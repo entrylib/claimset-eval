@@ -1,0 +1,555 @@
+{
+ "schema_version": "0.38",
+ "paper": {
+  "title": "Sequential C–O decarboxylative vinylation/C–H arylation of cyclic oxalates via a nickel-catalyzed multicomponent radical cascade",
+  "licence": "CC-BY-3.0",
+  "classification": {
+   "keywords": [
+    "photoredox catalysis",
+    "nickel catalysis",
+    "radical cascade",
+    "1,5-hydrogen atom transfer",
+    "alkyne difunctionalisation",
+    "cyclic oxalates"
+   ]
+  },
+  "declarations": {
+   "funding": [],
+   "competing_interests": "Not stated in the converted text."
+  },
+  "contributions": [
+   "C1"
+  ],
+  "contribution_record": "complete",
+  "origin": "converted",
+  "converted_from": {
+   "source_id": "10.1039/d0sc01471k",
+   "id_type": "doi",
+   "source_version": "published",
+   "source_licence": "CC-BY-3.0",
+   "source_authors": [
+    {
+     "name": "Huan Li"
+    },
+    {
+     "name": "Lei Guo"
+    },
+    {
+     "name": "Xiaoliang Feng"
+    },
+    {
+     "name": "Liping Huo"
+    },
+    {
+     "name": "Shengqing Zhu"
+    },
+    {
+     "name": "Lingling Chu"
+    }
+   ],
+   "source_status_at_conversion": "active",
+   "converter": "P1",
+   "date": "2026-11-06"
+  }
+ },
+ "contributors": [
+  {
+   "id": "P1",
+   "type": "agent",
+   "name": "EntryLib field-trial converter",
+   "positions": [
+    "converter"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "credit_roles": [
+    "data_curation"
+   ],
+   "ai_tasks": [
+    {
+     "task": "json_preparation",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "web_search",
+    "file_access"
+   ],
+   "record_source": "harness"
+  },
+  {
+   "id": "P2",
+   "type": "organisation",
+   "name": "OpenForecast Ltd",
+   "registration": "00000000",
+   "positions": [
+    "conversion_guarantor"
+   ],
+   "credit_roles": [
+    "validation"
+   ]
+  }
+ ],
+ "models": [
+  {
+   "id": "M1",
+   "provider": "Anthropic",
+   "name": "Claude",
+   "version": "opus-5-5",
+   "identifier": "claude-opus-5-5",
+   "weights": "api_only",
+   "accessed": "2026-11-06"
+  }
+ ],
+ "definitions": [
+  {
+   "id": "D1",
+   "term": "vinylation/arylation cascade",
+   "kind": "method",
+   "definition": "One-step reaction of a cyclic alkyl oxalate (caesium salt), a terminal alkyne and an aryl halide: decarboxylative alkyl radical addition to the alkyne, 1,5-hydrogen atom transfer from the ring to the vinyl radical, and nickel-catalysed arylation of the ring carbon radical."
+  },
+  {
+   "id": "D2",
+   "term": "standard conditions",
+   "kind": "method",
+   "definition": "Alkyne 0.1 mmol, cyclic oxalate 3.0 equiv, aryl halide 2.0 equiv, Ir[dF(CF3)ppy]2(dtbbpy)PF6 2 mol%, NiCl2(Py)4 20 mol%, dtbbpy 20 mol%, bis(4-methoxyphenyl)methanone 10 mol%, DMSO 0.05 M, 37 °C, 90 W blue LEDs."
+  },
+  {
+   "id": "D3",
+   "term": "1,3-vinylarylated cycloalkanes",
+   "kind": "other",
+   "definition": "Products carrying a trans-alkenyl group and an aryl group on carbons 1 and 3 of a saturated ring, formed as roughly 1:1 to 1:1.2 mixtures of diastereomers."
+  },
+  {
+   "id": "D4",
+   "term": "yield",
+   "kind": "variable",
+   "definition": "Isolated yield of product based on the alkyne, unless the source marks it as a crude 1H NMR yield."
+  },
+  {
+   "id": "D5",
+   "term": "control reactions",
+   "kind": "intervention",
+   "definition": "The standard conditions with one component removed: photocatalyst, nickel catalyst, light, ligand or additive.",
+   "members": [
+    "D6",
+    "D7",
+    "D8"
+   ]
+  },
+  {
+   "id": "D6",
+   "term": "no photocatalyst",
+   "kind": "intervention",
+   "definition": "Standard conditions without the iridium photocatalyst."
+  },
+  {
+   "id": "D7",
+   "term": "no nickel",
+   "kind": "intervention",
+   "definition": "Standard conditions without the nickel catalyst."
+  },
+  {
+   "id": "D8",
+   "term": "no light",
+   "kind": "intervention",
+   "definition": "Standard conditions in the dark."
+  },
+  {
+   "id": "D9",
+   "term": "vinyl radical intermediate",
+   "kind": "concept",
+   "definition": "The radical formed when the alkyl radical adds to the alkyne, proposed to abstract a hydrogen atom from carbon 5 of its own chain (1,5-HAT)."
+  },
+  {
+   "id": "D10",
+   "term": "radical clock experiment",
+   "kind": "method",
+   "definition": "Reaction under standard conditions with ethynylcyclopropane in place of the alkyne; ring opening to an allene indicates a vinyl radical."
+  },
+  {
+   "id": "D11",
+   "term": "substrate classes",
+   "kind": "other",
+   "definition": "The groups of the scope tables: cyclic oxalates, alkynes, aryl bromides, heteroaryl halides, aryl iodides and chlorides.",
+   "members": [
+    "D12",
+    "D13",
+    "D14",
+    "D15"
+   ]
+  },
+  {
+   "id": "D12",
+   "term": "cyclic oxalates scope",
+   "kind": "other",
+   "definition": "Products 4-14: varied five- and six-membered carbo- and heterocyclic oxalates."
+  },
+  {
+   "id": "D13",
+   "term": "alkyne scope",
+   "kind": "other",
+   "definition": "Products 19-29: varied terminal aliphatic alkynes, including late-stage examples."
+  },
+  {
+   "id": "D14",
+   "term": "aryl bromide scope",
+   "kind": "other",
+   "definition": "Products 30-35: varied aryl bromides."
+  },
+  {
+   "id": "D15",
+   "term": "heteroaryl and other aryl halide scope",
+   "kind": "other",
+   "definition": "Products 36-42: heteroaryl halides, aryl iodides and aryl chlorides."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1",
+   "statement": "Under the [[D2:standard conditions]], the [[D1:vinylation/arylation cascade]] gives [[D3:1,3-vinylarylated cycloalkanes]] from five- and six-membered cyclic oxalates, terminal aliphatic alkynes and aryl halides in 36% to 77% [[D4:yield]].",
+   "about": {
+    "subject": "D1",
+    "relation": "produces",
+    "object": "D3",
+    "comparator": null,
+    "conditions": [
+     "D2"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E1",
+     "tables": [
+      "E1.T1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1",
+    "L2"
+   ],
+   "provenance": "extracted",
+   "source_spans": [
+    "Abstract",
+    "Scheme 1"
+   ]
+  },
+  {
+   "id": "C2",
+   "statement": "Compared with the [[D2:standard conditions]], each of the [[D5:control reactions]] that removes the photocatalyst, the nickel catalyst or light gives 0% [[D4:yield]].",
+   "about": {
+    "subject": "D5",
+    "relation": "abolishes",
+    "object": "D4",
+    "comparator": "D2",
+    "conditions": []
+   },
+   "type": "causal",
+   "role": "secondary",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E2",
+     "tables": [
+      "E2.T1"
+     ]
+    }
+   ],
+   "provenance": "extracted",
+   "source_spans": [
+    "Table 1"
+   ]
+  },
+  {
+   "id": "C3",
+   "statement": "The [[D1:vinylation/arylation cascade]] proceeds through a [[D9:vinyl radical intermediate]], as the [[D10:radical clock experiment]] gives the ring-opened allene.",
+   "about": {
+    "subject": "D1",
+    "relation": "proceeds through",
+    "object": "D9",
+    "comparator": null,
+    "conditions": []
+   },
+   "type": "causal",
+   "role": "secondary",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E3"
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "provenance": "extracted",
+   "source_spans": [
+    "Mechanistic studies"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "profile": "quant",
+   "design": "experiment",
+   "data_origin": "primary",
+   "preregistered": false,
+   "description": "Substrate scope: 39 products (4-42) under standard conditions, each from a single run with isolated yield; failures of 4- and 7-membered, bicyclic and linear oxalates reported in text.",
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "procedure": [
+     "D2"
+    ],
+    "lens": [
+     "D4"
+    ]
+   },
+   "n": 39,
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Range of yields per substrate class",
+     "row_labels": [
+      "D11"
+     ],
+     "columns": [
+      "lowest yield",
+      "highest yield",
+      "products"
+     ],
+     "units": [
+      "%",
+      "%",
+      "1"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "D12"
+       ],
+       "values": [
+        36,
+        77,
+        11
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "D13"
+       ],
+       "values": [
+        45,
+        74,
+        11
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "D14"
+       ],
+       "values": [
+        53,
+        70,
+        6
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "D15"
+       ],
+       "values": [
+        50,
+        77,
+        7
+       ]
+      }
+     ]
+    }
+   ],
+   "availability": {
+    "level": "unavailable",
+    "reason": "other",
+    "comment": "Procedures and NMR spectra as images in the electronic supplementary information; no raw data deposited."
+   },
+   "source_spans": [
+    "Scheme 1",
+    "ESI"
+   ]
+  },
+  {
+   "id": "E2",
+   "profile": "quant",
+   "design": "experiment",
+   "data_origin": "primary",
+   "preregistered": false,
+   "description": "Optimisation and control reactions on the model reaction (oxalate 1, alkyne 2, 4-bromobenzonitrile 3); yields of product 4 by crude 1H NMR.",
+   "setup": {
+    "studied": [
+     "D5",
+     "D2"
+    ],
+    "procedure": [
+     "D2"
+    ],
+    "lens": [
+     "D4"
+    ]
+   },
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Yield of product 4 under standard and control conditions",
+     "row_labels": [
+      "D5"
+     ],
+     "columns": [
+      "yield of product 4"
+     ],
+     "units": [
+      "%"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "D6"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "D7"
+       ],
+       "values": [
+        0
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "D8"
+       ],
+       "values": [
+        0
+       ]
+      }
+     ]
+    }
+   ],
+   "results": [
+    {
+     "id": "R1",
+     "variable": "yield of product 4 under standard conditions (crude 1H NMR)",
+     "value": 84,
+     "unit": "%"
+    }
+   ],
+   "availability": {
+    "level": "not_stated",
+    "reason": "other"
+   },
+   "source_spans": [
+    "Table 1"
+   ]
+  },
+  {
+   "id": "E3",
+   "profile": "quant",
+   "design": "experiment",
+   "data_origin": "primary",
+   "preregistered": false,
+   "description": "Radical clock with ethynylcyclopropane gave allene 48; a stoichiometric aryl-Ni(II) complex did not give the 1,3-product; aryl alkynes gave 1,2-alkylarylation instead.",
+   "setup": {
+    "studied": [
+     "D1",
+     "D9"
+    ],
+    "procedure": [
+     "D10"
+    ],
+    "lens": [
+     "D4"
+    ]
+   },
+   "results": [
+    {
+     "id": "R1",
+     "variable": "allene 48 formed from ethynylcyclopropane",
+     "value": true
+    }
+   ],
+   "availability": {
+    "level": "not_stated",
+    "reason": "other"
+   },
+   "source_spans": [
+    "Scheme 3"
+   ]
+  }
+ ],
+ "warrants": [],
+ "limitations": [
+  {
+   "id": "L1",
+   "category": "sampling",
+   "statement": "Four- and seven-membered, bicyclic and linear oxalates and internal alkynes fail, so the scope is limited to five- and six-membered rings and terminal alkynes.",
+   "affects": [
+    "C1"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none",
+   "source_spans": [
+    "Scheme 1"
+   ]
+  },
+  {
+   "id": "L2",
+   "category": "measurement",
+   "statement": "Products form as near 1:1 diastereomer mixtures; yields combine both diastereomers.",
+   "affects": [
+    "C1"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none",
+   "source_spans": [
+    "Scheme 1"
+   ]
+  },
+  {
+   "id": "L3",
+   "category": "other",
+   "statement": "The authors note that a nickel(0) oxidative-addition pathway cannot be excluded.",
+   "affects": [
+    "C3"
+   ],
+   "impact": "could_reverse",
+   "mitigation": "none",
+   "source_spans": [
+    "Mechanistic studies"
+   ]
+  }
+ ],
+ "artefacts": [],
+ "references": [],
+ "open_questions": []
+}

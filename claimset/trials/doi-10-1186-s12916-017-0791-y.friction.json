@@ -1,0 +1,50 @@
+[
+ {
+  "where": "E1.preregistered",
+  "what": "The trial was registered prospectively (ANZCTR ACTRN12612000251820, 29 Feb 2012). The core holds only `preregistered: true`; the registry, identifier and date have no field (I put the ID in the description), and `planned_at_anchor` has no `registry` value for a claim's test.",
+  "need": "registration as a typed anchor",
+  "proposal": "core (anchor) + extension: trial (registry detail)"
+ },
+ {
+  "where": "D4, D5, D6",
+  "what": "Primary (MADRS) versus secondary outcomes (HADS, POMS, CGI-I, WHO-5, diet score, biomarkers) cannot be marked; 'primary' lives in the definition's text, so a reader cannot tell a pre-specified primary endpoint from an exploratory one.",
+  "need": "endpoint hierarchy",
+  "proposal": "extension: trial"
+ },
+ {
+  "where": "E1.T2",
+  "what": "CONSORT flow (166 assessed, 99 excluded, 67 randomised, 56 analysed at 12 weeks) fits a table only roughly: flows are stages, not rows of a dimension.",
+  "need": "participant flow",
+  "proposal": "extension: trial"
+ },
+ {
+  "where": "E1.R1-R4",
+  "what": "Contrasts with `comparator` work well (difference, Cohen's d, NNT). `statistic` as a free-text condition key is the convention, but nothing types it, so 'difference in change from baseline, MMRM' and 'Cohen's d' are strings.",
+  "need": "typed statistics (effect size kinds)",
+  "proposal": "core (light: a list of common statistics)"
+ },
+ {
+  "where": "D7",
+  "what": "Allocation concealment, blinding of whom, ITT versus per-protocol analysis sets: all text in the design definition.",
+  "need": "trial design fields",
+  "proposal": "extension: trial"
+ },
+ {
+  "where": "paper.declarations.funding",
+  "what": "In-kind support (food vouchers from a supermarket chain, biochemistry paid by an industry body) is recorded as funders with no award; there is no way to say 'in kind' or the sponsor's role.",
+  "need": "in-kind support and sponsor role",
+  "proposal": "core (minor: a `role` or `kind` on funding)"
+ },
+ {
+  "where": "harms",
+  "what": "The source reports no adverse events. The format cannot say 'harms not reported', which matters for trials.",
+  "need": "harms reporting",
+  "proposal": "extension: trial"
+ },
+ {
+  "where": "D8",
+  "what": "Arms as a group of interventions works (members). Good.",
+  "need": null,
+  "proposal": "none"
+ }
+]

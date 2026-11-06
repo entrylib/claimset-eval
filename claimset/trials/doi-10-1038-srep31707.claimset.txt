@@ -1,0 +1,49 @@
+CLAIMSET Cellular adhesome screen identifies critical modulators of focal adhesion dynamics, cellular traction forces and cell migration behaviour
+licence CC-BY-4.0; converted from 10.1038/srep31707 published by Michiel Fokkelman, Hayri E. Balcıoğlu, Janna E. Klip, Kuan Yan, Fons J. Verbeek, Erik H. J. Danen, Bob van de Water; contributions C1, C2, C3
+declarations funding: none | competing interests: Not stated in the converted text.
+
+DEFINITIONS
+D1 [population] MCF7-IGF1R cells: MCF7 human breast adenocarcinoma cells (from ATCC) stably overexpressing the IGF1 receptor, with lentiviral mCherry-LifeAct for live imaging.
+D2 [method] adhesome siRNA screen: Knockdown of 569 adhesion-related genes with Dharmacon SMARTpool siRNAs (four siRNAs per gene, 50 nM, DharmaFECT 4), followed by a nocodazole wash-out focal adhesion assay imaged by automated confocal microscopy; duplicate wells, 5-8 images per well.
+D3 [variable] focal adhesion size: Area of focal adhesions stained for phospho-Tyr118 paxillin or vinculin, segmented from confocal images; distributions compared with the mock-transfected control by a two-sample Kolmogorov-Smirnov test.
+D4 [variable] IGF1-induced migration speed: Speed of single MCF7-IGF1R cells in random migration after IGF1 stimulation, from live-cell tracking.
+D5 [variable] traction force: Force exerted by cells on elastomeric micropillar arrays, and its turnover (autocorrelation half-time).
+D6 [intervention] candidate genes: Knockdown of TPM1, PPP1R12B, RAC2 and HIPK3, each by SMARTpool and by single siRNAs. [members D7, D8, D9, D10]
+D7 [intervention] TPM1 knockdown: siRNA knockdown of tropomyosin 1 (TPM1).
+D8 [intervention] PPP1R12B knockdown: siRNA knockdown of protein phosphatase 1 regulatory subunit 12B.
+D9 [intervention] RAC2 knockdown: siRNA knockdown of the small GTPase RAC2.
+D10 [intervention] HIPK3 knockdown: siRNA knockdown of homeodomain-interacting protein kinase 3.
+D12 [intervention] knockdown condition: The four candidate knockdowns and the mock control, as compared in the force experiments. [members D7, D8, D9, D10, D11]
+D11 [intervention] mock transfection: Transfection reagent without siRNA; with siGFP and non-targeting siRNA the negative controls.
+
+CLAIMS
+C1 [descriptive; principal; support: empirical_quant E1 (E1.R1, E1.R2, E1.R3); limitations L1]
+  Of the [[D2:adhesome siRNA screen]]'s 569 genes, 30 increased and 11 decreased [[D3:focal adhesion size]] in [[D1:MCF7-IGF1R cells]] when knocked down.
+C2 [causal; principal; support: empirical_quant E2; limitations L2]
+  Knockdown of each of the [[D6:candidate genes]] enlarged focal adhesions and reduced [[D4:IGF1-induced migration speed]] of [[D1:MCF7-IGF1R cells]] compared with [[D11:mock transfection]].
+C3 [causal; principal; support: empirical_quant E3; limitations L2]
+  Compared with [[D11:mock transfection]], three of the [[D6:candidate genes]] ([[D8:PPP1R12B knockdown]], [[D10:HIPK3 knockdown]] and [[D9:RAC2 knockdown]]) increased [[D5:traction force]] and slowed its turnover in [[D1:MCF7-IGF1R cells]].
+
+EVIDENCE
+E1 [quant; design experiment; data_origin primary; n 569] Primary siRNA screen of 569 adhesion genes: focal adhesion size after nocodazole wash-out, per knockdown against mock.
+  setup: studied D2; cases D1; procedure D2; lens D3
+  E1.R1 genes whose knockdown increased focal adhesion size (D > 0.1, p < 1e-40) = 30
+  E1.R2 genes whose knockdown decreased focal adhesion size (D < -0.075, p < 1e-25) = 11
+  E1.R3 genes screened = 569
+E2 [quant; design experiment; data_origin primary] Random migration of IGF1-stimulated MCF7-IGF1R cells after SMARTpool knockdown of all 64 primary hits, then single siRNAs for the consistent ones; Kruskal-Wallis with Dunn's post-test, experiments in duplicate, significant only if p < 0.05 in every experiment.
+  setup: studied D6, D11; cases D1; procedure D2; lens D4
+  E2.R1 primary hits whose SMARTpool knockdown reduced migration consistently = 13 n 64
+  E2.R2 genes whose knockdown reduced migration with two or more single siRNAs = 10 n 13
+E3 [quant; design experiment; data_origin primary] Traction force microscopy on micropillar arrays after knockdown of the four candidates; four independent experiments, each knockdown in two; unpaired t-tests with Welch's correction.
+  setup: studied D6, D11; cases D1; procedure D2; lens D5
+  E3.T1 Cells analysed and force turnover half-time per knockdown
+  | row | D12 | cells analysed (1) | force autocorrelation half-time relative to mock (1) |
+  | r0 | D11 | 23 | 1 |
+  | r1 | D7 | 12 |  |
+  | r2 | D8 | 15 | 1.5 |
+  | r3 | D10 | 7 | 1.5 |
+  | r4 | D9 | 19 | 2 |
+
+LIMITATIONS
+L1 [measurement; affects C1; could_bias_magnitude; mitigation partial] Hits were called on distribution shifts with fixed D and p thresholds over thousands of adhesions per well, so a call reflects image counts more than the number of independent experiments.
+L2 [sample_size; affects C2, C3; reduces_precision; mitigation none] Force and migration results rest on two independent experiments per knockdown and 7 to 23 cells per condition.

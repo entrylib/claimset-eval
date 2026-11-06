@@ -1,0 +1,62 @@
+[
+ {
+  "where": "D3, E1",
+  "what": "Primary sources (a 1582 prayer book, a letter of Erasmus) are the evidence, each with its own date, author, genre and holding. They became one `data` definition and excerpts with free-text locators. Historians cite sources by archive, shelfmark, folio, edition and STC/Wing number.",
+  "need": "primary sources as typed objects (date, genre, holding, catalogue number)",
+  "proposal": "extension: archival (core needs only a 'source' kind and a typed locator)"
+ },
+ {
+  "where": "E1, E2",
+  "what": "The evidence profile `qual` with `data_sources: document` fits, but analytic approaches (thematic, IPA, grounded theory) are social-science ones; historical source criticism and philology got `discourse` and `content_analysis`.",
+  "need": "historical method as an analytic approach",
+  "proposal": "core (add source_criticism / close_reading to analytic_approach)"
+ },
+ {
+  "where": "E1.R1-R3",
+  "what": "The excerpts are the author's paraphrase here because the converter could not quote at length; in a native paper they would be early modern spelling with original orthography. The excerpt needs a 'transcription conventions' note and the date of the source, which only conditions can hold.",
+  "need": "dated sources and transcription conventions",
+  "proposal": "extension: archival"
+ },
+ {
+  "where": "C1 novelty",
+  "what": "The paper's main move is a re-reading of someone else's evidence. `refutation` with `contradicts` works; but the claim is that the evidence is insufficient, not that the thesis is false. There is no relation 'challenges the evidence for'.",
+  "need": "challenging the evidence for a claim, not the claim",
+  "proposal": "core (relation qualifies is close; a type `disputes_evidence` would be precise)"
+ },
+ {
+  "where": "C3 warrant",
+  "what": "An interpretive claim supported by an argument names the same warrant twice: on the support entry (rule 10) and on the claim (rule 6).",
+  "need": "one place for the warrant",
+  "proposal": "core (minor: accept the support entry's warrant for rule 6)"
+ },
+ {
+  "where": "C3",
+  "what": "A critique of another study's design (Wehr) has no evidence of its own: support `argument` with an analogical warrant. That fits.",
+  "need": null,
+  "proposal": "none"
+ },
+ {
+  "where": "E2.R1",
+  "what": "Corpus searches (database, query, date range, search date, hit count, hits read) are reproducible procedures; as text in a method definition they cannot be re-run or compared. The search date matters because EEBO changes.",
+  "need": "corpus queries",
+  "proposal": "extension: archival (or a shared corpus-search block with digital humanities)"
+ },
+ {
+  "where": "references B2, B3",
+  "what": "No DOI for Wehr's 1992 paper was at hand and EEBO has no identifier, so both are `reference` strings; a database is not a work, yet it is cited.",
+  "need": "databases and collections as references",
+  "proposal": "none (reference string suffices)"
+ },
+ {
+  "where": "paper",
+  "what": "Humanities papers argue through prose; the converted claims are faithful but three claims cover a 30-page essay. Most of its value is in the readings of individual passages, which here are excerpts with one-line glosses.",
+  "need": null,
+  "proposal": "none (expected granularity)"
+ },
+ {
+  "where": "E1 availability",
+  "what": "Sources in a subscription database are 'public' only in a loose sense; `public` was used with a comment.",
+  "need": "public but paywalled",
+  "proposal": "core (minor: availability note)"
+ }
+]

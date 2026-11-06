@@ -1,0 +1,527 @@
+{
+ "schema_version": "0.38",
+ "paper": {
+  "title": "Cellular adhesome screen identifies critical modulators of focal adhesion dynamics, cellular traction forces and cell migration behaviour",
+  "licence": "CC-BY-4.0",
+  "classification": {
+   "keywords": [
+    "focal adhesion",
+    "siRNA screen",
+    "cell migration",
+    "traction force",
+    "breast cancer cells",
+    "MCF7"
+   ]
+  },
+  "declarations": {
+   "funding": [],
+   "competing_interests": "Not stated in the converted text."
+  },
+  "contributions": [
+   "C1",
+   "C2",
+   "C3"
+  ],
+  "contribution_record": "complete",
+  "origin": "converted",
+  "converted_from": {
+   "source_id": "10.1038/srep31707",
+   "id_type": "doi",
+   "source_version": "published",
+   "source_licence": "CC-BY-4.0",
+   "source_authors": [
+    {
+     "name": "Michiel Fokkelman"
+    },
+    {
+     "name": "Hayri E. Balcıoğlu"
+    },
+    {
+     "name": "Janna E. Klip"
+    },
+    {
+     "name": "Kuan Yan"
+    },
+    {
+     "name": "Fons J. Verbeek"
+    },
+    {
+     "name": "Erik H. J. Danen"
+    },
+    {
+     "name": "Bob van de Water"
+    }
+   ],
+   "source_status_at_conversion": "active",
+   "converter": "P1",
+   "date": "2026-11-06"
+  }
+ },
+ "contributors": [
+  {
+   "id": "P1",
+   "type": "agent",
+   "name": "EntryLib field-trial converter",
+   "positions": [
+    "converter"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "credit_roles": [
+    "data_curation"
+   ],
+   "ai_tasks": [
+    {
+     "task": "json_preparation",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "web_search",
+    "file_access"
+   ],
+   "record_source": "harness"
+  },
+  {
+   "id": "P2",
+   "type": "organisation",
+   "name": "OpenForecast Ltd",
+   "registration": "00000000",
+   "positions": [
+    "conversion_guarantor"
+   ],
+   "credit_roles": [
+    "validation"
+   ]
+  }
+ ],
+ "models": [
+  {
+   "id": "M1",
+   "provider": "Anthropic",
+   "name": "Claude",
+   "version": "opus-5-5",
+   "identifier": "claude-opus-5-5",
+   "weights": "api_only",
+   "accessed": "2026-11-06"
+  }
+ ],
+ "definitions": [
+  {
+   "id": "D1",
+   "term": "MCF7-IGF1R cells",
+   "kind": "population",
+   "definition": "MCF7 human breast adenocarcinoma cells (from ATCC) stably overexpressing the IGF1 receptor, with lentiviral mCherry-LifeAct for live imaging."
+  },
+  {
+   "id": "D2",
+   "term": "adhesome siRNA screen",
+   "kind": "method",
+   "definition": "Knockdown of 569 adhesion-related genes with Dharmacon SMARTpool siRNAs (four siRNAs per gene, 50 nM, DharmaFECT 4), followed by a nocodazole wash-out focal adhesion assay imaged by automated confocal microscopy; duplicate wells, 5-8 images per well."
+  },
+  {
+   "id": "D3",
+   "term": "focal adhesion size",
+   "kind": "variable",
+   "definition": "Area of focal adhesions stained for phospho-Tyr118 paxillin or vinculin, segmented from confocal images; distributions compared with the mock-transfected control by a two-sample Kolmogorov-Smirnov test."
+  },
+  {
+   "id": "D4",
+   "term": "IGF1-induced migration speed",
+   "kind": "variable",
+   "definition": "Speed of single MCF7-IGF1R cells in random migration after IGF1 stimulation, from live-cell tracking."
+  },
+  {
+   "id": "D5",
+   "term": "traction force",
+   "kind": "variable",
+   "definition": "Force exerted by cells on elastomeric micropillar arrays, and its turnover (autocorrelation half-time)."
+  },
+  {
+   "id": "D6",
+   "term": "candidate genes",
+   "kind": "intervention",
+   "definition": "Knockdown of TPM1, PPP1R12B, RAC2 and HIPK3, each by SMARTpool and by single siRNAs.",
+   "members": [
+    "D7",
+    "D8",
+    "D9",
+    "D10"
+   ]
+  },
+  {
+   "id": "D7",
+   "term": "TPM1 knockdown",
+   "kind": "intervention",
+   "definition": "siRNA knockdown of tropomyosin 1 (TPM1)."
+  },
+  {
+   "id": "D8",
+   "term": "PPP1R12B knockdown",
+   "kind": "intervention",
+   "definition": "siRNA knockdown of protein phosphatase 1 regulatory subunit 12B."
+  },
+  {
+   "id": "D9",
+   "term": "RAC2 knockdown",
+   "kind": "intervention",
+   "definition": "siRNA knockdown of the small GTPase RAC2."
+  },
+  {
+   "id": "D10",
+   "term": "HIPK3 knockdown",
+   "kind": "intervention",
+   "definition": "siRNA knockdown of homeodomain-interacting protein kinase 3."
+  },
+  {
+   "id": "D12",
+   "term": "knockdown condition",
+   "kind": "intervention",
+   "definition": "The four candidate knockdowns and the mock control, as compared in the force experiments.",
+   "members": [
+    "D7",
+    "D8",
+    "D9",
+    "D10",
+    "D11"
+   ]
+  },
+  {
+   "id": "D11",
+   "term": "mock transfection",
+   "kind": "intervention",
+   "definition": "Transfection reagent without siRNA; with siGFP and non-targeting siRNA the negative controls."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1",
+   "statement": "Of the [[D2:adhesome siRNA screen]]'s 569 genes, 30 increased and 11 decreased [[D3:focal adhesion size]] in [[D1:MCF7-IGF1R cells]] when knocked down.",
+   "about": {
+    "subject": "D2",
+    "relation": "identifies regulators of",
+    "object": "D3",
+    "comparator": null,
+    "conditions": [
+     "D1"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E1",
+     "results": [
+      "E1.R1",
+      "E1.R2",
+      "E1.R3"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "provenance": "extracted",
+   "source_spans": [
+    "Abstract",
+    "Results"
+   ]
+  },
+  {
+   "id": "C2",
+   "statement": "Knockdown of each of the [[D6:candidate genes]] enlarged focal adhesions and reduced [[D4:IGF1-induced migration speed]] of [[D1:MCF7-IGF1R cells]] compared with [[D11:mock transfection]].",
+   "about": {
+    "subject": "D6",
+    "relation": "reduces",
+    "object": "D4",
+    "comparator": "D11",
+    "conditions": [
+     "D1"
+    ]
+   },
+   "type": "causal",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E2"
+    }
+   ],
+   "limitations": [
+    "L2"
+   ],
+   "provenance": "extracted",
+   "source_spans": [
+    "Abstract",
+    "Results"
+   ]
+  },
+  {
+   "id": "C3",
+   "statement": "Compared with [[D11:mock transfection]], three of the [[D6:candidate genes]] ([[D8:PPP1R12B knockdown]], [[D10:HIPK3 knockdown]] and [[D9:RAC2 knockdown]]) increased [[D5:traction force]] and slowed its turnover in [[D1:MCF7-IGF1R cells]].",
+   "about": {
+    "subject": "D6",
+    "relation": "increases",
+    "object": "D5",
+    "comparator": "D11",
+    "conditions": [
+     "D1"
+    ]
+   },
+   "type": "causal",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E3",
+     "tables": [
+      "E3.T1"
+     ]
+    }
+   ],
+   "limitations": [
+    "L2"
+   ],
+   "provenance": "extracted",
+   "source_spans": [
+    "Abstract",
+    "Results"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "profile": "quant",
+   "design": "experiment",
+   "data_origin": "primary",
+   "preregistered": false,
+   "description": "Primary siRNA screen of 569 adhesion genes: focal adhesion size after nocodazole wash-out, per knockdown against mock.",
+   "setup": {
+    "studied": [
+     "D2"
+    ],
+    "cases": [
+     "D1"
+    ],
+    "procedure": [
+     "D2"
+    ],
+    "lens": [
+     "D3"
+    ]
+   },
+   "n": 569,
+   "results": [
+    {
+     "id": "R1",
+     "variable": "genes whose knockdown increased focal adhesion size (D > 0.1, p < 1e-40)",
+     "value": 30
+    },
+    {
+     "id": "R2",
+     "variable": "genes whose knockdown decreased focal adhesion size (D < -0.075, p < 1e-25)",
+     "value": 11
+    },
+    {
+     "id": "R3",
+     "variable": "genes screened",
+     "value": 569
+    }
+   ],
+   "availability": {
+    "level": "not_stated"
+   },
+   "source_spans": [
+    "Results",
+    "Fig 1"
+   ]
+  },
+  {
+   "id": "E2",
+   "profile": "quant",
+   "design": "experiment",
+   "data_origin": "primary",
+   "preregistered": false,
+   "description": "Random migration of IGF1-stimulated MCF7-IGF1R cells after SMARTpool knockdown of all 64 primary hits, then single siRNAs for the consistent ones; Kruskal-Wallis with Dunn's post-test, experiments in duplicate, significant only if p < 0.05 in every experiment.",
+   "setup": {
+    "studied": [
+     "D6",
+     "D11"
+    ],
+    "cases": [
+     "D1"
+    ],
+    "procedure": [
+     "D2"
+    ],
+    "lens": [
+     "D4"
+    ]
+   },
+   "results": [
+    {
+     "id": "R1",
+     "variable": "primary hits whose SMARTpool knockdown reduced migration consistently",
+     "value": 13,
+     "n": 64
+    },
+    {
+     "id": "R2",
+     "variable": "genes whose knockdown reduced migration with two or more single siRNAs",
+     "value": 10,
+     "n": 13
+    }
+   ],
+   "availability": {
+    "level": "not_stated"
+   },
+   "source_spans": [
+    "Results",
+    "Fig 4"
+   ]
+  },
+  {
+   "id": "E3",
+   "profile": "quant",
+   "design": "experiment",
+   "data_origin": "primary",
+   "preregistered": false,
+   "description": "Traction force microscopy on micropillar arrays after knockdown of the four candidates; four independent experiments, each knockdown in two; unpaired t-tests with Welch's correction.",
+   "setup": {
+    "studied": [
+     "D6",
+     "D11"
+    ],
+    "cases": [
+     "D1"
+    ],
+    "procedure": [
+     "D2"
+    ],
+    "lens": [
+     "D5"
+    ]
+   },
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Cells analysed and force turnover half-time per knockdown",
+     "row_labels": [
+      "D12"
+     ],
+     "columns": [
+      "cells analysed",
+      "force autocorrelation half-time relative to mock"
+     ],
+     "units": [
+      "1",
+      "1"
+     ],
+     "rows": [
+      {
+       "id": "r0",
+       "label": [
+        "D11"
+       ],
+       "values": [
+        23,
+        1.0
+       ]
+      },
+      {
+       "id": "r1",
+       "label": [
+        "D7"
+       ],
+       "values": [
+        12,
+        null
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "D8"
+       ],
+       "values": [
+        15,
+        1.5
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "D10"
+       ],
+       "values": [
+        7,
+        1.5
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "D9"
+       ],
+       "values": [
+        19,
+        2.0
+       ]
+      }
+     ]
+    }
+   ],
+   "availability": {
+    "level": "not_stated"
+   },
+   "source_spans": [
+    "Results",
+    "Fig 6"
+   ]
+  }
+ ],
+ "warrants": [],
+ "limitations": [
+  {
+   "id": "L1",
+   "category": "measurement",
+   "statement": "Hits were called on distribution shifts with fixed D and p thresholds over thousands of adhesions per well, so a call reflects image counts more than the number of independent experiments.",
+   "affects": [
+    "C1"
+   ],
+   "impact": "could_bias_magnitude",
+   "mitigation": "partial",
+   "mitigation_evidence": "E2",
+   "source_spans": [
+    "Methods"
+   ]
+  },
+  {
+   "id": "L2",
+   "category": "sample_size",
+   "statement": "Force and migration results rest on two independent experiments per knockdown and 7 to 23 cells per condition.",
+   "affects": [
+    "C2",
+    "C3"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none",
+   "source_spans": [
+    "Methods",
+    "Fig 6"
+   ]
+  }
+ ],
+ "artefacts": [],
+ "references": [],
+ "open_questions": []
+}
