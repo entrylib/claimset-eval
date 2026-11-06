@@ -1,0 +1,55 @@
+CLAIMSET More than 75 percent decline over 27 years in total flying insect biomass in protected areas
+licence CC-BY-4.0; converted from 10.1371/journal.pone.0185809 published by Caspar A. Hallmann, Martin Sorg, Eelke Jongejans, Henk Siepel, Nick Hofland, Heinz Schwan, Werner Stenmans, Andreas Müller, Hubert Sumser, Thomas Hörren, Dave Goulson, Hans de Kroon; contributions C1, C2
+declarations funding: Netherlands Organisation for Scientific Research (NWO) award 840.11.001; Netherlands Organisation for Scientific Research (NWO) award 841.11.007; Triodos Foundation | competing interests: None declared. | ethics: Relevant authorities (listed in the source's S1 Appendix), trap permits, approved
+
+DEFINITIONS
+D1 [variable] total flying insect biomass: Alcohol-wet mass of all insects caught by a Malaise trap, per day of exposure, weighed after draining through a 0.8 mm sieve.
+D2 [method] Malaise trap sampling: Standardised bi-coloured Malaise traps (Townes design) run continuously from March to October and emptied about every 11 days; catches stored in 80% ethanol.
+D3 [setting] German protected areas: 63 lowland locations in protected areas (Natura 2000 sites, nature reserves, landscape protection areas, water protection zones) in North Rhine-Westphalia (57), Brandenburg (5) and Rhineland-Palatinate (1), 1989-2016; 96 location-years, 1,503 samples.
+D4 [method] Bayesian hierarchical biomass model: Daily latent biomass log-normal with a location random effect and a log-linear annual trend; observed catches are sums of daily biomass over exposure intervals; fitted by MCMC in JAGS.
+D5 [variable] annual decline rate: Percentage decrease of expected daily biomass per year, from the model's trend coefficient.
+D6 [variable] seasonal decline over 27 years: Percentage decrease of biomass over 1989-2016, weighted over the season (April-October).
+D7 [concept] weather, land use and habitat: Temperature, precipitation, wind, frost and winter rain; forest, agriculture, grassland and water cover within 200 m; plant richness and Ellenberg indicator values within 50 m.
+D8 [setting] habitat cluster: Grouping of locations by vegetation: 1 nutrient-poor heathland, sandy grassland and dunes; 2 nutrient-rich grassland, margins and wasteland; 3 pioneer and shrub communities. [members D9, D10]
+D9 [setting] nutrient-poor heathland, sandy grassland and dunes: Habitat cluster 1 (19 locations).
+D10 [setting] nutrient-rich grassland, margins and wasteland: Habitat cluster 2 (41 locations).
+
+CLAIMS
+C1 [descriptive; principal; support: empirical_quant E1 (E1.R2, E1.R3); assumes C4; limitations L1, L2]
+  In [[D3:German protected areas]], [[D1:total flying insect biomass]] declined by 76.7% over 27 years across the season (the [[D6:seasonal decline over 27 years]]), and by 81.6% in mid-summer.
+C2 [associational; principal; support: empirical_quant E2; limitations L3]
+  The decline of [[D1:total flying insect biomass]] is not explained by changes in [[D7:weather, land use and habitat]]: in [[D3:German protected areas]] the trend remains, and steepens, when they are in the model.
+C4 [descriptive; supporting; assumption (methodological, unchecked)]
+  Catches of a trap are representative of the flying insect biomass of its location in the sampling period.
+C3 [descriptive; secondary; support: empirical_quant E1 (E1.R5, E1.R6)]
+  The [[D5:annual decline rate]] was higher in [[D9:nutrient-poor heathland, sandy grassland and dunes]] than in [[D10:nutrient-rich grassland, margins and wasteland]], within [[D3:German protected areas]].
+
+EVIDENCE
+E1 [quant; design observational; data_origin primary; n 1503] Basic temporal model of 1,503 Malaise-trap samples from 63 locations in German protected areas, 1989-2016.
+  setup: studied D1; cases D3; procedure D2, D4; lens D1, D5, D6
+  E1.R1 annual trend coefficient (log scale) = -0.063 {model: basic}
+  E1.R2 D6 = 76.7 % 95% interval 74.8 to 78.5
+  E1.R3 mid-summer decline over 27 years = 81.6 % 95% interval 79.7 to 83.4
+  E1.R4 D5 = 6.1 %/a
+  E1.R5 D5 = 7.5 %/a 95% interval 6.6 to 8.4 {D8: D9}
+  E1.R6 D5 = 5.2 %/a 95% interval 4.8 to 5.5 {D8: D10}
+  E1.R7 D6 = 76.2 % 95% interval 73.9 to 78.3 n 26 {locations: sampled in more than one year}
+E2 [quant; design observational; data_origin primary] Comparison of seven models adding weather, land use and habitat covariates to the temporal model, by DIC and explained variation, with the trend coefficient each leaves.
+  setup: studied D7; cases D3; procedure D4; lens D1
+  derived from E1 (reanalysis)
+  E2.T1 Trend coefficient (log scale) and explained variation of biomass under models with different covariates
+  | row | model | annual trend coefficient (log scale) (1) | explained variation R2 (%) |
+  | r1 | basic | -0.063 |  |
+  | r2 | weather | -0.058 | 65.4 |
+  | r3 | land use | -0.064 | 61.3 |
+  | r4 | habitat | -0.059 | 61.9 |
+  | r5 | final combined | -0.081 |  |
+
+LIMITATIONS
+L1 [sampling; affects C1; could_bias_magnitude; mitigation partial] Only 26 of 63 locations were sampled in more than one year, so the trend is estimated mostly across locations rather than within them.
+L2 [sampling; affects C1; reduces_transferability; mitigation none] The protected areas are small and 94% are enclosed by farmland, so they may act as sinks and the decline may not transfer to other landscapes.
+L3 [measurement; affects C2; could_reverse; mitigation none] Land use was measured coarsely (proportions within 200 m) without management or pesticide use, and not every climate variable was analysed.
+
+ARTEFACTS
+A1 [data] S1 and S2 Datasets: biomass per sample and covariates (CSV).
+A2 [code] S1 Code: JAGS model scripts.

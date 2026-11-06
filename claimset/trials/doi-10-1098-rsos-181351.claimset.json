@@ -1,0 +1,467 @@
+{
+ "schema_version": "0.38",
+ "paper": {
+  "title": "The effect of preregistration on trust in empirical research findings: results of a registered report",
+  "licence": "CC-BY-4.0",
+  "classification": {
+   "keywords": [
+    "preregistration",
+    "registered reports",
+    "trust in research",
+    "Bayesian ANOVA",
+    "metascience"
+   ]
+  },
+  "declarations": {
+   "funding": [],
+   "competing_interests": "Not stated in the converted text.",
+   "consent": "Participants read a participant information statement (https://osf.io/49d2h/)."
+  },
+  "contributions": [
+   "C1",
+   "C2"
+  ],
+  "contribution_record": "complete",
+  "origin": "converted",
+  "converted_from": {
+   "source_id": "10.1098/rsos.181351",
+   "id_type": "doi",
+   "source_version": "published",
+   "source_licence": "CC-BY-4.0",
+   "source_authors": [
+    {
+     "name": "Sarahanne M. Field"
+    },
+    {
+     "name": "E.-J. Wagenmakers"
+    },
+    {
+     "name": "Henk A. L. Kiers"
+    },
+    {
+     "name": "Rink Hoekstra"
+    },
+    {
+     "name": "Anja F. Ernst"
+    },
+    {
+     "name": "Don van Ravenzwaaij"
+    }
+   ],
+   "source_status_at_conversion": "active",
+   "converter": "P1",
+   "date": "2026-11-06"
+  }
+ },
+ "contributors": [
+  {
+   "id": "P1",
+   "type": "agent",
+   "name": "EntryLib field-trial converter",
+   "positions": [
+    "converter"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "credit_roles": [
+    "data_curation"
+   ],
+   "ai_tasks": [
+    {
+     "task": "json_preparation",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "web_search",
+    "file_access"
+   ],
+   "record_source": "harness"
+  },
+  {
+   "id": "P2",
+   "type": "organisation",
+   "name": "OpenForecast Ltd",
+   "registration": "00000000",
+   "positions": [
+    "conversion_guarantor"
+   ],
+   "credit_roles": [
+    "validation"
+   ]
+  }
+ ],
+ "models": [
+  {
+   "id": "M1",
+   "provider": "Anthropic",
+   "name": "Claude",
+   "version": "opus-5-5",
+   "identifier": "claude-opus-5-5",
+   "weights": "api_only",
+   "accessed": "2026-11-06"
+  }
+ ],
+ "definitions": [
+  {
+   "id": "D1",
+   "term": "preregistration status",
+   "kind": "intervention",
+   "definition": "What the fictional study's description said about its planning: no preregistration, preregistered (PR), or a registered report (RR).",
+   "members": [
+    "D2",
+    "D3",
+    "D4"
+   ]
+  },
+  {
+   "id": "D2",
+   "term": "no preregistration",
+   "kind": "intervention",
+   "definition": "The described study was not preregistered."
+  },
+  {
+   "id": "D3",
+   "term": "preregistration",
+   "kind": "intervention",
+   "definition": "The described study was preregistered (PR)."
+  },
+  {
+   "id": "D4",
+   "term": "registered report",
+   "kind": "intervention",
+   "definition": "The described study was a registered report (RR), its protocol peer reviewed before data collection."
+  },
+  {
+   "id": "D5",
+   "term": "author familiarity",
+   "kind": "intervention",
+   "definition": "Whether the described study's author was presented as familiar to the participant or not."
+  },
+  {
+   "id": "D6",
+   "term": "trust in the findings",
+   "kind": "variable",
+   "definition": "Single item, 'How much do you trust the results of this study?', on a 1-9 slider."
+  },
+  {
+   "id": "D7",
+   "term": "psychology researchers",
+   "kind": "population",
+   "definition": "Authors of psychology articles indexed in Web of Science, 2013-2017 (with 2009-2010 added); 9,019 contacted, 654 completed, 209 analysed after manipulation checks."
+  },
+  {
+   "id": "D8",
+   "term": "Bayesian 3 x 2 between-subjects ANOVA",
+   "kind": "design",
+   "definition": "Each participant read one of six fictional scenarios (preregistration status x familiarity) and rated trust; Bayesian ANOVA in JASP with default priors; inclusion Bayes factors per effect."
+  },
+  {
+   "id": "D9",
+   "term": "trust in research",
+   "kind": "concept",
+   "definition": "The confidence a researcher places in a reported finding; here measured by D6."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1",
+   "statement": "Among [[D7:psychology researchers]], [[D1:preregistration status]] ([[D3:preregistration]] or a [[D4:registered report]]) did not clearly change [[D6:trust in the findings]] relative to [[D2:no preregistration]]: the evidence was ambiguous, leaning towards no effect.",
+   "about": {
+    "subject": "D1",
+    "relation": "does not clearly change",
+    "object": "D6",
+    "comparator": "D2",
+    "conditions": [
+     "D7"
+    ]
+   },
+   "type": "causal",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E1",
+     "results": [
+      "E1.R1",
+      "E1.R2"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+   ],
+   "provenance": "extracted",
+   "source_spans": [
+    "Abstract",
+    "Results"
+   ]
+  },
+  {
+   "id": "C2",
+   "statement": "Among [[D7:psychology researchers]], [[D5:author familiarity]] did not increase [[D6:trust in the findings]], alone or with [[D1:preregistration status]].",
+   "about": {
+    "subject": "D5",
+    "relation": "does not increase",
+    "object": "D6",
+    "comparator": null,
+    "conditions": [
+     "D7"
+    ]
+   },
+   "type": "causal",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E1",
+     "results": [
+      "E1.R3",
+      "E1.R4"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1",
+    "L2"
+   ],
+   "provenance": "extracted",
+   "source_spans": [
+    "Results"
+   ]
+  },
+  {
+   "id": "C3",
+   "statement": "Without the manipulation-check exclusions, the evidence on [[D1:preregistration status]] and [[D5:author familiarity]] among [[D7:psychology researchers]] is qualitatively the same: no effect on [[D6:trust in the findings]] is supported.",
+   "about": {
+    "subject": "D1",
+    "relation": "does not change",
+    "object": "D6",
+    "comparator": null,
+    "conditions": [
+     "D7"
+    ]
+   },
+   "type": "causal",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E2",
+     "results": [
+      "E2.R1",
+      "E2.R2"
+     ]
+    }
+   ],
+   "provenance": "extracted",
+   "source_spans": [
+    "Results"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "profile": "quant",
+   "design": "experiment",
+   "data_origin": "primary",
+   "preregistered": true,
+   "description": "Registered report: online between-subjects experiment with psychology researchers rating trust in one of six fictional study descriptions (N = 209 after manipulation checks).",
+   "setup": {
+    "studied": [
+     "D1",
+     "D5"
+    ],
+    "cases": [
+     "D7"
+    ],
+    "procedure": [
+     "D8"
+    ],
+    "lens": [
+     "D6"
+    ]
+   },
+   "n": 209,
+   "results": [
+    {
+     "id": "R1",
+     "variable": "posterior probability of the null model",
+     "value": 0.545
+    },
+    {
+     "id": "R2",
+     "variable": "inclusion Bayes factor",
+     "value": 0.359,
+     "conditions": {
+      "effect": "D1"
+     }
+    },
+    {
+     "id": "R3",
+     "variable": "inclusion Bayes factor",
+     "value": 0.143,
+     "conditions": {
+      "effect": "D5"
+     }
+    },
+    {
+     "id": "R4",
+     "variable": "inclusion Bayes factor",
+     "value": 0.069,
+     "conditions": {
+      "effect": "interaction of D1 and D5"
+     }
+    }
+   ],
+   "artefacts": [
+    "A1"
+   ],
+   "availability": {
+    "level": "public"
+   },
+   "source_spans": [
+    "Results",
+    "Table 4"
+   ]
+  },
+  {
+   "id": "E2",
+   "profile": "quant",
+   "design": "experiment",
+   "data_origin": "primary",
+   "preregistered": false,
+   "description": "Exploratory reanalysis of all 654 completed responses without the manipulation-check exclusions.",
+   "derived_from": [
+    {
+     "evidence": "E1",
+     "how": "reanalysis"
+    }
+   ],
+   "n": 654,
+   "setup": {
+    "studied": [
+     "D1",
+     "D5"
+    ],
+    "cases": [
+     "D7"
+    ],
+    "procedure": [
+     "D8"
+    ],
+    "lens": [
+     "D6"
+    ]
+   },
+   "results": [
+    {
+     "id": "R1",
+     "variable": "inclusion Bayes factor",
+     "value": 0.71,
+     "conditions": {
+      "effect": "D1"
+     }
+    },
+    {
+     "id": "R2",
+     "variable": "inclusion Bayes factor",
+     "value": 0.117,
+     "conditions": {
+      "effect": "D5"
+     }
+    }
+   ],
+   "availability": {
+    "level": "public"
+   },
+   "source_spans": [
+    "Table 5"
+   ]
+  }
+ ],
+ "warrants": [],
+ "limitations": [
+  {
+   "id": "L1",
+   "category": "sample_size",
+   "statement": "209 participants were analysed against a target of 480, with cells of 12 to 84.",
+   "affects": [
+    "C1",
+    "C2"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none",
+   "source_spans": [
+    "Discussion"
+   ]
+  },
+  {
+   "id": "L2",
+   "category": "data_quality",
+   "statement": "68% of completed responses failed the manipulation checks and were excluded, possibly because the manipulations were too subtle.",
+   "affects": [
+    "C1",
+    "C2"
+   ],
+   "impact": "could_bias_magnitude",
+   "mitigation": "partial",
+   "mitigation_evidence": "E2",
+   "source_spans": [
+    "Discussion"
+   ]
+  },
+  {
+   "id": "L3",
+   "category": "measurement",
+   "statement": "Trust was measured by a single item of unknown reliability and validity.",
+   "affects": [
+    "C1"
+   ],
+   "impact": "could_bias_magnitude",
+   "mitigation": "none",
+   "source_spans": [
+    "Discussion"
+   ]
+  },
+  {
+   "id": "L4",
+   "category": "other",
+   "statement": "Data collection ran beyond the planned two weeks, with a second wave of invitations after consulting the editor: the one deviation from the registered plan.",
+   "affects": [
+    "C1",
+    "C2"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none",
+   "source_spans": [
+    "Methods"
+   ]
+  }
+ ],
+ "artefacts": [
+  {
+   "id": "A1",
+   "kind": "data",
+   "uri": "https://osf.io/b3k75/",
+   "licence": "CC-BY-4.0",
+   "availability": {
+    "level": "public"
+   },
+   "description": "Raw data, analysis code, JASP files and materials."
+  }
+ ],
+ "references": [],
+ "open_questions": []
+}
