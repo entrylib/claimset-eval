@@ -63,6 +63,13 @@
     "v0.39": "none"
   },
   {
+    "where": "E4, C4",
+    "what": "Observation test: the knockdown blots (Supplementary Fig S1) are now evidence of profile `observation`, a record of kind `image` in a `specimen` figure, supporting a supporting claim with `empirical_obs`. Before, they could only be text or forced into `quant`. The blot's lanes and antibodies are for the wet-lab extension.",
+    "need": "direct observation as support",
+    "proposal": "core: profile observation (v0.39)",
+    "v0.39": "resolved: profile observation, support empirical_obs"
+  },
+  {
     "where": "E3.T1",
     "what": "The 0.38 conversion left TPM1's half-time empty and gave the others without saying they are approximate; the paper states 'about 1.5-fold' and 'roughly doubled'. The format has no way to mark a value as approximate, so the column's name says it.",
     "need": "approximate values",

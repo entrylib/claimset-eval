@@ -1,6 +1,6 @@
 # Field trials (core only)
 
-Seven open-access papers, one per kind of work, converted to claimsets that use the core of the specification and no extension: first under 0.38, then again under 0.39, which added core forms for the gaps the first round found. They were made to find what the core cannot hold, not as reference conversions: unlike `claimset/pilot/`, no author took part, and the converter worked from the published text without a local copy.
+Eight open-access papers, one per kind of work, converted to claimsets that use the core of the specification and no extension: first under 0.38, then again under 0.39, which added core forms for the gaps the first round found. They were made to find what the core cannot hold, not as reference conversions: unlike `claimset/pilot/`, no author took part, and the converter worked from the published text without a local copy.
 
 | Paper | Kind of work |
 |---|---|
@@ -11,6 +11,7 @@ Seven open-access papers, one per kind of work, converted to claimsets that use 
 | `doi-10-1038-srep31707` | wet-lab cell biology (adhesome siRNA screen, 2016) |
 | `doi-10-1039-d0sc01471k` | synthetic chemistry (photoredox/nickel cascade, 2020) |
 | `doi-10-1017-mdh-2023-14` | history from archival sources (segmented sleep, 2023) |
+| `doi-10-3847-2041-8213-ab0ec7` | astronomy (Event Horizon Telescope image of M87*, 2019); added to test observation evidence |
 
 For each paper:
 
@@ -35,3 +36,7 @@ Open in the core:
 - processes as a kind (decay channels, reactions);
 - units on condition values;
 - guidance: trial registries' CURIE prefixes, and whether `se` covers a posterior SD.
+
+## Observation evidence
+
+Spec v0.39 added evidence of profile `observation` and the support kind `empirical_obs`, for claims that rest on what a record shows. They were tested before entering the baseline on three papers: the knockdown blots of the adhesome screen (`image`), the NMR, HRMS and X-ray characterisation of the synthesis paper (`spectrum`, `structure`), and the EHT image of M87* (`image`, with its ring diameter as a measured result and the black hole's mass as `quant` evidence derived from it). All three are valid with no warning from the new evidence. One boundary stays to watch: a value measured from records with a fitting procedure (the ring diameter) sits at the line between `observation` and `quant`.
