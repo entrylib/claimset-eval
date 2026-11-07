@@ -1,6 +1,6 @@
-# Field trials (specification 0.38, core only)
+# Field trials (core only)
 
-Seven open-access papers, one per kind of work, converted to claimsets that use the core of specification 0.38 and no extension. They were made to find what the core cannot hold, not as reference conversions: unlike `claimset/pilot/`, no author took part, and the converter worked from the published text without a local copy.
+Seven open-access papers, one per kind of work, converted to claimsets that use the core of the specification and no extension: first under 0.38, then again under 0.39, which added core forms for the gaps the first round found. They were made to find what the core cannot hold, not as reference conversions: unlike `claimset/pilot/`, no author took part, and the converter worked from the published text without a local copy.
 
 | Paper | Kind of work |
 |---|---|
@@ -14,11 +14,25 @@ Seven open-access papers, one per kind of work, converted to claimsets that use 
 
 For each paper:
 
-- `<name>.claimset.json`: the claimset; valid under 0.38 with 0 errors. `<name>.claimset.txt` is its reading view (`claimset render`).
-- `<name>.friction.json`: what did not fit, as a list of `{where, what, need, proposal}`; `proposal` says whether the need belongs in the core, in an extension, or nowhere.
+- `<name>.claimset.json`: the claimset, converted again under 0.39; valid with 0 errors. `<name>.claimset.txt` is its reading view (`claimset render`).
+- `<name>.friction.json`: what did not fit, as a list of `{where, what, need, proposal, v0.39}`. `proposal` says whether the need belongs in the core, in an extension, or nowhere. `v0.39` says what happened in the second round: `resolved` or `partly resolved` (and how), `extension` (left to an extension), `open` (a core gap that remains), `none` (nothing needed), or `new` (found in the second round).
 
 Differences from the pilot set:
 
 - `source_spans` name sections, figures and tables of the published paper (`"Results"`, `"Fig 6"`), not `[pN.M]` markers: the papers' texts are not in `papers/text/`. `tools/compare.py` therefore cannot compare source spans for these files.
 - The claims are the converter's reading, checked against the paper but not by its authors. Use them to study the format, not as gold conversions.
-- Some decisions are forced by the core (a cell line recorded as a `population`, a compound as `other`, preregistered tests left out because only a lab record can hold them); each one is in the friction file.
+- Some decisions are still forced by the core; each is in the friction file. The largest: the preregistered study's confirmatory tests are left out, because rule 43 needs the registration's date and it could not be read.
+
+## Results of the second round (0.39)
+
+Of the 63 points of friction from the first round, 24 are resolved and 6 partly resolved by 0.39, 19 are left to extensions, 11 needed nothing and 3 remain open in the core. The second round found 8 more. Warnings fell from 20 to 15 across the seven files.
+
+Open in the core:
+
+- registered tests whose registration date is not at hand (rule 43: `planned_at` could be optional when the anchor is `registry`);
+- typed statistics (effect-size kinds), still free text in `conditions`;
+- approximate values ("about 1.5-fold");
+- an intervention's target (a knockdown and the gene it knocks down);
+- processes as a kind (decay channels, reactions);
+- units on condition values;
+- guidance: trial registries' CURIE prefixes, and whether `se` covers a posterior SD.

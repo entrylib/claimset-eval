@@ -1,494 +1,490 @@
 {
- "schema_version": "0.39",
- "paper": {
-  "title": "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC",
-  "licence": "CC-BY-3.0",
-  "classification": {
-   "keywords": [
-    "Higgs boson",
-    "LHC",
-    "ATLAS",
-    "proton-proton collisions",
-    "diphoton",
-    "four leptons"
-   ]
+  "schema_version": "0.39",
+  "paper": {
+    "title": "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC",
+    "licence": "CC-BY-3.0",
+    "classification": {
+      "keywords": [
+        "Higgs boson",
+        "LHC",
+        "ATLAS",
+        "proton-proton collisions",
+        "diphoton",
+        "four leptons"
+      ]
+    },
+    "declarations": {
+      "funding": [],
+      "competing_interests": "Not stated in the source."
+    },
+    "contributions": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "contribution_record": "complete",
+    "origin": "converted",
+    "converted_from": {
+      "source_id": "10.1016/j.physletb.2012.08.020",
+      "id_type": "doi",
+      "source_version": "published",
+      "source_licence": "CC-BY-3.0",
+      "source_authors": [
+        {
+          "name": "The ATLAS Collaboration"
+        }
+      ],
+      "source_status_at_conversion": "active",
+      "converter": "P1",
+      "date": "2026-11-07"
+    },
+    "collaborations": [
+      {
+        "name": "ATLAS Collaboration"
+      }
+    ]
   },
-  "declarations": {
-   "funding": [],
-   "competing_interests": "Not stated in the source."
-  },
-  "contributions": [
-   "C1",
-   "C2",
-   "C3"
+  "contributors": [
+    {
+      "id": "P1",
+      "type": "agent",
+      "name": "EntryLib field-trial converter",
+      "positions": [
+        "converter"
+      ],
+      "models": [
+        {
+          "model": "M1",
+          "role": "sole"
+        }
+      ],
+      "credit_roles": [
+        "data_curation"
+      ],
+      "ai_tasks": [
+        {
+          "task": "json_preparation",
+          "extent": "full"
+        }
+      ],
+      "tools": [
+        "web_search",
+        "file_access"
+      ],
+      "record_source": "harness"
+    },
+    {
+      "id": "P2",
+      "type": "organisation",
+      "name": "OpenForecast Ltd",
+      "registration": "00000000",
+      "positions": [
+        "conversion_guarantor"
+      ],
+      "credit_roles": [
+        "validation"
+      ]
+    }
   ],
-  "contribution_record": "complete",
-  "origin": "converted",
-  "converted_from": {
-   "source_id": "10.1016/j.physletb.2012.08.020",
-   "id_type": "doi",
-   "source_version": "published",
-   "source_licence": "CC-BY-3.0",
-   "source_authors": [
+  "models": [
     {
-     "name": "The ATLAS Collaboration"
+      "id": "M1",
+      "provider": "Anthropic",
+      "name": "Claude",
+      "version": "opus-5-5",
+      "identifier": "claude-opus-5-5",
+      "weights": "api_only",
+      "accessed": "2026-11-07"
     }
-   ],
-   "source_status_at_conversion": "active",
-   "converter": "P1",
-   "date": "2026-11-06"
-  }
- },
- "contributors": [
-  {
-   "id": "P1",
-   "type": "agent",
-   "name": "EntryLib field-trial converter",
-   "positions": [
-    "converter"
-   ],
-   "models": [
+  ],
+  "definitions": [
     {
-     "model": "M1",
-     "role": "sole"
-    }
-   ],
-   "credit_roles": [
-    "data_curation"
-   ],
-   "ai_tasks": [
-    {
-     "task": "json_preparation",
-     "extent": "full"
-    }
-   ],
-   "tools": [
-    "web_search",
-    "file_access"
-   ],
-   "record_source": "harness"
-  },
-  {
-   "id": "P2",
-   "type": "organisation",
-   "name": "OpenForecast Ltd",
-   "registration": "00000000",
-   "positions": [
-    "conversion_guarantor"
-   ],
-   "credit_roles": [
-    "validation"
-   ]
-  }
- ],
- "models": [
-  {
-   "id": "M1",
-   "provider": "Anthropic",
-   "name": "Claude",
-   "version": "opus-5-5",
-   "identifier": "claude-opus-5-5",
-   "weights": "api_only",
-   "accessed": "2026-11-06"
-  }
- ],
- "definitions": [
-  {
-   "id": "D1",
-   "term": "new neutral boson",
-   "kind": "other",
-   "definition": "The particle observed in this search: neutral, decaying to pairs of photons, Z bosons and W bosons, with a mass near 126 GeV."
-  },
-  {
-   "id": "D2",
-   "term": "Standard Model Higgs boson",
-   "kind": "theory",
-   "definition": "The scalar boson predicted by the Standard Model's mechanism of electroweak symmetry breaking."
-  },
-  {
-   "id": "D3",
-   "term": "2011 data",
-   "kind": "data",
-   "definition": "Proton-proton collisions at a centre-of-mass energy of 7 TeV recorded by ATLAS in 2011, about 4.8 fb^-1."
-  },
-  {
-   "id": "D4",
-   "term": "2012 data",
-   "kind": "data",
-   "definition": "Proton-proton collisions at a centre-of-mass energy of 8 TeV recorded by ATLAS in 2012, about 5.8 fb^-1."
-  },
-  {
-   "id": "D5",
-   "term": "decay channels",
-   "kind": "other",
-   "definition": "The final states searched: H->ZZ(*)->4l, H->gamma gamma and H->WW(*)->l nu l nu.",
-   "members": [
-    "D6",
-    "D7",
-    "D8"
-   ]
-  },
-  {
-   "id": "D6",
-   "term": "H->ZZ(*)->4l",
-   "kind": "other",
-   "definition": "Decay to two Z bosons, one possibly off-shell, each decaying to a pair of charged leptons."
-  },
-  {
-   "id": "D7",
-   "term": "H->gamma gamma",
-   "kind": "other",
-   "definition": "Decay to two photons."
-  },
-  {
-   "id": "D8",
-   "term": "H->WW(*)->l nu l nu",
-   "kind": "other",
-   "definition": "Decay to two W bosons, each decaying to a charged lepton and a neutrino."
-  },
-  {
-   "id": "D9",
-   "term": "mass",
-   "kind": "variable",
-   "definition": "Rest mass of the new particle, from the combined fit of the 4l and gamma gamma channels."
-  },
-  {
-   "id": "D10",
-   "term": "local significance",
-   "kind": "variable",
-   "definition": "Significance of the excess over the background-only hypothesis at the fitted mass, in standard deviations, without the look-elsewhere correction."
-  },
-  {
-   "id": "D11",
-   "term": "signal strength",
-   "kind": "variable",
-   "definition": "Ratio of the observed signal rate to the rate the Standard Model predicts for its Higgs boson at the fitted mass (mu)."
-  },
-  {
-   "id": "D12",
-   "term": "profile likelihood search",
-   "kind": "design",
-   "definition": "Search for an excess over the expected background in each channel, combined in a profile-likelihood test of the background-only hypothesis, with mass scanned over 110-600 GeV."
-  }
- ],
- "claims": [
-  {
-   "id": "C1",
-   "statement": "ATLAS observes a [[D1:new neutral boson]] with a [[D10:local significance]] of 5.9 standard deviations over the background-only expectation, in the combined [[D3:2011 data]] and [[D4:2012 data]].",
-   "about": {
-    "subject": "D1",
-    "relation": "is observed with",
-    "object": "D10",
-    "comparator": null,
-    "conditions": [
-     "D3",
-     "D4"
-    ]
-   },
-   "type": "descriptive",
-   "role": "principal",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "empirical_quant",
-     "evidence": "E1",
-     "results": [
-      "E1.R2"
-     ]
-    }
-   ],
-   "provenance": "extracted",
-   "source_spans": [
-    "Abstract",
-    "Section 9"
-   ]
-  },
-  {
-   "id": "C2",
-   "statement": "The [[D9:mass]] of the [[D1:new neutral boson]] is 126.0 GeV, with a statistical uncertainty of 0.4 GeV and a systematic uncertainty of 0.4 GeV.",
-   "about": {
-    "subject": "D1",
-    "relation": "has",
-    "object": "D9",
-    "comparator": null,
-    "conditions": []
-   },
-   "type": "descriptive",
-   "role": "principal",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "empirical_quant",
-     "evidence": "E1",
-     "results": [
-      "E1.R1"
-     ]
-    }
-   ],
-   "provenance": "extracted",
-   "source_spans": [
-    "Abstract",
-    "Section 9"
-   ]
-  },
-  {
-   "id": "C3",
-   "statement": "The [[D11:signal strength]] of the [[D1:new neutral boson]] is 1.4 plus or minus 0.3, consistent with the [[D2:Standard Model Higgs boson]].",
-   "about": {
-    "subject": "D1",
-    "relation": "is consistent with",
-    "object": "D2",
-    "comparator": null,
-    "conditions": []
-   },
-   "type": "descriptive",
-   "role": "principal",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "empirical_quant",
-     "evidence": "E1",
-     "results": [
-      "E1.R4"
-     ]
-    }
-   ],
-   "provenance": "extracted",
-   "source_spans": [
-    "Section 9"
-   ]
-  },
-  {
-   "id": "C4",
-   "statement": "A [[D2:Standard Model Higgs boson]] is excluded at 95% confidence level over most of the searched [[D9:mass]] range, except a window around the new particle's mass.",
-   "about": {
-    "subject": "D2",
-    "relation": "is excluded over ranges of",
-    "object": "D9",
-    "comparator": null,
-    "conditions": []
-   },
-   "type": "descriptive",
-   "role": "secondary",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "empirical_quant",
-     "evidence": "E1",
-     "tables": [
-      "E1.T2"
-     ]
-    }
-   ],
-   "provenance": "extracted",
-   "source_spans": [
-    "Section 9"
-   ]
-  }
- ],
- "evidence": [
-  {
-   "id": "E1",
-   "profile": "quant",
-   "design": "observational",
-   "data_origin": "primary",
-   "preregistered": false,
-   "description": "Combined search for the Standard Model Higgs boson in the 4l, gamma gamma and l nu l nu channels with 4.8 fb^-1 at 7 TeV and 5.8 fb^-1 at 8 TeV.",
-   "setup": {
-    "studied": [
-     "D1",
-     "D2"
-    ],
-    "cases": [
-     "D3",
-     "D4"
-    ],
-    "procedure": [
-     "D12"
-    ],
-    "lens": [
-     "D9",
-     "D10",
-     "D11"
-    ]
-   },
-   "results": [
-    {
-     "id": "R1",
-     "variable": "D9",
-     "value": 126.0,
-     "unit": "GeV",
-     "interval": {
-      "level": 0.683,
-      "lower": 125.6,
-      "upper": 126.4
-     }
+      "id": "D1",
+      "term": "new neutral boson",
+      "kind": "entity",
+      "definition": "The particle observed in this search: neutral, decaying to pairs of photons, Z bosons and W bosons, with a mass near 126 GeV."
     },
     {
-     "id": "R2",
-     "variable": "D10",
-     "value": 5.9,
-     "unit": "standard deviations",
-     "conditions": {
-      "D9": 126.5
-     }
+      "id": "D2",
+      "term": "Standard Model Higgs boson",
+      "kind": "theory",
+      "definition": "The scalar boson predicted by the Standard Model's mechanism of electroweak symmetry breaking."
     },
     {
-     "id": "R3",
-     "variable": "global significance over 110-600 GeV",
-     "value": 5.1,
-     "unit": "standard deviations"
+      "id": "D3",
+      "term": "2011 data",
+      "kind": "data",
+      "definition": "Proton-proton collisions at a centre-of-mass energy of 7 TeV recorded by ATLAS in 2011, about 4.8 fb^-1."
     },
     {
-     "id": "R4",
-     "variable": "D11",
-     "value": 1.4,
-     "interval": {
-      "level": 0.683,
-      "lower": 1.1,
-      "upper": 1.7
-     }
+      "id": "D4",
+      "term": "2012 data",
+      "kind": "data",
+      "definition": "Proton-proton collisions at a centre-of-mass energy of 8 TeV recorded by ATLAS in 2012, about 5.8 fb^-1."
     },
     {
-     "id": "R5",
-     "variable": "expected local significance for a Standard Model Higgs boson",
-     "value": 4.9,
-     "unit": "standard deviations",
-     "conditions": {
-      "D9": 126.5
-     }
-    },
-    {
-     "id": "R6",
-     "variable": "local p0",
-     "value": 1.7e-09,
-     "unit": "1"
-    }
-   ],
-   "tables": [
-    {
-     "id": "T1",
-     "description": "Observed and expected local significance of the excess in each decay channel, 7 and 8 TeV data combined",
-     "row_labels": [
-      "D5"
-     ],
-     "columns": [
-      "observed local significance",
-      "expected local significance"
-     ],
-     "units": [
-      "standard deviations",
-      "standard deviations"
-     ],
-     "rows": [
-      {
-       "id": "r1",
-       "label": [
-        "D6"
-       ],
-       "values": [
-        3.6,
-        2.7
-       ]
-      },
-      {
-       "id": "r2",
-       "label": [
-        "D7"
-       ],
-       "values": [
-        4.5,
-        2.5
-       ]
-      },
-      {
-       "id": "r3",
-       "label": [
+      "id": "D5",
+      "term": "decay channels",
+      "kind": "other",
+      "definition": "The final states searched: H->ZZ(*)->4l, H->gamma gamma and H->WW(*)->l nu l nu.",
+      "members": [
+        "D6",
+        "D7",
         "D8"
-       ],
-       "values": [
-        2.8,
-        2.3
-       ]
-      }
-     ]
+      ]
     },
     {
-     "id": "T2",
-     "description": "Mass ranges in which a Standard Model Higgs boson is excluded at 95% confidence level",
-     "row_labels": [
-      "kind of exclusion"
-     ],
-     "columns": [
-      "lower bound of excluded range",
-      "upper bound of excluded range"
-     ],
-     "units": [
-      "GeV",
-      "GeV"
-     ],
-     "rows": [
-      {
-       "id": "r1",
-       "label": [
-        "observed, first range"
-       ],
-       "values": [
-        111,
-        122
-       ]
-      },
-      {
-       "id": "r2",
-       "label": [
-        "observed, second range"
-       ],
-       "values": [
-        131,
-        559
-       ]
-      },
-      {
-       "id": "r3",
-       "label": [
-        "expected"
-       ],
-       "values": [
-        110,
-        582
-       ]
-      }
-     ]
+      "id": "D6",
+      "term": "H->ZZ(*)->4l",
+      "kind": "other",
+      "definition": "Decay to two Z bosons, one possibly off-shell, each decaying to a pair of charged leptons."
+    },
+    {
+      "id": "D7",
+      "term": "H->gamma gamma",
+      "kind": "other",
+      "definition": "Decay to two photons."
+    },
+    {
+      "id": "D8",
+      "term": "H->WW(*)->l nu l nu",
+      "kind": "other",
+      "definition": "Decay to two W bosons, each decaying to a charged lepton and a neutrino."
+    },
+    {
+      "id": "D9",
+      "term": "mass",
+      "kind": "variable",
+      "definition": "Rest mass of the new particle, from the combined fit of the 4l and gamma gamma channels."
+    },
+    {
+      "id": "D10",
+      "term": "local significance",
+      "kind": "variable",
+      "definition": "Significance of the excess over the background-only hypothesis at the fitted mass, in standard deviations, without the look-elsewhere correction."
+    },
+    {
+      "id": "D11",
+      "term": "signal strength",
+      "kind": "variable",
+      "definition": "Ratio of the observed signal rate to the rate the Standard Model predicts for its Higgs boson at the fitted mass (mu)."
+    },
+    {
+      "id": "D12",
+      "term": "profile likelihood search",
+      "kind": "design",
+      "definition": "Search for an excess over the expected background in each channel, combined in a profile-likelihood test of the background-only hypothesis, with mass scanned over 110-600 GeV."
     }
-   ],
-   "source_spans": [
-    "Sections 4-9"
-   ],
-   "availability": {
-    "level": "unavailable",
-    "reason": "other",
-    "comment": "Collision data are held by the ATLAS Collaboration."
-   }
-  }
- ],
- "warrants": [],
- "limitations": [
-  {
-   "id": "L1",
-   "category": "other",
-   "statement": "The local significance does not account for the look-elsewhere effect over 110-600 GeV; the global significance over that range is 5.1 standard deviations.",
-   "affects": [
-    "C1"
-   ],
-   "impact": "could_bias_magnitude",
-   "mitigation": "addressed",
-   "mitigation_evidence": "E1",
-   "source_spans": [
-    "Section 9"
-   ]
-  }
- ],
- "artefacts": [],
- "references": [],
- "open_questions": []
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "ATLAS observes a [[D1:new neutral boson]] with a [[D10:local significance]] of 5.9 standard deviations over the background-only expectation, in the combined [[D3:2011 data]] and [[D4:2012 data]].",
+      "about": {
+        "subject": "D1",
+        "relation": "is observed with",
+        "object": "D10",
+        "comparator": null,
+        "conditions": [
+          "D3",
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.R2"
+          ]
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Abstract",
+        "Section 9"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "The [[D9:mass]] of the [[D1:new neutral boson]] is 126.0 ± 0.4 (stat) ± 0.4 (sys) GeV.",
+      "about": {
+        "subject": "D1",
+        "relation": "has",
+        "object": "D9",
+        "comparator": null,
+        "conditions": []
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.R1"
+          ]
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Abstract",
+        "Section 9"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "The [[D11:signal strength]] of the [[D1:new neutral boson]] is 1.4 ± 0.3, consistent with the [[D2:Standard Model Higgs boson]].",
+      "about": {
+        "subject": "D1",
+        "relation": "is consistent with",
+        "object": "D2",
+        "comparator": null,
+        "conditions": []
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.R4"
+          ]
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Section 9"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "A [[D2:Standard Model Higgs boson]] is excluded at 95% confidence level for a [[D9:mass]] from 111 to 122 GeV and from 131 to 559 GeV.",
+      "about": {
+        "subject": "D2",
+        "relation": "is excluded over ranges of",
+        "object": "D9",
+        "comparator": null,
+        "conditions": []
+      },
+      "type": "descriptive",
+      "role": "secondary",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.R7",
+            "E1.R8",
+            "E1.R9"
+          ]
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Section 9"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "profile": "quant",
+      "design": "observational",
+      "data_origin": "primary",
+      "preregistered": false,
+      "description": "Combined search for the Standard Model Higgs boson in the 4l, gamma gamma and l nu l nu channels with 4.8 fb^-1 at 7 TeV and 5.8 fb^-1 at 8 TeV.",
+      "setup": {
+        "studied": [
+          "D1",
+          "D2"
+        ],
+        "cases": [
+          "D3",
+          "D4"
+        ],
+        "procedure": [
+          "D12"
+        ],
+        "lens": [
+          "D9",
+          "D10",
+          "D11"
+        ]
+      },
+      "results": [
+        {
+          "id": "R1",
+          "variable": "D9",
+          "value": 126.0,
+          "unit": "GeV",
+          "uncertainty": [
+            {
+              "kind": "stat",
+              "value": 0.4
+            },
+            {
+              "kind": "sys",
+              "value": 0.4
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "variable": "D10",
+          "value": 5.9,
+          "unit": "standard deviations",
+          "conditions": {
+            "D9": 126.5
+          }
+        },
+        {
+          "id": "R3",
+          "variable": "global significance over 110-600 GeV",
+          "value": 5.1,
+          "unit": "standard deviations"
+        },
+        {
+          "id": "R4",
+          "variable": "D11",
+          "value": 1.4,
+          "uncertainty": [
+            {
+              "kind": "total",
+              "value": 0.3
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "variable": "expected local significance for a Standard Model Higgs boson",
+          "value": 4.9,
+          "unit": "standard deviations",
+          "conditions": {
+            "D9": 126.5
+          }
+        },
+        {
+          "id": "R6",
+          "variable": "local p0",
+          "value": 1.7e-09,
+          "unit": "1"
+        },
+        {
+          "id": "R7",
+          "variable": "excluded Standard Model Higgs boson mass, observed (first range)",
+          "value": {
+            "min": 111,
+            "max": 122,
+            "level": 0.95
+          },
+          "unit": "GeV"
+        },
+        {
+          "id": "R8",
+          "variable": "excluded Standard Model Higgs boson mass, observed (second range)",
+          "value": {
+            "min": 131,
+            "max": 559,
+            "level": 0.95
+          },
+          "unit": "GeV"
+        },
+        {
+          "id": "R9",
+          "variable": "excluded Standard Model Higgs boson mass, expected",
+          "value": {
+            "min": 110,
+            "max": 582,
+            "level": 0.95
+          },
+          "unit": "GeV"
+        }
+      ],
+      "tables": [
+        {
+          "id": "T1",
+          "description": "Observed and expected local significance of the excess in each decay channel, 7 and 8 TeV data combined",
+          "row_labels": [
+            "D5"
+          ],
+          "columns": [
+            "observed local significance",
+            "expected local significance"
+          ],
+          "units": [
+            "standard deviations",
+            "standard deviations"
+          ],
+          "rows": [
+            {
+              "id": "r1",
+              "label": [
+                "D6"
+              ],
+              "values": [
+                3.6,
+                2.7
+              ]
+            },
+            {
+              "id": "r2",
+              "label": [
+                "D7"
+              ],
+              "values": [
+                4.5,
+                2.5
+              ]
+            },
+            {
+              "id": "r3",
+              "label": [
+                "D8"
+              ],
+              "values": [
+                2.8,
+                2.3
+              ]
+            }
+          ]
+        }
+      ],
+      "source_spans": [
+        "Sections 4-9"
+      ],
+      "availability": {
+        "level": "unavailable",
+        "reason": "other",
+        "comment": "Collision data are held by the ATLAS Collaboration."
+      }
+    }
+  ],
+  "warrants": [],
+  "limitations": [
+    {
+      "id": "L1",
+      "category": "other",
+      "statement": "The local significance does not account for the look-elsewhere effect over 110-600 GeV; the global significance over that range is 5.1 standard deviations.",
+      "affects": [
+        "C1"
+      ],
+      "impact": "could_bias_magnitude",
+      "mitigation": "addressed",
+      "mitigation_evidence": "E1",
+      "source_spans": [
+        "Section 9"
+      ]
+    }
+  ],
+  "artefacts": [],
+  "references": [],
+  "open_questions": []
 }

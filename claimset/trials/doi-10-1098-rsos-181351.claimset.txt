@@ -8,7 +8,7 @@ D2 [intervention] no preregistration: The described study was not preregistered.
 D3 [intervention] preregistration: The described study was preregistered (PR).
 D4 [intervention] registered report: The described study was a registered report (RR), its protocol peer reviewed before data collection.
 D5 [intervention] author familiarity: Whether the described study's author was presented as familiar to the participant or not.
-D6 [variable] trust in the findings: Single item, 'How much do you trust the results of this study?', on a 1-9 slider.
+D6 [variable] trust in the findings: Single item, 'How much do you trust the results of this study?', on a 1-9 slider. [measures D9]
 D7 [population] psychology researchers: Authors of psychology articles indexed in Web of Science, 2013-2017 (with 2009-2010 added); 9,019 contacted, 654 completed, 209 analysed after manipulation checks.
 D8 [design] Bayesian 3 x 2 between-subjects ANOVA: Each participant read one of six fictional scenarios (preregistration status x familiarity) and rated trust; Bayesian ANOVA in JASP with default priors; inclusion Bayes factors per effect.
 D9 [concept] trust in research: The confidence a researcher places in a reported finding; here measured by D6.
@@ -38,7 +38,7 @@ LIMITATIONS
 L1 [sample_size; affects C1, C2; reduces_precision; mitigation none] 209 participants were analysed against a target of 480, with cells of 12 to 84.
 L2 [data_quality; affects C1, C2; could_bias_magnitude; mitigation partial] 68% of completed responses failed the manipulation checks and were excluded, possibly because the manipulations were too subtle.
 L3 [measurement; affects C1; could_bias_magnitude; mitigation none] Trust was measured by a single item of unknown reliability and validity.
-L4 [other; affects C1, C2; reduces_precision; mitigation none] Data collection ran beyond the planned two weeks, with a second wave of invitations after consulting the editor: the one deviation from the registered plan.
+L4 [deviation; affects C1, C2; reduces_precision; mitigation none] The sampling departed from the registered plan: after the first wave left too few usable responses, a second wave of researchers was drawn from Web of Science and invited. The authors report this as the one deviation.
 
 ARTEFACTS
 A1 [data] Raw data, analysis code, JASP files and materials.

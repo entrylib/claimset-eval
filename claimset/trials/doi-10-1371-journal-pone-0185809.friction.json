@@ -1,44 +1,58 @@
 [
- {
-  "where": "D3",
-  "what": "63 trap locations exist only as a map (S1 Fig) and a text count by state. The format has no typed location (coordinates, area, reference system), so the study's spatial coverage cannot be searched or compared with other insect studies.",
-  "need": "typed location",
-  "proposal": "core"
- },
- {
-  "where": "D3 / ethics",
-  "what": "Trap permits went into `ethics` as an approval: they are not ethics reviews. No place for collection permits.",
-  "need": "permits",
-  "proposal": "extension: ecology-field"
- },
- {
-  "where": "D2, E1",
-  "what": "Sampling effort (16,908 exposure days, emptying interval 11.2 ± 6.3 days), trap design and the location-year structure (37/20/5/1 locations sampled in 1/2/3/4 years) have no fields; they live in text.",
-  "need": "sampling effort and design",
-  "proposal": "extension: ecology-field"
- },
- {
-  "where": "D1",
-  "what": "Biomass is of all insects, unidentified. Studies that identify taxa (GBIF/NCBITaxon) would need taxa as definitions: kind `population`? `other`? There is no kind for organisms or taxa.",
-  "need": "organisms/taxa as definition kinds",
-  "proposal": "core"
- },
- {
-  "where": "E1.R4 / E1.R1",
-  "what": "6.1% annual decline is reported with a coefficient's SD (sd = 0.002), not an interval. SD/SE of an estimate cannot be typed; I dropped it.",
-  "need": "typed uncertainty (SD, SE)",
-  "proposal": "core"
- },
- {
-  "where": "E2.T1",
-  "what": "Model comparison (DIC, pD, R2 per model) fits a table well; the 'trend survives covariates' claim reads off it. No friction beyond Bayesian credible intervals being stored as `interval` with level 0.95 and no way to say 'credible'.",
-  "need": "credible vs confidence interval",
-  "proposal": "core (as part of typed uncertainty)"
- },
- {
-  "where": "C4",
-  "what": "The key unstated assumption (trap catch represents local biomass; trap attractiveness constant over 27 years) is mine, provenance `inferred`. Fine.",
-  "need": null,
-  "proposal": "none"
- }
+  {
+    "where": "D3",
+    "what": "63 trap locations exist only as a map (S1 Fig) and a text count by state. The format has no typed location (coordinates, area, reference system), so the study's spatial coverage cannot be searched or compared with other insect studies.",
+    "need": "typed location",
+    "proposal": "core",
+    "v0.39": "partly resolved: `location` exists, but the source gives the 63 sites only as a map and supplementary files, which this conversion did not read; the region is named by identifiers (Germany)"
+  },
+  {
+    "where": "D3 / ethics",
+    "what": "Trap permits went into `ethics` as an approval: they are not ethics reviews. No place for collection permits.",
+    "need": "permits",
+    "proposal": "extension: ecology-field",
+    "v0.39": "extension: ecology-field"
+  },
+  {
+    "where": "D2, E1",
+    "what": "Sampling effort (16,908 exposure days, emptying interval 11.2 ± 6.3 days), trap design and the location-year structure (37/20/5/1 locations sampled in 1/2/3/4 years) have no fields; they live in text.",
+    "need": "sampling effort and design",
+    "proposal": "extension: ecology-field",
+    "v0.39": "extension: ecology-field"
+  },
+  {
+    "where": "D1",
+    "what": "Biomass is of all insects, unidentified. Studies that identify taxa (GBIF/NCBITaxon) would need taxa as definitions: kind `population`? `other`? There is no kind for organisms or taxa.",
+    "need": "organisms/taxa as definition kinds",
+    "proposal": "core",
+    "v0.39": "resolved: the insects are a definition of kind `organism` (ncbitaxon:50557, Insecta)"
+  },
+  {
+    "where": "E1.R4 / E1.R1",
+    "what": "6.1% annual decline is reported with a coefficient's SD (sd = 0.002), not an interval. SD/SE of an estimate cannot be typed; I dropped it.",
+    "need": "typed uncertainty (SD, SE)",
+    "proposal": "core",
+    "v0.39": "resolved: the trend coefficient carries its posterior SD as uncertainty (see the new entry on its kind)"
+  },
+  {
+    "where": "E2.T1",
+    "what": "Model comparison (DIC, pD, R2 per model) fits a table well; the 'trend survives covariates' claim reads off it. No friction beyond Bayesian credible intervals being stored as `interval` with level 0.95 and no way to say 'credible'.",
+    "need": "credible vs confidence interval",
+    "proposal": "core (as part of typed uncertainty)",
+    "v0.39": "resolved: the intervals say they are `credible`"
+  },
+  {
+    "where": "C4",
+    "what": "The key unstated assumption (trap catch represents local biomass; trap attractiveness constant over 27 years) is mine, provenance `inferred`. Fine.",
+    "need": null,
+    "proposal": "none",
+    "v0.39": "none"
+  },
+  {
+    "where": "E1.R1",
+    "what": "A Bayesian posterior standard deviation of a coefficient is neither `sd` (spread of the observations) nor quite `se` (a frequentist standard error); `se` was used, as the precision of the estimate. The kinds could say that `se` covers a posterior SD.",
+    "need": "posterior SD as a kind of uncertainty",
+    "proposal": "open: core, a sentence in §3.4 (se includes the posterior SD of an estimate)",
+    "v0.39": "new"
+  }
 ]

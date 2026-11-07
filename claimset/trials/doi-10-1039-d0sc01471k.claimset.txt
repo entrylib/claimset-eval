@@ -5,7 +5,7 @@ declarations funding: none | competing interests: Not stated in the converted te
 DEFINITIONS
 D1 [method] vinylation/arylation cascade: One-step reaction of a cyclic alkyl oxalate (caesium salt), a terminal alkyne and an aryl halide: decarboxylative alkyl radical addition to the alkyne, 1,5-hydrogen atom transfer from the ring to the vinyl radical, and nickel-catalysed arylation of the ring carbon radical.
 D2 [method] standard conditions: Alkyne 0.1 mmol, cyclic oxalate 3.0 equiv, aryl halide 2.0 equiv, Ir[dF(CF3)ppy]2(dtbbpy)PF6 2 mol%, NiCl2(Py)4 20 mol%, dtbbpy 20 mol%, bis(4-methoxyphenyl)methanone 10 mol%, DMSO 0.05 M, 37 °C, 90 W blue LEDs.
-D3 [other] 1,3-vinylarylated cycloalkanes: Products carrying a trans-alkenyl group and an aryl group on carbons 1 and 3 of a saturated ring, formed as roughly 1:1 to 1:1.2 mixtures of diastereomers.
+D3 [substance] 1,3-vinylarylated cycloalkanes: Products carrying a trans-alkenyl group and an aryl group on carbons 1 and 3 of a saturated ring, formed as roughly 1:1 to 1:1.2 mixtures of diastereomers.
 D4 [variable] yield: Isolated yield of product based on the alkyne, unless the source marks it as a crude 1H NMR yield.
 D5 [intervention] control reactions: The standard conditions with one component removed: photocatalyst, nickel catalyst, light, ligand or additive. [members D6, D7, D8]
 D6 [intervention] no photocatalyst: Standard conditions without the iridium photocatalyst.
@@ -13,29 +13,30 @@ D7 [intervention] no nickel: Standard conditions without the nickel catalyst.
 D8 [intervention] no light: Standard conditions in the dark.
 D9 [concept] vinyl radical intermediate: The radical formed when the alkyl radical adds to the alkyne, proposed to abstract a hydrogen atom from carbon 5 of its own chain (1,5-HAT).
 D10 [method] radical clock experiment: Reaction under standard conditions with ethynylcyclopropane in place of the alkyne; ring opening to an allene indicates a vinyl radical.
-D11 [other] substrate classes: The groups of the scope tables: cyclic oxalates, alkynes, aryl bromides, heteroaryl halides, aryl iodides and chlorides. [members D12, D13, D14, D15]
-D12 [other] cyclic oxalates scope: Products 4-14: varied five- and six-membered carbo- and heterocyclic oxalates.
-D13 [other] alkyne scope: Products 19-29: varied terminal aliphatic alkynes, including late-stage examples.
-D14 [other] aryl bromide scope: Products 30-35: varied aryl bromides.
-D15 [other] heteroaryl and other aryl halide scope: Products 36-42: heteroaryl halides, aryl iodides and aryl chlorides.
+D11 [substance] substrate classes: The groups of the scope tables: cyclic oxalates, alkynes, aryl bromides, heteroaryl halides, aryl iodides and chlorides. [members D12, D13, D14, D15]
+D12 [substance] cyclic oxalates scope: Products 4-14: varied five- and six-membered carbo- and heterocyclic oxalates.
+D13 [substance] alkyne scope: Products 19-29: varied terminal aliphatic alkynes, including late-stage examples.
+D14 [substance] aryl bromide scope: Products 30-35: varied aryl bromides.
+D15 [substance] heteroaryl and other aryl halide scope: Products 36-42: heteroaryl halides, aryl iodides and aryl chlorides.
 
 CLAIMS
-C1 [descriptive; principal; support: empirical_quant E1; limitations L1, L2]
+C1 [descriptive; principal; support: empirical_quant E1 (E1.R1); limitations L1, L2]
   Under the [[D2:standard conditions]], the [[D1:vinylation/arylation cascade]] gives [[D3:1,3-vinylarylated cycloalkanes]] from five- and six-membered cyclic oxalates, terminal aliphatic alkynes and aryl halides in 36% to 77% [[D4:yield]].
-C2 [causal; secondary; extension; support: empirical_quant E2]
+C2 [causal; secondary; not_applicable; support: empirical_quant E2]
   Compared with the [[D2:standard conditions]], each of the [[D5:control reactions]] that removes the photocatalyst, the nickel catalyst or light gives 0% [[D4:yield]].
-C3 [causal; secondary; extension; support: empirical_quant E3; limitations L3]
+C3 [mechanistic; secondary; not_applicable; support: empirical_quant E3; limitations L3]
   The [[D1:vinylation/arylation cascade]] proceeds through a [[D9:vinyl radical intermediate]], as the [[D10:radical clock experiment]] gives the ring-opened allene.
 
 EVIDENCE
 E1 [quant; design experiment; data_origin primary; n 39] Substrate scope: 39 products (4-42) under standard conditions, each from a single run with isolated yield; failures of 4- and 7-membered, bicyclic and linear oxalates reported in text.
-  setup: studied D1; procedure D2; lens D4
+  setup: studied D1, D3; procedure D2; lens D4
+  E1.R1 D4 = 36 to 77 (range) % n 39
   E1.T1 Range of yields per substrate class
-  | row | D11 | lowest yield (%) | highest yield (%) | products (1) |
-  | r1 | D12 | 36 | 77 | 11 |
-  | r2 | D13 | 45 | 74 | 11 |
-  | r3 | D14 | 53 | 70 | 6 |
-  | r4 | D15 | 50 | 77 | 7 |
+  | row | D11 | D4 (%) | products (1) |
+  | r1 | D12 | 36 to 77 (range) | 11 |
+  | r2 | D13 | 45 to 74 (range) | 11 |
+  | r3 | D14 | 53 to 70 (range) | 6 |
+  | r4 | D15 | 50 to 77 (range) | 7 |
 E2 [quant; design experiment; data_origin primary] Optimisation and control reactions on the model reaction (oxalate 1, alkyne 2, 4-bromobenzonitrile 3); yields of product 4 by crude 1H NMR.
   setup: studied D5, D2; procedure D2; lens D4
   E2.R1 yield of product 4 under standard conditions (crude 1H NMR) = 84 %

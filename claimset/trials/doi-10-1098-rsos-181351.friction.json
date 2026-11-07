@@ -1,44 +1,51 @@
 [
- {
-  "where": "C1, C2",
-  "what": "The registered report's confirmatory tests cannot be recorded: `hypothesis` requires a lab-record event (rule 42), confirmatory `planning` requires `planned_at` with an anchor (rule 43) and the paper then needs a lab-record `exploration` summary (rule 44). Validator rules raised: ['42', '43', '44']. I removed hypothesis, planning and test: the claimset no longer says the test was registered, what its rule was or that its outcome was inconclusive; only `evidence.preregistered: true` and the OSF artefact remain. The most-wanted kind of evidence (a registered, confirmatory, null result) is the one the format cannot hold outside our own lab record.",
-  "need": "planned tests registered outside the lab record",
-  "proposal": "core"
- },
- {
-  "where": "C1.hypothesis / planning / test",
-  "what": "The test structure is built for lab records. An external registered report fits only by leaving `hypothesis.lab_event` and `lab_plan` out; `planned_at` cannot be given an anchor (no `registry` value), and the Stage 1 in-principle acceptance has no field.",
-  "need": "external registration as an anchor; registered-report stage",
-  "proposal": "core (anchor) + extension: preregistration"
- },
- {
-  "where": "C1.test",
-  "what": "The source's decision rule is interpretive (Jeffreys' scale, 'ambiguous'), not a stated threshold; I wrote rules at BF 3 and 1/3 that the source does not state. A converted claim's `test` can only be as precise as the paper, and there is no way to mark rules as the converter's reading.",
-  "need": "provenance of a reconstructed decision rule",
-  "proposal": "core (field_provenance covers it; guidance needed)"
- },
- {
-  "where": "D7, L2",
-  "what": "Recruitment pool, response rate (6%), compensation (none), manipulation checks and the 68% exclusion are central to a behavioural experiment and are text only.",
-  "need": "participants, exclusions, manipulation checks",
-  "proposal": "extension: behavioural-experiment"
- },
- {
-  "where": "D6, D9",
-  "what": "The measure (single item) and the construct (trust) are separate definitions, but nothing links D6 to D9: the format cannot say D6 measures D9.",
-  "need": "measure-construct link",
-  "proposal": "core"
- },
- {
-  "where": "E1.R2-R4",
-  "what": "Inclusion Bayes factors per effect fit `conditions: {effect: …}`; the effect being a definition or an interaction of two is free text.",
-  "need": "interaction terms as conditions",
-  "proposal": "none (text suffices)"
- },
- {
-  "where": "L4",
-  "what": "The deviation from the registered plan is a limitation with category `other`: there is no `deviation` category outside lab records.",
-  "need": "deviations from a registered plan",
-  "proposal": "extension: preregistration"
- }
+  {
+    "where": "C1, C2",
+    "what": "The registered report's confirmatory tests can now be recorded (hypothesis without lab_event, test.registration = B1, the OSF registration's DOI, anchor `registry`), except for one field: rule 43 requires `planned_at`, and neither the paper nor anything this conversion could read gives the registration's date (the OSF API refuses automated reads). Inventing a date is not an option, so the tests were removed again. Validator rules raised with them: ['43']. With anchor `registry`, the registry holds the date: `planned_at` could be optional, or the converter must read the registry.",
+    "need": "registered tests whose registration date is not at hand",
+    "proposal": "open: core, rule 43 (planned_at optional when the anchor is registry and test.registration names the registration)",
+    "v0.39": "new"
+  },
+  {
+    "where": "C1.hypothesis / planning / test",
+    "what": "The test structure is built for lab records. An external registered report fits only by leaving `hypothesis.lab_event` and `lab_plan` out; `planned_at` cannot be given an anchor (no `registry` value), and the Stage 1 in-principle acceptance has no field.",
+    "need": "external registration as an anchor; registered-report stage",
+    "proposal": "core (anchor) + extension: preregistration",
+    "v0.39": "resolved in form (anchor `registry`, test.registration as a reference); the in-principle acceptance stage is for the preregistration extension; blocked here by planned_at (new entry)"
+  },
+  {
+    "where": "C1.test",
+    "what": "The source's decision rule is interpretive (Jeffreys' scale, 'ambiguous'), not a stated threshold; I wrote rules at BF 3 and 1/3 that the source does not state. A converted claim's `test` can only be as precise as the paper, and there is no way to mark rules as the converter's reading.",
+    "need": "provenance of a reconstructed decision rule",
+    "proposal": "core (field_provenance covers it; guidance needed)",
+    "v0.39": "resolved: field_provenance marks reconstructed rules `inferred` (spec §3.3.3 guidance); the rules no longer invent thresholds, citing Jeffreys' scale as the paper does"
+  },
+  {
+    "where": "D7, L2",
+    "what": "Recruitment pool, response rate (6%), compensation (none), manipulation checks and the 68% exclusion are central to a behavioural experiment and are text only.",
+    "need": "participants, exclusions, manipulation checks",
+    "proposal": "extension: behavioural-experiment",
+    "v0.39": "extension: behavioural-experiment"
+  },
+  {
+    "where": "D6, D9",
+    "what": "The measure (single item) and the construct (trust) are separate definitions, but nothing links D6 to D9: the format cannot say D6 measures D9.",
+    "need": "measure-construct link",
+    "proposal": "core",
+    "v0.39": "resolved: D6 `measures` D9"
+  },
+  {
+    "where": "E1.R2-R4",
+    "what": "Inclusion Bayes factors per effect fit `conditions: {effect: …}`; the effect being a definition or an interaction of two is free text.",
+    "need": "interaction terms as conditions",
+    "proposal": "none (text suffices)",
+    "v0.39": "none"
+  },
+  {
+    "where": "L4",
+    "what": "The deviation from the registered plan is a limitation with category `other`: there is no `deviation` category outside lab records.",
+    "need": "deviations from a registered plan",
+    "proposal": "extension: preregistration",
+    "v0.39": "resolved: limitation category `deviation`"
+  }
 ]

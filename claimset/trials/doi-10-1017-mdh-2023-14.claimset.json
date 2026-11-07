@@ -1,441 +1,463 @@
 {
- "schema_version": "0.39",
- "paper": {
-  "title": "Have we lost sleep? A reconsideration of segmented sleep in early modern England",
-  "licence": "CC-BY-4.0",
-  "classification": {
-   "keywords": [
-    "segmented sleep",
-    "first sleep",
-    "early modern England",
-    "history of medicine",
-    "sleep history",
-    "Ekirch"
-   ]
+  "schema_version": "0.39",
+  "paper": {
+    "title": "Have we lost sleep? A reconsideration of segmented sleep in early modern England",
+    "licence": "CC-BY-4.0",
+    "classification": {
+      "keywords": [
+        "segmented sleep",
+        "first sleep",
+        "early modern England",
+        "history of medicine",
+        "sleep history",
+        "Ekirch"
+      ]
+    },
+    "declarations": {
+      "funding": [],
+      "competing_interests": "Not stated in the converted text."
+    },
+    "contributions": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "contribution_record": "complete",
+    "origin": "converted",
+    "converted_from": {
+      "source_id": "10.1017/mdh.2023.14",
+      "id_type": "doi",
+      "source_version": "published",
+      "source_licence": "CC-BY-4.0",
+      "source_authors": [
+        {
+          "name": "Niall Boyce"
+        }
+      ],
+      "source_status_at_conversion": "active",
+      "converter": "P1",
+      "date": "2026-11-07"
+    }
   },
-  "declarations": {
-   "funding": [],
-   "competing_interests": "Not stated in the converted text."
-  },
-  "contributions": [
-   "C1",
-   "C2",
-   "C3"
+  "contributors": [
+    {
+      "id": "P1",
+      "type": "agent",
+      "name": "EntryLib field-trial converter",
+      "positions": [
+        "converter"
+      ],
+      "models": [
+        {
+          "model": "M1",
+          "role": "sole"
+        }
+      ],
+      "credit_roles": [
+        "data_curation"
+      ],
+      "ai_tasks": [
+        {
+          "task": "json_preparation",
+          "extent": "full"
+        }
+      ],
+      "tools": [
+        "web_search",
+        "file_access"
+      ],
+      "record_source": "harness"
+    },
+    {
+      "id": "P2",
+      "type": "organisation",
+      "name": "OpenForecast Ltd",
+      "registration": "00000000",
+      "positions": [
+        "conversion_guarantor"
+      ],
+      "credit_roles": [
+        "validation"
+      ]
+    }
   ],
-  "contribution_record": "complete",
-  "origin": "converted",
-  "converted_from": {
-   "source_id": "10.1017/mdh.2023.14",
-   "id_type": "doi",
-   "source_version": "published",
-   "source_licence": "CC-BY-4.0",
-   "source_authors": [
+  "models": [
     {
-     "name": "Niall Boyce"
+      "id": "M1",
+      "provider": "Anthropic",
+      "name": "Claude",
+      "version": "opus-5-5",
+      "identifier": "claude-opus-5-5",
+      "weights": "api_only",
+      "accessed": "2026-11-07"
     }
-   ],
-   "source_status_at_conversion": "active",
-   "converter": "P1",
-   "date": "2026-11-06"
-  }
- },
- "contributors": [
-  {
-   "id": "P1",
-   "type": "agent",
-   "name": "EntryLib field-trial converter",
-   "positions": [
-    "converter"
-   ],
-   "models": [
+  ],
+  "definitions": [
     {
-     "model": "M1",
-     "role": "sole"
-    }
-   ],
-   "credit_roles": [
-    "data_curation"
-   ],
-   "ai_tasks": [
-    {
-     "task": "json_preparation",
-     "extent": "full"
-    }
-   ],
-   "tools": [
-    "web_search",
-    "file_access"
-   ],
-   "record_source": "harness"
-  },
-  {
-   "id": "P2",
-   "type": "organisation",
-   "name": "OpenForecast Ltd",
-   "registration": "00000000",
-   "positions": [
-    "conversion_guarantor"
-   ],
-   "credit_roles": [
-    "validation"
-   ]
-  }
- ],
- "models": [
-  {
-   "id": "M1",
-   "provider": "Anthropic",
-   "name": "Claude",
-   "version": "opus-5-5",
-   "identifier": "claude-opus-5-5",
-   "weights": "api_only",
-   "accessed": "2026-11-06"
-  }
- ],
- "definitions": [
-  {
-   "id": "D1",
-   "term": "segmented sleep thesis",
-   "kind": "theory",
-   "definition": "Ekirch's thesis that people in pre-industrial western Europe routinely slept in two segments, a 'first' and a 'second' sleep separated by up to an hour or more of wakefulness, and that consolidated sleep is a modern artefact of artificial light.",
-   "source": "B1"
-  },
-  {
-   "id": "D2",
-   "term": "early modern England",
-   "kind": "setting",
-   "definition": "England in the sixteenth to eighteenth centuries, from which much of the thesis's textual evidence comes."
-  },
-  {
-   "id": "D3",
-   "term": "Ekirch's textual sources",
-   "kind": "data",
-   "definition": "The printed and manuscript passages quoted by Ekirch as references to first and second sleep: Bentley (1582), Taillepied, Erasmus (1535), Bayly, Davenant, Baldwin, Fidge, Gombauld, Shirley, Amyraut and others.",
-   "source": "B1"
-  },
-  {
-   "id": "D4",
-   "term": "Wehr's photoperiod experiment",
-   "kind": "data",
-   "definition": "A study of 16 participants (15 men, one woman) aged 20 to 36, one week at 16 h light and 8 h dark then four weeks at 10 h light and 14 h dark, confined to a dark room in the dark period.",
-   "source": "B2"
-  },
-  {
-   "id": "D5",
-   "term": "EEBO full-text search",
-   "kind": "method",
-   "definition": "Full-text searches of Early English Books Online for 'first sleep' and 'second sleep' in English printed texts of 1475-1700, each hit read in context.",
-   "source": "B3"
-  },
-  {
-   "id": "D6",
-   "term": "close reading in context",
-   "kind": "method",
-   "definition": "Re-reading each quoted passage with its surrounding text, genre and circumstances of writing (illness, watch duty, prayer collections, figures of speech)."
-  },
-  {
-   "id": "D7",
-   "term": "first sleep",
-   "kind": "concept",
-   "definition": "The early modern phrase whose meaning is at issue: a separate first segment of sleep, or the first, deepest or earliest part of a night's sleep, or an allocated watch."
-  },
-  {
-   "id": "D8",
-   "term": "unusual or unwanted waking",
-   "kind": "concept",
-   "definition": "Waking at night described as troublesome, caused by illness, fear, duty or circumstance, rather than as a routine interval."
-  }
- ],
- "claims": [
-  {
-   "id": "C1",
-   "statement": "Most passages of [[D3:Ekirch's textual sources]] describe [[D8:unusual or unwanted waking]] rather than a routine interval between two sleeps in [[D2:early modern England]].",
-   "about": {
-    "subject": "D3",
-    "relation": "describe",
-    "object": "D8",
-    "comparator": null,
-    "conditions": [
-     "D2"
-    ]
-   },
-   "type": "interpretive",
-   "role": "principal",
-   "novelty": "refutation",
-   "support": [
-    {
-     "kind": "empirical_qual",
-     "evidence": "E1"
-    }
-   ],
-   "warrant": "W1",
-   "relations": [
-    {
-     "type": "contradicts",
-     "reference": "B1",
-     "note": "Ekirch reads these passages as evidence that segmented sleep was routine."
-    }
-   ],
-   "provenance": "extracted",
-   "source_spans": [
-    "Section 4"
-   ],
-   "limitations": [
-    "L1"
-   ]
-  },
-  {
-   "id": "C2",
-   "statement": "In [[D2:early modern England]] the phrase [[D7:first sleep]] carried several meanings, including the first or deepest part of a continuous night's sleep and an allocated watch, so its occurrence does not show segmented sleep.",
-   "about": {
-    "subject": "D7",
-    "relation": "carried several meanings in",
-    "object": "D2",
-    "comparator": null,
-    "conditions": []
-   },
-   "type": "interpretive",
-   "role": "principal",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "empirical_qual",
-     "evidence": "E2"
-    }
-   ],
-   "warrant": "W2",
-   "provenance": "extracted",
-   "source_spans": [
-    "Sections 5-6"
-   ],
-   "limitations": [
-    "L1",
-    "L2"
-   ]
-  },
-  {
-   "id": "C3",
-   "statement": "[[D4:Wehr's photoperiod experiment]] does not support the [[D1:segmented sleep thesis]] for [[D2:early modern England]], because its participants lay in darkness without the candle and firelight of early modern evenings and its bimodal pattern was not quantified.",
-   "about": {
-    "subject": "D4",
-    "relation": "does not support",
-    "object": "D1",
-    "comparator": null,
-    "conditions": [
-     "D2"
-    ]
-   },
-   "type": "interpretive",
-   "role": "principal",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "argument",
-     "warrant": "W3"
-    }
-   ],
-   "warrant": "W3",
-   "provenance": "extracted",
-   "source_spans": [
-    "Section 2"
-   ]
-  }
- ],
- "evidence": [
-  {
-   "id": "E1",
-   "profile": "qual",
-   "data_origin": "secondary",
-   "preregistered": false,
-   "description": "Re-reading in context of the passages Ekirch quotes as references to first and second sleep.",
-   "setup": {
-    "studied": [
-     "D1"
-    ],
-    "cases": [
-     "D3"
-    ],
-    "procedure": [
-     "D6"
-    ],
-    "context": [
-     "D2"
-    ]
-   },
-   "results": [
-    {
-     "id": "R1",
-     "variable": "D8",
-     "conditions": {
-      "source": "Bentley 1582"
-     },
-     "value": {
-      "text": "A prayer for waking at midnight, framed as troublesome and sent by God.",
-      "locator": "Section 4, Bentley"
-     }
+      "id": "D1",
+      "term": "segmented sleep thesis",
+      "kind": "theory",
+      "definition": "Ekirch's thesis that people in pre-industrial western Europe routinely slept in two segments, a 'first' and a 'second' sleep separated by up to an hour or more of wakefulness, and that consolidated sleep is a modern artefact of artificial light.",
+      "source": "B1"
     },
     {
-     "id": "R2",
-     "variable": "D8",
-     "conditions": {
-      "source": "Erasmus 1535"
-     },
-     "value": {
-      "text": "Written while ill with gout, so not a record of ordinary sleep.",
-      "locator": "Section 4, Erasmus"
-     }
+      "id": "D2",
+      "term": "early modern England",
+      "kind": "setting",
+      "definition": "England in the sixteenth to eighteenth centuries, from which much of the thesis's textual evidence comes."
     },
     {
-     "id": "R3",
-     "variable": "D8",
-     "conditions": {
-      "source": "Amyraut"
-     },
-     "value": {
-      "text": "The sleeper wakes from a frightening dream.",
-      "locator": "Section 4, Amyraut"
-     }
+      "id": "D3",
+      "term": "Ekirch's textual sources",
+      "kind": "source",
+      "definition": "The printed and manuscript passages quoted by Ekirch as references to first and second sleep: Bentley (1582), Taillepied, Erasmus (1535), Bayly, Davenant, Baldwin, Fidge, Gombauld, Shirley, Amyraut and others.",
+      "source": "B1",
+      "members": [
+        "D9",
+        "D10",
+        "D11"
+      ]
+    },
+    {
+      "id": "D4",
+      "term": "Wehr's photoperiod experiment",
+      "kind": "data",
+      "definition": "A study of 16 participants (15 men, one woman) aged 20 to 36, one week at 16 h light and 8 h dark then four weeks at 10 h light and 14 h dark, confined to a dark room in the dark period.",
+      "source": "B2"
+    },
+    {
+      "id": "D5",
+      "term": "EEBO full-text search",
+      "kind": "method",
+      "definition": "Full-text searches of Early English Books Online for 'first sleep' and 'second sleep' in English printed texts of 1475-1700, each hit read in context.",
+      "source": "B3"
+    },
+    {
+      "id": "D6",
+      "term": "close reading in context",
+      "kind": "method",
+      "definition": "Re-reading each quoted passage with its surrounding text, genre and circumstances of writing (illness, watch duty, prayer collections, figures of speech)."
+    },
+    {
+      "id": "D7",
+      "term": "first sleep",
+      "kind": "concept",
+      "definition": "The early modern phrase whose meaning is at issue: a separate first segment of sleep, or the first, deepest or earliest part of a night's sleep, or an allocated watch."
+    },
+    {
+      "id": "D9",
+      "term": "Bentley (1582)",
+      "kind": "source",
+      "definition": "A prayer book of 1582 quoted by Ekirch, with a prayer for waking at midnight."
+    },
+    {
+      "id": "D10",
+      "term": "Erasmus (1535)",
+      "kind": "source",
+      "definition": "A letter of Erasmus of 1535 quoted by Ekirch."
+    },
+    {
+      "id": "D11",
+      "term": "Amyraut",
+      "kind": "source",
+      "definition": "A passage by Amyraut quoted by Ekirch, in which a sleeper wakes from a dream."
+    },
+    {
+      "id": "D8",
+      "term": "unusual or unwanted waking",
+      "kind": "concept",
+      "definition": "Waking at night described as troublesome, caused by illness, fear, duty or circumstance, rather than as a routine interval."
     }
-   ],
-   "data_sources": [
-    "document"
-   ],
-   "analytic_approach": "discourse",
-   "n_participants_or_cases": 12,
-   "sampling": "purposive",
-   "availability": {
-    "level": "public",
-    "comment": "The sources are printed books in EEBO and other public collections."
-   },
-   "source_spans": [
-    "Section 4"
-   ]
-  },
-  {
-   "id": "E2",
-   "profile": "qual",
-   "data_origin": "secondary",
-   "preregistered": false,
-   "description": "Full-text EEBO searches for 'first sleep' (many hits, not counted) and 'second sleep' (15 hits), each read in context.",
-   "setup": {
-    "studied": [
-     "D7"
-    ],
-    "cases": [
-     "D3"
-    ],
-    "procedure": [
-     "D5",
-     "D6"
-    ],
-    "context": [
-     "D2"
-    ]
-   },
-   "results": [
+  ],
+  "claims": [
     {
-     "id": "R1",
-     "variable": "EEBO hits for 'second sleep'",
-     "value": 15
+      "id": "C1",
+      "statement": "Most passages of [[D3:Ekirch's textual sources]] describe [[D8:unusual or unwanted waking]] rather than a routine interval between two sleeps in [[D2:early modern England]].",
+      "about": {
+        "subject": "D3",
+        "relation": "describe",
+        "object": "D8",
+        "comparator": null,
+        "conditions": [
+          "D2"
+        ]
+      },
+      "type": "interpretive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_qual",
+          "evidence": "E1"
+        }
+      ],
+      "warrant": "W1",
+      "relations": [
+        {
+          "type": "disputes_evidence",
+          "reference": "B1",
+          "note": "Ekirch reads these passages as evidence that segmented sleep was routine."
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Section 4"
+      ],
+      "limitations": [
+        "L1"
+      ]
     },
     {
-     "id": "R2",
-     "variable": "EEBO hits naming both first and second sleep",
-     "value": 5,
-     "n": 15
+      "id": "C2",
+      "statement": "In [[D2:early modern England]] the phrase [[D7:first sleep]] carried several meanings, including the first or deepest part of a continuous night's sleep and an allocated watch, so its occurrence does not show segmented sleep.",
+      "about": {
+        "subject": "D7",
+        "relation": "carried several meanings in",
+        "object": "D2",
+        "comparator": null,
+        "conditions": []
+      },
+      "type": "interpretive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_qual",
+          "evidence": "E2"
+        }
+      ],
+      "warrant": "W2",
+      "provenance": "extracted",
+      "source_spans": [
+        "Sections 5-6"
+      ],
+      "limitations": [
+        "L1",
+        "L2"
+      ]
     },
     {
-     "id": "R3",
-     "variable": "D7",
-     "conditions": {
-      "source": "Caryl"
-     },
-     "value": {
-      "text": "the first sleepe is the deepe sleepe",
-      "locator": "Section 6, Caryl"
-     }
+      "id": "C3",
+      "statement": "[[D4:Wehr's photoperiod experiment]] does not support the [[D1:segmented sleep thesis]] for [[D2:early modern England]], because its participants lay in darkness without the candle and firelight of early modern evenings and its bimodal pattern was not quantified.",
+      "about": {
+        "subject": "D4",
+        "relation": "does not support",
+        "object": "D1",
+        "comparator": null,
+        "conditions": [
+          "D2"
+        ]
+      },
+      "type": "interpretive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "argument",
+          "warrant": "W3"
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Section 2"
+      ]
     }
-   ],
-   "data_sources": [
-    "document"
-   ],
-   "analytic_approach": "content_analysis",
-   "sampling": "other",
-   "availability": {
-    "level": "public",
-    "comment": "EEBO, by subscription; the search terms are given."
-   },
-   "source_spans": [
-    "Sections 5-6"
-   ]
-  }
- ],
- "warrants": [
-  {
-   "id": "W1",
-   "reasoning": "interpretive",
-   "premises": [],
-   "text": "A passage shows routine segmentation only if it presents night waking as ordinary; passages written in illness, about watches, in emergency prayers or as figures of speech present it as exceptional."
-  },
-  {
-   "id": "W2",
-   "reasoning": "interpretive",
-   "premises": [],
-   "text": "'First' commonly meant initial or earliest; used of sleep it can name the first, deepest part of one sleep, as in Caryl, as readily as a separate segment, and only 5 of 15 'second sleep' hits name both."
-  },
-  {
-   "id": "W3",
-   "reasoning": "analogical",
-   "premises": [],
-   "text": "An experiment informs a historical claim only as far as its conditions resemble the historical ones; 14 hours confined in darkness do not resemble evenings lit by candle and fire."
-  }
- ],
- "limitations": [
-  {
-   "id": "L1",
-   "category": "researcher_position",
-   "statement": "The author states that any alternative model of early modern sleep is by nature limited and uncertain, and does not deny that segmented sleep existed.",
-   "affects": [
-    "C1",
-    "C2"
-   ],
-   "impact": "reduces_transferability",
-   "mitigation": "none",
-   "source_spans": [
-    "Conclusion"
-   ]
-  },
-  {
-   "id": "L2",
-   "category": "sampling",
-   "statement": "Hits for 'first sleep' were not counted, and EEBO covers printed English texts only, not manuscripts or speech.",
-   "affects": [
-    "C2"
-   ],
-   "impact": "reduces_transferability",
-   "mitigation": "none",
-   "source_spans": [
-    "Section 5"
-   ]
-  }
- ],
- "artefacts": [],
- "references": [
-  {
-   "id": "B1",
-   "target": "10.1086/ahr/106.2.343",
-   "id_type": "doi"
-  },
-  {
-   "id": "B2",
-   "target": "Wehr TA. In short photoperiods, human sleep is biphasic. J Sleep Res 1992;1:103-107.",
-   "id_type": "reference"
-  },
-  {
-   "id": "B3",
-   "target": "Early English Books Online (EEBO), English printed texts 1475-1700",
-   "id_type": "reference"
-  }
- ],
- "open_questions": []
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "profile": "qual",
+      "data_origin": "secondary",
+      "preregistered": false,
+      "description": "Re-reading in context of the passages Ekirch quotes as references to first and second sleep.",
+      "setup": {
+        "studied": [
+          "D1"
+        ],
+        "cases": [
+          "D3"
+        ],
+        "procedure": [
+          "D6"
+        ],
+        "context": [
+          "D2"
+        ]
+      },
+      "results": [
+        {
+          "id": "R1",
+          "variable": "D8",
+          "conditions": {
+            "D3": "D9"
+          },
+          "value": {
+            "text": "A prayer for waking at midnight, framed as troublesome and sent by God.",
+            "locator": "Section 4, Bentley"
+          }
+        },
+        {
+          "id": "R2",
+          "variable": "D8",
+          "conditions": {
+            "D3": "D10"
+          },
+          "value": {
+            "text": "Written while ill with gout, so not a record of ordinary sleep.",
+            "locator": "Section 4, Erasmus"
+          }
+        },
+        {
+          "id": "R3",
+          "variable": "D8",
+          "conditions": {
+            "D3": "D11"
+          },
+          "value": {
+            "text": "The sleeper wakes from a frightening dream.",
+            "locator": "Section 4, Amyraut"
+          }
+        }
+      ],
+      "data_sources": [
+        "document"
+      ],
+      "analytic_approach": "source_criticism",
+      "n_participants_or_cases": 12,
+      "sampling": "purposive",
+      "availability": {
+        "level": "public",
+        "comment": "The sources are printed books in EEBO and other public collections."
+      },
+      "source_spans": [
+        "Section 4"
+      ]
+    },
+    {
+      "id": "E2",
+      "profile": "qual",
+      "data_origin": "secondary",
+      "preregistered": false,
+      "description": "Full-text EEBO searches for 'first sleep' (many hits, not counted) and 'second sleep' (15 hits), each read in context.",
+      "setup": {
+        "studied": [
+          "D7"
+        ],
+        "cases": [
+          "D3"
+        ],
+        "procedure": [
+          "D5",
+          "D6"
+        ],
+        "context": [
+          "D2"
+        ]
+      },
+      "results": [
+        {
+          "id": "R1",
+          "variable": "EEBO hits for 'second sleep'",
+          "value": 15
+        },
+        {
+          "id": "R2",
+          "variable": "EEBO hits naming both first and second sleep",
+          "value": 5,
+          "n": 15
+        },
+        {
+          "id": "R3",
+          "variable": "D7",
+          "conditions": {
+            "source": "Caryl"
+          },
+          "value": {
+            "text": "the first sleepe is the deepe sleepe",
+            "locator": "Section 6, Caryl"
+          }
+        }
+      ],
+      "data_sources": [
+        "document"
+      ],
+      "analytic_approach": "content_analysis",
+      "sampling": "other",
+      "availability": {
+        "level": "public",
+        "comment": "EEBO, by subscription; the search terms are given."
+      },
+      "source_spans": [
+        "Sections 5-6"
+      ]
+    }
+  ],
+  "warrants": [
+    {
+      "id": "W1",
+      "reasoning": "interpretive",
+      "premises": [],
+      "text": "A passage shows routine segmentation only if it presents night waking as ordinary; passages written in illness, about watches, in emergency prayers or as figures of speech present it as exceptional."
+    },
+    {
+      "id": "W2",
+      "reasoning": "interpretive",
+      "premises": [],
+      "text": "'First' commonly meant initial or earliest; used of sleep it can name the first, deepest part of one sleep, as in Caryl, as readily as a separate segment, and only 5 of 15 'second sleep' hits name both."
+    },
+    {
+      "id": "W3",
+      "reasoning": "analogical",
+      "premises": [],
+      "text": "An experiment informs a historical claim only as far as its conditions resemble the historical ones; 14 hours confined in darkness do not resemble evenings lit by candle and fire."
+    }
+  ],
+  "limitations": [
+    {
+      "id": "L1",
+      "category": "researcher_position",
+      "statement": "The author states that any alternative model of early modern sleep is by nature limited and uncertain, and does not deny that segmented sleep existed.",
+      "affects": [
+        "C1",
+        "C2"
+      ],
+      "impact": "reduces_transferability",
+      "mitigation": "none",
+      "source_spans": [
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "L2",
+      "category": "sampling",
+      "statement": "Hits for 'first sleep' were not counted, and EEBO covers printed English texts only, not manuscripts or speech.",
+      "affects": [
+        "C2"
+      ],
+      "impact": "reduces_transferability",
+      "mitigation": "none",
+      "source_spans": [
+        "Section 5"
+      ]
+    }
+  ],
+  "artefacts": [],
+  "references": [
+    {
+      "id": "B1",
+      "target": "10.1086/ahr/106.2.343",
+      "id_type": "doi"
+    },
+    {
+      "id": "B2",
+      "target": "Wehr TA. In short photoperiods, human sleep is biphasic. J Sleep Res 1992;1:103-107.",
+      "id_type": "reference"
+    },
+    {
+      "id": "B3",
+      "target": "Early English Books Online (EEBO), English printed texts 1475-1700",
+      "id_type": "reference"
+    }
+  ],
+  "open_questions": []
 }

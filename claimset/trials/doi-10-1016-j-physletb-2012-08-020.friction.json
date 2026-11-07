@@ -1,62 +1,79 @@
 [
- {
-  "where": "E1.R1",
-  "what": "The mass is 126.0 ± 0.4 (stat) ± 0.4 (sys) GeV. A result holds one interval, so the systematic component survives only in the claim's text; the numbers cannot be combined or compared by machine.",
-  "need": "uncertainty components",
-  "proposal": "core"
- },
- {
-  "where": "E1.T2 / C4",
-  "what": "Exclusion ranges (111-122, 131-559 GeV at 95% CL) have no point value. A result without value is refused (rule 66), so they had to become a table of range bounds, losing that they are confidence statements at 95%.",
-  "need": "limits and ranges as values",
-  "proposal": "core"
- },
- {
-  "where": "D1, D5-D8",
-  "what": "A particle and its decay modes are neither methods, populations nor concepts; they went to kind `other`.",
-  "need": "physical entities as definition kinds",
-  "proposal": "core"
- },
- {
-  "where": "E1.R2, R3, R6",
-  "what": "Significance in standard deviations and p0 are ordinary results, but whether a significance is local or global, and over which range, can only be said in the variable's text.",
-  "need": "look-elsewhere and test detail",
-  "proposal": "extension: particle-physics"
- },
- {
-  "where": "D3, D4",
-  "what": "Energy and integrated luminosity are conditions every number depends on; condition values cannot carry units, so they live in the definitions' text.",
-  "need": "units on condition values",
-  "proposal": "core (minor) or extension: particle-physics"
- },
- {
-  "where": "evidence",
-  "what": "No place for the event selection, signal regions, background estimation, systematic uncertainty breakdown, or the HEPData record and likelihoods that would let a reader recompute.",
-  "need": "analysis detail and HEPData",
-  "proposal": "extension: particle-physics"
- },
- {
-  "where": "paper.converted_from.source_authors",
-  "what": "Thousands of authors credited as 'The ATLAS Collaboration'. Fine for a converted paper; a native paper could not list the collaboration as a contributor.",
-  "need": "collaborations as contributors",
-  "proposal": "core"
- },
- {
-  "where": "C2, C3 (validator warning W17)",
-  "what": "The validator warns that 0.4 and 0.3 in the statements match no recorded number: the symmetric uncertainties (±0.4 stat, ±0.4 sys; ±0.3) can only be recorded as interval bounds, and the second component not at all.",
-  "need": "uncertainty components (confirmed by the validator)",
-  "proposal": "core"
- },
- {
-  "where": "C4 (warning W24)",
-  "what": "Stating the excluded ranges in the claim is what physicists read; the format pushes them into a table and asks for the 'pattern' instead. Acceptable, but the ranges are the finding.",
-  "need": "range-valued findings",
-  "proposal": "core (with limits)"
- },
- {
-  "where": "E1.availability",
-  "what": "Restricted by a collaboration's data policy: no reason value fits (`other`).",
-  "need": "availability reason for collaboration-held data",
-  "proposal": "none (other suffices)"
- }
+  {
+    "where": "E1.R1",
+    "what": "The mass is 126.0 ± 0.4 (stat) ± 0.4 (sys) GeV. A result holds one interval, so the systematic component survives only in the claim's text; the numbers cannot be combined or compared by machine.",
+    "need": "uncertainty components",
+    "proposal": "core",
+    "v0.39": "resolved: uncertainty [{stat 0.4}, {sys 0.4}] on the result (§3.4 Uncertainty)"
+  },
+  {
+    "where": "E1.T2 / C4",
+    "what": "Exclusion ranges (111-122, 131-559 GeV at 95% CL) have no point value. A result without value is refused (rule 66), so they had to become a table of range bounds, losing that they are confidence statements at 95%.",
+    "need": "limits and ranges as values",
+    "proposal": "core",
+    "v0.39": "resolved: three results whose values are ranges {min, max, level 0.95}; the table is gone"
+  },
+  {
+    "where": "D1, D5-D8",
+    "what": "A particle and its decay modes are neither methods, populations nor concepts; they went to kind `other`.",
+    "need": "physical entities as definition kinds",
+    "proposal": "core",
+    "v0.39": "partly resolved: the particle is an `entity`; decay channels remain `other` (see the new entry on processes)"
+  },
+  {
+    "where": "E1.R2, R3, R6",
+    "what": "Significance in standard deviations and p0 are ordinary results, but whether a significance is local or global, and over which range, can only be said in the variable's text.",
+    "need": "look-elsewhere and test detail",
+    "proposal": "extension: particle-physics",
+    "v0.39": "extension: particle-physics"
+  },
+  {
+    "where": "D3, D4",
+    "what": "Energy and integrated luminosity are conditions every number depends on; condition values cannot carry units, so they live in the definitions' text.",
+    "need": "units on condition values",
+    "proposal": "core (minor) or extension: particle-physics",
+    "v0.39": "open: condition values still carry no unit; minor, left to particle-physics"
+  },
+  {
+    "where": "evidence",
+    "what": "No place for the event selection, signal regions, background estimation, systematic uncertainty breakdown, or the HEPData record and likelihoods that would let a reader recompute.",
+    "need": "analysis detail and HEPData",
+    "proposal": "extension: particle-physics",
+    "v0.39": "extension: particle-physics"
+  },
+  {
+    "where": "paper.converted_from.source_authors",
+    "what": "Thousands of authors credited as 'The ATLAS Collaboration'. Fine for a converted paper; a native paper could not list the collaboration as a contributor.",
+    "need": "collaborations as contributors",
+    "proposal": "core",
+    "v0.39": "resolved: paper.collaborations names the ATLAS Collaboration"
+  },
+  {
+    "where": "C2, C3 (validator warning W17)",
+    "what": "The validator warns that 0.4 and 0.3 in the statements match no recorded number: the symmetric uncertainties (±0.4 stat, ±0.4 sys; ±0.3) can only be recorded as interval bounds, and the second component not at all.",
+    "need": "uncertainty components (confirmed by the validator)",
+    "proposal": "core",
+    "v0.39": "resolved: the statements' ± numbers now match the recorded components; no W17"
+  },
+  {
+    "where": "C4 (warning W24)",
+    "what": "Stating the excluded ranges in the claim is what physicists read; the format pushes them into a table and asks for the 'pattern' instead. Acceptable, but the ranges are the finding.",
+    "need": "range-valued findings",
+    "proposal": "core (with limits)",
+    "v0.39": "resolved: the claim states the ranges, supported by range-valued results"
+  },
+  {
+    "where": "E1.availability",
+    "what": "Restricted by a collaboration's data policy: no reason value fits (`other`).",
+    "need": "availability reason for collaboration-held data",
+    "proposal": "none (other suffices)",
+    "v0.39": "none"
+  },
+  {
+    "where": "D5-D8",
+    "what": "Decay channels are processes (a particle decaying to a final state), not things: none of the new kinds fits, and `method` would misdescribe them. Chemistry has the same need for reactions.",
+    "need": "processes as a definition kind",
+    "proposal": "open: core candidate (physics, chemistry)",
+    "v0.39": "new"
+  }
 ]
