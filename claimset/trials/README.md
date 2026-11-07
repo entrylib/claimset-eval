@@ -21,15 +21,14 @@ Differences from the pilot set:
 
 - `source_spans` name sections, figures and tables of the published paper (`"Results"`, `"Fig 6"`), not `[pN.M]` markers: the papers' texts are not in `papers/text/`. `tools/compare.py` therefore cannot compare source spans for these files.
 - The claims are the converter's reading, checked against the paper but not by its authors. Use them to study the format, not as gold conversions.
-- Some decisions are still forced by the core; each is in the friction file. The largest: the preregistered study's confirmatory tests are left out, because rule 43 needs the registration's date and it could not be read.
+- Some decisions are still forced by the core; each is in the friction file.
 
 ## Results of the second round (0.39)
 
-Of the 63 points of friction from the first round, 24 are resolved and 6 partly resolved by 0.39, 19 are left to extensions, 11 needed nothing and 3 remain open in the core. The second round found 8 more. Warnings fell from 20 to 15 across the seven files.
+Of the 63 points of friction from the first round, 24 are resolved and 6 partly resolved by 0.39, 19 are left to extensions, 11 needed nothing and 3 remain open in the core. The second round found 8 more. One of them, a registered test whose registration date is not at hand, was fixed by revising rule 43: the preregistered study's confirmatory tests are now recorded, without the date, which neither the paper nor the registry gave.
 
 Open in the core:
 
-- registered tests whose registration date is not at hand (rule 43: `planned_at` could be optional when the anchor is `registry`);
 - typed statistics (effect-size kinds), still free text in `conditions`;
 - approximate values ("about 1.5-fold");
 - an intervention's target (a knockdown and the gene it knocks down);

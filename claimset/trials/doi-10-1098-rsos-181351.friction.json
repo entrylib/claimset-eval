@@ -1,10 +1,10 @@
 [
   {
     "where": "C1, C2",
-    "what": "The registered report's confirmatory tests can now be recorded (hypothesis without lab_event, test.registration = B1, the OSF registration's DOI, anchor `registry`), except for one field: rule 43 requires `planned_at`, and neither the paper nor anything this conversion could read gives the registration's date (the OSF API refuses automated reads). Inventing a date is not an option, so the tests were removed again. Validator rules raised with them: ['43']. With anchor `registry`, the registry holds the date: `planned_at` could be optional, or the converter must read the registry.",
+    "what": "The registered report's confirmatory tests are recorded: hypothesis without lab_event, test.registration = B1 (the OSF registration's DOI), anchor `registry`. Neither the paper nor anything this conversion could read gives the registration's date (the OSF API refuses automated reads), so `planned_at` is left out, as rule 43 allows for a registered test (warning 36 asks for it). In the first 0.39 attempt, before rule 43 was revised, the tests had to be removed.",
     "need": "registered tests whose registration date is not at hand",
-    "proposal": "open: core, rule 43 (planned_at optional when the anchor is registry and test.registration names the registration)",
-    "v0.39": "new"
+    "proposal": "core: rule 43 revised (planned_at optional with anchor registry)",
+    "v0.39": "resolved: rule 43 revised; the tests are recorded without the date"
   },
   {
     "where": "C1.hypothesis / planning / test",

@@ -186,6 +186,23 @@
       "type": "causal",
       "role": "principal",
       "novelty": "no_prior_found",
+      "hypothesis": {
+        "outcome": "inconclusive"
+      },
+      "planning": "confirmatory_with_deviations",
+      "test": {
+        "framework": "bayesian",
+        "parameters": {
+          "prior": "default priors of the BayesFactor package (Rouder and Morey)",
+          "threshold": "Jeffreys' scale of evidence",
+          "sample": "80 per cell, 480 in all"
+        },
+        "supported": "the inclusion Bayes factor for preregistration status gives evidence for an effect on Jeffreys' scale",
+        "not_supported": "the inclusion Bayes factor for preregistration status gives evidence against an effect on Jeffreys' scale",
+        "verdict": "judged",
+        "runs": 1,
+        "registration": "B1"
+      },
       "support": [
         {
           "kind": "empirical_quant",
@@ -206,7 +223,12 @@
       "source_spans": [
         "Abstract",
         "Results"
-      ]
+      ],
+      "planned_at_anchor": "registry",
+      "field_provenance": {
+        "test.supported": "inferred",
+        "test.not_supported": "inferred"
+      }
     },
     {
       "id": "C2",
@@ -223,6 +245,23 @@
       "type": "causal",
       "role": "principal",
       "novelty": "no_prior_found",
+      "hypothesis": {
+        "outcome": "inconclusive"
+      },
+      "planning": "confirmatory_with_deviations",
+      "test": {
+        "framework": "bayesian",
+        "parameters": {
+          "prior": "default priors of the BayesFactor package",
+          "threshold": "Jeffreys' scale of evidence",
+          "sample": "80 per cell"
+        },
+        "supported": "the inclusion Bayes factor for familiarity gives evidence for an effect on Jeffreys' scale",
+        "not_supported": "the inclusion Bayes factor for familiarity gives evidence against an effect on Jeffreys' scale",
+        "verdict": "judged",
+        "runs": 1,
+        "registration": "B1"
+      },
       "support": [
         {
           "kind": "empirical_quant",
@@ -235,12 +274,18 @@
       ],
       "limitations": [
         "L1",
-        "L2"
+        "L2",
+        "L4"
       ],
       "provenance": "extracted",
       "source_spans": [
         "Results"
-      ]
+      ],
+      "planned_at_anchor": "registry",
+      "field_provenance": {
+        "test.supported": "inferred",
+        "test.not_supported": "inferred"
+      }
     },
     {
       "id": "C3",
@@ -257,6 +302,7 @@
       "type": "causal",
       "role": "secondary",
       "novelty": "no_prior_found",
+      "planning": "exploratory",
       "support": [
         {
           "kind": "empirical_quant",
@@ -465,6 +511,12 @@
       "description": "Raw data, analysis code, JASP files and materials."
     }
   ],
-  "references": [],
+  "references": [
+    {
+      "id": "B1",
+      "target": "10.17605/OSF.IO/B3K75",
+      "id_type": "doi"
+    }
+  ],
   "open_questions": []
 }
