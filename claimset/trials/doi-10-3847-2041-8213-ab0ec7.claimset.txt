@@ -1,0 +1,40 @@
+CLAIMSET First M87 Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole
+licence CC-BY-3.0; converted from 10.3847/2041-8213/ab0ec7 published by The Event Horizon Telescope Collaboration; contributions C1, C2, C3
+declarations funding: none | competing interests: Not stated in the converted text.
+on behalf of Event Horizon Telescope Collaboration
+
+DEFINITIONS
+D1 [entity] M87*: The compact radio source at the centre of the galaxy M87.
+D2 [entity] Event Horizon Telescope: A global very-long-baseline interferometer of radio telescopes observing at a wavelength of 1.3 mm.
+D3 [data] 2017 EHT observations of M87: Interferometric data of M87 at 1.3 mm from the 2017 observing campaign of the Event Horizon Telescope.
+D4 [method] image reconstruction: Reconstruction of images of M87* from the interferometric data by several independent methods and teams.
+D5 [variable] ring diameter: Diameter of the bright emission ring in the reconstructed images. [unit uas]
+D6 [theory] Kerr black hole shadow: The dark region and surrounding bright ring that general relativity predicts for a rotating (Kerr) black hole seen through the emission of nearby plasma.
+D7 [method] GRMHD model comparison: Comparison of the data with a library of general-relativistic magnetohydrodynamic simulations of accretion flows, from which the black hole's mass is inferred.
+D8 [variable] central mass: Mass of the compact object at the centre of M87, in solar masses. [unit solar masses]
+
+CLAIMS
+C1 [descriptive; principal; support: empirical_obs E1 (E1.R1, E1.R2, E1.R3)]
+  Images of [[D1:M87*]] from the [[D2:Event Horizon Telescope]] show a bright ring, brighter in the south, with a [[D5:ring diameter]] of 42 ± 3 μas around a dark central region.
+C2 [interpretive; principal; support: empirical_obs E1 (E1.R1), argument W1; uses C1]
+  The size and shape of the ring around [[D1:M87*]] are consistent with the [[D6:Kerr black hole shadow]] that general relativity predicts.
+C3 [descriptive; principal; support: empirical_quant E2 (E2.R1); uses C1]
+  From the [[D7:GRMHD model comparison]], the [[D8:central mass]] of [[D1:M87*]] is (6.5 ± 0.7) × 10^9 solar masses.
+
+EVIDENCE
+E1 [observation; data_origin primary] Images of M87* reconstructed from the 2017 1.3 mm EHT data by independent methods and teams.
+  setup: studied D1; cases D3; procedure D2, D4; lens D5
+  record: image; in A1; Reconstructed 1.3 mm image of M87*
+  E1.R1 a bright ring around a dark central region = yes read from A1, precision as the source reports it
+  E1.R2 D5 = 42 ± 3 (unspecified) uas
+  E1.R3 the brighter side of the ring = south read from A1, precision as the source reports it
+E2 [quant; design observational; data_origin primary] The black hole's mass inferred by comparing the EHT data with general-relativistic simulations of the emission.
+  setup: studied D1; cases D3; procedure D7; lens D8
+  derived from E1 (reanalysis)
+  E2.R1 D8 = 6500000000 ± 700000000 (unspecified) solar masses
+
+WARRANTS
+W1 [abductive] General relativity predicts a ring of a size set by the black hole's mass, around a darker region; a ring of that size and shape is what a Kerr black hole would show.
+
+ARTEFACTS
+A1 [figure, specimen] The source's image of M87* at 1.3 mm: a bright ring, brighter in the south, around a dark central region.

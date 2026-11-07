@@ -1,0 +1,44 @@
+[
+  {
+    "where": "E1, C1",
+    "what": "Observation test: the image is evidence of profile `observation`, a record of kind `image` in a `specimen` figure; the ring's presence, diameter and brighter side are its results. It fits; the boundary to `quant` was decided by the rule in §3.4: the diameter is measured off the image (observation), the mass is fitted with a model across the data (quant, derived from E1).",
+    "need": "direct observation as support",
+    "proposal": "core: profile observation (v0.39)",
+    "v0.39": "new: resolved by profile observation"
+  },
+  {
+    "where": "E1.R2",
+    "what": "The diameter is measured from images with fitting procedures, not read off by eye; whether that is still observation or already quant depends on reading 'measured off a record' generously. The spec's line holds, but a stricter reader would put R2 in E2.",
+    "need": "boundary of observation and quant for measured values",
+    "proposal": "open: watch in conversions; the spec's rule may need an example of a fitted measurement",
+    "v0.39": "new"
+  },
+  {
+    "where": "E1.R2, E2.R1",
+    "what": "The ± is not explained in the abstract (68% intervals in the paper body, which this conversion did not read): recorded as `unspecified`.",
+    "need": null,
+    "proposal": "none (the converter should read the body)",
+    "v0.39": "new"
+  },
+  {
+    "where": "E2",
+    "what": "The GRMHD simulation library behind the mass is simulation evidence of its own (in a companion paper); here it is a method, and the mass a quant result. Citing the companion paper would be `cited` support.",
+    "need": null,
+    "proposal": "none",
+    "v0.39": "new"
+  },
+  {
+    "where": "C3 (warning W17)",
+    "what": "The validator could not read '(6.5 ± 0.7) × 10^9' and reported the numbers as unsourced: a bug in its number reader, fixed (scientific notation is normalised before matching).",
+    "need": null,
+    "proposal": "none (validator bug, fixed)",
+    "v0.39": "new: fixed"
+  },
+  {
+    "where": "D2, paper",
+    "what": "An instrument (the EHT) is an `entity`; the collaboration is in `paper.collaborations`. Both fit.",
+    "need": null,
+    "proposal": "none",
+    "v0.39": "new"
+  }
+]

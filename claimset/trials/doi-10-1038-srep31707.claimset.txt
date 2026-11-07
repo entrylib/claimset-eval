@@ -22,10 +22,12 @@ D11 [intervention] mock transfection: Transfection reagent without siRNA; with s
 CLAIMS
 C1 [descriptive; principal; support: empirical_quant E1 (E1.R1, E1.R2, E1.R3); limitations L1]
   Of the [[D2:adhesome siRNA screen]]'s 569 genes, 30 increased and 11 decreased [[D3:focal adhesion size]] in [[D1:MCF7-IGF1R cells]] when knocked down.
-C2 [causal; principal; support: empirical_quant E2; limitations L2]
+C2 [causal; principal; support: empirical_quant E2; uses C4; limitations L2]
   Knockdown of each of the [[D6:candidate genes]] enlarged focal adhesions and reduced [[D4:IGF1-induced migration speed]] of [[D1:MCF7-IGF1R cells]] compared with [[D11:mock transfection]].
-C3 [causal; principal; support: empirical_quant E3; limitations L2]
+C3 [causal; principal; support: empirical_quant E3; uses C4; limitations L2]
   Compared with [[D11:mock transfection]], three of the [[D6:candidate genes]] ([[D8:PPP1R12B knockdown]], [[D10:HIPK3 knockdown]] and [[D9:RAC2 knockdown]]) increased [[D5:traction force]] and slowed its turnover in [[D1:MCF7-IGF1R cells]].
+C4 [descriptive; supporting; not_applicable; support: empirical_obs E4 (E4.R1)]
+  The siRNA knockdowns of the [[D6:candidate genes]] reduced the target proteins in [[D1:MCF7-IGF1R cells]].
 
 EVIDENCE
 E1 [quant; design experiment; data_origin primary; n 569] Primary siRNA screen of 569 adhesion genes: focal adhesion size after nocodazole wash-out, per knockdown against mock.
@@ -46,7 +48,14 @@ E3 [quant; design experiment; data_origin primary] Traction force microscopy on 
   | r2 | D8 | 15 | 1.5 |
   | r3 | D10 | 7 | 1.5 |
   | r4 | D9 | 19 | 2 |
+E4 [observation; data_origin primary] Western blots of target proteins after siRNA knockdown in MCF7-IGF1R cells.
+  setup: studied D6; cases D1; procedure D2
+  record: image; in A1; Western blots of the knocked-down proteins against controls
+  E4.R1 knockdown reduced the target protein = yes read from A1, precision as the source reports it
 
 LIMITATIONS
 L1 [measurement; affects C1; could_bias_magnitude; mitigation partial] Hits were called on distribution shifts with fixed D and p thresholds over thousands of adhesions per well, so a call reflects image counts more than the number of independent experiments.
 L2 [sample_size; affects C2, C3; reduces_precision; mitigation none] Force and migration results rest on two independent experiments per knockdown and 7 to 23 cells per condition.
+
+ARTEFACTS
+A1 [figure, specimen] Supplementary Figure S1 of the source: Western blots confirming the efficiency of the siRNA knockdowns.

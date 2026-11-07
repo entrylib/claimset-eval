@@ -206,6 +206,12 @@
       "term": "heteroaryl and other aryl halide scope",
       "kind": "substance",
       "definition": "Products 36-42: heteroaryl halides, aryl iodides and aryl chlorides."
+    },
+    {
+      "id": "D16",
+      "term": "product characterisation",
+      "kind": "method",
+      "definition": "1H and 13C NMR spectroscopy and high-resolution mass spectrometry of each isolated product; single-crystal X-ray diffraction of product 7'."
     }
   ],
   "claims": [
@@ -244,6 +250,9 @@
       "source_spans": [
         "Abstract",
         "Scheme 1"
+      ],
+      "depends_on": [
+        "C4"
       ]
     },
     {
@@ -298,6 +307,34 @@
       "provenance": "extracted",
       "source_spans": [
         "Mechanistic studies"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "The structures of the [[D3:1,3-vinylarylated cycloalkanes]] were assigned by [[D16:product characterisation]], that of 7' by X-ray crystallography.",
+      "about": {
+        "subject": "D3",
+        "relation": "were characterised by",
+        "object": "D16",
+        "comparator": null,
+        "conditions": []
+      },
+      "type": "descriptive",
+      "role": "supporting",
+      "novelty": "not_applicable",
+      "support": [
+        {
+          "kind": "empirical_obs",
+          "evidence": "E4",
+          "results": [
+            "E4.R1",
+            "E4.R2"
+          ]
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "ESI"
       ]
     }
   ],
@@ -526,6 +563,52 @@
       "source_spans": [
         "Scheme 3"
       ]
+    },
+    {
+      "id": "E4",
+      "profile": "observation",
+      "data_origin": "primary",
+      "preregistered": false,
+      "description": "Characterisation of the isolated products by NMR and HRMS, and of 7' by X-ray crystallography.",
+      "setup": {
+        "studied": [
+          "D3"
+        ],
+        "procedure": [
+          "D16"
+        ]
+      },
+      "records": [
+        {
+          "kind": "spectrum",
+          "artefact": "A1",
+          "description": "1H and 13C NMR spectra and HRMS of each product"
+        },
+        {
+          "kind": "structure",
+          "artefact": "A1",
+          "description": "Single-crystal X-ray structure of 7'"
+        }
+      ],
+      "results": [
+        {
+          "id": "R1",
+          "variable": "structures assigned from NMR and HRMS",
+          "value": true
+        },
+        {
+          "id": "R2",
+          "variable": "structure of 7' determined by X-ray crystallography",
+          "value": true
+        }
+      ],
+      "availability": {
+        "level": "public",
+        "comment": "Supplementary information, spectra as images."
+      },
+      "source_spans": [
+        "ESI"
+      ]
     }
   ],
   "warrants": [],
@@ -570,7 +653,19 @@
       ]
     }
   ],
-  "artefacts": [],
+  "artefacts": [
+    {
+      "id": "A1",
+      "kind": "data",
+      "uri": "https://doi.org/10.1039/d0sc01471k",
+      "licence": "CC-BY-3.0",
+      "description": "Electronic supplementary information of the source: NMR spectra and HRMS of the products, and the X-ray structure of 7'.",
+      "availability": {
+        "level": "public",
+        "comment": "Supplementary information, spectra as images; no raw data (FIDs) deposited."
+      }
+    }
+  ],
   "references": [],
   "open_questions": []
 }

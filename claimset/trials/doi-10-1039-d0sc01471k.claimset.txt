@@ -18,10 +18,13 @@ D12 [substance] cyclic oxalates scope: Products 4-14: varied five- and six-membe
 D13 [substance] alkyne scope: Products 19-29: varied terminal aliphatic alkynes, including late-stage examples.
 D14 [substance] aryl bromide scope: Products 30-35: varied aryl bromides.
 D15 [substance] heteroaryl and other aryl halide scope: Products 36-42: heteroaryl halides, aryl iodides and aryl chlorides.
+D16 [method] product characterisation: 1H and 13C NMR spectroscopy and high-resolution mass spectrometry of each isolated product; single-crystal X-ray diffraction of product 7'.
 
 CLAIMS
-C1 [descriptive; principal; support: empirical_quant E1 (E1.R1); limitations L1, L2]
+C1 [descriptive; principal; support: empirical_quant E1 (E1.R1); uses C4; limitations L1, L2]
   Under the [[D2:standard conditions]], the [[D1:vinylation/arylation cascade]] gives [[D3:1,3-vinylarylated cycloalkanes]] from five- and six-membered cyclic oxalates, terminal aliphatic alkynes and aryl halides in 36% to 77% [[D4:yield]].
+C4 [descriptive; supporting; not_applicable; support: empirical_obs E4 (E4.R1, E4.R2)]
+  The structures of the [[D3:1,3-vinylarylated cycloalkanes]] were assigned by [[D16:product characterisation]], that of 7' by X-ray crystallography.
 C2 [causal; secondary; not_applicable; support: empirical_quant E2]
   Compared with the [[D2:standard conditions]], each of the [[D5:control reactions]] that removes the photocatalyst, the nickel catalyst or light gives 0% [[D4:yield]].
 C3 [mechanistic; secondary; not_applicable; support: empirical_quant E3; limitations L3]
@@ -48,8 +51,17 @@ E2 [quant; design experiment; data_origin primary] Optimisation and control reac
 E3 [quant; design experiment; data_origin primary] Radical clock with ethynylcyclopropane gave allene 48; a stoichiometric aryl-Ni(II) complex did not give the 1,3-product; aryl alkynes gave 1,2-alkylarylation instead.
   setup: studied D1, D9; procedure D10; lens D4
   E3.R1 allene 48 formed from ethynylcyclopropane = yes
+E4 [observation; data_origin primary] Characterisation of the isolated products by NMR and HRMS, and of 7' by X-ray crystallography.
+  setup: studied D3; procedure D16
+  record: spectrum; in A1; 1H and 13C NMR spectra and HRMS of each product
+  record: structure; in A1; Single-crystal X-ray structure of 7'
+  E4.R1 structures assigned from NMR and HRMS = yes
+  E4.R2 structure of 7' determined by X-ray crystallography = yes
 
 LIMITATIONS
 L1 [sampling; affects C1; reduces_transferability; mitigation none] Four- and seven-membered, bicyclic and linear oxalates and internal alkynes fail, so the scope is limited to five- and six-membered rings and terminal alkynes.
 L2 [measurement; affects C1; reduces_transferability; mitigation none] Products form as near 1:1 diastereomer mixtures; yields combine both diastereomers.
 L3 [other; affects C3; could_reverse; mitigation none] The authors note that a nickel(0) oxidative-addition pathway cannot be excluded.
+
+ARTEFACTS
+A1 [data] Electronic supplementary information of the source: NMR spectra and HRMS of the products, and the X-ray structure of 7'.

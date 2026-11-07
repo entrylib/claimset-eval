@@ -1,0 +1,391 @@
+{
+  "schema_version": "0.39",
+  "paper": {
+    "title": "First M87 Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole",
+    "licence": "CC-BY-3.0",
+    "classification": {
+      "keywords": [
+        "black hole",
+        "M87",
+        "Event Horizon Telescope",
+        "very long baseline interferometry",
+        "black hole shadow",
+        "general relativity"
+      ]
+    },
+    "declarations": {
+      "funding": [],
+      "competing_interests": "Not stated in the converted text."
+    },
+    "contributions": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "contribution_record": "complete",
+    "origin": "converted",
+    "converted_from": {
+      "source_id": "10.3847/2041-8213/ab0ec7",
+      "id_type": "doi",
+      "source_version": "published",
+      "source_licence": "CC-BY-3.0",
+      "source_authors": [
+        {
+          "name": "The Event Horizon Telescope Collaboration"
+        }
+      ],
+      "source_status_at_conversion": "active",
+      "converter": "P1",
+      "date": "2026-11-07"
+    },
+    "collaborations": [
+      {
+        "name": "Event Horizon Telescope Collaboration"
+      }
+    ]
+  },
+  "contributors": [
+    {
+      "id": "P1",
+      "type": "agent",
+      "name": "EntryLib field-trial converter",
+      "positions": [
+        "converter"
+      ],
+      "models": [
+        {
+          "model": "M1",
+          "role": "sole"
+        }
+      ],
+      "credit_roles": [
+        "data_curation"
+      ],
+      "ai_tasks": [
+        {
+          "task": "json_preparation",
+          "extent": "full"
+        }
+      ],
+      "tools": [
+        "web_search",
+        "file_access"
+      ],
+      "record_source": "harness"
+    },
+    {
+      "id": "P2",
+      "type": "organisation",
+      "name": "OpenForecast Ltd",
+      "registration": "00000000",
+      "positions": [
+        "conversion_guarantor"
+      ],
+      "credit_roles": [
+        "validation"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "M1",
+      "provider": "Anthropic",
+      "name": "Claude",
+      "version": "opus-5-5",
+      "identifier": "claude-opus-5-5",
+      "weights": "api_only",
+      "accessed": "2026-11-07"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D1",
+      "term": "M87*",
+      "kind": "entity",
+      "definition": "The compact radio source at the centre of the galaxy M87."
+    },
+    {
+      "id": "D2",
+      "term": "Event Horizon Telescope",
+      "kind": "entity",
+      "definition": "A global very-long-baseline interferometer of radio telescopes observing at a wavelength of 1.3 mm."
+    },
+    {
+      "id": "D3",
+      "term": "2017 EHT observations of M87",
+      "kind": "data",
+      "definition": "Interferometric data of M87 at 1.3 mm from the 2017 observing campaign of the Event Horizon Telescope."
+    },
+    {
+      "id": "D4",
+      "term": "image reconstruction",
+      "kind": "method",
+      "definition": "Reconstruction of images of M87* from the interferometric data by several independent methods and teams."
+    },
+    {
+      "id": "D5",
+      "term": "ring diameter",
+      "kind": "variable",
+      "definition": "Diameter of the bright emission ring in the reconstructed images.",
+      "unit": "uas"
+    },
+    {
+      "id": "D6",
+      "term": "Kerr black hole shadow",
+      "kind": "theory",
+      "definition": "The dark region and surrounding bright ring that general relativity predicts for a rotating (Kerr) black hole seen through the emission of nearby plasma."
+    },
+    {
+      "id": "D7",
+      "term": "GRMHD model comparison",
+      "kind": "method",
+      "definition": "Comparison of the data with a library of general-relativistic magnetohydrodynamic simulations of accretion flows, from which the black hole's mass is inferred."
+    },
+    {
+      "id": "D8",
+      "term": "central mass",
+      "kind": "variable",
+      "definition": "Mass of the compact object at the centre of M87, in solar masses.",
+      "unit": "solar masses"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Images of [[D1:M87*]] from the [[D2:Event Horizon Telescope]] show a bright ring, brighter in the south, with a [[D5:ring diameter]] of 42 ± 3 μas around a dark central region.",
+      "about": {
+        "subject": "D1",
+        "relation": "shows",
+        "object": "D5",
+        "comparator": null,
+        "conditions": [
+          "D2"
+        ]
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_obs",
+          "evidence": "E1",
+          "results": [
+            "E1.R1",
+            "E1.R2",
+            "E1.R3"
+          ]
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Abstract"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "The size and shape of the ring around [[D1:M87*]] are consistent with the [[D6:Kerr black hole shadow]] that general relativity predicts.",
+      "about": {
+        "subject": "D1",
+        "relation": "is consistent with",
+        "object": "D6",
+        "comparator": null,
+        "conditions": []
+      },
+      "type": "interpretive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_obs",
+          "evidence": "E1",
+          "results": [
+            "E1.R1"
+          ]
+        },
+        {
+          "kind": "argument",
+          "warrant": "W1"
+        }
+      ],
+      "depends_on": [
+        "C1"
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Abstract"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "From the [[D7:GRMHD model comparison]], the [[D8:central mass]] of [[D1:M87*]] is (6.5 ± 0.7) × 10^9 solar masses.",
+      "about": {
+        "subject": "D1",
+        "relation": "has",
+        "object": "D8",
+        "comparator": null,
+        "conditions": []
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E2",
+          "results": [
+            "E2.R1"
+          ]
+        }
+      ],
+      "depends_on": [
+        "C1"
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Abstract"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "profile": "observation",
+      "data_origin": "primary",
+      "preregistered": false,
+      "description": "Images of M87* reconstructed from the 2017 1.3 mm EHT data by independent methods and teams.",
+      "setup": {
+        "studied": [
+          "D1"
+        ],
+        "cases": [
+          "D3"
+        ],
+        "procedure": [
+          "D2",
+          "D4"
+        ],
+        "lens": [
+          "D5"
+        ]
+      },
+      "records": [
+        {
+          "kind": "image",
+          "artefact": "A1",
+          "description": "Reconstructed 1.3 mm image of M87*"
+        }
+      ],
+      "results": [
+        {
+          "id": "R1",
+          "variable": "a bright ring around a dark central region",
+          "value": true,
+          "read_from": {
+            "artefact": "A1",
+            "precision": "as the source reports it"
+          }
+        },
+        {
+          "id": "R2",
+          "variable": "D5",
+          "value": 42,
+          "unit": "uas",
+          "uncertainty": [
+            {
+              "kind": "unspecified",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "variable": "the brighter side of the ring",
+          "value": "south",
+          "read_from": {
+            "artefact": "A1",
+            "precision": "as the source reports it"
+          }
+        }
+      ],
+      "availability": {
+        "level": "public",
+        "comment": "The source states that EHT data and images were released; this conversion did not check their location."
+      },
+      "source_spans": [
+        "Abstract"
+      ]
+    },
+    {
+      "id": "E2",
+      "profile": "quant",
+      "design": "observational",
+      "data_origin": "primary",
+      "preregistered": false,
+      "description": "The black hole's mass inferred by comparing the EHT data with general-relativistic simulations of the emission.",
+      "derived_from": [
+        {
+          "evidence": "E1",
+          "how": "reanalysis"
+        }
+      ],
+      "setup": {
+        "studied": [
+          "D1"
+        ],
+        "cases": [
+          "D3"
+        ],
+        "procedure": [
+          "D7"
+        ],
+        "lens": [
+          "D8"
+        ]
+      },
+      "results": [
+        {
+          "id": "R1",
+          "variable": "D8",
+          "value": 6500000000.0,
+          "unit": "solar masses",
+          "uncertainty": [
+            {
+              "kind": "unspecified",
+              "value": 700000000.0
+            }
+          ]
+        }
+      ],
+      "availability": {
+        "level": "not_stated"
+      },
+      "source_spans": [
+        "Abstract"
+      ]
+    }
+  ],
+  "warrants": [
+    {
+      "id": "W1",
+      "reasoning": "abductive",
+      "premises": [],
+      "text": "General relativity predicts a ring of a size set by the black hole's mass, around a darker region; a ring of that size and shape is what a Kerr black hole would show."
+    }
+  ],
+  "limitations": [],
+  "artefacts": [
+    {
+      "id": "A1",
+      "kind": "figure",
+      "function": "specimen",
+      "uri": "https://doi.org/10.3847/2041-8213/ab0ec7",
+      "licence": "CC-BY-3.0",
+      "description": "The source's image of M87* at 1.3 mm: a bright ring, brighter in the south, around a dark central region.",
+      "availability": {
+        "level": "public"
+      }
+    }
+  ],
+  "references": [],
+  "open_questions": []
+}

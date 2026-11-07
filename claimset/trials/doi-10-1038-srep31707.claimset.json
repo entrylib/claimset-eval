@@ -275,6 +275,9 @@
       "source_spans": [
         "Abstract",
         "Results"
+      ],
+      "depends_on": [
+        "C4"
       ]
     },
     {
@@ -307,6 +310,38 @@
       "provenance": "extracted",
       "source_spans": [
         "Abstract",
+        "Results"
+      ],
+      "depends_on": [
+        "C4"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "The siRNA knockdowns of the [[D6:candidate genes]] reduced the target proteins in [[D1:MCF7-IGF1R cells]].",
+      "about": {
+        "subject": "D6",
+        "relation": "reduce",
+        "object": "the target proteins",
+        "comparator": null,
+        "conditions": [
+          "D1"
+        ]
+      },
+      "type": "descriptive",
+      "role": "supporting",
+      "novelty": "not_applicable",
+      "support": [
+        {
+          "kind": "empirical_obs",
+          "evidence": "E4",
+          "results": [
+            "E4.R1"
+          ]
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
         "Results"
       ]
     }
@@ -505,6 +540,50 @@
         "Results",
         "Fig 6"
       ]
+    },
+    {
+      "id": "E4",
+      "profile": "observation",
+      "data_origin": "primary",
+      "preregistered": false,
+      "description": "Western blots of target proteins after siRNA knockdown in MCF7-IGF1R cells.",
+      "setup": {
+        "studied": [
+          "D6"
+        ],
+        "cases": [
+          "D1"
+        ],
+        "procedure": [
+          "D2"
+        ]
+      },
+      "records": [
+        {
+          "kind": "image",
+          "artefact": "A1",
+          "description": "Western blots of the knocked-down proteins against controls"
+        }
+      ],
+      "results": [
+        {
+          "id": "R1",
+          "variable": "knockdown reduced the target protein",
+          "value": true,
+          "read_from": {
+            "artefact": "A1",
+            "precision": "as the source reports it"
+          }
+        }
+      ],
+      "availability": {
+        "level": "public",
+        "comment": "Blot images in the supplementary information; uncropped originals not stated."
+      },
+      "source_spans": [
+        "Results",
+        "Supplementary Fig S1"
+      ]
     }
   ],
   "warrants": [],
@@ -539,7 +618,20 @@
       ]
     }
   ],
-  "artefacts": [],
+  "artefacts": [
+    {
+      "id": "A1",
+      "kind": "figure",
+      "function": "specimen",
+      "uri": "https://doi.org/10.1038/srep31707",
+      "licence": "CC-BY-4.0",
+      "description": "Supplementary Figure S1 of the source: Western blots confirming the efficiency of the siRNA knockdowns.",
+      "availability": {
+        "level": "public",
+        "comment": "In the article's supplementary information."
+      }
+    }
+  ],
   "references": [],
   "open_questions": []
 }

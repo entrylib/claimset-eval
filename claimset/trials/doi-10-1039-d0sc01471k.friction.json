@@ -89,5 +89,12 @@
     "need": null,
     "proposal": "none",
     "v0.39": "none"
+  },
+  {
+    "where": "E4, C4",
+    "what": "Observation test: product characterisation (NMR, HRMS, an X-ray structure) is evidence of profile `observation` with records of kind `spectrum` and `structure`, supporting the scope claim through a supporting claim. Results say only that structures were assigned: per-compound spectra (shifts, m/z) are a table keyed by structures, for the synthesis extension.",
+    "need": "direct observation as support",
+    "proposal": "core: profile observation (v0.39)",
+    "v0.39": "new: resolved by profile observation"
   }
 ]
