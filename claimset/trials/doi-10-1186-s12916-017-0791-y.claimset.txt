@@ -1,6 +1,6 @@
 CLAIMSET A randomised controlled trial of dietary improvement for adults with major depression (the 'SMILES' trial)
 licence CC-BY-4.0; converted from 10.1186/s12916-017-0791-y published by Felice N. Jacka, Adrienne O'Neil, Michael Berk; contributions C1, C2
-declarations funding: National Health and Medical Research Council (NHMRC) award 1021347; Woolworths (food vouchers); Meat and Livestock Australia (biochemistry) | competing interests: Several authors report grants, honoraria or consultancy from pharmaceutical companies and other organisations; the sponsors had no role in design, analysis or writing. | ethics: Human Research Ethics Committee, St Vincent's Health, approved; Human Research Ethics Committee, Barwon Health, approved | consent: Written informed consent from all participants.
+declarations funding: National Health and Medical Research Council (NHMRC) award 1021347; Woolworths in kind (role: Supplied food vouchers; no role in design, analysis or writing.); Meat and Livestock Australia in kind (role: Paid for biochemistry analyses; no role in design, analysis or writing.) | competing interests: Several authors report grants, honoraria or consultancy from pharmaceutical companies and other organisations; the sponsors had no role in design, analysis or writing. | ethics: Human Research Ethics Committee, St Vincent's Health, approved; Human Research Ethics Committee, Barwon Health, approved | consent: Written informed consent from all participants.
 
 DEFINITIONS
 D1 [intervention] dietary support: Seven individual sessions of about 60 minutes with a clinical dietitian over 12 weeks (weekly for four, then fortnightly), promoting a modified Mediterranean diet (ModiMedDiet), added to usual treatment.
@@ -13,20 +13,22 @@ D7 [design] single-blind parallel-group trial: Two-arm, 12-week randomised trial
 D8 [intervention] trial arm: The arms of the trial. [members D1, D2]
 
 CLAIMS
-C1 [causal; principal; support: empirical_quant E1 (E1.R1, E1.R2); limitations L1, L2, L3]
+C1 [causal; principal; support: empirical_quant E1 (E1.R1, E1.R2); limitations L1, L2, L3, L5; planning confirmatory_with_deviations; outcome supported]
   In [[D3:adults with moderate to severe depression and poor diet]], [[D1:dietary support]] reduced [[D4:MADRS]] scores at 12 weeks more than [[D2:social support]], by 7.1 points.
+  test: frequentist; alpha 0.05; test mixed model for repeated measures: difference between arms in MADRS change from baseline to 12 weeks; sides two-sided; correction none (single primary outcome); sample 176 planned; 67 randomised; supported if MADRS falls more with dietary support than with social support at 12 weeks, p < alpha; not supported if MADRS falls less with dietary support, or the difference is not significant with adequate power; verdict judged
+  plan: registered B1; planned 2012-02-29T00:00:00Z; anchor registry
 C2 [causal; principal; support: empirical_quant E1; limitations L2]
   More participants reached [[D5:remission]] with [[D1:dietary support]] than with [[D2:social support]] (32.3% against 8.0%) among [[D3:adults with moderate to severe depression and poor diet]].
 C3 [causal; secondary; support: empirical_quant E1 (E1.R4); limitations L4]
   [[D1:dietary support]] reduced [[D6:HADS depression]] scores more than [[D2:social support]] in [[D3:adults with moderate to severe depression and poor diet]].
 
 EVIDENCE
-E1 [quant; design experiment; data_origin primary; n 67; preregistered] SMILES: 12-week randomised trial of dietary support against social support, 67 adults with major depression, two sites in Victoria, Australia; registered ACTRN12612000251820.
+E1 [quant; design experiment; data_origin primary; n 67; preregistered] SMILES: 12-week randomised trial of dietary support against social support, 67 adults with major depression, two sites in Victoria, Australia.
   setup: studied D1, D2; cases D3; procedure D7; lens D4, D5, D6
-  E1.R1 D4 = -7.1 1 95% interval -10.4 to -3.9 n 67 {D8: D1, comparator: D2, statistic: difference in change from baseline, MMRM}
-  E1.R2 D4 = -1.16 1 95% interval -1.73 to -0.59 {D8: D1, comparator: D2, statistic: Cohen's d}
-  E1.R3 D5 = 4.1 95% interval 2.3 to 27.8 {D8: D1, comparator: D2, statistic: number needed to treat}
-  E1.R4 D6 = -2.3 95% interval -4.4 to -0.2 {D8: D1, comparator: D2, statistic: difference in change from baseline}
+  E1.R1 D4 = -7.1 1 95% confidence interval -10.4 to -3.9 n 67 {D8: D1, comparator: D2, statistic: difference in change from baseline, MMRM}
+  E1.R2 D4 = -1.16 1 95% confidence interval -1.73 to -0.59 {D8: D1, comparator: D2, statistic: Cohen's d}
+  E1.R3 D5 = 4.1 95% confidence interval 2.3 to 27.8 {D8: D1, comparator: D2, statistic: number needed to treat}
+  E1.R4 D6 = -2.3 95% confidence interval -4.4 to -0.2 {D8: D1, comparator: D2, statistic: difference in change from baseline}
   E1.T1 Remission at 12 weeks by arm, among completers
   | row | D8 | participants in remission (1) | completers (1) | D5 {statistic: proportion} (%) |
   | r1 | D1 | 10 | 31 | 32.3 |
@@ -41,3 +43,7 @@ L1 [measurement; affects C1, C2, C3; could_bias_magnitude; mitigation partial] P
 L2 [sample_size; affects C1, C2; could_bias_magnitude; mitigation none] 67 were randomised against a planned 176, which may inflate the effect size.
 L3 [data_quality; affects C1, C2; could_bias_magnitude; mitigation partial] Completion differed between arms (94% with dietary support, 74% with social support).
 L4 [analytic_flexibility; affects C3; could_reverse; mitigation none] Secondary outcomes were not adjusted for multiple comparisons.
+L5 [deviation; affects C1; reduces_precision; mitigation none] The trial randomised 67 participants of the 176 its registration planned.
+
+REFERENCES
+B1 anzctr:ACTRN12612000251820 (curie)

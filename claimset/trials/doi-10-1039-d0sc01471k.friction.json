@@ -1,80 +1,93 @@
 [
- {
-  "where": "D2-D3, E1",
-  "what": "Compounds (39 products, reagents, catalysts) have no kind and no structure. They became `other` and text. SMILES/InChI, CAS numbers and stereochemistry are the identity of a compound and are what a chemist would search on.",
-  "need": "substances as definition kinds with structure identifiers",
-  "proposal": "core (kind `substance`) + extension: synthesis (SMILES, InChI, stereo)"
- },
- {
-  "where": "E1.T1",
-  "what": "The scope is a table of compounds and yields. I collapsed it to ranges per class because one row per compound would need 39 definitions just to label rows. A compound table (structure, yield, dr, ee) is the core result of a methods paper.",
-  "need": "substrate-scope tables keyed by structures",
-  "proposal": "extension: synthesis"
- },
- {
-  "where": "D2",
-  "what": "Reaction conditions (equivalents, mol%, solvent, concentration, temperature, light source, time) are a structured recipe; as text they cannot be compared across papers.",
-  "need": "reaction conditions",
-  "proposal": "extension: synthesis"
- },
- {
-  "where": "D4, E2.R1",
-  "what": "Yield kind matters: isolated vs crude NMR vs GC with internal standard. The variable's text carries it.",
-  "need": "yield type",
-  "proposal": "extension: synthesis"
- },
- {
-  "where": "L2, D3",
-  "what": "Selectivity (dr 1:1-1:1.2, E/Z, regioisomer ratio) is a ratio, not a number; the format has no ratio value.",
-  "need": "ratios as values",
-  "proposal": "extension: synthesis (core could add a ratio value, but only chemistry and genetics need it)"
- },
- {
-  "where": "E1.availability",
-  "what": "Characterisation data (NMR spectra, HRMS, X-ray for 7') live in the ESI PDF. No availability level says 'in the supplement as images'; on_request is wrong, open is too strong. NMR FIDs would be the open data.",
-  "need": "supplementary-information availability",
-  "proposal": "core (availability level: supplementary)"
- },
- {
-  "where": "E3",
-  "what": "Mechanistic evidence is a set of qualitative outcomes (allene formed, product not formed). Recorded as a boolean result; acceptable.",
-  "need": null,
-  "proposal": "none"
- },
- {
-  "where": "E1-E3 n",
-  "what": "Each scope entry is a single run; replicates are not stated. The format cannot ask whether yields were reproduced.",
-  "need": "replicate counts",
-  "proposal": "extension: synthesis (the same field as wet-lab)"
- },
- {
-  "where": "C3 type",
-  "what": "There is no claim type for a reaction mechanism: `causal` was used. Mechanistic claims are the second kind of claim in synthesis and catalysis papers (and in biochemistry).",
-  "need": "mechanistic claims",
-  "proposal": "core (claim type) — or accept causal"
- },
- {
-  "where": "L1",
-  "what": "Failed substrates are the scope's boundary; the limitation category for 'the method does not work on X' had to be `sampling`. Negative scope entries deserve their own place.",
-  "need": "negative scope results",
-  "proposal": "extension: synthesis"
- },
- {
-  "where": "C1 (warning W17)",
-  "what": "The yield range 36-77% matches a table's min and max columns, but the validator checks numbers only against cells, and its unit-blind percent reading (see BUGS) also fails here.",
-  "need": "range-valued findings",
-  "proposal": "core (with limits)"
- },
- {
-  "where": "C2, C3 novelty (warning W7)",
-  "what": "Control experiments and routine mechanistic probes are not novel findings, yet novelty is required and has no 'not applicable' value; `extension` then asks for the work extended.",
-  "need": "novelty not applicable to secondary claims",
-  "proposal": "core (optional novelty for secondary claims, or a value not_applicable)"
- },
- {
-  "where": "C3 figures",
-  "what": "Type `mechanistic` fits; mechanism diagrams (catalytic cycles) are a figure the format can only reference.",
-  "need": null,
-  "proposal": "none"
- }
+  {
+    "where": "D2-D3, E1",
+    "what": "Compounds (39 products, reagents, catalysts) have no kind and no structure. They became `other` and text. SMILES/InChI, CAS numbers and stereochemistry are the identity of a compound and are what a chemist would search on.",
+    "need": "substances as definition kinds with structure identifiers",
+    "proposal": "core (kind `substance`) + extension: synthesis (SMILES, InChI, stereo)",
+    "v0.39": "partly resolved: products and substrate classes are `substance`; structures (SMILES, InChI, stereo) are for the synthesis extension"
+  },
+  {
+    "where": "E1.T1",
+    "what": "The scope is a table of compounds and yields. I collapsed it to ranges per class because one row per compound would need 39 definitions just to label rows. A compound table (structure, yield, dr, ee) is the core result of a methods paper.",
+    "need": "substrate-scope tables keyed by structures",
+    "proposal": "extension: synthesis",
+    "v0.39": "partly resolved: yields are ranges per class and overall; a table keyed by structures is for the synthesis extension"
+  },
+  {
+    "where": "D2",
+    "what": "Reaction conditions (equivalents, mol%, solvent, concentration, temperature, light source, time) are a structured recipe; as text they cannot be compared across papers.",
+    "need": "reaction conditions",
+    "proposal": "extension: synthesis",
+    "v0.39": "extension: synthesis"
+  },
+  {
+    "where": "D4, E2.R1",
+    "what": "Yield kind matters: isolated vs crude NMR vs GC with internal standard. The variable's text carries it.",
+    "need": "yield type",
+    "proposal": "extension: synthesis",
+    "v0.39": "extension: synthesis"
+  },
+  {
+    "where": "L2, D3",
+    "what": "Selectivity (dr 1:1-1:1.2, E/Z, regioisomer ratio) is a ratio, not a number; the format has no ratio value.",
+    "need": "ratios as values",
+    "proposal": "extension: synthesis (core could add a ratio value, but only chemistry and genetics need it)",
+    "v0.39": "open: ratios (dr 1:1.2) are still text; extension: synthesis, unless genetics or ecology need ratios too"
+  },
+  {
+    "where": "E1.availability",
+    "what": "Characterisation data (NMR spectra, HRMS, X-ray for 7') live in the ESI PDF. No availability level says 'in the supplement as images'; on_request is wrong, open is too strong. NMR FIDs would be the open data.",
+    "need": "supplementary-information availability",
+    "proposal": "core (availability level: supplementary)",
+    "v0.39": "resolved: `public` with a comment that it is supplementary information as images"
+  },
+  {
+    "where": "E3",
+    "what": "Mechanistic evidence is a set of qualitative outcomes (allene formed, product not formed). Recorded as a boolean result; acceptable.",
+    "need": null,
+    "proposal": "none",
+    "v0.39": "none"
+  },
+  {
+    "where": "E1-E3 n",
+    "what": "Each scope entry is a single run; replicates are not stated. The format cannot ask whether yields were reproduced.",
+    "need": "replicate counts",
+    "proposal": "extension: synthesis (the same field as wet-lab)",
+    "v0.39": "extension: synthesis (shared with wet-lab: a core candidate)"
+  },
+  {
+    "where": "C3 type",
+    "what": "There is no claim type for a reaction mechanism: `causal` was used. Mechanistic claims are the second kind of claim in synthesis and catalysis papers (and in biochemistry).",
+    "need": "mechanistic claims",
+    "proposal": "core (claim type) — or accept causal",
+    "v0.39": "resolved: claim type `mechanistic`"
+  },
+  {
+    "where": "L1",
+    "what": "Failed substrates are the scope's boundary; the limitation category for 'the method does not work on X' had to be `sampling`. Negative scope entries deserve their own place.",
+    "need": "negative scope results",
+    "proposal": "extension: synthesis",
+    "v0.39": "extension: synthesis"
+  },
+  {
+    "where": "C1 (warning W17)",
+    "what": "The yield range 36-77% matches a table's min and max columns, but the validator checks numbers only against cells, and its unit-blind percent reading (see BUGS) also fails here.",
+    "need": "range-valued findings",
+    "proposal": "core (with limits)",
+    "v0.39": "resolved: the range is a result {min 36, max 77}, and the percentage bug is fixed; no W17"
+  },
+  {
+    "where": "C2, C3 novelty (warning W7)",
+    "what": "Control experiments and routine mechanistic probes are not novel findings, yet novelty is required and has no 'not applicable' value; `extension` then asks for the work extended.",
+    "need": "novelty not applicable to secondary claims",
+    "proposal": "core (optional novelty for secondary claims, or a value not_applicable)",
+    "v0.39": "resolved: novelty `not_applicable`; no W7"
+  },
+  {
+    "where": "C3 figures",
+    "what": "Type `mechanistic` fits; mechanism diagrams (catalytic cycles) are a figure the format can only reference.",
+    "need": null,
+    "proposal": "none",
+    "v0.39": "none"
+  }
 ]

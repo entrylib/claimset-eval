@@ -5,7 +5,8 @@ declarations funding: Netherlands Organisation for Scientific Research (NWO) awa
 DEFINITIONS
 D1 [variable] total flying insect biomass: Alcohol-wet mass of all insects caught by a Malaise trap, per day of exposure, weighed after draining through a 0.8 mm sieve.
 D2 [method] Malaise trap sampling: Standardised bi-coloured Malaise traps (Townes design) run continuously from March to October and emptied about every 11 days; catches stored in 80% ethanol.
-D3 [setting] German protected areas: 63 lowland locations in protected areas (Natura 2000 sites, nature reserves, landscape protection areas, water protection zones) in North Rhine-Westphalia (57), Brandenburg (5) and Rhineland-Palatinate (1), 1989-2016; 96 location-years, 1,503 samples.
+D3 [setting] German protected areas: 63 lowland locations in protected areas (Natura 2000 sites, nature reserves, landscape protection areas, water protection zones) in North Rhine-Westphalia (57), Brandenburg (5) and Rhineland-Palatinate (1), 1989-2016; 96 location-years, 1,503 samples. [identifiers wikidata:Q183]
+D11 [organism] flying insects: All insects caught in flight by the traps, not identified further. [identifiers ncbitaxon:50557]
 D4 [method] Bayesian hierarchical biomass model: Daily latent biomass log-normal with a location random effect and a log-linear annual trend; observed catches are sums of daily biomass over exposure intervals; fitted by MCMC in JAGS.
 D5 [variable] annual decline rate: Percentage decrease of expected daily biomass per year, from the model's trend coefficient.
 D6 [variable] seasonal decline over 27 years: Percentage decrease of biomass over 1989-2016, weighted over the season (April-October).
@@ -16,7 +17,7 @@ D10 [setting] nutrient-rich grassland, margins and wasteland: Habitat cluster 2 
 
 CLAIMS
 C1 [descriptive; principal; support: empirical_quant E1 (E1.R2, E1.R3); assumes C4; limitations L1, L2]
-  In [[D3:German protected areas]], [[D1:total flying insect biomass]] declined by 76.7% over 27 years across the season (the [[D6:seasonal decline over 27 years]]), and by 81.6% in mid-summer.
+  In [[D3:German protected areas]], [[D1:total flying insect biomass]] of [[D11:flying insects]] declined by 76.7% over 27 years across the season (the [[D6:seasonal decline over 27 years]]), and by 81.6% in mid-summer.
 C2 [associational; principal; support: empirical_quant E2; limitations L3]
   The decline of [[D1:total flying insect biomass]] is not explained by changes in [[D7:weather, land use and habitat]]: in [[D3:German protected areas]] the trend remains, and steepens, when they are in the model.
 C4 [descriptive; supporting; assumption (methodological, unchecked)]
@@ -26,14 +27,14 @@ C3 [descriptive; secondary; support: empirical_quant E1 (E1.R5, E1.R6)]
 
 EVIDENCE
 E1 [quant; design observational; data_origin primary; n 1503] Basic temporal model of 1,503 Malaise-trap samples from 63 locations in German protected areas, 1989-2016.
-  setup: studied D1; cases D3; procedure D2, D4; lens D1, D5, D6
-  E1.R1 annual trend coefficient (log scale) = -0.063 {model: basic}
-  E1.R2 D6 = 76.7 % 95% interval 74.8 to 78.5
-  E1.R3 mid-summer decline over 27 years = 81.6 % 95% interval 79.7 to 83.4
+  setup: studied D1, D11; cases D3; procedure D2, D4; lens D1, D5, D6
+  E1.R1 annual trend coefficient (log scale) = -0.063 ± 0.002 (se) {model: basic}
+  E1.R2 D6 = 76.7 % 95% credible interval 74.8 to 78.5
+  E1.R3 mid-summer decline over 27 years = 81.6 % 95% credible interval 79.7 to 83.4
   E1.R4 D5 = 6.1 %/a
-  E1.R5 D5 = 7.5 %/a 95% interval 6.6 to 8.4 {D8: D9}
-  E1.R6 D5 = 5.2 %/a 95% interval 4.8 to 5.5 {D8: D10}
-  E1.R7 D6 = 76.2 % 95% interval 73.9 to 78.3 n 26 {locations: sampled in more than one year}
+  E1.R5 D5 = 7.5 %/a 95% credible interval 6.6 to 8.4 {D8: D9}
+  E1.R6 D5 = 5.2 %/a 95% credible interval 4.8 to 5.5 {D8: D10}
+  E1.R7 D6 = 76.2 % 95% credible interval 73.9 to 78.3 n 26 {locations: sampled in more than one year}
 E2 [quant; design observational; data_origin primary] Comparison of seven models adding weather, land use and habitat covariates to the temporal model, by DIC and explained variation, with the trend coefficient each leaves.
   setup: studied D7; cases D3; procedure D4; lens D1
   derived from E1 (reanalysis)

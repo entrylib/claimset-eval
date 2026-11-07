@@ -1,56 +1,79 @@
 [
- {
-  "where": "D1",
-  "what": "A cell line (MCF7, from ATCC) is recorded as kind `population`: it is a biological material with an identifier (RRID:CVCL_0031, Cellosaurus), and needs authentication and mycoplasma status, which the source does not report and the format cannot ask for.",
-  "need": "biological materials as definition kinds; authentication",
-  "proposal": "core (kind) + extension: wet-lab (authentication)"
- },
- {
-  "where": "D2, D6-D11",
-  "what": "Reagents (SMARTpool and single siRNAs with Dharmacon IDs such as D-001300-01; antibodies BD 610052, Sigma V-9131, …) have no place: identifiers of reagents fit `identifiers` only as CURIEs (RRID), and these have none in the source.",
-  "need": "reagents with catalogue numbers and validation",
-  "proposal": "extension: wet-lab"
- },
- {
-  "where": "E2, E3",
-  "what": "Replicate structure (duplicate wells, two independent experiments per knockdown, 7-23 cells) is text. `n` would be either cells or experiments, and the two mean very different things for inference.",
-  "need": "replicate structure (biological vs technical)",
-  "proposal": "extension: wet-lab (core `n` stays one number)"
- },
- {
-  "where": "E1-E3",
-  "what": "Knockdown efficiency was confirmed by Western blot (Supplementary Fig S1); blots are specimens shown as figures. No way to say a figure is a blot, which lanes, or whether uncropped originals exist.",
-  "need": "blots and images as specimens",
-  "proposal": "core (direct-observation support) + extension: wet-lab"
- },
- {
-  "where": "E1",
-  "what": "A 569-gene screen's per-gene results (D, p for each knockdown) is a large table I did not encode; the format can hold it as an artefact-backed table but the source gives no data file.",
-  "need": "screen results as data",
-  "proposal": "extension: omics or wet-lab (gene identifiers)"
- },
- {
-  "where": "D7-D10",
-  "what": "Genes are named in text (TPM1, RAC2). The knockdown is the intervention; the gene itself (HGNC/NCBI Gene ID) has no kind and is not a separate term, so a search for claims about RAC2 across papers depends on text.",
-  "need": "genes and proteins as definition kinds",
-  "proposal": "core"
- },
- {
-  "where": "E3.T1",
-  "what": "A table whose rows are the four knockdowns plus the mock control needed a second group (D12) only because the control is not a member of the candidates group: rule 66 ties row labels to one dimension. Comparators in tables are routine in wet-lab work.",
-  "need": "a control row in a table without an artificial group",
-  "proposal": "core (allow the comparator as a row of a dimension's table)"
- },
- {
-  "where": "C3",
-  "what": "The negative finding (TPM1 knockdown did not change forces) had to be dropped from the claim to avoid a compound statement; as its own claim it would need a null result with no test.",
-  "need": null,
-  "proposal": "none"
- },
- {
-  "where": "C2",
-  "what": "Causal claims from knockdowns in one cell line: fine as `causal` with scope. Mechanism ('slows force turnover') has no structure beyond text; acceptable.",
-  "need": null,
-  "proposal": "none"
- }
+  {
+    "where": "D1",
+    "what": "A cell line (MCF7, from ATCC) is recorded as kind `population`: it is a biological material with an identifier (RRID:CVCL_0031, Cellosaurus), and needs authentication and mycoplasma status, which the source does not report and the format cannot ask for.",
+    "need": "biological materials as definition kinds; authentication",
+    "proposal": "core (kind) + extension: wet-lab (authentication)",
+    "v0.39": "resolved: kind `biological_material` with cellosaurus:CVCL_0031; authentication is for the wet-lab extension"
+  },
+  {
+    "where": "D2, D6-D11",
+    "what": "Reagents (SMARTpool and single siRNAs with Dharmacon IDs such as D-001300-01; antibodies BD 610052, Sigma V-9131, …) have no place: identifiers of reagents fit `identifiers` only as CURIEs (RRID), and these have none in the source.",
+    "need": "reagents with catalogue numbers and validation",
+    "proposal": "extension: wet-lab",
+    "v0.39": "extension: wet-lab"
+  },
+  {
+    "where": "E2, E3",
+    "what": "Replicate structure (duplicate wells, two independent experiments per knockdown, 7-23 cells) is text. `n` would be either cells or experiments, and the two mean very different things for inference.",
+    "need": "replicate structure (biological vs technical)",
+    "proposal": "extension: wet-lab (core `n` stays one number)",
+    "v0.39": "extension: wet-lab (a third extension needing replicate structure would move it to the core)"
+  },
+  {
+    "where": "E1-E3",
+    "what": "Knockdown efficiency was confirmed by Western blot (Supplementary Fig S1); blots are specimens shown as figures. No way to say a figure is a blot, which lanes, or whether uncropped originals exist.",
+    "need": "blots and images as specimens",
+    "proposal": "core (direct-observation support) + extension: wet-lab",
+    "v0.39": "extension: wet-lab"
+  },
+  {
+    "where": "E1",
+    "what": "A 569-gene screen's per-gene results (D, p for each knockdown) is a large table I did not encode; the format can hold it as an artefact-backed table but the source gives no data file.",
+    "need": "screen results as data",
+    "proposal": "extension: omics or wet-lab (gene identifiers)",
+    "v0.39": "extension: wet-lab or omics"
+  },
+  {
+    "where": "D7-D10",
+    "what": "Genes are named in text (TPM1, RAC2). The knockdown is the intervention; the gene itself (HGNC/NCBI Gene ID) has no kind and is not a separate term, so a search for claims about RAC2 across papers depends on text.",
+    "need": "genes and proteins as definition kinds",
+    "proposal": "core",
+    "v0.39": "resolved: the four genes are definitions of kind `entity` (D13-D16); HGNC identifiers left out, as the source gives none and this conversion did not look them up"
+  },
+  {
+    "where": "E3.T1",
+    "what": "A table whose rows are the four knockdowns plus the mock control needed a second group (D12) only because the control is not a member of the candidates group: rule 66 ties row labels to one dimension. Comparators in tables are routine in wet-lab work.",
+    "need": "a control row in a table without an artificial group",
+    "proposal": "core (allow the comparator as a row of a dimension's table)",
+    "v0.39": "resolved: the mock control labels a row of the candidates' dimension; the artificial group is gone"
+  },
+  {
+    "where": "C3",
+    "what": "The negative finding (TPM1 knockdown did not change forces) had to be dropped from the claim to avoid a compound statement; as its own claim it would need a null result with no test.",
+    "need": null,
+    "proposal": "none",
+    "v0.39": "none"
+  },
+  {
+    "where": "C2",
+    "what": "Causal claims from knockdowns in one cell line: fine as `causal` with scope. Mechanism ('slows force turnover') has no structure beyond text; acceptable.",
+    "need": null,
+    "proposal": "none",
+    "v0.39": "none"
+  },
+  {
+    "where": "E3.T1",
+    "what": "The 0.38 conversion left TPM1's half-time empty and gave the others without saying they are approximate; the paper states 'about 1.5-fold' and 'roughly doubled'. The format has no way to mark a value as approximate, so the column's name says it.",
+    "need": "approximate values",
+    "proposal": "open: core candidate (an `approximate` flag on a value, or guidance to record the stated number with uncertainty `unspecified`)",
+    "v0.39": "new"
+  },
+  {
+    "where": "D13-D16",
+    "what": "The genes are now definitions, but nothing links a knockdown (intervention D7) to the gene it targets (entity D13): a search for claims about RAC2 finds the definition, not the claims about knocking it down, unless they mention it.",
+    "need": "an intervention's target",
+    "proposal": "open: core candidate (`targets` on an intervention, like `measures` on a variable)",
+    "v0.39": "new"
+  }
 ]

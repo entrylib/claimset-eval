@@ -3,7 +3,7 @@ licence CC-BY-4.0; converted from 10.1038/srep31707 published by Michiel Fokkelm
 declarations funding: none | competing interests: Not stated in the converted text.
 
 DEFINITIONS
-D1 [population] MCF7-IGF1R cells: MCF7 human breast adenocarcinoma cells (from ATCC) stably overexpressing the IGF1 receptor, with lentiviral mCherry-LifeAct for live imaging.
+D1 [biological_material] MCF7-IGF1R cells: MCF7 human breast adenocarcinoma cells (from ATCC) stably overexpressing the IGF1 receptor, with lentiviral mCherry-LifeAct for live imaging. [identifiers cellosaurus:CVCL_0031]
 D2 [method] adhesome siRNA screen: Knockdown of 569 adhesion-related genes with Dharmacon SMARTpool siRNAs (four siRNAs per gene, 50 nM, DharmaFECT 4), followed by a nocodazole wash-out focal adhesion assay imaged by automated confocal microscopy; duplicate wells, 5-8 images per well.
 D3 [variable] focal adhesion size: Area of focal adhesions stained for phospho-Tyr118 paxillin or vinculin, segmented from confocal images; distributions compared with the mock-transfected control by a two-sample Kolmogorov-Smirnov test.
 D4 [variable] IGF1-induced migration speed: Speed of single MCF7-IGF1R cells in random migration after IGF1 stimulation, from live-cell tracking.
@@ -13,7 +13,10 @@ D7 [intervention] TPM1 knockdown: siRNA knockdown of tropomyosin 1 (TPM1).
 D8 [intervention] PPP1R12B knockdown: siRNA knockdown of protein phosphatase 1 regulatory subunit 12B.
 D9 [intervention] RAC2 knockdown: siRNA knockdown of the small GTPase RAC2.
 D10 [intervention] HIPK3 knockdown: siRNA knockdown of homeodomain-interacting protein kinase 3.
-D12 [intervention] knockdown condition: The four candidate knockdowns and the mock control, as compared in the force experiments. [members D7, D8, D9, D10, D11]
+D13 [entity] TPM1: The gene encoding tropomyosin 1.
+D14 [entity] PPP1R12B: The gene encoding protein phosphatase 1 regulatory subunit 12B.
+D15 [entity] RAC2: The gene encoding the small GTPase RAC2.
+D16 [entity] HIPK3: The gene encoding homeodomain-interacting protein kinase 3.
 D11 [intervention] mock transfection: Transfection reagent without siRNA; with siGFP and non-targeting siRNA the negative controls.
 
 CLAIMS
@@ -35,11 +38,11 @@ E2 [quant; design experiment; data_origin primary] Random migration of IGF1-stim
   E2.R1 primary hits whose SMARTpool knockdown reduced migration consistently = 13 n 64
   E2.R2 genes whose knockdown reduced migration with two or more single siRNAs = 10 n 13
 E3 [quant; design experiment; data_origin primary] Traction force microscopy on micropillar arrays after knockdown of the four candidates; four independent experiments, each knockdown in two; unpaired t-tests with Welch's correction.
-  setup: studied D6, D11; cases D1; procedure D2; lens D5
-  E3.T1 Cells analysed and force turnover half-time per knockdown
-  | row | D12 | cells analysed (1) | force autocorrelation half-time relative to mock (1) |
+  setup: studied D6, D11, D13, D14, D15, D16; cases D1; procedure D2; lens D5
+  E3.T1 Cells analysed and force turnover half-time per knockdown; the mock half-time is about 22 minutes, and the TPM1 increase is not significant
+  | row | D6 | cells analysed (1) | force autocorrelation half-time relative to mock (approximate, as the text gives it) (1) |
   | r0 | D11 | 23 | 1 |
-  | r1 | D7 | 12 |  |
+  | r1 | D7 | 12 | 1.5 |
   | r2 | D8 | 15 | 1.5 |
   | r3 | D10 | 7 | 1.5 |
   | r4 | D9 | 19 | 2 |

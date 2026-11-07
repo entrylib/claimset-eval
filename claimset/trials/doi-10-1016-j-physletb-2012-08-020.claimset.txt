@@ -1,9 +1,10 @@
 CLAIMSET Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC
 licence CC-BY-3.0; converted from 10.1016/j.physletb.2012.08.020 published by The ATLAS Collaboration; contributions C1, C2, C3
 declarations funding: none | competing interests: Not stated in the source.
+on behalf of ATLAS Collaboration
 
 DEFINITIONS
-D1 [other] new neutral boson: The particle observed in this search: neutral, decaying to pairs of photons, Z bosons and W bosons, with a mass near 126 GeV.
+D1 [entity] new neutral boson: The particle observed in this search: neutral, decaying to pairs of photons, Z bosons and W bosons, with a mass near 126 GeV.
 D2 [theory] Standard Model Higgs boson: The scalar boson predicted by the Standard Model's mechanism of electroweak symmetry breaking.
 D3 [data] 2011 data: Proton-proton collisions at a centre-of-mass energy of 7 TeV recorded by ATLAS in 2011, about 4.8 fb^-1.
 D4 [data] 2012 data: Proton-proton collisions at a centre-of-mass energy of 8 TeV recorded by ATLAS in 2012, about 5.8 fb^-1.
@@ -20,31 +21,29 @@ CLAIMS
 C1 [descriptive; principal; support: empirical_quant E1 (E1.R2)]
   ATLAS observes a [[D1:new neutral boson]] with a [[D10:local significance]] of 5.9 standard deviations over the background-only expectation, in the combined [[D3:2011 data]] and [[D4:2012 data]].
 C2 [descriptive; principal; support: empirical_quant E1 (E1.R1)]
-  The [[D9:mass]] of the [[D1:new neutral boson]] is 126.0 GeV, with a statistical uncertainty of 0.4 GeV and a systematic uncertainty of 0.4 GeV.
+  The [[D9:mass]] of the [[D1:new neutral boson]] is 126.0 ± 0.4 (stat) ± 0.4 (sys) GeV.
 C3 [descriptive; principal; support: empirical_quant E1 (E1.R4)]
-  The [[D11:signal strength]] of the [[D1:new neutral boson]] is 1.4 plus or minus 0.3, consistent with the [[D2:Standard Model Higgs boson]].
-C4 [descriptive; secondary; support: empirical_quant E1]
-  A [[D2:Standard Model Higgs boson]] is excluded at 95% confidence level over most of the searched [[D9:mass]] range, except a window around the new particle's mass.
+  The [[D11:signal strength]] of the [[D1:new neutral boson]] is 1.4 ± 0.3, consistent with the [[D2:Standard Model Higgs boson]].
+C4 [descriptive; secondary; support: empirical_quant E1 (E1.R7, E1.R8, E1.R9)]
+  A [[D2:Standard Model Higgs boson]] is excluded at 95% confidence level for a [[D9:mass]] from 111 to 122 GeV and from 131 to 559 GeV.
 
 EVIDENCE
 E1 [quant; design observational; data_origin primary] Combined search for the Standard Model Higgs boson in the 4l, gamma gamma and l nu l nu channels with 4.8 fb^-1 at 7 TeV and 5.8 fb^-1 at 8 TeV.
   setup: studied D1, D2; cases D3, D4; procedure D12; lens D9, D10, D11
-  E1.R1 D9 = 126 GeV 68.30000000000001% interval 125.6 to 126.4
+  E1.R1 D9 = 126 ± 0.4 (stat) ± 0.4 (sys) GeV
   E1.R2 D10 = 5.9 standard deviations {D9: 126.5}
   E1.R3 global significance over 110-600 GeV = 5.1 standard deviations
-  E1.R4 D11 = 1.4 68.30000000000001% interval 1.1 to 1.7
+  E1.R4 D11 = 1.4 ± 0.3 (total)
   E1.R5 expected local significance for a Standard Model Higgs boson = 4.9 standard deviations {D9: 126.5}
   E1.R6 local p0 = 1.7e-09 1
+  E1.R7 excluded Standard Model Higgs boson mass, observed (first range) = 111 to 122 (range, 95%) GeV
+  E1.R8 excluded Standard Model Higgs boson mass, observed (second range) = 131 to 559 (range, 95%) GeV
+  E1.R9 excluded Standard Model Higgs boson mass, expected = 110 to 582 (range, 95%) GeV
   E1.T1 Observed and expected local significance of the excess in each decay channel, 7 and 8 TeV data combined
   | row | D5 | observed local significance (standard deviations) | expected local significance (standard deviations) |
   | r1 | D6 | 3.6 | 2.7 |
   | r2 | D7 | 4.5 | 2.5 |
   | r3 | D8 | 2.8 | 2.3 |
-  E1.T2 Mass ranges in which a Standard Model Higgs boson is excluded at 95% confidence level
-  | row | kind of exclusion | lower bound of excluded range (GeV) | upper bound of excluded range (GeV) |
-  | r1 | observed, first range | 111 | 122 |
-  | r2 | observed, second range | 131 | 559 |
-  | r3 | expected | 110 | 582 |
 
 LIMITATIONS
 L1 [other; affects C1; could_bias_magnitude; mitigation addressed] The local significance does not account for the look-elsewhere effect over 110-600 GeV; the global significance over that range is 5.1 standard deviations.

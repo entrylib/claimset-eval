@@ -1,625 +1,650 @@
 {
- "schema_version": "0.38",
- "paper": {
-  "title": "More than 75 percent decline over 27 years in total flying insect biomass in protected areas",
-  "licence": "CC-BY-4.0",
-  "classification": {
-   "keywords": [
-    "insect decline",
-    "flying insect biomass",
-    "Malaise traps",
-    "protected areas",
-    "Germany"
-   ]
+  "schema_version": "0.39",
+  "paper": {
+    "title": "More than 75 percent decline over 27 years in total flying insect biomass in protected areas",
+    "licence": "CC-BY-4.0",
+    "classification": {
+      "keywords": [
+        "insect decline",
+        "flying insect biomass",
+        "Malaise traps",
+        "protected areas",
+        "Germany"
+      ]
+    },
+    "declarations": {
+      "funding": [
+        {
+          "funder": "Netherlands Organisation for Scientific Research (NWO)",
+          "award": "840.11.001"
+        },
+        {
+          "funder": "Netherlands Organisation for Scientific Research (NWO)",
+          "award": "841.11.007"
+        },
+        {
+          "funder": "Triodos Foundation"
+        }
+      ],
+      "competing_interests": "None declared.",
+      "ethics": [
+        {
+          "body": "Relevant authorities (listed in the source's S1 Appendix)",
+          "decision": "approved",
+          "reference": "trap permits"
+        }
+      ]
+    },
+    "contributions": [
+      "C1",
+      "C2"
+    ],
+    "contribution_record": "complete",
+    "origin": "converted",
+    "converted_from": {
+      "source_id": "10.1371/journal.pone.0185809",
+      "id_type": "doi",
+      "source_version": "published",
+      "source_licence": "CC-BY-4.0",
+      "source_authors": [
+        {
+          "name": "Caspar A. Hallmann"
+        },
+        {
+          "name": "Martin Sorg"
+        },
+        {
+          "name": "Eelke Jongejans"
+        },
+        {
+          "name": "Henk Siepel"
+        },
+        {
+          "name": "Nick Hofland"
+        },
+        {
+          "name": "Heinz Schwan"
+        },
+        {
+          "name": "Werner Stenmans"
+        },
+        {
+          "name": "Andreas Müller"
+        },
+        {
+          "name": "Hubert Sumser"
+        },
+        {
+          "name": "Thomas Hörren"
+        },
+        {
+          "name": "Dave Goulson"
+        },
+        {
+          "name": "Hans de Kroon"
+        }
+      ],
+      "source_status_at_conversion": "active",
+      "converter": "P1",
+      "date": "2026-11-07"
+    }
   },
-  "declarations": {
-   "funding": [
+  "contributors": [
     {
-     "funder": "Netherlands Organisation for Scientific Research (NWO)",
-     "award": "840.11.001"
+      "id": "P1",
+      "type": "agent",
+      "name": "EntryLib field-trial converter",
+      "positions": [
+        "converter"
+      ],
+      "models": [
+        {
+          "model": "M1",
+          "role": "sole"
+        }
+      ],
+      "credit_roles": [
+        "data_curation"
+      ],
+      "ai_tasks": [
+        {
+          "task": "json_preparation",
+          "extent": "full"
+        }
+      ],
+      "tools": [
+        "web_search",
+        "file_access"
+      ],
+      "record_source": "harness"
     },
     {
-     "funder": "Netherlands Organisation for Scientific Research (NWO)",
-     "award": "841.11.007"
-    },
-    {
-     "funder": "Triodos Foundation"
+      "id": "P2",
+      "type": "organisation",
+      "name": "OpenForecast Ltd",
+      "registration": "00000000",
+      "positions": [
+        "conversion_guarantor"
+      ],
+      "credit_roles": [
+        "validation"
+      ]
     }
-   ],
-   "competing_interests": "None declared.",
-   "ethics": [
-    {
-     "body": "Relevant authorities (listed in the source's S1 Appendix)",
-     "decision": "approved",
-     "reference": "trap permits"
-    }
-   ]
-  },
-  "contributions": [
-   "C1",
-   "C2"
   ],
-  "contribution_record": "complete",
-  "origin": "converted",
-  "converted_from": {
-   "source_id": "10.1371/journal.pone.0185809",
-   "id_type": "doi",
-   "source_version": "published",
-   "source_licence": "CC-BY-4.0",
-   "source_authors": [
+  "models": [
     {
-     "name": "Caspar A. Hallmann"
-    },
-    {
-     "name": "Martin Sorg"
-    },
-    {
-     "name": "Eelke Jongejans"
-    },
-    {
-     "name": "Henk Siepel"
-    },
-    {
-     "name": "Nick Hofland"
-    },
-    {
-     "name": "Heinz Schwan"
-    },
-    {
-     "name": "Werner Stenmans"
-    },
-    {
-     "name": "Andreas Müller"
-    },
-    {
-     "name": "Hubert Sumser"
-    },
-    {
-     "name": "Thomas Hörren"
-    },
-    {
-     "name": "Dave Goulson"
-    },
-    {
-     "name": "Hans de Kroon"
+      "id": "M1",
+      "provider": "Anthropic",
+      "name": "Claude",
+      "version": "opus-5-5",
+      "identifier": "claude-opus-5-5",
+      "weights": "api_only",
+      "accessed": "2026-11-07"
     }
-   ],
-   "source_status_at_conversion": "active",
-   "converter": "P1",
-   "date": "2026-11-06"
-  }
- },
- "contributors": [
-  {
-   "id": "P1",
-   "type": "agent",
-   "name": "EntryLib field-trial converter",
-   "positions": [
-    "converter"
-   ],
-   "models": [
+  ],
+  "definitions": [
     {
-     "model": "M1",
-     "role": "sole"
-    }
-   ],
-   "credit_roles": [
-    "data_curation"
-   ],
-   "ai_tasks": [
-    {
-     "task": "json_preparation",
-     "extent": "full"
-    }
-   ],
-   "tools": [
-    "web_search",
-    "file_access"
-   ],
-   "record_source": "harness"
-  },
-  {
-   "id": "P2",
-   "type": "organisation",
-   "name": "OpenForecast Ltd",
-   "registration": "00000000",
-   "positions": [
-    "conversion_guarantor"
-   ],
-   "credit_roles": [
-    "validation"
-   ]
-  }
- ],
- "models": [
-  {
-   "id": "M1",
-   "provider": "Anthropic",
-   "name": "Claude",
-   "version": "opus-5-5",
-   "identifier": "claude-opus-5-5",
-   "weights": "api_only",
-   "accessed": "2026-11-06"
-  }
- ],
- "definitions": [
-  {
-   "id": "D1",
-   "term": "total flying insect biomass",
-   "kind": "variable",
-   "definition": "Alcohol-wet mass of all insects caught by a Malaise trap, per day of exposure, weighed after draining through a 0.8 mm sieve."
-  },
-  {
-   "id": "D2",
-   "term": "Malaise trap sampling",
-   "kind": "method",
-   "definition": "Standardised bi-coloured Malaise traps (Townes design) run continuously from March to October and emptied about every 11 days; catches stored in 80% ethanol."
-  },
-  {
-   "id": "D3",
-   "term": "German protected areas",
-   "kind": "setting",
-   "definition": "63 lowland locations in protected areas (Natura 2000 sites, nature reserves, landscape protection areas, water protection zones) in North Rhine-Westphalia (57), Brandenburg (5) and Rhineland-Palatinate (1), 1989-2016; 96 location-years, 1,503 samples."
-  },
-  {
-   "id": "D4",
-   "term": "Bayesian hierarchical biomass model",
-   "kind": "method",
-   "definition": "Daily latent biomass log-normal with a location random effect and a log-linear annual trend; observed catches are sums of daily biomass over exposure intervals; fitted by MCMC in JAGS."
-  },
-  {
-   "id": "D5",
-   "term": "annual decline rate",
-   "kind": "variable",
-   "definition": "Percentage decrease of expected daily biomass per year, from the model's trend coefficient."
-  },
-  {
-   "id": "D6",
-   "term": "seasonal decline over 27 years",
-   "kind": "variable",
-   "definition": "Percentage decrease of biomass over 1989-2016, weighted over the season (April-October)."
-  },
-  {
-   "id": "D7",
-   "term": "weather, land use and habitat",
-   "kind": "concept",
-   "definition": "Temperature, precipitation, wind, frost and winter rain; forest, agriculture, grassland and water cover within 200 m; plant richness and Ellenberg indicator values within 50 m."
-  },
-  {
-   "id": "D8",
-   "term": "habitat cluster",
-   "kind": "setting",
-   "definition": "Grouping of locations by vegetation: 1 nutrient-poor heathland, sandy grassland and dunes; 2 nutrient-rich grassland, margins and wasteland; 3 pioneer and shrub communities.",
-   "members": [
-    "D9",
-    "D10"
-   ]
-  },
-  {
-   "id": "D9",
-   "term": "nutrient-poor heathland, sandy grassland and dunes",
-   "kind": "setting",
-   "definition": "Habitat cluster 1 (19 locations)."
-  },
-  {
-   "id": "D10",
-   "term": "nutrient-rich grassland, margins and wasteland",
-   "kind": "setting",
-   "definition": "Habitat cluster 2 (41 locations)."
-  }
- ],
- "claims": [
-  {
-   "id": "C1",
-   "statement": "In [[D3:German protected areas]], [[D1:total flying insect biomass]] declined by 76.7% over 27 years across the season (the [[D6:seasonal decline over 27 years]]), and by 81.6% in mid-summer.",
-   "about": {
-    "subject": "D1",
-    "relation": "declined in",
-    "object": "D6",
-    "comparator": null,
-    "conditions": [
-     "D3"
-    ]
-   },
-   "type": "descriptive",
-   "role": "principal",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "empirical_quant",
-     "evidence": "E1",
-     "results": [
-      "E1.R2",
-      "E1.R3"
-     ]
-    }
-   ],
-   "assumptions": [
-    "C4"
-   ],
-   "limitations": [
-    "L1",
-    "L2"
-   ],
-   "provenance": "extracted",
-   "source_spans": [
-    "Abstract",
-    "Results"
-   ]
-  },
-  {
-   "id": "C2",
-   "statement": "The decline of [[D1:total flying insect biomass]] is not explained by changes in [[D7:weather, land use and habitat]]: in [[D3:German protected areas]] the trend remains, and steepens, when they are in the model.",
-   "about": {
-    "subject": "D7",
-    "relation": "does not explain",
-    "object": "D1",
-    "comparator": null,
-    "conditions": [
-     "D3"
-    ]
-   },
-   "type": "associational",
-   "role": "principal",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "empirical_quant",
-     "evidence": "E2",
-     "tables": [
-      "E2.T1"
-     ]
-    }
-   ],
-   "limitations": [
-    "L3"
-   ],
-   "provenance": "extracted",
-   "source_spans": [
-    "Abstract",
-    "Results",
-    "Discussion"
-   ]
-  },
-  {
-   "id": "C3",
-   "statement": "The [[D5:annual decline rate]] was higher in [[D9:nutrient-poor heathland, sandy grassland and dunes]] than in [[D10:nutrient-rich grassland, margins and wasteland]], within [[D3:German protected areas]].",
-   "about": {
-    "subject": "D9",
-    "relation": "has higher",
-    "object": "D5",
-    "comparator": "D10",
-    "conditions": [
-     "D3"
-    ]
-   },
-   "type": "descriptive",
-   "role": "secondary",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "empirical_quant",
-     "evidence": "E1",
-     "results": [
-      "E1.R5",
-      "E1.R6"
-     ]
-    }
-   ],
-   "provenance": "extracted",
-   "source_spans": [
-    "Results"
-   ]
-  },
-  {
-   "id": "C4",
-   "statement": "Catches of a trap are representative of the flying insect biomass of its location in the sampling period.",
-   "type": "descriptive",
-   "role": "supporting",
-   "support": [
-    {
-     "kind": "assumption"
-    }
-   ],
-   "assumption_category": "methodological",
-   "check": "unchecked",
-   "provenance": "inferred",
-   "source_spans": [
-    "Methods"
-   ]
-  }
- ],
- "evidence": [
-  {
-   "id": "E1",
-   "profile": "quant",
-   "design": "observational",
-   "data_origin": "primary",
-   "preregistered": false,
-   "description": "Basic temporal model of 1,503 Malaise-trap samples from 63 locations in German protected areas, 1989-2016.",
-   "setup": {
-    "studied": [
-     "D1"
-    ],
-    "cases": [
-     "D3"
-    ],
-    "procedure": [
-     "D2",
-     "D4"
-    ],
-    "lens": [
-     "D1",
-     "D5",
-     "D6"
-    ]
-   },
-   "n": 1503,
-   "artefacts": [
-    "A1",
-    "A2"
-   ],
-   "results": [
-    {
-     "id": "R1",
-     "variable": "annual trend coefficient (log scale)",
-     "value": -0.063,
-     "conditions": {
-      "model": "basic"
-     }
+      "id": "D1",
+      "term": "total flying insect biomass",
+      "kind": "variable",
+      "definition": "Alcohol-wet mass of all insects caught by a Malaise trap, per day of exposure, weighed after draining through a 0.8 mm sieve."
     },
     {
-     "id": "R2",
-     "variable": "D6",
-     "value": 76.7,
-     "unit": "%",
-     "interval": {
-      "level": 0.95,
-      "lower": 74.8,
-      "upper": 78.5
-     }
+      "id": "D2",
+      "term": "Malaise trap sampling",
+      "kind": "method",
+      "definition": "Standardised bi-coloured Malaise traps (Townes design) run continuously from March to October and emptied about every 11 days; catches stored in 80% ethanol."
     },
     {
-     "id": "R3",
-     "variable": "mid-summer decline over 27 years",
-     "value": 81.6,
-     "unit": "%",
-     "interval": {
-      "level": 0.95,
-      "lower": 79.7,
-      "upper": 83.4
-     }
+      "id": "D3",
+      "term": "German protected areas",
+      "kind": "setting",
+      "definition": "63 lowland locations in protected areas (Natura 2000 sites, nature reserves, landscape protection areas, water protection zones) in North Rhine-Westphalia (57), Brandenburg (5) and Rhineland-Palatinate (1), 1989-2016; 96 location-years, 1,503 samples.",
+      "identifiers": [
+        "wikidata:Q183"
+      ]
     },
     {
-     "id": "R4",
-     "variable": "D5",
-     "value": 6.1,
-     "unit": "%/a"
+      "id": "D11",
+      "term": "flying insects",
+      "kind": "organism",
+      "definition": "All insects caught in flight by the traps, not identified further.",
+      "identifiers": [
+        "ncbitaxon:50557"
+      ]
     },
     {
-     "id": "R5",
-     "variable": "D5",
-     "value": 7.5,
-     "unit": "%/a",
-     "interval": {
-      "level": 0.95,
-      "lower": 6.6,
-      "upper": 8.4
-     },
-     "conditions": {
-      "D8": "D9"
-     }
+      "id": "D4",
+      "term": "Bayesian hierarchical biomass model",
+      "kind": "method",
+      "definition": "Daily latent biomass log-normal with a location random effect and a log-linear annual trend; observed catches are sums of daily biomass over exposure intervals; fitted by MCMC in JAGS."
     },
     {
-     "id": "R6",
-     "variable": "D5",
-     "value": 5.2,
-     "unit": "%/a",
-     "interval": {
-      "level": 0.95,
-      "lower": 4.8,
-      "upper": 5.5
-     },
-     "conditions": {
-      "D8": "D10"
-     }
+      "id": "D5",
+      "term": "annual decline rate",
+      "kind": "variable",
+      "definition": "Percentage decrease of expected daily biomass per year, from the model's trend coefficient."
     },
     {
-     "id": "R7",
-     "variable": "D6",
-     "value": 76.2,
-     "unit": "%",
-     "interval": {
-      "level": 0.95,
-      "lower": 73.9,
-      "upper": 78.3
-     },
-     "n": 26,
-     "conditions": {
-      "locations": "sampled in more than one year"
-     }
+      "id": "D6",
+      "term": "seasonal decline over 27 years",
+      "kind": "variable",
+      "definition": "Percentage decrease of biomass over 1989-2016, weighted over the season (April-October)."
+    },
+    {
+      "id": "D7",
+      "term": "weather, land use and habitat",
+      "kind": "concept",
+      "definition": "Temperature, precipitation, wind, frost and winter rain; forest, agriculture, grassland and water cover within 200 m; plant richness and Ellenberg indicator values within 50 m."
+    },
+    {
+      "id": "D8",
+      "term": "habitat cluster",
+      "kind": "setting",
+      "definition": "Grouping of locations by vegetation: 1 nutrient-poor heathland, sandy grassland and dunes; 2 nutrient-rich grassland, margins and wasteland; 3 pioneer and shrub communities.",
+      "members": [
+        "D9",
+        "D10"
+      ]
+    },
+    {
+      "id": "D9",
+      "term": "nutrient-poor heathland, sandy grassland and dunes",
+      "kind": "setting",
+      "definition": "Habitat cluster 1 (19 locations)."
+    },
+    {
+      "id": "D10",
+      "term": "nutrient-rich grassland, margins and wasteland",
+      "kind": "setting",
+      "definition": "Habitat cluster 2 (41 locations)."
     }
-   ],
-   "availability": {
-    "level": "public"
-   },
-   "source_spans": [
-    "Methods",
-    "Results",
-    "Table 1"
-   ]
-  },
-  {
-   "id": "E2",
-   "profile": "quant",
-   "design": "observational",
-   "data_origin": "primary",
-   "preregistered": false,
-   "description": "Comparison of seven models adding weather, land use and habitat covariates to the temporal model, by DIC and explained variation, with the trend coefficient each leaves.",
-   "derived_from": [
+  ],
+  "claims": [
     {
-     "evidence": "E1",
-     "how": "reanalysis"
-    }
-   ],
-   "setup": {
-    "studied": [
-     "D7"
-    ],
-    "cases": [
-     "D3"
-    ],
-    "procedure": [
-     "D4"
-    ],
-    "lens": [
-     "D1"
-    ]
-   },
-   "tables": [
-    {
-     "id": "T1",
-     "description": "Trend coefficient (log scale) and explained variation of biomass under models with different covariates",
-     "row_labels": [
-      "model"
-     ],
-     "columns": [
-      "annual trend coefficient (log scale)",
-      "explained variation R2"
-     ],
-     "units": [
-      "1",
-      "%"
-     ],
-     "rows": [
-      {
-       "id": "r1",
-       "label": [
-        "basic"
-       ],
-       "values": [
-        -0.063,
-        null
-       ]
+      "id": "C1",
+      "statement": "In [[D3:German protected areas]], [[D1:total flying insect biomass]] of [[D11:flying insects]] declined by 76.7% over 27 years across the season (the [[D6:seasonal decline over 27 years]]), and by 81.6% in mid-summer.",
+      "about": {
+        "subject": "D1",
+        "relation": "declined in",
+        "object": "D6",
+        "comparator": null,
+        "conditions": [
+          "D3",
+          "D11"
+        ]
       },
-      {
-       "id": "r2",
-       "label": [
-        "weather"
-       ],
-       "values": [
-        -0.058,
-        65.4
-       ]
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.R2",
+            "E1.R3"
+          ]
+        }
+      ],
+      "assumptions": [
+        "C4"
+      ],
+      "limitations": [
+        "L1",
+        "L2"
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Abstract",
+        "Results"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "The decline of [[D1:total flying insect biomass]] is not explained by changes in [[D7:weather, land use and habitat]]: in [[D3:German protected areas]] the trend remains, and steepens, when they are in the model.",
+      "about": {
+        "subject": "D7",
+        "relation": "does not explain",
+        "object": "D1",
+        "comparator": null,
+        "conditions": [
+          "D3"
+        ]
       },
-      {
-       "id": "r3",
-       "label": [
-        "land use"
-       ],
-       "values": [
-        -0.064,
-        61.3
-       ]
+      "type": "associational",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E2",
+          "tables": [
+            "E2.T1"
+          ]
+        }
+      ],
+      "limitations": [
+        "L3"
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Abstract",
+        "Results",
+        "Discussion"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "The [[D5:annual decline rate]] was higher in [[D9:nutrient-poor heathland, sandy grassland and dunes]] than in [[D10:nutrient-rich grassland, margins and wasteland]], within [[D3:German protected areas]].",
+      "about": {
+        "subject": "D9",
+        "relation": "has higher",
+        "object": "D5",
+        "comparator": "D10",
+        "conditions": [
+          "D3"
+        ]
       },
-      {
-       "id": "r4",
-       "label": [
-        "habitat"
-       ],
-       "values": [
-        -0.059,
-        61.9
-       ]
-      },
-      {
-       "id": "r5",
-       "label": [
-        "final combined"
-       ],
-       "values": [
-        -0.081,
-        null
-       ]
-      }
-     ]
+      "type": "descriptive",
+      "role": "secondary",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.R5",
+            "E1.R6"
+          ]
+        }
+      ],
+      "provenance": "extracted",
+      "source_spans": [
+        "Results"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "Catches of a trap are representative of the flying insect biomass of its location in the sampling period.",
+      "type": "descriptive",
+      "role": "supporting",
+      "support": [
+        {
+          "kind": "assumption"
+        }
+      ],
+      "assumption_category": "methodological",
+      "check": "unchecked",
+      "provenance": "inferred",
+      "source_spans": [
+        "Methods"
+      ]
     }
-   ],
-   "availability": {
-    "level": "public"
-   },
-   "source_spans": [
-    "Table 3",
-    "Table 4",
-    "Results"
-   ]
-  }
- ],
- "warrants": [],
- "limitations": [
-  {
-   "id": "L1",
-   "category": "sampling",
-   "statement": "Only 26 of 63 locations were sampled in more than one year, so the trend is estimated mostly across locations rather than within them.",
-   "affects": [
-    "C1"
-   ],
-   "impact": "could_bias_magnitude",
-   "mitigation": "partial",
-   "mitigation_evidence": "E1",
-   "source_spans": [
-    "Discussion"
-   ]
-  },
-  {
-   "id": "L2",
-   "category": "sampling",
-   "statement": "The protected areas are small and 94% are enclosed by farmland, so they may act as sinks and the decline may not transfer to other landscapes.",
-   "affects": [
-    "C1"
-   ],
-   "impact": "reduces_transferability",
-   "mitigation": "none",
-   "source_spans": [
-    "Discussion"
-   ]
-  },
-  {
-   "id": "L3",
-   "category": "measurement",
-   "statement": "Land use was measured coarsely (proportions within 200 m) without management or pesticide use, and not every climate variable was analysed.",
-   "affects": [
-    "C2"
-   ],
-   "impact": "could_reverse",
-   "mitigation": "none",
-   "source_spans": [
-    "Discussion"
-   ]
-  }
- ],
- "artefacts": [
-  {
-   "id": "A1",
-   "kind": "data",
-   "uri": "https://doi.org/10.1371/journal.pone.0185809.s003",
-   "licence": "CC-BY-4.0",
-   "availability": {
-    "level": "public"
-   },
-   "description": "S1 and S2 Datasets: biomass per sample and covariates (CSV)."
-  },
-  {
-   "id": "A2",
-   "kind": "code",
-   "uri": "https://doi.org/10.1371/journal.pone.0185809.s001",
-   "licence": "CC-BY-4.0",
-   "availability": {
-    "level": "public"
-   },
-   "description": "S1 Code: JAGS model scripts."
-  }
- ],
- "references": [],
- "open_questions": []
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "profile": "quant",
+      "design": "observational",
+      "data_origin": "primary",
+      "preregistered": false,
+      "description": "Basic temporal model of 1,503 Malaise-trap samples from 63 locations in German protected areas, 1989-2016.",
+      "setup": {
+        "studied": [
+          "D1",
+          "D11"
+        ],
+        "cases": [
+          "D3"
+        ],
+        "procedure": [
+          "D2",
+          "D4"
+        ],
+        "lens": [
+          "D1",
+          "D5",
+          "D6"
+        ]
+      },
+      "n": 1503,
+      "artefacts": [
+        "A1",
+        "A2"
+      ],
+      "results": [
+        {
+          "id": "R1",
+          "variable": "annual trend coefficient (log scale)",
+          "value": -0.063,
+          "uncertainty": [
+            {
+              "kind": "se",
+              "value": 0.002
+            }
+          ],
+          "conditions": {
+            "model": "basic"
+          }
+        },
+        {
+          "id": "R2",
+          "variable": "D6",
+          "value": 76.7,
+          "unit": "%",
+          "interval": {
+            "kind": "credible",
+            "level": 0.95,
+            "lower": 74.8,
+            "upper": 78.5
+          }
+        },
+        {
+          "id": "R3",
+          "variable": "mid-summer decline over 27 years",
+          "value": 81.6,
+          "unit": "%",
+          "interval": {
+            "kind": "credible",
+            "level": 0.95,
+            "lower": 79.7,
+            "upper": 83.4
+          }
+        },
+        {
+          "id": "R4",
+          "variable": "D5",
+          "value": 6.1,
+          "unit": "%/a"
+        },
+        {
+          "id": "R5",
+          "variable": "D5",
+          "value": 7.5,
+          "unit": "%/a",
+          "interval": {
+            "kind": "credible",
+            "level": 0.95,
+            "lower": 6.6,
+            "upper": 8.4
+          },
+          "conditions": {
+            "D8": "D9"
+          }
+        },
+        {
+          "id": "R6",
+          "variable": "D5",
+          "value": 5.2,
+          "unit": "%/a",
+          "interval": {
+            "kind": "credible",
+            "level": 0.95,
+            "lower": 4.8,
+            "upper": 5.5
+          },
+          "conditions": {
+            "D8": "D10"
+          }
+        },
+        {
+          "id": "R7",
+          "variable": "D6",
+          "value": 76.2,
+          "unit": "%",
+          "interval": {
+            "kind": "credible",
+            "level": 0.95,
+            "lower": 73.9,
+            "upper": 78.3
+          },
+          "n": 26,
+          "conditions": {
+            "locations": "sampled in more than one year"
+          }
+        }
+      ],
+      "availability": {
+        "level": "public"
+      },
+      "source_spans": [
+        "Methods",
+        "Results",
+        "Table 1"
+      ]
+    },
+    {
+      "id": "E2",
+      "profile": "quant",
+      "design": "observational",
+      "data_origin": "primary",
+      "preregistered": false,
+      "description": "Comparison of seven models adding weather, land use and habitat covariates to the temporal model, by DIC and explained variation, with the trend coefficient each leaves.",
+      "derived_from": [
+        {
+          "evidence": "E1",
+          "how": "reanalysis"
+        }
+      ],
+      "setup": {
+        "studied": [
+          "D7"
+        ],
+        "cases": [
+          "D3"
+        ],
+        "procedure": [
+          "D4"
+        ],
+        "lens": [
+          "D1"
+        ]
+      },
+      "tables": [
+        {
+          "id": "T1",
+          "description": "Trend coefficient (log scale) and explained variation of biomass under models with different covariates",
+          "row_labels": [
+            "model"
+          ],
+          "columns": [
+            "annual trend coefficient (log scale)",
+            "explained variation R2"
+          ],
+          "units": [
+            "1",
+            "%"
+          ],
+          "rows": [
+            {
+              "id": "r1",
+              "label": [
+                "basic"
+              ],
+              "values": [
+                -0.063,
+                null
+              ]
+            },
+            {
+              "id": "r2",
+              "label": [
+                "weather"
+              ],
+              "values": [
+                -0.058,
+                65.4
+              ]
+            },
+            {
+              "id": "r3",
+              "label": [
+                "land use"
+              ],
+              "values": [
+                -0.064,
+                61.3
+              ]
+            },
+            {
+              "id": "r4",
+              "label": [
+                "habitat"
+              ],
+              "values": [
+                -0.059,
+                61.9
+              ]
+            },
+            {
+              "id": "r5",
+              "label": [
+                "final combined"
+              ],
+              "values": [
+                -0.081,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "availability": {
+        "level": "public"
+      },
+      "source_spans": [
+        "Table 3",
+        "Table 4",
+        "Results"
+      ]
+    }
+  ],
+  "warrants": [],
+  "limitations": [
+    {
+      "id": "L1",
+      "category": "sampling",
+      "statement": "Only 26 of 63 locations were sampled in more than one year, so the trend is estimated mostly across locations rather than within them.",
+      "affects": [
+        "C1"
+      ],
+      "impact": "could_bias_magnitude",
+      "mitigation": "partial",
+      "mitigation_evidence": "E1",
+      "source_spans": [
+        "Discussion"
+      ]
+    },
+    {
+      "id": "L2",
+      "category": "sampling",
+      "statement": "The protected areas are small and 94% are enclosed by farmland, so they may act as sinks and the decline may not transfer to other landscapes.",
+      "affects": [
+        "C1"
+      ],
+      "impact": "reduces_transferability",
+      "mitigation": "none",
+      "source_spans": [
+        "Discussion"
+      ]
+    },
+    {
+      "id": "L3",
+      "category": "measurement",
+      "statement": "Land use was measured coarsely (proportions within 200 m) without management or pesticide use, and not every climate variable was analysed.",
+      "affects": [
+        "C2"
+      ],
+      "impact": "could_reverse",
+      "mitigation": "none",
+      "source_spans": [
+        "Discussion"
+      ]
+    }
+  ],
+  "artefacts": [
+    {
+      "id": "A1",
+      "kind": "data",
+      "uri": "https://doi.org/10.1371/journal.pone.0185809.s003",
+      "licence": "CC-BY-4.0",
+      "availability": {
+        "level": "public"
+      },
+      "description": "S1 and S2 Datasets: biomass per sample and covariates (CSV)."
+    },
+    {
+      "id": "A2",
+      "kind": "code",
+      "uri": "https://doi.org/10.1371/journal.pone.0185809.s001",
+      "licence": "CC-BY-4.0",
+      "availability": {
+        "level": "public"
+      },
+      "description": "S1 Code: JAGS model scripts."
+    }
+  ],
+  "references": [],
+  "open_questions": []
 }
