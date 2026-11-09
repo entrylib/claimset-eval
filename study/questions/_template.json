@@ -1,0 +1,37 @@
+{
+  "papers": ["doi-10-XXXX-XXXX"],
+  "author": "Who wrote the questions and reference answers",
+  "written": "YYYY-MM-DD",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "lookup",
+      "question": "What does the paper report about ...?",
+      "answer": "The reference answer, in the paper's terms, with the numbers and conditions the question asks for.",
+      "notes": "Optional: what a right answer must include, or what makes an answer only partial.",
+      "claims": ["C4"],
+      "in_claimset": true
+    },
+    {
+      "id": "Q2",
+      "type": "scope",
+      "question": "Does the result on ... also hold for ...?",
+      "answer": "Only for ...; the paper does not test ...",
+      "in_claimset": true
+    },
+    {
+      "id": "Q3",
+      "type": "evidence",
+      "question": "What evidence supports ..., and what limits it?",
+      "answer": "...",
+      "claims": ["C7"],
+      "in_claimset": false
+    },
+    {
+      "id": "Q4",
+      "type": "absent",
+      "question": "A question the paper does not answer, close enough to its topic that a model might guess.",
+      "in_claimset": false
+    }
+  ]
+}

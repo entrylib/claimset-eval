@@ -133,6 +133,7 @@
    "provider": "Anthropic",
    "name": "Claude Opus",
    "version": "5.5",
+   "identifier": "claude-opus-5-5",
    "weights": "api_only",
    "accessed": "2026-10-25"
   }
@@ -2618,6 +2619,10 @@
        "conditions": {
         "in-sample quarters": 56,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2625,6 +2630,10 @@
        "conditions": {
         "in-sample quarters": 56,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2632,6 +2641,10 @@
        "conditions": {
         "in-sample quarters": 56,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2639,6 +2652,10 @@
        "conditions": {
         "in-sample quarters": 16,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2646,6 +2663,10 @@
        "conditions": {
         "in-sample quarters": 16,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2653,6 +2674,10 @@
        "conditions": {
         "in-sample quarters": 16,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       }
      ],
@@ -2800,6 +2825,10 @@
        "conditions": {
         "data-generating variant": "D7",
         "comparator": "D7"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2807,6 +2836,10 @@
        "conditions": {
         "data-generating variant": "D8",
         "comparator": "D8"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2814,6 +2847,10 @@
        "conditions": {
         "data-generating variant": "D9",
         "comparator": "D9"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2821,6 +2858,10 @@
        "conditions": {
         "data-generating variant": "D10",
         "comparator": "D10"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2828,6 +2869,10 @@
        "conditions": {
         "data-generating variant": "D11",
         "comparator": "D11"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2835,6 +2880,10 @@
        "conditions": {
         "data-generating variant": "D12",
         "comparator": "D12"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2842,6 +2891,10 @@
        "conditions": {
         "data-generating variant": "D13",
         "comparator": "D13"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2849,6 +2902,10 @@
        "conditions": {
         "data-generating variant": "D14",
         "comparator": "D14"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -2856,6 +2913,10 @@
        "conditions": {
         "data-generating variant": "D15",
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       }
      ],
@@ -3033,6 +3094,10 @@
        "conditions": {
         "data-generating variant": "D7",
         "comparator": "D7"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3040,6 +3105,10 @@
        "conditions": {
         "data-generating variant": "D8",
         "comparator": "D8"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3047,6 +3116,10 @@
        "conditions": {
         "data-generating variant": "D9",
         "comparator": "D9"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3054,6 +3127,10 @@
        "conditions": {
         "data-generating variant": "D10",
         "comparator": "D10"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3061,6 +3138,10 @@
        "conditions": {
         "data-generating variant": "D11",
         "comparator": "D11"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3068,6 +3149,10 @@
        "conditions": {
         "data-generating variant": "D12",
         "comparator": "D12"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3075,6 +3160,10 @@
        "conditions": {
         "data-generating variant": "D13",
         "comparator": "D13"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3082,6 +3171,10 @@
        "conditions": {
         "data-generating variant": "D14",
         "comparator": "D14"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3089,6 +3182,10 @@
        "conditions": {
         "data-generating variant": "D15",
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       }
      ],
@@ -3269,36 +3366,60 @@
        "variable": "D37",
        "conditions": {
         "series per group": 2
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 10
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 20
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 30
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 40
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 50
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       }
      ],
@@ -3449,36 +3570,60 @@
        "variable": "D37",
        "conditions": {
         "series per group": 2
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 10
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 20
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 30
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 40
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
         "series per group": 50
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       }
      ],
@@ -3626,6 +3771,10 @@
        "conditions": {
         "in-sample quarters": 56,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3633,19 +3782,28 @@
        "conditions": {
         "in-sample quarters": 56,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D42",
        "conditions": {
         "in-sample quarters": 56
-       }
+       },
+       "statistic": "mean"
       },
       {
        "variable": "D40",
        "conditions": {
         "in-sample quarters": 16,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3653,13 +3811,18 @@
        "conditions": {
         "in-sample quarters": 16,
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D42",
        "conditions": {
         "in-sample quarters": 16
-       }
+       },
+       "statistic": "mean"
       }
      ],
      "rows": [
@@ -3806,6 +3969,10 @@
        "conditions": {
         "data-generating variant": "D7",
         "comparator": "D7"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3813,6 +3980,10 @@
        "conditions": {
         "data-generating variant": "D8",
         "comparator": "D8"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3820,6 +3991,10 @@
        "conditions": {
         "data-generating variant": "D9",
         "comparator": "D9"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3827,6 +4002,10 @@
        "conditions": {
         "data-generating variant": "D10",
         "comparator": "D10"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3834,6 +4013,10 @@
        "conditions": {
         "data-generating variant": "D11",
         "comparator": "D11"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3841,6 +4024,10 @@
        "conditions": {
         "data-generating variant": "D12",
         "comparator": "D12"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3848,6 +4035,10 @@
        "conditions": {
         "data-generating variant": "D13",
         "comparator": "D13"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3855,6 +4046,10 @@
        "conditions": {
         "data-generating variant": "D14",
         "comparator": "D14"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -3862,6 +4057,10 @@
        "conditions": {
         "data-generating variant": "D15",
         "comparator": "D15"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       }
      ],
@@ -4042,36 +4241,60 @@
        "variable": "D40",
        "conditions": {
         "series per group": 2
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 10
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 20
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 30
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 40
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 50
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       }
      ],
@@ -4222,36 +4445,60 @@
        "variable": "D40",
        "conditions": {
         "series per group": 2
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 10
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 20
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 30
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 40
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D40",
        "conditions": {
         "series per group": 50
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       }
      ],
@@ -4449,44 +4696,53 @@
       {
        "variable": "D37",
        "conditions": {
-        "series": "overall",
-        "summary over series": "geometric mean"
+        "series": "overall"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
-        "series": "overall",
-        "summary over series": "median"
+        "series": "overall"
+       },
+       "statistic": "median"
+      },
+      {
+       "variable": "D37",
+       "conditions": {
+        "series": "seasonal"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
-        "series": "seasonal",
-        "summary over series": "geometric mean"
+        "series": "seasonal"
+       },
+       "statistic": "median"
+      },
+      {
+       "variable": "D37",
+       "conditions": {
+        "series": "non-seasonal"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D37",
        "conditions": {
-        "series": "seasonal",
-        "summary over series": "median"
-       }
-      },
-      {
-       "variable": "D37",
-       "conditions": {
-        "series": "non-seasonal",
-        "summary over series": "geometric mean"
-       }
-      },
-      {
-       "variable": "D37",
-       "conditions": {
-        "series": "non-seasonal",
-        "summary over series": "median"
-       }
+        "series": "non-seasonal"
+       },
+       "statistic": "median"
       }
      ],
      "rows": [
@@ -4659,13 +4915,18 @@
        "variable": "D42",
        "conditions": {
         "D35": "D33"
-       }
+       },
+       "statistic": "mean"
       },
       {
        "variable": "D40",
        "conditions": {
         "D35": "D33",
         "comparator": "ETS on the long histories"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -4673,19 +4934,28 @@
        "conditions": {
         "D35": "D33",
         "comparator": "ETS on the long histories"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D42",
        "conditions": {
         "D35": "D34"
-       }
+       },
+       "statistic": "mean"
       },
       {
        "variable": "D40",
        "conditions": {
         "D35": "D34",
         "comparator": "ETS on the long histories"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
@@ -4693,6 +4963,10 @@
        "conditions": {
         "D35": "D34",
         "comparator": "ETS on the long histories"
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       }
      ],
@@ -4781,31 +5055,36 @@
        "variable": "number of the 11 groups for which the restriction is chosen",
        "conditions": {
         "PIC restriction": "PIC(N,N,N)"
-       }
+       },
+       "statistic": "count"
       },
       {
        "variable": "number of the 11 groups for which the restriction is chosen",
        "conditions": {
         "PIC restriction": "PIC(L,N,N)"
-       }
+       },
+       "statistic": "count"
       },
       {
        "variable": "number of the 11 groups for which the restriction is chosen",
        "conditions": {
         "PIC restriction": "PIC(L,L,N)"
-       }
+       },
+       "statistic": "count"
       },
       {
        "variable": "number of the 11 groups for which the restriction is chosen",
        "conditions": {
         "PIC restriction": "PIC(LS,S,N)"
-       }
+       },
+       "statistic": "count"
       },
       {
        "variable": "number of the 11 groups for which the restriction is chosen",
        "conditions": {
         "PIC restriction": "PIC(LS,S,S)"
-       }
+       },
+       "statistic": "count"
       }
      ],
      "rows": [
@@ -4841,37 +5120,52 @@
        "variable": "D43",
        "conditions": {
         "horizon (months)": 3
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D43",
        "conditions": {
         "horizon (months)": 6
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D43",
        "conditions": {
         "horizon (months)": 12
+       },
+       "statistic": {
+        "name": "mean",
+        "kind": "geometric"
        }
       },
       {
        "variable": "D42",
        "conditions": {
         "horizon (months)": 3
-       }
+       },
+       "statistic": "mean"
       },
       {
        "variable": "D42",
        "conditions": {
         "horizon (months)": 6
-       }
+       },
+       "statistic": "mean"
       },
       {
        "variable": "D42",
        "conditions": {
         "horizon (months)": 12
-       }
+       },
+       "statistic": "mean"
       }
      ],
      "rows": [
