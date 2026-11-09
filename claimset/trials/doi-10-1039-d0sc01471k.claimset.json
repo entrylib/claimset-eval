@@ -368,7 +368,10 @@
           ],
           "columns": [
             "D4",
-            "products"
+            {
+              "variable": "products",
+              "statistic": "count"
+            }
           ],
           "units": [
             "%",

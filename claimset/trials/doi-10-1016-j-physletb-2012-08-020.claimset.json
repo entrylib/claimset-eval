@@ -375,6 +375,7 @@
           "id": "R6",
           "variable": "local p0",
           "value": 1.7e-09,
+          "statistic": "p_value",
           "unit": "1"
         },
         {

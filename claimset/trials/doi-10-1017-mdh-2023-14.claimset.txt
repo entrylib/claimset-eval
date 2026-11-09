@@ -32,8 +32,8 @@ E1 [qual; data_origin secondary; analytic_approach source_criticism; sampling pu
   E1.R3 D8 = "The sleeper wakes from a frightening dream." (Section 4, Amyraut) {D3: D11}
 E2 [qual; data_origin secondary; analytic_approach content_analysis; sampling other] Full-text EEBO searches for 'first sleep' (many hits, not counted) and 'second sleep' (15 hits), each read in context.
   setup: studied D7; cases D3; procedure D5, D6; context D2
-  E2.R1 EEBO hits for 'second sleep' = 15
-  E2.R2 EEBO hits naming both first and second sleep = 5 n 15
+  E2.R1 EEBO hits for 'second sleep' (count) = 15
+  E2.R2 EEBO hits naming both first and second sleep (count) = 5 n 15
   E2.R3 D7 = "the first sleepe is the deepe sleepe" (Section 6, Caryl) {source: Caryl}
 
 WARRANTS

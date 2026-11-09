@@ -32,17 +32,17 @@ C4 [descriptive; supporting; not_applicable; support: empirical_obs E4 (E4.R1)]
 EVIDENCE
 E1 [quant; design experiment; data_origin primary; n 569] Primary siRNA screen of 569 adhesion genes: focal adhesion size after nocodazole wash-out, per knockdown against mock.
   setup: studied D2; cases D1; procedure D2; lens D3
-  E1.R1 genes whose knockdown increased focal adhesion size (D > 0.1, p < 1e-40) = 30
-  E1.R2 genes whose knockdown decreased focal adhesion size (D < -0.075, p < 1e-25) = 11
-  E1.R3 genes screened = 569
+  E1.R1 genes whose knockdown increased focal adhesion size (D > 0.1, p < 1e-40) (count) = 30
+  E1.R2 genes whose knockdown decreased focal adhesion size (D < -0.075, p < 1e-25) (count) = 11
+  E1.R3 genes screened (count) = 569
 E2 [quant; design experiment; data_origin primary] Random migration of IGF1-stimulated MCF7-IGF1R cells after SMARTpool knockdown of all 64 primary hits, then single siRNAs for the consistent ones; Kruskal-Wallis with Dunn's post-test, experiments in duplicate, significant only if p < 0.05 in every experiment.
   setup: studied D6, D11; cases D1; procedure D2; lens D4
-  E2.R1 primary hits whose SMARTpool knockdown reduced migration consistently = 13 n 64
-  E2.R2 genes whose knockdown reduced migration with two or more single siRNAs = 10 n 13
+  E2.R1 primary hits whose SMARTpool knockdown reduced migration consistently (count) = 13 n 64
+  E2.R2 genes whose knockdown reduced migration with two or more single siRNAs (count) = 10 n 13
 E3 [quant; design experiment; data_origin primary] Traction force microscopy on micropillar arrays after knockdown of the four candidates; four independent experiments, each knockdown in two; unpaired t-tests with Welch's correction.
   setup: studied D6, D11, D13, D14, D15, D16; cases D1; procedure D2; lens D5
   E3.T1 Cells analysed and force turnover half-time per knockdown; the mock half-time is about 22 minutes, and the TPM1 increase is not significant
-  | row | D6 | cells analysed (1) | force autocorrelation half-time relative to mock (approximate, as the text gives it) (1) |
+  | row | D6 | cells analysed (count) (1) | force autocorrelation half-time relative to mock (approximate, as the text gives it) (1) |
   | r0 | D11 | 23 | 1 |
   | r1 | D7 | 12 | 1.5 |
   | r2 | D8 | 15 | 1.5 |

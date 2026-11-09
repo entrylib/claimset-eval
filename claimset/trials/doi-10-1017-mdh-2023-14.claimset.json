@@ -358,12 +358,14 @@
         {
           "id": "R1",
           "variable": "EEBO hits for 'second sleep'",
-          "value": 15
+          "value": 15,
+          "statistic": "count"
         },
         {
           "id": "R2",
           "variable": "EEBO hits naming both first and second sleep",
           "value": 5,
+          "statistic": "count",
           "n": 15
         },
         {

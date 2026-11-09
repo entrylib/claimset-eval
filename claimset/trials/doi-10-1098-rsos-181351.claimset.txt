@@ -28,15 +28,15 @@ C3 [causal; secondary; support: empirical_quant E2 (E2.R1, E2.R2); planning expl
 EVIDENCE
 E1 [quant; design experiment; data_origin primary; n 209; preregistered] Registered report: online between-subjects experiment with psychology researchers rating trust in one of six fictional study descriptions (N = 209 after manipulation checks).
   setup: studied D1, D5; cases D7; procedure D8; lens D6
-  E1.R1 posterior probability of the null model = 0.545
-  E1.R2 inclusion Bayes factor = 0.359 {effect: D1}
-  E1.R3 inclusion Bayes factor = 0.143 {effect: D5}
-  E1.R4 inclusion Bayes factor = 0.069 {effect: interaction of D1 and D5}
+  E1.R1 posterior probability of the null model (posterior_probability) = 0.545
+  E1.R2 inclusion Bayes factor (bayes_factor) = 0.359 {effect: D1}
+  E1.R3 inclusion Bayes factor (bayes_factor) = 0.143 {effect: D5}
+  E1.R4 inclusion Bayes factor (bayes_factor) = 0.069 {effect: interaction of D1 and D5}
 E2 [quant; design experiment; data_origin primary; n 654] Exploratory reanalysis of all 654 completed responses without the manipulation-check exclusions.
   setup: studied D1, D5; cases D7; procedure D8; lens D6
   derived from E1 (reanalysis)
-  E2.R1 inclusion Bayes factor = 0.71 {effect: D1}
-  E2.R2 inclusion Bayes factor = 0.117 {effect: D5}
+  E2.R1 inclusion Bayes factor (bayes_factor) = 0.71 {effect: D1}
+  E2.R2 inclusion Bayes factor (bayes_factor) = 0.117 {effect: D5}
 
 LIMITATIONS
 L1 [sample_size; affects C1, C2; reduces_precision; mitigation none] 209 participants were analysed against a target of 480, with cells of 12 to 84.
