@@ -1,0 +1,13 @@
+{
+  "papers": ["doi-10-XXXX-AAAA", "doi-10-XXXX-BBBB"],
+  "author": "Who wrote the questions and reference answers",
+  "written": "YYYY-MM-DD",
+  "questions": [
+    {
+      "id": "X1",
+      "type": "cross",
+      "question": "Which of these papers test their method on ...?",
+      "answer": "..."
+    }
+  ]
+}
