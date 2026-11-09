@@ -35,7 +35,7 @@ E1 [quant; design experiment; data_origin primary; n 39] Substrate scope: 39 pro
   setup: studied D1, D3; procedure D2; lens D4
   E1.R1 D4 = 36 to 77 (range) % n 39
   E1.T1 Range of yields per substrate class
-  | row | D11 | D4 (%) | products (1) |
+  | row | D11 | D4 (%) | products (count) (1) |
   | r1 | D12 | 36 to 77 (range) | 11 |
   | r2 | D13 | 45 to 74 (range) | 11 |
   | r3 | D14 | 53 to 70 (range) | 6 |

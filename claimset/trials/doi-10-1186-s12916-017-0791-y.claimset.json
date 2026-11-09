@@ -336,6 +336,10 @@
           "id": "R1",
           "variable": "D4",
           "value": -7.1,
+          "statistic": {
+            "name": "difference",
+            "label": "in change from baseline, MMRM"
+          },
           "unit": "1",
           "interval": {
             "kind": "confidence",
@@ -346,14 +350,17 @@
           "n": 67,
           "conditions": {
             "D8": "D1",
-            "comparator": "D2",
-            "statistic": "difference in change from baseline, MMRM"
+            "comparator": "D2"
           }
         },
         {
           "id": "R2",
           "variable": "D4",
           "value": -1.16,
+          "statistic": {
+            "name": "standardised_mean_difference",
+            "label": "Cohen's d"
+          },
           "unit": "1",
           "interval": {
             "kind": "confidence",
@@ -363,14 +370,14 @@
           },
           "conditions": {
             "D8": "D1",
-            "comparator": "D2",
-            "statistic": "Cohen's d"
+            "comparator": "D2"
           }
         },
         {
           "id": "R3",
           "variable": "D5",
           "value": 4.1,
+          "statistic": "nnt",
           "interval": {
             "kind": "confidence",
             "level": 0.95,
@@ -379,14 +386,17 @@
           },
           "conditions": {
             "D8": "D1",
-            "comparator": "D2",
-            "statistic": "number needed to treat"
+            "comparator": "D2"
           }
         },
         {
           "id": "R4",
           "variable": "D6",
           "value": -2.3,
+          "statistic": {
+            "name": "difference",
+            "label": "in change from baseline"
+          },
           "interval": {
             "kind": "confidence",
             "level": 0.95,
@@ -395,8 +405,7 @@
           },
           "conditions": {
             "D8": "D1",
-            "comparator": "D2",
-            "statistic": "difference in change from baseline"
+            "comparator": "D2"
           }
         }
       ],
@@ -408,13 +417,17 @@
             "D8"
           ],
           "columns": [
-            "participants in remission",
-            "completers",
+            {
+              "variable": "participants in remission",
+              "statistic": "count"
+            },
+            {
+              "variable": "completers",
+              "statistic": "count"
+            },
             {
               "variable": "D5",
-              "conditions": {
-                "statistic": "proportion"
-              }
+              "statistic": "proportion"
             }
           ],
           "units": [
@@ -454,8 +467,14 @@
             "D8"
           ],
           "columns": [
-            "randomised",
-            "completed 12 weeks"
+            {
+              "variable": "randomised",
+              "statistic": "count"
+            },
+            {
+              "variable": "completed 12 weeks",
+              "statistic": "count"
+            }
           ],
           "units": [
             "1",

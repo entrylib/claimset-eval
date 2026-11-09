@@ -35,7 +35,7 @@ E1 [quant; design observational; data_origin primary] Combined search for the St
   E1.R3 global significance over 110-600 GeV = 5.1 standard deviations
   E1.R4 D11 = 1.4 ± 0.3 (total)
   E1.R5 expected local significance for a Standard Model Higgs boson = 4.9 standard deviations {D9: 126.5}
-  E1.R6 local p0 = 1.7e-09 1
+  E1.R6 local p0 (p_value) = 1.7e-09 1
   E1.R7 excluded Standard Model Higgs boson mass, observed (first range) = 111 to 122 (range, 95%) GeV
   E1.R8 excluded Standard Model Higgs boson mass, observed (second range) = 131 to 559 (range, 95%) GeV
   E1.R9 excluded Standard Model Higgs boson mass, expected = 110 to 582 (range, 95%) GeV

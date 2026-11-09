@@ -378,6 +378,7 @@
           "id": "R1",
           "variable": "annual trend coefficient (log scale)",
           "value": -0.063,
+          "statistic": "coefficient",
           "uncertainty": [
             {
               "kind": "se",
@@ -509,8 +510,14 @@
             "model"
           ],
           "columns": [
-            "annual trend coefficient (log scale)",
-            "explained variation R2"
+            {
+              "variable": "annual trend coefficient (log scale)",
+              "statistic": "coefficient"
+            },
+            {
+              "variable": "explained variation R2",
+              "statistic": "r_squared"
+            }
           ],
           "units": [
             "1",

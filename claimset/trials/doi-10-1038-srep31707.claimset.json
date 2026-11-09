@@ -373,17 +373,20 @@
         {
           "id": "R1",
           "variable": "genes whose knockdown increased focal adhesion size (D > 0.1, p < 1e-40)",
-          "value": 30
+          "value": 30,
+          "statistic": "count"
         },
         {
           "id": "R2",
           "variable": "genes whose knockdown decreased focal adhesion size (D < -0.075, p < 1e-25)",
-          "value": 11
+          "value": 11,
+          "statistic": "count"
         },
         {
           "id": "R3",
           "variable": "genes screened",
-          "value": 569
+          "value": 569,
+          "statistic": "count"
         }
       ],
       "availability": {
@@ -421,12 +424,14 @@
           "id": "R1",
           "variable": "primary hits whose SMARTpool knockdown reduced migration consistently",
           "value": 13,
+          "statistic": "count",
           "n": 64
         },
         {
           "id": "R2",
           "variable": "genes whose knockdown reduced migration with two or more single siRNAs",
           "value": 10,
+          "statistic": "count",
           "n": 13
         }
       ],
@@ -472,7 +477,10 @@
             "D6"
           ],
           "columns": [
-            "cells analysed",
+            {
+              "variable": "cells analysed",
+              "statistic": "count"
+            },
             "force autocorrelation half-time relative to mock (approximate, as the text gives it)"
           ],
           "units": [

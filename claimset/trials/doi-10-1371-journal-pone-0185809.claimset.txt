@@ -28,7 +28,7 @@ C3 [descriptive; secondary; support: empirical_quant E1 (E1.R5, E1.R6)]
 EVIDENCE
 E1 [quant; design observational; data_origin primary; n 1503] Basic temporal model of 1,503 Malaise-trap samples from 63 locations in German protected areas, 1989-2016.
   setup: studied D1, D11; cases D3; procedure D2, D4; lens D1, D5, D6
-  E1.R1 annual trend coefficient (log scale) = -0.063 ± 0.002 (se) {model: basic}
+  E1.R1 annual trend coefficient (log scale) (coefficient) = -0.063 ± 0.002 (se) {model: basic}
   E1.R2 D6 = 76.7 % 95% credible interval 74.8 to 78.5
   E1.R3 mid-summer decline over 27 years = 81.6 % 95% credible interval 79.7 to 83.4
   E1.R4 D5 = 6.1 %/a
@@ -39,7 +39,7 @@ E2 [quant; design observational; data_origin primary] Comparison of seven models
   setup: studied D7; cases D3; procedure D4; lens D1
   derived from E1 (reanalysis)
   E2.T1 Trend coefficient (log scale) and explained variation of biomass under models with different covariates
-  | row | model | annual trend coefficient (log scale) (1) | explained variation R2 (%) |
+  | row | model | annual trend coefficient (log scale) (coefficient) (1) | explained variation R2 (r_squared) (%) |
   | r1 | basic | -0.063 |  |
   | r2 | weather | -0.058 | 65.4 |
   | r3 | land use | -0.064 | 61.3 |

@@ -347,12 +347,14 @@
         {
           "id": "R1",
           "variable": "posterior probability of the null model",
-          "value": 0.545
+          "value": 0.545,
+          "statistic": "posterior_probability"
         },
         {
           "id": "R2",
           "variable": "inclusion Bayes factor",
           "value": 0.359,
+          "statistic": "bayes_factor",
           "conditions": {
             "effect": "D1"
           }
@@ -361,6 +363,7 @@
           "id": "R3",
           "variable": "inclusion Bayes factor",
           "value": 0.143,
+          "statistic": "bayes_factor",
           "conditions": {
             "effect": "D5"
           }
@@ -369,6 +372,7 @@
           "id": "R4",
           "variable": "inclusion Bayes factor",
           "value": 0.069,
+          "statistic": "bayes_factor",
           "conditions": {
             "effect": "interaction of D1 and D5"
           }
@@ -419,6 +423,7 @@
           "id": "R1",
           "variable": "inclusion Bayes factor",
           "value": 0.71,
+          "statistic": "bayes_factor",
           "conditions": {
             "effect": "D1"
           }
@@ -427,6 +432,7 @@
           "id": "R2",
           "variable": "inclusion Bayes factor",
           "value": 0.117,
+          "statistic": "bayes_factor",
           "conditions": {
             "effect": "D5"
           }
