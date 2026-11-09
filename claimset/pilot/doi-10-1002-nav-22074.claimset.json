@@ -2652,44 +2652,26 @@
      "columns": [
       {
        "variable": "D14",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D15",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D16",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D14",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       },
       {
        "variable": "D15",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       },
       {
        "variable": "D16",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       }
      ],
@@ -2998,44 +2980,26 @@
      "columns": [
       {
        "variable": "D15",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D14",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D16",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D15",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       },
       {
        "variable": "D14",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       },
       {
        "variable": "D16",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       }
      ],
@@ -3186,44 +3150,26 @@
      "columns": [
       {
        "variable": "D14",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D15",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D16",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D14",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       },
       {
        "variable": "D15",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       },
       {
        "variable": "D16",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       }
      ],
@@ -3329,44 +3275,26 @@
      "columns": [
       {
        "variable": "D14",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D15",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D16",
-       "conditions": {
-        "summary over series": "mean"
-       },
        "statistic": "mean"
       },
       {
        "variable": "D14",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       },
       {
        "variable": "D15",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       },
       {
        "variable": "D16",
-       "conditions": {
-        "summary over series": "median"
-       },
        "statistic": "median"
       }
      ],

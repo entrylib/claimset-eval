@@ -197,7 +197,7 @@ E1 [formal; foundation Linear state space models; matrix algebra] Construction o
 E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applied to [[D22:simulated VETS(M,N,M;LN) data]] from each of the nine variants, evaluated on the [[D23:simulation holdout]] against [[D15:PIC(N,N,N)]] or the correct variant.
   setup: studied D6; cases D22; procedure D23; lens D37, D38, D39, D40, D41, D42
   E2.T1 rMAE, rRMSE and rAME of the nine variants relative to PIC(N,N,N), over all simulated data, for 56 and 16 in-sample quarters
-  | row | D6 | D37 {in-sample quarters: 56, comparator: D15} | D38 {in-sample quarters: 56, comparator: D15} | D39 {in-sample quarters: 56, comparator: D15} | D37 {in-sample quarters: 16, comparator: D15} | D38 {in-sample quarters: 16, comparator: D15} | D39 {in-sample quarters: 16, comparator: D15} |
+  | row | D6 | D37 {in-sample quarters: 56, comparator: D15} (geometric mean) | D38 {in-sample quarters: 56, comparator: D15} (geometric mean) | D39 {in-sample quarters: 56, comparator: D15} (geometric mean) | D37 {in-sample quarters: 16, comparator: D15} (geometric mean) | D38 {in-sample quarters: 16, comparator: D15} (geometric mean) | D39 {in-sample quarters: 16, comparator: D15} (geometric mean) |
   | r1 | D7 | 1.23 | 1.21 | 1.11 | 1.17 | 1.16 | 1.08 |
   | r2 | D8 | 1.23 | 1.22 | 1.1 | 1.17 | 1.15 | 1.07 |
   | r3 | D9 | 1.24 | 1.22 | 1.11 | 1.17 | 1.15 | 1.07 |
@@ -208,7 +208,7 @@ E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applie
   | r8 | D14 | 1 | 1 | 0.99 | 1 | 1 | 1 |
   | r9 | D15 | 1 | 1 | 1 | 1 | 1 | 1 |
   E2.T2 rMAE of the nine variants (rows) on data from each variant (columns), relative to the correct variant, 16 in-sample quarters {in-sample quarters: 16}
-  | row | D6 | D37 {data-generating variant: D7, comparator: D7} | D37 {data-generating variant: D8, comparator: D8} | D37 {data-generating variant: D9, comparator: D9} | D37 {data-generating variant: D10, comparator: D10} | D37 {data-generating variant: D11, comparator: D11} | D37 {data-generating variant: D12, comparator: D12} | D37 {data-generating variant: D13, comparator: D13} | D37 {data-generating variant: D14, comparator: D14} | D37 {data-generating variant: D15, comparator: D15} |
+  | row | D6 | D37 {data-generating variant: D7, comparator: D7} (geometric mean) | D37 {data-generating variant: D8, comparator: D8} (geometric mean) | D37 {data-generating variant: D9, comparator: D9} (geometric mean) | D37 {data-generating variant: D10, comparator: D10} (geometric mean) | D37 {data-generating variant: D11, comparator: D11} (geometric mean) | D37 {data-generating variant: D12, comparator: D12} (geometric mean) | D37 {data-generating variant: D13, comparator: D13} (geometric mean) | D37 {data-generating variant: D14, comparator: D14} (geometric mean) | D37 {data-generating variant: D15, comparator: D15} (geometric mean) |
   | r1 | D7 | 1 | 0.98 | 1.01 | 1 | 1 | 1.16 | 1.58 | 1.66 | 1.7 |
   | r2 | D8 | 1.01 | 1 | 1.02 | 1.01 | 1.01 | 1.15 | 1.55 | 1.64 | 1.67 |
   | r3 | D9 | 1.01 | 0.98 | 1 | 1.01 | 1.01 | 1.16 | 1.55 | 1.64 | 1.68 |
@@ -219,7 +219,7 @@ E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applie
   | r8 | D14 | 1.08 | 1.06 | 1.04 | 1.04 | 1.04 | 1.02 | 0.98 | 1 | 1.01 |
   | r9 | D15 | 1.07 | 1.06 | 1.03 | 1.03 | 1.04 | 1.02 | 0.97 | 1 | 1 |
   E2.T3 rRMSE of the nine variants (rows) on data from each variant (columns), relative to the correct variant, 16 in-sample quarters {in-sample quarters: 16}
-  | row | D6 | D38 {data-generating variant: D7, comparator: D7} | D38 {data-generating variant: D8, comparator: D8} | D38 {data-generating variant: D9, comparator: D9} | D38 {data-generating variant: D10, comparator: D10} | D38 {data-generating variant: D11, comparator: D11} | D38 {data-generating variant: D12, comparator: D12} | D38 {data-generating variant: D13, comparator: D13} | D38 {data-generating variant: D14, comparator: D14} | D38 {data-generating variant: D15, comparator: D15} |
+  | row | D6 | D38 {data-generating variant: D7, comparator: D7} (geometric mean) | D38 {data-generating variant: D8, comparator: D8} (geometric mean) | D38 {data-generating variant: D9, comparator: D9} (geometric mean) | D38 {data-generating variant: D10, comparator: D10} (geometric mean) | D38 {data-generating variant: D11, comparator: D11} (geometric mean) | D38 {data-generating variant: D12, comparator: D12} (geometric mean) | D38 {data-generating variant: D13, comparator: D13} (geometric mean) | D38 {data-generating variant: D14, comparator: D14} (geometric mean) | D38 {data-generating variant: D15, comparator: D15} (geometric mean) |
   | r1 | D7 | 1 | 0.98 | 1.01 | 1 | 1 | 1.14 | 1.52 | 1.6 | 1.63 |
   | r2 | D8 | 1.01 | 1 | 1.02 | 1 | 1.01 | 1.14 | 1.49 | 1.58 | 1.61 |
   | r3 | D9 | 1.01 | 0.98 | 1 | 1.01 | 1.01 | 1.15 | 1.5 | 1.58 | 1.61 |
@@ -230,7 +230,7 @@ E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applie
   | r8 | D14 | 1.08 | 1.06 | 1.03 | 1.04 | 1.04 | 1.02 | 0.98 | 1 | 1.01 |
   | r9 | D15 | 1.07 | 1.05 | 1.03 | 1.03 | 1.04 | 1.01 | 0.97 | 1 | 1 |
   E2.T4 rMAE of the nine variants relative to PIC(N,N,N) by group size, on data from PIC(LS,S,S) {data-generating variant: D7, comparator: D15}
-  | row | D6 | D37 {series per group: 2} | D37 {series per group: 10} | D37 {series per group: 20} | D37 {series per group: 30} | D37 {series per group: 40} | D37 {series per group: 50} |
+  | row | D6 | D37 {series per group: 2} (geometric mean) | D37 {series per group: 10} (geometric mean) | D37 {series per group: 20} (geometric mean) | D37 {series per group: 30} (geometric mean) | D37 {series per group: 40} (geometric mean) | D37 {series per group: 50} (geometric mean) |
   | r1 | D7 | 0.97 | 0.95 | 0.95 | 0.95 | 0.95 | 0.95 |
   | r2 | D8 | 0.98 | 0.95 | 0.95 | 0.97 | 0.95 | 0.95 |
   | r3 | D9 | 0.98 | 0.96 | 0.96 | 0.96 | 0.96 | 0.95 |
@@ -241,7 +241,7 @@ E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applie
   | r8 | D14 | 1 | 1 | 1.01 | 1.01 | 1.01 | 1.01 |
   | r9 | D15 | 1 | 1 | 1 | 1 | 1 | 1 |
   E2.T5 rMAE of the nine variants relative to PIC(N,N,N) by group size, on data from PIC(N,N,N) {data-generating variant: D15, comparator: D15}
-  | row | D6 | D37 {series per group: 2} | D37 {series per group: 10} | D37 {series per group: 20} | D37 {series per group: 30} | D37 {series per group: 40} | D37 {series per group: 50} |
+  | row | D6 | D37 {series per group: 2} (geometric mean) | D37 {series per group: 10} (geometric mean) | D37 {series per group: 20} (geometric mean) | D37 {series per group: 30} (geometric mean) | D37 {series per group: 40} (geometric mean) | D37 {series per group: 50} (geometric mean) |
   | r1 | D7 | 1.53 | 1.82 | 1.86 | 1.87 | 1.88 | 1.88 |
   | r2 | D8 | 1.52 | 1.8 | 1.83 | 1.84 | 1.85 | 1.85 |
   | r3 | D9 | 1.53 | 1.8 | 1.83 | 1.84 | 1.85 | 1.85 |
@@ -252,7 +252,7 @@ E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applie
   | r8 | D14 | 1.01 | 1.01 | 1.01 | 1.01 | 1.01 | 1.01 |
   | r9 | D15 | 1 | 1 | 1 | 1 | 1 | 1 |
   E2.T6 rPinballU, rPinballL relative to PIC(N,N,N) and coverage of the 95% interval of the nine variants over all simulated data, for 56 and 16 in-sample quarters
-  | row | D6 | D40 {in-sample quarters: 56, comparator: D15} | D41 {in-sample quarters: 56, comparator: D15} | D42 {in-sample quarters: 56} | D40 {in-sample quarters: 16, comparator: D15} | D41 {in-sample quarters: 16, comparator: D15} | D42 {in-sample quarters: 16} |
+  | row | D6 | D40 {in-sample quarters: 56, comparator: D15} (geometric mean) | D41 {in-sample quarters: 56, comparator: D15} (geometric mean) | D42 {in-sample quarters: 56} (mean) | D40 {in-sample quarters: 16, comparator: D15} (geometric mean) | D41 {in-sample quarters: 16, comparator: D15} (geometric mean) | D42 {in-sample quarters: 16} (mean) |
   | r1 | D7 | 1.23 | 1.12 | 0.946 | 0.99 | 1.04 | 0.944 |
   | r2 | D8 | 1.31 | 1.12 | 0.95 | 1.05 | 1.05 | 0.953 |
   | r3 | D9 | 1.29 | 1.12 | 0.949 | 1.09 | 1.06 | 0.96 |
@@ -263,7 +263,7 @@ E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applie
   | r8 | D14 | 1.01 | 1 | 0.944 | 0.91 | 0.98 | 0.954 |
   | r9 | D15 | 1 | 1 | 0.946 | 1 | 1 | 0.97 |
   E2.T7 rPinballU of the nine variants (rows) on data from each variant (columns), relative to the correct variant, 16 in-sample quarters {in-sample quarters: 16}
-  | row | D6 | D40 {data-generating variant: D7, comparator: D7} | D40 {data-generating variant: D8, comparator: D8} | D40 {data-generating variant: D9, comparator: D9} | D40 {data-generating variant: D10, comparator: D10} | D40 {data-generating variant: D11, comparator: D11} | D40 {data-generating variant: D12, comparator: D12} | D40 {data-generating variant: D13, comparator: D13} | D40 {data-generating variant: D14, comparator: D14} | D40 {data-generating variant: D15, comparator: D15} |
+  | row | D6 | D40 {data-generating variant: D7, comparator: D7} (geometric mean) | D40 {data-generating variant: D8, comparator: D8} (geometric mean) | D40 {data-generating variant: D9, comparator: D9} (geometric mean) | D40 {data-generating variant: D10, comparator: D10} (geometric mean) | D40 {data-generating variant: D11, comparator: D11} (geometric mean) | D40 {data-generating variant: D12, comparator: D12} (geometric mean) | D40 {data-generating variant: D13, comparator: D13} (geometric mean) | D40 {data-generating variant: D14, comparator: D14} (geometric mean) | D40 {data-generating variant: D15, comparator: D15} (geometric mean) |
   | r1 | D7 | 1 | 0.95 | 0.96 | 1.03 | 0.98 | 1.01 | 1.71 | 1.73 | 1.7 |
   | r2 | D8 | 1.06 | 1 | 1 | 1.08 | 1.03 | 1.05 | 1.87 | 1.93 | 1.87 |
   | r3 | D9 | 1.09 | 1.01 | 1 | 1.12 | 1.06 | 1.08 | 2 | 2.05 | 1.99 |
@@ -274,7 +274,7 @@ E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applie
   | r8 | D14 | 1.24 | 1.17 | 1.17 | 1.22 | 1.15 | 0.98 | 1.01 | 1 | 0.91 |
   | r9 | D15 | 1.39 | 1.28 | 1.26 | 1.36 | 1.28 | 1.07 | 1.13 | 1.11 | 1 |
   E2.T8 rPinballU of the nine variants relative to PIC(N,N,N) by group size, on data from PIC(LS,S,S) {data-generating variant: D7, comparator: D15}
-  | row | D6 | D40 {series per group: 2} | D40 {series per group: 10} | D40 {series per group: 20} | D40 {series per group: 30} | D40 {series per group: 40} | D40 {series per group: 50} |
+  | row | D6 | D40 {series per group: 2} (geometric mean) | D40 {series per group: 10} (geometric mean) | D40 {series per group: 20} (geometric mean) | D40 {series per group: 30} (geometric mean) | D40 {series per group: 40} (geometric mean) | D40 {series per group: 50} (geometric mean) |
   | r1 | D7 | 0.87 | 0.74 | 0.71 | 0.69 | 0.68 | 0.66 |
   | r2 | D8 | 0.89 | 0.81 | 0.77 | 0.72 | 0.72 | 0.7 |
   | r3 | D9 | 0.9 | 0.82 | 0.79 | 0.76 | 0.74 | 0.73 |
@@ -285,7 +285,7 @@ E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applie
   | r8 | D14 | 0.96 | 0.89 | 0.89 | 0.88 | 0.87 | 0.85 |
   | r9 | D15 | 1 | 1 | 1 | 1 | 1 | 1 |
   E2.T9 rPinballU of the nine variants relative to PIC(N,N,N) by group size, on data from PIC(N,N,N) {data-generating variant: D15, comparator: D15}
-  | row | D6 | D40 {series per group: 2} | D40 {series per group: 10} | D40 {series per group: 20} | D40 {series per group: 30} | D40 {series per group: 40} | D40 {series per group: 50} |
+  | row | D6 | D40 {series per group: 2} (geometric mean) | D40 {series per group: 10} (geometric mean) | D40 {series per group: 20} (geometric mean) | D40 {series per group: 30} (geometric mean) | D40 {series per group: 40} (geometric mean) | D40 {series per group: 50} (geometric mean) |
   | r1 | D7 | 1.6 | 1.76 | 1.73 | 1.73 | 1.7 | 1.68 |
   | r2 | D8 | 1.66 | 1.92 | 1.9 | 1.9 | 1.96 | 1.83 |
   | r3 | D9 | 1.72 | 2.07 | 2.05 | 2.04 | 1.99 | 1.97 |
@@ -299,7 +299,7 @@ E2 [simulation; runs 1000] The [[D6:nine PIC variants of VETS(M,N,M;LN)]] applie
 E3 [quant; design benchmark; data_origin secondary; n 69] [[D24:VETS F]] and [[D25:VETS D]] compared with [[D26:ETS LN]], [[D28:ETS (ADAM)]] and [[D27:ETS]] on the [[D32:M5 departmental data]], on long and short histories with the same 12-month holdout, by accuracy and prediction-interval measures and the [[D36:MCB test]].
   setup: studied D24, D25, D26, D27, D28; cases D32; procedure D5, D33, D34, D36; lens D37, D40, D41, D42, D43
   E3.T1 Geometric mean and median rMAE (benchmark Naive) of the five models, overall and on seasonal and non-seasonal series, on long and short histories {comparator: the Naive method}
-  | row | D35 | D29 | D37 {series: overall, summary over series: geometric mean} | D37 {series: overall, summary over series: median} | D37 {series: seasonal, summary over series: geometric mean} | D37 {series: seasonal, summary over series: median} | D37 {series: non-seasonal, summary over series: geometric mean} | D37 {series: non-seasonal, summary over series: median} |
+  | row | D35 | D29 | D37 {series: overall} (geometric mean) | D37 {series: overall} (median) | D37 {series: seasonal} (geometric mean) | D37 {series: seasonal} (median) | D37 {series: non-seasonal} (geometric mean) | D37 {series: non-seasonal} (median) |
   | r1 | D33 | D26 | 0.917 | 0.959 | 0.906 | 0.878 | 0.972 | 1.031 |
   | r2 | D33 | D28 | 0.955 | 1 | 0.946 | 0.964 | 0.996 | 1.015 |
   | r3 | D33 | D27 | 0.933 | 0.957 | 0.92 | 0.924 | 0.996 | 1.015 |
@@ -311,17 +311,17 @@ E3 [quant; design benchmark; data_origin secondary; n 69] [[D24:VETS F]] and [[D
   | r9 | D34 | D25 | 0.936 | 0.974 | 0.923 | 0.974 | 0.999 | 0.974 |
   | r10 | D34 | D24 | 1.011 | 1 | 1.02 | 1.006 | 0.969 | 0.976 |
   E3.T2 Coverage of the 95% prediction interval and rPinballU and rPinballL (benchmark ETS on long histories) of the five models, on long and short histories
-  | row | D29 | D42 {D35: D33} | D40 {D35: D33, comparator: ETS on the long histories} | D41 {D35: D33, comparator: ETS on the long histories} | D42 {D35: D34} | D40 {D35: D34, comparator: ETS on the long histories} | D41 {D35: D34, comparator: ETS on the long histories} |
+  | row | D29 | D42 {D35: D33} (mean) | D40 {D35: D33, comparator: ETS on the long histories} (geometric mean) | D41 {D35: D33, comparator: ETS on the long histories} (geometric mean) | D42 {D35: D34} (mean) | D40 {D35: D34, comparator: ETS on the long histories} (geometric mean) | D41 {D35: D34, comparator: ETS on the long histories} (geometric mean) |
   | r1 | D26 | 0.934 | 1 | 1 | 0.854 | 1.061 | 0.895 |
   | r2 | D28 | 0.925 | 0.943 | 1.08 | 0.815 | 1.155 | 0.908 |
   | r3 | D27 | 0.937 | 0.912 | 1.3 | 0.886 | 0.938 | 1.194 |
   | r4 | D25 | 0.947 | 0.99 | 1.006 | 0.97 | 2.515 | 1.567 |
   | r5 | D24 | 0.982 | 2.383 | 1.494 | 0.972 | 4.414 | 1.804 |
   E3.T3 Number of the 11 VETS D models for which the selection procedure chose each PIC restriction {D29: D25, chosen by: D5}
-  | row | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(N,N,N)} | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(L,N,N)} | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(L,L,N)} | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(LS,S,N)} | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(LS,S,S)} |
+  | row | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(N,N,N)} (count) | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(L,N,N)} (count) | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(L,L,N)} (count) | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(LS,S,N)} (count) | number of the 11 groups for which the restriction is chosen {PIC restriction: PIC(LS,S,S)} (count) |
   | r1 | 1 | 1 | 2 | 6 | 1 |
   E3.T4 GMRAE (benchmark Naive) and coverage of the 95% interval of the five models at horizons 3, 6 and 12 months, on long and short histories
-  | row | D35 | D29 | D43 {horizon (months): 3} | D43 {horizon (months): 6} | D43 {horizon (months): 12} | D42 {horizon (months): 3} | D42 {horizon (months): 6} | D42 {horizon (months): 12} |
+  | row | D35 | D29 | D43 {horizon (months): 3} (geometric mean) | D43 {horizon (months): 6} (geometric mean) | D43 {horizon (months): 12} (geometric mean) | D42 {horizon (months): 3} (mean) | D42 {horizon (months): 6} (mean) | D42 {horizon (months): 12} (mean) |
   | r1 | D33 | D26 | 0.748 | 0.962 | 1.092 | 0.928 | 0.928 | 0.942 |
   | r2 | D33 | D28 | 0.716 | 0.942 | 0.988 | 0.855 | 0.899 | 0.913 |
   | r3 | D33 | D27 | 0.888 | 0.827 | 0.939 | 0.899 | 0.899 | 0.928 |
