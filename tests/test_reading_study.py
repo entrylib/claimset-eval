@@ -192,5 +192,50 @@ class ReadingStudyTest(unittest.TestCase):
         self.assertFalse(os.path.exists(self.out))
 
 
+class TestChatCompletions(unittest.TestCase):
+    """Providers of OpenAI's Chat Completions API answer as the Claude API does, for the rest of the study."""
+
+    REPLY = {"model": "deepseek-chat", "usage": {"prompt_tokens": 50, "completion_tokens": 9},
+             "choices": [{"message": {"content": "{\"answer\": \"0.112\", \"not_stated\": false, \"cites\": []}"},
+                          "finish_reason": "stop"}]}
+
+    def call(self, provider, model, env):
+        sent = []
+        real = rs.post_json
+        rs.post_json = lambda url, payload, headers: sent.append((url, payload, headers)) or (self.REPLY, 0.5, 1)
+        old = {k: os.environ.get(k) for k in env}
+        os.environ.update(env)
+        try:
+            out = rs.PROVIDERS[provider](model, "system", [{"type": "text", "text": "doc"}, {"type": "text", "text": "Q"}],
+                                         rs.ANSWER_SCHEMA, "high")
+        finally:
+            rs.post_json = real
+            for k, v in old.items():
+                os.environ.pop(k, None) if v is None else os.environ.__setitem__(k, v)
+        return out, sent[0]
+
+    def test_deepseek(self):
+        out, (url, payload, headers) = self.call("deepseek", "deepseek-chat", {"DEEPSEEK_API_KEY": "k"})
+        self.assertEqual(url, "https://api.deepseek.com/v1/chat/completions")
+        self.assertEqual(headers["authorization"], "Bearer k")
+        self.assertEqual(payload["response_format"], {"type": "json_object"})
+        self.assertIn("JSON schema", payload["messages"][0]["content"])
+        self.assertEqual(payload["messages"][1]["content"], "doc\n\nQ")
+        self.assertEqual((out["stop_reason"], out["usage"]["input_tokens"], rs.input_tokens(out["usage"])),
+                         ("end_turn", 50, 50))
+        self.assertEqual(json.loads(out["text"])["answer"], "0.112")
+
+    def test_openai_holds_the_reply_to_the_schema(self):
+        _, (_, payload, _) = self.call("openai", "gpt-5", {"OPENAI_API_KEY": "k"})
+        self.assertEqual(payload["response_format"]["json_schema"]["schema"], rs.ANSWER_SCHEMA)
+        self.assertEqual((payload["reasoning_effort"], payload["max_completion_tokens"]), ("high", 16000))
+
+    def test_minimax_and_a_local_server(self):
+        _, (url, payload, _) = self.call("minimax", "MiniMax-M2", {"MINIMAX_API_KEY": "k"})
+        self.assertNotIn("response_format", payload)
+        _, (url, _, headers) = self.call("local", "qwen3", {"OPENAI_BASE_URL": "http://localhost:8000/v1"})
+        self.assertEqual((url, "authorization" in headers), ("http://localhost:8000/v1/chat/completions", False))
+
+
 if __name__ == "__main__":
     unittest.main()
