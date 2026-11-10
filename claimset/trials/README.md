@@ -15,7 +15,7 @@ Eight open-access papers, one per kind of work, converted to claimsets that use 
 
 For each paper:
 
-- `<name>.claimset.json`: the claimset, converted again under 0.39; valid with 0 errors. `<name>.claimset.txt` is its reading view (`claimset render`).
+- `<name>.claimset.json`: the claimset, converted again under 0.39 and brought to 0.40 by its version alone; valid with 0 errors. `<name>.claimset.txt` is its reading view (`claimset render`).
 - `<name>.friction.json`: what did not fit, as a list of `{where, what, need, proposal, v0.39}`. `proposal` says whether the need belongs in the core, in an extension, or nowhere. `v0.39` says what happened in the second round: `resolved` or `partly resolved` (and how), `extension` (left to an extension), `open` (a core gap that remains), `none` (nothing needed), or `new` (found in the second round).
 
 Differences from the pilot set:
