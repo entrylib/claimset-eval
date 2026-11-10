@@ -12,7 +12,9 @@ are graded blind against the author's reference answers:
     python3 tools/reading_study.py grade  --out study/runs/R [--sheet sheet.csv | --import sheet.csv]
     python3 tools/reading_study.py report --out study/runs/R
 
-Standard library only; the Claude API is called over HTTPS with ANTHROPIC_API_KEY from the environment.
+Standard library only. Models are called over HTTPS with the key from the environment: the Claude API
+(ANTHROPIC_API_KEY, the default) or, with --provider, any provider of CHAT_COMPLETIONS (OpenAI, DeepSeek, MiniMax,
+Mistral, Qwen, Kimi, GLM, xAI, OpenRouter, a local server).
 See study/README.md for the protocol and the question format.
 """
 
@@ -250,16 +252,25 @@ def call_anthropic(model, system, blocks, schema, effort, max_tokens=16000):
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         raise SystemExit("ANTHROPIC_API_KEY is not set")
-    body = json.dumps({
+    payload = {
         "model": model, "max_tokens": max_tokens, "system": system,
         "messages": [{"role": "user", "content": blocks}],
         "output_config": {"effort": effort, "format": {"type": "json_schema", "schema": schema}},
-    }).encode("utf-8")
+    }
     headers = {"content-type": "application/json", "x-api-key": key, "anthropic-version": API_VERSION}
+    data, latency, attempts = post_json(API_URL, payload, headers)
+    text = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text")
+    return {"text": text, "usage": data.get("usage", {}), "stop_reason": data.get("stop_reason"),
+            "served_model": data.get("model"), "latency_s": latency, "attempts": attempts}
+
+
+def post_json(url, payload, headers):
+    """POST JSON with retries on rate limits and server errors: (answer, seconds, attempts)."""
+    body = json.dumps(payload).encode("utf-8")
     attempts = 0
     while True:
         attempts += 1
-        req = urllib.request.Request(API_URL, data=body, headers=headers, method="POST")
+        req = urllib.request.Request(url, data=body, headers=headers, method="POST")
         start = time.perf_counter()
         try:
             with urllib.request.urlopen(req, timeout=600) as resp:
@@ -276,9 +287,7 @@ def call_anthropic(model, system, blocks, schema, effort, max_tokens=16000):
                 raise RuntimeError(f"connection failed: {e.reason}") from None
             wait = 2 ** attempts
         time.sleep(wait)
-    text = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text")
-    return {"text": text, "usage": data.get("usage", {}), "stop_reason": data.get("stop_reason"),
-            "served_model": data.get("model"), "latency_s": round(latency, 3), "attempts": attempts}
+    return data, round(latency, 3), attempts
 
 
 def call_fake(model, system, blocks, schema, effort, max_tokens=16000):
@@ -292,7 +301,66 @@ def call_fake(model, system, blocks, schema, effort, max_tokens=16000):
             "stop_reason": "end_turn", "served_model": model, "latency_s": 0.0, "attempts": 1}
 
 
-PROVIDERS = {"anthropic": call_anthropic, "fake": call_fake}
+# Providers that serve OpenAI's Chat Completions API: (address, key variable, structured output). `<NAME>_BASE_URL`
+# overrides an address; `local` is a server on this machine or network (vLLM, LM Studio, llama.cpp) at
+# OPENAI_BASE_URL, without a key. "schema": the reply is held to the JSON schema; "object": the reply is JSON and the
+# schema is given in the instructions; None: the instructions alone ask for it.
+CHAT_COMPLETIONS = {
+    "openai": ("https://api.openai.com/v1", "OPENAI_API_KEY", "schema"),
+    "deepseek": ("https://api.deepseek.com/v1", "DEEPSEEK_API_KEY", "object"),
+    "minimax": ("https://api.minimax.io/v1", "MINIMAX_API_KEY", None),
+    "mistral": ("https://api.mistral.ai/v1", "MISTRAL_API_KEY", "object"),
+    "qwen": ("https://dashscope-intl.aliyuncs.com/compatible-mode/v1", "DASHSCOPE_API_KEY", "object"),
+    "moonshot": ("https://api.moonshot.ai/v1", "MOONSHOT_API_KEY", "object"),
+    "zai": ("https://api.z.ai/api/paas/v4", "ZAI_API_KEY", "object"),
+    "xai": ("https://api.x.ai/v1", "XAI_API_KEY", "schema"),
+    "openrouter": ("https://openrouter.ai/api/v1", "OPENROUTER_API_KEY", "object"),
+    "local": (None, None, None),
+}
+# OpenAI's reasoning models take an effort and no temperature; the study sends no temperature to any model
+OPENAI_EFFORT = {"low": "low", "medium": "medium", "high": "high", "xhigh": "high", "max": "high"}
+
+
+def chat_completions(name):
+    """A caller for one provider of CHAT_COMPLETIONS, with the same answer as call_anthropic."""
+    default, key_var, structured = CHAT_COMPLETIONS[name]
+
+    def call(model, system, blocks, schema, effort, max_tokens=16000):
+        base = os.environ.get(f"{name.upper()}_BASE_URL") or (os.environ.get("OPENAI_BASE_URL") if name == "local"
+                                                               else None) or default
+        if not base:
+            raise SystemExit("set OPENAI_BASE_URL to the local server's address (…/v1)")
+        key = os.environ.get(key_var) if key_var else None
+        if key_var and not key:
+            raise SystemExit(f"{key_var} is not set")
+        if structured != "schema":
+            system += "\n\nReply with one JSON object that follows this JSON schema, and nothing else:\n" + json.dumps(schema)
+        payload = {"model": model, "max_tokens": max_tokens,
+                   "messages": [{"role": "system", "content": system},
+                                {"role": "user", "content": "\n\n".join(b["text"] for b in blocks)}]}
+        if structured == "schema":
+            payload["response_format"] = {"type": "json_schema",
+                                          "json_schema": {"name": "reply", "schema": schema, "strict": True}}
+        elif structured == "object":
+            payload["response_format"] = {"type": "json_object"}
+        if name == "openai":
+            payload["max_completion_tokens"] = payload.pop("max_tokens")
+            if re.match(r"^(o\d|gpt-5)", model):
+                payload["reasoning_effort"] = OPENAI_EFFORT[effort]
+        headers = {"content-type": "application/json", **({"authorization": f"Bearer {key}"} if key else {})}
+        data, latency, attempts = post_json(f"{base.rstrip('/')}/chat/completions", payload, headers)
+        choice = (data.get("choices") or [{}])[0]
+        usage = data.get("usage") or {}
+        finish = choice.get("finish_reason")
+        return {"text": (choice.get("message") or {}).get("content") or "",
+                "usage": {"input_tokens": usage.get("prompt_tokens"), "output_tokens": usage.get("completion_tokens")},
+                "stop_reason": "end_turn" if finish == "stop" else finish,
+                "served_model": data.get("model"), "latency_s": latency, "attempts": attempts}
+    return call
+
+
+PROVIDERS = {"anthropic": call_anthropic, "fake": call_fake,
+             **{name: chat_completions(name) for name in CHAT_COMPLETIONS}}
 
 
 def input_tokens(usage):
