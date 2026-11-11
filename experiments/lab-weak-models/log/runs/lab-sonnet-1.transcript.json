@@ -1,0 +1,38 @@
+{
+ "first": "2026-11-11T14:15:45.847Z",
+ "last": "2026-11-11T14:26:58.444Z",
+ "models": {
+  "claude-sonnet-5-5": 62
+ },
+ "usage": {
+  "input_tokens": 132,
+  "cache_creation_input_tokens": 260697,
+  "cache_read_input_tokens": 6035710,
+  "output_tokens": 52609
+ },
+ "total_tokens": 6349148,
+ "tools": {
+  "Bash": 32,
+  "Read": 1,
+  "SubagentHandback": 3
+ },
+ "n_commands": 36,
+ "errors": [
+  {
+   "ts": "2026-11-11T14:26:31.371Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/lab-sonnet-1 && source /home/user/venv/bin/activate && claimset lab paper ets-estimation --questions Q1 --by AC1 | head -1; claimset lab verify 2>&1 | tail -5; claimset lab anchor 2>&1 | tail -2; claimset lab export --paper ets-estimation 2>&1 | tail -60; ls claimset/ets-estimation claimset/ets-estimation/files",
+   "rules": [],
+   "output": " on\n  - claims[].assumptions: link each claim to the assumption claims it relies on\n  - artefacts.A2.uri: the URI names no fixed version of the lab record, and the file there changes as the record grows, so it will not match the version hash: anchor the record (`claimset lab anchor`) and export again, or give a URI of this version (sha256:3ccf3fa007b32e40e04339857e2927cd8a6e83c71fcea856785466fc0b7b64a5)\n  - artefacts.A1.licence: give the licence of A1 itself, which is not necessarily the paper's: the study's own code and data take the licence their owners choose; content written by others (downloaded issues, posts, pages) keeps its authors' terms and cannot take the paper's licence; say whose it is and under what terms it is shared, or leave it out of the package\n  - artefacts.A2.licence: give the licence of A2 itself, which is not necessarily the paper's: the study's own code and data take the licence their owners choose; content written by others (downloaded issues, posts, pages) keeps its authors' terms and cannot take the paper's licence; say whose it is and under what terms it is shared, or leave it out of the package\nValidator: 2 error(s), 24 warning(s) in the draft; `claimset validate /home/user/exp-runs/lab-sonnet-1/claimset/ets-estimation/ets-estimation.claimset.json` lists them.\nclaimset: pushed claimset/ets-estimation at seq 1130 (0c30ddcabe9b)\nclaimset/ets-estimation:\nets-estimation.claimset.json\nfiles\nlab\n\nclaimset/ets-estimation/files:\nets-estimation.results.csv"
+  },
+  {
+   "ts": "2026-11-11T14:26:37.251Z",
+   "tool": "Bash",
+   "is_error": true,
+   "input": "cd /home/user/exp-runs/lab-sonnet-1 && python3 -I - <<'E'\nimport csv,json,collections\nrows=list(csv.DictReader(open('claimset/ets-estimation/files/ets-estimation.results.csv')))\nprint(rows[0].keys())\nd={}\nfor r in rows:\n    if r['variable'] in('bias','RMSE','estimates on a bound'):\n        c=json.loads(r['conditions']) if r['conditions'].startswith('{') else r['conditions']\n        d[(r['variable'",
+   "rules": [],
+   "output": "Exit code 1\ndict_keys(['lab_result', 'run', 'quantity', 'conditions', 'value'])\nTraceback (most recent call last):\n  File \"<stdin>\", line 6, in <module>\nKeyError: 'variable'"
+  }
+ ]
+}

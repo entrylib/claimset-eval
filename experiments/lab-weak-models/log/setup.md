@@ -79,3 +79,27 @@ lab-haiku-1 reported that statsforecast caps β at its starting α (≈ 0.20). V
 statsforecast's β never exceeds 0.20006 for ETS(A,A,N) (0.5, 0.2). The answer key was amended (K0.7, K8; K7.2
 qualified). The reference missed it because its bound flag used β ≤ α̂ (the estimate), not the starting α. The
 agent did not see the key; the finding is credited to that run.
+
+## Phase 2 setup
+
+Selected record: **lab-sonnet-1** (study `ets-estimation`). Reasons, from the four Phase 1 records:
+- all four verify (`claimset lab verify`: OK);
+- lab-sonnet-1 and lab-sonnet-2 have a confirmatory plan approved before its run and are anchored; lab-haiku-2's
+  plan was approved before its run but its hypotheses were set after the pilot and it was not anchored; lab-haiku-1
+  has no plan at all and recorded one run as the human;
+- only lab-sonnet-1 fixes statsforecast's model form (`AutoETS(..., damped=False)`). lab-sonnet-2
+  (`AutoETS(model=form, season_length=m)`) and both Haiku runs (`ets_f(y, m, model=code)`) leave `damped` unset,
+  so statsforecast chooses between ETS(A,A,N) and ETS(A,Ad,N) (model selection, against the brief); lab-sonnet-2's
+  form check compares `components[:3]`, which does not see the damping flag;
+- lab-sonnet-1 ran all 20 cells with R = 300, counted failures and estimates on a bound, and stated the
+  comparability settings (NT1).
+
+Copies: for each Phase 2 run, `git clone --bare lab-sonnet-1.git <run>.git` (HEAD set to `main`), a clone of it,
+`claimset setup` (which checks out the existing study), and one commit on the study branch by "Experiment" that
+removes the draft claimset and results CSV the lab agent had exported (`git rm ets-estimation.claimset.json
+files/ets-estimation.results.csv`), so that each Phase 2 agent exports afresh. `lab/` is untouched;
+`claimset lab verify` and `verify --remote`: OK, 1130 events. The lab agent's `.claude/`, `AGENTS.md`, `brief.md`
+and code on `main` are as it left them.
+
+The EntryLib rubric is not installed in the agents' environment (as in Phase 1); it is installed separately for
+scoring.

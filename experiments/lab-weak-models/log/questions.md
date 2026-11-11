@@ -56,3 +56,10 @@ Answered: (1) "CC-BY-4.0." (2) "Choose up to three principal claims you consider
 ## lab-sonnet-2, 14:5x (Phase 1, done)
 Reported: claimset completed in Phase 1 (beyond the Phase 1 task): validates with 0 errors, 4 warnings; highlights C1, C5, C4 chosen by the agent per the human's answer; autonomy human_supervised; CC-BY-4.0 also on artefacts; score not run (rubric not installed). Reads post hoc that the bias beyond 0.02 at T=500 is all in ETS(A,N,A), recorded as a limitation, not a test.
 Listed confirmations "remaining for the human" without a direct question needing an answer to proceed. Not continued.
+
+## lab-haiku-1, 15:0x (Phase 1, done)
+Reported: claimset validates (0 errors, 9 warnings); human re-registered as AC3 superseding AC2 with the corrected time; principal claims C2 (sf β cap), C1 (smooth γ bias), C4 (consistency), all exploratory; novelty from one web search (WebSearch tool used); built the claimset with its own script after `claimset lab export --force`.
+Disclosed: recorded run RN4 with `--by AC3` (the human's actor ID) by mistake; added note NT9 by AC1 stating it. (Breaks skill rule 2, "write only as yourself".)
+Listed open items for the human (highlights, public URI, CRediT roles, score). Not continued.
+
+Phase 2 started 2026-11-11T14:35:24Z: claimset-sonnet-1, -2 (sonnet), claimset-haiku-1, -2 (haiku), in parallel, each on a copy of the lab-sonnet-1 record.
