@@ -40,3 +40,7 @@ Reported: RN2 confirmatory under PL1; verdicts H1 supported, H2/H3 inconclusive,
 Asked: (1) SPDX licence for the paper, code and results; (2) confirm guarantor; (3) highlights; (4) autonomy human_supervised?; (5) run claimset score?
 Answered: (1) "CC-BY-4.0." (2) "Ivan Svetunkov, ORCID 0000-0001-7826-0281. I am the guarantor and the supervisor of this study." (3) "Choose up to three principal claims you consider most important." (4) and (5) "Use your judgement and say what you decided."
 Note: the agent said it would add `source_spans` "as the repo rule requires" and mentioned `papers/text/`: rules of the claimset-eval repository's AGENTS.md, which the Agent-tool subagents receive with the orchestrator's session context. Recorded as a confound in setup.md.
+
+## lab-sonnet-1, 14:3x (Phase 1, finished record)
+Reported: RN2 confirmatory under PL1 (approved before the run); verdicts H1 not_supported, H2 not_supported, H3 supported; verify OK; anchored; exported draft (2 errors, 24 warnings). Flagged smooth's γ bias in ETS(A,N,A) as "surprising result to check" (not investigated).
+Listed items "still needed from the human" (guarantor, licence, highlights, …) without asking a question. Not continued: the Phase 1 task ends at the finished record, which it reached.
