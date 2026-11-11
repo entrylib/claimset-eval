@@ -44,3 +44,6 @@ Note: the agent said it would add `source_spans` "as the repo rule requires" and
 ## lab-sonnet-1, 14:3x (Phase 1, finished record)
 Reported: RN2 confirmatory under PL1 (approved before the run); verdicts H1 not_supported, H2 not_supported, H3 supported; verify OK; anchored; exported draft (2 errors, 24 warnings). Flagged smooth's γ bias in ETS(A,N,A) as "surprising result to check" (not investigated).
 Listed items "still needed from the human" (guarantor, licence, highlights, …) without asking a question. Not continued: the Phase 1 task ends at the finished record, which it reached.
+
+## lab-haiku-2, 14:4x (Phase 1, finished record)
+Reported: RN4 confirmatory under PL1 (approved before the run), seed 20261112, R=300; verdicts H1, H2, H3 all inconclusive (violation counts 2, 12, 3); verify OK (1521 events). Q2 left as is and protection not installed (DC7). Disclosed: redirected the confirmatory run's stdout to a file in /tmp (outside its folder), then removed it. No question asked; not continued (Phase 1 task complete). Not exported; not anchored (no `claimset lab anchor` reported).
