@@ -87,3 +87,13 @@ Answered: (1) name answer; roles: judgement. (2) judgement. (3) "CC-BY-4.0." (4)
 ## claimset-haiku-2, 14:38 (Phase 2)
 Reported: valid, 0 errors, 21 warnings; did not yet rewrite the negative-result statements or search prior work ("main remaining piece of work"). Asked again for the artefact licences (A1, A2).
 Answered: "CC-BY-4.0."
+
+## claimset-haiku-1, 14:39 (Phase 2)
+Reported: valid, 0 errors, 2 warnings; highlights left out ("the guarantor must choose"), although the human's answer was to choose up to three. Asked again: which agent ran the study; highlights; score.
+Answered (repeated fixed answers): judgement / "Choose up to three principal claims you consider most important." / judgement.
+
+## claimset-haiku-2, 14:39 (Phase 2) — INTERVENTION
+Reported the licence applied (valid, 19 warnings) and stopped with its own stated remaining work undone (rewrite C1-C3 as negative results, prior-work search), asking nothing. Sent one neutral message: "The human has no further answers for you; all your questions have been answered. Continue." Counted as an intervention (a nudge to continue, no content).
+
+## claimset-haiku-1, 14:39 (Phase 2, done)
+Reported: valid, 0 errors, 1 warning; highlights C1, C3, C2 chosen; contributor and model left as itself (Claude Haiku, record_source "harness"), the Sonnet lab agent not added; score not run; not committed. Asked again to confirm the model question (already answered: judgement) and whether to submit or score. Not continued: the task (complete for submission, do not submit) is done. Reference B1 (DOI 10.1016/S0169-2070(01)00110-8) checked by web search: Hyndman, Koehler, Snyder & Grose (2002), IJF 18(3) 439-454 — a real DOI, correct.
