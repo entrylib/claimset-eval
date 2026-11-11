@@ -59,3 +59,15 @@ checking the reference, two facts that bear on the answer key were found and ver
 
 The brief fixes the data generating process's initial states (l_0 = 100, b_0 = 1, s_j = 10 sin(2πj/12)), which
 the request did not give, so that every run simulates the same processes as the reference.
+
+## Confound found during Phase 1
+
+Agent-tool subagents receive the orchestrator's project instructions (`claimset-eval/CLAUDE.md` → `AGENTS.md`:
+hand-made pilot claimsets, `source_spans` to `papers/text/`, "ask the author … one question at a time", run
+`claimset validate` and `claimset render` after every change). lab-sonnet-2 cited them ("source_spans, as the repo
+rule requires"). They do not apply to the runs; any effect on a run (e.g. `source_spans` added, one question at a
+time) is noted in its scoring and not counted against the skills.
+
+The Phase 1 task ends at the finished record. Agents that go on to export and complete a claimset in Phase 1 are
+answered from `human.md` like any other question; their Phase 1 claimsets are kept as data but Phase 2 starts from
+the selected record only (`lab/` and the code), without any claimset a lab agent drafted.

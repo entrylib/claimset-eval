@@ -34,3 +34,9 @@ Asked: whether to correct a stray question Q2; "Do you approve plan PL1 as writt
 The request to the human did not show the hypotheses' rules or quantities ("with the rules listed in the plan"); the recorded PL1 does name them (quantities viol1-viol3, "H1 violations (count)" etc.; rules H1 viol1 == 0 / viol1 >= 12, H2 viol2 == 0 / >= 16, H3 viol3 == 0 / >= 12; deterministic), checked with `claimset lab show PL1`. Judged by the plan as recorded: approved. Scored as a departure from the skill's Approvals step 1 (show the supervisor the decision rule).
 The agent reports H1-H3 recorded --from-exploration (thresholds set after pilot numbers), tested on new seed 20261112.
 Answered: Q2: "Use your judgement and say what you decided." PL1: "Approved." (given at 2026-11-11T14:20:55Z). Protection: "Use your judgement and say what you decided."
+
+## lab-sonnet-2, 14:3x (Phase 1, after verified record and export)
+Reported: RN2 confirmatory under PL1; verdicts H1 supported, H2/H3 inconclusive, H4-H6 not_supported; `claimset lab verify` OK; anchored; exported draft (2 errors, 31 warnings).
+Asked: (1) SPDX licence for the paper, code and results; (2) confirm guarantor; (3) highlights; (4) autonomy human_supervised?; (5) run claimset score?
+Answered: (1) "CC-BY-4.0." (2) "Ivan Svetunkov, ORCID 0000-0001-7826-0281. I am the guarantor and the supervisor of this study." (3) "Choose up to three principal claims you consider most important." (4) and (5) "Use your judgement and say what you decided."
+Note: the agent said it would add `source_spans` "as the repo rule requires" and mentioned `papers/text/`: rules of the claimset-eval repository's AGENTS.md, which the Agent-tool subagents receive with the orchestrator's session context. Recorded as a confound in setup.md.
