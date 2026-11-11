@@ -63,3 +63,27 @@ Disclosed: recorded run RN4 with `--by AC3` (the human's actor ID) by mistake; a
 Listed open items for the human (highlights, public URI, CRediT roles, score). Not continued.
 
 Phase 2 started 2026-11-11T14:35:24Z: claimset-sonnet-1, -2 (sonnet), claimset-haiku-1, -2 (haiku), in parallel, each on a copy of the lab-sonnet-1 record.
+
+## claimset-sonnet-1, 14:36 (Phase 2, after export)
+Asked (one message): (1) guarantor, ORCID, supervision, conceptualization, other contributors; (2) licences; (3) confidentiality; (4) funding, competing interests; (5) autonomy; (6) principal claims C1-C3?; (7) keywords and subfield; (8) highlights and score (for later).
+Answered: (1) name answer; contributors/conceptualization: judgement. (2) "CC-BY-4.0." (3) judgement. (4) "None." / competing-interest answer. (5)-(7) judgement. (8) highlights answer; score: judgement.
+
+## claimset-sonnet-2, 14:36 (Phase 2, after export)
+Asked (one message): (1) guarantor etc.; (2) licences; (3) confidentiality; (4) funding, competing interests; (5) autonomy; (6) keywords, subfield; (7) highlights; (8) C1-C3 principal; (9) score, and --novelty (sends to EntryLib).
+Answered: (1) name answer; contributors: judgement. (2) "CC-BY-4.0." (3) judgement. (4) "None." / competing-interest answer. (5), (6) judgement. (7) highlights answer. (8), (9) judgement.
+
+## claimset-haiku-2, 14:36 (Phase 2, after export)
+Asked one question (Q1), with six more "queued, one at a time" (the one-at-a-time rule is in claimset-eval's AGENTS.md, a confound; the submit skill says to ask in a single message): (1) keep the Sonnet lab agent as recorded and add itself as a second author agent with record_source "harness", contribution_record partial?
+Answered: (1) "Use your judgement and say what you decided."
+
+## claimset-haiku-2, 14:37 (Phase 2)
+Reported its decision on Q1 (added itself as author agent P3, record_source "harness"; contribution_record partial) and listed questions 2-7 as open "one at a time". All listed questions answered at once (the rule: answer each thing asked):
+(2) did Ivan approve PL1 with "Approved."? judgement. (3) licences: "CC-BY-4.0." (4) guarantor: name answer. (5) "None." / competing-interest answer / highlights answer / autonomy, keywords, principal claims: judgement. (6) negative-result wording, prior-work search: judgement. (7) score: judgement.
+
+## claimset-haiku-1, 14:38 (Phase 2, after export and first edits)
+Asked (one message, 11 questions): (1) guarantor, conceptualization, CRediT; (2) did a Sonnet agent run the study (record names Claude Sonnet)?; (3) licences; (4) confidentiality; (5) funding, competing interest, ethics; (6) autonomy; (7) keywords; (8) principal-claim order; (9) AS2 check status; (10) A2 lab-record URI; (11) prior work (it added Hyndman et al. 2002, DOI 10.1016/S0169-2070(01)00110-8, to be checked).
+Answered: (1) name answer; roles: judgement. (2) judgement. (3) "CC-BY-4.0." (4) judgement. (5) "None." / competing-interest answer / ethics: judgement. (6)-(11) judgement.
+
+## claimset-haiku-2, 14:38 (Phase 2)
+Reported: valid, 0 errors, 21 warnings; did not yet rewrite the negative-result statements or search prior work ("main remaining piece of work"). Asked again for the artefact licences (A1, A2).
+Answered: "CC-BY-4.0."

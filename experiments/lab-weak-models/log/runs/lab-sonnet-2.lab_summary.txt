@@ -1,0 +1,24 @@
+events: 1404; by type: {'init': 1, 'actor': 2, 'question': 1, 'term': 10, 'hypothesis': 6, 'run': 2, 'result': 1370, 'note': 2, 'decision': 1, 'plan': 1, 'approval': 1, 'status': 6, 'paper': 1}
+  actor AC1: agent Claude Code model=None words=None given_at=None supersedes=None
+  actor AC2: human Ivan Svetunkov model=None words='Ivan Svetunkov, ORCID 0000-0001-7826-0281. I am the guarantor and the supervisor of this study.' given_at=2026-11-11T14:30:00Z supersedes=None
+events written --by a human actor: []
+  H1 seq 15 from_exploration=None prompted_by=None: For every generating process and smoothing parameter of the [[TM4:ETS simulation design]], the [[TM6:RMSE]] of the estimates at T=500 is lower than at T=50, for
+  H2 seq 16 from_exploration=None prompted_by=None: In the [[TM4:ETS simulation design]], [[TM1:smooth ES, optimised initial states]] has lower [[TM6:RMSE]] of the smoothing-parameter estimates than [[TM3:statsfo
+  H3 seq 17 from_exploration=None prompted_by=None: In the [[TM4:ETS simulation design]], [[TM2:smooth ES, backcasting]] has lower [[TM6:RMSE]] of the smoothing-parameter estimates than [[TM1:smooth ES, optimised
+  H4 seq 18 from_exploration=None prompted_by=None: In the [[TM4:ETS simulation design]] at T=500, the [[TM5:bias]] of [[TM1:smooth ES, optimised initial states]] estimates of every smoothing parameter is within 
+  H5 seq 19 from_exploration=None prompted_by=None: In the [[TM4:ETS simulation design]] at T=500, the [[TM5:bias]] of [[TM2:smooth ES, backcasting]] estimates of every smoothing parameter is within +-0.02 of zer
+  H6 seq 20 from_exploration=None prompted_by=None: In the [[TM4:ETS simulation design]] at T=500, the [[TM5:bias]] of [[TM3:statsforecast AutoETS]] estimates of every smoothing parameter is within +-0.02 of zero
+  PL1 seq 709 kind=confirmatory hyps=['H1', 'H2', 'H3', 'H4', 'H5', 'H6'] requires_approval=True framework=deterministic quantities=['share_fall', 'share_so_sf', 'share_sb_so', 'so_up', 'so_lo', 'sb_up', 'sb_lo', 'sf_up', 'sf_lo'] supersedes=None
+  AP1 seq 710 target=PL1 words='Approved.' given_at=2026-11-11T14:20:18Z by=AC1 on_behalf_of=AC2
+  RN1 seq 21 by=AC1 label=exploratory exit=success dirty=False seeds=[1] cmd=python3 claimset-code/ets-param-estimation/sim.py --R 10 --seed 1 
+  RN2 seq 711 by=AC1 label=confirmatory exit=success dirty=False seeds=[2026] cmd=python3 claimset-code/ets-param-estimation/sim.py --R 300 --seed 2026 plan PL1 seq 709 before run; approvals before run: ['AP1']
+  ST1 H1 -> supported plan=PL1 evidence=['RS1358']: Rule of PL1: share_fall = 1.0 (all 24 arm x process x parameter series have lower RMSE at T=500 than at T=50).
+  ST2 H2 -> inconclusive plan=PL1 evidence=['RS1359']: Rule of PL1: share = 0.594, between 0.25 and 0.75; neither rule met.
+  ST3 H3 -> inconclusive plan=PL1 evidence=['RS1360']: Rule of PL1: share = 0.281, between 0.25 and 0.75; neither rule met (backcasting lower in a minority of comparisons).
+  ST4 H4 -> not_supported plan=PL1 evidence=['RS1361', 'RS1362']: Rule of PL1: max lower 90% bound of |bias| at T=500 is 0.0555 > 0.02.
+  ST5 H5 -> not_supported plan=PL1 evidence=['RS1363', 'RS1364']: Rule of PL1: max lower 90% bound of |bias| at T=500 is 0.0893 > 0.02.
+  ST6 H6 -> not_supported plan=PL1 evidence=['RS1365', 'RS1366']: Rule of PL1: max lower 90% bound of |bias| at T=500 is 0.0344 > 0.02.
+  NT1 note: Pilot RN1 (R=10, all 20 cells, exploratory) took 22.6 CPU-seconds summed over cells, so R=300 needs about 30 times that (roughly 11 CPU-minutes, about 3 minutes on 4 processes): under the 20-minute limit, so R stays 300.
+  DC1 decision: Comparability, fixed before the confirmatory run. (1) Parametrisation: both packages use the single-source-of-error (innovations) form with additive error, l_t = l_{t-1} + alpha e_t, b_t = b_{t-1} + beta e_t, s_t = s_{t-
+  NT2 note: Claimset draft completed after export: licence CC-BY-4.0 and guarantor/supervisor Ivan Svetunkov as stated by him; highlights (C1, C5, C4) chosen by the agent at his instruction; autonomy human_supervised chosen by the a
+anchor receipts: 34

@@ -39,6 +39,11 @@ agent's own record and still wrong against the key (a design error in the record
 - **K0.5 Fixed form in statsforecast.** For ETS(A,A,N), `AutoETS(model="AAN")` without `damped=False` selects
   between damped and undamped trend (on the reference's first 40 series of ETS(A,A,N), α = 0.5, β = 0.2, T = 50,
   it chose ETS(A,Ad,N) for 6). A study that leaves `damped` unset is doing model selection, against the brief.
+  Over all reference series (`damped_check.py`, `damped_check.csv`), the damped form is chosen in 36, 30, 18, 7 of
+  300 fits (α = 0.3, β = 0.05; T = 50…500) and 61, 48, 37, 27 of 300 (α = 0.5, β = 0.2). It changes sf's numbers
+  mostly at small T: for (0.5, 0.2), α bias −0.009 instead of +0.024 at T = 50 and −0.004 instead of +0.017 at
+  T = 100, α RMSE 0.185 instead of 0.207 (T = 50); at T = 500 the changes are below Monte Carlo error. A run that
+  left `damped` unset can still state K3 and K4.2 correctly, but not K4.1 (sf's positive α bias at small T).
 - **K0.7 statsforecast caps β at its starting α (amendment, see the end).** In `statsforecast.ets.initparam`, with
   α free, the starting value is α₀ = 0.0001 + 0.2·(0.9999 − 0.0001)/m (≈ 0.20006 for m = 1), and β's upper bound is
   set to min(0.9999, α₀) for the whole optimisation (`upper[1] = min(upper[1], alpha)` before optimising). So for

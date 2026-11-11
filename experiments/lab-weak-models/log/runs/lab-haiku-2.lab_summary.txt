@@ -1,0 +1,28 @@
+events: 1521; by type: {'init': 1, 'actor': 2, 'question': 2, 'decision': 7, 'note': 1, 'run': 4, 'result': 1482, 'term': 11, 'assumption': 2, 'hypothesis': 3, 'status': 4, 'plan': 1, 'approval': 1}
+  actor AC1: agent Claude Code model=None words=None given_at=None supersedes=None
+  actor AC2: human Ivan Svetunkov model=None words='Ivan Svetunkov, ORCID 0000-0001-7826-0281. I am the guarantor and the supervisor of this study.' given_at=2026-11-11T14:16:46Z supersedes=None
+events written --by a human actor: []
+  H1 seq 908 from_exploration=None prompted_by=['RN2', 'RN3']: For the simulated ETS series of [[TM4]] (ETS(A,N,N), ETS(A,A,N) and ETS(A,N,A) with the settings of the design), the RMSE of each smoothing-parameter estimate f
+  H2 seq 909 from_exploration=None prompted_by=['RN2', 'RN3']: At every setting, smoothing parameter and series length T in {50, 100, 250, 500}, the RMSE of [[TM3]] is within 10% of the RMSE of [[TM1]] for the same estimate
+  H3 seq 910 from_exploration=None prompted_by=['RN2', 'RN3']: For each of [[TM1]], [[TM2]] and [[TM3]] and each smoothing parameter of the settings in [[TM4]], the absolute bias of the estimate at T=500 is at most 0.02.
+  PL1 seq 912 kind=confirmatory hyps=['H1', 'H2', 'H3'] requires_approval=True framework=deterministic quantities=['viol1', 'viol2', 'viol3'] supersedes=None
+  AP1 seq 913 target=PL1 words='Approved.' given_at=2026-11-11T14:20:55Z by=AC1 on_behalf_of=AC2
+  RN1 seq 7 by=AC1 label=exploratory exit=success dirty=False seeds=[20261111] cmd=python3 claimset-code/ets-param-estimation/simulate_fit.py --reps 3 --lengths 50 500 
+  RN2 seq 284 by=AC1 label=exploratory exit=success dirty=False seeds=[20261111] cmd=python3 claimset-code/ets-param-estimation/simulate_fit.py --reps 3 --lengths 50 500 
+  RN3 seq 585 by=AC1 label=exploratory exit=success dirty=True seeds=[20261111] cmd=python3 claimset-code/ets-param-estimation/simulate_fit.py --reps 3 --lengths 50 500 
+  RN4 seq 915 by=AC1 label=confirmatory exit=success dirty=False seeds=[20261112] cmd=python3 claimset-code/ets-param-estimation/simulate_fit.py --reps 300 --lengths 50 100 250 500 --seed 20261112 plan PL1 seq 912 before run; approvals before run: ['AP1']
+  ST1 H1 -> testing plan=None evidence=None: Planned, not yet run.
+  ST2 H1 -> inconclusive plan=PL1 evidence=['RS1480']: Rule of PL1: H1 violations = 2, which is neither 0 (supported) nor at least 12 (not supported).
+  ST3 H2 -> inconclusive plan=PL1 evidence=['RS1481']: Rule of PL1: H2 violations = 12, which is neither 0 (supported) nor at least 16 (not supported).
+  ST4 H3 -> inconclusive plan=PL1 evidence=['RS1482']: Rule of PL1: H3 violations = 3, which is neither 0 (supported) nor at least 12 (not supported).
+  DC1 decision: Study name ets-param-estimation and the local origin remote chosen by the agent, because the human left both to its judgement; the record is not publishable until a public repository URI is given.
+  NT1 note: Guarantor of the study is Ivan Svetunkov, who is also the author and maintainer of the smooth package that the study evaluates: a competing interest to declare (human's reply, relayed by the coordinator).
+  AS1 assumption: smooth and statsforecast use the same meaning for alpha, beta and gamma (the innovations-form update of the level, trend and seasonal states that the simulation uses), so their estimates are comparable without conversion
+  AS2 assumption: Both implementations estimate the error scale sigma from the data; the simulation fixes sigma = 1 and the estimators are not told it.
+  DC2 decision: Season indexing: observation t (1-based) has season index (t-1) mod 12 in the initial seasonal states 10 sin(2 pi k/12), k = 0..11, so the first observation's season is index 0 as the brief states.
+  DC3 decision: Failures are counted, not dropped silently: a fit that raises an error or returns a non-finite estimate is excluded from that cell's bias, RMSE and MAE and counted in failed fits (excluded) and non-finite estimates (excl
+  DC4 decision: Replicates R=300 per cell. Timing from the exploratory pilots RN1-RN3 (3 replicates, lengths 50 and 500) was about 0.03 s per fit; the full design is 18,000 fits, about 10 minutes, below the 20-minute limit, so R stays a
+  DC5 decision: Seeds: pilots RN1-RN3 used seed 20261111. The confirmatory run uses seed 20261112, so its series are new data for the hypotheses.
+  DC6 decision: Comparability: both use the Gaussian likelihood (smooth loss='likelihood', statsforecast opt_crit='lik'). smooth optimised uses initial='optimal'; statsforecast estimates its initial states with the smoothing parameters 
+  DC7 decision: Protection steps: not installed now. The guard hook and the sudo append-only protection are for the human to decide (claimset-lab skill: the guard restricts the harness, and protection needs an administrator); the human 
+anchor receipts: 38
