@@ -20,3 +20,11 @@ Answered: (1) "Ivan Svetunkov, ORCID 0000-0001-7826-0281. I am the guarantor and
 Asked: (1) study name, proposed ets-param-recovery; (2) name and ORCID; (3) is the guarantor the one who approves plans, and should plans use --requires-approval; (4) repository URI; (5) confirmatory tests with decision rules or descriptive reporting, "give the rule or threshold for each property. I will not choose these."
 Answered: (1) "Use your judgement and say what you decided." (2) "Ivan Svetunkov, ORCID 0000-0001-7826-0281. I am the guarantor and the supervisor of this study." (3) same as (2); on --requires-approval: "Use your judgement and say what you decided." (4) and (5) "Use your judgement and say what you decided."
 Note: the agent disclosed one `ls /home/user/exp-runs/` outside its folder (names of sibling folders only, no contents). Its first turn also used the Skill tool (to be checked in the transcript).
+
+## lab-sonnet-2, 14:20 (Phase 1, approval of PL1)
+Asked: approval of PL1 (deterministic, H1-H6, quantities share_fall, share_so_sf, share_sb_so, so/sb/sf_up/lo; rules per hypothesis), recorded with --requires-approval before any confirmatory run (only exploratory pilot RN1, R=10, run). Orchestrator checked `claimset lab show PL1`: quantities and rules present.
+Answered: "Approved." (given at 2026-11-11T14:20:18Z)
+
+## lab-sonnet-1, 14:20 (Phase 1, approval of PL1)
+Asked: approval of PL1 (H1 RMSE ratio equivalence, H2 backcasting better at T=50, H3 consistency; quantities r_min, r_max, n_bc, v_opt, v_bc, v_sf, n_excl; rules computed). Exploratory timing run RN1 (R=10) before. Checked with `claimset lab show PL1`.
+Answered: "Approved." (given at 2026-11-11T14:20:18Z)
