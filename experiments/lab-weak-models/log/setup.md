@@ -71,3 +71,11 @@ time) is noted in its scoring and not counted against the skills.
 The Phase 1 task ends at the finished record. Agents that go on to export and complete a claimset in Phase 1 are
 answered from `human.md` like any other question; their Phase 1 claimsets are kept as data but Phase 2 starts from
 the selected record only (`lab/` and the code), without any claimset a lab agent drafted.
+
+## Answer key amended during Phase 1
+
+lab-haiku-1 reported that statsforecast caps β at its starting α (≈ 0.20). Verified against the statsforecast
+2.1.1 source (`initparam`: `upper[1] = min(upper[1], alpha)` with the starting α) and the reference estimates:
+statsforecast's β never exceeds 0.20006 for ETS(A,A,N) (0.5, 0.2). The answer key was amended (K0.7, K8; K7.2
+qualified). The reference missed it because its bound flag used β ≤ α̂ (the estimate), not the starting α. The
+agent did not see the key; the finding is credited to that run.

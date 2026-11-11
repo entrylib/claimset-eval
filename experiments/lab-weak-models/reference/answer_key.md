@@ -39,6 +39,11 @@ agent's own record and still wrong against the key (a design error in the record
 - **K0.5 Fixed form in statsforecast.** For ETS(A,A,N), `AutoETS(model="AAN")` without `damped=False` selects
   between damped and undamped trend (on the reference's first 40 series of ETS(A,A,N), α = 0.5, β = 0.2, T = 50,
   it chose ETS(A,Ad,N) for 6). A study that leaves `damped` unset is doing model selection, against the brief.
+- **K0.7 statsforecast caps β at its starting α (amendment, see the end).** In `statsforecast.ets.initparam`, with
+  α free, the starting value is α₀ = 0.0001 + 0.2·(0.9999 − 0.0001)/m (≈ 0.20006 for m = 1), and β's upper bound is
+  set to min(0.9999, α₀) for the whole optimisation (`upper[1] = min(upper[1], alpha)` before optimising). So for
+  ETS(A,A,N) statsforecast's β cannot exceed ≈ 0.20006, whatever the data. (For ETS(A,N,A) the analogous γ bound is
+  1 − α₀ ≈ 0.983, which does not bind.)
 - **K0.6 Optimisers.** Both use Nelder–Mead (smooth: NLopt `NLOPT_LN_NELDERMEAD`; statsforecast: its own).
   statsforecast exposes the iteration count (`model_["fit"].nit`); smooth's Python API does not expose a
   convergence flag.
@@ -62,7 +67,8 @@ agent's own record and still wrong against the key (a design error in the record
   | ETS(A,N,A) (0.2, 0.1) | α | 19 / 0 | 26 / 0 | 52 / 0 |
   | ETS(A,N,A) (0.2, 0.1) | γ | 129 / 0 | 136 / 0 | 265 / 3 |
 
-  β's upper bound is β = α. Bound hits fall with T (ETS(A,N,N) α = 0.1: 92 / 93 / 108 at T = 100, 1 / 1 / 1 at
+  β's upper bound is β = α (for statsforecast, effectively also β ≤ 0.20006, K0.7: not counted in this table).
+  Bound hits fall with T (ETS(A,N,N) α = 0.1: 92 / 93 / 108 at T = 100, 1 / 1 / 1 at
   T = 500), except γ in ETS(A,N,A) (K5).
 
 ## K2. ETS(A,N,N)
@@ -142,8 +148,8 @@ agent's own record and still wrong against the key (a design error in the record
   α = 0.3, β = 0.05), their estimates are practically the same; differences are within Monte Carlo error at
   T ≥ 250.
 - **K7.2** Neither implementation is uniformly better: smooth-opt is more efficient for α in ETS(A,A,N) at small T
-  and for α in ETS(A,N,A); sf is more efficient for β in ETS(A,A,N) (0.5, 0.2) at T ≥ 250 and less biased for γ
-  in ETS(A,N,A), the latter with non-converged fits.
+  and for α in ETS(A,N,A); sf has the lower RMSE for β in ETS(A,A,N) (0.5, 0.2) at T ≥ 250, but only because its
+  β is capped at ≈ 0.2 (K8), and is less biased for γ in ETS(A,N,A), with non-converged fits (K1.2, K5.4).
 - **K7.3** Backcasting (smooth's default) is close to optimised initial states for ETS(A,N,N) and ETS(A,A,N), the
   least biased arm for α in ETS(A,N,A), and the most biased for γ there.
 - **K7.4** Small-sample bias towards zero (or towards the lower bound) of the smoothing parameters is shared by
@@ -153,3 +159,21 @@ agent's own record and still wrong against the key (a design error in the record
 
 The guarantor (Ivan Svetunkov) is the author and maintainer of smooth: a competing interest, declared. Licence
 CC-BY-4.0; funding none.
+
+## Amendment (2026-11-11, during Phase 1): statsforecast's β cap
+
+Found by run lab-haiku-1 (its exploratory run RN1, reported to the orchestrator), then verified here against the
+statsforecast 2.1.1 source (K0.7) and the reference estimates (`estimates.csv`). The key above was written
+without it; K4.2–K4.4 are qualified by it.
+
+- **K8.1** For ETS(A,A,N) with (α, β) = (0.5, 0.2), statsforecast's β never exceeds 0.20006, the cap K0.7 (the
+  largest estimate in each T cell is 0.20006); 100, 135, 132, 144 of 300 fits at T = 50, 100, 250, 500 are within
+  0.001 of the cap. smooth's β exceeds 0.2 in about half the fits (131, 146, 132, 137 of 300 above 0.20006; maximum
+  0.41 at T = 100, 0.27 at T = 500). For (0.3, 0.05) the cap does not bind (largest estimates ≤ 0.17).
+- **K8.2** Consequently sf's negative β bias for (0.5, 0.2) (K4.2) and its lower β RMSE and MAE at T ≥ 250 (K4.3)
+  are produced by the cap sitting at the true value: estimates above 0.2 are impossible, which removes the upper
+  half of the sampling distribution. They are not evidence that statsforecast estimates β more efficiently. A
+  correct paper either reports the cap and qualifies the comparison, or does not claim sf is more efficient for β.
+- **K8.3** K7.2's "sf is more efficient for β in ETS(A,A,N) (0.5, 0.2) at T ≥ 250" is withdrawn as a correct
+  statement: it is true of the numbers but an artefact of K0.7. Claims that state it without the cap are scored
+  *partly correct* (numbers right, conclusion unsupported).
