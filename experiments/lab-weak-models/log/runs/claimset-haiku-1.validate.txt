@@ -1,0 +1,17 @@
+1. 2026-11-11T14:35:29.025Z Validator: 2 error(s), 24 warning(s)
+2. 2026-11-11T14:35:35.121Z INVALID submission: 2 error(s), 24 warning(s)
+     ERROR   [rule 16] contributors: a native paper has exactly one guarantor, the person who submits it (found 0); list other people as supervisors or contributo
+     ERROR   [rule 19] paper.licence: missing required field
+3. 2026-11-11T14:37:24.724Z INVALID submission: 4 error(s), 11 warning(s)
+     ERROR   [rule 16] contributors: a native paper has exactly one guarantor, the person who submits it (found 0); list other people as supervisors or contributo
+     ERROR   [rule 19] paper.licence: missing required field
+     ERROR   [rule 1] limitations:L1.category: 'methodological' is not one of ['analytic_flexibility', 'computational', 'confounding', 'data_quality', 'deviation
+     ERROR   [rule 1] limitations:L2.category: 'methodological' is not one of ['analytic_flexibility', 'computational', 'confounding', 'data_quality', 'deviation
+4. 2026-11-11T14:37:29.939Z INVALID submission: 2 error(s), 10 warning(s)
+     ERROR   [rule 16] contributors: a native paper has exactly one guarantor, the person who submits it (found 0); list other people as supervisors or contributo
+     ERROR   [rule 19] paper.licence: missing required field
+5. 2026-11-11T14:38:31.915Z INVALID submission: 1 error(s), 2 warning(s)
+     ERROR   [rule 69] paper.declarations.ethics: a list (empty when no ethics review was needed)
+6. 2026-11-11T14:38:35.664Z VALID submission: 0 error(s), 2 warning(s)
+7. 2026-11-11T14:39:20.395Z VALID submission: 0 error(s), 1 warning(s)
+total validator outcomes: 7

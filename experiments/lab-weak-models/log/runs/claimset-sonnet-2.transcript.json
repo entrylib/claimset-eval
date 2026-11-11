@@ -1,0 +1,96 @@
+{
+ "first": "2026-11-11T14:35:01.156Z",
+ "last": "2026-11-11T14:40:05.515Z",
+ "models": {
+  "claude-sonnet-5-5": 42
+ },
+ "usage": {
+  "input_tokens": 88,
+  "cache_creation_input_tokens": 196734,
+  "cache_read_input_tokens": 4480044,
+  "output_tokens": 44792
+ },
+ "total_tokens": 4721658,
+ "tools": {
+  "Bash": 20,
+  "Read": 1,
+  "SubagentHandback": 2,
+  "ToolSearch": 1,
+  "WebSearch": 1
+ },
+ "n_commands": 25,
+ "errors": [
+  {
+   "ts": "2026-11-11T14:35:27.474Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/claimset-sonnet-2 && source /home/user/venv/bin/activate && claimset lab export --help 2>&1 | head -30; claimset lab export 2>&1 | tail -80",
+   "rules": [],
+   "output": "claims[] (assumptions): assumptions are exported from the whole record; remove those that no claim of this paper rests on\n  - claims[].assumptions: link each claim to the assumption claims it relies on\n  - artefacts.A2.uri: the URI names no fixed version of the lab record, and the file there changes as the record grows, so it will not match the version hash: anchor the record (`claimset lab anchor`) and export again, or give a URI of this version (sha256:3ccf3fa007b32e40e04339857e2927cd8a6e83c71fcea856785466fc0b7b64a5)\n  - artefacts.A1.licence: give the licence of A1 itself, which is not necessarily the paper's: the study's own code and data take the licence their owners choose; content written by others (downloaded issues, posts, pages) keeps its authors' terms and cannot take the paper's licence; say whose it is and under what terms it is shared, or leave it out of the package\n  - artefacts.A2.licence: give the licence of A2 itself, which is not necessarily the paper's: the study's own code and data take the licence their owners choose; content written by others (downloaded issues, posts, pages) keeps its authors' terms and cannot take the paper's licence; say whose it is and under what terms it is shared, or leave it out of the package\nValidator: 2 error(s), 24 warning(s) in the draft; `claimset validate /home/user/exp-runs/claimset-sonnet-2/claimset/ets-estimation/ets-estimation.claimset.json` lists them.\nclaimset: pushed claimset/ets-estimation at seq 1130 (1092848277e0)"
+  },
+  {
+   "ts": "2026-11-11T14:35:31.125Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/claimset-sonnet-2/claimset/ets-estimation && source /home/user/venv/bin/activate && claimset validate ets-estimation.claimset.json 2>&1 | head -60; python3 -c \"\nimport json;d=json.load(open('ets-estimation.claimset.json'))\nprint(json.dumps({k:v for k,v in d.items() if k not in('evidence',)},indent=1)[:14000])\"",
+   "rules": [],
+   "output": "[\n  {\n   \"id\": \"A1\",\n   \"kind\": \"data\",\n   \"uri\": \"files/ets-estimation.results.csv\",\n   \"version\": \"sha256:03e0423018c47a4487122c66a49d4592f5223837a1cc12b02ef71a96ee0e4997\",\n   \"availability\": {\n    \"level\": \"public\"\n   },\n   \"description\": \"Every result of the lab record (1102 results of 2 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.\",\n   \"columns\": [\n    {\n     \"name\": \"lab_result\",\n     \"dimension\": \"the result event of the lab record\"\n    },\n    {\n     \"name\": \"run\",\n     \"dimension\": \"the lab run that produced it\"\n    },\n    {\n     \"name\": \"quantity\",\n     \"dimension\": \"the quantity, as the run's script named it\"\n    },\n    {\n     \"name\": \"conditions\",\n     \"dimension\": \"the result's conditions, as JSON\"\n    },\n    {\n     \"name\": \"value\",\n     \"variable\": \"the value of the quantity, as JSON, at full precision\"\n    }\n   ]\n  },\n  {\n   \"id\": \"A2\",\n   \"kind\": \"lab_record\",\n   \"uri\": \"/home/user/exp-runs/lab-sonnet-1.git/lab/lab.jsonl\",\n   \"version\": \"sha256:3ccf3fa007b32e40e04339857e2927cd8a6e83c71fcea856785466fc0b7b64a5\",\n   \"availability\": {\n    \"level\": \"public\"\n   },\n   \"description\": \"Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.21, begun 2026-11-11; exported with claimset 0.41.6).\"\n  }\n ]\n}"
+  },
+  {
+   "ts": "2026-11-11T14:37:17.824Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/claimset-sonnet-2/.claude/skills/claimset-submit && ls . references examples; grep -n \"id_type\" references/spec-v0.41.md | head -20; grep -n \"autonomy\" references/spec-v0.41.md | head; grep -n \"declarations\" references/spec-v0.41.md | head",
+   "rules": [
+    "L3"
+   ],
+   "output": "on}`: words from the data that are themselves the observation (an interview passage, a passage of a judgment, a linguistic example). `text` is the words as the source gives them; `locator` where they are: text (a transcript and line, a document and paragraph, a corpus and sentence ID) or, for words from a file the claimset lists as an artefact, `{artefact, start, end, lab_event}`: the artefact (a captured source, lab record \u00a75.20), the characters of its text the words occupy (`start` inclusive, `end` exclusive, counted in Unicode code points from 0), and optionally the lab record event that recorded the passage (a coding, `CD3`) (rule 78); `language` a BCP 47 tag when not English; `translation` an English translation of words in another language. The interlinear gloss of a linguistic example is given by the linguistics extension (`ext.linguistics.gloss` on the result, \u00a72.7). Excerpts from people's data carry no personal data beyond what the participants consented to publish (`declarations.consent`);\n1579:69. Declarations. `paper.declarations`, if present, has only `funding`, `competing_interests`, `ethics` and `consent`; each funding entry has a non-empty `funder`; each ethics entry has a non-empty `body` and a `decision` from the list of \u00a73.1; `competing_interests` and `consent` are non-empty text. (Revised in v0.39: a funding entry has only `funder`, `funder_id`, `award`, `kind` and `role`; `kind`, if present, is `grant` or `in_kind`; `role`, if present, is non-empty text.)"
+  },
+  {
+   "ts": "2026-11-11T14:37:35.223Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/claimset-sonnet-2/.claude/skills/claimset-submit && python3 - <<'E'\nimport json\nd=json.load(open('examples/submission-from-lab.json'))\nfor k in ('paper','contributors','limitations','artefacts'):\n    print(k,json.dumps(d[k],indent=1)[:3500])\nprint(json.dumps(d['claims'][3],indent=1)[:2500])\nE\ngrep -n \"credit_roles\" references/spec-v0.41.md | head -5",
+   "rules": [
+    "L1"
+   ],
+   "output": "sided tests on mean relative MASE reduction, 90% interval from a paired bootstrap\",\n   \"lower_bound\": -0.02,\n   \"upper_bound\": 0.02,\n   \"sample\": \"900 weekly series, the full collection, fixed in advance\"\n  },\n  \"quantities\": {\n   \"lower\": {\n    \"variable\": \"mean relative MASE reduction, method M vs seasonal naive\",\n    \"conditions\": {\n     \"frequency\": \"weekly\"\n    },\n    \"field\": \"interval.lower\"\n   },\n   \"upper\": {\n    \"variable\": \"mean relative MASE reduction, method M vs seasonal naive\",\n    \"conditions\": {\n     \"frequency\": \"weekly\"\n    },\n    \"field\": \"interval.upper\"\n   }\n  },\n  \"supported\": \"lower >= upper_bound\",\n  \"not_supported\": \"lower_bound < lower and upper < upper_bound\",\n  \"verdict\": \"computed\",\n  \"runs\": 1,\n  \"lab_plan\": \"PL4\"\n }\n}\n1249:| `credit_roles` | recommended | list | CRediT roles (below) |\n1270:| `label` | recommended when a paper has more than one agent | string | What the agent did, in a few words, as a reader would name it: `drafting`, `correction`, `proof checking`, `numerical evidence`, `JSON preparation`. At most 60 characters. Shown beside the agent's name (`Claude Code \u00b7 drafting`); its `credit_roles` and `ai_tasks` say the same in a fixed vocabulary (v0.41, rule 93) |\n1752:      \"credit_roles\": [\"formal_analysis\", \"software\", \"writing_original_draft\"],\n1757:    {\"id\": \"P2\", \"type\": \"human\", \"name\": \"A. Researcher\", \"orcid\": \"0000-0000-0000-0000\", \"positions\": [\"supervisor\", \"guarantor\"], \"credit_roles\": [\"conceptualization\", \"supervision\"]}"
+  },
+  {
+   "ts": "2026-11-11T14:38:57.766Z",
+   "tool": "Bash",
+   "is_error": true,
+   "input": "cd /home/user/exp-runs/claimset-sonnet-2/claimset/ets-estimation && cp ../../claimset-code/ets-estimation/sim.py files/sim.py && cp lab/lab.jsonl files/ets-estimation.lab.jsonl && sha256sum files/* && cat > /tmp/edit.py <<'E'\nimport json,csv,hashlib\nf='ets-estimation.claimset.json'\nd=json.load(open(f))\nP=d['paper']\nP['licence']='CC-BY-4.0'\nP['autonomy']='human_supervised'\nP['contributions']=['C1',",
+   "rules": [
+    "L3"
+   ],
+   "output": "nce:E1.tables[2].rows[0].values[0].variable: 'RMSE' is the term of D6: give the ID\n  WARNING [W30] evidence:E1.tables[2].rows[0].values[1].variable: 'RMSE' is the term of D6: give the ID\n  WARNING [W30] evidence:E1.tables[2].rows[0].values[2].variable: 'bias' is the term of D5: give the ID\n  WARNING [W30] evidence:E1.tables[2].rows[1].values[0].variable: 'RMSE' is the term of D6: give the ID\n  WARNING [W30] evidence:E1.tables[2].rows[1].values[1].variable: 'RMSE' is the term of D6: give the ID\n  WARNING [W30] evidence:E1.tables[2].rows[1].values[2].variable: 'bias' is the term of D5: give the ID\n  WARNING [W30] evidence:E1.tables[2].rows[2].values[0].variable: 'RMSE' is the term of D6: give the ID\n  WARNING [W30] evidence:E1.tables[2].rows[2].values[1].variable: 'RMSE' is the term of D6: give the ID\n  WARNING [W30] evidence:E1.tables[2].rows[2].values[2].variable: 'bias' is the term of D5: give the ID\n  WARNING [W39] paper.highlights: ask the guarantor which principal claims and which of the paper's own terms a reader should take first, at most five, in order of priority (\u00a73.1); leave the field out only if the guarantor prefers none\n  WARNING [W1] models:M1.weights: recommended field missing\n  WARNING [W2] contributors:P1.record_source: absent or self_reported; details are the agent's own account\n  Verifiability the platform will compute:\n    C1: open (no flags)\n    C2: open (no flags)\n    C3: open (no flags)\n    C4: not_applicable (no flags)\n    C5: not_applicable (no flags)"
+  },
+  {
+   "ts": "2026-11-11T14:39:16.171Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/claimset-sonnet-2/claimset/ets-estimation && source /home/user/venv/bin/activate && python3 - <<'E'\nimport json\nf='ets-estimation.claimset.json';d=json.load(open(f))\ne=d['evidence'][0]\ne['setup']['lens']=['D5','D6','D7','D9','D10']\nt=e['tables'][2]\nt['columns']=[{'variable':'D6','conditions':{'sample size':50}},{'variable':'D6','conditions':{'sample size':500}},{'variable':'",
+   "rules": [
+    "L3"
+   ],
+   "output": "INVALID submission: 1 error(s), 3 warning(s)\n  ERROR   [rule 11] limitations:L3.mitigation_evidence: one ID of an object in evidence, as a string; not [\"E1\"]\n  WARNING [W39] paper.highlights: ask the guarantor which principal claims and which of the paper's own terms a reader should take first, at most five, in order of priority (\u00a73.1); leave the field out only if the guarantor prefers none\n  WARNING [W1] models:M1.weights: recommended field missing\n  WARNING [W2] contributors:P1.record_source: absent or self_reported; details are the agent's own account\n  Verifiability the platform will compute:\n    C1: open (no flags)\n    C2: open (no flags)\n    C3: open (no flags)\n    C4: not_applicable (no flags)\n    C5: not_applicable (no flags)"
+  },
+  {
+   "ts": "2026-11-11T14:39:24.904Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/claimset-sonnet-2/claimset/ets-estimation && source /home/user/venv/bin/activate && sed -i 's/\"mitigation_evidence\": \\[\\s*$/&/' ets-estimation.claimset.json && python3 - <<'E'\nimport json\nf='ets-estimation.claimset.json';d=json.load(open(f))\nfor l in d['limitations']:\n    if l['id']=='L3': l['mitigation_evidence']='E1'\njson.dump(d,open(f,'w'),indent=2)\nE\nclaimset renumber et",
+   "rules": [],
+   "output": "ur series lengths, 300 series were simulated; each was fitted by smooth ES with optimised initial states, smooth ES with backcasting and statsforecast AutoETS, with the model form fixed to the generating one. Bias, RMSE and MAE of each smoothing-parameter estimate around the true value were computed over replicates. No fit failed. Estimates on a bound are counted (an estimate within 0.001 of a bound), not dropped. The full-precision results of the run are in `files/ets-estimation.results.csv`. R was 300, so the 20-minute reduction to 200 did not apply. A first pilot run (RN1, 10 replicates) was exploratory and is not used by any claim.\n  setup: studied D1, D2, D3; cases D4; procedure D4; lens D5, D6, D7, D9, D10\n  E1.R1 failed fits excluded = 0\n  E1.T1 Test quantities of the plan. Row r1: the minimum and maximum, over the 32 cells (8 parameter cells, 4 series lengths), of the RMSE ratio of smooth ES with optimised initial states to statsforecast AutoETS. Row r2: the number of the 8 parameter cells at T=50 in which smooth ES with backcasting has a lower RMSE than smooth ES with optimised initial states.\n  | row | summary | minimum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS | maximum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS | cells at T=50 with lower RMSE for smooth ES backcasting than optimised initials |\n  | r1 | ratio over 32 cells | 0.6003881889469503 | 1.399249293958608 |  |\n  | r2 | count over 8 cells at T=50 |  |  | 0 |"
+  },
+  {
+   "ts": "2026-11-11T14:39:44.502Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/claimset-sonnet-2/claimset/ets-estimation && source /home/user/venv/bin/activate && python3 - <<'E'\nf='ets-estimation.claimset.json'\nimport json;d=json.load(open(f))\nr=d['evidence'][0]['tables'][0]['rows'][0]; r['values']=[0.6004,1.399,None]\nd['definitions'][3]['definition']=d['definitions'][3]['definition'].replace(r'j=0,\\dots,12-1','j=0,\\dots,11')\njson.dump(d,open(f,'w'),i",
+   "rules": [],
+   "output": "<stdin>:4: SyntaxWarning: invalid escape sequence '\\d'\nVALID submission: 0 error(s), 3 warning(s)\n  WARNING [W39] paper.highlights: ask the guarantor which principal claims and which of the paper's own terms a reader should take first, at most five, in order of priority (\u00a73.1); leave the field out only if the guarantor prefers none\n## claimset/ets-estimation...origin/claimset/ets-estimation"
+  }
+ ]
+}

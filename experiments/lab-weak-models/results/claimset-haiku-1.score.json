@@ -1,0 +1,263 @@
+{
+ "valid": true,
+ "errors": [],
+ "warnings": [
+  {
+   "rule": "W1",
+   "where": "models:M1.weights",
+   "message": "recommended field missing"
+  }
+ ],
+ "novelty_checked": false,
+ "scores": {
+  "rubric": "0.2",
+  "claims": {
+   "C1": {
+    "score": 79,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "amber",
+     "open": "amber"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7"
+    ],
+    "costs": {
+     "P1": 10,
+     "P2": 3,
+     "P3": 3,
+     "P4": 2,
+     "P5": 1,
+     "P6": 1,
+     "P7": 1
+    }
+   },
+   "C2": {
+    "score": 79,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "amber",
+     "open": "amber"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7"
+    ],
+    "costs": {
+     "P1": 10,
+     "P2": 3,
+     "P3": 3,
+     "P4": 2,
+     "P5": 1,
+     "P6": 1,
+     "P7": 1
+    }
+   },
+   "C3": {
+    "score": 80,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "amber",
+     "open": "amber"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P6",
+     "P7"
+    ],
+    "costs": {
+     "P1": 10,
+     "P2": 3,
+     "P3": 3,
+     "P4": 2,
+     "P6": 1,
+     "P7": 1
+    }
+   }
+  },
+  "assumptions": [
+   "C4",
+   "C5"
+  ],
+  "paper": {
+   "score": 79,
+   "band": "medium",
+   "dots": {
+    "support": "green",
+    "plan": "amber",
+    "checkable": "green",
+    "context": "amber",
+    "open": "amber"
+   },
+   "problems": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7"
+   ],
+   "principal": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "lowest": "C1",
+   "lowest_problems": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7"
+   ]
+  },
+  "problems": {
+   "P1": {
+    "check": "no_scope",
+    "group": "context",
+    "cost": 10,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [],
+    "text": "No scope: where the claim holds is not stated",
+    "fix": "Give the claim a scope: population, setting, period, data, conditions, exclusions."
+   },
+   "P2": {
+    "check": "plan_anchor",
+    "group": "plan",
+    "cost": 3,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [],
+    "text": "The plan's time is anchored by a git push only",
+    "fix": "Anchor plans with the platform, a timestamp authority (RFC 3161) or a registry."
+   },
+   "P3": {
+    "check": "unchecked_assumption",
+    "group": "open",
+    "cost": 3,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "C4"
+    ],
+    "text": "Assumption C4 is not checked: The two implementations optimise comparable objectives: both maximise the Gaussian likelihood of the innovations form (smooth loss='likelihood', statsforecast opt_crit='lik').",
+    "fix": "Test the assumption, or analyse how sensitive the claim is to it."
+   },
+   "P4": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 2,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "L1"
+    ],
+    "text": "Limitation L1 (reduces transferability, not mitigated): A substantial share of the parameter estimates lie on a bound (within 1e-3 of it); they are kept and counted, not removed, so bias and RMSE depend on how each package handles the bound.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P5": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 1,
+    "claims": [
+     "C1",
+     "C2"
+    ],
+    "objects": [
+     "L2"
+    ],
+    "text": "Limitation L2 (reduces transferability, not mitigated): The packages use different bounds: smooth 'usual' bounds against statsforecast bounds 'both' (usual plus admissibility). The difference is part of what is compared, not removed.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P6": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 1,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "L3"
+    ],
+    "text": "Limitation L3 (reduces transferability, not mitigated): Three generating processes, one error scale (sigma = 1) and one set of initial states were simulated.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P7": {
+    "check": "unchecked_assumption",
+    "group": "open",
+    "cost": 1,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "C5"
+    ],
+    "text": "Assumption C5 is not checked: The alpha, beta and gamma of both packages have the same meaning, the innovations form (b_t = b_{t-1} + beta e_t, s_t = s_{t-m} + gamma e_t), so their estimates are compared with the true values without conversion.",
+    "fix": "Test the assumption, or analyse how sensitive the claim is to it."
+   }
+  },
+  "novelty": {
+   "C1": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C2": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C3": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   }
+  }
+ }
+}

@@ -24,3 +24,11 @@ Claude Code 2.1.322 as the harness.
 ## Protocol and its departures from the request
 
 See `log/setup.md`.
+
+## Results
+
+Ran on 2026-11-11 (Phase 1 ≈ 51 min and Phase 2 ≈ 20 min of agent time). `results/summary.md` has the tables;
+`results/report.md` what each model managed, where it failed, and the changes proposed to the skills, the
+specification, the tools and the rubric. `tools/` holds the standard-library scripts used for scoring
+(`transcript.py`, `lab_summary.py`, `validate_runs.py`); the rubric was run from a separate environment with
+`entrylib-rubric` 0.2.0, without `--novelty` (nothing was sent).

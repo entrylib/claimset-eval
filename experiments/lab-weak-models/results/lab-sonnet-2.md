@@ -19,8 +19,8 @@ Study `ets-param-estimation`; record and files in `runs/lab-sonnet-2/`. Facts: `
 ## Verdicts against the answer key
 
 - H1 (consistency, end points) supported: agrees with the numbers (as lab-sonnet-1 H3).
-- H2 (smooth-opt lower RMSE than sf in ≥ 75 % of 32 comparisons) inconclusive at 0.594: plausible (reference:
-  smooth-opt lower in about 60 % of the 32; differences mostly tiny for ETS(A,N,N)).
+- H2 (smooth-opt lower RMSE than sf in ≥ 75 % of 32 comparisons) inconclusive at 0.594: agrees (reference:
+  smooth-opt lower in 18 of 32, 0.56; differences mostly tiny for ETS(A,N,N)).
 - H3 (backcasting lower than optimised in ≥ 75 %) inconclusive at 0.281: agrees in direction (K2.4, K7.3).
 - H4–H6 (|bias| ≤ 0.02 at T = 500 for every parameter) not supported for all arms: agrees (K5.1, K5.3: smooth's γ
   and sf's α in ETS(A,N,A)). Its post-hoc reading (all excess bias in ETS(A,N,A); smooth γ −0.092 bc, −0.060 opt;

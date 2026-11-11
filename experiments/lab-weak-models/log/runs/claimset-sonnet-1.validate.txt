@@ -1,0 +1,10 @@
+1. 2026-11-11T14:35:18.465Z Validator: 2 error(s), 24 warning(s)
+2. 2026-11-11T14:36:46.604Z INVALID submission: 2 error(s), 24 warning(s)
+     ERROR   [rule 16] contributors: a native paper has exactly one guarantor, the person who submits it (found 0); list other people as supervisors or contributo
+     ERROR   [rule 19] paper.licence: missing required field
+3. 2026-11-11T14:39:10.755Z INVALID submission: 1 error(s), 3 warning(s)
+     ERROR   [rule 64] claims:C1.about.object: D6 is not marked in the statement: write [[D6:RMSE]] where the statement names it
+4. 2026-11-11T14:39:20.130Z VALID submission: 0 error(s), 2 warning(s)
+5. 2026-11-11T14:39:27.169Z VALID submission: 0 error(s), 2 warning(s)
+6. 2026-11-11T14:40:00.363Z VALID submission: 0 error(s), 2 warning(s)
+total validator outcomes: 6
