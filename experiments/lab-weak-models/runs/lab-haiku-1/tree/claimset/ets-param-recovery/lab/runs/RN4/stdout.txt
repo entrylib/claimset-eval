@@ -1,0 +1,96 @@
+ETS(A,A,N) alpha=0.3 beta=0.05         T=50   sf         alpha n_ok=300 failed=0 bias=-0.1381 rmse=0.2173 mae=0.1831 on_bound=0.437
+ETS(A,A,N) alpha=0.3 beta=0.05         T=50   sf         beta  n_ok=300 failed=0 bias=-0.0232 rmse=0.0444 mae=0.0384 on_bound=0.537
+ETS(A,A,N) alpha=0.3 beta=0.05         T=50   smooth_bc  alpha n_ok=300 failed=0 bias=-0.1239 rmse=0.2035 mae=0.1753 on_bound=0.207
+ETS(A,A,N) alpha=0.3 beta=0.05         T=50   smooth_bc  beta  n_ok=300 failed=0 bias=-0.0171 rmse=0.0410 mae=0.0341 on_bound=0.687
+ETS(A,A,N) alpha=0.3 beta=0.05         T=50   smooth_opt alpha n_ok=300 failed=0 bias=-0.1212 rmse=0.1975 mae=0.1693 on_bound=0.080
+ETS(A,A,N) alpha=0.3 beta=0.05         T=50   smooth_opt beta  n_ok=300 failed=0 bias=-0.0145 rmse=0.0388 mae=0.0315 on_bound=0.673
+ETS(A,A,N) alpha=0.3 beta=0.05         T=100  sf         alpha n_ok=300 failed=0 bias=-0.0555 rmse=0.1235 mae=0.0922 on_bound=0.090
+ETS(A,A,N) alpha=0.3 beta=0.05         T=100  sf         beta  n_ok=300 failed=0 bias=-0.0086 rmse=0.0274 mae=0.0207 on_bound=0.133
+ETS(A,A,N) alpha=0.3 beta=0.05         T=100  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0510 rmse=0.1155 mae=0.0891 on_bound=0.013
+ETS(A,A,N) alpha=0.3 beta=0.05         T=100  smooth_bc  beta  n_ok=300 failed=0 bias=-0.0067 rmse=0.0266 mae=0.0198 on_bound=0.203
+ETS(A,A,N) alpha=0.3 beta=0.05         T=100  smooth_opt alpha n_ok=300 failed=0 bias=-0.0491 rmse=0.1116 mae=0.0859 on_bound=0.003
+ETS(A,A,N) alpha=0.3 beta=0.05         T=100  smooth_opt beta  n_ok=300 failed=0 bias=-0.0065 rmse=0.0252 mae=0.0189 on_bound=0.187
+ETS(A,A,N) alpha=0.3 beta=0.05         T=250  sf         alpha n_ok=300 failed=0 bias=-0.0153 rmse=0.0554 mae=0.0446 on_bound=0.000
+ETS(A,A,N) alpha=0.3 beta=0.05         T=250  sf         beta  n_ok=300 failed=0 bias=-0.0013 rmse=0.0127 mae=0.0097 on_bound=0.003
+ETS(A,A,N) alpha=0.3 beta=0.05         T=250  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0146 rmse=0.0546 mae=0.0440 on_bound=0.000
+ETS(A,A,N) alpha=0.3 beta=0.05         T=250  smooth_bc  beta  n_ok=300 failed=0 bias=-0.0009 rmse=0.0126 mae=0.0096 on_bound=0.007
+ETS(A,A,N) alpha=0.3 beta=0.05         T=250  smooth_opt alpha n_ok=300 failed=0 bias=-0.0142 rmse=0.0554 mae=0.0444 on_bound=0.000
+ETS(A,A,N) alpha=0.3 beta=0.05         T=250  smooth_opt beta  n_ok=300 failed=0 bias=-0.0008 rmse=0.0124 mae=0.0095 on_bound=0.003
+ETS(A,A,N) alpha=0.3 beta=0.05         T=500  sf         alpha n_ok=300 failed=0 bias=-0.0056 rmse=0.0363 mae=0.0286 on_bound=0.000
+ETS(A,A,N) alpha=0.3 beta=0.05         T=500  sf         beta  n_ok=300 failed=0 bias=-0.0014 rmse=0.0087 mae=0.0069 on_bound=0.000
+ETS(A,A,N) alpha=0.3 beta=0.05         T=500  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0050 rmse=0.0361 mae=0.0284 on_bound=0.000
+ETS(A,A,N) alpha=0.3 beta=0.05         T=500  smooth_bc  beta  n_ok=300 failed=0 bias=-0.0014 rmse=0.0087 mae=0.0069 on_bound=0.000
+ETS(A,A,N) alpha=0.3 beta=0.05         T=500  smooth_opt alpha n_ok=300 failed=0 bias=-0.0050 rmse=0.0361 mae=0.0284 on_bound=0.000
+ETS(A,A,N) alpha=0.3 beta=0.05         T=500  smooth_opt beta  n_ok=300 failed=0 bias=-0.0014 rmse=0.0087 mae=0.0069 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=50   sf         alpha n_ok=300 failed=0 bias=-0.0326 rmse=0.2140 mae=0.1620 on_bound=0.083
+ETS(A,A,N) alpha=0.5 beta=0.2          T=50   sf         beta  n_ok=300 failed=0 bias=-0.0700 rmse=0.1082 mae=0.0700 on_bound=0.593
+ETS(A,A,N) alpha=0.5 beta=0.2          T=50   smooth_bc  alpha n_ok=300 failed=0 bias=-0.0680 rmse=0.1811 mae=0.1470 on_bound=0.007
+ETS(A,A,N) alpha=0.5 beta=0.2          T=50   smooth_bc  beta  n_ok=300 failed=0 bias=-0.0189 rmse=0.0927 mae=0.0713 on_bound=0.307
+ETS(A,A,N) alpha=0.5 beta=0.2          T=50   smooth_opt alpha n_ok=300 failed=0 bias=-0.0668 rmse=0.1793 mae=0.1456 on_bound=0.003
+ETS(A,A,N) alpha=0.5 beta=0.2          T=50   smooth_opt beta  n_ok=300 failed=0 bias=-0.0188 rmse=0.0913 mae=0.0702 on_bound=0.243
+ETS(A,A,N) alpha=0.5 beta=0.2          T=100  sf         alpha n_ok=300 failed=0 bias=-0.0164 rmse=0.0934 mae=0.0744 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=100  sf         beta  n_ok=300 failed=0 bias=-0.0246 rmse=0.0477 mae=0.0246 on_bound=0.507
+ETS(A,A,N) alpha=0.5 beta=0.2          T=100  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0267 rmse=0.0962 mae=0.0776 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=100  smooth_bc  beta  n_ok=300 failed=0 bias=-0.0063 rmse=0.0516 mae=0.0397 on_bound=0.017
+ETS(A,A,N) alpha=0.5 beta=0.2          T=100  smooth_opt alpha n_ok=300 failed=0 bias=-0.0267 rmse=0.0957 mae=0.0773 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=100  smooth_opt beta  n_ok=300 failed=0 bias=-0.0062 rmse=0.0509 mae=0.0395 on_bound=0.003
+ETS(A,A,N) alpha=0.5 beta=0.2          T=250  sf         alpha n_ok=300 failed=0 bias=-0.0065 rmse=0.0554 mae=0.0440 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=250  sf         beta  n_ok=300 failed=0 bias=-0.0130 rmse=0.0219 mae=0.0130 on_bound=0.480
+ETS(A,A,N) alpha=0.5 beta=0.2          T=250  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0107 rmse=0.0572 mae=0.0455 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=250  smooth_bc  beta  n_ok=300 failed=0 bias=-0.0033 rmse=0.0290 mae=0.0234 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=250  smooth_opt alpha n_ok=300 failed=0 bias=-0.0108 rmse=0.0573 mae=0.0455 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=250  smooth_opt beta  n_ok=300 failed=0 bias=-0.0032 rmse=0.0290 mae=0.0234 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=500  sf         alpha n_ok=300 failed=0 bias=-0.0048 rmse=0.0392 mae=0.0319 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=500  sf         beta  n_ok=300 failed=0 bias=-0.0079 rmse=0.0144 mae=0.0079 on_bound=0.547
+ETS(A,A,N) alpha=0.5 beta=0.2          T=500  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0087 rmse=0.0401 mae=0.0321 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=500  smooth_bc  beta  n_ok=300 failed=0 bias=+0.0000 rmse=0.0200 mae=0.0162 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=500  smooth_opt alpha n_ok=300 failed=0 bias=-0.0089 rmse=0.0401 mae=0.0322 on_bound=0.000
+ETS(A,A,N) alpha=0.5 beta=0.2          T=500  smooth_opt beta  n_ok=300 failed=0 bias=-0.0000 rmse=0.0200 mae=0.0162 on_bound=0.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=50   sf         alpha n_ok=300 failed=0 bias=-0.1112 rmse=0.1397 mae=0.1217 on_bound=0.087
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=50   sf         gamma n_ok=300 failed=0 bias=-0.0909 rmse=0.0930 mae=0.0912 on_bound=0.447
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=50   smooth_bc  alpha n_ok=300 failed=0 bias=+0.0082 rmse=0.1322 mae=0.1048 on_bound=0.127
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=50   smooth_bc  gamma n_ok=300 failed=0 bias=-0.0940 rmse=0.1051 mae=0.0986 on_bound=0.897
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=50   smooth_opt alpha n_ok=300 failed=0 bias=-0.0121 rmse=0.0984 mae=0.0734 on_bound=0.043
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=50   smooth_opt gamma n_ok=300 failed=0 bias=-0.0932 rmse=0.1034 mae=0.0976 on_bound=0.387
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=100  sf         alpha n_ok=300 failed=0 bias=-0.0546 rmse=0.0893 mae=0.0711 on_bound=0.027
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=100  sf         gamma n_ok=300 failed=0 bias=-0.0765 rmse=0.0917 mae=0.0871 on_bound=0.260
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=100  smooth_bc  alpha n_ok=300 failed=0 bias=+0.0098 rmse=0.0791 mae=0.0621 on_bound=0.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=100  smooth_bc  gamma n_ok=300 failed=0 bias=-0.1000 rmse=0.1000 mae=0.1000 on_bound=1.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=100  smooth_opt alpha n_ok=300 failed=0 bias=-0.0089 rmse=0.0655 mae=0.0494 on_bound=0.010
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=100  smooth_opt gamma n_ok=300 failed=0 bias=-0.0979 rmse=0.0979 mae=0.0979 on_bound=0.493
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=250  sf         alpha n_ok=300 failed=0 bias=-0.0361 rmse=0.0528 mae=0.0428 on_bound=0.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=250  sf         gamma n_ok=300 failed=0 bias=-0.0568 rmse=0.0854 mae=0.0779 on_bound=0.240
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=250  smooth_bc  alpha n_ok=300 failed=0 bias=+0.0107 rmse=0.0403 mae=0.0315 on_bound=0.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=250  smooth_bc  gamma n_ok=300 failed=0 bias=-0.1000 rmse=0.1000 mae=0.1000 on_bound=1.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=250  smooth_opt alpha n_ok=300 failed=0 bias=-0.0063 rmse=0.0358 mae=0.0293 on_bound=0.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=250  smooth_opt gamma n_ok=300 failed=0 bias=-0.0983 rmse=0.0986 mae=0.0985 on_bound=0.670
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=500  sf         alpha n_ok=300 failed=0 bias=-0.0378 rmse=0.0489 mae=0.0411 on_bound=0.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=500  sf         gamma n_ok=300 failed=0 bias=-0.0126 rmse=0.0497 mae=0.0386 on_bound=0.057
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=500  smooth_bc  alpha n_ok=300 failed=0 bias=+0.0031 rmse=0.0273 mae=0.0219 on_bound=0.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=500  smooth_bc  gamma n_ok=300 failed=0 bias=-0.0942 rmse=0.0976 mae=0.0958 on_bound=0.950
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=500  smooth_opt alpha n_ok=300 failed=0 bias=-0.0042 rmse=0.0291 mae=0.0233 on_bound=0.000
+ETS(A,N,A) m=12 alpha=0.2 gamma=0.1    T=500  smooth_opt gamma n_ok=300 failed=0 bias=-0.0605 rmse=0.0746 mae=0.0628 on_bound=0.393
+ETS(A,N,N) alpha=0.1                   T=50   sf         alpha n_ok=300 failed=0 bias=-0.0428 rmse=0.0900 mae=0.0816 on_bound=0.597
+ETS(A,N,N) alpha=0.1                   T=50   smooth_bc  alpha n_ok=300 failed=0 bias=-0.0448 rmse=0.0915 mae=0.0836 on_bound=0.627
+ETS(A,N,N) alpha=0.1                   T=50   smooth_opt alpha n_ok=300 failed=0 bias=-0.0427 rmse=0.0900 mae=0.0815 on_bound=0.597
+ETS(A,N,N) alpha=0.1                   T=100  sf         alpha n_ok=300 failed=0 bias=-0.0263 rmse=0.0641 mae=0.0515 on_bound=0.297
+ETS(A,N,N) alpha=0.1                   T=100  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0278 rmse=0.0658 mae=0.0529 on_bound=0.327
+ETS(A,N,N) alpha=0.1                   T=100  smooth_opt alpha n_ok=300 failed=0 bias=-0.0267 rmse=0.0645 mae=0.0518 on_bound=0.303
+ETS(A,N,N) alpha=0.1                   T=250  sf         alpha n_ok=300 failed=0 bias=-0.0108 rmse=0.0347 mae=0.0265 on_bound=0.030
+ETS(A,N,N) alpha=0.1                   T=250  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0114 rmse=0.0360 mae=0.0270 on_bound=0.047
+ETS(A,N,N) alpha=0.1                   T=250  smooth_opt alpha n_ok=300 failed=0 bias=-0.0105 rmse=0.0340 mae=0.0261 on_bound=0.023
+ETS(A,N,N) alpha=0.1                   T=500  sf         alpha n_ok=300 failed=0 bias=-0.0022 rmse=0.0192 mae=0.0156 on_bound=0.000
+ETS(A,N,N) alpha=0.1                   T=500  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0022 rmse=0.0192 mae=0.0156 on_bound=0.000
+ETS(A,N,N) alpha=0.1                   T=500  smooth_opt alpha n_ok=300 failed=0 bias=-0.0022 rmse=0.0192 mae=0.0156 on_bound=0.000
+ETS(A,N,N) alpha=0.5                   T=50   sf         alpha n_ok=300 failed=0 bias=-0.0292 rmse=0.1605 mae=0.1195 on_bound=0.017
+ETS(A,N,N) alpha=0.5                   T=50   smooth_bc  alpha n_ok=300 failed=0 bias=-0.0308 rmse=0.1640 mae=0.1210 on_bound=0.027
+ETS(A,N,N) alpha=0.5                   T=50   smooth_opt alpha n_ok=300 failed=0 bias=-0.0304 rmse=0.1628 mae=0.1205 on_bound=0.020
+ETS(A,N,N) alpha=0.5                   T=100  sf         alpha n_ok=300 failed=0 bias=-0.0105 rmse=0.0966 mae=0.0765 on_bound=0.000
+ETS(A,N,N) alpha=0.5                   T=100  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0110 rmse=0.0984 mae=0.0769 on_bound=0.003
+ETS(A,N,N) alpha=0.5                   T=100  smooth_opt alpha n_ok=300 failed=0 bias=-0.0105 rmse=0.0966 mae=0.0765 on_bound=0.000
+ETS(A,N,N) alpha=0.5                   T=250  sf         alpha n_ok=300 failed=0 bias=-0.0045 rmse=0.0589 mae=0.0481 on_bound=0.000
+ETS(A,N,N) alpha=0.5                   T=250  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0045 rmse=0.0589 mae=0.0482 on_bound=0.000
+ETS(A,N,N) alpha=0.5                   T=250  smooth_opt alpha n_ok=300 failed=0 bias=-0.0045 rmse=0.0589 mae=0.0482 on_bound=0.000
+ETS(A,N,N) alpha=0.5                   T=500  sf         alpha n_ok=300 failed=0 bias=-0.0004 rmse=0.0374 mae=0.0292 on_bound=0.000
+ETS(A,N,N) alpha=0.5                   T=500  smooth_bc  alpha n_ok=300 failed=0 bias=-0.0004 rmse=0.0374 mae=0.0293 on_bound=0.000
+ETS(A,N,N) alpha=0.5                   T=500  smooth_opt alpha n_ok=300 failed=0 bias=-0.0004 rmse=0.0374 mae=0.0293 on_bound=0.000

@@ -1,0 +1,80 @@
+CLAIMSET Estimating ETS parameters: smooth and statsforecast on simulated data
+licence CC-BY-4.0; contributions C1, C2, C3
+declarations funding: none | competing interests: The guarantor is the author and maintainer of the smooth package, one of the two implementations evaluated.
+exploration {"lab_record": "A2", "questions": 1, "hypotheses": {"total": 3, "supported": 1, "not_supported": 2, "inconclusive": 0, "revised": 0, "abandoned": 0, "open": 0, "from_exploration": 0}, "tests": {"total": 3, "supported": 1, "not_supported": 2, "inconclusive": 0}, "runs": {"total": 2, "confirmatory": 1, "exploratory": 1, "failed": 0}, "covers": {"questions": ["Q1"], "lab": {"questions": 1, "hypotheses": {"total": 3, "supported": 1, "not_supported": 2, "inconclusive": 0, "revised": 0, "abandoned": 0, "open": 0, "from_exploration": 0}, "tests": {"total": 3, "supported": 1, "not_supported": 2, "inconclusive": 0}}}}
+
+DEFINITIONS
+D1 [method] smooth ES, optimised initials: smooth 1.2.0 ES(model=<form>, initial='optimal', loss='likelihood', bounds='usual'). Each fits the data-generating form (no model selection), with the same innovations-form equations as the generating process, for the form fixed to the generating one:
+$$\begin{aligned} y_t &= l_{t-1} + \varepsilon_t \\ l_t &= l_{t-1} + \alpha\,\varepsilon_t \end{aligned}$$$$\begin{aligned} y_t &= l_{t-1} + b_{t-1} + \varepsilon_t \\ l_t &= l_{t-1} + b_{t-1} + \alpha\,\varepsilon_t \\ b_t &= b_{t-1} + \beta\,\varepsilon_t \end{aligned}$$$$\begin{aligned} y_t &= l_{t-1} + s_{t-m} + \varepsilon_t \\ l_t &= l_{t-1} + \alpha\,\varepsilon_t \\ s_t &= s_{t-m} + \gamma\,\varepsilon_t \end{aligned}$$
+with the smoothing parameters $\alpha$, $\beta$, $\gamma$ estimated by maximum likelihood of the Gaussian innovations model. The initial states are estimated jointly with the smoothing parameters. Parameter bounds: bounds='usual'.
+D2 [method] smooth ES, backcasting: smooth 1.2.0 ES(model=<form>, initial='backcasting', loss='likelihood', bounds='usual'), smooth's default. Each fits the data-generating form (no model selection), with the same innovations-form equations as the generating process, for the form fixed to the generating one:
+$$\begin{aligned} y_t &= l_{t-1} + \varepsilon_t \\ l_t &= l_{t-1} + \alpha\,\varepsilon_t \end{aligned}$$$$\begin{aligned} y_t &= l_{t-1} + b_{t-1} + \varepsilon_t \\ l_t &= l_{t-1} + b_{t-1} + \alpha\,\varepsilon_t \\ b_t &= b_{t-1} + \beta\,\varepsilon_t \end{aligned}$$$$\begin{aligned} y_t &= l_{t-1} + s_{t-m} + \varepsilon_t \\ l_t &= l_{t-1} + \alpha\,\varepsilon_t \\ s_t &= s_{t-m} + \gamma\,\varepsilon_t \end{aligned}$$
+with the smoothing parameters $\alpha$, $\beta$, $\gamma$ estimated by maximum likelihood of the Gaussian innovations model. The initial states are obtained by backcasting; only the smoothing parameters are optimised. Parameter bounds: bounds='usual'.
+D3 [method] statsforecast AutoETS: statsforecast 2.1.1 AutoETS(season_length=m, model=<form>, damped=False) with the form fixed to the generating one (no selection). Each fits the data-generating form (no model selection), with the same innovations-form equations as the generating process, for the form fixed to the generating one:
+$$\begin{aligned} y_t &= l_{t-1} + \varepsilon_t \\ l_t &= l_{t-1} + \alpha\,\varepsilon_t \end{aligned}$$$$\begin{aligned} y_t &= l_{t-1} + b_{t-1} + \varepsilon_t \\ l_t &= l_{t-1} + b_{t-1} + \alpha\,\varepsilon_t \\ b_t &= b_{t-1} + \beta\,\varepsilon_t \end{aligned}$$$$\begin{aligned} y_t &= l_{t-1} + s_{t-m} + \varepsilon_t \\ l_t &= l_{t-1} + \alpha\,\varepsilon_t \\ s_t &= s_{t-m} + \gamma\,\varepsilon_t \end{aligned}$$
+with the smoothing parameters $\alpha$, $\beta$, $\gamma$ estimated by maximum likelihood of the Gaussian innovations model. The initial states are optimised jointly with the smoothing parameters. Bounds: lower 1e-4 and upper 0.9999 for $\alpha$, $\beta$ and $\gamma$, with $\beta\le\alpha$, $\gamma\le 1-\alpha$ and admissibility.
+D4 [data] ETS data generating process: Simulated series from ETS in its innovations form with additive Gaussian errors $\varepsilon_t \sim N(0,1)$ independent, started from $l_0=100$, $b_0=1$ and seasonal indices $s_j=10\sin(2\pi j/12)$ for $j=0,\dots,11$, with no burn-in. Three forms:
+
+ETS(A,N,N):
+$$\begin{aligned} y_t &= l_{t-1} + \varepsilon_t \\ l_t &= l_{t-1} + \alpha\,\varepsilon_t \end{aligned}$$
+ETS(A,A,N):
+$$\begin{aligned} y_t &= l_{t-1} + b_{t-1} + \varepsilon_t \\ l_t &= l_{t-1} + b_{t-1} + \alpha\,\varepsilon_t \\ b_t &= b_{t-1} + \beta\,\varepsilon_t \end{aligned}$$
+ETS(A,N,A) with period $m=12$:
+$$\begin{aligned} y_t &= l_{t-1} + s_{t-m} + \varepsilon_t \\ l_t &= l_{t-1} + \alpha\,\varepsilon_t \\ s_t &= s_{t-m} + \gamma\,\varepsilon_t \end{aligned}$$
+Parameter settings: ETS(A,N,N) with $\alpha=0.1$ and with $\alpha=0.5$; ETS(A,A,N) with $(\alpha,\beta)=(0.3,0.05)$ and with $(0.5,0.2)$; ETS(A,N,A) with $(\alpha,\gamma)=(0.2,0.1)$. Together the five settings have 8 parameter cells (setting and smoothing parameter). Series lengths $T\in\{50,100,250,500\}$, 300 replicates per setting and length. Each setting and length has its own random stream, seeded from the run seed, the setting index and $T$.
+D5 [variable] bias: Mean over successful replicates of the estimate minus the true value of a smoothing parameter, for one method, setting and series length.
+D6 [variable] RMSE: Square root of the mean over successful replicates of the squared (estimate minus true value) of a smoothing parameter.
+D7 [variable] MAE: Mean over successful replicates of the absolute value of (estimate minus true value) of a smoothing parameter.
+D8 [concept] consistency: Consistency of an estimator in the sense used here: the RMSE of a smoothing parameter estimate is lower at series length $T=500$ than at $T=50$ in a given setting. This checks the direction of change between two lengths, not the rate of convergence or the limit.
+D9 [variable] RMSE ratio: For a setting, smoothing parameter and series length: the RMSE of smooth ES with optimised initial states divided by the RMSE of statsforecast AutoETS. There are 32 such cells (8 parameter cells, 4 lengths).
+D10 [variable] estimate on a bound: A replicate whose estimate of a smoothing parameter lies within $10^{-3}$ of a lower or upper bound of its admissible region (for $\beta$: $0$ or $\alpha$; for $\gamma$: $0$ or $1-\alpha$; for $\alpha$: $0$ or $1$), counted as in the run's script.
+
+CLAIMS
+C1 [descriptive; principal; support: simulation E1 (E1.T1.r1) artefacts A1, A3; assumes C4, C5; strength moderate (author); planning confirmatory; outcome not_supported]
+  With optimised initial states, the RMSE of the smoothing parameter estimates of [[D1:smooth ES]] is not within 10% of that of [[D3:statsforecast AutoETS]] in every cell of [[D4:the ETS data generating processes]]: the [[D9:RMSE ratio]] ranges from 0.6004 to 1.399 over the 32 cells.
+  scope: conditions: ETS(A,N,N), ETS(A,A,N) and ETS(A,N,A) with m=12 at the five stated parameter settings; series lengths 50, 100, 250 and 500, 300 replicates per cell; Gaussian innovations with sigma 1, no burn-in; smooth 1.2.0 and statsforecast 2.1.1 | excludes: model selection; non-Gaussian errors; multiplicative forms; damped trend
+  test: deterministic; seed 20261111; R 300; bound_tolerance 0.001; sample R=300 replicates per cell, T in 50,100,250,500, five processes; fixed, no stopping rule; supported if r_min >= 0.9 and r_max <= 1.1; not supported if r_min < 0.8 or r_max > 1.25; verdict computed
+  plan: lab plan PL1; planned 2026-11-11T14:19:57Z; anchor git_remote
+C2 [descriptive; principal; support: simulation E1 (E1.T1.r2) artefacts A1, A3; assumes C4, C5; strength moderate (author); planning confirmatory; outcome not_supported]
+  At series length 50, [[D2:smooth ES with backcasting]] does not have a lower [[D6:RMSE]] of the smoothing parameter estimates than [[D1:smooth ES with optimised initials]] in most parameter cells of [[D4:the ETS data generating processes]]: it has a lower RMSE in 0 of the 8 cells.
+  scope: conditions: series length 50; ETS(A,N,N), ETS(A,A,N) and ETS(A,N,A) with m=12 at the five stated parameter settings; smooth 1.2.0 | excludes: series lengths above 50
+  test: deterministic; seed 20261111; R 300; bound_tolerance 0.001; sample R=300 replicates per cell, T in 50,100,250,500, five processes; fixed, no stopping rule; supported if n_bc >= 6; not supported if n_bc <= 2; verdict computed
+  plan: lab plan PL1; planned 2026-11-11T14:19:57Z; anchor git_remote
+C3 [descriptive; principal; support: simulation E1 (E1.T2.r1, E1.T2.r2, E1.T2.r3) artefacts A1, A3; assumes C4, C5; strength low (author); planning confirmatory; outcome supported]
+  In all 8 parameter cells of [[D4:the ETS data generating processes]], each of [[D1:smooth ES with optimised initials]], [[D2:smooth ES with backcasting]] and [[D3:statsforecast AutoETS]] has a lower [[D6:RMSE]] of the smoothing parameter estimate at series length 500 than at series length 50, the criterion used here for [[D8:consistency]].
+  scope: conditions: series lengths 50 and 500 compared; ETS(A,N,N), ETS(A,A,N) and ETS(A,N,A) with m=12 at the five stated parameter settings; smooth 1.2.0 and statsforecast 2.1.1 | excludes: rate of convergence; lengths 100 and 250 (recorded but not part of the criterion)
+  test: deterministic; seed 20261111; R 300; bound_tolerance 0.001; sample R=300 replicates per cell, T in 50,100,250,500, five processes; fixed, no stopping rule; supported if v_opt + v_bc + v_sf < 1; not supported if v_opt + v_bc + v_sf >= 3; verdict computed
+  plan: lab plan PL1; planned 2026-11-11T14:19:57Z; anchor git_remote
+C4 [descriptive; supporting; assumption (methodological, unchecked)]
+  The smooth ES and statsforecast AutoETS arms both maximise the Gaussian likelihood of the innovations form (smooth loss='likelihood', statsforecast opt_crit='lik').
+C5 [descriptive; supporting; assumption (methodological, unchecked)]
+  The smoothing parameters $\alpha$, $\beta$ and $\gamma$ have the same meaning in smooth ES and statsforecast AutoETS (the innovations form of the generating process), so that estimates of both are compared with the true values without conversion.
+
+EVIDENCE
+E1 [simulation] Run RN2 of the lab record (script `files/sim.py`, command `sim.py --seed 20261111 --R 300 --T 50 100 250 500`), under plan PL1 fixed before the run. For each of five ETS data-generating settings and four series lengths, 300 series were simulated; each was fitted by smooth ES with optimised initial states, smooth ES with backcasting and statsforecast AutoETS, with the model form fixed to the generating one. Bias, RMSE and MAE of each smoothing-parameter estimate around the true value were computed over replicates. No fit failed. Estimates on a bound are counted (an estimate within 0.001 of a bound), not dropped. The full-precision results of the run are in `files/ets-estimation.results.csv`. R was 300, so the 20-minute reduction to 200 did not apply. A first pilot run (RN1, 10 replicates) was exploratory and is not used by any claim.
+  setup: studied D1, D2, D3; cases D4; procedure D4; lens D5, D6, D7, D9, D10
+  E1.R1 failed fits excluded = 0
+  E1.T1 Test quantities of the plan. Row r1: the minimum and maximum, over the 32 cells (8 parameter cells, 4 series lengths), of the RMSE ratio of smooth ES with optimised initial states to statsforecast AutoETS. Row r2: the number of the 8 parameter cells at T=50 in which smooth ES with backcasting has a lower RMSE than smooth ES with optimised initial states.
+  | row | summary | minimum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS | maximum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS | cells at T=50 with lower RMSE for smooth ES backcasting than optimised initials |
+  | r1 | ratio over 32 cells | 0.6004 | 1.399 |  |
+  | r2 | count over 8 cells at T=50 |  |  | 0 |
+  E1.T2 Number of the 8 parameter cells in which the RMSE of the smoothing-parameter estimate at T=500 is not below the RMSE at T=50, by method. {cells: 8}
+  | row | method | cells with RMSE at T=500 not below RMSE at T=50 |
+  | r1 | smooth ES, optimised initials | 0 |
+  | r2 | smooth ES, backcasting | 0 |
+  | r3 | statsforecast AutoETS | 0 |
+  E1.T3 Estimates of the seasonal parameter gamma (true value 0.1) in ETS(A,N,A) with alpha=0.2 and m=12: RMSE at T=50 and T=500, bias at T=500, and the number of the 300 replicates at T=500 whose estimate lies on a bound, by method.
+  | row | method | D6 {sample size: 50} (1) | D6 {sample size: 500} (1) | D5 {sample size: 500} (1) | D10 {sample size: 500} (1) |
+  | r1 | smooth ES, optimised initials | 0.09623 | 0.07358 | -0.05865 | 118 |
+  | r2 | smooth ES, backcasting | 0.1049 | 0.09777 | -0.09443 | 286 |
+  | r3 | statsforecast AutoETS | 0.09387 | 0.05258 | -0.01168 | 25 |
+
+LIMITATIONS
+L1 [model_specification; affects C1, C3, C5; could_bias_magnitude; mitigation none] In the ETS(A,N,A) setting the estimates of gamma often lie on a bound: at series length 500, 286 of 300 replicates for smooth ES with backcasting, 118 for smooth ES with optimised initials and 25 for statsforecast AutoETS; the bias of the smooth estimates stays near -0.09 and -0.06, and the cause (bounds, parametrisation or the optimiser) was not investigated.
+L2 [computational; affects C1, C2, C3; reduces_transferability; mitigation none] Each package was run in one version (smooth 1.2.0, statsforecast 2.1.1) with the model form fixed to the generating one and default optimiser settings, so the results do not transfer to other versions or to automatic model selection.
+L3 [researcher_position; affects C1, C2, C3; could_bias_magnitude; mitigation partial] The guarantor is the author and maintainer of the smooth package under evaluation; the simulation design and the analysis were fixed in a plan before the run, and every result is recorded, including those against smooth.
+
+ARTEFACTS
+A1 [data] Every result of the lab record (1102 results of 2 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.
+A2 [lab_record] Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.21, begun 2026-11-11; exported with claimset 0.41.6).
+A3 [code] Simulation script of run RN2 (commit 9db1cb3bd520a86b7ec42e4ed85755a7b6e1ad03 of the study repository): simulates the five ETS settings, fits the three arms and writes bias, RMSE, MAE and counts of failed fits and estimates on a bound.

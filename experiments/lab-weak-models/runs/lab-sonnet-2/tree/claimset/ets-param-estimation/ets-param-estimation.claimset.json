@@ -1,0 +1,878 @@
+{
+  "schema_version": "0.41",
+  "paper": {
+    "title": "Bias, efficiency and consistency of ETS smoothing-parameter estimates: smooth vs statsforecast",
+    "contributions": [
+      "C1",
+      "C4",
+      "C5"
+    ],
+    "autonomy": "human_supervised",
+    "contribution_record": "complete",
+    "origin": "native",
+    "exploration": {
+      "lab_record": "A2",
+      "questions": 1,
+      "hypotheses": {
+        "total": 6,
+        "supported": 1,
+        "not_supported": 3,
+        "inconclusive": 2,
+        "revised": 0,
+        "abandoned": 0,
+        "open": 0,
+        "from_exploration": 0
+      },
+      "tests": {
+        "total": 6,
+        "supported": 1,
+        "not_supported": 3,
+        "inconclusive": 2
+      },
+      "runs": {
+        "total": 2,
+        "confirmatory": 1,
+        "exploratory": 1,
+        "failed": 0
+      },
+      "covers": {
+        "questions": [
+          "Q1"
+        ],
+        "lab": {
+          "questions": 1,
+          "hypotheses": {
+            "total": 6,
+            "supported": 1,
+            "not_supported": 3,
+            "inconclusive": 2,
+            "revised": 0,
+            "abandoned": 0,
+            "open": 0,
+            "from_exploration": 0
+          },
+          "tests": {
+            "total": 6,
+            "supported": 1,
+            "not_supported": 3,
+            "inconclusive": 2
+          }
+        }
+      }
+    },
+    "study": "ets-param-estimation",
+    "licence": "CC-BY-4.0",
+    "classification": {
+      "keywords": [
+        "exponential smoothing",
+        "ETS parameter estimation",
+        "Monte Carlo simulation",
+        "smooth package",
+        "statsforecast",
+        "bias and consistency of estimators"
+      ]
+    },
+    "declarations": {
+      "funding": [],
+      "competing_interests": "Ivan Svetunkov, the guarantor and supervisor of this study, is the author of the smooth package, one of the two implementations compared. No other competing interests declared."
+    },
+    "highlights": [
+      "C1",
+      "C5",
+      "C4"
+    ]
+  },
+  "contributors": [
+    {
+      "id": "P1",
+      "type": "agent",
+      "name": "Claude Code",
+      "positions": [
+        "author"
+      ],
+      "models": [
+        {
+          "model": "M1",
+          "role": "sole"
+        }
+      ],
+      "run_period": {
+        "start": "2026-11-11",
+        "end": "2026-11-11"
+      },
+      "tools": [
+        "code_execution"
+      ],
+      "system": {
+        "name": "Claude Code"
+      },
+      "label": "research",
+      "record_source": "self_reported",
+      "credit_roles": [
+        "software",
+        "formal_analysis",
+        "investigation",
+        "writing_original_draft"
+      ],
+      "ai_tasks": [
+        {
+          "task": "analysis",
+          "extent": "full"
+        },
+        {
+          "task": "writing",
+          "extent": "full"
+        },
+        {
+          "task": "json_preparation",
+          "extent": "full"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "type": "human",
+      "name": "Ivan Svetunkov",
+      "positions": [
+        "guarantor",
+        "supervisor"
+      ],
+      "orcid": "0000-0001-7826-0281",
+      "credit_roles": [
+        "conceptualization",
+        "supervision"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "M1",
+      "provider": "Anthropic",
+      "name": "Claude Sonnet",
+      "version": "5.5",
+      "identifier": "claude-sonnet-5-5",
+      "accessed": "2026-11-11",
+      "weights": "api_only"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D1",
+      "term": "smooth ES, optimised initial states",
+      "kind": "method",
+      "definition": "smooth.ES (Python, v1.2.0) with the generating model form fixed, initial='optimal', loss='likelihood', bounds='usual', Gaussian errors; initial states estimated together with alpha, beta, gamma. Gaussian likelihood is maximised over the persistence parameters and the initial states; the bounds are $0\\le\\alpha,\\beta,\\gamma\\le1$, $\\beta\\le\\alpha$, $\\gamma\\le1-\\alpha$. Gaussian likelihood is maximised over the persistence parameters and the initial states; the bounds are $0\\le\\alpha,\\beta,\\gamma\\le1$, $\\beta\\le\\alpha$, $\\gamma\\le1-\\alpha$. Gaussian likelihood is maximised over the persistence parameters and the initial states; the bounds are $0\\le\\alpha,\\beta,\\gamma\\le1$, $\\beta\\le\\alpha$, $\\gamma\\le1-\\alpha$."
+    },
+    {
+      "id": "D2",
+      "term": "smooth ES, backcasting",
+      "kind": "method",
+      "definition": "smooth.ES (Python, v1.2.0), the package default: initial='backcasting', loss='likelihood', bounds='usual', model form fixed; initial states obtained by backcasting, not optimised. Gaussian likelihood is maximised over the persistence parameters only; the same bounds as the optimised-states arm. Gaussian likelihood is maximised over the persistence parameters only; the same bounds as the optimised-states arm. Gaussian likelihood is maximised over the persistence parameters only; the same bounds as the optimised-states arm."
+    },
+    {
+      "id": "D3",
+      "term": "statsforecast AutoETS",
+      "kind": "method",
+      "definition": "statsforecast.models.AutoETS (v2.1.1) with model set to the generating form (e.g. 'ANN') and season_length set, so no selection; maximum likelihood, initial states optimised, bounds 'both' (box [1e-4, 0.9999] plus usual and admissible checks). The persistence parameters have the same meaning as in the data-generating equations of the simulation design, so no conversion was applied. The persistence parameters have the same meaning as in the data-generating equations of the simulation design, so no conversion was applied. The persistence parameters have the same meaning as in the data-generating equations of the simulation design, so no conversion was applied."
+    },
+    {
+      "id": "D4",
+      "term": "ETS simulation design",
+      "kind": "design",
+      "definition": "Series are simulated from the innovations form of ETS with additive Gaussian errors $\\varepsilon_t \\sim N(0,1)$, independent, starting from fixed states with no burn-in, for series lengths $T \\in \\{50,100,250,500\\}$ and $R=300$ replicates per cell (process x parameters x $T$).\nETS(A,N,N): $$\\begin{aligned} y_t &= l_{t-1} + \\varepsilon_t \\\\ l_t &= l_{t-1} + \\alpha\\varepsilon_t \\end{aligned}$$ with $\\alpha \\in \\{0.1, 0.5\\}$.\nETS(A,A,N): $$\\begin{aligned} y_t &= l_{t-1} + b_{t-1} + \\varepsilon_t \\\\ l_t &= l_{t-1} + b_{t-1} + \\alpha\\varepsilon_t \\\\ b_t &= b_{t-1} + \\beta\\varepsilon_t \\end{aligned}$$ with $(\\alpha,\\beta) \\in \\{(0.3,0.05),(0.5,0.2)\\}$.\nETS(A,N,A), period $m=12$: $$\\begin{aligned} y_t &= l_{t-1} + s_{t-m} + \\varepsilon_t \\\\ l_t &= l_{t-1} + \\alpha\\varepsilon_t \\\\ s_t &= s_{t-m} + \\gamma\\varepsilon_t \\end{aligned}$$ with $(\\alpha,\\gamma)=(0.2,0.1)$.\nInitial states: $l_0=100$, $b_0=1$, $s_j = 10\\sin(2\\pi j/12)$ for $j=0,\\dots,11$ ($s_0$ belongs to the first observation's season). Replicate seeds are SeedSequence([2026, process-set index, T, replicate])."
+    },
+    {
+      "id": "D5",
+      "term": "bias",
+      "kind": "variable",
+      "definition": "Mean over replicates of (estimate minus true value) of a smoothing parameter."
+    },
+    {
+      "id": "D6",
+      "term": "RMSE",
+      "kind": "variable",
+      "definition": "Root mean squared error of the estimates of a smoothing parameter around its true value, over replicates."
+    },
+    {
+      "id": "D7",
+      "term": "MAE",
+      "kind": "variable",
+      "definition": "Mean absolute error of the estimates of a smoothing parameter around its true value, over replicates."
+    },
+    {
+      "id": "D8",
+      "term": "consistency",
+      "kind": "concept",
+      "definition": "RMSE of the estimates falling towards zero as series length T grows."
+    },
+    {
+      "id": "D9",
+      "term": "failure",
+      "kind": "variable",
+      "definition": "Replicate on which the fit raised an error, returned no finite estimate, or was reported as not converged; counted per arm and cell, never dropped from the counts."
+    },
+    {
+      "id": "D10",
+      "term": "bound hit",
+      "kind": "variable",
+      "definition": "Replicate whose estimate lies within 1e-3 of a bound of its parameter: 0 or 1 for alpha, 0 or alpha for beta, 0 or 1-alpha for gamma. Counted per arm, cell and parameter and reported in the results file; bound-hit estimates stay in the error statistics. Counted per arm, cell and parameter and reported in the results file; bound-hit estimates stay in the error statistics. Counted per arm, cell and parameter and reported in the results file; bound-hit estimates stay in the error statistics."
+    },
+    {
+      "id": "D11",
+      "term": "smoothing parameters",
+      "kind": "variable",
+      "definition": "The persistence parameters $\\alpha$ (level), $\\beta$ (trend) and $\\gamma$ (seasonal) of the innovations form of ETS, as in the equations of the simulation design.",
+      "part_of": [
+        "D4"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "For each of [[D1:smooth ES, optimised initial states]], [[D2:smooth ES, backcasting]] and [[D3:statsforecast AutoETS]], the [[D6:RMSE]] of the estimates of each smoothing parameter of the [[D4:ETS simulation design]] is lower at the largest series length than at the smallest: the share of the 24 arm-by-parameter series with falling RMSE is 1, the pattern of [[D8:consistency]].",
+      "about": {
+        "subject": "D6",
+        "relation": "is lower at T=500 than at",
+        "object": "T=50",
+        "comparator": null,
+        "conditions": [
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.R1"
+          ]
+        }
+      ],
+      "provenance": "author_stated",
+      "hypothesis": {
+        "lab_event": "H1",
+        "outcome": "supported"
+      },
+      "planning": "confirmatory",
+      "planned_at": "2026-11-11T14:19:50Z",
+      "planned_at_anchor": "git_remote",
+      "test": {
+        "framework": "deterministic",
+        "parameters": {
+          "bias_bound": 0.02,
+          "share_threshold": 0.75,
+          "sample": "R=300 replicates per cell, 20 cells, fixed seed 2026, single run, no interim analysis",
+          "correction": "none"
+        },
+        "quantities": {
+          "share_fall": {
+            "variable": "share of series with RMSE lower at largest T than at smallest T"
+          }
+        },
+        "supported": "share_fall == 1",
+        "not_supported": "share_fall < 0.5",
+        "verdict": "computed",
+        "runs": 1,
+        "lab_plan": "PL1"
+      },
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "moderate",
+          "rationale": "Planned test with a computed verdict on one run of 300 replicates per cell; the closest prior literature was not searched; simulation with five parameter sets only, so the result is for these settings."
+        }
+      ],
+      "scope": {
+        "conditions": [
+          "series lengths 50 and 500 compared, with 100 and 250 also simulated",
+          "five parameter sets of the simulation design, 300 replicates each"
+        ]
+      }
+    },
+    {
+      "id": "C2",
+      "statement": "In the [[D4:ETS simulation design]], [[D1:smooth ES, optimised initial states]] has lower [[D6:RMSE]] of the smoothing-parameter estimates than [[D3:statsforecast AutoETS]] in at least 75% of the process x parameter x T comparisons.",
+      "about": {
+        "subject": "D1",
+        "relation": "has lower RMSE than",
+        "object": "D6",
+        "comparator": "D3",
+        "conditions": [
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "secondary",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.T1.r1"
+          ]
+        }
+      ],
+      "provenance": "author_stated",
+      "hypothesis": {
+        "lab_event": "H2",
+        "outcome": "inconclusive"
+      },
+      "planning": "confirmatory",
+      "planned_at": "2026-11-11T14:19:50Z",
+      "planned_at_anchor": "git_remote",
+      "test": {
+        "framework": "deterministic",
+        "parameters": {
+          "bias_bound": 0.02,
+          "share_threshold": 0.75,
+          "sample": "R=300 replicates per cell, 20 cells, fixed seed 2026, single run, no interim analysis",
+          "correction": "none"
+        },
+        "quantities": {
+          "share_so_sf": {
+            "variable": "share of comparisons with RMSE lower, smooth optimised vs statsforecast"
+          }
+        },
+        "supported": "share_so_sf >= share_threshold",
+        "not_supported": "share_so_sf <= 1 - share_threshold",
+        "verdict": "computed",
+        "runs": 1,
+        "lab_plan": "PL1"
+      },
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "moderate",
+          "rationale": "Planned test with a computed verdict on one run of 300 replicates per cell; the closest prior literature was not searched; simulation with five parameter sets only, so the result is for these settings."
+        }
+      ],
+      "scope": {
+        "conditions": [
+          "32 comparisons: eight parameters over series lengths 50, 100, 250 and 500"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "statement": "In the [[D4:ETS simulation design]], [[D2:smooth ES, backcasting]] has lower [[D6:RMSE]] of the smoothing-parameter estimates than [[D1:smooth ES, optimised initial states]] in at least 75% of the process x parameter x T comparisons.",
+      "about": {
+        "subject": "D2",
+        "relation": "has lower RMSE than",
+        "object": "D6",
+        "comparator": "D1",
+        "conditions": [
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "secondary",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.T1.r1"
+          ]
+        }
+      ],
+      "provenance": "author_stated",
+      "hypothesis": {
+        "lab_event": "H3",
+        "outcome": "inconclusive"
+      },
+      "planning": "confirmatory",
+      "planned_at": "2026-11-11T14:19:50Z",
+      "planned_at_anchor": "git_remote",
+      "test": {
+        "framework": "deterministic",
+        "parameters": {
+          "bias_bound": 0.02,
+          "share_threshold": 0.75,
+          "sample": "R=300 replicates per cell, 20 cells, fixed seed 2026, single run, no interim analysis",
+          "correction": "none"
+        },
+        "quantities": {
+          "share_sb_so": {
+            "variable": "share of comparisons with RMSE lower, smooth backcasting vs smooth optimised"
+          }
+        },
+        "supported": "share_sb_so >= share_threshold",
+        "not_supported": "share_sb_so <= 1 - share_threshold",
+        "verdict": "computed",
+        "runs": 1,
+        "lab_plan": "PL1"
+      },
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "moderate",
+          "rationale": "Planned test with a computed verdict on one run of 300 replicates per cell; the closest prior literature was not searched; simulation with five parameter sets only, so the result is for these settings."
+        }
+      ],
+      "scope": {
+        "conditions": [
+          "32 comparisons: eight parameters over series lengths 50, 100, 250 and 500"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "statement": "In the [[D4:ETS simulation design]] at the largest series length, the mean [[D5:bias]] of the [[D1:smooth ES, optimised initial states]] estimates of the smoothing parameters is not within 0.02 of zero for all eight parameters: the largest lower 90% bound of the absolute bias over the eight parameters is 0.0555.",
+      "about": {
+        "subject": "D1",
+        "relation": "does not have bias within 0.02 of zero for all parameters at the largest series length",
+        "object": "D5",
+        "comparator": null,
+        "conditions": [
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.T2.r1"
+          ]
+        }
+      ],
+      "provenance": "author_stated",
+      "hypothesis": {
+        "lab_event": "H4",
+        "outcome": "not_supported"
+      },
+      "planning": "confirmatory",
+      "planned_at": "2026-11-11T14:19:50Z",
+      "planned_at_anchor": "git_remote",
+      "test": {
+        "framework": "deterministic",
+        "parameters": {
+          "bias_bound": 0.02,
+          "share_threshold": 0.75,
+          "sample": "R=300 replicates per cell, 20 cells, fixed seed 2026, single run, no interim analysis",
+          "correction": "none"
+        },
+        "quantities": {
+          "so_up": {
+            "variable": "max upper 90% bound of absolute bias at largest T",
+            "conditions": {
+              "method": "smooth optimised"
+            }
+          },
+          "so_lo": {
+            "variable": "max lower 90% bound of absolute bias at largest T",
+            "conditions": {
+              "method": "smooth optimised"
+            }
+          }
+        },
+        "supported": "so_up < bias_bound",
+        "not_supported": "so_lo > bias_bound",
+        "verdict": "computed",
+        "runs": 1,
+        "lab_plan": "PL1"
+      },
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "moderate",
+          "rationale": "Planned test with a computed verdict on one run of 300 replicates per cell; the closest prior literature was not searched; simulation with five parameter sets only, so the result is for these settings."
+        }
+      ],
+      "scope": {
+        "conditions": [
+          "series length 500",
+          "eight smoothing parameters of five parameter sets",
+          "300 replicates",
+          "90% intervals computed from the standard error of the mean bias, smooth optimised arm"
+        ]
+      },
+      "depends_on": []
+    },
+    {
+      "id": "C5",
+      "statement": "In the [[D4:ETS simulation design]] at the largest series length, the mean [[D5:bias]] of the [[D2:smooth ES, backcasting]] estimates of the smoothing parameters is not within 0.02 of zero for all eight parameters: the largest lower 90% bound of the absolute bias over the eight parameters is 0.0893.",
+      "about": {
+        "subject": "D2",
+        "relation": "does not have bias within 0.02 of zero for all parameters at the largest series length",
+        "object": "D5",
+        "comparator": null,
+        "conditions": [
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.T2.r2"
+          ]
+        }
+      ],
+      "provenance": "author_stated",
+      "hypothesis": {
+        "lab_event": "H5",
+        "outcome": "not_supported"
+      },
+      "planning": "confirmatory",
+      "planned_at": "2026-11-11T14:19:50Z",
+      "planned_at_anchor": "git_remote",
+      "test": {
+        "framework": "deterministic",
+        "parameters": {
+          "bias_bound": 0.02,
+          "share_threshold": 0.75,
+          "sample": "R=300 replicates per cell, 20 cells, fixed seed 2026, single run, no interim analysis",
+          "correction": "none"
+        },
+        "quantities": {
+          "sb_up": {
+            "variable": "max upper 90% bound of absolute bias at largest T",
+            "conditions": {
+              "method": "smooth backcasting"
+            }
+          },
+          "sb_lo": {
+            "variable": "max lower 90% bound of absolute bias at largest T",
+            "conditions": {
+              "method": "smooth backcasting"
+            }
+          }
+        },
+        "supported": "sb_up < bias_bound",
+        "not_supported": "sb_lo > bias_bound",
+        "verdict": "computed",
+        "runs": 1,
+        "lab_plan": "PL1"
+      },
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "moderate",
+          "rationale": "Planned test with a computed verdict on one run of 300 replicates per cell; the closest prior literature was not searched; simulation with five parameter sets only, so the result is for these settings."
+        }
+      ],
+      "scope": {
+        "conditions": [
+          "series length 500",
+          "eight smoothing parameters of five parameter sets",
+          "300 replicates",
+          "90% intervals computed from the standard error of the mean bias, smooth backcasting arm"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "statement": "In the [[D4:ETS simulation design]] at the largest series length, the mean [[D5:bias]] of the [[D3:statsforecast AutoETS]] estimates of the smoothing parameters is not within 0.02 of zero for all eight parameters: the largest lower 90% bound of the absolute bias over the eight parameters is 0.0344.",
+      "about": {
+        "subject": "D3",
+        "relation": "does not have bias within 0.02 of zero for all parameters at the largest series length",
+        "object": "D5",
+        "comparator": null,
+        "conditions": [
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "secondary",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.T2.r3"
+          ]
+        }
+      ],
+      "provenance": "author_stated",
+      "hypothesis": {
+        "lab_event": "H6",
+        "outcome": "not_supported"
+      },
+      "planning": "confirmatory",
+      "planned_at": "2026-11-11T14:19:50Z",
+      "planned_at_anchor": "git_remote",
+      "test": {
+        "framework": "deterministic",
+        "parameters": {
+          "bias_bound": 0.02,
+          "share_threshold": 0.75,
+          "sample": "R=300 replicates per cell, 20 cells, fixed seed 2026, single run, no interim analysis",
+          "correction": "none"
+        },
+        "quantities": {
+          "sf_up": {
+            "variable": "max upper 90% bound of absolute bias at largest T",
+            "conditions": {
+              "method": "statsforecast"
+            }
+          },
+          "sf_lo": {
+            "variable": "max lower 90% bound of absolute bias at largest T",
+            "conditions": {
+              "method": "statsforecast"
+            }
+          }
+        },
+        "supported": "sf_up < bias_bound",
+        "not_supported": "sf_lo > bias_bound",
+        "verdict": "computed",
+        "runs": 1,
+        "lab_plan": "PL1"
+      },
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "moderate",
+          "rationale": "Planned test with a computed verdict on one run of 300 replicates per cell; the closest prior literature was not searched; simulation with five parameter sets only, so the result is for these settings."
+        }
+      ],
+      "scope": {
+        "conditions": [
+          "series length 500",
+          "eight smoothing parameters of five parameter sets",
+          "300 replicates",
+          "90% intervals computed from the standard error of the mean bias, statsforecast arm"
+        ]
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "profile": "quant",
+      "design": "other",
+      "description": "Single confirmatory simulation run (RN2, plan PL1) of 28,800 fit rows: R=300 replicates in each of 20 cells (five parameter sets of the simulation design x series lengths 50, 100, 250, 500), each series fitted by three arms with the model form fixed to the generating form (smooth with optimised initial states, smooth with backcasting, statsforecast), all by Gaussian likelihood. No fit failed in any arm. Per arm, cell and parameter the bias (with a 90% interval), RMSE, MAE, failures, bound hits and warned fits were computed over replicates and are in the results file (artefact A1); the tables give the quantities that decide the six hypotheses: T1 the shares of RMSE comparisons (32 process x parameter x T comparisons), T2 the largest upper and lower 90% bounds of the absolute bias over the eight parameters at T=500, per arm. Not reported in the tables, but in A1: an exploratory reading of A1 shows that all the bias beyond 0.02 at T=500 sits in the seasonal process (gamma for both smooth arms; alpha for statsforecast), read after the verdicts and not a planned test.",
+      "availability": {
+        "level": "public"
+      },
+      "lab_runs": [
+        "RN2"
+      ],
+      "results": [
+        {
+          "id": "R1",
+          "variable": "share of series with RMSE lower at largest T than at smallest T",
+          "value": 1.0,
+          "conditions": {
+            "n series": 24
+          }
+        }
+      ],
+      "tables": [
+        {
+          "id": "T1",
+          "description": "Shares of the 32 process x parameter x T comparisons in which one arm has the lower RMSE: smooth optimised against statsforecast, and smooth backcasting against smooth optimised (decide H2 and H3).",
+          "conditions": {
+            "n comparisons": 32
+          },
+          "row_labels": [],
+          "columns": [
+            "share of comparisons with RMSE lower, smooth optimised vs statsforecast",
+            "share of comparisons with RMSE lower, smooth backcasting vs smooth optimised"
+          ],
+          "rows": [
+            {
+              "id": "r1",
+              "label": [],
+              "values": [
+                0.5938,
+                0.2812
+              ]
+            }
+          ],
+          "artefact": "A1"
+        },
+        {
+          "id": "T2",
+          "description": "Largest upper and lower 90% bounds of the absolute bias over the eight smoothing parameters at T=500, by method (decide H4 to H6; bound 0.02).",
+          "row_labels": [
+            "method"
+          ],
+          "columns": [
+            "max upper 90% bound of absolute bias at largest T",
+            "max lower 90% bound of absolute bias at largest T"
+          ],
+          "rows": [
+            {
+              "id": "r1",
+              "label": [
+                "smooth optimised"
+              ],
+              "values": [
+                0.06391,
+                0.0555
+              ]
+            },
+            {
+              "id": "r2",
+              "label": [
+                "smooth backcasting"
+              ],
+              "values": [
+                0.09482,
+                0.0893
+              ]
+            },
+            {
+              "id": "r3",
+              "label": [
+                "statsforecast"
+              ],
+              "values": [
+                0.04002,
+                0.03436
+              ]
+            }
+          ],
+          "artefact": "A1"
+        }
+      ],
+      "artefacts": [
+        "A1"
+      ],
+      "setup": {
+        "studied": [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "cases": [
+          "D4"
+        ],
+        "lens": [
+          "D5",
+          "D6",
+          "D7",
+          "D8",
+          "D9",
+          "D10"
+        ]
+      },
+      "execution": {
+        "code_version": "a4628983c38045c6986d429d44aa81a8b05fd2b2",
+        "software": {
+          "python": "3.13.18",
+          "platform": "Linux-6.18.44-fc-v378-x86_64-with-glibc2.39"
+        }
+      },
+      "n": 28800,
+      "estimand": "bias, RMSE and MAE of smoothing-parameter estimates"
+    }
+  ],
+  "warrants": [],
+  "limitations": [
+    {
+      "id": "L1",
+      "category": "sampling",
+      "statement": "Only five parameter sets (three process forms, one seasonal set) are simulated, so the bias results at T=500 describe these settings; the bias beyond 0.02 appears only in the single seasonal process, read from the results file after the verdicts.",
+      "affects": [
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "impact": "reduces_transferability",
+      "mitigation": "none"
+    },
+    {
+      "id": "L2",
+      "category": "measurement",
+      "statement": "Neither smooth nor statsforecast exposes a convergence flag that the script reads, so non-convergence is visible only as bound hits and warnings, which are counted; no fit raised an error, returned a non-finite estimate or changed the model form.",
+      "affects": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "impact": "could_bias_magnitude",
+      "mitigation": "none"
+    },
+    {
+      "id": "L3",
+      "category": "model_specification",
+      "statement": "The bounds differ slightly between the packages (smooth: usual bounds; statsforecast: box [1e-4, 0.9999] plus usual and admissibility checks), and the optimisers differ, so differences in RMSE partly reflect these implementation choices.",
+      "affects": [
+        "C2",
+        "C3"
+      ],
+      "impact": "could_bias_magnitude",
+      "mitigation": "none"
+    },
+    {
+      "id": "L4",
+      "category": "analytic_flexibility",
+      "statement": "The thresholds (bias bound 0.02, share 0.75) were fixed in advance without a prior literature basis and the consistency test compares only the smallest and the largest series length.",
+      "affects": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "impact": "could_bias_magnitude",
+      "mitigation": "none"
+    }
+  ],
+  "artefacts": [
+    {
+      "id": "A1",
+      "kind": "data",
+      "uri": "files/ets-param-estimation.results.csv",
+      "version": "sha256:de6220ef7bf15a6bf481577cda76a114ec60615b566b3259154aff7bd7aa5178",
+      "availability": {
+        "level": "public"
+      },
+      "description": "Every result of the lab record (1370 results of 2 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.",
+      "columns": [
+        {
+          "name": "lab_result",
+          "dimension": "the result event of the lab record"
+        },
+        {
+          "name": "run",
+          "dimension": "the lab run that produced it"
+        },
+        {
+          "name": "quantity",
+          "dimension": "the quantity, as the run's script named it"
+        },
+        {
+          "name": "conditions",
+          "dimension": "the result's conditions, as JSON"
+        },
+        {
+          "name": "value",
+          "variable": "the value of the quantity, as JSON, at full precision"
+        }
+      ],
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "id": "A2",
+      "kind": "lab_record",
+      "uri": "/home/user/exp-runs/lab-sonnet-2.git/lab/lab.jsonl",
+      "version": "sha256:cd13884c27d85a4d62aca19788d28534f5aee915e33b7513778495d2e4169fe0",
+      "availability": {
+        "level": "public"
+      },
+      "description": "Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.21, begun 2026-11-11; exported with claimset 0.41.6).",
+      "licence": "CC-BY-4.0"
+    }
+  ]
+}

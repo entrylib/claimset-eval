@@ -1,0 +1,1934 @@
+{
+  "schema_version": "0.41",
+  "paper": {
+    "title": "How well smooth and statsforecast estimate ETS parameters",
+    "contributions": [
+      "C2",
+      "C1",
+      "C4"
+    ],
+    "autonomy": "human_supervised",
+    "contribution_record": "complete",
+    "origin": "native",
+    "exploration": {
+      "lab_record": "A2",
+      "questions": 1,
+      "hypotheses": {
+        "total": 4,
+        "supported": 0,
+        "not_supported": 0,
+        "inconclusive": 4,
+        "revised": 0,
+        "abandoned": 0,
+        "open": 0,
+        "from_exploration": 4
+      },
+      "tests": {
+        "total": 0,
+        "supported": 0,
+        "not_supported": 0,
+        "inconclusive": 0
+      },
+      "runs": {
+        "total": 4,
+        "confirmatory": 0,
+        "exploratory": 4,
+        "failed": 0
+      }
+    },
+    "study": "ets-param-recovery",
+    "licence": "CC-BY-4.0",
+    "declarations": {
+      "funding": [],
+      "competing_interests": "The guarantor is the author and maintainer of the smooth package that the study evaluates."
+    },
+    "classification": {
+      "keywords": [
+        "exponential smoothing",
+        "ETS state space models",
+        "parameter estimation",
+        "smooth package",
+        "statsforecast",
+        "Monte Carlo simulation"
+      ]
+    }
+  },
+  "contributors": [
+    {
+      "id": "P1",
+      "type": "agent",
+      "name": "Claude Code",
+      "positions": [
+        "author"
+      ],
+      "models": [
+        {
+          "model": "M1",
+          "role": "sole"
+        }
+      ],
+      "run_period": {
+        "start": "2026-11-11",
+        "end": "2026-11-11"
+      },
+      "tools": [
+        "code_execution"
+      ],
+      "system": {
+        "name": "Claude Code"
+      },
+      "label": "research",
+      "record_source": "self_reported"
+    },
+    {
+      "id": "P2",
+      "type": "human",
+      "name": "Ivan Svetunkov",
+      "positions": [
+        "supervisor",
+        "guarantor"
+      ],
+      "orcid": "0000-0001-7826-0281"
+    }
+  ],
+  "models": [
+    {
+      "id": "M1",
+      "provider": "Anthropic",
+      "name": "Claude Haiku",
+      "version": "5.5",
+      "identifier": "claude-haiku-5-5",
+      "accessed": "2026-11-11"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D1",
+      "term": "smooth ES",
+      "kind": "method",
+      "definition": "The ES class of the Python package smooth (Ivan Svetunkov) with the model form fixed; estimated smoothing parameters by likelihood; usual bounds (alpha, beta, gamma in [0,1], beta at most alpha, gamma at most 1 minus alpha); initial states optimised (initial='optimal') or by backcasting (initial='backcasting', its default). Two arms: optimised and backcasting."
+    },
+    {
+      "id": "D2",
+      "term": "statsforecast ETS",
+      "kind": "method",
+      "definition": "The ets_f function of statsforecast (Nixtla) with the model form fixed; likelihood loss (opt_crit 'lik'); smoothing parameters bounded to [0.0001, 0.9999], with beta's upper bound set to the starting alpha (about 0.2 for non-seasonal models); initial states optimised."
+    },
+    {
+      "id": "D3",
+      "term": "ETS innovations-form data",
+      "kind": "data",
+      "definition": "Simulated series of length T in {50, 100, 250, 500} from ETS(A,N,N), ETS(A,A,N) and ETS(A,N,A) with m=12 in innovations form, additive Gaussian errors with sigma=1, l_0=100, b_0=1 and s_j=10 sin(2 pi j/12) for j=0,...,11; no burn-in. ETS(A,N,N): $y_t = l_{t-1} + \\varepsilon_t$, $l_t = l_{t-1} + \\alpha \\varepsilon_t$. ETS(A,A,N): $y_t = l_{t-1} + b_{t-1} + \\varepsilon_t$, $l_t = l_{t-1} + b_{t-1} + \\alpha \\varepsilon_t$, $b_t = b_{t-1} + \\beta \\varepsilon_t$. ETS(A,N,A): $y_t = l_{t-1} + s_{t-m} + \\varepsilon_t$, $l_t = l_{t-1} + \\alpha \\varepsilon_t$, $s_t = s_{t-m} + \\gamma \\varepsilon_t$; $\\varepsilon_t \\sim N(0,1)$ i.i.d."
+    },
+    {
+      "id": "D4",
+      "term": "bias of smoothing parameter estimates",
+      "kind": "variable",
+      "definition": "Mean over successful replicates of (estimate minus true value) of a smoothing parameter."
+    },
+    {
+      "id": "D5",
+      "term": "RMSE of smoothing parameter estimates",
+      "kind": "variable",
+      "definition": "Root mean squared error of a smoothing-parameter estimate around its true value, over successful replicates."
+    },
+    {
+      "id": "D6",
+      "term": "MAE of smoothing parameter estimates",
+      "kind": "variable",
+      "definition": "Mean absolute error of a smoothing-parameter estimate around its true value, over successful replicates."
+    },
+    {
+      "id": "D7",
+      "term": "Monte Carlo replicate design",
+      "kind": "design",
+      "definition": "5 processes x 4 series lengths x 300 replicates per cell. Each replicate has its own fixed seed derived from the base seed 2026; the three arms are fitted to the same series. Fit failures and non-finite estimates are counted, not dropped."
+    },
+    {
+      "id": "D8",
+      "term": "share of estimates on a bound",
+      "kind": "variable",
+      "definition": "Share of successful replicates whose estimate lies within 0.001 of a bound of the implementation's parameter range: smooth 0 or 1 (beta also at alpha); statsforecast 0.0001 or 0.9999 (beta also at its cap)."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "role": "principal",
+      "type": "descriptive",
+      "novelty": "no_prior_found",
+      "statement": "For ETS(A,N,A) with $m=12$ and true $\\gamma=0.1$ in [[D3:ETS innovations-form data]], [[D1:smooth ES]] estimates $\\gamma$ with a bias towards zero for series of 50 to 250 observations, under both initial-state methods.",
+      "about": {
+        "subject": "D1",
+        "relation": "estimates the seasonal smoothing parameter with a bias towards zero",
+        "object": null,
+        "comparator": null,
+        "conditions": [
+          "D3"
+        ]
+      },
+      "scope": {
+        "data_type": "simulated",
+        "conditions": "ETS(A,N,A) with m=12, Gaussian errors, series length 50 to 250"
+      },
+      "support": [
+        {
+          "kind": "simulation",
+          "evidence": "E1",
+          "artefacts": [
+            "A3"
+          ],
+          "results": [
+            "E1.T1.r74",
+            "E1.T1.r80",
+            "E1.T1.r86",
+            "E1.T1.r76",
+            "E1.T1.r82",
+            "E1.T1.r88"
+          ]
+        }
+      ],
+      "assumptions": [
+        "C5"
+      ],
+      "hypothesis": {
+        "lab_event": "H1",
+        "outcome": "inconclusive"
+      },
+      "planning": "exploratory",
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "low",
+          "rationale": "The result is exploratory, not tested under a plan: one simulation study, with no independent check; one web search found no head-to-head study of these estimators."
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "role": "principal",
+      "type": "descriptive",
+      "novelty": "no_prior_found",
+      "statement": "For ETS(A,A,N) with true $(\\alpha,\\beta)=(0.5,0.2)$ in [[D3:ETS innovations-form data]], [[D2:statsforecast ETS]] estimates $\\beta$ on its cap in roughly half of replicates at every series length from 50 to 500.",
+      "about": {
+        "subject": "D2",
+        "relation": "estimates beta on its cap in a share of replicates",
+        "object": null,
+        "comparator": null,
+        "conditions": [
+          "D3"
+        ]
+      },
+      "scope": {
+        "data_type": "simulated",
+        "conditions": "ETS(A,A,N), Gaussian errors, series length 50 to 500"
+      },
+      "support": [
+        {
+          "kind": "simulation",
+          "evidence": "E1",
+          "artefacts": [
+            "A3"
+          ],
+          "results": [
+            "E1.T1.r54",
+            "E1.T1.r60",
+            "E1.T1.r66",
+            "E1.T1.r72"
+          ]
+        }
+      ],
+      "assumptions": [
+        "C5"
+      ],
+      "hypothesis": {
+        "lab_event": "H2",
+        "outcome": "inconclusive"
+      },
+      "planning": "exploratory",
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "low",
+          "rationale": "The result is exploratory, not tested under a plan: one simulation study, with no independent check; one web search found no head-to-head study of these estimators."
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "role": "principal",
+      "type": "descriptive",
+      "novelty": "no_prior_found",
+      "statement": "For non-seasonal ETS in [[D3:ETS innovations-form data]], the RMSE of the estimates of $\\alpha$ and $\\beta$ from [[D1:smooth ES]] with optimised initial states falls at each series length from 50 to 500.",
+      "about": {
+        "subject": "D1",
+        "relation": "has an RMSE for alpha and beta that falls with series length",
+        "object": null,
+        "comparator": null,
+        "conditions": [
+          "D3"
+        ]
+      },
+      "scope": {
+        "data_type": "simulated",
+        "conditions": "ETS(A,N,N) and ETS(A,A,N), Gaussian errors, series length 50 to 500"
+      },
+      "support": [
+        {
+          "kind": "simulation",
+          "evidence": "E1",
+          "artefacts": [
+            "A3"
+          ],
+          "results": [
+            "E1.T1.r1",
+            "E1.T1.r4",
+            "E1.T1.r7",
+            "E1.T1.r10",
+            "E1.T1.r13",
+            "E1.T1.r16",
+            "E1.T1.r19",
+            "E1.T1.r22",
+            "E1.T1.r25",
+            "E1.T1.r26",
+            "E1.T1.r31",
+            "E1.T1.r32",
+            "E1.T1.r37",
+            "E1.T1.r38",
+            "E1.T1.r43",
+            "E1.T1.r44",
+            "E1.T1.r49",
+            "E1.T1.r50",
+            "E1.T1.r55",
+            "E1.T1.r56",
+            "E1.T1.r61",
+            "E1.T1.r62",
+            "E1.T1.r67",
+            "E1.T1.r68"
+          ]
+        }
+      ],
+      "assumptions": [
+        "C5"
+      ],
+      "hypothesis": {
+        "lab_event": "H4",
+        "outcome": "inconclusive"
+      },
+      "planning": "exploratory",
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "low",
+          "rationale": "The result is exploratory, not tested under a plan: one simulation study, with no independent check; one web search found no head-to-head study of these estimators."
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "role": "supporting",
+      "type": "descriptive",
+      "statement": "The errors are i.i.d. $N(0,1)$ and the data are generated exactly by the stated innovations-form ETS model.",
+      "support": [
+        {
+          "kind": "assumption"
+        }
+      ],
+      "assumption_category": "statistical",
+      "check": "unchecked"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "profile": "simulation",
+      "description": "Monte Carlo comparison of smoothing-parameter estimates of smooth ES (two initial-state arms) and statsforecast ets_f on simulated ETS data (definitions D3 and D7). The bias, RMSE and MAE come from lab run RN4 (analyse.py --output error) and the share on a bound from RN3 (analyse.py), both over the replicate file of RN2 (simulate.py --seed 2026 --reps 300). The lab record holds all runs; every result is in files/ets-param-recovery.results.csv. All 18,000 fits succeeded.",
+      "model": "ETS innovations-form models of definition D3, with m=12 for ETS(A,N,A)",
+      "parameters": "A5",
+      "runs": [
+        "RN2",
+        "RN3",
+        "RN4"
+      ],
+      "seeds": "base seed 2026; replicate seed 2026*10^7 + p*10^6 + T_index*10^5 + replicate (p process, T_index length, replicate 0 to 299)",
+      "outputs": "E1.T1",
+      "setup": {
+        "studied": [
+          "D1",
+          "D2"
+        ],
+        "cases": [
+          "D3"
+        ],
+        "procedure": [
+          "D7"
+        ],
+        "lens": [
+          "D4",
+          "D5",
+          "D6",
+          "D8"
+        ]
+      },
+      "availability": {
+        "level": "public"
+      },
+      "lab_runs": [
+        "RN2",
+        "RN3",
+        "RN4"
+      ],
+      "execution": {
+        "code_version": "f18283ae36f7c8f444f9bc23a5a4b4a497983660",
+        "notes": "Scripts simulate.py and analyse.py in claimset-code/ets-param-recovery/."
+      },
+      "tables": [
+        {
+          "id": "T1",
+          "description": "Bias, RMSE and MAE of the smoothing-parameter estimates of successful fits, and the share of estimates on a bound, for 5 processes, 4 series lengths and 3 arms, 300 replicates per cell (lab runs RN4 and RN3); values to four significant digits",
+          "row_labels": [
+            "method",
+            "process",
+            "sample size",
+            "parameter"
+          ],
+          "columns": [
+            "D4",
+            "D5",
+            "D6",
+            "D8"
+          ],
+          "units": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "rows": [
+            {
+              "id": "r1",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,N) alpha=0.1",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.0427,
+                0.09004,
+                0.08154,
+                0.5967
+              ]
+            },
+            {
+              "id": "r2",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,N) alpha=0.1",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.04478,
+                0.0915,
+                0.08358,
+                0.6267
+              ]
+            },
+            {
+              "id": "r3",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,N) alpha=0.1",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.04279,
+                0.09002,
+                0.08162,
+                0.5967
+              ]
+            },
+            {
+              "id": "r4",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,N) alpha=0.1",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.0267,
+                0.06454,
+                0.05181,
+                0.3033
+              ]
+            },
+            {
+              "id": "r5",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,N) alpha=0.1",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.02781,
+                0.06582,
+                0.05292,
+                0.3267
+              ]
+            },
+            {
+              "id": "r6",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,N) alpha=0.1",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.0263,
+                0.06414,
+                0.05145,
+                0.2967
+              ]
+            },
+            {
+              "id": "r7",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,N) alpha=0.1",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.01046,
+                0.03398,
+                0.02615,
+                0.02333
+              ]
+            },
+            {
+              "id": "r8",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,N) alpha=0.1",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.01136,
+                0.03602,
+                0.02704,
+                0.04667
+              ]
+            },
+            {
+              "id": "r9",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,N) alpha=0.1",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.01078,
+                0.03467,
+                0.02646,
+                0.03
+              ]
+            },
+            {
+              "id": "r10",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,N) alpha=0.1",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.002212,
+                0.01917,
+                0.01562,
+                0.0
+              ]
+            },
+            {
+              "id": "r11",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,N) alpha=0.1",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.002211,
+                0.01917,
+                0.01562,
+                0.0
+              ]
+            },
+            {
+              "id": "r12",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,N) alpha=0.1",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.002226,
+                0.01916,
+                0.01561,
+                0.0
+              ]
+            },
+            {
+              "id": "r13",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,N) alpha=0.5",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.03038,
+                0.1628,
+                0.1205,
+                0.02
+              ]
+            },
+            {
+              "id": "r14",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,N) alpha=0.5",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.03082,
+                0.164,
+                0.121,
+                0.02667
+              ]
+            },
+            {
+              "id": "r15",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,N) alpha=0.5",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.02918,
+                0.1605,
+                0.1195,
+                0.01667
+              ]
+            },
+            {
+              "id": "r16",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,N) alpha=0.5",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.01053,
+                0.09659,
+                0.07648,
+                0.0
+              ]
+            },
+            {
+              "id": "r17",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,N) alpha=0.5",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.01095,
+                0.0984,
+                0.07686,
+                0.003333
+              ]
+            },
+            {
+              "id": "r18",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,N) alpha=0.5",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.01045,
+                0.0966,
+                0.07647,
+                0.0
+              ]
+            },
+            {
+              "id": "r19",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,N) alpha=0.5",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.004459,
+                0.0589,
+                0.04818,
+                0.0
+              ]
+            },
+            {
+              "id": "r20",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,N) alpha=0.5",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.004463,
+                0.0589,
+                0.04818,
+                0.0
+              ]
+            },
+            {
+              "id": "r21",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,N) alpha=0.5",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.004477,
+                0.05886,
+                0.04813,
+                0.0
+              ]
+            },
+            {
+              "id": "r22",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,N) alpha=0.5",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.0004289,
+                0.03743,
+                0.02927,
+                0.0
+              ]
+            },
+            {
+              "id": "r23",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,N) alpha=0.5",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.0004341,
+                0.03741,
+                0.02925,
+                0.0
+              ]
+            },
+            {
+              "id": "r24",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,N) alpha=0.5",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.0004486,
+                0.03742,
+                0.02925,
+                0.0
+              ]
+            },
+            {
+              "id": "r25",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.1212,
+                0.1975,
+                0.1693,
+                0.08
+              ]
+            },
+            {
+              "id": "r26",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                50,
+                "beta"
+              ],
+              "values": [
+                -0.01451,
+                0.03883,
+                0.03146,
+                0.6733
+              ]
+            },
+            {
+              "id": "r27",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.1239,
+                0.2035,
+                0.1753,
+                0.2067
+              ]
+            },
+            {
+              "id": "r28",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                50,
+                "beta"
+              ],
+              "values": [
+                -0.01709,
+                0.04097,
+                0.03415,
+                0.6867
+              ]
+            },
+            {
+              "id": "r29",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.1381,
+                0.2173,
+                0.1831,
+                0.4367
+              ]
+            },
+            {
+              "id": "r30",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                50,
+                "beta"
+              ],
+              "values": [
+                -0.02317,
+                0.04441,
+                0.03837,
+                0.5367
+              ]
+            },
+            {
+              "id": "r31",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.04914,
+                0.1116,
+                0.0859,
+                0.003333
+              ]
+            },
+            {
+              "id": "r32",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                100,
+                "beta"
+              ],
+              "values": [
+                -0.006503,
+                0.02521,
+                0.01893,
+                0.1867
+              ]
+            },
+            {
+              "id": "r33",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.05101,
+                0.1155,
+                0.08913,
+                0.01333
+              ]
+            },
+            {
+              "id": "r34",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                100,
+                "beta"
+              ],
+              "values": [
+                -0.006701,
+                0.02664,
+                0.01978,
+                0.2033
+              ]
+            },
+            {
+              "id": "r35",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.05554,
+                0.1235,
+                0.0922,
+                0.09
+              ]
+            },
+            {
+              "id": "r36",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                100,
+                "beta"
+              ],
+              "values": [
+                -0.008625,
+                0.02738,
+                0.02068,
+                0.1333
+              ]
+            },
+            {
+              "id": "r37",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.0142,
+                0.05542,
+                0.04441,
+                0.0
+              ]
+            },
+            {
+              "id": "r38",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                250,
+                "beta"
+              ],
+              "values": [
+                -0.0008464,
+                0.01242,
+                0.009514,
+                0.003333
+              ]
+            },
+            {
+              "id": "r39",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.01463,
+                0.0546,
+                0.04402,
+                0.0
+              ]
+            },
+            {
+              "id": "r40",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                250,
+                "beta"
+              ],
+              "values": [
+                -0.0008824,
+                0.0126,
+                0.009578,
+                0.006667
+              ]
+            },
+            {
+              "id": "r41",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.01526,
+                0.05539,
+                0.04463,
+                0.0
+              ]
+            },
+            {
+              "id": "r42",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                250,
+                "beta"
+              ],
+              "values": [
+                -0.001312,
+                0.01272,
+                0.009677,
+                0.003333
+              ]
+            },
+            {
+              "id": "r43",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.004962,
+                0.03609,
+                0.0284,
+                0.0
+              ]
+            },
+            {
+              "id": "r44",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                500,
+                "beta"
+              ],
+              "values": [
+                -0.001396,
+                0.008709,
+                0.006946,
+                0.0
+              ]
+            },
+            {
+              "id": "r45",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.004999,
+                0.0361,
+                0.02837,
+                0.0
+              ]
+            },
+            {
+              "id": "r46",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                500,
+                "beta"
+              ],
+              "values": [
+                -0.001404,
+                0.008703,
+                0.006932,
+                0.0
+              ]
+            },
+            {
+              "id": "r47",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.00558,
+                0.03628,
+                0.02859,
+                0.0
+              ]
+            },
+            {
+              "id": "r48",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.3 beta=0.05",
+                500,
+                "beta"
+              ],
+              "values": [
+                -0.00138,
+                0.008726,
+                0.006934,
+                0.0
+              ]
+            },
+            {
+              "id": "r49",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.06677,
+                0.1793,
+                0.1456,
+                0.003333
+              ]
+            },
+            {
+              "id": "r50",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                50,
+                "beta"
+              ],
+              "values": [
+                -0.01881,
+                0.09129,
+                0.07015,
+                0.2433
+              ]
+            },
+            {
+              "id": "r51",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.068,
+                0.1811,
+                0.147,
+                0.006667
+              ]
+            },
+            {
+              "id": "r52",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                50,
+                "beta"
+              ],
+              "values": [
+                -0.01895,
+                0.09273,
+                0.07131,
+                0.3067
+              ]
+            },
+            {
+              "id": "r53",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.03257,
+                0.214,
+                0.162,
+                0.08333
+              ]
+            },
+            {
+              "id": "r54",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                50,
+                "beta"
+              ],
+              "values": [
+                -0.06997,
+                0.1082,
+                0.07,
+                0.5933
+              ]
+            },
+            {
+              "id": "r55",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.02671,
+                0.09575,
+                0.0773,
+                0.0
+              ]
+            },
+            {
+              "id": "r56",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                100,
+                "beta"
+              ],
+              "values": [
+                -0.006172,
+                0.05088,
+                0.03949,
+                0.003333
+              ]
+            },
+            {
+              "id": "r57",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.02665,
+                0.09623,
+                0.07758,
+                0.0
+              ]
+            },
+            {
+              "id": "r58",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                100,
+                "beta"
+              ],
+              "values": [
+                -0.006268,
+                0.05161,
+                0.0397,
+                0.01667
+              ]
+            },
+            {
+              "id": "r59",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.01638,
+                0.09338,
+                0.0744,
+                0.0
+              ]
+            },
+            {
+              "id": "r60",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                100,
+                "beta"
+              ],
+              "values": [
+                -0.0246,
+                0.04768,
+                0.02464,
+                0.5067
+              ]
+            },
+            {
+              "id": "r61",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.01076,
+                0.05726,
+                0.04554,
+                0.0
+              ]
+            },
+            {
+              "id": "r62",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                250,
+                "beta"
+              ],
+              "values": [
+                -0.003215,
+                0.02896,
+                0.02337,
+                0.0
+              ]
+            },
+            {
+              "id": "r63",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.01067,
+                0.0572,
+                0.04553,
+                0.0
+              ]
+            },
+            {
+              "id": "r64",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                250,
+                "beta"
+              ],
+              "values": [
+                -0.00334,
+                0.02902,
+                0.02345,
+                0.0
+              ]
+            },
+            {
+              "id": "r65",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.006511,
+                0.05535,
+                0.04402,
+                0.0
+              ]
+            },
+            {
+              "id": "r66",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                250,
+                "beta"
+              ],
+              "values": [
+                -0.01296,
+                0.02192,
+                0.013,
+                0.48
+              ]
+            },
+            {
+              "id": "r67",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.008862,
+                0.04014,
+                0.03217,
+                0.0
+              ]
+            },
+            {
+              "id": "r68",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                500,
+                "beta"
+              ],
+              "values": [
+                -1.953e-05,
+                0.02005,
+                0.01623,
+                0.0
+              ]
+            },
+            {
+              "id": "r69",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.008727,
+                0.0401,
+                0.03214,
+                0.0
+              ]
+            },
+            {
+              "id": "r70",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                500,
+                "beta"
+              ],
+              "values": [
+                8.229e-06,
+                0.02003,
+                0.01625,
+                0.0
+              ]
+            },
+            {
+              "id": "r71",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.004757,
+                0.03923,
+                0.03187,
+                0.0
+              ]
+            },
+            {
+              "id": "r72",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,A,N) alpha=0.5 beta=0.2",
+                500,
+                "beta"
+              ],
+              "values": [
+                -0.007855,
+                0.01442,
+                0.007904,
+                0.5467
+              ]
+            },
+            {
+              "id": "r73",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.01212,
+                0.09844,
+                0.07342,
+                0.04333
+              ]
+            },
+            {
+              "id": "r74",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                50,
+                "gamma"
+              ],
+              "values": [
+                -0.09317,
+                0.1034,
+                0.09765,
+                0.3867
+              ]
+            },
+            {
+              "id": "r75",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                50,
+                "alpha"
+              ],
+              "values": [
+                0.008212,
+                0.1322,
+                0.1048,
+                0.1267
+              ]
+            },
+            {
+              "id": "r76",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                50,
+                "gamma"
+              ],
+              "values": [
+                -0.09398,
+                0.1051,
+                0.09864,
+                0.8967
+              ]
+            },
+            {
+              "id": "r77",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                50,
+                "alpha"
+              ],
+              "values": [
+                -0.1112,
+                0.1397,
+                0.1217,
+                0.08667
+              ]
+            },
+            {
+              "id": "r78",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                50,
+                "gamma"
+              ],
+              "values": [
+                -0.09091,
+                0.09298,
+                0.09115,
+                0.4467
+              ]
+            },
+            {
+              "id": "r79",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.008948,
+                0.06546,
+                0.04939,
+                0.01
+              ]
+            },
+            {
+              "id": "r80",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                100,
+                "gamma"
+              ],
+              "values": [
+                -0.09788,
+                0.09793,
+                0.09788,
+                0.4933
+              ]
+            },
+            {
+              "id": "r81",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                100,
+                "alpha"
+              ],
+              "values": [
+                0.009841,
+                0.07914,
+                0.06213,
+                0.0
+              ]
+            },
+            {
+              "id": "r82",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                100,
+                "gamma"
+              ],
+              "values": [
+                -0.1,
+                0.1,
+                0.1,
+                1.0
+              ]
+            },
+            {
+              "id": "r83",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                100,
+                "alpha"
+              ],
+              "values": [
+                -0.05462,
+                0.0893,
+                0.07105,
+                0.02667
+              ]
+            },
+            {
+              "id": "r84",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                100,
+                "gamma"
+              ],
+              "values": [
+                -0.07652,
+                0.09168,
+                0.08706,
+                0.26
+              ]
+            },
+            {
+              "id": "r85",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.00627,
+                0.03582,
+                0.02934,
+                0.0
+              ]
+            },
+            {
+              "id": "r86",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                250,
+                "gamma"
+              ],
+              "values": [
+                -0.09831,
+                0.09863,
+                0.0985,
+                0.67
+              ]
+            },
+            {
+              "id": "r87",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                250,
+                "alpha"
+              ],
+              "values": [
+                0.01066,
+                0.04033,
+                0.03152,
+                0.0
+              ]
+            },
+            {
+              "id": "r88",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                250,
+                "gamma"
+              ],
+              "values": [
+                -0.1,
+                0.1,
+                0.1,
+                1.0
+              ]
+            },
+            {
+              "id": "r89",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                250,
+                "alpha"
+              ],
+              "values": [
+                -0.03612,
+                0.0528,
+                0.04283,
+                0.0
+              ]
+            },
+            {
+              "id": "r90",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                250,
+                "gamma"
+              ],
+              "values": [
+                -0.05682,
+                0.08539,
+                0.07794,
+                0.24
+              ]
+            },
+            {
+              "id": "r91",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.00418,
+                0.02911,
+                0.02334,
+                0.0
+              ]
+            },
+            {
+              "id": "r92",
+              "label": [
+                "smooth ES, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                500,
+                "gamma"
+              ],
+              "values": [
+                -0.06045,
+                0.0746,
+                0.06283,
+                0.3933
+              ]
+            },
+            {
+              "id": "r93",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                500,
+                "alpha"
+              ],
+              "values": [
+                0.003092,
+                0.02726,
+                0.02194,
+                0.0
+              ]
+            },
+            {
+              "id": "r94",
+              "label": [
+                "smooth ES, backcasting initial states (default)",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                500,
+                "gamma"
+              ],
+              "values": [
+                -0.09419,
+                0.09756,
+                0.09581,
+                0.95
+              ]
+            },
+            {
+              "id": "r95",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                500,
+                "alpha"
+              ],
+              "values": [
+                -0.03778,
+                0.04895,
+                0.04108,
+                0.0
+              ]
+            },
+            {
+              "id": "r96",
+              "label": [
+                "statsforecast ets_f, optimised initial states",
+                "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+                500,
+                "gamma"
+              ],
+              "values": [
+                -0.01258,
+                0.04969,
+                0.03861,
+                0.05667
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "warrants": [],
+  "limitations": [],
+  "artefacts": [
+    {
+      "id": "A1",
+      "kind": "data",
+      "uri": "files/ets-param-recovery.results.csv",
+      "version": "sha256:e0a0a324ae74b6f7abcbff20e9a434544919698d4b2d890ef36f3e8425a302a5",
+      "availability": {
+        "level": "public"
+      },
+      "description": "Every result of the lab record (929 results of 4 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.",
+      "columns": [
+        {
+          "name": "lab_result",
+          "dimension": "the result event of the lab record"
+        },
+        {
+          "name": "run",
+          "dimension": "the lab run that produced it"
+        },
+        {
+          "name": "quantity",
+          "dimension": "the quantity, as the run's script named it"
+        },
+        {
+          "name": "conditions",
+          "dimension": "the result's conditions, as JSON"
+        },
+        {
+          "name": "value",
+          "variable": "the value of the quantity, as JSON, at full precision"
+        }
+      ],
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "id": "A2",
+      "kind": "lab_record",
+      "uri": "/home/user/exp-runs/lab-haiku-1.git/lab/lab.jsonl",
+      "version": "sha256:97ed153d4fbfcdd766d96516a50509f93faead5858fa102bf61ea12f2d5f64e3",
+      "availability": {
+        "level": "public"
+      },
+      "description": "Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.21, begun 2026-11-11; exported with claimset 0.41.6).",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "id": "A3",
+      "kind": "code",
+      "uri": "files/simulate.py",
+      "version": "sha256:320179ea145dd52d095e9e16c2ca8f51693d10cd47226f1c796b5389dd7f3056",
+      "availability": {
+        "level": "public"
+      },
+      "licence": "CC-BY-4.0",
+      "description": "Script that simulates the ETS data, fits smooth (two arms) and statsforecast ets_f, and writes the replicate file (lab run RN2)."
+    },
+    {
+      "id": "A4",
+      "kind": "code",
+      "uri": "files/analyse.py",
+      "version": "sha256:6c2c20151a21526171c3fc4087e34581cb4d93d6ac010ffc5b9670f6d384de19",
+      "availability": {
+        "level": "public"
+      },
+      "licence": "CC-BY-4.0",
+      "description": "Script that summarises the replicate file: bias, RMSE and MAE (RN4) and the share on a bound (RN3)."
+    },
+    {
+      "id": "A5",
+      "kind": "data",
+      "uri": "files/simulation-parameters.json",
+      "version": "sha256:26989734f59cf8da24f92cfc86a87151f84845c53f627175dd77c3c945451aac",
+      "availability": {
+        "level": "public"
+      },
+      "licence": "CC-BY-4.0",
+      "description": "Simulation parameters: processes, true smoothing parameters, lengths, replicates, initial states, base seed."
+    }
+  ]
+}

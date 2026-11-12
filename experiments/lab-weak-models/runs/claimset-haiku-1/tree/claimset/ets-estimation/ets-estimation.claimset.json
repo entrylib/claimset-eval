@@ -1,0 +1,692 @@
+{
+  "schema_version": "0.41",
+  "paper": {
+    "title": "Estimating ETS parameters: smooth and statsforecast on simulated data",
+    "contributions": [
+      "C3",
+      "C1",
+      "C2"
+    ],
+    "autonomy": "human_supervised",
+    "contribution_record": "complete",
+    "origin": "native",
+    "exploration": {
+      "lab_record": "A2",
+      "questions": 1,
+      "hypotheses": {
+        "total": 3,
+        "supported": 1,
+        "not_supported": 2,
+        "inconclusive": 0,
+        "revised": 0,
+        "abandoned": 0,
+        "open": 0,
+        "from_exploration": 0
+      },
+      "tests": {
+        "total": 3,
+        "supported": 1,
+        "not_supported": 2,
+        "inconclusive": 0
+      },
+      "runs": {
+        "total": 2,
+        "confirmatory": 1,
+        "exploratory": 1,
+        "failed": 0
+      },
+      "covers": {
+        "questions": [
+          "Q1"
+        ],
+        "lab": {
+          "questions": 1,
+          "hypotheses": {
+            "total": 3,
+            "supported": 1,
+            "not_supported": 2,
+            "inconclusive": 0,
+            "revised": 0,
+            "abandoned": 0,
+            "open": 0,
+            "from_exploration": 0
+          },
+          "tests": {
+            "total": 3,
+            "supported": 1,
+            "not_supported": 2,
+            "inconclusive": 0
+          }
+        }
+      }
+    },
+    "study": "ets-estimation",
+    "licence": "CC-BY-4.0",
+    "classification": {
+      "keywords": [
+        "exponential smoothing",
+        "ETS",
+        "state space model",
+        "parameter estimation",
+        "smooth package",
+        "statsforecast",
+        "simulation study",
+        "RMSE bias"
+      ]
+    },
+    "declarations": {
+      "funding": [],
+      "competing_interests": "The guarantor is the author and maintainer of the smooth package, one of the implementations the study evaluates.",
+      "ethics": []
+    },
+    "highlights": [
+      "C1",
+      "C3",
+      "C2"
+    ]
+  },
+  "contributors": [
+    {
+      "id": "P1",
+      "type": "agent",
+      "name": "Claude Code",
+      "positions": [
+        "author"
+      ],
+      "models": [
+        {
+          "model": "M1",
+          "role": "sole"
+        }
+      ],
+      "run_period": {
+        "start": "2026-11-11",
+        "end": "2026-11-11"
+      },
+      "tools": [
+        "code_execution",
+        "file_access"
+      ],
+      "system": {
+        "name": "Claude Code"
+      },
+      "label": "research",
+      "record_source": "harness",
+      "credit_roles": [
+        "formal_analysis",
+        "software",
+        "writing_original_draft"
+      ],
+      "ai_tasks": [
+        {
+          "task": "analysis",
+          "extent": "full"
+        },
+        {
+          "task": "writing",
+          "extent": "full"
+        },
+        {
+          "task": "json_preparation",
+          "extent": "full"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "type": "human",
+      "name": "Ivan Svetunkov",
+      "positions": [
+        "guarantor",
+        "supervisor"
+      ],
+      "orcid": "0000-0001-7826-0281",
+      "credit_roles": [
+        "conceptualization",
+        "supervision"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "M1",
+      "provider": "Anthropic",
+      "name": "Claude Haiku",
+      "version": "5.5",
+      "identifier": "claude-haiku-5-5",
+      "accessed": "2026-11-11",
+      "record_source": "harness"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D1",
+      "term": "smooth ES, optimised initials",
+      "kind": "method",
+      "definition": "smooth 1.2.0 ES(model=<form>, initial='optimal', loss='likelihood', bounds='usual'); smoothing parameters estimated by maximum likelihood with the initial states estimated jointly."
+    },
+    {
+      "id": "D2",
+      "term": "smooth ES, backcasting",
+      "kind": "method",
+      "definition": "smooth 1.2.0 ES(model=<form>, initial='backcasting', loss='likelihood', bounds='usual'): smooth's default; initial states obtained by backcasting, only smoothing parameters optimised."
+    },
+    {
+      "id": "D3",
+      "term": "statsforecast AutoETS",
+      "kind": "method",
+      "definition": "statsforecast 2.1.1 AutoETS(season_length=m, model=<form>, damped=False) with the form fixed to the generating one (no selection); maximum likelihood with optimised initial states; bounds lower 1e-4, upper 0.9999 for alpha, beta, gamma, beta<=alpha, gamma<=1-alpha, and admissibility."
+    },
+    {
+      "id": "D4",
+      "term": "ETS data generating process",
+      "kind": "data",
+      "definition": "Innovations ETS with additive Gaussian errors, sigma=1, started from l0=100, b0=1, s_j=10 sin(2 pi j/12), no burn-in; ETS(A,N,N) alpha 0.1 and 0.5; ETS(A,A,N) (alpha,beta) (0.3,0.05) and (0.5,0.2); ETS(A,N,A) m=12 (alpha,gamma)=(0.2,0.1); lengths 50,100,250,500; R replicates per cell."
+    },
+    {
+      "id": "D5",
+      "term": "bias",
+      "kind": "variable",
+      "definition": "Mean over successful replicates of (estimate minus true value) of a smoothing parameter."
+    },
+    {
+      "id": "D6",
+      "term": "RMSE",
+      "kind": "variable",
+      "definition": "Square root of the mean over successful replicates of the squared (estimate minus true value) of a smoothing parameter."
+    },
+    {
+      "id": "D7",
+      "term": "MAE",
+      "kind": "variable",
+      "definition": "Mean over successful replicates of the absolute value of (estimate minus true value) of a smoothing parameter."
+    },
+    {
+      "id": "D8",
+      "term": "consistency",
+      "kind": "concept",
+      "definition": "The RMSE of an estimator falls towards zero as series length T grows; here assessed on T in {50,100,250,500} by the RMSE at T=500 against the RMSE at T=50 and the trend across the four lengths."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "With optimised initial states, [[D1:smooth ES]] and [[D3:statsforecast AutoETS]] do not have [[D6:RMSE]] of the alpha, beta and gamma estimates within 10% of each other in every setting: the ratio of their RMSEs, smooth over AutoETS, ranges from 0.6004 to 1.399 across the cells of [[D4:the ETS data generating processes]].",
+      "about": {
+        "subject": "D1",
+        "relation": "has RMSE within 10% of",
+        "object": "D6",
+        "comparator": "D3",
+        "conditions": [
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.T1.r1"
+          ]
+        }
+      ],
+      "provenance": "author_stated",
+      "hypothesis": {
+        "lab_event": "H1",
+        "outcome": "not_supported"
+      },
+      "planning": "confirmatory",
+      "planned_at": "2026-11-11T14:19:57Z",
+      "planned_at_anchor": "git_remote",
+      "test": {
+        "framework": "deterministic",
+        "parameters": {
+          "seed": 20261111,
+          "R": 300,
+          "bound_tolerance": 0.001,
+          "sample": "R=300 replicates per cell, T in 50,100,250,500, five processes; fixed, no stopping rule"
+        },
+        "quantities": {
+          "r_min": {
+            "variable": "minimum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS"
+          },
+          "r_max": {
+            "variable": "maximum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS"
+          }
+        },
+        "supported": "r_min >= 0.9 and r_max <= 1.1",
+        "not_supported": "r_min < 0.8 or r_max > 1.25",
+        "verdict": "computed",
+        "runs": 1,
+        "lab_plan": "PL1"
+      },
+      "assumptions": [
+        "C4",
+        "C5"
+      ],
+      "relations": [
+        {
+          "type": "addresses",
+          "reference": "B1",
+          "note": "Gives the innovations state-space form of ETS whose smoothing parameters both packages estimate here. Closest result found for the model form; no prior result was found for comparing the two estimators' parameter RMSE on this design."
+        }
+      ],
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "moderate",
+          "rationale": "One simulation study with 300 replicates per cell under one fixed seed, three generating processes and one error scale, with no external replication; the test was fixed in plan PL1 before the run."
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "At T=50, [[D2:smooth ES with backcasting]] does not have a lower [[D6:RMSE]] of the smoothing parameter estimates than [[D1:smooth ES with optimised initials]]: it has the lower RMSE in none of the 8 parameter-setting cells of [[D4:the ETS data generating processes]].",
+      "about": {
+        "subject": "D2",
+        "relation": "has lower RMSE than",
+        "object": "D6",
+        "comparator": "D1",
+        "conditions": [
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.T1.r2"
+          ]
+        }
+      ],
+      "provenance": "author_stated",
+      "hypothesis": {
+        "lab_event": "H2",
+        "outcome": "not_supported"
+      },
+      "planning": "confirmatory",
+      "planned_at": "2026-11-11T14:19:57Z",
+      "planned_at_anchor": "git_remote",
+      "test": {
+        "framework": "deterministic",
+        "parameters": {
+          "seed": 20261111,
+          "R": 300,
+          "bound_tolerance": 0.001,
+          "sample": "R=300 replicates per cell, T in 50,100,250,500, five processes; fixed, no stopping rule"
+        },
+        "quantities": {
+          "n_bc": {
+            "variable": "cells at T=50 with lower RMSE for smooth ES backcasting than optimised initials"
+          }
+        },
+        "supported": "n_bc >= 6",
+        "not_supported": "n_bc <= 2",
+        "verdict": "computed",
+        "runs": 1,
+        "lab_plan": "PL1"
+      },
+      "assumptions": [
+        "C4",
+        "C5"
+      ],
+      "relations": [
+        {
+          "type": "addresses",
+          "reference": "B1",
+          "note": "Gives the innovations state-space form of ETS whose smoothing parameters both packages estimate here. Closest result found for the model form; no prior result was found for comparing the two estimators' parameter RMSE on this design."
+        }
+      ],
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "moderate",
+          "rationale": "One simulation study with 300 replicates per cell under one fixed seed, three generating processes and one error scale, with no external replication; the test was fixed in plan PL1 before the run."
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "For each of the three arms, the [[D6:RMSE]] of every smoothing parameter estimate is lower at T=500 than at T=50, in all 8 parameter-setting cells of [[D4:the ETS data generating processes]] ([[D8:consistency]]).",
+      "about": {
+        "subject": "D8",
+        "relation": "holds for",
+        "object": "D6",
+        "comparator": null,
+        "conditions": [
+          "D4"
+        ]
+      },
+      "type": "descriptive",
+      "role": "principal",
+      "novelty": "no_prior_found",
+      "support": [
+        {
+          "kind": "empirical_quant",
+          "evidence": "E1",
+          "results": [
+            "E1.T2.r1",
+            "E1.T2.r2",
+            "E1.T2.r3"
+          ]
+        }
+      ],
+      "provenance": "author_stated",
+      "hypothesis": {
+        "lab_event": "H3",
+        "outcome": "supported"
+      },
+      "planning": "confirmatory",
+      "planned_at": "2026-11-11T14:19:57Z",
+      "planned_at_anchor": "git_remote",
+      "test": {
+        "framework": "deterministic",
+        "parameters": {
+          "seed": 20261111,
+          "R": 300,
+          "bound_tolerance": 0.001,
+          "sample": "R=300 replicates per cell, T in 50,100,250,500, five processes; fixed, no stopping rule"
+        },
+        "quantities": {
+          "v_opt": {
+            "variable": "cells with RMSE at T=500 not below RMSE at T=50",
+            "conditions": {
+              "method": "smooth ES, optimised initials"
+            }
+          },
+          "v_bc": {
+            "variable": "cells with RMSE at T=500 not below RMSE at T=50",
+            "conditions": {
+              "method": "smooth ES, backcasting"
+            }
+          },
+          "v_sf": {
+            "variable": "cells with RMSE at T=500 not below RMSE at T=50",
+            "conditions": {
+              "method": "statsforecast AutoETS"
+            }
+          }
+        },
+        "supported": "v_opt + v_bc + v_sf < 1",
+        "not_supported": "v_opt + v_bc + v_sf >= 3",
+        "verdict": "computed",
+        "runs": 1,
+        "lab_plan": "PL1"
+      },
+      "assumptions": [
+        "C4",
+        "C5"
+      ],
+      "relations": [
+        {
+          "type": "addresses",
+          "reference": "B1",
+          "note": "Gives the innovations state-space form of ETS whose smoothing parameters both packages estimate here. Closest result found for the model form; no prior result was found for comparing the two estimators' parameter RMSE on this design."
+        }
+      ],
+      "assessments": [
+        {
+          "by": "author",
+          "strength": "moderate",
+          "rationale": "One simulation study with 300 replicates per cell under one fixed seed, three generating processes and one error scale, with no external replication; the test was fixed in plan PL1 before the run."
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "The two implementations optimise comparable objectives: both maximise the Gaussian likelihood of the innovations form (smooth loss='likelihood', statsforecast opt_crit='lik').",
+      "type": "descriptive",
+      "role": "supporting",
+      "support": [
+        {
+          "kind": "assumption"
+        }
+      ],
+      "assumption_category": "statistical",
+      "check": "unchecked",
+      "provenance": "author_stated"
+    },
+    {
+      "id": "C5",
+      "statement": "The alpha, beta and gamma of both packages have the same meaning, the innovations form (b_t = b_{t-1} + beta e_t, s_t = s_{t-m} + gamma e_t), so their estimates are compared with the true values without conversion.",
+      "type": "descriptive",
+      "role": "supporting",
+      "support": [
+        {
+          "kind": "assumption"
+        }
+      ],
+      "assumption_category": "statistical",
+      "check": "unchecked",
+      "provenance": "author_stated"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "profile": "quant",
+      "design": "other",
+      "description": "Lab runs RN2 under plan PL1. Design: One run of claimset-code/ets-estimation/sim.py --seed 20261111 --R 300 --T 50 100 250 500. Five generating processes (ETS(A,N,N) alpha 0.1 and 0.5; ETS(A,A,N) (alpha,beta) (0.3,0.05) and (0.5,0.2); ETS(A,N,A) m=12 (alpha,gamma)=(0.2,0.1)), additive Gaussian errors sigma=1, l0=100, b0=1, s_j=10 sin(2 pi j/12), no burn-in, 300 replicates per process and length, series simulated with numpy default_rng(SeedSequence([20261111, process index, T])), the same series fitted by all three arms (smooth ES optimised initials, smooth ES backcasting, statsforecast AutoETS), each with the generating form fixed (no selection). Comparability as in note NT1. Analysis: Per arm, process, parameter and T: bias, RMSE and MAE of estimate minus true value over successful fits; failed fits and estimates on a bound (within 1e-3) are counted. Decision quantities: (a) over the 32 cells (8 parameter-process cells x 4 lengths) the minimum and maximum of RMSE(smooth ES optimised initials)/RMSE(statsforecast AutoETS); (b) the number of the 8 parameter-process cells at T=50 where RMSE(smooth backcasting) < RMSE(smooth optimised); (c) per arm the number of the 8 cells where RMSE at T=500 is not below RMSE at T=50. No inferential test: results are descriptive summaries of simulation output under fixed seeds. Bias, MAE and the cell-level numbers beyond these are reported as descriptive results.",
+      "availability": {
+        "level": "public"
+      },
+      "lab_runs": [
+        "RN2"
+      ],
+      "results": [
+        {
+          "id": "R1",
+          "variable": "failed fits excluded",
+          "value": 0.0,
+          "conditions": {}
+        }
+      ],
+      "tables": [
+        {
+          "id": "T1",
+          "description": "minimum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS, maximum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS, cells at T=50 with lower RMSE for smooth ES backcasting than optimised initials by cells (lab runs RN2)",
+          "row_labels": [
+            "cells"
+          ],
+          "columns": [
+            "minimum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS",
+            "maximum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS",
+            "cells at T=50 with lower RMSE for smooth ES backcasting than optimised initials"
+          ],
+          "rows": [
+            {
+              "id": "r1",
+              "label": [
+                32
+              ],
+              "values": [
+                0.6003881889469503,
+                1.399249293958608,
+                null
+              ]
+            },
+            {
+              "id": "r2",
+              "label": [
+                8
+              ],
+              "values": [
+                null,
+                null,
+                0.0
+              ]
+            }
+          ],
+          "artefact": "A1"
+        },
+        {
+          "id": "T2",
+          "description": "cells with RMSE at T=500 not below RMSE at T=50 by method; cells: 8 (lab runs RN2)",
+          "conditions": {
+            "cells": 8
+          },
+          "row_labels": [
+            "method"
+          ],
+          "columns": [
+            "cells with RMSE at T=500 not below RMSE at T=50"
+          ],
+          "rows": [
+            {
+              "id": "r1",
+              "label": [
+                "smooth ES, optimised initials"
+              ],
+              "values": [
+                0.0
+              ]
+            },
+            {
+              "id": "r2",
+              "label": [
+                "smooth ES, backcasting"
+              ],
+              "values": [
+                0.0
+              ]
+            },
+            {
+              "id": "r3",
+              "label": [
+                "statsforecast AutoETS"
+              ],
+              "values": [
+                0.0
+              ]
+            }
+          ],
+          "artefact": "A1"
+        }
+      ],
+      "artefacts": [
+        "A1"
+      ],
+      "setup": {
+        "studied": [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "cases": [
+          "D4"
+        ],
+        "procedure": [
+          "D4"
+        ],
+        "lens": [
+          "D6"
+        ]
+      },
+      "execution": {
+        "code_version": "9db1cb3bd520a86b7ec42e4ed85755a7b6e1ad03",
+        "software": {
+          "python": "3.13.18",
+          "platform": "Linux-6.18.44-fc-v378-x86_64-with-glibc2.39"
+        }
+      }
+    }
+  ],
+  "warrants": [],
+  "limitations": [
+    {
+      "id": "L1",
+      "category": "model_specification",
+      "statement": "A substantial share of the parameter estimates lie on a bound (within 1e-3 of it); they are kept and counted, not removed, so bias and RMSE depend on how each package handles the bound.",
+      "affects": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "impact": "reduces_transferability",
+      "mitigation": "none"
+    },
+    {
+      "id": "L2",
+      "category": "model_specification",
+      "statement": "The packages use different bounds: smooth 'usual' bounds against statsforecast bounds 'both' (usual plus admissibility). The difference is part of what is compared, not removed.",
+      "affects": [
+        "C1",
+        "C2"
+      ],
+      "impact": "reduces_transferability",
+      "mitigation": "none"
+    },
+    {
+      "id": "L3",
+      "category": "sampling",
+      "statement": "Three generating processes, one error scale (sigma = 1) and one set of initial states were simulated.",
+      "affects": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "impact": "reduces_transferability",
+      "mitigation": "none"
+    }
+  ],
+  "artefacts": [
+    {
+      "id": "A1",
+      "kind": "data",
+      "uri": "files/ets-estimation.results.csv",
+      "version": "sha256:03e0423018c47a4487122c66a49d4592f5223837a1cc12b02ef71a96ee0e4997",
+      "availability": {
+        "level": "public"
+      },
+      "description": "Every result of the lab record (1102 results of 2 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.",
+      "columns": [
+        {
+          "name": "lab_result",
+          "dimension": "the result event of the lab record"
+        },
+        {
+          "name": "run",
+          "dimension": "the lab run that produced it"
+        },
+        {
+          "name": "quantity",
+          "dimension": "the quantity, as the run's script named it"
+        },
+        {
+          "name": "conditions",
+          "dimension": "the result's conditions, as JSON"
+        },
+        {
+          "name": "value",
+          "variable": "the value of the quantity, as JSON, at full precision"
+        }
+      ],
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "id": "A2",
+      "kind": "lab_record",
+      "uri": "/home/user/exp-runs/lab-sonnet-1.git/lab/lab.jsonl",
+      "version": "sha256:3ccf3fa007b32e40e04339857e2927cd8a6e83c71fcea856785466fc0b7b64a5",
+      "availability": {
+        "level": "public"
+      },
+      "description": "Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.21, begun 2026-11-11; exported with claimset 0.41.6).",
+      "licence": "CC-BY-4.0"
+    }
+  ],
+  "references": [
+    {
+      "id": "B1",
+      "target": "10.1016/S0169-2070(01)00110-8",
+      "id_type": "doi"
+    }
+  ]
+}

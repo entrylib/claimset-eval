@@ -1,0 +1,4 @@
+replicates: 300 lengths: [50, 100, 250, 500]
+smooth_backcasting total seconds: 71.0
+smooth_optimised total seconds: 235.8
+statsforecast_optimised total seconds: 34.5
