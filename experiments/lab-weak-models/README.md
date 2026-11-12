@@ -32,3 +32,10 @@ Ran on 2026-11-11 (Phase 1 ≈ 51 min and Phase 2 ≈ 20 min of agent time). `re
 specification, the tools and the rubric. `tools/` holds the standard-library scripts used for scoring
 (`transcript.py`, `lab_summary.py`, `validate_runs.py`); the rubric was run from a separate environment with
 `entrylib-rubric` 0.2.0, without `--novelty` (nothing was sent).
+
+## Claimset of this experiment
+
+`claimset/lab-weak-models.claimset.json` (with its reading view `.txt` and page view `.html`), validated with
+claimset 0.41.10 (spec 0.41 amended 2026-11-11, `paper.summary`), installed from the `summary-from-paper` branch of
+entrylib/claimset at c0b27ff9655d16c781d0dcd168ede62088d687e1 (not yet on PyPI). `claimset/build_claimset.py`
+writes it; `claimset renumber` then puts the claims in reading order. Not submitted.

@@ -18,6 +18,7 @@
    "funding": [],
    "competing_interests": "The guarantor owns EntryLib, which develops the claimset tools, skills and rubric the study evaluates; the study was done to improve them."
   },
+  "summary": "Can smaller AI models run a research project with a Claimset lab record and write it up as a claimset? Two Claude Sonnet and two Claude Haiku agents each did one simulation study, comparing how well two Python packages estimate exponential smoothing parameters; four more agents completed a claimset from one of the resulting records. All four lab records passed the tool's own verification and all four claimsets were valid. The Sonnet agents planned their tests before seeing data; the Haiku agents did not. No claim was wrong, but no claimset stated the study's main findings: the lab format turns only pass-or-fail hypotheses into claims, so the agents tested thresholds they chose themselves instead of reporting estimates. EntryLib's scoring rubric ranked a claimset without planned tests, and one without limitations or scope, above more careful ones. These are exploratory results from two runs per model on one task.",
   "contributions": [
    "C1",
    "C2",
@@ -30,6 +31,13 @@
    "C9",
    "C10",
    "C11"
+  ],
+  "highlights": [
+   "C8",
+   "C10",
+   "C11",
+   "C3",
+   "C7"
   ],
   "autonomy": "human_supervised",
   "contribution_record": "partial",
@@ -349,7 +357,7 @@
    "id": "D32",
    "term": "statsforecast β cap",
    "kind": "concept",
-   "definition": "In statsforecast 2.1.1 (`statsforecast.ets.initparam`), when α is estimated its starting value is $\\alpha_0 = 0.0001 + 0.2 \\cdot (0.9999 - 0.0001)/m$ (0.20006 for $m = 1$), and the upper bound of β is set to $\\min(0.9999, \\alpha_0)$ for the whole optimisation, so β cannot exceed $\\alpha_0$."
+   "definition": "In statsforecast 2.1.1 (`statsforecast.ets.initparam`), when α is estimated its starting value is $$\\alpha_0 = 0.0001 + 0.2 \\cdot \\frac{0.9999 - 0.0001}{m}$$ (0.20006 for $m = 1$), and the upper bound of β is set to $\\min(0.9999, \\alpha_0)$ for the whole optimisation, so β cannot exceed $\\alpha_0$."
   },
   {
    "id": "D33",
@@ -480,7 +488,7 @@
   },
   {
    "id": "C3",
-   "statement": "In neither of its lab runs did the [[D4:Haiku agent]] test every hypothesis under a plan written before the data that informed it ([[D13:plans before data]]): one run recorded no plan, the other fixed its hypotheses and thresholds after three pilot runs.",
+   "statement": "Neither lab run of the [[D4:Haiku agent]] planned its tests before seeing the data ([[D13:plans before data]]): one run made no plan at all, and the other set its hypotheses and thresholds after three pilot runs.",
    "type": "descriptive",
    "role": "principal",
    "planning": "exploratory",
@@ -719,7 +727,7 @@
   },
   {
    "id": "C7",
-   "statement": "None of the four claimsets that the [[D5:agents under test]] completed with [[D2:claimset-submit]] states as a claim any of [[D10:the answer key]]'s findings on bias, on statsforecast's non-convergence or on statsforecast's β cap ([[D26:answer-key findings stated]]).",
+   "statement": "None of the four claimsets that the [[D5:agents under test]] completed with [[D2:claimset-submit]] states as a claim any of the main findings of [[D10:the answer key]]: how large the estimation bias is, that statsforecast's optimiser fails to converge for the seasonal model, or that statsforecast caps β ([[D26:answer-key findings stated]]).",
    "type": "descriptive",
    "role": "principal",
    "planning": "exploratory",
@@ -783,7 +791,7 @@
   },
   {
    "id": "C8",
-   "statement": "The single route of [[D1:claimset-lab]] from runs to claims, a hypothesis decided by a rule, led the [[D5:agents under test]] to turn [[D6:the brief]]'s questions about the size of bias and RMSE into tests of thresholds they chose themselves, leaving the estimates the brief asked for in the results files.",
+   "statement": "The [[D5:agents under test]] answered [[D6:the brief]]'s questions about how large the bias and RMSE are with pass-or-fail tests against thresholds they chose themselves, so the estimates never became claims: [[D1:claimset-lab]] turns only hypotheses decided by a rule into claims.",
    "type": "interpretive",
    "role": "principal",
    "planning": "exploratory",
@@ -891,7 +899,7 @@
   },
   {
    "id": "C10",
-   "statement": "Under [[D23:EntryLib rubric 0.2]], the claimset whose principal claims were not planned tests has a higher [[D24:reliability score]] than each of the six claimsets whose principal claims were planned tests.",
+   "statement": "Under [[D23:EntryLib rubric 0.2]], the one claimset that tested nothing under a plan gets a higher [[D24:reliability score]] than each of the six claimsets whose principal claims were planned tests.",
    "type": "descriptive",
    "role": "principal",
    "planning": "exploratory",
@@ -946,7 +954,7 @@
   },
   {
    "id": "C11",
-   "statement": "Under [[D23:EntryLib rubric 0.2]], the claimset with no limitations and no scope (claimset-haiku-2) has a higher [[D24:reliability score]] than the claimset from the same record with scoped claims and three specific limitations (claimset-sonnet-1).",
+   "statement": "Under [[D23:EntryLib rubric 0.2]], a claimset that states no limitations and gives its claims no scope (claimset-haiku-2) gets a higher [[D24:reliability score]] than one written from the same lab record with scoped claims and three specific limitations (claimset-sonnet-1).",
    "type": "descriptive",
    "role": "principal",
    "planning": "exploratory",
