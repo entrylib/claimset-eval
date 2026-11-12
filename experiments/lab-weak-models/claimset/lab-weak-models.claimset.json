@@ -1,6 +1,8 @@
 {
  "schema_version": "0.41",
  "paper": {
+  "id": "entrylib:2026.000005",
+  "correction_reason": "The platform classified the paper under the OpenAlex subfield Management Science and Operations Research, which is wrong: the paper studies AI agents doing research. This version proposes the subfield Artificial Intelligence and replaces the keywords agent evaluation and scoring rubric with metascience and research methodology; claims, evidence and every other field are unchanged.",
   "title": "Claude Sonnet and Claude Haiku agents keeping Claimset lab records and completing claimsets: a pilot on one simulation study",
   "licence": "CC-BY-4.0",
   "classification": {
@@ -9,10 +11,11 @@
     "lab records",
     "pre-registration",
     "claimsets",
-    "agent evaluation",
-    "research integrity",
-    "scoring rubric"
-   ]
+    "metascience",
+    "research methodology",
+    "research integrity"
+   ],
+   "subfield": "openalex:subfields/1702"
   },
   "declarations": {
    "funding": [],
