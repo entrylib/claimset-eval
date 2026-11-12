@@ -1,0 +1,880 @@
+{
+ "valid": true,
+ "errors": [],
+ "warnings": [
+  {
+   "rule": "W13",
+   "where": "claims:C1",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C2",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C3",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C4",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C5",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C6",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C7",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C8",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C9",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C10",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C11",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W3",
+   "where": "paper.contribution_record",
+   "message": "contribution record is partial"
+  }
+ ],
+ "novelty_checked": false,
+ "scores": {
+  "rubric": "0.2",
+  "claims": {
+   "C1": {
+    "score": 74,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P3",
+     "P4",
+     "P6",
+     "P8",
+     "P11"
+    ],
+    "costs": {
+     "P3": 12,
+     "P4": 5,
+     "P6": 5,
+     "P8": 3,
+     "P11": 1
+    }
+   },
+   "C2": {
+    "score": 60,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P2",
+     "P3",
+     "P4",
+     "P6",
+     "P12",
+     "P11"
+    ],
+    "costs": {
+     "P2": 20,
+     "P3": 6,
+     "P4": 5,
+     "P6": 5,
+     "P12": 3,
+     "P11": 1
+    }
+   },
+   "C3": {
+    "score": 60,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P2",
+     "P3",
+     "P4",
+     "P6",
+     "P12",
+     "P11"
+    ],
+    "costs": {
+     "P2": 20,
+     "P3": 6,
+     "P4": 5,
+     "P6": 5,
+     "P12": 3,
+     "P11": 1
+    }
+   },
+   "C4": {
+    "score": 69,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P2",
+     "P4",
+     "P6",
+     "P11"
+    ],
+    "costs": {
+     "P2": 20,
+     "P4": 5,
+     "P6": 5,
+     "P11": 1
+    }
+   },
+   "C5": {
+    "score": 68,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P3",
+     "P7",
+     "P4",
+     "P6",
+     "P12",
+     "P11"
+    ],
+    "costs": {
+     "P3": 12,
+     "P7": 6,
+     "P4": 5,
+     "P6": 5,
+     "P12": 3,
+     "P11": 1
+    }
+   },
+   "C6": {
+    "score": 71,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P10",
+     "P4",
+     "P6",
+     "P8",
+     "P9",
+     "P11"
+    ],
+    "costs": {
+     "P10": 12,
+     "P4": 5,
+     "P6": 5,
+     "P8": 3,
+     "P9": 3,
+     "P11": 1
+    }
+   },
+   "C7": {
+    "score": 71,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P10",
+     "P4",
+     "P6",
+     "P8",
+     "P9",
+     "P11"
+    ],
+    "costs": {
+     "P10": 12,
+     "P4": 5,
+     "P6": 5,
+     "P8": 3,
+     "P9": 3,
+     "P11": 1
+    }
+   },
+   "C8": {
+    "score": 29,
+    "band": "low",
+    "dots": {
+     "support": "red",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P10",
+     "P4",
+     "P6",
+     "P8",
+     "P11",
+     "P9"
+    ],
+    "costs": {
+     "P1": 30,
+     "P2": 20,
+     "P10": 6,
+     "P4": 5,
+     "P6": 5,
+     "P8": 3,
+     "P11": 1,
+     "P9": 1
+    }
+   },
+   "C9": {
+    "score": 63,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P2",
+     "P3",
+     "P4",
+     "P6",
+     "P11"
+    ],
+    "costs": {
+     "P2": 20,
+     "P3": 6,
+     "P4": 5,
+     "P6": 5,
+     "P11": 1
+    }
+   },
+   "C10": {
+    "score": 83,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "green"
+    },
+    "problems": [
+     "P4",
+     "P5",
+     "P6",
+     "P11"
+    ],
+    "costs": {
+     "P4": 5,
+     "P5": 5,
+     "P6": 5,
+     "P11": 2
+    }
+   },
+   "C11": {
+    "score": 83,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "amber",
+     "open": "green"
+    },
+    "problems": [
+     "P4",
+     "P5",
+     "P6",
+     "P11"
+    ],
+    "costs": {
+     "P4": 5,
+     "P5": 5,
+     "P6": 5,
+     "P11": 2
+    }
+   },
+   "C12": {
+    "score": 95,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "green",
+     "open": "green"
+    },
+    "problems": [
+     "P6"
+    ],
+    "costs": {
+     "P6": 5
+    }
+   },
+   "C13": {
+    "score": 95,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "green",
+     "context": "amber",
+     "open": "green"
+    },
+    "problems": [
+     "P5"
+    ],
+    "costs": {
+     "P5": 5
+    }
+   },
+   "C14": {
+    "score": 95,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "green",
+     "context": "amber",
+     "open": "green"
+    },
+    "problems": [
+     "P5"
+    ],
+    "costs": {
+     "P5": 5
+    }
+   },
+   "C15": {
+    "score": 93,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "green",
+     "open": "green"
+    },
+    "problems": [
+     "P6",
+     "P11"
+    ],
+    "costs": {
+     "P6": 5,
+     "P11": 2
+    }
+   },
+   "C16": {
+    "score": 100,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "green",
+     "context": "green",
+     "open": "green"
+    },
+    "problems": [],
+    "costs": {}
+   },
+   "C17": {
+    "score": 75,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "green",
+     "open": "red"
+    },
+    "problems": [
+     "P2",
+     "P6"
+    ],
+    "costs": {
+     "P2": 20,
+     "P6": 5
+    }
+   },
+   "C18": {
+    "score": 75,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "green",
+     "open": "red"
+    },
+    "problems": [
+     "P2",
+     "P6"
+    ],
+    "costs": {
+     "P2": 20,
+     "P6": 5
+    }
+   },
+   "C19": {
+    "score": 100,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "green",
+     "context": "green",
+     "open": "green"
+    },
+    "problems": [],
+    "costs": {}
+   },
+   "C20": {
+    "score": 83,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "amber",
+     "context": "green",
+     "open": "red"
+    },
+    "problems": [
+     "P10",
+     "P6"
+    ],
+    "costs": {
+     "P10": 12,
+     "P6": 5
+    }
+   }
+  },
+  "assumptions": [
+   "C21",
+   "C22"
+  ],
+  "paper": {
+   "score": 29,
+   "band": "low",
+   "dots": {
+    "support": "red",
+    "plan": "green",
+    "checkable": "amber",
+    "context": "amber",
+    "open": "red"
+   },
+   "problems": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "P9",
+    "P10",
+    "P11",
+    "P12"
+   ],
+   "principal": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10",
+    "C11"
+   ],
+   "lowest": "C8",
+   "lowest_problems": [
+    "P1",
+    "P2",
+    "P10",
+    "P4",
+    "P6",
+    "P8",
+    "P11",
+    "P9"
+   ]
+  },
+  "problems": {
+   "P1": {
+    "check": "support_kind",
+    "group": "support",
+    "cost": 30,
+    "claims": [
+     "C8"
+    ],
+    "objects": [],
+    "text": "Rests on argument only",
+    "fix": "Support the claim with evidence the claimset records, or have its proof checked."
+   },
+   "P2": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 20,
+    "claims": [
+     "C2",
+     "C3",
+     "C4",
+     "C8",
+     "C9"
+    ],
+    "objects": [
+     "L1"
+    ],
+    "text": "Limitation L1 (could reverse, not mitigated): Two runs per agent and phase: differences between the Sonnet and Haiku agents rest on two runs each and could reverse with more runs.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P3": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 12,
+    "claims": [
+     "C1",
+     "C2",
+     "C3",
+     "C5",
+     "C9"
+    ],
+    "objects": [
+     "L2"
+    ],
+    "text": "Limitation L2 (could bias magnitude, not mitigated): The agents ran as subagents of the orchestrating session: they read the skills as files, the claimset guard hook of their folders was not active, and they received the orchestrating session's own project instructions (which led one Haiku run to ask its questions one at a time); four runs shared one 4-core machine.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P4": {
+    "check": "no_prior_work",
+    "group": "context",
+    "cost": 5,
+    "claims": [
+     "C1",
+     "C2",
+     "C3",
+     "C4",
+     "C5",
+     "C6",
+     "C7",
+     "C8",
+     "C9",
+     "C10",
+     "C11"
+    ],
+    "objects": [],
+    "text": "A principal claim related to no earlier work",
+    "fix": "Relate the claim to the earlier work it extends, addresses or departs from."
+   },
+   "P5": {
+    "check": "numbers_without_results",
+    "group": "context",
+    "cost": 5,
+    "claims": [
+     "C13",
+     "C14"
+    ],
+    "objects": [],
+    "text": "Numbers in the statement point to no recorded result",
+    "fix": "List the results, table rows or cells the numbers come from in the support's results."
+   },
+   "P6": {
+    "check": "verifiability_flags",
+    "group": "checkable",
+    "cost": 5,
+    "claims": [
+     "C1",
+     "C2",
+     "C3",
+     "C4",
+     "C5",
+     "C6",
+     "C7",
+     "C9",
+     "C10",
+     "C11",
+     "C12"
+    ],
+    "objects": [],
+    "text": "Flags: api model dependency",
+    "fix": "Publish what each flag says is missing."
+   },
+   "P7": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 6,
+    "claims": [
+     "C5"
+    ],
+    "objects": [
+     "L6"
+    ],
+    "text": "Limitation L6 (could bias magnitude, not mitigated): One claimset run (claimset-haiku-2) stopped with its own stated work undone and was sent one message with no content (\"Continue.\") before it finished.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P8": {
+    "check": "unchecked_assumption",
+    "group": "open",
+    "cost": 3,
+    "claims": [
+     "C1",
+     "C6",
+     "C7"
+    ],
+    "objects": [
+     "C21"
+    ],
+    "text": "Assumption C21 is not checked: [[D10:The answer key]] states the findings that a correct paper on [[D6:the brief]] would state, with correct numbers.",
+    "fix": "Test the assumption, or analyse how sensitive the claim is to it."
+   },
+   "P9": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 3,
+    "claims": [
+     "C6",
+     "C7"
+    ],
+    "objects": [
+     "L3"
+    ],
+    "text": "Limitation L3 (could bias magnitude, mitigation partial): One scorer, the orchestrating agent, wrote the answer key and the protocol and scored every claim, knowing which agent wrote it.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P10": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 12,
+    "claims": [
+     "C6",
+     "C7"
+    ],
+    "objects": [
+     "L4"
+    ],
+    "text": "Limitation L4 (could bias magnitude, not mitigated): The answer key was amended once during the lab phase, after a Haiku run reported statsforecast's \u03b2 cap; the claimsets were scored against the amended key.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P11": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 2,
+    "claims": [
+     "C1",
+     "C2",
+     "C3",
+     "C4",
+     "C5",
+     "C6",
+     "C7",
+     "C8",
+     "C9",
+     "C10",
+     "C11"
+    ],
+    "objects": [
+     "L5"
+    ],
+    "text": "Limitation L5 (reduces transferability, not mitigated): One study task (an ETS simulation comparison in Python), one version of claimset (0.41.6) and of its skills, one harness (Claude Code 2.1.322).",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P12": {
+    "check": "unchecked_assumption",
+    "group": "open",
+    "cost": 3,
+    "claims": [
+     "C2",
+     "C3",
+     "C5"
+    ],
+    "objects": [
+     "C22"
+    ],
+    "text": "Assumption C22 is not checked: The [[D5:agents under test]], run as subagents of an orchestrating session, act as they would in sessions of their own started in their run folders.",
+    "fix": "Test the assumption, or analyse how sensitive the claim is to it."
+   }
+  },
+  "novelty": {
+   "C1": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C2": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C3": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C4": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C5": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C6": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C7": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C8": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C9": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C10": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C11": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C12": {
+    "label": null,
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C13": {
+    "label": null,
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C14": {
+    "label": null,
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C15": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C16": {
+    "label": null,
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C17": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C18": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C19": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C20": {
+    "label": null,
+    "check": "none",
+    "matches": [],
+    "checked": false
+   }
+  }
+ }
+}
