@@ -111,6 +111,10 @@ definitions = [
       "In statsforecast 2.1.1 (`statsforecast.ets.initparam`), when α is estimated its starting value is "
       "$$\\alpha_0 = 0.0001 + 0.2 \\cdot \\frac{0.9999 - 0.0001}{m}$$ (0.20006 for $m = 1$), and the upper bound of β is set to "
       "$\\min(0.9999, \\alpha_0)$ for the whole optimisation, so β cannot exceed $\\alpha_0$."),
+    d("D34", "decision thresholds", "variable", "The thresholds a lab record's confirmatory plans fix in their decision rules, as the plans state them; `none` when a record has no plan."),
+    d("D35", "hypotheses about an estimate", "variable", "Number of a lab record's hypotheses that state the direction or size of an estimate (a bias towards zero, an estimate on a bound, a bias of about −0.04) rather than a pass-or-fail threshold.", unit="1"),
+    d("D36", "rubric cost", "variable", "Points that [[D23:EntryLib rubric 0.2]] deducts from a claim's score for one problem, as its file rubric.json states them.", unit="1"),
+    d("D37", "reading of the rubric's code", "design", "The orchestrating agent read the costs in src/rubric/rubric.json and the rule that applies the plan check in src/rubric/score.py (lines 28 and 111), at the commit artefact A10 names."),
     d("D33", "statsforecast iteration cap", "variable", "Number of statsforecast fits whose optimiser stopped at its iteration cap (`nit` = 1001) in [[D31:the reference simulation]].", unit="1"),
 ]
 
@@ -168,13 +172,20 @@ evidence = [
          "run's script, and its transcript (`tools/transcript.py`: every tool call, every refusal, model-call usage), "
          "and recorded the variables of table T1. Every question and answer is in `log/questions.md`."),
      "setup": {"studied": ["D3", "D4"], "cases": ["D6"], "procedure": ["D7", "D9", "D1"],
-               "lens": ["D10", "D11", "D12", "D13", "D14", "D15", "D16", "D17", "D18", "D19"]},
+               "lens": ["D10", "D11", "D12", "D13", "D14", "D15", "D16", "D17", "D18", "D19", "D34", "D35"]},
      "estimand": "per-run outcomes of the lab phase", "n": 4, "data_origin": "primary", "preregistered": False,
      "models": SUBJECTS, "artefacts": ["A1", "A2", "A3", "A4", "A5", "A8", "A9"], "availability": PUB,
      "tables": [{"id": "T1", "description": "Outcomes of the four lab runs of the lab phase on the ETS estimation brief",
                  "row_labels": ["run", "agent"], "columns": lab_cols,
                  "rows": [{"id": i, "label": [r, a], "values": v} for i, r, a, v in lab_rows],
-                 "artefact": "A8"}]},
+                 "artefact": "A8"},
+                {"id": "T2", "description": "The decision thresholds each lab record's plans fixed, and the record's hypotheses about the direction or size of an estimate",
+                 "row_labels": ["run", "agent"], "columns": ["D34", "D35"],
+                 "rows": [{"id": "r1", "label": ["lab-sonnet-1", "D3"], "values": ["RMSE ratio of the two optimised arms between 0.9 and 1.1 in all 32 cells; backcasting with the lower RMSE in at least 6 of 8 cells at length 50; RMSE at length 500 below length 50 in all 24 comparisons", 0]},
+                          {"id": "r2", "label": ["lab-sonnet-2", "D3"], "values": ["RMSE at length 500 below length 50 in all 24 series; smooth with the lower RMSE than statsforecast in at least 75 % of 32 comparisons; backcasting below optimised initial states in at least 75 %; |bias| + 1.645 SE below 0.02 at length 500 for every parameter", 0]},
+                          {"id": "r3", "label": ["lab-haiku-1", "D4"], "values": ["none", 3]},
+                          {"id": "r4", "label": ["lab-haiku-2", "D4"], "values": ["no violations of: RMSE falling with length; statsforecast's RMSE within 10 % of smooth's; |bias| at most 0.02 at length 500 (not supported only at 12, 16 and 12 violations)", 0]}],
+                 "artefact": "A1"}]},
     {"id": "E2", "profile": "quant", "design": "experiment",
      "description": (
          "[[D8:The claimset phase]]: two runs each of the [[D3:Sonnet agent]] and the [[D4:Haiku agent]] exported "
@@ -224,6 +235,17 @@ evidence = [
           "rows": [{"id": "r1", "label": [50], "values": [288]}, {"id": "r2", "label": [100], "values": [296]},
                    {"id": "r3", "label": [250], "values": [300]}, {"id": "r4", "label": [500], "values": [299]}],
           "artefact": "A6"}]},
+    {"id": "E4", "profile": "quant", "design": "other",
+     "description": "[[D37:A reading of the rubric's code]]: the costs [[D23:EntryLib rubric 0.2]] deducts for the problems that decide the scores compared in this paper.",
+     "setup": {"studied": ["D23"], "cases": ["D23"], "procedure": ["D37"], "lens": ["D36"]},
+     "data_origin": "secondary", "preregistered": False, "artefacts": ["A10"], "availability": PUB,
+     "tables": [{"id": "T1", "description": "Costs of four problems in EntryLib rubric 0.2, per claim",
+                 "row_labels": ["problem"], "columns": ["D36"],
+                 "rows": [{"id": "r1", "label": ["a limitation that could bias magnitude, not mitigated"], "values": [12]},
+                          {"id": "r2", "label": ["no scope"], "values": [10]},
+                          {"id": "r3", "label": ["a plan anchored only by a git push"], "values": [3]},
+                          {"id": "r4", "label": ["a descriptive claim without a plan"], "values": [0]}],
+                 "artefact": "A10"}]},
 ]
 
 
@@ -330,7 +352,8 @@ claims = [
           role="supporting", strength="high", rationale=EXPL + "read from the record itself.", novelty="not_applicable"),
     claim("C11", "The [[D5:agents under test]] answered [[D6:the brief]]'s questions about how large the bias and RMSE are with pass-or-fail tests against thresholds they chose themselves, so the estimates never became claims: [[D1:claimset-lab]] turns only hypotheses decided by a rule into claims.",
           {"subject": "D1", "relation": "leads agents to replace estimates by threshold tests", "object": None, "conditions": ["D6"]},
-          [{"kind": "argument", "warrant": "W1"}],
+          [{"kind": "empirical_quant", "evidence": "E1", "results": ["E1.T2"], "artefacts": ["A1"]},
+           {"kind": "argument", "warrant": "W1"}],
           SCOPE_P1, typ="interpretive", rationale=EXPL + "an interpretation of four runs: three planned runs invented thresholds (10 %, 0.02, 0.75, 12 violations); the unplanned run reported the estimates.",
           limitations=["L1", "L5"], depends_on=["C9", "C10"]),
     claim("C12", "The two claimsets that the [[D4:Haiku agent]] completed give a scope to none of their three principal claims, against all three in each of the two that the [[D3:Sonnet agent]] completed ([[D27:principal claims with scope]]).",
@@ -359,12 +382,12 @@ claims = [
           limitations=["L5"], depends_on=["C17"]),
     claim("C17", "In [[D23:EntryLib rubric 0.2]], an unmitigated limitation that could bias a claim's magnitude costs the claim 12 points, more than a missing scope (10 points).",
           {"subject": "D23", "relation": "charges", "object": None},
-          [{"kind": "demonstration", "artefacts": ["A10"]}],
+          [{"kind": "empirical_quant", "evidence": "E4", "results": ["E4.T1.r1", "E4.T1.r2"], "artefacts": ["A10"]}],
           SCOPE_R, role="supporting", strength="high", rationale="Read from the rubric's code at the commit artefact A10 names (rubric.json, checks limitation and no_scope).",
           novelty="not_applicable"),
     claim("C20", "In [[D23:EntryLib rubric 0.2]], a descriptive claim made without a plan costs nothing in the plan group, and a planned claim whose plan is anchored only by a git push costs 3 points.",
           {"subject": "D23", "relation": "charges planned claims more than unplanned descriptive ones", "object": None, "comparator": None, "conditions": []},
-          [{"kind": "demonstration", "artefacts": ["A10"]}],
+          [{"kind": "empirical_quant", "evidence": "E4", "results": ["E4.T1.r3", "E4.T1.r4"], "artefacts": ["A10"]}],
           dict(SCOPE_R, conditions=SCOPE_R["conditions"] + ["claims of type descriptive"]), role="supporting", strength="high",
           rationale="Read from the rubric's code at the commit artefact A10 names (score.py, lines 28 and 111: only associational, causal, mechanistic and predictive claims are charged without a plan; rubric.json, plan_anchor).",
           novelty="not_applicable"),

@@ -78,18 +78,18 @@
      "open": "red"
     },
     "problems": [
+     "P2",
      "P3",
      "P4",
      "P6",
-     "P8",
-     "P11"
+     "P9"
     ],
     "costs": {
-     "P3": 12,
+     "P2": 12,
+     "P3": 5,
      "P4": 5,
-     "P6": 5,
-     "P8": 3,
-     "P11": 1
+     "P6": 3,
+     "P9": 1
     }
    },
    "C2": {
@@ -103,20 +103,20 @@
      "open": "red"
     },
     "problems": [
+     "P1",
      "P2",
      "P3",
      "P4",
-     "P6",
-     "P12",
-     "P11"
+     "P10",
+     "P9"
     ],
     "costs": {
-     "P2": 20,
-     "P3": 6,
+     "P1": 20,
+     "P2": 6,
+     "P3": 5,
      "P4": 5,
-     "P6": 5,
-     "P12": 3,
-     "P11": 1
+     "P10": 3,
+     "P9": 1
     }
    },
    "C3": {
@@ -130,20 +130,20 @@
      "open": "red"
     },
     "problems": [
+     "P1",
      "P2",
      "P3",
      "P4",
-     "P6",
-     "P12",
-     "P11"
+     "P10",
+     "P9"
     ],
     "costs": {
-     "P2": 20,
-     "P3": 6,
+     "P1": 20,
+     "P2": 6,
+     "P3": 5,
      "P4": 5,
-     "P6": 5,
-     "P12": 3,
-     "P11": 1
+     "P10": 3,
+     "P9": 1
     }
    },
    "C4": {
@@ -157,16 +157,16 @@
      "open": "red"
     },
     "problems": [
-     "P2",
+     "P1",
+     "P3",
      "P4",
-     "P6",
-     "P11"
+     "P9"
     ],
     "costs": {
-     "P2": 20,
+     "P1": 20,
+     "P3": 5,
      "P4": 5,
-     "P6": 5,
-     "P11": 1
+     "P9": 1
     }
    },
    "C5": {
@@ -180,20 +180,20 @@
      "open": "red"
     },
     "problems": [
+     "P2",
+     "P5",
      "P3",
-     "P7",
      "P4",
-     "P6",
-     "P12",
-     "P11"
+     "P10",
+     "P9"
     ],
     "costs": {
-     "P3": 12,
-     "P7": 6,
+     "P2": 12,
+     "P5": 6,
+     "P3": 5,
      "P4": 5,
-     "P6": 5,
-     "P12": 3,
-     "P11": 1
+     "P10": 3,
+     "P9": 1
     }
    },
    "C6": {
@@ -207,20 +207,20 @@
      "open": "red"
     },
     "problems": [
-     "P10",
+     "P8",
+     "P3",
      "P4",
      "P6",
-     "P8",
-     "P9",
-     "P11"
+     "P7",
+     "P9"
     ],
     "costs": {
-     "P10": 12,
+     "P8": 12,
+     "P3": 5,
      "P4": 5,
-     "P6": 5,
-     "P8": 3,
-     "P9": 3,
-     "P11": 1
+     "P6": 3,
+     "P7": 3,
+     "P9": 1
     }
    },
    "C7": {
@@ -234,27 +234,27 @@
      "open": "red"
     },
     "problems": [
-     "P10",
+     "P8",
+     "P3",
      "P4",
      "P6",
-     "P8",
-     "P9",
-     "P11"
+     "P7",
+     "P9"
     ],
     "costs": {
-     "P10": 12,
+     "P8": 12,
+     "P3": 5,
      "P4": 5,
-     "P6": 5,
-     "P8": 3,
-     "P9": 3,
-     "P11": 1
+     "P6": 3,
+     "P7": 3,
+     "P9": 1
     }
    },
    "C8": {
-    "score": 29,
+    "score": 59,
     "band": "low",
     "dots": {
-     "support": "red",
+     "support": "green",
      "plan": "green",
      "checkable": "amber",
      "context": "amber",
@@ -262,22 +262,20 @@
     },
     "problems": [
      "P1",
-     "P2",
-     "P10",
+     "P8",
+     "P3",
      "P4",
      "P6",
-     "P8",
-     "P11",
+     "P7",
      "P9"
     ],
     "costs": {
-     "P1": 30,
-     "P2": 20,
-     "P10": 6,
+     "P1": 20,
+     "P8": 6,
+     "P3": 5,
      "P4": 5,
-     "P6": 5,
-     "P8": 3,
-     "P11": 1,
+     "P6": 3,
+     "P7": 1,
      "P9": 1
     }
    },
@@ -292,22 +290,22 @@
      "open": "red"
     },
     "problems": [
+     "P1",
      "P2",
      "P3",
      "P4",
-     "P6",
-     "P11"
+     "P9"
     ],
     "costs": {
-     "P2": 20,
-     "P3": 6,
+     "P1": 20,
+     "P2": 6,
+     "P3": 5,
      "P4": 5,
-     "P6": 5,
-     "P11": 1
+     "P9": 1
     }
    },
    "C10": {
-    "score": 83,
+    "score": 88,
     "band": "high",
     "dots": {
      "support": "green",
@@ -317,20 +315,18 @@
      "open": "green"
     },
     "problems": [
+     "P3",
      "P4",
-     "P5",
-     "P6",
-     "P11"
+     "P9"
     ],
     "costs": {
+     "P3": 5,
      "P4": 5,
-     "P5": 5,
-     "P6": 5,
-     "P11": 2
+     "P9": 2
     }
    },
    "C11": {
-    "score": 83,
+    "score": 88,
     "band": "high",
     "dots": {
      "support": "green",
@@ -340,16 +336,14 @@
      "open": "green"
     },
     "problems": [
+     "P3",
      "P4",
-     "P5",
-     "P6",
-     "P11"
+     "P9"
     ],
     "costs": {
+     "P3": 5,
      "P4": 5,
-     "P5": 5,
-     "P6": 5,
-     "P11": 2
+     "P9": 2
     }
    },
    "C12": {
@@ -363,45 +357,37 @@
      "open": "green"
     },
     "problems": [
-     "P6"
+     "P4"
     ],
     "costs": {
-     "P6": 5
+     "P4": 5
     }
    },
    "C13": {
-    "score": 95,
+    "score": 100,
     "band": "high",
     "dots": {
      "support": "green",
      "plan": "green",
      "checkable": "green",
-     "context": "amber",
+     "context": "green",
      "open": "green"
     },
-    "problems": [
-     "P5"
-    ],
-    "costs": {
-     "P5": 5
-    }
+    "problems": [],
+    "costs": {}
    },
    "C14": {
-    "score": 95,
+    "score": 100,
     "band": "high",
     "dots": {
      "support": "green",
      "plan": "green",
      "checkable": "green",
-     "context": "amber",
+     "context": "green",
      "open": "green"
     },
-    "problems": [
-     "P5"
-    ],
-    "costs": {
-     "P5": 5
-    }
+    "problems": [],
+    "costs": {}
    },
    "C15": {
     "score": 93,
@@ -414,12 +400,12 @@
      "open": "green"
     },
     "problems": [
-     "P6",
-     "P11"
+     "P4",
+     "P9"
     ],
     "costs": {
-     "P6": 5,
-     "P11": 2
+     "P4": 5,
+     "P9": 2
     }
    },
    "C16": {
@@ -446,12 +432,12 @@
      "open": "red"
     },
     "problems": [
-     "P2",
-     "P6"
+     "P1",
+     "P4"
     ],
     "costs": {
-     "P2": 20,
-     "P6": 5
+     "P1": 20,
+     "P4": 5
     }
    },
    "C18": {
@@ -465,12 +451,12 @@
      "open": "red"
     },
     "problems": [
-     "P2",
-     "P6"
+     "P1",
+     "P4"
     ],
     "costs": {
-     "P2": 20,
-     "P6": 5
+     "P1": 20,
+     "P4": 5
     }
    },
    "C19": {
@@ -497,12 +483,12 @@
      "open": "red"
     },
     "problems": [
-     "P10",
-     "P6"
+     "P8",
+     "P4"
     ],
     "costs": {
-     "P10": 12,
-     "P6": 5
+     "P8": 12,
+     "P4": 5
     }
    }
   },
@@ -511,10 +497,10 @@
    "C22"
   ],
   "paper": {
-   "score": 29,
+   "score": 59,
    "band": "low",
    "dots": {
-    "support": "red",
+    "support": "green",
     "plan": "green",
     "checkable": "amber",
     "context": "amber",
@@ -530,9 +516,7 @@
     "P7",
     "P8",
     "P9",
-    "P10",
-    "P11",
-    "P12"
+    "P10"
    ],
    "principal": [
     "C1",
@@ -550,28 +534,16 @@
    "lowest": "C8",
    "lowest_problems": [
     "P1",
-    "P2",
-    "P10",
+    "P8",
+    "P3",
     "P4",
     "P6",
-    "P8",
-    "P11",
+    "P7",
     "P9"
    ]
   },
   "problems": {
    "P1": {
-    "check": "support_kind",
-    "group": "support",
-    "cost": 30,
-    "claims": [
-     "C8"
-    ],
-    "objects": [],
-    "text": "Rests on argument only",
-    "fix": "Support the claim with evidence the claimset records, or have its proof checked."
-   },
-   "P2": {
     "check": "limitation",
     "group": "open",
     "cost": 20,
@@ -588,7 +560,7 @@
     "text": "Limitation L1 (could reverse, not mitigated): Two runs per agent and phase: differences between the Sonnet and Haiku agents rest on two runs each and could reverse with more runs.",
     "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
    },
-   "P3": {
+   "P2": {
     "check": "limitation",
     "group": "open",
     "cost": 12,
@@ -605,7 +577,7 @@
     "text": "Limitation L2 (could bias magnitude, not mitigated): The agents ran as subagents of the orchestrating session: they read the skills as files, the claimset guard hook of their folders was not active, and they received the orchestrating session's own project instructions (which led one Haiku run to ask its questions one at a time); four runs shared one 4-core machine.",
     "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
    },
-   "P4": {
+   "P3": {
     "check": "no_prior_work",
     "group": "context",
     "cost": 5,
@@ -626,19 +598,7 @@
     "text": "A principal claim related to no earlier work",
     "fix": "Relate the claim to the earlier work it extends, addresses or departs from."
    },
-   "P5": {
-    "check": "numbers_without_results",
-    "group": "context",
-    "cost": 5,
-    "claims": [
-     "C13",
-     "C14"
-    ],
-    "objects": [],
-    "text": "Numbers in the statement point to no recorded result",
-    "fix": "List the results, table rows or cells the numbers come from in the support's results."
-   },
-   "P6": {
+   "P4": {
     "check": "verifiability_flags",
     "group": "checkable",
     "cost": 5,
@@ -650,6 +610,7 @@
      "C5",
      "C6",
      "C7",
+     "C8",
      "C9",
      "C10",
      "C11",
@@ -659,7 +620,7 @@
     "text": "Flags: api model dependency",
     "fix": "Publish what each flag says is missing."
    },
-   "P7": {
+   "P5": {
     "check": "limitation",
     "group": "open",
     "cost": 6,
@@ -672,7 +633,7 @@
     "text": "Limitation L6 (could bias magnitude, not mitigated): One claimset run (claimset-haiku-2) stopped with its own stated work undone and was sent one message with no content (\"Continue.\") before it finished.",
     "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
    },
-   "P8": {
+   "P6": {
     "check": "unchecked_assumption",
     "group": "open",
     "cost": 3,
@@ -687,7 +648,7 @@
     "text": "Assumption C21 is not checked: [[D10:The answer key]] states the findings that a correct paper on [[D6:the brief]] would state, with correct numbers.",
     "fix": "Test the assumption, or analyse how sensitive the claim is to it."
    },
-   "P9": {
+   "P7": {
     "check": "limitation",
     "group": "open",
     "cost": 3,
@@ -701,7 +662,7 @@
     "text": "Limitation L3 (could bias magnitude, mitigation partial): One scorer, the orchestrating agent, wrote the answer key and the protocol and scored every claim, knowing which agent wrote it.",
     "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
    },
-   "P10": {
+   "P8": {
     "check": "limitation",
     "group": "open",
     "cost": 12,
@@ -715,7 +676,7 @@
     "text": "Limitation L4 (could bias magnitude, not mitigated): The answer key was amended once during the lab phase, after a Haiku run reported statsforecast's \u03b2 cap; the claimsets were scored against the amended key.",
     "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
    },
-   "P11": {
+   "P9": {
     "check": "limitation",
     "group": "open",
     "cost": 2,
@@ -738,7 +699,7 @@
     "text": "Limitation L5 (reduces transferability, not mitigated): One study task (an ETS simulation comparison in Python), one version of claimset (0.41.6) and of its skills, one harness (Claude Code 2.1.322).",
     "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
    },
-   "P12": {
+   "P10": {
     "check": "unchecked_assumption",
     "group": "open",
     "cost": 3,

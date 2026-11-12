@@ -361,6 +361,32 @@
   },
   {
    "id": "D33",
+   "term": "decision thresholds",
+   "kind": "variable",
+   "definition": "The thresholds a lab record's confirmatory plans fix in their decision rules, as the plans state them; `none` when a record has no plan."
+  },
+  {
+   "id": "D34",
+   "term": "hypotheses about an estimate",
+   "kind": "variable",
+   "definition": "Number of a lab record's hypotheses that state the direction or size of an estimate (a bias towards zero, an estimate on a bound, a bias of about −0.04) rather than a pass-or-fail threshold.",
+   "unit": "1"
+  },
+  {
+   "id": "D35",
+   "term": "rubric cost",
+   "kind": "variable",
+   "definition": "Points that [[D23:EntryLib rubric 0.2]] deducts from a claim's score for one problem, as its file rubric.json states them.",
+   "unit": "1"
+  },
+  {
+   "id": "D36",
+   "term": "reading of the rubric's code",
+   "kind": "design",
+   "definition": "The orchestrating agent read the costs in src/rubric/rubric.json and the rule that applies the plan check in src/rubric/score.py (lines 28 and 111), at the commit artefact A10 names."
+  },
+  {
+   "id": "D37",
    "term": "statsforecast iteration cap",
    "kind": "variable",
    "definition": "Number of statsforecast fits whose optimiser stopped at its iteration cap (`nit` = 1001) in [[D31:the reference simulation]].",
@@ -798,6 +824,16 @@
    "provenance": "author_stated",
    "support": [
     {
+     "kind": "empirical_quant",
+     "evidence": "E1",
+     "results": [
+      "E1.T2"
+     ],
+     "artefacts": [
+      "A1"
+     ]
+    },
+    {
      "kind": "argument",
      "warrant": "W1"
     }
@@ -1055,7 +1091,12 @@
    "provenance": "author_stated",
    "support": [
     {
-     "kind": "demonstration",
+     "kind": "empirical_quant",
+     "evidence": "E4",
+     "results": [
+      "E4.T1.r1",
+      "E4.T1.r2"
+     ],
      "artefacts": [
       "A10"
      ]
@@ -1096,7 +1137,12 @@
    "provenance": "author_stated",
    "support": [
     {
-     "kind": "demonstration",
+     "kind": "empirical_quant",
+     "evidence": "E4",
+     "results": [
+      "E4.T1.r3",
+      "E4.T1.r4"
+     ],
      "artefacts": [
       "A10"
      ]
@@ -1185,7 +1231,7 @@
   },
   {
    "id": "C16",
-   "statement": "In [[D31:the reference simulation]], statsforecast's optimiser stopped at its iteration cap in nearly every ETS(A,N,A) fit, at every series length ([[D33:statsforecast iteration cap]]).",
+   "statement": "In [[D31:the reference simulation]], statsforecast's optimiser stopped at its iteration cap in nearly every ETS(A,N,A) fit, at every series length ([[D37:statsforecast iteration cap]]).",
    "type": "descriptive",
    "role": "secondary",
    "planning": "exploratory",
@@ -1206,7 +1252,7 @@
    "about": {
     "subject": "statsforecast 2.1.1",
     "relation": "stops at its iteration cap for",
-    "object": "D33",
+    "object": "D37",
     "conditions": [
      "D31"
     ],
@@ -1490,7 +1536,9 @@
      "D16",
      "D17",
      "D18",
-     "D19"
+     "D19",
+     "D33",
+     "D34"
     ]
    },
    "estimand": "per-run outcomes of the lab phase",
@@ -1627,6 +1675,65 @@
       }
      ],
      "artefact": "A8"
+    },
+    {
+     "id": "T2",
+     "description": "The decision thresholds each lab record's plans fixed, and the record's hypotheses about the direction or size of an estimate",
+     "row_labels": [
+      "run",
+      "agent"
+     ],
+     "columns": [
+      "D33",
+      "D34"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "lab-sonnet-1",
+        "D3"
+       ],
+       "values": [
+        "RMSE ratio of the two optimised arms between 0.9 and 1.1 in all 32 cells; backcasting with the lower RMSE in at least 6 of 8 cells at length 50; RMSE at length 500 below length 50 in all 24 comparisons",
+        0
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "lab-sonnet-2",
+        "D3"
+       ],
+       "values": [
+        "RMSE at length 500 below length 50 in all 24 series; smooth with the lower RMSE than statsforecast in at least 75 % of 32 comparisons; backcasting below optimised initial states in at least 75 %; |bias| + 1.645 SE below 0.02 at length 500 for every parameter",
+        0
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "lab-haiku-1",
+        "D4"
+       ],
+       "values": [
+        "none",
+        3
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "lab-haiku-2",
+        "D4"
+       ],
+       "values": [
+        "no violations of: RMSE falling with length; statsforecast's RMSE within 10 % of smooth's; |bias| at most 0.02 at length 500 (not supported only at 12, 16 and 12 violations)",
+        0
+       ]
+      }
+     ],
+     "artefact": "A1"
     }
    ]
   },
@@ -1895,7 +2002,7 @@
     ],
     "lens": [
      "D32",
-     "D33"
+     "D37"
     ]
    },
    "model": "ETS in innovations form with Gaussian errors, σ = 1, l0 = 100, b0 = 1, s_j = 10 sin(2πj/12)",
@@ -1985,7 +2092,7 @@
       "series length"
      ],
      "columns": [
-      "D33"
+      "D37"
      ],
      "rows": [
       {
@@ -2026,6 +2133,85 @@
       }
      ],
      "artefact": "A6"
+    }
+   ]
+  },
+  {
+   "id": "E4",
+   "profile": "quant",
+   "design": "other",
+   "description": "[[D36:A reading of the rubric's code]]: the costs [[D23:EntryLib rubric 0.2]] deducts for the problems that decide the scores compared in this paper.",
+   "setup": {
+    "studied": [
+     "D23"
+    ],
+    "cases": [
+     "D23"
+    ],
+    "procedure": [
+     "D36"
+    ],
+    "lens": [
+     "D35"
+    ]
+   },
+   "data_origin": "secondary",
+   "preregistered": false,
+   "artefacts": [
+    "A10"
+   ],
+   "availability": {
+    "level": "public"
+   },
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Costs of four problems in EntryLib rubric 0.2, per claim",
+     "row_labels": [
+      "problem"
+     ],
+     "columns": [
+      "D35"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "a limitation that could bias magnitude, not mitigated"
+       ],
+       "values": [
+        12
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "no scope"
+       ],
+       "values": [
+        10
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "a plan anchored only by a git push"
+       ],
+       "values": [
+        3
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "a descriptive claim without a plan"
+       ],
+       "values": [
+        0
+       ]
+      }
+     ],
+     "artefact": "A10"
     }
    ]
   }
