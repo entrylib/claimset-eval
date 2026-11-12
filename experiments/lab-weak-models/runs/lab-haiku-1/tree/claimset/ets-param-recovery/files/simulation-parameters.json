@@ -1,0 +1,56 @@
+{
+  "processes": [
+    {
+      "label": "ETS(A,N,N) alpha=0.1",
+      "model": "ANN"
+    },
+    {
+      "label": "ETS(A,N,N) alpha=0.5",
+      "model": "ANN"
+    },
+    {
+      "label": "ETS(A,A,N) alpha=0.3 beta=0.05",
+      "model": "AAN"
+    },
+    {
+      "label": "ETS(A,A,N) alpha=0.5 beta=0.2",
+      "model": "AAN"
+    },
+    {
+      "label": "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1",
+      "model": "ANA"
+    }
+  ],
+  "smoothing_true": {
+    "ETS(A,N,N) alpha=0.1": {
+      "alpha": 0.1
+    },
+    "ETS(A,N,N) alpha=0.5": {
+      "alpha": 0.5
+    },
+    "ETS(A,A,N) alpha=0.3 beta=0.05": {
+      "alpha": 0.3,
+      "beta": 0.05
+    },
+    "ETS(A,A,N) alpha=0.5 beta=0.2": {
+      "alpha": 0.5,
+      "beta": 0.2
+    },
+    "ETS(A,N,A) m=12 alpha=0.2 gamma=0.1": {
+      "alpha": 0.2,
+      "gamma": 0.1
+    }
+  },
+  "lengths": [
+    50,
+    100,
+    250,
+    500
+  ],
+  "replicates": 300,
+  "sigma": 1,
+  "level0": 100,
+  "trend0": 1,
+  "season0": "10 sin(2 pi j / 12), j = 0..11",
+  "base_seed": 2026
+}

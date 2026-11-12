@@ -1,0 +1,961 @@
+method,process,T,rep,parameter,truth,estimate,on_bound
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,0,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,0,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,0,alpha,0.1,0.0001,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,1,alpha,0.1,0.09624258737945512,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,1,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,1,alpha,0.1,0.096906636143606,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,2,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,2,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,2,alpha,0.1,0.00010000000000000002,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,3,alpha,0.1,0.08157152878834041,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,3,alpha,0.1,0.08154296875,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,3,alpha,0.1,0.08098598129041948,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,4,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,4,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,4,alpha,0.1,0.0001,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,5,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,5,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,5,alpha,0.1,0.00010000000000000002,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,6,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,6,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,6,alpha,0.1,0.00010000000000000093,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,7,alpha,0.1,0.13545561651934634,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,7,alpha,0.1,0.13544921875,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,7,alpha,0.1,0.1359734065122606,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,8,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,8,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,8,alpha,0.1,0.0001,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",50,9,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",50,9,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",50,9,alpha,0.1,0.00010000000000000002,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,0,alpha,0.1,0.09269671184501929,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,0,alpha,0.1,0.09282226562500001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,0,alpha,0.1,0.09238874313589239,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,1,alpha,0.1,0.10841661167312361,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,1,alpha,0.1,0.10834960937499999,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,1,alpha,0.1,0.1088431333515488,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,2,alpha,0.1,0.23991515057280427,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,2,alpha,0.1,0.2400390625,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,2,alpha,0.1,0.23926037047576904,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,3,alpha,0.1,0.09164106987461729,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,3,alpha,0.1,0.09157714843750002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,3,alpha,0.1,0.09130331091067648,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,4,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,4,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,4,alpha,0.1,0.0001,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,5,alpha,0.1,0.09193771928256639,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,5,alpha,0.1,0.09187011718750002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,5,alpha,0.1,0.09166166862002231,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,6,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,6,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,6,alpha,0.1,0.0001,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,7,alpha,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,7,alpha,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,7,alpha,0.1,0.0001,1
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,8,alpha,0.1,0.158932340652791,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,8,alpha,0.1,0.15888671875,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,8,alpha,0.1,0.15913294208717352,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",100,9,alpha,0.1,0.09692680015551075,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",100,9,alpha,0.1,0.09685058593750001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",100,9,alpha,0.1,0.09610193919134158,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,0,alpha,0.1,0.14645228473566435,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,0,alpha,0.1,0.14643554687500002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,0,alpha,0.1,0.1465877330605373,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,1,alpha,0.1,0.05601586587501116,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,1,alpha,0.1,0.0560546875,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,1,alpha,0.1,0.056204561266713526,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,2,alpha,0.1,0.112786406252286,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,2,alpha,0.1,0.11259765625000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,2,alpha,0.1,0.1130421657391038,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,3,alpha,0.1,0.06933822138984942,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,3,alpha,0.1,0.06938476562499998,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,3,alpha,0.1,0.06928524699749188,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,4,alpha,0.1,0.10526403768551479,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,4,alpha,0.1,0.10527343750000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,4,alpha,0.1,0.10509011579981466,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,5,alpha,0.1,0.050775658967696216,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,5,alpha,0.1,0.05078125,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,5,alpha,0.1,0.05070424980797394,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,6,alpha,0.1,0.1380689707039657,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,6,alpha,0.1,0.1380126953125,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,6,alpha,0.1,0.13779767144899605,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,7,alpha,0.1,0.1366611335059513,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,7,alpha,0.1,0.13662109375000003,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,7,alpha,0.1,0.13632109471465248,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,8,alpha,0.1,0.06697404156479456,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,8,alpha,0.1,0.0669677734375,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,8,alpha,0.1,0.06678668115636352,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",250,9,alpha,0.1,0.16716327470345219,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",250,9,alpha,0.1,0.16708984375000002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",250,9,alpha,0.1,0.167132977185758,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,0,alpha,0.1,0.0945242038648214,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,0,alpha,0.1,0.09443359375,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,0,alpha,0.1,0.09460253052024442,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,1,alpha,0.1,0.08723548622098923,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,1,alpha,0.1,0.0871826171875,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,1,alpha,0.1,0.08685658470101959,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,2,alpha,0.1,0.08794338208681579,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,2,alpha,0.1,0.0879150390625,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,2,alpha,0.1,0.08790119182970393,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,3,alpha,0.1,0.10898277799289247,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,3,alpha,0.1,0.1090087890625,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,3,alpha,0.1,0.10899560993647425,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,4,alpha,0.1,0.09406551568064286,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,4,alpha,0.1,0.093994140625,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,4,alpha,0.1,0.09385872916882705,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,5,alpha,0.1,0.08849941572031808,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,5,alpha,0.1,0.08857421875,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,5,alpha,0.1,0.08841857856449159,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,6,alpha,0.1,0.09084799551469586,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,6,alpha,0.1,0.0908447265625,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,6,alpha,0.1,0.09073039319070059,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,7,alpha,0.1,0.1005778658700689,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,7,alpha,0.1,0.1005859375,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,7,alpha,0.1,0.10069987338392607,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,8,alpha,0.1,0.07846805406416024,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,8,alpha,0.1,0.07846679687500002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,8,alpha,0.1,0.07839917269219737,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.1",500,9,alpha,0.1,0.06598497351075615,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.1",500,9,alpha,0.1,0.066015625,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.1",500,9,alpha,0.1,0.06601273861403192,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,0,alpha,0.5,0.3786683213418781,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,0,alpha,0.5,0.37875976562500013,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,0,alpha,0.5,0.3797313867290875,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,1,alpha,0.5,0.726266584534508,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,1,alpha,0.5,0.7263671875000003,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,1,alpha,0.5,0.7264411821041021,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,2,alpha,0.5,0.3485663980497019,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,2,alpha,0.5,0.34843750000000007,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,2,alpha,0.5,0.3493231340408318,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,3,alpha,0.5,0.33587311071955994,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,3,alpha,0.5,0.3358398437500001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,3,alpha,0.5,0.336117219420465,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,4,alpha,0.5,0.49530691775598973,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,4,alpha,0.5,0.4955078125000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,4,alpha,0.5,0.49503028124697324,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,5,alpha,0.5,0.6991125708896204,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,5,alpha,0.5,0.6989746093750003,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,5,alpha,0.5,0.698370961764035,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,6,alpha,0.5,0.578763233416428,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,6,alpha,0.5,0.5787109375000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,6,alpha,0.5,0.5794441697379589,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,7,alpha,0.5,0.7284695215515957,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,7,alpha,0.5,0.7284179687500003,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,7,alpha,0.5,0.7271395869353539,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,8,alpha,0.5,0.5076348164714546,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,8,alpha,0.5,0.50751953125,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,8,alpha,0.5,0.5061662207476207,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",50,9,alpha,0.5,0.5386752135363447,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",50,9,alpha,0.5,0.5387207031250001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",50,9,alpha,0.5,0.5376711457206871,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,0,alpha,0.5,0.6225791321868577,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,0,alpha,0.5,0.6223632812500002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,0,alpha,0.5,0.6227702222714371,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,1,alpha,0.5,0.5499059296605817,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,1,alpha,0.5,0.5498535156250002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,1,alpha,0.5,0.5487278176084629,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,2,alpha,0.5,0.35904202442000055,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,2,alpha,0.5,0.358984375,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,2,alpha,0.5,0.3583896354204273,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,3,alpha,0.5,0.5018347018609546,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,3,alpha,0.5,0.501806640625,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,3,alpha,0.5,0.5011938596339707,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,4,alpha,0.5,0.5174885205492143,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,4,alpha,0.5,0.5176269531250002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,4,alpha,0.5,0.5182058923498702,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,5,alpha,0.5,0.4657265500678556,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,5,alpha,0.5,0.46562500000000007,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,5,alpha,0.5,0.46561749543191466,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,6,alpha,0.5,0.37474746158875416,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,6,alpha,0.5,0.37480468750000007,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,6,alpha,0.5,0.37530787085153533,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,7,alpha,0.5,0.5310009989852833,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,7,alpha,0.5,0.53095703125,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,7,alpha,0.5,0.5311146937503431,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,8,alpha,0.5,0.48114431085001,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,8,alpha,0.5,0.4811523437500001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,8,alpha,0.5,0.48157182712110314,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",100,9,alpha,0.5,0.5180644617550079,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",100,9,alpha,0.5,0.5180664062500002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",100,9,alpha,0.5,0.5172984872863924,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,0,alpha,0.5,0.5270682207214701,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,0,alpha,0.5,0.5271484375000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,0,alpha,0.5,0.5269975265730784,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,1,alpha,0.5,0.5159414277703489,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,1,alpha,0.5,0.5160156250000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,1,alpha,0.5,0.5161294135071763,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,2,alpha,0.5,0.5822966161092022,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,2,alpha,0.5,0.5825195312500002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,2,alpha,0.5,0.5820964246777485,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,3,alpha,0.5,0.4461460013640365,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,3,alpha,0.5,0.4462890625000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,3,alpha,0.5,0.44566162656429853,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,4,alpha,0.5,0.5275547307160043,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,4,alpha,0.5,0.5271484375000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,4,alpha,0.5,0.5277365565469483,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,5,alpha,0.5,0.4250801622599582,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,5,alpha,0.5,0.4250488281250001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,5,alpha,0.5,0.4246818986650294,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,6,alpha,0.5,0.5810452969689099,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,6,alpha,0.5,0.5810546875000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,6,alpha,0.5,0.5809879658384498,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,7,alpha,0.5,0.5126708932623611,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,7,alpha,0.5,0.5127929687500001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,7,alpha,0.5,0.5122127949134111,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,8,alpha,0.5,0.5636370887629594,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,8,alpha,0.5,0.5637695312500002,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,8,alpha,0.5,0.564083119604271,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",250,9,alpha,0.5,0.5040402764251215,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",250,9,alpha,0.5,0.5040039062500001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",250,9,alpha,0.5,0.5034617712708236,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,0,alpha,0.5,0.5070086132962273,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,0,alpha,0.5,0.507080078125,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,0,alpha,0.5,0.5073518665021581,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,1,alpha,0.5,0.47063220579205456,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,1,alpha,0.5,0.4703125000000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,1,alpha,0.5,0.4709605042948494,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,2,alpha,0.5,0.5036846550592597,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,2,alpha,0.5,0.503857421875,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,2,alpha,0.5,0.5035980196368208,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,3,alpha,0.5,0.40816725542200616,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,3,alpha,0.5,0.408056640625,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,3,alpha,0.5,0.40803820265040436,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,4,alpha,0.5,0.5848659125214906,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,4,alpha,0.5,0.5845703125000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,4,alpha,0.5,0.5846404425560481,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,5,alpha,0.5,0.5157230818000735,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,5,alpha,0.5,0.5157226562500001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,5,alpha,0.5,0.5160734404842768,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,6,alpha,0.5,0.5349712861400857,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,6,alpha,0.5,0.5353515624999999,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,6,alpha,0.5,0.5353508637704174,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,7,alpha,0.5,0.5933381212444203,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,7,alpha,0.5,0.5933593750000001,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,7,alpha,0.5,0.5934273916496664,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,8,alpha,0.5,0.5423172949715309,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,8,alpha,0.5,0.5423828125,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,8,alpha,0.5,0.54233437060682,0
+"smooth ES, optimised initials","ETS(A,N,N) alpha=0.5",500,9,alpha,0.5,0.44284983518461996,0
+"smooth ES, backcasting","ETS(A,N,N) alpha=0.5",500,9,alpha,0.5,0.44291992187500007,0
+statsforecast AutoETS,"ETS(A,N,N) alpha=0.5",500,9,alpha,0.5,0.44290090142387567,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,0,alpha,0.3,0.24329778562727988,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,0,beta,0.05,0.0,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,0,alpha,0.3,0.24334549307823206,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,0,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,0,alpha,0.3,0.24751496880849752,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,0,beta,0.05,0.00010534420315537303,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,1,alpha,0.3,0.2699442446416449,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,1,beta,0.05,4.984292212859631e-05,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,1,alpha,0.3,0.26935634911060313,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,1,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,1,alpha,0.3,0.2691899090207618,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,1,beta,0.05,0.00010158046929393088,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,2,alpha,0.3,0.2914242309692883,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,2,beta,0.05,1.0533287099226543e-05,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,2,alpha,0.3,0.28777894973754914,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,2,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,2,alpha,0.3,0.28948389543948866,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,2,beta,0.05,0.0001452630324567036,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,3,alpha,0.3,0.32562381305805943,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,3,beta,0.05,0.0,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,3,alpha,0.3,0.0,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,3,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,3,alpha,0.3,0.31767753601858695,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,3,beta,0.05,0.0001,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,4,alpha,0.3,0.49982443488673933,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,4,beta,0.05,0.03683184011031821,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,4,alpha,0.3,0.5350003719329836,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,4,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,4,alpha,0.3,0.49885259733161963,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,4,beta,0.05,0.03678818659083008,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,5,alpha,0.3,0.03428117519380394,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,5,beta,0.05,0.03427282412577584,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,5,alpha,0.3,0.0,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,5,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,5,alpha,0.3,0.00010113755372332983,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,5,beta,0.05,0.03706421232470067,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,6,alpha,0.3,0.16210827859264332,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,6,beta,0.05,0.1621045141386263,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,6,alpha,0.3,0.1616637759663177,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,6,beta,0.05,0.16166272727306752,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,6,alpha,0.3,0.0001038414546710876,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,6,beta,0.05,0.20006000000000002,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,7,alpha,0.3,0.2210383811237112,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,7,beta,0.05,0.0,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,7,alpha,0.3,0.22274925708770754,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,7,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,7,alpha,0.3,0.22257207501328916,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,7,beta,0.05,0.00010022949737463919,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,8,alpha,0.3,0.276364809160505,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,8,beta,0.05,9.36342063070426e-05,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,8,alpha,0.3,0.26798426285386057,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,8,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,8,alpha,0.3,0.26722737737757396,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,8,beta,0.05,0.0001,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,9,alpha,0.3,0.004435772735262035,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",50,9,beta,0.05,0.00014081134567282334,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,9,alpha,0.3,0.0,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",50,9,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,9,alpha,0.3,0.0001,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",50,9,beta,0.05,0.00010020937915608785,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,0,alpha,0.3,0.3420127303714877,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,0,beta,0.05,0.0,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,0,alpha,0.3,0.3442747116088864,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,0,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,0,alpha,0.3,0.3410978536069467,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,0,beta,0.05,0.00010000000000000006,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,1,alpha,0.3,0.24666484214624043,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,1,beta,0.05,0.0776076098601233,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,1,alpha,0.3,0.24659705331287113,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,1,beta,0.05,0.07759644835750805,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,1,alpha,0.3,0.24634868024876197,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,1,beta,0.05,0.07772794262986288,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,2,alpha,0.3,0.5127475414563067,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,2,beta,0.05,2.3902096635431603e-06,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,2,alpha,0.3,0.48491452117559664,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,2,beta,0.05,0.016606897855308486,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,2,alpha,0.3,0.4851237307504863,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,2,beta,0.05,0.0165414823148338,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,3,alpha,0.3,0.19553658548094097,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,3,beta,0.05,0.04578586685674837,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,3,alpha,0.3,0.19541871887631712,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,3,beta,0.05,0.04581024409271778,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,3,alpha,0.3,0.19559006052548863,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,3,beta,0.05,0.045673568697903455,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,4,alpha,0.3,0.3176541926360668,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,4,beta,0.05,0.0,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,4,alpha,0.3,0.3174437455832958,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,4,beta,0.05,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,4,alpha,0.3,0.31759040137138633,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,4,beta,0.05,0.0001,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,5,alpha,0.3,0.19463189302752087,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,5,beta,0.05,0.05010558454296495,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,5,alpha,0.3,0.19460952884892324,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,5,beta,0.05,0.05012907962141071,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,5,alpha,0.3,0.1957440496547484,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,5,beta,0.05,0.05012102162315123,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,6,alpha,0.3,0.22720129375893588,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,6,beta,0.05,0.03293128038554974,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,6,alpha,0.3,0.2273132633395904,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,6,beta,0.05,0.03290696094242662,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,6,alpha,0.3,0.22739271451301846,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,6,beta,0.05,0.03278986267947902,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,7,alpha,0.3,0.17904615264194493,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,7,beta,0.05,0.039659392387703496,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,7,alpha,0.3,0.17897028496240644,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,7,beta,0.05,0.03967240056031188,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,7,alpha,0.3,0.17907670692247413,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,7,beta,0.05,0.039716044021607166,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,8,alpha,0.3,0.17434751649767632,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,8,beta,0.05,0.05062104140517584,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,8,alpha,0.3,0.1743459295976209,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,8,beta,0.05,0.050626534820185046,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,8,alpha,0.3,0.17481129441112792,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,8,beta,0.05,0.05057247001131983,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,9,alpha,0.3,0.13517723251200775,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",100,9,beta,0.05,0.04211712595557657,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,9,alpha,0.3,0.13511787100287626,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",100,9,beta,0.05,0.04211475178890396,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,9,alpha,0.3,0.13546707560322288,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",100,9,beta,0.05,0.04206131836419674,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,0,alpha,0.3,0.38570015422264564,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,0,beta,0.05,0.05235784400829896,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,0,alpha,0.3,0.3859481253306571,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,0,beta,0.05,0.052364403249472224,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,0,alpha,0.3,0.38542562461547264,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,0,beta,0.05,0.05222451700813063,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,1,alpha,0.3,0.3527053716031759,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,1,beta,0.05,0.040316792397798694,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,1,alpha,0.3,0.35266131040569926,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,1,beta,0.05,0.04033875260405037,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,1,alpha,0.3,0.3531666358351021,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,1,beta,0.05,0.04026180166816101,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,2,alpha,0.3,0.276616404177776,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,2,beta,0.05,0.02558614604628409,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,2,alpha,0.3,0.2766340229265822,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,2,beta,0.05,0.025590098830888763,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,2,alpha,0.3,0.27665341771768975,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,2,beta,0.05,0.02566620331093219,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,3,alpha,0.3,0.368732885572324,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,3,beta,0.05,0.06342440484993866,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,3,alpha,0.3,0.36874925908622364,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,3,beta,0.05,0.06342933481602843,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,3,alpha,0.3,0.3687985091024153,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,3,beta,0.05,0.06376661735045501,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,4,alpha,0.3,0.27188655908341985,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,4,beta,0.05,0.05420215043800691,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,4,alpha,0.3,0.271868957659899,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,4,beta,0.05,0.05423057582102045,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,4,alpha,0.3,0.27216516784894773,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,4,beta,0.05,0.05436268620734714,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,5,alpha,0.3,0.2994172267875753,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,5,beta,0.05,0.03672372207069986,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,5,alpha,0.3,0.2994317948809112,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,5,beta,0.05,0.03671250886091002,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,5,alpha,0.3,0.2991838367088548,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,5,beta,0.05,0.036607706337117185,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,6,alpha,0.3,0.2622287979137137,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,6,beta,0.05,0.05479166427186628,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,6,alpha,0.3,0.2622998822793307,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,6,beta,0.05,0.054797725006210385,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,6,alpha,0.3,0.2621460176598707,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,6,beta,0.05,0.05485038248613023,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,7,alpha,0.3,0.2773904147063752,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,7,beta,0.05,0.056624084268409536,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,7,alpha,0.3,0.27745584387012057,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,7,beta,0.05,0.05662341904644562,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,7,alpha,0.3,0.27714404861784103,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,7,beta,0.05,0.05649115408496775,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,8,alpha,0.3,0.32680753882003355,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,8,beta,0.05,0.03259205012854831,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,8,alpha,0.3,0.32671804182973574,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,8,beta,0.05,0.03261395871159039,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,8,alpha,0.3,0.326782328341262,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,8,beta,0.05,0.032660857740920916,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,9,alpha,0.3,0.37730092091931355,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",250,9,beta,0.05,0.05652408193895844,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,9,alpha,0.3,0.3774277437293453,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",250,9,beta,0.05,0.05651438712956175,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,9,alpha,0.3,0.37744598331023266,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",250,9,beta,0.05,0.05671872629410239,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,0,alpha,0.3,0.2830511724986235,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,0,beta,0.05,0.04870918472096798,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,0,alpha,0.3,0.28305122399979155,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,0,beta,0.05,0.04871035787436995,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,0,alpha,0.3,0.2828096567652006,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,0,beta,0.05,0.04878937112013728,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,1,alpha,0.3,0.26869748251261316,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,1,beta,0.05,0.05546199221560209,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,1,alpha,0.3,0.2687119528978655,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,1,beta,0.05,0.05546042558471527,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,1,alpha,0.3,0.2687924142765668,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,1,beta,0.05,0.05541921808794556,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,2,alpha,0.3,0.26239995699158525,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,2,beta,0.05,0.058561532886338634,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,2,alpha,0.3,0.2624086407820868,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,2,beta,0.05,0.058539889029816564,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,2,alpha,0.3,0.26277617356889166,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,2,beta,0.05,0.05849028046574059,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,3,alpha,0.3,0.3514074529824017,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,3,beta,0.05,0.05657725234875921,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,3,alpha,0.3,0.3513287732290335,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,3,beta,0.05,0.05660113841222481,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,3,alpha,0.3,0.35093151680804974,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,3,beta,0.05,0.05656262681334413,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,4,alpha,0.3,0.2673458321220462,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,4,beta,0.05,0.05379889207944905,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,4,alpha,0.3,0.26739883381778784,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,4,beta,0.05,0.05382022363055512,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,4,alpha,0.3,0.2670151219326027,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,4,beta,0.05,0.05384492526024079,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,5,alpha,0.3,0.2733876580125552,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,5,beta,0.05,0.04586161948617525,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,5,alpha,0.3,0.27339733007065664,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,5,beta,0.05,0.045880271798250744,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,5,alpha,0.3,0.2736416507544328,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,5,beta,0.05,0.04576295833780053,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,6,alpha,0.3,0.282600478382951,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,6,beta,0.05,0.03636288458463095,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,6,alpha,0.3,0.28262582037316264,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,6,beta,0.05,0.036380454344301684,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,6,alpha,0.3,0.28301487239800593,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,6,beta,0.05,0.036420374351658645,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,7,alpha,0.3,0.29058398317646633,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,7,beta,0.05,0.04086608398659172,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,7,alpha,0.3,0.2905934756419016,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,7,beta,0.05,0.040851021375635815,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,7,alpha,0.3,0.2903218401812999,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,7,beta,0.05,0.04079502279113834,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,8,alpha,0.3,0.29344308971837885,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,8,beta,0.05,0.04245909038046028,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,8,alpha,0.3,0.29341465121979127,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,8,beta,0.05,0.042499814399343444,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,8,alpha,0.3,0.2937862248742511,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,8,beta,0.05,0.04250051224252171,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,9,alpha,0.3,0.32526792961138096,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.3 beta=0.05",500,9,beta,0.05,0.04790394885617415,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,9,alpha,0.3,0.32544718287790597,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.3 beta=0.05",500,9,beta,0.05,0.04788364298401575,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,9,alpha,0.3,0.3254048180327959,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.3 beta=0.05",500,9,beta,0.05,0.0479114004390925,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,0,alpha,0.5,0.39145802051898837,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,0,beta,0.2,0.23802893802106828,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,0,alpha,0.5,0.39156287990626903,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,0,beta,0.2,0.23807360357095614,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,0,alpha,0.5,0.42811622485197537,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,0,beta,0.2,0.20005472143761252,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,1,alpha,0.5,0.6751548729648348,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,1,beta,0.2,0.0,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,1,alpha,0.5,0.6758652687072746,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,1,beta,0.2,0.0,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,1,alpha,0.5,0.6760528070032192,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,1,beta,0.2,0.00010768970889429281,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,2,alpha,0.5,0.6719983852603092,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,2,beta,0.2,0.0007775897289397731,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,2,alpha,0.5,0.6691544878704014,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,2,beta,0.2,0.0011214546655537567,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,2,alpha,0.5,0.6895766415867781,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,2,beta,0.2,0.001216119681102796,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,3,alpha,0.5,0.40608446020092853,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,3,beta,0.2,0.16486769373049354,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,3,alpha,0.5,0.4080213990178892,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,3,beta,0.2,0.16618614078906835,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,3,alpha,0.5,0.40770300036969453,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,3,beta,0.2,0.16585512867225702,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,4,alpha,0.5,0.37731858846198973,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,4,beta,0.2,0.21348044204988248,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,4,alpha,0.5,0.377303525619209,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,4,beta,0.2,0.21353037781082101,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,4,alpha,0.5,0.6252891005883502,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,4,beta,0.2,0.0001,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,5,alpha,0.5,0.3910480505000462,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,5,beta,0.2,0.14089568037407857,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,5,alpha,0.5,0.39105779981146044,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,5,beta,0.2,0.140870271560334,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,5,alpha,0.5,0.5576766138529415,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,5,beta,0.2,0.00010218536395999436,1
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,6,alpha,0.5,0.47855886394460956,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,6,beta,0.2,0.17359852460465935,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,6,alpha,0.5,0.4784327849396506,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,6,beta,0.2,0.17360568853473524,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,6,alpha,0.5,0.47835657227973777,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,6,beta,0.2,0.17308218854266816,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,7,alpha,0.5,0.3486437247974048,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,7,beta,0.2,0.34862257825357645,1
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,7,alpha,0.5,0.3506050767318809,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,7,beta,0.2,0.3505919548617389,1
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,7,alpha,0.5,0.5031200971986457,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,7,beta,0.2,0.20006000000000002,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,8,alpha,0.5,0.4037743253219491,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,8,beta,0.2,0.14102264368290673,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,8,alpha,0.5,0.4036616662866437,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,8,beta,0.2,0.14103895582811676,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,8,alpha,0.5,0.4046276969678199,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,8,beta,0.2,0.1411040223996693,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,9,alpha,0.5,0.49573393095695495,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",50,9,beta,0.2,0.14523350166053647,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,9,alpha,0.5,0.4959190268360546,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",50,9,beta,0.2,0.14509198824380293,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,9,alpha,0.5,0.4948814800449188,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",50,9,beta,0.2,0.14564190844009745,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,0,alpha,0.5,0.49535597159223643,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,0,beta,0.2,0.16826272524106084,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,0,alpha,0.5,0.4954256084252848,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,0,beta,0.2,0.16830034212034664,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,0,alpha,0.5,0.49468583145221007,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,0,beta,0.2,0.16792236367416846,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,1,alpha,0.5,0.38769784110272487,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,1,beta,0.2,0.31050347574596016,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,1,alpha,0.5,0.3876887389793412,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,1,beta,0.2,0.31056172294411244,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,1,alpha,0.5,0.46467129893995046,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,1,beta,0.2,0.20005876509053802,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,2,alpha,0.5,0.48637784101120063,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,2,beta,0.2,0.23789872384133387,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,2,alpha,0.5,0.486465428734664,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,2,beta,0.2,0.23797662247379778,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,2,alpha,0.5,0.49911081209942004,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,2,beta,0.2,0.1999502958985805,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,3,alpha,0.5,0.3147171266537919,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,3,beta,0.2,0.20949341124023435,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,3,alpha,0.5,0.31453361121675716,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,3,beta,0.2,0.20962832391851413,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,3,alpha,0.5,0.32301211983306954,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,3,beta,0.2,0.19969796414188873,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,4,alpha,0.5,0.6202999285033222,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,4,beta,0.2,0.28361539108380096,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,4,alpha,0.5,0.6220652017218526,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,4,beta,0.2,0.2833839699240345,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,4,alpha,0.5,0.6711865802389682,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,4,beta,0.2,0.20006000000000002,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,5,alpha,0.5,0.5407421637138408,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,5,beta,0.2,0.1882859042927144,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,5,alpha,0.5,0.5333266324712895,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,5,beta,0.2,0.1974299804889597,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,5,alpha,0.5,0.5330239771456311,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,5,beta,0.2,0.19772601640855567,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,6,alpha,0.5,0.8105648702335198,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,6,beta,0.2,0.21561855183724632,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,6,alpha,0.5,0.8107348334541713,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,6,beta,0.2,0.21559090475270765,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,6,alpha,0.5,0.8253934332034603,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,6,beta,0.2,0.1999986928835357,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,7,alpha,0.5,0.48174373778029284,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,7,beta,0.2,0.1857299265657605,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,7,alpha,0.5,0.48175068629207096,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,7,beta,0.2,0.18576539235218667,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,7,alpha,0.5,0.48118644132916094,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,7,beta,0.2,0.18485962490778146,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,8,alpha,0.5,0.6360202927688556,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,8,beta,0.2,0.13580826938594046,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,8,alpha,0.5,0.6363640344912713,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,8,beta,0.2,0.13575356722913057,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,8,alpha,0.5,0.6341204065054805,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,8,beta,0.2,0.1367086972848752,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,9,alpha,0.5,0.6432632458044493,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",100,9,beta,0.2,0.1271181050175011,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,9,alpha,0.5,0.6427242936086264,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",100,9,beta,0.2,0.12715275705395468,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,9,alpha,0.5,0.6439045864866291,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",100,9,beta,0.2,0.12740354613725177,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,0,alpha,0.5,0.5575507284828556,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,0,beta,0.2,0.18000529486314076,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,0,alpha,0.5,0.5575703591035567,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,0,beta,0.2,0.17996993055130583,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,0,alpha,0.5,0.5570573899011152,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,0,beta,0.2,0.1800457878785575,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,1,alpha,0.5,0.577317602324104,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,1,beta,0.2,0.15004997271101578,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,1,alpha,0.5,0.577565108111594,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,1,beta,0.2,0.1495877434557769,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,1,alpha,0.5,0.5765335511881404,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,1,beta,0.2,0.14964180396885313,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,2,alpha,0.5,0.4713703705124076,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,2,beta,0.2,0.14404770839080827,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,2,alpha,0.5,0.4714273960031279,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,2,beta,0.2,0.144038562617061,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,2,alpha,0.5,0.4709582712820455,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,2,beta,0.2,0.14395773487653907,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,3,alpha,0.5,0.42405786018510844,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,3,beta,0.2,0.21193062987650596,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,3,alpha,0.5,0.42406217438256144,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,3,beta,0.2,0.21188285293956144,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,3,alpha,0.5,0.4300560673104633,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,3,beta,0.2,0.20006000000000002,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,4,alpha,0.5,0.43482828527948825,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,4,beta,0.2,0.16756883757376484,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,4,alpha,0.5,0.43475908787659157,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,4,beta,0.2,0.16764386661379832,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,4,alpha,0.5,0.4360098254897007,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,4,beta,0.2,0.16783619094886,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,5,alpha,0.5,0.42813995520515635,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,5,beta,0.2,0.19341819300095153,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,5,alpha,0.5,0.4280387210696064,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,5,beta,0.2,0.19341768230005985,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,5,alpha,0.5,0.4272006027630617,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,5,beta,0.2,0.19313555863800902,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,6,alpha,0.5,0.3313568551164431,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,6,beta,0.2,0.19316628251184187,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,6,alpha,0.5,0.3313904389545316,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,6,beta,0.2,0.19314676225303634,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,6,alpha,0.5,0.3319652749433145,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,6,beta,0.2,0.1932026189747832,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,7,alpha,0.5,0.3856911140189076,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,7,beta,0.2,0.24786030380292293,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,7,alpha,0.5,0.38617489762909846,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,7,beta,0.2,0.2484028879768631,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,7,alpha,0.5,0.4344982328924317,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,7,beta,0.2,0.200059211886845,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,8,alpha,0.5,0.5931041344829583,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,8,beta,0.2,0.15405193185302798,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,8,alpha,0.5,0.593169964598201,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,8,beta,0.2,0.15400491130349106,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,8,alpha,0.5,0.5930541768817027,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,8,beta,0.2,0.15405332567797875,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,9,alpha,0.5,0.458668556717414,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",250,9,beta,0.2,0.1940678777625679,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,9,alpha,0.5,0.4584541227552109,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",250,9,beta,0.2,0.1939486752307858,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,9,alpha,0.5,0.458077374174747,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",250,9,beta,0.2,0.19398692328293804,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,0,alpha,0.5,0.4759257710374867,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,0,beta,0.2,0.1610442675468225,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,0,alpha,0.5,0.47583860519080196,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,0,beta,0.2,0.16097646679154426,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,0,alpha,0.5,0.47570663992110385,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,0,beta,0.2,0.16112549705567952,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,1,alpha,0.5,0.5194076488687145,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,1,beta,0.2,0.1847674572061236,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,1,alpha,0.5,0.5194063365226613,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,1,beta,0.2,0.18483699528151187,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,1,alpha,0.5,0.5192637878540411,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,1,beta,0.2,0.1849155445085356,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,2,alpha,0.5,0.5345813693918546,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,2,beta,0.2,0.1558885898849945,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,2,alpha,0.5,0.5346789378720133,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,2,beta,0.2,0.15585043623837008,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,2,alpha,0.5,0.5351574003604972,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,2,beta,0.2,0.15577238362550117,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,3,alpha,0.5,0.48988659558139624,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,3,beta,0.2,0.21191591619774217,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,3,alpha,0.5,0.4899122024682585,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,3,beta,0.2,0.2119429796439363,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,3,alpha,0.5,0.4984077592869315,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,3,beta,0.2,0.20004920678473653,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,4,alpha,0.5,0.49033784607303943,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,4,beta,0.2,0.20841255517996046,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,4,alpha,0.5,0.490451253775973,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,4,beta,0.2,0.20842006084276365,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,4,alpha,0.5,0.49449872249729443,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,4,beta,0.2,0.2000575887193082,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,5,alpha,0.5,0.4880082963000939,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,5,beta,0.2,0.20187699506081008,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,5,alpha,0.5,0.48802708375442316,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,5,beta,0.2,0.20189139888207136,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,5,alpha,0.5,0.4886417871695557,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,5,beta,0.2,0.20003478864012444,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,6,alpha,0.5,0.552309391101518,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,6,beta,0.2,0.17065490586861887,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,6,alpha,0.5,0.5523299482534643,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,6,beta,0.2,0.17062046947248743,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,6,alpha,0.5,0.5524576773163646,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,6,beta,0.2,0.17065051032610015,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,7,alpha,0.5,0.4581525331237086,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,7,beta,0.2,0.1710435027517776,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,7,alpha,0.5,0.4583294203970582,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,7,beta,0.2,0.1708182961214334,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,7,alpha,0.5,0.45813188951407147,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,7,beta,0.2,0.1710830850201166,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,8,alpha,0.5,0.43592907430102024,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,8,beta,0.2,0.20267905548921133,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,8,alpha,0.5,0.4360557786862047,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,8,beta,0.2,0.202671459657222,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,8,alpha,0.5,0.4379004195240875,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,8,beta,0.2,0.1999254384482117,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,9,alpha,0.5,0.49296264383838506,0
+"smooth ES, optimised initials","ETS(A,A,N) alpha=0.5 beta=0.2",500,9,beta,0.2,0.18682043113474664,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,9,alpha,0.5,0.4931183939188488,0
+"smooth ES, backcasting","ETS(A,A,N) alpha=0.5 beta=0.2",500,9,beta,0.2,0.18672215481019522,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,9,alpha,0.5,0.49299102933326466,0
+statsforecast AutoETS,"ETS(A,A,N) alpha=0.5 beta=0.2",500,9,beta,0.2,0.1865343757215984,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,0,alpha,0.2,0.3842428701153314,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,0,gamma,0.1,0.0006637003765562454,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,0,alpha,0.2,0.39849380552768704,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,0,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,0,alpha,0.2,0.003745574799645583,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,0,gamma,0.1,0.002667571103126283,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,1,alpha,0.2,0.19994939428776737,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,1,gamma,0.1,0.0008142147700353534,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,1,alpha,0.2,0.156982421875,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,1,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,1,alpha,0.2,0.036039636292295486,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,1,gamma,0.1,0.00028275793925835514,1
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,2,alpha,0.2,0.2601340531526528,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,2,gamma,0.1,0.006120278691043286,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,2,alpha,0.2,0.27519531249999996,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,2,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,2,alpha,0.2,0.22873191169018797,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,2,gamma,0.1,0.006980494414263946,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,3,alpha,0.2,0.2193302086333888,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,3,gamma,0.1,0.00020719384081668065,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,3,alpha,0.2,0.24546427726745607,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,3,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,3,alpha,0.2,0.19340440256762942,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,3,gamma,0.1,0.07223828304026234,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,4,alpha,0.2,0.28222391298787114,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,4,gamma,0.1,0.006954772109309762,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,4,alpha,0.2,0.37932918071746824,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,4,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,4,alpha,0.2,0.19458340111297998,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,4,gamma,0.1,0.007659030533557731,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,5,alpha,0.2,0.2514546684781312,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,5,gamma,0.1,0.0012762707256929343,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,5,alpha,0.2,0.2872807919979095,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,5,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,5,alpha,0.2,0.16991581310868448,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,5,gamma,0.1,0.0008975108549990224,1
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,6,alpha,0.2,0.1566237590267166,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,6,gamma,0.1,0.0010094978409333052,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,6,alpha,0.2,0.1371617963624885,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,6,gamma,0.1,0.01783277988288317,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,6,alpha,0.2,0.05464726076087935,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,6,gamma,0.1,0.00031711243476719234,1
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,7,alpha,0.2,0.09182367761808931,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,7,gamma,0.1,1.0209330028078064e-05,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,7,alpha,0.2,0.09830274283885948,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,7,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,7,alpha,0.2,0.021552933099115643,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,7,gamma,0.1,0.00010138795371761088,1
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,8,alpha,0.2,0.19884887909757826,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,8,gamma,0.1,0.0011841481772597454,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,8,alpha,0.2,0.2590271711349488,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,8,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,8,alpha,0.2,0.13802047784717425,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,8,gamma,0.1,0.0016369905211470375,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,9,alpha,0.2,0.4156356198967408,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",50,9,gamma,0.1,0.0010129051448075949,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,9,alpha,0.2,0.4734418153762818,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",50,9,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,9,alpha,0.2,0.3891585914852373,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",50,9,gamma,0.1,0.007371525339967769,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,0,alpha,0.2,0.11862754779790122,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,0,gamma,0.1,0.0006553016250732819,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,0,alpha,0.2,0.11578297000378365,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,0,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,0,alpha,0.2,0.09835598101761715,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,0,gamma,0.1,0.00486072993083378,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,1,alpha,0.2,0.11138831435342161,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,1,gamma,0.1,9.845281635367928e-05,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,1,alpha,0.2,0.15616308078169822,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,1,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,1,alpha,0.2,0.13341943626760785,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,1,gamma,0.1,0.0001,1
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,2,alpha,0.2,0.12326190291278197,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,2,gamma,0.1,5.3767707493598024e-05,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,2,alpha,0.2,0.11073994222097092,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,2,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,2,alpha,0.2,0.10758904736083466,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,2,gamma,0.1,0.00012622636013015156,1
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,3,alpha,0.2,0.15128909658299217,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,3,gamma,0.1,0.0007295068761813915,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,3,alpha,0.2,0.15967042446136476,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,3,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,3,alpha,0.2,0.1244071179563407,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,3,gamma,0.1,0.00208106913001396,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,4,alpha,0.2,0.13901240478457463,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,4,gamma,0.1,0.002713965493004567,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,4,alpha,0.2,0.1547119140624999,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,4,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,4,alpha,0.2,0.1493333609943552,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,4,gamma,0.1,0.004719559943556751,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,5,alpha,0.2,0.20892953417591145,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,5,gamma,0.1,0.0012935838802593952,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,5,alpha,0.2,0.2978412562981248,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,5,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,5,alpha,0.2,0.014348305697891488,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,5,gamma,0.1,0.00021044891718072033,1
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,6,alpha,0.2,0.16837436401893835,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,6,gamma,0.1,0.0020252379581545206,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,6,alpha,0.2,0.18687838530167938,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,6,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,6,alpha,0.2,0.1554809218733785,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,6,gamma,0.1,0.018176027109752222,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,7,alpha,0.2,0.19503862414805107,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,7,gamma,0.1,0.0005204375353681793,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,7,alpha,0.2,0.13061523437499994,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,7,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,7,alpha,0.2,0.1016918724434628,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,7,gamma,0.1,0.0039257104594919425,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,8,alpha,0.2,0.17321394223372183,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,8,gamma,0.1,0.0006244619067712289,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,8,alpha,0.2,0.1885301642119885,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,8,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,8,alpha,0.2,0.1842016706264278,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,8,gamma,0.1,0.0064365957792260646,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,9,alpha,0.2,0.2810951460171086,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",100,9,gamma,0.1,0.00903361520192492,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,9,alpha,0.2,0.33849389068782326,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",100,9,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,9,alpha,0.2,0.002410399212420842,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",100,9,gamma,0.1,0.0031411136453038655,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,0,alpha,0.2,0.17020586865439966,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,0,gamma,0.1,0.00129084979818501,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,0,alpha,0.2,0.16335449218750003,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,0,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,0,alpha,0.2,0.10460038768685105,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,0,gamma,0.1,0.2005734261395186,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,1,alpha,0.2,0.158474396057315,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,1,gamma,0.1,0.00016715345687158068,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,1,alpha,0.2,0.17792968750000004,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,1,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,1,alpha,0.2,0.1754611096360393,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,1,gamma,0.1,0.002016832728716776,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,2,alpha,0.2,0.16763848565796907,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,2,gamma,0.1,0.0009375086247898452,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,2,alpha,0.2,0.18247070312499986,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,2,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,2,alpha,0.2,0.11934547164098708,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,2,gamma,0.1,0.01545161904542731,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,3,alpha,0.2,0.18143592598293617,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,3,gamma,0.1,0.00045147989581088626,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,3,alpha,0.2,0.19135117530822754,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,3,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,3,alpha,0.2,0.1307318968968227,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,3,gamma,0.1,0.04290064832573257,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,4,alpha,0.2,0.15495572254835693,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,4,gamma,0.1,0.0003476618962664131,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,4,alpha,0.2,0.18173828125000008,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,4,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,4,alpha,0.2,0.12155626938368409,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,4,gamma,0.1,0.10525709146359546,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,5,alpha,0.2,0.19273094551449113,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,5,gamma,0.1,0.0002538047228780205,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,5,alpha,0.2,0.1930747985839844,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,5,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,5,alpha,0.2,0.1847571749542335,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,5,gamma,0.1,0.004866797837576362,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,6,alpha,0.2,0.07303725748818155,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,6,gamma,0.1,0.00020021107225740747,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,6,alpha,0.2,0.08026679605245583,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,6,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,6,alpha,0.2,0.07718417094038457,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,6,gamma,0.1,0.0005397230734522406,1
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,7,alpha,0.2,0.230071918913755,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,7,gamma,0.1,0.0034479996029356317,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,7,alpha,0.2,0.2532241404056549,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,7,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,7,alpha,0.2,0.24307100403642568,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,7,gamma,0.1,0.012440243450006095,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,8,alpha,0.2,0.2194472248701999,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,8,gamma,0.1,0.000769901173192423,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,8,alpha,0.2,0.21476993560791013,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,8,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,8,alpha,0.2,0.18565578165593313,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,8,gamma,0.1,0.10143226784897476,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,9,alpha,0.2,0.18656739008865608,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",250,9,gamma,0.1,0.0010982084978167798,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,9,alpha,0.2,0.183349609375,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",250,9,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,9,alpha,0.2,0.13629108064334966,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",250,9,gamma,0.1,0.04801873940551038,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,0,alpha,0.2,0.15362277072517505,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,0,gamma,0.1,0.00044874959141474196,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,0,alpha,0.2,0.18466796875000008,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,0,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,0,alpha,0.2,0.13494310660624464,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,0,gamma,0.1,0.12164932766231126,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,1,alpha,0.2,0.20262566870065624,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,1,gamma,0.1,0.009729609111192453,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,1,alpha,0.2,0.22944884300231935,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,1,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,1,alpha,0.2,0.1707968478775147,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,1,gamma,0.1,0.030750112590069732,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,2,alpha,0.2,0.21917092484935893,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,2,gamma,0.1,0.04368151997686802,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,2,alpha,0.2,0.21985275745391847,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,2,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,2,alpha,0.2,0.17036097177171688,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,2,gamma,0.1,0.08978486293695388,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,3,alpha,0.2,0.19005863789094307,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,3,gamma,0.1,0.0659201794676505,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,3,alpha,0.2,0.18613281249999997,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,3,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,3,alpha,0.2,0.12008820090526094,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,3,gamma,0.1,0.11850110592875088,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,4,alpha,0.2,0.20601241145675536,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,4,gamma,0.1,0.0,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,4,alpha,0.2,0.21882001310586932,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,4,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,4,alpha,0.2,0.17119116198490844,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,4,gamma,0.1,0.07908220706272584,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,5,alpha,0.2,0.17156751787206742,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,5,gamma,0.1,0.09192802114297435,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,5,alpha,0.2,0.1767578125,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,5,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,5,alpha,0.2,0.14878082337946943,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,5,gamma,0.1,0.10226216662149426,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,6,alpha,0.2,0.19963641038056124,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,6,gamma,0.1,0.08293556144516781,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,6,alpha,0.2,0.20252361297607424,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,6,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,6,alpha,0.2,0.18872544073428843,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,6,gamma,0.1,0.08326685600679745,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,7,alpha,0.2,0.24044844842595708,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,7,gamma,0.1,0.05089366928633694,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,7,alpha,0.2,0.2441749304533004,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,7,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,7,alpha,0.2,0.18784797924208177,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,7,gamma,0.1,0.014802303386818042,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,8,alpha,0.2,0.1843530132353428,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,8,gamma,0.1,0.0007741230107957232,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,8,alpha,0.2,0.20553767376113682,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,8,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,8,alpha,0.2,0.13499786345313908,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,8,gamma,0.1,0.1335682990699884,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,9,alpha,0.2,0.25338079578729833,0
+"smooth ES, optimised initials","ETS(A,N,A) alpha=0.2 gamma=0.1",500,9,gamma,0.1,0.0007845268109098261,1
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,9,alpha,0.2,0.25739726424217235,0
+"smooth ES, backcasting","ETS(A,N,A) alpha=0.2 gamma=0.1",500,9,gamma,0.1,0.0,1
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,9,alpha,0.2,0.21922095592909743,0
+statsforecast AutoETS,"ETS(A,N,A) alpha=0.2 gamma=0.1",500,9,gamma,0.1,0.0641260054488613,0

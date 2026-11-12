@@ -1,0 +1,1103 @@
+lab_result,run,quantity,conditions,value
+RS1,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.10121215402327462
+RS2,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.18858761649640382
+RS3,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.14821222840987133
+RS4,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",3.0
+RS5,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",10.0
+RS6,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.03383372727269325
+RS7,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.05913422415324265
+RS8,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.05616627272730675
+RS9,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",10.0
+RS10,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",10.0
+RS11,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.050099437169161556
+RS12,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.11147232860900551
+RS13,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.09942603284271732
+RS14,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS15,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",10.0
+RS16,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.01445366819612275
+RS17,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.02712127380590291
+RS18,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.020124080755943508
+RS19,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",2.0
+RS20,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",10.0
+RS21,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.019919498199850477
+RS22,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.04986266025914706
+RS23,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.042381397876481736
+RS24,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS25,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",10.0
+RS26,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",-0.002678483592382162
+RS27,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.01217035382256221
+RS28,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.01027045260612993
+RS29,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS30,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",10.0
+RS31,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.010162211509001661
+RS32,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0285758026753613
+RS33,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.02551740273038956
+RS34,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS35,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",10.0
+RS36,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.0013372760566770878
+RS37,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.007137772840327782
+RS38,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.006221611388139439
+RS39,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS40,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",10.0
+RS41,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.03584160842732666
+RS42,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.1177985781377694
+RS43,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.10484555974286187
+RS44,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS45,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",10.0
+RS46,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.04298895641348731
+RS47,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.10755972252598808
+RS48,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.08342814366219051
+RS49,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",2.0
+RS50,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",10.0
+RS51,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.04110790693953293
+RS52,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.14109600857666238
+RS53,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.10793509220990931
+RS54,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS55,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",10.0
+RS56,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0071543583257744625
+RS57,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.05621673069572042
+RS58,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.04427395047685882
+RS59,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS60,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",10.0
+RS61,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.03373877295159201
+RS62,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.08782965433570566
+RS63,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.07939985931426234
+RS64,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS65,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",10.0
+RS66,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.016395612475826046
+RS67,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.034420492997247934
+RS68,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.028452760659110954
+RS69,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS70,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",10.0
+RS71,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.0061852039160292804
+RS72,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.03333223844199888
+RS73,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.02746824844565705
+RS74,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS75,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",10.0
+RS76,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.014524928225846454
+RS77,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.024118899101051375
+RS78,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.019510108031045106
+RS79,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS80,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",10.0
+RS81,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.07106793155980992
+RS82,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.13464551064835725
+RS83,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.11257853934454035
+RS84,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0
+RS85,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",10.0
+RS86,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",-0.09821672201171168
+RS87,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0983623159862428
+RS88,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.09821672201171168
+RS89,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",9.0
+RS90,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",10.0
+RS91,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.016057273759506673
+RS92,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.07384475318642308
+RS93,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.06332430315669628
+RS94,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS95,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",10.0
+RS96,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.1
+RS97,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.10000000000000002
+RS98,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.1
+RS99,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",10.0
+RS100,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",10.0
+RS101,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.01784703806042673
+RS102,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.04500861572611738
+RS103,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.03144585326313973
+RS104,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS105,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",10.0
+RS106,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.1
+RS107,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.10000000000000002
+RS108,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.1
+RS109,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",10.0
+RS110,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",10.0
+RS111,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.012531368874479091
+RS112,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.028046449781350624
+RS113,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.02301965012447909
+RS114,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS115,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",10.0
+RS116,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",-0.1
+RS117,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.10000000000000002
+RS118,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.1
+RS119,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",10.0
+RS120,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",10.0
+RS121,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",-0.07830078124999999
+RS122,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.09033122888157165
+RS123,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.085390625
+RS124,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",8.0
+RS125,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",10.0
+RS126,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",-0.011960449218749997
+RS127,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.07303887920170984
+RS128,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.05341552734374999
+RS129,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",3.0
+RS130,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",10.0
+RS131,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.004921875000000001
+RS132,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.04001497614169504
+RS133,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.03628417968750001
+RS134,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0
+RS135,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",10.0
+RS136,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",-0.010297851562500002
+RS137,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.015138931604883124
+RS138,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.012216796875
+RS139,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.0
+RS140,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",10.0
+RS141,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.033725585937500156
+RS142,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.14676448397668554
+RS143,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.12201660156250009
+RS144,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.0
+RS145,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",10.0
+RS146,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",-0.007875976562499892
+RS147,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.07493530503113507
+RS148,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.05601074218750006
+RS149,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS150,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",10.0
+RS151,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.018579101562500124
+RS152,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.052781339854225534
+RS153,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.044311523437500076
+RS154,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS155,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",10.0
+RS156,RN1,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.010361328125000051
+RS157,RN1,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.05640870487862656
+RS158,RN1,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.04610351562500002
+RS159,RN1,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS160,RN1,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",10.0
+RS161,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.06716570740110625
+RS162,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.15117897028426067
+RS163,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.11225535699006599
+RS164,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.0
+RS165,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",10.0
+RS166,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.026649599986407195
+RS167,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.05518941528994702
+RS168,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.04907050281413246
+RS169,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",9.0
+RS170,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",10.0
+RS171,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.04749800194708714
+RS172,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.11622500356791672
+RS173,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.10198089483985942
+RS174,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS175,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",10.0
+RS176,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.016116970839649424
+RS177,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.02956434664232525
+RS178,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.02178381800130224
+RS179,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",3.0
+RS180,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",10.0
+RS181,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.019878627380635276
+RS182,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.04981567373210055
+RS183,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.042370746846863254
+RS184,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS185,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",10.0
+RS186,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",-0.0026857059581190273
+RS187,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.012173460374952474
+RS188,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.010270551913214783
+RS189,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS190,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",10.0
+RS191,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.01018149639909977
+RS192,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.028584921377468434
+RS193,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.025516572917856313
+RS194,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS195,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",10.0
+RS196,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.0013437518454850702
+RS197,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.007143357180340311
+RS198,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.006223685751514866
+RS199,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS200,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",10.0
+RS201,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.036022677707198476
+RS202,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.1185037738591321
+RS203,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.10545332935222725
+RS204,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS205,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",10.0
+RS206,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.043347240789385844
+RS207,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.1073817942249289
+RS208,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.08337363245429127
+RS209,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",3.0
+RS210,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",10.0
+RS211,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.041678301916423424
+RS212,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.14109938070116496
+RS213,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.10849979828837411
+RS214,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS215,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",10.0
+RS216,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.006233448425155286
+RS217,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.056350144280166714
+RS218,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.04519246232455984
+RS219,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS220,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",10.0
+RS221,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.033791453767515675
+RS222,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.08784752727990862
+RS223,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.07938594682549925
+RS224,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS225,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",10.0
+RS226,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.01638329676534523
+RS227,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.034273336896827905
+RS228,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.028341483501231002
+RS229,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS230,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",10.0
+RS231,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.00624988303827827
+RS232,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.03336708910270578
+RS233,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.027509564910695693
+RS234,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS235,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",10.0
+RS236,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.014489632367919239
+RS237,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.024066929308628044
+RS238,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.01946653675346404
+RS239,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS240,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",10.0
+RS241,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.04602670432942676
+RS242,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.10364710053422233
+RS243,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.07657756232339648
+RS244,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0
+RS245,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",10.0
+RS246,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",-0.0980746808993517
+RS247,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.09810270693464362
+RS248,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0980746808993517
+RS249,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",4.0
+RS250,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",10.0
+RS251,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.03297691229745972
+RS252,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.05903636973703928
+RS253,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.05098184833606373
+RS254,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS255,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",10.0
+RS256,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.09822516689994153
+RS257,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.09825818823516237
+RS258,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.09822516689994153
+RS259,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",6.0
+RS260,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",10.0
+RS261,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.026543486422373957
+RS262,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.04865004875822659
+RS263,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.036447315179164934
+RS264,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS265,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",10.0
+RS266,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.09910352212589961
+RS267,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.09910788774002029
+RS268,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.09910352212589961
+RS269,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",7.0
+RS270,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",10.0
+RS271,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0020876599324115425
+RS272,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.028634242497674448
+RS273,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.022239989911593636
+RS274,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS275,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",10.0
+RS276,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",-0.06529040401566896
+RS277,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.07406056217393664
+RS278,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.06529040401566896
+RS279,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",4.0
+RS280,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",10.0
+RS281,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",-0.06867302673128581
+RS282,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.08462318089245226
+RS283,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.07576415003515509
+RS284,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",7.0
+RS285,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",10.0
+RS286,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",-0.011953359594356746
+RS287,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.07301901406144144
+RS288,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.053406180174100516
+RS289,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",3.0
+RS290,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",10.0
+RS291,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.004949989538418563
+RS292,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.04005209875518333
+RS293,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0363292319789483
+RS294,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0
+RS295,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",10.0
+RS296,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",-0.010287032947383909
+RS297,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.015136680191257822
+RS298,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.01219916171997618
+RS299,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.0
+RS300,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",10.0
+RS301,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.03373366882670812
+RS302,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.14676906615343308
+RS303,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.12205071925328217
+RS304,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.0
+RS305,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",10.0
+RS306,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",-0.007846590807548015
+RS307,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.07496692757684366
+RS308,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.05602133980712791
+RS309,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS310,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",10.0
+RS311,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.018548071436037223
+RS312,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.052751249988012665
+RS313,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.04430283871123829
+RS314,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS315,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",10.0
+RS316,RN1,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.010355826143176872
+RS317,RN1,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.056391264030759836
+RS318,RN1,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.04602596686344074
+RS319,RN1,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS320,RN1,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",10.0
+RS321,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.08871766619817878
+RS322,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.1790406521921166
+RS323,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.1320236928682201
+RS324,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",3.0
+RS325,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",10.0
+RS326,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.022533497450303253
+RS327,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.0634702372481849
+RS328,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.052545497450303257
+RS329,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",9.0
+RS330,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",10.0
+RS331,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.050175743239233815
+RS332,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.11115575116253296
+RS333,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0989381403849977
+RS334,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS335,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",10.0
+RS336,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.014459628965764592
+RS337,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.02711524078337456
+RS338,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.020143915818631376
+RS339,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",2.0
+RS340,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",10.0
+RS341,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.019891156975768882
+RS342,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.04984823186854205
+RS343,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.04243265926512806
+RS344,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS345,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",10.0
+RS346,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",-0.0026389347511735564
+RS347,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.012211754119115304
+RS348,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.010321751437400184
+RS349,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS350,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",10.0
+RS351,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.010150571040790275
+RS352,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.028456977772692422
+RS353,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.025417838008959408
+RS354,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS355,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",10.0
+RS356,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.0013503310090379951
+RS357,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.007130672165138629
+RS358,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.006213741134492207
+RS359,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS360,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",10.0
+RS361,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.026540023474408113
+RS362,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.10451990531631077
+RS363,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.08380302857157884
+RS364,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS365,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",10.0
+RS366,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.09726760357537385
+RS367,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.12950100338840148
+RS368,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.09729054786289636
+RS369,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",3.0
+RS370,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",10.0
+RS371,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.05702954872339803
+RS372,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.1441974119124049
+RS373,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.10449624799263582
+RS374,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS375,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",10.0
+RS376,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",-0.01856140335728246
+RS377,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.03246461392899189
+RS378,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.018585156375390065
+RS379,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS380,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",10.0
+RS381,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.028458923317327727
+RS382,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.08196690631530923
+RS383,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0737879469115194
+RS384,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS385,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",10.0
+RS386,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.02240208438666364
+RS387,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.030577688932727276
+RS388,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.02242592676403264
+RS389,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS390,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",10.0
+RS391,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.004684288722278796
+RS392,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.03281667579150841
+RS393,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.02606006182845939
+RS394,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS395,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",10.0
+RS396,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.01698515811500878
+RS397,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.02360882438312796
+RS398,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.01701347494384261
+RS399,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS400,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",10.0
+RS401,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",-0.057019999723617064
+RS402,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.1264102176115433
+RS403,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.10059810035870212
+RS404,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0
+RS405,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",10.0
+RS406,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",-0.08998473358649328
+RS407,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.09239066843440846
+RS408,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.08998473358649328
+RS409,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",4.0
+RS410,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",10.0
+RS411,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.0928761886549663
+RS412,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.10816186008100917
+RS413,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0928761886549663
+RS414,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS415,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",10.0
+RS416,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.09562225187245106
+RS417,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.09575587777324804
+RS418,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.09562225187245106
+RS419,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",3.0
+RS420,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",10.0
+RS421,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.05213456525252893
+RS422,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0697105810277771
+RS423,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.060748766059814066
+RS424,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS425,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",10.0
+RS426,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.04665026106814894
+RS427,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0771139439138805
+RS428,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0681028181585667
+RS429,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",1.0
+RS430,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",10.0
+RS431,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",-0.03530466481162783
+RS432,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.045466970978829506
+RS433,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.039148855997447315
+RS434,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS435,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",10.0
+RS436,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",-0.0162206753285229
+RS437,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.040132245767098874
+RS438,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.03141685518503186
+RS439,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS440,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",10.0
+RS441,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",-0.0685433976053714
+RS442,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.08457260654818005
+RS443,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.07573807890782351
+RS444,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",7.0
+RS445,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",10.0
+RS446,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",-0.012100789222757594
+RS447,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.07288804628527565
+RS448,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.05354807840565586
+RS449,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",3.0
+RS450,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",10.0
+RS451,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.004895249717740509
+RS452,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.040019718631259756
+RS453,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.03629910187203194
+RS454,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0
+RS455,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",10.0
+RS456,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",-0.010352459739838327
+RS457,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.015195966042729957
+RS458,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.012291556403918389
+RS459,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.0
+RS460,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",10.0
+RS461,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.033543528844711526
+RS462,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.14630033292134897
+RS463,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.12150312455724002
+RS464,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.0
+RS465,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",10.0
+RS466,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",-0.007980219827454315
+RS467,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.07494701190580136
+RS468,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0558424144075496
+RS469,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS470,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",10.0
+RS471,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0184049098161235
+RS472,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.052868206135859436
+RS473,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.04433620477025791
+RS474,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS475,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",10.0
+RS476,RN1,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.010467600357533713
+RS477,RN1,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.05640965098871968
+RS478,RN1,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.04608767868370782
+RS479,RN1,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS480,RN1,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",10.0
+RS481,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.0
+RS482,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.0
+RS483,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0
+RS484,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.0
+RS485,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.0
+RS486,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS487,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS488,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS489,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.0
+RS490,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS491,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS492,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS493,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS494,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS495,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS496,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS497,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0
+RS498,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS499,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS500,RN1,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS501,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.0
+RS502,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.0
+RS503,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0
+RS504,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.0
+RS505,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.0
+RS506,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS507,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS508,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS509,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.0
+RS510,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS511,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS512,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS513,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS514,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS515,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS516,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS517,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0
+RS518,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS519,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS520,RN1,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS521,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.0
+RS522,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.0
+RS523,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0
+RS524,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.0
+RS525,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.0
+RS526,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS527,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS528,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS529,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.0
+RS530,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS531,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS532,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS533,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS534,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS535,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS536,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS537,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0
+RS538,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS539,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS540,RN1,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS541,RN1,failed fits excluded,{},0.0
+RS542,RN1,"minimum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS","{""cells"": 32}",0.545815037692799
+RS543,RN1,"maximum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS","{""cells"": 32}",1.845412853388155
+RS544,RN1,cells at T=50 with lower RMSE for smooth ES backcasting than optimised initials,"{""cells"": 8}",2.0
+RS545,RN1,cells with RMSE at T=500 not below RMSE at T=50,"{""cells"": 8, ""method"": ""smooth ES, optimised initials""}",0.0
+RS546,RN1,cells with RMSE at T=500 not below RMSE at T=50,"{""cells"": 8, ""method"": ""smooth ES, backcasting""}",1.0
+RS547,RN1,cells with RMSE at T=500 not below RMSE at T=50,"{""cells"": 8, ""method"": ""statsforecast AutoETS""}",0.0
+RS548,RN1,computing seconds,"{""R"": 10, ""method"": ""smooth ES, optimised initials""}",9.112698316574097
+RS549,RN1,computing seconds,"{""R"": 10, ""method"": ""smooth ES, backcasting""}",2.3702824115753174
+RS550,RN1,computing seconds,"{""R"": 10, ""method"": ""statsforecast AutoETS""}",1.1352381706237793
+RS551,RN1,computing seconds,"{""R"": 10, ""method"": ""all, including simulation""}",12.665119647979736
+RS552,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.13593639300727461
+RS553,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.20133214723677811
+RS554,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.1703026300276414
+RS555,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",61.0
+RS556,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",300.0
+RS557,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.014737294209717934
+RS558,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.03936816275419807
+RS559,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.03310645963051655
+RS560,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",185.0
+RS561,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",300.0
+RS562,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.04281902457648551
+RS563,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.10220618455401928
+RS564,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.07876855978617905
+RS565,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS566,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",300.0
+RS567,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.007237278598434692
+RS568,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.02850459685118483
+RS569,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.022076525912798985
+RS570,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",72.0
+RS571,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",300.0
+RS572,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",-0.01676076351369408
+RS573,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.051152767905611664
+RS574,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.04086110199268708
+RS575,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS576,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",300.0
+RS577,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",-0.003691518426361798
+RS578,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.013304165814654718
+RS579,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.01011513082721694
+RS580,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",4.0
+RS581,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",300.0
+RS582,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.0074803576660030305
+RS583,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.03267583951984004
+RS584,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.025861071832432074
+RS585,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS586,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",300.0
+RS587,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.001051645679695267
+RS588,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.008216234786660752
+RS589,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.006154465082336767
+RS590,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS591,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",300.0
+RS592,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.06556150056731523
+RS593,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.16548322384721267
+RS594,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.13515249951999736
+RS595,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS596,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",300.0
+RS597,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.021639718757628396
+RS598,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.09449023480362156
+RS599,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.07289422872480407
+RS600,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",82.0
+RS601,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",300.0
+RS602,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",-0.03061201337393906
+RS603,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.10448957949584044
+RS604,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.08529951340002334
+RS605,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS606,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",300.0
+RS607,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",-0.00480286406908494
+RS608,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.051467627137447555
+RS609,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.03966317705764303
+RS610,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",7.0
+RS611,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",300.0
+RS612,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.005606208828063081
+RS613,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.05720629471035296
+RS614,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.04484849975638494
+RS615,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS616,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",300.0
+RS617,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.0018112004133060756
+RS618,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.02987281617935207
+RS619,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.02304296141397608
+RS620,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS621,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",300.0
+RS622,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.005518756976163597
+RS623,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.03796811963799179
+RS624,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.029450103332916124
+RS625,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS626,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",300.0
+RS627,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.0002817103241390742
+RS628,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.02063895434046931
+RS629,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.016514260805594635
+RS630,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS631,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",300.0
+RS632,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0054840716758874685
+RS633,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.1299064088073519
+RS634,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.10204239760050929
+RS635,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",41.0
+RS636,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",300.0
+RS637,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",-0.09466886100259761
+RS638,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.10488083994662796
+RS639,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.09912194664879036
+RS640,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",273.0
+RS641,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",300.0
+RS642,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.002911858730404347
+RS643,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.07430576842705054
+RS644,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.05885884881988932
+RS645,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS646,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",300.0
+RS647,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.09999999999999999
+RS648,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.10000000000000002
+RS649,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.09999999999999999
+RS650,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",300.0
+RS651,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",300.0
+RS652,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.003541974394582197
+RS653,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.042596400976464124
+RS654,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.03365497901445876
+RS655,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS656,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",300.0
+RS657,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.09999999999999999
+RS658,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.10000000000000002
+RS659,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.09999999999999999
+RS660,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",300.0
+RS661,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",300.0
+RS662,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.005212867488954099
+RS663,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.02907723715644576
+RS664,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.023073681705615266
+RS665,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS666,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",300.0
+RS667,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",-0.09442731290135356
+RS668,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.09777034910377287
+RS669,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.09626083690600024
+RS670,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",286.0
+RS671,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",300.0
+RS672,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",-0.045460042317708324
+RS673,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.08442520189316678
+RS674,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.07506697591145832
+RS675,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",175.0
+RS676,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",300.0
+RS677,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",-0.022825642903645835
+RS678,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.06543339640035917
+RS679,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.05357857259114584
+RS680,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",88.0
+RS681,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",300.0
+RS682,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",-0.011419514973958335
+RS683,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.036512857370065335
+RS684,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.026912679036458335
+RS685,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",13.0
+RS686,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",300.0
+RS687,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",-0.001578206380208334
+RS688,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.021685429039026035
+RS689,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.016867268880208335
+RS690,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",1.0
+RS691,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",300.0
+RS692,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",-0.02371972656249989
+RS693,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.14923409827423087
+RS694,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.11439811197916669
+RS695,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",3.0
+RS696,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",300.0
+RS697,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",-0.006066162109374899
+RS698,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.09821070150981687
+RS699,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.07715307617187503
+RS700,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS701,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",300.0
+RS702,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",-0.0026333007812499127
+RS703,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.053929209146004214
+RS704,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.04370231119791665
+RS705,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS706,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",300.0
+RS707,RN2,bias,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",-0.0018017578124999187
+RS708,RN2,RMSE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.03983561773147515
+RS709,RN2,MAE,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.03184440104166665
+RS710,RN2,estimates on a bound,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS711,RN2,successful fits,"{""method"": ""smooth ES, backcasting"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",300.0
+RS712,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.13373836179057197
+RS713,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.19777245932576418
+RS714,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.16679275369483462
+RS715,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",27.0
+RS716,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",300.0
+RS717,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.01121280378915433
+RS718,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.038242569436724536
+RS719,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.030897027026048414
+RS720,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",195.0
+RS721,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",300.0
+RS722,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.04281694111316422
+RS723,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.10196874933380538
+RS724,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0781326548063625
+RS725,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS726,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",300.0
+RS727,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.006944911996587435
+RS728,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.027293698576630124
+RS729,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.02122820775042952
+RS730,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",62.0
+RS731,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",300.0
+RS732,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",-0.016813813403472745
+RS733,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.05119706622872207
+RS734,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.04096059919900404
+RS735,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS736,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",300.0
+RS737,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",-0.0035922173990204534
+RS738,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.013082819342743924
+RS739,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.010050377089767438
+RS740,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",3.0
+RS741,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",300.0
+RS742,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.0074278807933065676
+RS743,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.03276963862914445
+RS744,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.025983009345335692
+RS745,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS746,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",300.0
+RS747,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.0010511207892944987
+RS748,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.00821300696484305
+RS749,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.006151652078088059
+RS750,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS751,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",300.0
+RS752,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.06339439100457435
+RS753,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.1647273741100842
+RS754,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.13443993914283198
+RS755,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS756,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",300.0
+RS757,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.02220365718153553
+RS758,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.09378613503014142
+RS759,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.07268311116887262
+RS760,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",72.0
+RS761,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",300.0
+RS762,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",-0.030254516333485193
+RS763,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.10476442728854683
+RS764,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0854959556015069
+RS765,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS766,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",300.0
+RS767,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",-0.004897691295560276
+RS768,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.051312928860009065
+RS769,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.03959749269553652
+RS770,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",4.0
+RS771,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",300.0
+RS772,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.005616799533122387
+RS773,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.05726743935220204
+RS774,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.04492552885802874
+RS775,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS776,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",300.0
+RS777,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.0017987722773831819
+RS778,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.029925622342659764
+RS779,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.023077391521878564
+RS780,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS781,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",300.0
+RS782,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.005526409735579881
+RS783,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.03797149548561816
+RS784,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.02948116439124778
+RS785,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS786,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",300.0
+RS787,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.00028194295129501827
+RS788,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.020667621580261992
+RS789,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.01653495521860077
+RS790,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS791,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",300.0
+RS792,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",-0.013017229427404518
+RS793,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.09969612196689435
+RS794,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.07330307897084241
+RS795,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",11.0
+RS796,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",300.0
+RS797,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",-0.09599226467138518
+RS798,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.09622538414030188
+RS799,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.09599226467138518
+RS800,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",124.0
+RS801,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",300.0
+RS802,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.01249160937824849
+RS803,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.06320587641450763
+RS804,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.04895161531387145
+RS805,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",2.0
+RS806,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",300.0
+RS807,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.09820961892698823
+RS808,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0982509960618368
+RS809,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.09820961892698823
+RS810,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",162.0
+RS811,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",300.0
+RS812,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.012283931973918355
+RS813,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.03901735990795817
+RS814,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.031553456039509674
+RS815,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS816,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",300.0
+RS817,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.09558669806094662
+RS818,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0977257691385672
+RS819,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.09716281890357725
+RS820,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",184.0
+RS821,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",300.0
+RS822,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",-0.0024492078938565696
+RS823,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.028625003548476403
+RS824,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.023108464354234984
+RS825,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS826,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",300.0
+RS827,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",-0.058645823663483976
+RS828,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.07357702821953821
+RS829,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.06147064073525654
+RS830,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",118.0
+RS831,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",300.0
+RS832,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",-0.04315919701989394
+RS833,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.08277288066914826
+RS834,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.0730370122144477
+RS835,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",165.0
+RS836,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",300.0
+RS837,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",-0.020990792555453018
+RS838,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.06333783787999431
+RS839,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.05171466478339104
+RS840,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",77.0
+RS841,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",300.0
+RS842,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",-0.010631159049859805
+RS843,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.034925358300311585
+RS844,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.026180970364081523
+RS845,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",8.0
+RS846,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",300.0
+RS847,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",-0.0015790205663930527
+RS848,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.02168055716734088
+RS849,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.01686830960865871
+RS850,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",1.0
+RS851,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",300.0
+RS852,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",-0.023715935300905093
+RS853,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.1492119184306398
+RS854,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.11439212532482211
+RS855,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",3.0
+RS856,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",300.0
+RS857,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",-0.006051361596634792
+RS858,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.09820982377296403
+RS859,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.07716088096352683
+RS860,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS861,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",300.0
+RS862,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",-0.00263029602476617
+RS863,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.05392672892687277
+RS864,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.043694168325863175
+RS865,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS866,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",300.0
+RS867,RN2,bias,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",-0.0017989785468987263
+RS868,RN2,RMSE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.03983400635982736
+RS869,RN2,MAE,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.03184584746208146
+RS870,RN2,estimates on a bound,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS871,RN2,successful fits,"{""method"": ""smooth ES, optimised initials"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",300.0
+RS872,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.13947238115638946
+RS873,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.21851596557146533
+RS874,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.18192434861480583
+RS875,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",131.0
+RS876,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",300.0
+RS877,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",-0.019214988156880154
+RS878,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.03906549525953242
+RS879,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.032853850214846346
+RS880,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",215.0
+RS881,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",300.0
+RS882,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.04725247498264108
+RS883,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.11431907732958048
+RS884,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.08324961419245179
+RS885,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",23.0
+RS886,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",300.0
+RS887,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",-0.007792184533928824
+RS888,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.028996990344411964
+RS889,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.022712022269659828
+RS890,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",70.0
+RS891,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",300.0
+RS892,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",-0.01684791074057583
+RS893,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.05121286918906855
+RS894,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.040996492246531666
+RS895,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS896,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",300.0
+RS897,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",-0.0036021922452179086
+RS898,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.013071583389780575
+RS899,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.01004092529236438
+RS900,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",3.0
+RS901,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",300.0
+RS902,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.007484309062032415
+RS903,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0326603751130658
+RS904,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.025855976510050088
+RS905,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS906,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",300.0
+RS907,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",-0.001054694377028583
+RS908,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.008215998932913948
+RS909,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.006156843218845462
+RS910,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS911,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",300.0
+RS912,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.029785941093876514
+RS913,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.21927591391246287
+RS914,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.16912142877205233
+RS915,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",22.0
+RS916,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",300.0
+RS917,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",-0.09246992836993644
+RS918,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.12705810313955712
+RS919,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.09249693559041788
+RS920,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",117.0
+RS921,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",300.0
+RS922,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.003080610405613712
+RS923,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.12310961415375182
+RS924,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0902079339695594
+RS925,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",4.0
+RS926,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",300.0
+RS927,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",-0.030620056397041077
+RS928,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.058049011393367995
+RS929,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.030656242904998524
+RS930,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",14.0
+RS931,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",300.0
+RS932,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0023736453570683694
+RS933,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.06231488937699283
+RS934,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.04513113880232714
+RS935,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",1.0
+RS936,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",300.0
+RS937,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",-0.012555331246758035
+RS938,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.022095112493210375
+RS939,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.012593516052666807
+RS940,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS941,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",300.0
+RS942,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.0005838234370217736
+RS943,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.035586904522715075
+RS944,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.028010337465549224
+RS945,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS946,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",300.0
+RS947,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",-0.008384589369836559
+RS948,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.014933835063007777
+RS949,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.008431372753267802
+RS950,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS951,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""beta"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",300.0
+RS952,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",-0.10695585632240524
+RS953,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.13785222282883336
+RS954,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.12189057582908612
+RS955,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",16.0
+RS956,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",300.0
+RS957,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",-0.09199999827277357
+RS958,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.09387306379347388
+RS959,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.09254452253374959
+RS960,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",124.0
+RS961,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",300.0
+RS962,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.06180695761959036
+RS963,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.09480037936284598
+RS964,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.07910152321973668
+RS965,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",5.0
+RS966,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",300.0
+RS967,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",-0.08437917113585845
+RS968,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.09133344904058081
+RS969,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.08943800582106963
+RS970,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",89.0
+RS971,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",300.0
+RS972,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.042906425848374986
+RS973,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.059053994658177636
+RS974,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.04972640389878292
+RS975,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS976,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",300.0
+RS977,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",-0.06629256941020394
+RS978,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.08473286795828064
+RS979,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.07984336303262925
+RS980,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",76.0
+RS981,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",300.0
+RS982,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",-0.03734860048327072
+RS983,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.04767749278792971
+RS984,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.04051610144525672
+RS985,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS986,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",300.0
+RS987,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",-0.011680354467151419
+RS988,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.052583216255469294
+RS989,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.03974376740180608
+RS990,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",25.0
+RS991,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""gamma"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",300.0
+RS992,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",-0.04347391200014603
+RS993,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.08306277607745227
+RS994,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.07345695970606975
+RS995,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",167.0
+RS996,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",300.0
+RS997,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",-0.021020259019456807
+RS998,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.0632617115411537
+RS999,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.05173087374383231
+RS1000,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",76.0
+RS1001,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",300.0
+RS1002,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",-0.010796622491979824
+RS1003,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.035243492591059036
+RS1004,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.02632300298002379
+RS1005,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",9.0
+RS1006,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",300.0
+RS1007,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",-0.001572443076610319
+RS1008,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.021684652822932804
+RS1009,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.016876731266281475
+RS1010,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",1.0
+RS1011,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",300.0
+RS1012,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",-0.023692296418361278
+RS1013,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.14920168175923457
+RS1014,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.11440259956949267
+RS1015,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",3.0
+RS1016,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",300.0
+RS1017,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",-0.006099992821346416
+RS1018,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.09818174690664211
+RS1019,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.07712928051826141
+RS1020,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS1021,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",300.0
+RS1022,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",-0.0026081202313561953
+RS1023,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.053955633268491454
+RS1024,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0437071042060458
+RS1025,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS1026,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",300.0
+RS1027,RN2,bias,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",-0.0017809259363858266
+RS1028,RN2,RMSE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.03981043335310439
+RS1029,RN2,MAE,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.031836547962886985
+RS1030,RN2,estimates on a bound,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS1031,RN2,successful fits,"{""method"": ""statsforecast AutoETS"", ""parameter"": ""alpha"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",300.0
+RS1032,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.0
+RS1033,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.0
+RS1034,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0
+RS1035,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.0
+RS1036,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.0
+RS1037,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS1038,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS1039,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS1040,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.0
+RS1041,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS1042,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS1043,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS1044,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS1045,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS1046,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS1047,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS1048,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0
+RS1049,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS1050,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS1051,RN2,failed fits,"{""method"": ""smooth ES, optimised initials"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS1052,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.0
+RS1053,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.0
+RS1054,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0
+RS1055,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.0
+RS1056,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.0
+RS1057,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS1058,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS1059,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS1060,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.0
+RS1061,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS1062,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS1063,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS1064,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS1065,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS1066,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS1067,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS1068,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0
+RS1069,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS1070,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS1071,RN2,failed fits,"{""method"": ""smooth ES, backcasting"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS1072,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 50}",0.0
+RS1073,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 100}",0.0
+RS1074,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 250}",0.0
+RS1075,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.1"", ""sample size"": 500}",0.0
+RS1076,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 50}",0.0
+RS1077,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 100}",0.0
+RS1078,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 250}",0.0
+RS1079,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,N) alpha=0.5"", ""sample size"": 500}",0.0
+RS1080,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 50}",0.0
+RS1081,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 100}",0.0
+RS1082,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 250}",0.0
+RS1083,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.3 beta=0.05"", ""sample size"": 500}",0.0
+RS1084,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 50}",0.0
+RS1085,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 100}",0.0
+RS1086,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 250}",0.0
+RS1087,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,A,N) alpha=0.5 beta=0.2"", ""sample size"": 500}",0.0
+RS1088,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 50}",0.0
+RS1089,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 100}",0.0
+RS1090,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 250}",0.0
+RS1091,RN2,failed fits,"{""method"": ""statsforecast AutoETS"", ""process"": ""ETS(A,N,A) alpha=0.2 gamma=0.1"", ""sample size"": 500}",0.0
+RS1092,RN2,failed fits excluded,{},0.0
+RS1093,RN2,"minimum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS","{""cells"": 32}",0.6003881889469503
+RS1094,RN2,"maximum RMSE ratio, smooth ES optimised initials over statsforecast AutoETS","{""cells"": 32}",1.399249293958608
+RS1095,RN2,cells at T=50 with lower RMSE for smooth ES backcasting than optimised initials,"{""cells"": 8}",0.0
+RS1096,RN2,cells with RMSE at T=500 not below RMSE at T=50,"{""cells"": 8, ""method"": ""smooth ES, optimised initials""}",0.0
+RS1097,RN2,cells with RMSE at T=500 not below RMSE at T=50,"{""cells"": 8, ""method"": ""smooth ES, backcasting""}",0.0
+RS1098,RN2,cells with RMSE at T=500 not below RMSE at T=50,"{""cells"": 8, ""method"": ""statsforecast AutoETS""}",0.0
+RS1099,RN2,computing seconds,"{""R"": 300, ""method"": ""smooth ES, optimised initials""}",245.56123185157776
+RS1100,RN2,computing seconds,"{""R"": 300, ""method"": ""smooth ES, backcasting""}",71.18924450874329
+RS1101,RN2,computing seconds,"{""R"": 300, ""method"": ""statsforecast AutoETS""}",20.010662078857422
+RS1102,RN2,computing seconds,"{""R"": 300, ""method"": ""all, including simulation""}",337.6108636856079

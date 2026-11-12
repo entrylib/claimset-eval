@@ -1,0 +1,139 @@
+CLAIMSET How well smooth and statsforecast estimate ETS parameters
+licence CC-BY-4.0; contributions C2, C1, C4
+declarations funding: none | competing interests: The guarantor is the author and maintainer of the smooth package that the study evaluates.
+exploration {"lab_record": "A2", "questions": 1, "hypotheses": {"total": 4, "supported": 0, "not_supported": 0, "inconclusive": 4, "revised": 0, "abandoned": 0, "open": 0, "from_exploration": 4}, "tests": {"total": 0, "supported": 0, "not_supported": 0, "inconclusive": 0}, "runs": {"total": 4, "confirmatory": 0, "exploratory": 4, "failed": 0}}
+
+DEFINITIONS
+D1 [method] smooth ES: The ES class of the Python package smooth (Ivan Svetunkov) with the model form fixed; estimated smoothing parameters by likelihood; usual bounds (alpha, beta, gamma in [0,1], beta at most alpha, gamma at most 1 minus alpha); initial states optimised (initial='optimal') or by backcasting (initial='backcasting', its default). Two arms: optimised and backcasting.
+D2 [method] statsforecast ETS: The ets_f function of statsforecast (Nixtla) with the model form fixed; likelihood loss (opt_crit 'lik'); smoothing parameters bounded to [0.0001, 0.9999], with beta's upper bound set to the starting alpha (about 0.2 for non-seasonal models); initial states optimised.
+D3 [data] ETS innovations-form data: Simulated series of length T in {50, 100, 250, 500} from ETS(A,N,N), ETS(A,A,N) and ETS(A,N,A) with m=12 in innovations form, additive Gaussian errors with sigma=1, l_0=100, b_0=1 and s_j=10 sin(2 pi j/12) for j=0,...,11; no burn-in. ETS(A,N,N): $y_t = l_{t-1} + \varepsilon_t$, $l_t = l_{t-1} + \alpha \varepsilon_t$. ETS(A,A,N): $y_t = l_{t-1} + b_{t-1} + \varepsilon_t$, $l_t = l_{t-1} + b_{t-1} + \alpha \varepsilon_t$, $b_t = b_{t-1} + \beta \varepsilon_t$. ETS(A,N,A): $y_t = l_{t-1} + s_{t-m} + \varepsilon_t$, $l_t = l_{t-1} + \alpha \varepsilon_t$, $s_t = s_{t-m} + \gamma \varepsilon_t$; $\varepsilon_t \sim N(0,1)$ i.i.d.
+D4 [variable] bias of smoothing parameter estimates: Mean over successful replicates of (estimate minus true value) of a smoothing parameter.
+D5 [variable] RMSE of smoothing parameter estimates: Root mean squared error of a smoothing-parameter estimate around its true value, over successful replicates.
+D6 [variable] MAE of smoothing parameter estimates: Mean absolute error of a smoothing-parameter estimate around its true value, over successful replicates.
+D7 [design] Monte Carlo replicate design: 5 processes x 4 series lengths x 300 replicates per cell. Each replicate has its own fixed seed derived from the base seed 2026; the three arms are fitted to the same series. Fit failures and non-finite estimates are counted, not dropped.
+D8 [variable] share of estimates on a bound: Share of successful replicates whose estimate lies within 0.001 of a bound of the implementation's parameter range: smooth 0 or 1 (beta also at alpha); statsforecast 0.0001 or 0.9999 (beta also at its cap).
+
+CLAIMS
+C1 [descriptive; principal; support: simulation E1 (E1.T1.r74, E1.T1.r80, E1.T1.r86, E1.T1.r76, E1.T1.r82, E1.T1.r88) artefacts A3; assumes C5; strength low (author); planning exploratory; outcome inconclusive]
+  For ETS(A,N,A) with $m=12$ and true $\gamma=0.1$ in [[D3:ETS innovations-form data]], [[D1:smooth ES]] estimates $\gamma$ with a bias towards zero for series of 50 to 250 observations, under both initial-state methods.
+  scope: data_type: simulated | conditions: ETS(A,N,A) with m=12, Gaussian errors, series length 50 to 250
+C2 [descriptive; principal; support: simulation E1 (E1.T1.r54, E1.T1.r60, E1.T1.r66, E1.T1.r72) artefacts A3; assumes C5; strength low (author); planning exploratory; outcome inconclusive]
+  For ETS(A,A,N) with true $(\alpha,\beta)=(0.5,0.2)$ in [[D3:ETS innovations-form data]], [[D2:statsforecast ETS]] estimates $\beta$ on its cap in roughly half of replicates at every series length from 50 to 500.
+  scope: data_type: simulated | conditions: ETS(A,A,N), Gaussian errors, series length 50 to 500
+C4 [descriptive; principal; support: simulation E1 (E1.T1.r1, E1.T1.r4, E1.T1.r7, E1.T1.r10, E1.T1.r13, E1.T1.r16, E1.T1.r19, E1.T1.r22, E1.T1.r25, E1.T1.r26, E1.T1.r31, E1.T1.r32, E1.T1.r37, E1.T1.r38, E1.T1.r43, E1.T1.r44, E1.T1.r49, E1.T1.r50, E1.T1.r55, E1.T1.r56, E1.T1.r61, E1.T1.r62, E1.T1.r67, E1.T1.r68) artefacts A3; assumes C5; strength low (author); planning exploratory; outcome inconclusive]
+  For non-seasonal ETS in [[D3:ETS innovations-form data]], the RMSE of the estimates of $\alpha$ and $\beta$ from [[D1:smooth ES]] with optimised initial states falls at each series length from 50 to 500.
+  scope: data_type: simulated | conditions: ETS(A,N,N) and ETS(A,A,N), Gaussian errors, series length 50 to 500
+C5 [descriptive; supporting; assumption (statistical, unchecked)]
+  The errors are i.i.d. $N(0,1)$ and the data are generated exactly by the stated innovations-form ETS model.
+
+EVIDENCE
+E1 [simulation; runs ['RN2', 'RN3', 'RN4']] Monte Carlo comparison of smoothing-parameter estimates of smooth ES (two initial-state arms) and statsforecast ets_f on simulated ETS data (definitions D3 and D7). The bias, RMSE and MAE come from lab run RN4 (analyse.py --output error) and the share on a bound from RN3 (analyse.py), both over the replicate file of RN2 (simulate.py --seed 2026 --reps 300). The lab record holds all runs; every result is in files/ets-param-recovery.results.csv. All 18,000 fits succeeded.
+  setup: studied D1, D2; cases D3; procedure D7; lens D4, D5, D6, D8
+  E1.T1 Bias, RMSE and MAE of the smoothing-parameter estimates of successful fits, and the share of estimates on a bound, for 5 processes, 4 series lengths and 3 arms, 300 replicates per cell (lab runs RN4 and RN3); values to four significant digits
+  | row | method | process | sample size | parameter | D4 (1) | D5 (1) | D6 (1) | D8 (1) |
+  | r1 | smooth ES, optimised initial states | ETS(A,N,N) alpha=0.1 | 50 | alpha | -0.0427 | 0.09004 | 0.08154 | 0.5967 |
+  | r2 | smooth ES, backcasting initial states (default) | ETS(A,N,N) alpha=0.1 | 50 | alpha | -0.04478 | 0.0915 | 0.08358 | 0.6267 |
+  | r3 | statsforecast ets_f, optimised initial states | ETS(A,N,N) alpha=0.1 | 50 | alpha | -0.04279 | 0.09002 | 0.08162 | 0.5967 |
+  | r4 | smooth ES, optimised initial states | ETS(A,N,N) alpha=0.1 | 100 | alpha | -0.0267 | 0.06454 | 0.05181 | 0.3033 |
+  | r5 | smooth ES, backcasting initial states (default) | ETS(A,N,N) alpha=0.1 | 100 | alpha | -0.02781 | 0.06582 | 0.05292 | 0.3267 |
+  | r6 | statsforecast ets_f, optimised initial states | ETS(A,N,N) alpha=0.1 | 100 | alpha | -0.0263 | 0.06414 | 0.05145 | 0.2967 |
+  | r7 | smooth ES, optimised initial states | ETS(A,N,N) alpha=0.1 | 250 | alpha | -0.01046 | 0.03398 | 0.02615 | 0.02333 |
+  | r8 | smooth ES, backcasting initial states (default) | ETS(A,N,N) alpha=0.1 | 250 | alpha | -0.01136 | 0.03602 | 0.02704 | 0.04667 |
+  | r9 | statsforecast ets_f, optimised initial states | ETS(A,N,N) alpha=0.1 | 250 | alpha | -0.01078 | 0.03467 | 0.02646 | 0.03 |
+  | r10 | smooth ES, optimised initial states | ETS(A,N,N) alpha=0.1 | 500 | alpha | -0.002212 | 0.01917 | 0.01562 | 0 |
+  | r11 | smooth ES, backcasting initial states (default) | ETS(A,N,N) alpha=0.1 | 500 | alpha | -0.002211 | 0.01917 | 0.01562 | 0 |
+  | r12 | statsforecast ets_f, optimised initial states | ETS(A,N,N) alpha=0.1 | 500 | alpha | -0.002226 | 0.01916 | 0.01561 | 0 |
+  | r13 | smooth ES, optimised initial states | ETS(A,N,N) alpha=0.5 | 50 | alpha | -0.03038 | 0.1628 | 0.1205 | 0.02 |
+  | r14 | smooth ES, backcasting initial states (default) | ETS(A,N,N) alpha=0.5 | 50 | alpha | -0.03082 | 0.164 | 0.121 | 0.02667 |
+  | r15 | statsforecast ets_f, optimised initial states | ETS(A,N,N) alpha=0.5 | 50 | alpha | -0.02918 | 0.1605 | 0.1195 | 0.01667 |
+  | r16 | smooth ES, optimised initial states | ETS(A,N,N) alpha=0.5 | 100 | alpha | -0.01053 | 0.09659 | 0.07648 | 0 |
+  | r17 | smooth ES, backcasting initial states (default) | ETS(A,N,N) alpha=0.5 | 100 | alpha | -0.01095 | 0.0984 | 0.07686 | 0.003333 |
+  | r18 | statsforecast ets_f, optimised initial states | ETS(A,N,N) alpha=0.5 | 100 | alpha | -0.01045 | 0.0966 | 0.07647 | 0 |
+  | r19 | smooth ES, optimised initial states | ETS(A,N,N) alpha=0.5 | 250 | alpha | -0.004459 | 0.0589 | 0.04818 | 0 |
+  | r20 | smooth ES, backcasting initial states (default) | ETS(A,N,N) alpha=0.5 | 250 | alpha | -0.004463 | 0.0589 | 0.04818 | 0 |
+  | r21 | statsforecast ets_f, optimised initial states | ETS(A,N,N) alpha=0.5 | 250 | alpha | -0.004477 | 0.05886 | 0.04813 | 0 |
+  | r22 | smooth ES, optimised initial states | ETS(A,N,N) alpha=0.5 | 500 | alpha | -0.0004289 | 0.03743 | 0.02927 | 0 |
+  | r23 | smooth ES, backcasting initial states (default) | ETS(A,N,N) alpha=0.5 | 500 | alpha | -0.0004341 | 0.03741 | 0.02925 | 0 |
+  | r24 | statsforecast ets_f, optimised initial states | ETS(A,N,N) alpha=0.5 | 500 | alpha | -0.0004486 | 0.03742 | 0.02925 | 0 |
+  | r25 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 50 | alpha | -0.1212 | 0.1975 | 0.1693 | 0.08 |
+  | r26 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 50 | beta | -0.01451 | 0.03883 | 0.03146 | 0.6733 |
+  | r27 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.3 beta=0.05 | 50 | alpha | -0.1239 | 0.2035 | 0.1753 | 0.2067 |
+  | r28 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.3 beta=0.05 | 50 | beta | -0.01709 | 0.04097 | 0.03415 | 0.6867 |
+  | r29 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 50 | alpha | -0.1381 | 0.2173 | 0.1831 | 0.4367 |
+  | r30 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 50 | beta | -0.02317 | 0.04441 | 0.03837 | 0.5367 |
+  | r31 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 100 | alpha | -0.04914 | 0.1116 | 0.0859 | 0.003333 |
+  | r32 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 100 | beta | -0.006503 | 0.02521 | 0.01893 | 0.1867 |
+  | r33 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.3 beta=0.05 | 100 | alpha | -0.05101 | 0.1155 | 0.08913 | 0.01333 |
+  | r34 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.3 beta=0.05 | 100 | beta | -0.006701 | 0.02664 | 0.01978 | 0.2033 |
+  | r35 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 100 | alpha | -0.05554 | 0.1235 | 0.0922 | 0.09 |
+  | r36 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 100 | beta | -0.008625 | 0.02738 | 0.02068 | 0.1333 |
+  | r37 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 250 | alpha | -0.0142 | 0.05542 | 0.04441 | 0 |
+  | r38 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 250 | beta | -0.0008464 | 0.01242 | 0.009514 | 0.003333 |
+  | r39 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.3 beta=0.05 | 250 | alpha | -0.01463 | 0.0546 | 0.04402 | 0 |
+  | r40 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.3 beta=0.05 | 250 | beta | -0.0008824 | 0.0126 | 0.009578 | 0.006667 |
+  | r41 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 250 | alpha | -0.01526 | 0.05539 | 0.04463 | 0 |
+  | r42 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 250 | beta | -0.001312 | 0.01272 | 0.009677 | 0.003333 |
+  | r43 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 500 | alpha | -0.004962 | 0.03609 | 0.0284 | 0 |
+  | r44 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 500 | beta | -0.001396 | 0.008709 | 0.006946 | 0 |
+  | r45 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.3 beta=0.05 | 500 | alpha | -0.004999 | 0.0361 | 0.02837 | 0 |
+  | r46 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.3 beta=0.05 | 500 | beta | -0.001404 | 0.008703 | 0.006932 | 0 |
+  | r47 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 500 | alpha | -0.00558 | 0.03628 | 0.02859 | 0 |
+  | r48 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.3 beta=0.05 | 500 | beta | -0.00138 | 0.008726 | 0.006934 | 0 |
+  | r49 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 50 | alpha | -0.06677 | 0.1793 | 0.1456 | 0.003333 |
+  | r50 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 50 | beta | -0.01881 | 0.09129 | 0.07015 | 0.2433 |
+  | r51 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.5 beta=0.2 | 50 | alpha | -0.068 | 0.1811 | 0.147 | 0.006667 |
+  | r52 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.5 beta=0.2 | 50 | beta | -0.01895 | 0.09273 | 0.07131 | 0.3067 |
+  | r53 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 50 | alpha | -0.03257 | 0.214 | 0.162 | 0.08333 |
+  | r54 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 50 | beta | -0.06997 | 0.1082 | 0.07 | 0.5933 |
+  | r55 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 100 | alpha | -0.02671 | 0.09575 | 0.0773 | 0 |
+  | r56 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 100 | beta | -0.006172 | 0.05088 | 0.03949 | 0.003333 |
+  | r57 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.5 beta=0.2 | 100 | alpha | -0.02665 | 0.09623 | 0.07758 | 0 |
+  | r58 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.5 beta=0.2 | 100 | beta | -0.006268 | 0.05161 | 0.0397 | 0.01667 |
+  | r59 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 100 | alpha | -0.01638 | 0.09338 | 0.0744 | 0 |
+  | r60 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 100 | beta | -0.0246 | 0.04768 | 0.02464 | 0.5067 |
+  | r61 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 250 | alpha | -0.01076 | 0.05726 | 0.04554 | 0 |
+  | r62 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 250 | beta | -0.003215 | 0.02896 | 0.02337 | 0 |
+  | r63 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.5 beta=0.2 | 250 | alpha | -0.01067 | 0.0572 | 0.04553 | 0 |
+  | r64 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.5 beta=0.2 | 250 | beta | -0.00334 | 0.02902 | 0.02345 | 0 |
+  | r65 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 250 | alpha | -0.006511 | 0.05535 | 0.04402 | 0 |
+  | r66 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 250 | beta | -0.01296 | 0.02192 | 0.013 | 0.48 |
+  | r67 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 500 | alpha | -0.008862 | 0.04014 | 0.03217 | 0 |
+  | r68 | smooth ES, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 500 | beta | -1.953e-05 | 0.02005 | 0.01623 | 0 |
+  | r69 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.5 beta=0.2 | 500 | alpha | -0.008727 | 0.0401 | 0.03214 | 0 |
+  | r70 | smooth ES, backcasting initial states (default) | ETS(A,A,N) alpha=0.5 beta=0.2 | 500 | beta | 8.229e-06 | 0.02003 | 0.01625 | 0 |
+  | r71 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 500 | alpha | -0.004757 | 0.03923 | 0.03187 | 0 |
+  | r72 | statsforecast ets_f, optimised initial states | ETS(A,A,N) alpha=0.5 beta=0.2 | 500 | beta | -0.007855 | 0.01442 | 0.007904 | 0.5467 |
+  | r73 | smooth ES, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 50 | alpha | -0.01212 | 0.09844 | 0.07342 | 0.04333 |
+  | r74 | smooth ES, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 50 | gamma | -0.09317 | 0.1034 | 0.09765 | 0.3867 |
+  | r75 | smooth ES, backcasting initial states (default) | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 50 | alpha | 0.008212 | 0.1322 | 0.1048 | 0.1267 |
+  | r76 | smooth ES, backcasting initial states (default) | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 50 | gamma | -0.09398 | 0.1051 | 0.09864 | 0.8967 |
+  | r77 | statsforecast ets_f, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 50 | alpha | -0.1112 | 0.1397 | 0.1217 | 0.08667 |
+  | r78 | statsforecast ets_f, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 50 | gamma | -0.09091 | 0.09298 | 0.09115 | 0.4467 |
+  | r79 | smooth ES, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 100 | alpha | -0.008948 | 0.06546 | 0.04939 | 0.01 |
+  | r80 | smooth ES, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 100 | gamma | -0.09788 | 0.09793 | 0.09788 | 0.4933 |
+  | r81 | smooth ES, backcasting initial states (default) | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 100 | alpha | 0.009841 | 0.07914 | 0.06213 | 0 |
+  | r82 | smooth ES, backcasting initial states (default) | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 100 | gamma | -0.1 | 0.1 | 0.1 | 1 |
+  | r83 | statsforecast ets_f, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 100 | alpha | -0.05462 | 0.0893 | 0.07105 | 0.02667 |
+  | r84 | statsforecast ets_f, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 100 | gamma | -0.07652 | 0.09168 | 0.08706 | 0.26 |
+  | r85 | smooth ES, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 250 | alpha | -0.00627 | 0.03582 | 0.02934 | 0 |
+  | r86 | smooth ES, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 250 | gamma | -0.09831 | 0.09863 | 0.0985 | 0.67 |
+  | r87 | smooth ES, backcasting initial states (default) | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 250 | alpha | 0.01066 | 0.04033 | 0.03152 | 0 |
+  | r88 | smooth ES, backcasting initial states (default) | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 250 | gamma | -0.1 | 0.1 | 0.1 | 1 |
+  | r89 | statsforecast ets_f, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 250 | alpha | -0.03612 | 0.0528 | 0.04283 | 0 |
+  | r90 | statsforecast ets_f, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 250 | gamma | -0.05682 | 0.08539 | 0.07794 | 0.24 |
+  | r91 | smooth ES, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 500 | alpha | -0.00418 | 0.02911 | 0.02334 | 0 |
+  | r92 | smooth ES, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 500 | gamma | -0.06045 | 0.0746 | 0.06283 | 0.3933 |
+  | r93 | smooth ES, backcasting initial states (default) | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 500 | alpha | 0.003092 | 0.02726 | 0.02194 | 0 |
+  | r94 | smooth ES, backcasting initial states (default) | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 500 | gamma | -0.09419 | 0.09756 | 0.09581 | 0.95 |
+  | r95 | statsforecast ets_f, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 500 | alpha | -0.03778 | 0.04895 | 0.04108 | 0 |
+  | r96 | statsforecast ets_f, optimised initial states | ETS(A,N,A) m=12 alpha=0.2 gamma=0.1 | 500 | gamma | -0.01258 | 0.04969 | 0.03861 | 0.05667 |
+  outputs: E1.T1
+  parameters: A5
+  seeds: base seed 2026; replicate seed 2026*10^7 + p*10^6 + T_index*10^5 + replicate (p process, T_index length, replicate 0 to 299)
+
+ARTEFACTS
+A1 [data] Every result of the lab record (929 results of 4 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.
+A2 [lab_record] Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.21, begun 2026-11-11; exported with claimset 0.41.6).
+A3 [code] Script that simulates the ETS data, fits smooth (two arms) and statsforecast ets_f, and writes the replicate file (lab run RN2).
+A4 [code] Script that summarises the replicate file: bias, RMSE and MAE (RN4) and the share on a bound (RN3).
+A5 [data] Simulation parameters: processes, true smoothing parameters, lengths, replicates, initial states, base seed.
