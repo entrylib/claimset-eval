@@ -1,0 +1,268 @@
+{
+ "valid": true,
+ "errors": [],
+ "warnings": [
+  {
+   "rule": "W1",
+   "where": "models:M1.weights",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W1",
+   "where": "models:M2.weights",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W1",
+   "where": "models:M2.accessed",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W22",
+   "where": "claims:C5.statement",
+   "message": "may hold more than one claim (semicolon): if one part could be true and another false, split it into claims, each self-contained; a comparison that states where a method is better and where it is not stays one claim"
+  },
+  {
+   "rule": "W1",
+   "where": "contributors:P1.credit_roles",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W1",
+   "where": "contributors:P1.ai_tasks",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W2",
+   "where": "contributors:P1.record_source",
+   "message": "absent or self_reported; details are the agent's own account"
+  },
+  {
+   "rule": "W1",
+   "where": "contributors:P3.credit_roles",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W1",
+   "where": "contributors:P3.ai_tasks",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W1",
+   "where": "contributors:P3.tools",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W3",
+   "where": "paper.contribution_record",
+   "message": "contribution record is partial"
+  }
+ ],
+ "novelty_checked": false,
+ "scores": {
+  "rubric": "0.2",
+  "claims": {
+   "C1": {
+    "score": 78,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "red",
+     "open": "amber"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5"
+    ],
+    "costs": {
+     "P1": 10,
+     "P2": 5,
+     "P3": 3,
+     "P4": 3,
+     "P5": 1
+    }
+   },
+   "C2": {
+    "score": 78,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "red",
+     "open": "amber"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5"
+    ],
+    "costs": {
+     "P1": 10,
+     "P2": 5,
+     "P3": 3,
+     "P4": 3,
+     "P5": 1
+    }
+   },
+   "C3": {
+    "score": 78,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "red",
+     "open": "amber"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5"
+    ],
+    "costs": {
+     "P1": 10,
+     "P2": 5,
+     "P3": 3,
+     "P4": 3,
+     "P5": 1
+    }
+   }
+  },
+  "assumptions": [
+   "C4",
+   "C5"
+  ],
+  "paper": {
+   "score": 78,
+   "band": "medium",
+   "dots": {
+    "support": "green",
+    "plan": "amber",
+    "checkable": "green",
+    "context": "red",
+    "open": "amber"
+   },
+   "problems": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "principal": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "lowest": "C1",
+   "lowest_problems": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ]
+  },
+  "problems": {
+   "P1": {
+    "check": "no_scope",
+    "group": "context",
+    "cost": 10,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [],
+    "text": "No scope: where the claim holds is not stated",
+    "fix": "Give the claim a scope: population, setting, period, data, conditions, exclusions."
+   },
+   "P2": {
+    "check": "no_prior_work",
+    "group": "context",
+    "cost": 5,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [],
+    "text": "A principal claim related to no earlier work",
+    "fix": "Relate the claim to the earlier work it extends, addresses or departs from."
+   },
+   "P3": {
+    "check": "plan_anchor",
+    "group": "plan",
+    "cost": 3,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [],
+    "text": "The plan's time is anchored by a git push only",
+    "fix": "Anchor plans with the platform, a timestamp authority (RFC 3161) or a registry."
+   },
+   "P4": {
+    "check": "unchecked_assumption",
+    "group": "open",
+    "cost": 3,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "C4"
+    ],
+    "text": "Assumption C4 is not checked: The two implementations optimise comparable objectives: both maximise the Gaussian likelihood of the innovations form (smooth loss='likelihood', statsforecast opt_crit='lik'), so differences in estimates come from optimiser, bounds and initial-state handling.",
+    "fix": "Test the assumption, or analyse how sensitive the claim is to it."
+   },
+   "P5": {
+    "check": "unchecked_assumption",
+    "group": "open",
+    "cost": 1,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "C5"
+    ],
+    "text": "Assumption C5 is not checked: alpha, beta, gamma have the same meaning in both packages (innovations/error-correction form, b_t=b_{t-1}+beta*e_t, s_t=s_{t-m}+gamma*e_t), so estimates are compared to the true values without conversion; to be checked by the data (bias of both near zero at T=500) not assumed unchecked.",
+    "fix": "Test the assumption, or analyse how sensitive the claim is to it."
+   }
+  },
+  "novelty": {
+   "C1": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C2": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C3": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   }
+  }
+ }
+}

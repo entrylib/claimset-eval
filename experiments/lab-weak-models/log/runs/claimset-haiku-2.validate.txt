@@ -1,0 +1,22 @@
+1. 2026-11-11T14:35:21.630Z Validator: 2 error(s), 24 warning(s)
+2. 2026-11-11T14:35:27.694Z INVALID submission: 2 error(s), 24 warning(s)
+     ERROR   [rule 16] contributors: a native paper has exactly one guarantor, the person who submits it (found 0); list other people as supervisors or contributo
+     ERROR   [rule 19] paper.licence: missing required field
+3. 2026-11-11T14:37:05.324Z INVALID submission: 2 error(s), 30 warning(s)
+     ERROR   [rule 16] contributors: a native paper has exactly one guarantor, the person who submits it (found 0); list other people as supervisors or contributo
+4. 2026-11-11T14:37:46.418Z VALID submission: 0 error(s), 21 warning(s)
+5. 2026-11-11T14:38:15.759Z VALID submission: 0 error(s), 19 warning(s)
+6. 2026-11-11T14:39:50.538Z INVALID submission: 11 error(s), 13 warning(s)
+     ERROR   [rule 64] claims:C1.about.comparator: D3 is not marked in the statement: write [[D3:statsforecast AutoETS]] where the statement names it
+     ERROR   [rule 64] claims:C1.about.conditions[0]: D4 is not marked in the statement: write [[D4:ETS data generating process]] where the statement names it
+     ERROR   [rule 64] claims:C1.about.object: D6 is not marked in the statement: write [[D6:RMSE]] where the statement names it
+     ERROR   [rule 64] claims:C1.about.subject: D1 is not marked in the statement: write [[D1:smooth ES, optimised initials]] where the statement names it
+     ERROR   [rule 64] claims:C2.about.comparator: D1 is not marked in the statement: write [[D1:smooth ES, optimised initials]] where the statement names it
+     ERROR   [rule 64] claims:C2.about.conditions[0]: D4 is not marked in the statement: write [[D4:ETS data generating process]] where the statement names it
+     ERROR   [rule 64] claims:C2.about.object: D6 is not marked in the statement: write [[D6:RMSE]] where the statement names it
+     ERROR   [rule 64] claims:C2.about.subject: D2 is not marked in the statement: write [[D2:smooth ES, backcasting]] where the statement names it
+     ERROR   [rule 64] claims:C3.about.conditions[0]: D4 is not marked in the statement: write [[D4:ETS data generating process]] where the statement names it
+     ERROR   [rule 64] claims:C3.about.object: D6 is not marked in the statement: write [[D6:RMSE]] where the statement names it
+     ERROR   [rule 64] claims:C3.about.subject: D8 is not marked in the statement: write [[D8:consistency]] where the statement names it
+7. 2026-11-11T14:39:57.225Z VALID submission: 0 error(s), 11 warning(s)
+total validator outcomes: 7

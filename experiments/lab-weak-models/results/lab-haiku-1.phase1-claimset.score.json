@@ -1,0 +1,192 @@
+{
+ "valid": true,
+ "errors": [],
+ "warnings": [
+  {
+   "rule": "W39",
+   "where": "paper.highlights",
+   "message": "ask the guarantor which principal claims and which of the paper's own terms a reader should take first, at most five, in order of priority (\u00a73.1); leave the field out only if the guarantor prefers none"
+  },
+  {
+   "rule": "W1",
+   "where": "models:M1.weights",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C1",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C2",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W13",
+   "where": "claims:C4",
+   "message": "exploratory principal claim: say so in the assessment rationale"
+  },
+  {
+   "rule": "W1",
+   "where": "contributors:P1.credit_roles",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W1",
+   "where": "contributors:P1.ai_tasks",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W2",
+   "where": "contributors:P1.record_source",
+   "message": "absent or self_reported; details are the agent's own account"
+  },
+  {
+   "rule": "W1",
+   "where": "contributors:P2.credit_roles",
+   "message": "recommended field missing"
+  }
+ ],
+ "novelty_checked": false,
+ "scores": {
+  "rubric": "0.2",
+  "claims": {
+   "C1": {
+    "score": 92,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "green",
+     "context": "amber",
+     "open": "amber"
+    },
+    "problems": [
+     "P1",
+     "P2"
+    ],
+    "costs": {
+     "P1": 5,
+     "P2": 3
+    }
+   },
+   "C2": {
+    "score": 92,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "green",
+     "context": "amber",
+     "open": "amber"
+    },
+    "problems": [
+     "P1",
+     "P2"
+    ],
+    "costs": {
+     "P1": 5,
+     "P2": 3
+    }
+   },
+   "C4": {
+    "score": 92,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "green",
+     "checkable": "green",
+     "context": "amber",
+     "open": "amber"
+    },
+    "problems": [
+     "P1",
+     "P2"
+    ],
+    "costs": {
+     "P1": 5,
+     "P2": 3
+    }
+   }
+  },
+  "assumptions": [
+   "C5"
+  ],
+  "paper": {
+   "score": 92,
+   "band": "high",
+   "dots": {
+    "support": "green",
+    "plan": "green",
+    "checkable": "green",
+    "context": "amber",
+    "open": "amber"
+   },
+   "problems": [
+    "P1",
+    "P2"
+   ],
+   "principal": [
+    "C1",
+    "C2",
+    "C4"
+   ],
+   "lowest": "C1",
+   "lowest_problems": [
+    "P1",
+    "P2"
+   ]
+  },
+  "problems": {
+   "P1": {
+    "check": "no_prior_work",
+    "group": "context",
+    "cost": 5,
+    "claims": [
+     "C1",
+     "C2",
+     "C4"
+    ],
+    "objects": [],
+    "text": "A principal claim related to no earlier work",
+    "fix": "Relate the claim to the earlier work it extends, addresses or departs from."
+   },
+   "P2": {
+    "check": "unchecked_assumption",
+    "group": "open",
+    "cost": 3,
+    "claims": [
+     "C1",
+     "C2",
+     "C4"
+    ],
+    "objects": [
+     "C5"
+    ],
+    "text": "Assumption C5 is not checked: The errors are i.i.d. $N(0,1)$ and the data are generated exactly by the stated innovations-form ETS model.",
+    "fix": "Test the assumption, or analyse how sensitive the claim is to it."
+   }
+  },
+  "novelty": {
+   "C1": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C2": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C4": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   }
+  }
+ }
+}

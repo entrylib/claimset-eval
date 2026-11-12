@@ -1,0 +1,20 @@
+events: 1130; by type: {'init': 1, 'actor': 2, 'question': 1, 'decision': 2, 'term': 8, 'hypothesis': 3, 'assumption': 2, 'run': 2, 'result': 1102, 'note': 1, 'plan': 1, 'approval': 1, 'status': 3, 'paper': 1}
+  actor AC1: agent Claude Code model=None words=None given_at=None supersedes=None
+  actor AC2: human Ivan Svetunkov model=None words='Ivan Svetunkov, ORCID 0000-0001-7826-0281. I am the guarantor and the supervisor of this study.' given_at=2026-11-11T14:16:47Z supersedes=None
+events written --by a human actor: []
+  H1 seq 14 from_exploration=None prompted_by=None: With optimised initial states, [[TM1:smooth ES]] and [[TM3:statsforecast AutoETS]] have [[TM6:RMSE]] of the alpha, beta and gamma estimates within 10% of each o
+  H2 seq 15 from_exploration=None prompted_by=None: At T=50, [[TM2:smooth ES with backcasting]] has a lower [[TM6:RMSE]] of the smoothing parameter estimates than [[TM1:smooth ES with optimised initials]] in most
+  H3 seq 16 from_exploration=None prompted_by=None: For each of the three arms, the [[TM6:RMSE]] of every smoothing parameter estimate is lower at T=500 than at T=50, in all 8 parameter-setting cells of [[TM4:the
+  PL1 seq 573 kind=confirmatory hyps=['H1', 'H2', 'H3'] requires_approval=True framework=deterministic quantities=['r_min', 'r_max', 'n_bc', 'v_opt', 'v_bc', 'v_sf', 'n_excl'] supersedes=None
+  AP1 seq 574 target=PL1 words='Approved.' given_at=2026-11-11T14:20:18Z by=AC1 on_behalf_of=AC2
+  RN1 seq 19 by=AC1 label=exploratory exit=success dirty=False seeds=[1000] cmd=python3 claimset-code/ets-estimation/sim.py --seed 1000 --R 10 
+  RN2 seq 575 by=AC1 label=confirmatory exit=success dirty=False seeds=[20261111] cmd=python3 claimset-code/ets-estimation/sim.py --seed 20261111 --R 300 plan PL1 seq 573 before run; approvals before run: ['AP1']
+  ST1 H1 -> not_supported plan=PL1 evidence=['RS1093', 'RS1094']: Rule of PL1: minimum RMSE ratio 0.600 < 0.8 and maximum 1.399 > 1.25 across the 32 cells.
+  ST2 H2 -> not_supported plan=PL1 evidence=['RS1095']: Rule of PL1: backcasting had lower RMSE than optimised initials in 0 of 8 cells at T=50 (<= 2).
+  ST3 H3 -> supported plan=PL1 evidence=['RS1096', 'RS1097', 'RS1098']: Rule of PL1: 0 of 24 arm-cell comparisons had RMSE at T=500 not below RMSE at T=50.
+  DC1 decision: Because the human is the study's supervisor and said 'use your judgement' about plan approval (not an approval of any plan), every confirmatory plan is written with --requires-approval and run only after the supervisor's
+  AS1 assumption: The two implementations optimise comparable objectives: both maximise the Gaussian likelihood of the innovations form (smooth loss='likelihood', statsforecast opt_crit='lik'), so differences in estimates come from optimi
+  AS2 assumption: alpha, beta, gamma have the same meaning in both packages (innovations/error-correction form, b_t=b_{t-1}+beta*e_t, s_t=s_{t-m}+gamma*e_t), so estimates are compared to the true values without conversion; to be checked b
+  DC2 decision: Full run uses R=300: the exploratory timing run RN1 (R=10, all three arms, 20 cells) took 12.7 s in total (RS548-RS551), so R=300 projects to about 6 minutes, below the 20-minute limit of the brief; R is not lowered to 2
+  NT1 note: Comparability, stated before any comparison. (1) Parametrisation: both packages use the innovations (single source of error) form; smooth persistence = alpha, beta, gamma with b_t=b_{t-1}+beta*e_t and s_t=s_{t-m}+gamma*e
+anchor receipts: 28

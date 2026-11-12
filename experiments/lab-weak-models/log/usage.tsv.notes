@@ -1,0 +1,1 @@
+Notes on usage.tsv: the values are those of each turn's task notification (subagent_tokens, tool_uses, duration_ms). duration_ms and tool_uses grow across turns of the same agent (cumulative); subagent_tokens is as the harness reports it. The final row of each run is used for scoring.

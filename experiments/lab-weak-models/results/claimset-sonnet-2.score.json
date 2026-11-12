@@ -1,0 +1,273 @@
+{
+ "valid": true,
+ "errors": [],
+ "warnings": [
+  {
+   "rule": "W39",
+   "where": "paper.highlights",
+   "message": "ask the guarantor which principal claims and which of the paper's own terms a reader should take first, at most five, in order of priority (\u00a73.1); leave the field out only if the guarantor prefers none"
+  },
+  {
+   "rule": "W1",
+   "where": "models:M1.weights",
+   "message": "recommended field missing"
+  },
+  {
+   "rule": "W2",
+   "where": "contributors:P1.record_source",
+   "message": "absent or self_reported; details are the agent's own account"
+  }
+ ],
+ "novelty_checked": false,
+ "scores": {
+  "rubric": "0.2",
+  "claims": {
+   "C1": {
+    "score": 72,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7"
+    ],
+    "costs": {
+     "P1": 12,
+     "P2": 5,
+     "P3": 3,
+     "P4": 3,
+     "P5": 3,
+     "P6": 1,
+     "P7": 1
+    }
+   },
+   "C2": {
+    "score": 81,
+    "band": "high",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P3",
+     "P2",
+     "P4",
+     "P5",
+     "P6",
+     "P7"
+    ],
+    "costs": {
+     "P3": 6,
+     "P2": 5,
+     "P4": 3,
+     "P5": 3,
+     "P6": 1,
+     "P7": 1
+    }
+   },
+   "C3": {
+    "score": 72,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7"
+    ],
+    "costs": {
+     "P1": 12,
+     "P2": 5,
+     "P3": 3,
+     "P4": 3,
+     "P5": 3,
+     "P6": 1,
+     "P7": 1
+    }
+   }
+  },
+  "assumptions": [
+   "C4",
+   "C5"
+  ],
+  "paper": {
+   "score": 72,
+   "band": "medium",
+   "dots": {
+    "support": "green",
+    "plan": "amber",
+    "checkable": "green",
+    "context": "amber",
+    "open": "red"
+   },
+   "problems": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7"
+   ],
+   "principal": [
+    "C1",
+    "C2",
+    "C3"
+   ],
+   "lowest": "C1",
+   "lowest_problems": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7"
+   ]
+  },
+  "problems": {
+   "P1": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 12,
+    "claims": [
+     "C1",
+     "C3"
+    ],
+    "objects": [
+     "L1"
+    ],
+    "text": "Limitation L1 (could bias magnitude, not mitigated): In the ETS(A,N,A) setting the estimates of gamma often lie on a bound: at series length 500, 286 of 300 replicates for smooth ES with backcasting, 118 for smooth ES with optimised initials and 25 for statsforecast AutoETS; the bias of the smooth estimates stays near -0.09 and -0.06, and the cause (bounds, parametrisation or the optimiser) was not investigated.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P2": {
+    "check": "no_prior_work",
+    "group": "context",
+    "cost": 5,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [],
+    "text": "A principal claim related to no earlier work",
+    "fix": "Relate the claim to the earlier work it extends, addresses or departs from."
+   },
+   "P3": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 6,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "L3"
+    ],
+    "text": "Limitation L3 (could bias magnitude, mitigation partial): The guarantor is the author and maintainer of the smooth package under evaluation; the simulation design and the analysis were fixed in a plan before the run, and every result is recorded, including those against smooth.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P4": {
+    "check": "plan_anchor",
+    "group": "plan",
+    "cost": 3,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [],
+    "text": "The plan's time is anchored by a git push only",
+    "fix": "Anchor plans with the platform, a timestamp authority (RFC 3161) or a registry."
+   },
+   "P5": {
+    "check": "unchecked_assumption",
+    "group": "open",
+    "cost": 3,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "C4"
+    ],
+    "text": "Assumption C4 is not checked: The smooth ES and statsforecast AutoETS arms both maximise the Gaussian likelihood of the innovations form (smooth loss='likelihood', statsforecast opt_crit='lik').",
+    "fix": "Test the assumption, or analyse how sensitive the claim is to it."
+   },
+   "P6": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 1,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "L2"
+    ],
+    "text": "Limitation L2 (reduces transferability, not mitigated): Each package was run in one version (smooth 1.2.0, statsforecast 2.1.1) with the model form fixed to the generating one and default optimiser settings, so the results do not transfer to other versions or to automatic model selection.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P7": {
+    "check": "unchecked_assumption",
+    "group": "open",
+    "cost": 1,
+    "claims": [
+     "C1",
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "C5"
+    ],
+    "text": "Assumption C5 is not checked: The smoothing parameters $\\alpha$, $\\beta$ and $\\gamma$ have the same meaning in smooth ES and statsforecast AutoETS (the innovations form of the generating process), so that estimates of both are compared with the true values without conversion.",
+    "fix": "Test the assumption, or analyse how sensitive the claim is to it."
+   }
+  },
+  "novelty": {
+   "C1": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C2": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C3": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   }
+  }
+ }
+}

@@ -1,0 +1,26 @@
+run	turn	tokens	tool_uses	duration_ms	ended_with
+lab-haiku-2	1	89270	6	35171	questions (setup)
+lab-sonnet-2	1	83294	6	36717	questions (setup)
+lab-sonnet-1	1	84033	8	41206	questions (setup)
+lab-haiku-1	1	91456	7	42332	questions (setup)
+lab-sonnet-2	2	116472	22	262411	plan approval
+lab-sonnet-1	2	120405	28	265589	plan approval
+lab-haiku-2	2	141718	30	304128	plan approval
+lab-sonnet-2	3	129890	32	634775	licence/guarantor/highlights questions after export
+lab-sonnet-1	3	131220	36	672604	finished record (final)
+lab-haiku-2	3	153023	39	705301	finished record (final)
+lab-haiku-1	2	171338	46	742519	record finished; completion questions
+lab-sonnet-2	4	173963	45	809901	done, claimset completed (final)
+lab-haiku-1	3	253033	74	1004320	done, claimset completed (final)
+claimset-sonnet-1	1	103098	7	54649	questions after export
+claimset-sonnet-2	1	101844	9	70571	questions after export
+claimset-haiku-2	1	123853	15	91735	question 1 after export
+claimset-haiku-2	2	125974	17	129707	decision on Q1, open questions listed
+claimset-haiku-1	1	138350	23	169101	questions after export
+claimset-haiku-2	3	137430	22	171565	artefact licence
+claimset-haiku-2	4	138475	24	198385	stopped with work left; nudged
+claimset-haiku-1	2	145216	27	222125	asked again (model, highlights, score)
+claimset-haiku-1	3	147294	29	263867	done (final)
+claimset-sonnet-2	2	147263	25	304366	done (final)
+claimset-haiku-2	5	149645	7	52451	done (final)
+claimset-sonnet-1	2	149225	25	312816	done (final)

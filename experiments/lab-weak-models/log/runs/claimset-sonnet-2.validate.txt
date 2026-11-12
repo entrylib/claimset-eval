@@ -1,0 +1,11 @@
+1. 2026-11-11T14:35:27.474Z Validator: 2 error(s), 24 warning(s)
+2. 2026-11-11T14:35:31.125Z INVALID submission: 2 error(s), 24 warning(s)
+     ERROR   [rule 16] contributors: a native paper has exactly one guarantor, the person who submits it (found 0); list other people as supervisors or contributo
+     ERROR   [rule 19] paper.licence: missing required field
+3. 2026-11-11T14:38:57.766Z INVALID submission: 1 error(s), 13 warning(s)
+     ERROR   [rule 11] limitations:L3: mitigation partial/addressed requires mitigation_evidence
+4. 2026-11-11T14:39:16.171Z INVALID submission: 1 error(s), 3 warning(s)
+     ERROR   [rule 11] limitations:L3.mitigation_evidence: one ID of an object in evidence, as a string; not ["E1"]
+5. 2026-11-11T14:39:24.904Z VALID submission: 0 error(s), 3 warning(s) | VALID submission: 0 error(s), 3 warning(s)
+6. 2026-11-11T14:39:44.502Z VALID submission: 0 error(s), 3 warning(s)
+total validator outcomes: 6

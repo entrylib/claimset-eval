@@ -1,0 +1,330 @@
+{
+ "valid": true,
+ "errors": [],
+ "warnings": [
+  {
+   "rule": "W25",
+   "where": "claims:C2",
+   "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+  },
+  {
+   "rule": "W25",
+   "where": "claims:C3",
+   "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+  },
+  {
+   "rule": "W25",
+   "where": "claims:C6",
+   "message": "a secondary result on which no claim, warrant or open question rests, and that stands in no relation to another claim: keep it only if it states a loss, limit or null result of the paper's own method; otherwise the result table of its evidence holds it"
+  },
+  {
+   "rule": "W2",
+   "where": "contributors:P1.record_source",
+   "message": "absent or self_reported; details are the agent's own account"
+  }
+ ],
+ "novelty_checked": false,
+ "scores": {
+  "rubric": "0.2",
+  "claims": {
+   "C1": {
+    "score": 74,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4"
+    ],
+    "costs": {
+     "P1": 12,
+     "P2": 6,
+     "P3": 5,
+     "P4": 3
+    }
+   },
+   "C2": {
+    "score": 76,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "green",
+     "open": "red"
+    },
+    "problems": [
+     "P1",
+     "P6",
+     "P2",
+     "P4"
+    ],
+    "costs": {
+     "P1": 12,
+     "P6": 6,
+     "P2": 3,
+     "P4": 3
+    }
+   },
+   "C3": {
+    "score": 76,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "green",
+     "open": "red"
+    },
+    "problems": [
+     "P1",
+     "P6",
+     "P2",
+     "P4"
+    ],
+    "costs": {
+     "P1": 12,
+     "P6": 6,
+     "P2": 3,
+     "P4": 3
+    }
+   },
+   "C4": {
+    "score": 73,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5"
+    ],
+    "costs": {
+     "P1": 12,
+     "P2": 6,
+     "P3": 5,
+     "P4": 3,
+     "P5": 1
+    }
+   },
+   "C5": {
+    "score": 73,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "amber",
+     "open": "red"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5"
+    ],
+    "costs": {
+     "P1": 12,
+     "P2": 6,
+     "P3": 5,
+     "P4": 3,
+     "P5": 1
+    }
+   },
+   "C6": {
+    "score": 78,
+    "band": "medium",
+    "dots": {
+     "support": "green",
+     "plan": "amber",
+     "checkable": "green",
+     "context": "green",
+     "open": "red"
+    },
+    "problems": [
+     "P1",
+     "P2",
+     "P4",
+     "P5"
+    ],
+    "costs": {
+     "P1": 12,
+     "P2": 6,
+     "P4": 3,
+     "P5": 1
+    }
+   }
+  },
+  "assumptions": [],
+  "paper": {
+   "score": 73,
+   "band": "medium",
+   "dots": {
+    "support": "green",
+    "plan": "amber",
+    "checkable": "green",
+    "context": "amber",
+    "open": "red"
+   },
+   "problems": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "principal": [
+    "C1",
+    "C4",
+    "C5"
+   ],
+   "lowest": "C4",
+   "lowest_problems": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ]
+  },
+  "problems": {
+   "P1": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 12,
+    "claims": [
+     "C1",
+     "C4",
+     "C5"
+    ],
+    "objects": [
+     "L2"
+    ],
+    "text": "Limitation L2 (could bias magnitude, not mitigated): Neither smooth nor statsforecast exposes a convergence flag that the script reads, so non-convergence is visible only as bound hits and warnings, which are counted; no fit raised an error, returned a non-finite estimate or changed the model form.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P2": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 6,
+    "claims": [
+     "C1",
+     "C4",
+     "C5"
+    ],
+    "objects": [
+     "L4"
+    ],
+    "text": "Limitation L4 (could bias magnitude, not mitigated): The thresholds (bias bound 0.02, share 0.75) were fixed in advance without a prior literature basis and the consistency test compares only the smallest and the largest series length.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P3": {
+    "check": "no_prior_work",
+    "group": "context",
+    "cost": 5,
+    "claims": [
+     "C1",
+     "C4",
+     "C5"
+    ],
+    "objects": [],
+    "text": "A principal claim related to no earlier work",
+    "fix": "Relate the claim to the earlier work it extends, addresses or departs from."
+   },
+   "P4": {
+    "check": "plan_anchor",
+    "group": "plan",
+    "cost": 3,
+    "claims": [
+     "C1",
+     "C4",
+     "C5"
+    ],
+    "objects": [],
+    "text": "The plan's time is anchored by a git push only",
+    "fix": "Anchor plans with the platform, a timestamp authority (RFC 3161) or a registry."
+   },
+   "P5": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 1,
+    "claims": [
+     "C4",
+     "C5"
+    ],
+    "objects": [
+     "L1"
+    ],
+    "text": "Limitation L1 (reduces transferability, not mitigated): Only five parameter sets (three process forms, one seasonal set) are simulated, so the bias results at T=500 describe these settings; the bias beyond 0.02 appears only in the single seasonal process, read from the results file after the verdicts.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   },
+   "P6": {
+    "check": "limitation",
+    "group": "open",
+    "cost": 6,
+    "claims": [
+     "C2",
+     "C3"
+    ],
+    "objects": [
+     "L3"
+    ],
+    "text": "Limitation L3 (could bias magnitude, not mitigated): The bounds differ slightly between the packages (smooth: usual bounds; statsforecast: box [1e-4, 0.9999] plus usual and admissibility checks), and the optimisers differ, so differences in RMSE partly reflect these implementation choices.",
+    "fix": "Mitigate it with evidence, or narrow the claim's scope so that it no longer applies."
+   }
+  },
+  "novelty": {
+   "C1": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C2": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C3": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C4": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C5": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   },
+   "C6": {
+    "label": "no_prior_found",
+    "check": "none",
+    "matches": [],
+    "checked": false
+   }
+  }
+ }
+}

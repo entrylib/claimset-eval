@@ -1,0 +1,50 @@
+{
+ "first": "2026-11-11T14:15:45.898Z",
+ "last": "2026-11-11T14:27:31.192Z",
+ "models": {
+  "claude-haiku-5-5": 84
+ },
+ "usage": {
+  "input_tokens": 184,
+  "cache_creation_input_tokens": 317911,
+  "cache_read_input_tokens": 9367473,
+  "output_tokens": 122979
+ },
+ "total_tokens": 9808547,
+ "tools": {
+  "Bash": 33,
+  "Read": 1,
+  "SubagentHandback": 3,
+  "ToolSearch": 1,
+  "Monitor": 1
+ },
+ "n_commands": 39,
+ "errors": [
+  {
+   "ts": "2026-11-11T14:20:13.757Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/lab-haiku-2 && source /home/user/venv/bin/activate && B='--by AC1'; \nclaimset lab assume \"smooth and statsforecast use the same meaning for alpha, beta and gamma (the innovations-form update of the level, trend and seasonal states that the simulation uses), so their estimates are comparable without conversion.\" --category statistical --check unchecked $B 2>&1 | grep -v pushe",
+   "rules": [
+    "L12"
+   ],
+   "output": "AS1\nAS2\nERROR [L12] decision: 'affects' names 'H1', which is not an earlier event\nDC2\nDC3\nDC4\nDC5\nok"
+  },
+  {
+   "ts": "2026-11-11T14:20:41.229Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/lab-haiku-2 && source /home/user/venv/bin/activate && claimset lab verify 2>&1 | tail -5; claimset lab list --last 40 2>&1 | grep -E \" (Q[0-9]|PL[0-9]|H[0-9]|DC[0-9]) \" | cut -c1-160; git status --short; git -C claimset/ets-param-estimation status --short | head -3",
+   "rules": [],
+   "output": " initial seasonal st...\n  903 DC3        decision    AC1    2026-11-11T14:20:13Z  Failures are counted, not dropped silently: a fit that raises an error or returns a non-finite es...\n  904 DC4        decision    AC1    2026-11-11T14:20:13Z  Replicates R=300 per cell. Timing from the exploratory pilots RN1-RN3 (3 replicates, lengths 50 a...\n  905 DC5        decision    AC1    2026-11-11T14:20:13Z  Seeds: pilots RN1-RN3 used seed 20261111. The confirmatory run uses seed 20261112, so its series ...\n  906 DC6        decision    AC1    2026-11-11T14:20:21Z  Comparability: both use the Gaussian likelihood (smooth loss='likelihood', statsforecast opt_crit...\n  907 Q2         question    AC1    2026-11-11T14:20:21Z  Hypotheses for H1-H3 (consistency, agreement, bias)\n  908 H1         hypothesis  AC1    2026-11-11T14:20:22Z  For the simulated ETS series of [[TM4]] (ETS(A,N,N), ETS(A,A,N) and ETS(A,N,A) with the settings ...\n  909 H2         hypothesis  AC1    2026-11-11T14:20:22Z  At every setting, smoothing parameter and series length T in {50, 100, 250, 500}, the RMSE of [[T...\n  910 H3         hypothesis  AC1    2026-11-11T14:20:22Z  For each of [[TM1]], [[TM2]] and [[TM3]] and each smoothing parameter of the settings in [[TM4]],...\n  911 ST1        status      AC1    2026-11-11T14:20:22Z  H1 -> testing: Planned, not yet run.\n  912 PL1        plan        AC1    2026-11-11T14:20:33Z  [confirmatory] Simulated series from [[TM4]]: ETS(A,N,N) with alpha = 0.1 and 0.5; ETS(A,A,N) wit..."
+  },
+  {
+   "ts": "2026-11-11T14:27:25.270Z",
+   "tool": "Bash",
+   "is_error": false,
+   "input": "cd /home/user/exp-runs/lab-haiku-2 && source /home/user/venv/bin/activate && B='--by AC1'; claimset lab status H1 inconclusive --plan PL1 --evidence RS1480 --why \"Rule of PL1: H1 violations = 2, which is neither 0 (supported) nor at least 12 (not supported).\" $B 2>&1 | grep -v pushed; claimset lab status H2 inconclusive --plan PL1 --evidence RS1481 --why \"Rule of PL1: H2 violations = 12, which is ",
+   "rules": [],
+   "output": "ST2\nST3\nST4\nOK: 1521 events, 0 error(s), 0 withheld"
+  }
+ ]
+}
