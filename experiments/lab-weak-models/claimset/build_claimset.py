@@ -411,6 +411,9 @@ claims = [
      "assumption_category": "methodological", "check": "unchecked"},
 ]
 
+# builder IDs of the principal claims (renumber maps them to the final IDs)
+_BUILDER = {"C1": "C1", "C2": "C2", "C3": "C3", "C5": "C7", "C6": "C8", "C7": "C9", "C8": "C11", "C10": "C15", "C11": "C16"}
+
 warrants = [
     {"id": "W1", "reasoning": "inductive", "premises": ["C10"], "text": (
         "The claimset-lab skill offers one route from a run to a claim: a hypothesis decided by a rule, with computed "
@@ -452,7 +455,28 @@ artefacts = [
      "description": "EntryLib's scoring rubric, entrylib-rubric 0.2.0 (src/rubric/rubric.json holds the costs; src/rubric/score.py applies them)."},
 ]
 
-references = []
+references = [
+    {"id": "B1", "target": "10.1073/pnas.1708274114", "id_type": "doi", "self": False},
+    {"id": "B2", "target": "10.1371/journal.pone.0132382", "id_type": "doi", "self": False},
+    {"id": "B3", "target": "10.1177/25152459211007467", "id_type": "doi", "self": False},
+    {"id": "B4", "target": "10.1177/0956797613504966", "id_type": "doi", "self": False},
+    {"id": "B5", "target": "10.1098/rsos.160384", "id_type": "doi", "self": False},
+    {"id": "B6", "target": "2408.06292", "id_type": "arxiv", "self": False},
+]
+
+REL = {
+    "C1": [("B6", "Agents that run research end to end, judged by an automated reviewer; here agents keep a verifiable lab record of one study, checked by the record's own verification.")],
+    "C2": [("B1", "Argues that predictions must be fixed before the data are seen; here the question is whether AI agents do so when a tool asks them to.")],
+    "C3": [("B1", "Argues that predictions must be fixed before the data are seen; here AI agents with the same tool did not, in either of two runs."),
+           ("B2", "Mandatory registration of trials was followed by more null results; here an agent that planned nothing reported more descriptive findings, on one task.")],
+    "C5": [("B6", "Agents write papers judged by an automated reviewer; here agents complete a claimset judged by a validator and against an answer key.")],
+    "C6": [("B6", "Agent-written papers judged by an automated reviewer; here each claim is checked against an answer key from a reference simulation.")],
+    "C7": [("B6", "Agent-written papers judged by an automated reviewer; here the check is which findings of a reference analysis the claims state.")],
+    "C8": [("B4", "Recommends framing research questions as estimation rather than significance tests; here a tool's pass-or-fail plans led agents away from estimation."),
+           ("B3", "Registered Reports report far fewer positive results than standard articles; here the registered format changed what agents reported, from estimates to threshold tests.")],
+    "C10": [("B5", "Incentives that reward output select for weaker methods; here a scoring rubric ranks a claimset without planned tests above planned ones.")],
+    "C11": [("B5", "Incentives that reward output select for weaker methods; here a scoring rubric ranks a claimset without limitations or scope above one with both.")],
+}
 
 open_questions = [
     {"id": "O1", "question": "Whether the differences between the Sonnet and Haiku agents hold over more runs, other study tasks and agents in sessions of their own is not established.", "claims": ["C2", "C3", "C12", "C19"]},
@@ -475,6 +499,10 @@ paper = {
     "contribution_record": "partial",
     "origin": "native",
 }
+
+_byid = {c["id"]: c for c in claims}
+for final, rels in REL.items():
+    _byid[_BUILDER[final]]["relations"] = [{"type": "addresses", "reference": b, "note": n} for b, n in rels]
 
 out = {"schema_version": "0.41", "paper": paper, "contributors": contributors, "models": models,
        "definitions": definitions, "claims": claims, "evidence": evidence, "warrants": warrants,

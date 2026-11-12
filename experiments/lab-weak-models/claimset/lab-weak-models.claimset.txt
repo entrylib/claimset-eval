@@ -46,36 +46,47 @@ CLAIMS
 C1 [descriptive; principal; support: empirical_quant E1 (E1.T1) artefacts A1; assumes C21; limitations L2, L5; strength moderate (author); planning exploratory]
   Every lab record that the [[D5:agents under test]] kept with [[D1:claimset-lab]] on [[D6:the ETS estimation brief]] passes `claimset lab verify` ([[D11:record verifies]]).
   scope: data_type: agent runs on one simulation study task | conditions: claimset 0.41.6 with its skills read as files; Claude Code 2.1.322 Agent-tool subagents; two runs per agent; fixed answers in place of the human; records as left at the end of each lab run | excludes: agents in sessions of their own with the guard hook active; other study tasks and fields
+  addresses B6: Agents that run research end to end, judged by an automated reviewer; here agents keep a verifiable lab record of one study, checked by the record's own verification.
 C2 [descriptive; principal; support: empirical_quant E1 (E1.T1.r1, E1.T1.r2) artefacts A1, A2; assumes C22; limitations L1, L2, L5; strength low (author); planning exploratory]
   In both of its lab runs, the [[D3:Sonnet agent]] ran every confirmatory test under a plan with a computed decision rule, written with its hypotheses before any run and approved by the human before the test ([[D13:plans before data]]).
   scope: data_type: agent runs on one simulation study task | conditions: claimset 0.41.6 with its skills read as files; Claude Code 2.1.322 Agent-tool subagents; two runs per agent; fixed answers in place of the human; the two Sonnet lab runs | excludes: agents in sessions of their own with the guard hook active; other study tasks and fields
+  addresses B1: Argues that predictions must be fixed before the data are seen; here the question is whether AI agents do so when a tool asks them to.
 C3 [descriptive; principal; support: empirical_quant E1 (E1.T1.r3, E1.T1.r4) artefacts A1, A2; assumes C22; limitations L1, L2, L5; strength low (author); planning exploratory]
   Neither lab run of the [[D4:Haiku agent]] planned its tests before seeing the data ([[D13:plans before data]]): one run made no plan at all, and the other set its hypotheses and thresholds after three pilot runs.
   scope: data_type: agent runs on one simulation study task | conditions: claimset 0.41.6 with its skills read as files; Claude Code 2.1.322 Agent-tool subagents; two runs per agent; fixed answers in place of the human; the two Haiku lab runs | excludes: agents in sessions of their own with the guard hook active; other study tasks and fields
+  addresses B1: Argues that predictions must be fixed before the data are seen; here AI agents with the same tool did not, in either of two runs.
+  addresses B2: Mandatory registration of trials was followed by more null results; here an agent that planned nothing reported more descriptive findings, on one task.
 C4 [descriptive; principal; support: empirical_quant E1 (E1.T1) artefacts A1; limitations L1, L5; strength low (author); planning exploratory]
   Three of the four lab runs of the [[D5:agents under test]] left statsforecast's damped-trend option unset, so that their statsforecast arm selected between a damped and an undamped trend, against the fixed model forms of [[D6:the brief]] ([[D14:model form fixed]]).
   scope: data_type: agent runs on one simulation study task | conditions: claimset 0.41.6 with its skills read as files; Claude Code 2.1.322 Agent-tool subagents; two runs per agent; fixed answers in place of the human; the statsforecast arm of each run's script | excludes: agents in sessions of their own with the guard hook active; other study tasks and fields
 C5 [descriptive; principal; support: empirical_quant E2 (E2.T1) artefacts A1, A2; assumes C22; limitations L2, L5, L6; strength moderate (author); planning exploratory]
   Every claimset that the [[D5:agents under test]] completed with [[D2:claimset-submit]] from one lab record validates with no errors ([[D20:claimset validates]]), at the fourth to sixth validator outcome ([[D21:validator outcomes until valid]]).
   scope: data_type: agent runs on one simulation study task | conditions: one lab record (lab-sonnet-1) completed four times; claimset 0.41.6 with its skills read as files; Claude Code 2.1.322 Agent-tool subagents; two runs per agent; fixed answers in place of the human; the final file of each claimset run | excludes: agents in sessions of their own with the guard hook active; other study tasks and fields
+  addresses B6: Agents write papers judged by an automated reviewer; here agents complete a claimset judged by a validator and against an answer key.
 C6 [descriptive; principal; support: empirical_quant E2 (E2.T1) artefacts A6, A8; assumes C21; limitations L3, L4, L5; strength low (author); planning exploratory]
   No claim of the four claimsets that the [[D5:agents under test]] completed with [[D2:claimset-submit]] is wrong against [[D10:the answer key]]: each is correct or partly correct ([[D25:claim correctness]]).
   scope: data_type: agent runs on one simulation study task | conditions: one lab record (lab-sonnet-1) completed four times; claimset 0.41.6 with its skills read as files; Claude Code 2.1.322 Agent-tool subagents; two runs per agent; fixed answers in place of the human; the 20 claims of the four claimsets | excludes: agents in sessions of their own with the guard hook active; other study tasks and fields
+  addresses B6: Agent-written papers judged by an automated reviewer; here each claim is checked against an answer key from a reference simulation.
 C7 [descriptive; principal; support: empirical_quant E2 (E2.T1) artefacts A6, A8; assumes C21; uses C12; limitations L3, L4, L5; strength low (author); planning exploratory]
   None of the four claimsets that the [[D5:agents under test]] completed with [[D2:claimset-submit]] states as a claim any of the main findings of [[D10:the answer key]]: how large the estimation bias is, that statsforecast's optimiser fails to converge for the seasonal model, or that statsforecast caps β ([[D26:answer-key findings stated]]).
   scope: data_type: agent runs on one simulation study task | conditions: one lab record (lab-sonnet-1) completed four times; claimset 0.41.6 with its skills read as files; Claude Code 2.1.322 Agent-tool subagents; two runs per agent; fixed answers in place of the human; claims only, not limitations or open questions | excludes: agents in sessions of their own with the guard hook active; other study tasks and fields
+  addresses B6: Agent-written papers judged by an automated reviewer; here the check is which findings of a reference analysis the claims state.
 C8 [interpretive; principal; support: empirical_quant E1 (E1.T2) artefacts A1, argument W1; uses C7, C12; limitations L1, L5; strength low (author); planning exploratory]
   The [[D5:agents under test]] answered [[D6:the brief]]'s questions about how large the bias and RMSE are with pass-or-fail tests against thresholds they chose themselves, so the estimates never became claims: [[D1:claimset-lab]] turns only hypotheses decided by a rule into claims.
   scope: data_type: agent runs on one simulation study task | conditions: claimset 0.41.6 with its skills read as files; Claude Code 2.1.322 Agent-tool subagents; two runs per agent; fixed answers in place of the human; the three lab runs with a plan and the one without | excludes: agents in sessions of their own with the guard hook active; other study tasks and fields
+  addresses B4: Recommends framing research questions as estimation rather than significance tests; here a tool's pass-or-fail plans led agents away from estimation.
+  addresses B3: Registered Reports report far fewer positive results than standard articles; here the registered format changed what agents reported, from estimates to threshold tests.
 C9 [descriptive; principal; support: empirical_quant E2 (E2.T1) artefacts A1; limitations L1, L2, L5; strength low (author); planning exploratory]
   The two claimsets that the [[D4:Haiku agent]] completed give a scope to none of their three principal claims, against all three in each of the two that the [[D3:Sonnet agent]] completed ([[D27:principal claims with scope]]).
   scope: data_type: agent runs on one simulation study task | conditions: one lab record (lab-sonnet-1) completed four times; claimset 0.41.6 with its skills read as files; Claude Code 2.1.322 Agent-tool subagents; two runs per agent; fixed answers in place of the human; principal claims only | excludes: agents in sessions of their own with the guard hook active; other study tasks and fields
 C10 [descriptive; principal; support: empirical_quant E2 (E2.T1, E2.T2) artefacts A8, A10; uses C14; limitations L5; strength moderate (author); planning exploratory]
   Under [[D23:EntryLib rubric 0.2]], the one claimset that tested nothing under a plan gets a higher [[D24:reliability score]] than each of the six claimsets whose principal claims were planned tests.
   scope: conditions: entrylib-rubric 0.2.0, without --novelty; the six claimsets of this study; claimsets written in either phase | excludes: other rubric versions
+  addresses B5: Incentives that reward output select for weaker methods; here a scoring rubric ranks a claimset without planned tests above planned ones.
 C11 [descriptive; principal; support: empirical_quant E2 (E2.T1.r1, E2.T1.r4) artefacts A8, A10; uses C13; limitations L5; strength moderate (author); planning exploratory]
   Under [[D23:EntryLib rubric 0.2]], a claimset that states no limitations and gives its claims no scope (claimset-haiku-2) gets a higher [[D24:reliability score]] than one written from the same lab record with scoped claims and three specific limitations (claimset-sonnet-1).
   scope: conditions: entrylib-rubric 0.2.0, without --novelty; the six claimsets of this study; claimsets completed from one lab record | excludes: other rubric versions
+  addresses B5: Incentives that reward output select for weaker methods; here a scoring rubric ranks a claimset without limitations or scope above one with both.
 C12 [descriptive; supporting; not_applicable; support: empirical_quant E2 artefacts A1; strength high (author); planning exploratory]
   The lab record that [[D8:the claimset phase]] started from holds three hypotheses, each a threshold test on the RMSE (a band for the ratio of the two packages, backcasting better in most cells at the shortest length, the longest length against the shortest), and no hypothesis about the size of the bias or the RMSE.
   scope: conditions: the lab record of run lab-sonnet-1, 1,130 events
@@ -188,3 +199,11 @@ A7 [code] The reference analysis scripts simulate.py, optcheck.py and damped_che
 A8 [data] Scoring per run, rubric scores as JSON, summary.md and report.md.
 A9 [code] The scoring scripts transcript.py, lab_summary.py and validate_runs.py.
 A10 [software] EntryLib's scoring rubric, entrylib-rubric 0.2.0 (src/rubric/rubric.json holds the costs; src/rubric/score.py applies them).
+
+REFERENCES
+B1 10.1073/pnas.1708274114 (doi)
+B2 10.1371/journal.pone.0132382 (doi)
+B3 10.1177/25152459211007467 (doi)
+B4 10.1177/0956797613504966 (doi)
+B5 10.1098/rsos.160384 (doi)
+B6 2408.06292 (arxiv)
