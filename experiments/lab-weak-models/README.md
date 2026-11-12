@@ -39,3 +39,7 @@ specification, the tools and the rubric. `tools/` holds the standard-library scr
 claimset 0.41.10 (spec 0.41 amended 2026-11-11, `paper.summary`), installed from the `summary-from-paper` branch of
 entrylib/claimset at c0b27ff9655d16c781d0dcd168ede62088d687e1 (not yet on PyPI). `claimset/build_claimset.py`
 writes it; `claimset renumber` then puts the claims in reading order. Not submitted.
+
+Published as entrylib:2026.000005 (v1, 2026-11-12). The file here is the correction submitted after it (classification:
+subfield Artificial Intelligence, keywords metascience and research methodology), made from the published v1 file;
+`build_claimset.py` writes v1.
