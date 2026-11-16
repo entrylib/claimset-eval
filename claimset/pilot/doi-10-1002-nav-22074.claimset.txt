@@ -1,6 +1,6 @@
 CLAIMSET Complex exponential smoothing
 summary Exponential smoothing forecasts a series by first choosing a model: with or without a trend, with or without seasonality. This paper proposes complex exponential smoothing (CES), which uses complex variables, pairing each value with its forecast error, so that one model moves smoothly between a level and a trend as its smoothing parameter changes. It shows that CES can be stationary or non-stationary depending on that parameter, and that it corresponds to an ARMA(2,2) model whose coefficients are tied together. A seasonal version handles seasonality without seasonal indices, so model selection reduces to a choice between two models. On the series of the M1, M3, tourism and M4 forecasting competitions, CES was more accurate than exponential smoothing, ARIMA and the Theta method on most error measures, though not on all, and adding it to a combination of forecasts improved the combination.
-licence CC-BY-4.0; contributions C1, C16, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12; highlights D1, C16, C2, C10, C4
+licence CC-BY-4.0; corrects the published paper in 7 places (CORRECTIONS); contributions C1, C16, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12; highlights D1, C16, C2, C10, C4
 declarations funding: none | competing interests: None declared.
 
 DEFINITIONS
@@ -48,17 +48,17 @@ D41 [design] KPSS test: Kwiatkowski-Phillips-Schmidt-Shin test of the null hypot
 D42 [data] M3 series 1664 and 2721: Two monthly series of the M3 competition: series 1664, which graphical analysis and the [[D40:ADF]] and [[D41:KPSS tests]] indicate is stationary, and the trended series 2721; each split into in-sample and holdout parts.
 
 CLAIMS
-C1 [formal; principal; extension; support: formal_proof E3; uses C17, C18, C19, C20, C23, C24, C25, C32, C21, C22, C33; verification unchecked]
+C1 [formal; principal; extension; support: formal_proof E3; uses C17, C18, C19, C20, C23, C24, C25, C32, C21, C22, C33; verification agent_checked]
   Depending on the value of its [[D2:complex smoothing parameter]], [[D1:CES]] is a stationary or a non-stationary model.
   extends B1, own earlier work: Exponential smoothing in a state space framework (ETS) gives 30 models with no, additive or multiplicative error, trend and seasonal components, among which a model is selected by an information criterion.
   addresses B3, own earlier work: Identifying the presence and type of trend in exponential smoothing often leads to misidentification and poorly performing long-term forecasts.
   addresses B2: The diverse trend alternatives of exponential smoothing in a state space framework make the selection of a model difficult.
   addresses B4: Selecting the most appropriate exponential smoothing model is a challenging task.
   addresses B5, own earlier work: Even when the components of exponential smoothing are identified correctly, the estimated smoothing parameters and the weights they imply can give poor forecasts.
-C16 [formal; principal; support: formal_proof E1; assumes C60, C61; verification unchecked]
+C16 [formal; principal; support: formal_proof E1; assumes C60, C61; verification agent_checked]
   [[D1:CES]] has the single-source-of-error state-space form $$\begin{aligned} y_t &= l_{t-1} + \varepsilon_t \\ l_t &= l_{t-1} - (1 - \alpha_1) c_{t-1} + (\alpha_0 - \alpha_1) \varepsilon_t \\ c_t &= l_{t-1} + (1 - \alpha_0) c_{t-1} + (\alpha_0 + \alpha_1) \varepsilon_t \end{aligned}$$ with level $l_t$ and [[D3:nonlinear trend component]] $c_t$.
   extends B14, own earlier work: Exponential smoothing methods can be written as state-space models with a single source of error.
-C2 [formal; principal; support: formal_proof E3; uses C17, C18, C25; verification unchecked]
+C2 [formal; principal; support: formal_proof E3; uses C17, C18, C25; verification agent_checked]
   [[D1:CES]] passes continuously from a stationary to a non-stationary model as its [[D2:complex smoothing parameter]] changes.
   extends B1, own earlier work: The exponential smoothing models of the ETS framework are non-stationary.
 C3 [descriptive; principal; support: empirical_quant E2 (E2.T1.r1, E2.T1.r2, E2.T1.r3, E2.T1.r4); uses C34; limitations L1, L3; inherits C60, C62, C63, C64]
@@ -69,14 +69,14 @@ C4 [descriptive; principal; support: empirical_quant E8 (E8.T1.r1, E8.T1.r2, E8.
   On the [[D32:M4 competition data]], [[D17:CES]] has the lowest mean and median [[D15:MASE]] and [[D14:RMSSE]] and the lowest median [[D16:MSIS]] of [[D12:four methods, CES, ETS, ARIMA and the Theta method]], but not the lowest mean MSIS.
   scope: population: M4 competition time series | excludes: 10 series on which ETS broke down
   addresses B2: The trend alternatives of exponential smoothing in a state space framework make the selection of a model difficult.
-C5 [formal; principal; support: formal_proof E5; assumes C61; uses C16; verification unchecked]
-  [[D1:CES]] has an underlying ARMA(2,2) model whose coefficients $$\begin{aligned} \phi_1 &= 2 - \alpha_0 \\ \phi_2 &= \alpha_0 + \alpha_1 - 2 \\ \theta_1 &= 2 - 2\alpha_0 + \alpha_1 \\ \theta_2 &= 3\alpha_0 + \alpha_1 - 2 - \alpha_0^2 - \alpha_1^2 \end{aligned}$$ are nonlinear functions of the same two parameters $\alpha_0$ and $\alpha_1$.
+C5 [formal; principal; support: formal_proof E5; assumes C61; uses C16; verification agent_checked]
+  [[D1:CES]] has an underlying ARMA(2,2) model whose coefficients $$\begin{aligned} \phi_1 &= 2 - \alpha_0 \\ \phi_2 &= \alpha_0 + \alpha_1 - 2 \\ \theta_1 &= 2 - 2\alpha_0 + \alpha_1 \\ \theta_2 &= 3\alpha_0 + \alpha_1 - 2 - \alpha_0^2 - \alpha_1^2 \end{aligned}$$ are functions of the same two parameters $\alpha_0$ and $\alpha_1$, so that the autoregressive and moving-average coefficients are tied together; $\theta_2$ is nonlinear in them.
   extends B26: Exponential smoothing methods have equivalent ARIMA models: simple exponential smoothing corresponds to ARIMA(0,1,1).
-C6 [formal; principal; support: formal_proof E5; uses C5; verification unchecked]
+C6 [formal; principal; support: formal_proof E5; uses C5; verification agent_checked]
   The parameter space of the ARMA(2,2) model underlying [[D1:CES]] differs from that of the general ARMA(2,2) model.
   extends B26: Exponential smoothing methods have equivalent ARIMA models: simple exponential smoothing corresponds to ARIMA(0,1,1).
   qualifies B27: The coefficients of a general ARMA(2,2) model are free parameters, restricted only by the stationarity and invertibility conditions.
-C7 [formal; principal; support: formal_proof E5; uses C5; verification unchecked]
+C7 [formal; principal; support: formal_proof E5; uses C5; verification agent_checked]
   The parameter space of the ARMA(2,2) model underlying [[D1:CES]] is not restricted to stationary models.
   qualifies B27: The coefficients of a general ARMA(2,2) model are free parameters, restricted only by the stationarity and invertibility conditions.
 C8 [methodological; principal; support: argument W1; limitations L2; warrant W1]
@@ -100,13 +100,13 @@ C12 [descriptive; principal; support: empirical_quant E8 (E8.T1.r5, E8.T1.r6); l
   On the [[D32:M4 data without 10 series]], [[D5:SCUM]] has lower mean and median [[D15:MASE]], [[D14:RMSSE]] and [[D16:MSIS]] than [[D6:SCUM(noCES)]].
   scope: population: M4 competition time series | excludes: 10 series on which ETS broke down
   extends B13, own earlier work: A median combination of ETS, ARIMA, Theta and CES forecasts (SCUM) is accurate on the M4 competition data.
-C17 [formal; supporting; support: formal_proof E3, cited B1, at p. 38, own earlier work; verification unchecked]
+C17 [formal; supporting; support: formal_proof E3, cited B1, at p. 38, own earlier work; verification agent_checked]
   [[D1:CES]] is stationary, with both eigenvalues of its transition matrix inside the unit circle, when $\alpha_1 < 5 - 2\alpha_0$, $\alpha_1 < 1$ and $\alpha_1 > 1 - \alpha_0$.
-C18 [formal; supporting; support: formal_proof E3; verification unchecked]
+C18 [formal; supporting; support: formal_proof E3; verification agent_checked]
   When $\alpha_1 > 1$, both eigenvalues of the [[D1:CES]] transition matrix are real and one of them is greater than one.
-C19 [formal; supporting; support: formal_proof E3; uses C18; verification unchecked]
+C19 [formal; supporting; support: formal_proof E3; uses C18; verification agent_checked]
   When $\alpha_1 > 1$, [[D1:CES]] produces a non-stationary trajectory.
-C20 [formal; supporting; support: formal_proof E3; verification unchecked]
+C20 [formal; supporting; support: formal_proof E3; verification agent_checked]
   When $\alpha_1 = 1$, [[D1:CES]] is equivalent to [[D19:ETS(A,N,N)]].
 C21 [methodological; supporting; support: cited B14, own earlier work, cited B1, own earlier work]
   [[D1:CES]] is required to be stable, or at least forecastable.
@@ -114,24 +114,28 @@ C21 [methodological; supporting; support: cited B14, own earlier work, cited B1,
 C22 [methodological; supporting; support: cited B14, own earlier work, cited B1, own earlier work]
   [[D1:CES]] is not required to be stationary.
   scope: data_type: univariate time series | conditions: estimation of the complex smoothing parameter
-C23 [formal; supporting; support: formal_proof E4, cited B1, at pp. 172-173, own earlier work; verification unchecked]
+C23 [formal; supporting; support: formal_proof E4, cited B1, at pp. 172-173, own earlier work; verification agent_checked]
   [[D1:CES]] is stable, with all eigenvalues of its discount matrix inside the unit circle, when $(\alpha_0 - 2.5)^2 + \alpha_1^2 > 1.25$, $(\alpha_0 - 0.5)^2 + (\alpha_1 - 1)^2 > 0.25$ and $(\alpha_0 - 1.5)^2 + (\alpha_1 - 0.5)^2 < 1.5$.
-C24 [formal; supporting; support: formal_proof E4; uses C17, C23; verification unchecked]
+C24 [formal; supporting; support: formal_proof E4; uses C17, C23; verification agent_checked]
   The stable region of [[D1:CES]] contains both stationary and non-stationary values of the [[D2:complex smoothing parameter]].
 C25 [formal; supporting; support: formal_proof E3; uses C26, C27, C28, C29, C30; verification unchecked]
-  The [[D1:CES]] point forecast $w'F^{h-1}v_t$ follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation.
+  For $0 < \alpha_0 < 2$, the [[D1:CES]] point forecast $w'F^{h-1}v_t$ follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation; on the line $\alpha_0 + \alpha_1 = 1$ it oscillates with constant amplitude.
   explains C36
   explains C37
-C26 [formal; supporting; support: formal_proof E3; verification unchecked]
+  corrected from the published paper (correction; Section 3.3, the list of forecasting trajectories): printed There are several types of forecasting trajectories of CES depending on the particular value of the complex smoothing parameter: a flat line, exponential growth, exponential decline, a harmonic trajectory converging to zero and a diverging harmonic trajectory.
+C26 [formal; supporting; support: formal_proof E3; verification agent_checked]
   When $\alpha_1 = 1$, the [[D1:CES]] point forecast is a flat line.
 C27 [formal; supporting; support: formal_proof E3; verification unchecked]
-  When $\alpha_1 > 1$, the [[D1:CES]] point forecast grows exponentially.
-C28 [formal; supporting; support: formal_proof E3; verification unchecked]
-  When $(4 - \alpha_0^2)/4 < \alpha_1 < 1$, the [[D1:CES]] point forecast declines exponentially.
-C29 [formal; supporting; support: formal_proof E3; verification unchecked]
+  When $\alpha_1 > 1$ and $\alpha_0 < 2$, the [[D1:CES]] point forecast grows exponentially in magnitude, upward or downward according to the current state.
+  corrected from the published paper (correction; Section 3.3, the list of forecasting trajectories): printed When $\alpha_1 > 1$ the model produces trajectory with exponential growth.
+C28 [formal; supporting; support: formal_proof E3; verification disputed]
+  When $(4 - \alpha_0^2)/4 < \alpha_1 < 1$, $\alpha_0 > 0$ and $\alpha_1 < 5 - 2\alpha_0$, the [[D1:CES]] point forecast declines exponentially.
+  corrected from the published paper (correction; Section 3.3, the list of forecasting trajectories): printed When $(4 - \alpha_0^2)/4 < \alpha_1 < 1$ trajectory becomes stationary and CES produces exponential decline.
+C29 [formal; supporting; support: formal_proof E3; verification agent_checked]
   When $1 - \alpha_0 < \alpha_1 < (4 - \alpha_0^2)/4$, the [[D1:CES]] point forecast is a harmonic oscillation converging to zero.
-C30 [formal; supporting; support: formal_proof E3; verification unchecked]
-  When $0 < \alpha_1 < 1 - \alpha_0$, the [[D1:CES]] point forecast is a diverging harmonic oscillation.
+C30 [formal; supporting; support: formal_proof E3; verification agent_checked]
+  When $\alpha_0 \ge 0$ and $0 < \alpha_1 < 1 - \alpha_0$, the [[D1:CES]] point forecast is a diverging harmonic oscillation.
+  corrected from the published paper (correction; Section 3.3, the list of forecasting trajectories): printed When $0 < \alpha_1 < 1 - \alpha_0$ the diverging harmonic trajectory is produced.
 C32 [descriptive; supporting; support: empirical_quant E7 (E7.R1, E7.R2); inherits C60, C62, C63, C64]
   On M3 series 1664, which graphical analysis and [[D40:ADF test]] and [[D41:KPSS test]] indicate is stationary, [[D1:CES]] estimates the stationary [[D2:complex smoothing parameter]] $\alpha_0 + i\alpha_1 = 0.99999 + 0.99884i$.
   scope: population: M3 competition series 1664 | conditions: non-seasonal CES
@@ -171,20 +175,21 @@ C64 [descriptive; supporting; assumption (statistical, unchecked)]
   The error term $\varepsilon_t$ of [[D1:CES]] is normally distributed.
 C65 [descriptive; supporting; assumption (methodological, unchecked)]
   [[D9:ETS]] model selection with es() from the smooth package identifies correctly which series of the [[D8:M1, M3 and tourism data]] are seasonal.
-C41 [formal; secondary; support: formal_proof E1; uses C16; verification unchecked]
+C41 [formal; secondary; support: formal_proof E1; uses C16; verification agent_checked]
   The transition matrix of the [[D1:CES]] state-space form contains the smoothing parameters.
 C42 [methodological; secondary; support: cited B1, at p. 68, own earlier work; assumes C60, C64]
   The [[D39:Akaike information criterion]] of seasonal and non-seasonal [[D1:CES]] can be computed from a Gaussian likelihood of the same form as that of additive exponential smoothing models.
   scope: data_type: univariate time series | conditions: additive Gaussian errors
 C43 [formal; secondary; support: cited B1, at p. 96, own earlier work; assumes C60, C62, C63; uses C16]
   The conditional variance of [[D1:CES]] $h$ steps ahead, given the level and the [[D3:nonlinear trend component]], can be calculated from its state-space form in the same way as for pure additive ETS models.
-C44 [formal; secondary; support: formal_proof E3; uses C20; verification unchecked]
-  When $\alpha_1$ is close to 1, [[D1:CES]] behaves like simple exponential smoothing with smoothing parameter $\alpha_0 - 1$.
-C45 [formal; secondary; support: formal_proof E3; uses C44; verification unchecked]
+C44 [formal; secondary; support: formal_proof E3; uses C20; verification agent_checked]
+  When $\alpha_1 = 1$, [[D1:CES]] is simple exponential smoothing with smoothing parameter $\alpha_0 - 1$; when $\alpha_1$ is close to 1, it behaves like it over short horizons only.
+  corrected from the published paper (correction; Section 3.4.2): printed When $\alpha_1$ is close to 1 the influence of $\hat{e}_t$ on $\hat{y}_t$ becomes minimal and the second smoothing parameter $\alpha_0$ behaves similarly to the smoothing parameter in SES.
+C45 [formal; secondary; support: formal_proof E3; uses C44; verification agent_checked]
   When $\alpha_1$ is close to 1, the real part $\alpha_0$ of the [[D2:complex smoothing parameter]] of [[D1:CES]] is close to 1 for a stationary series, for which the smoothing parameter of simple exponential smoothing would be close to 0.
-C46 [formal; secondary; support: formal_proof E3; uses C44; verification unchecked]
+C46 [formal; secondary; support: formal_proof E3; uses C44; verification agent_checked]
   When $\alpha_1$ is close to 1, the real part $\alpha_0$ of the [[D2:complex smoothing parameter]] of [[D1:CES]] is close to 2 for a random walk.
-C47 [formal; secondary; support: formal_proof E6; uses C8; verification unchecked]
+C47 [formal; secondary; support: formal_proof E6; uses C8; verification agent_checked]
   [[D4:seasonal CES]] has an underlying SARIMA(2,0,2m+2)(2,0,0)$_m$ model.
 C53 [descriptive; secondary; support: empirical_quant E2; inherits C60, C62, C63, C64]
   On the [[D8:M1, M3 and tourism data]], in [[D38:Nemenyi tests]] at the 5% level, not all of the differences between [[D17:CES]] and [[D13:ETS, ARIMA and the Theta method]] on [[D14:RMSSE]] and [[D15:MASE]] are statistically significant.
@@ -222,7 +227,7 @@ C15 [methodological; supporting; support: argument W2; uses C37, C38; warrant W2
 C31 [methodological; supporting; support: argument W3; uses C25; warrant W3]
   [[D4:seasonal CES]] can produce seasonality whose amplitude changes nonlinearly.
   scope: data_type: seasonal univariate time series | conditions: seasonal CES
-C48 [formal; secondary; support: argument W4; uses C47; limitations L2; warrant W4; verification unchecked]
+C48 [formal; secondary; support: argument W4; uses C47; limitations L2; warrant W4; verification agent_checked]
   [[D4:seasonal CES]] is a stationary or a non-stationary model depending on the values of its complex smoothing parameters.
 C49 [methodological; secondary; support: argument W3; uses C25; warrant W3]
   [[D4:seasonal CES]] can produce all the trajectories of non-seasonal [[D1:CES]].
@@ -265,6 +270,8 @@ E5 [formal; foundation Algebra of backshift-operator polynomials] Derivation of 
 E6 [formal; foundation Algebra of backshift-operator polynomials and matrix inversion] Derivation of the SARIMA model underlying [[D4:seasonal CES]] from its state-space form.
   assumes C61
   derivation: in the source
+  corrected from the published paper (misprint; Equations (E9) to (E11), Appendix E): printed $\det(I_2 - F_0 B) = 1 - 2B - (\alpha_0 + \alpha_1 - 2)B^2$ and $\det(I_2 - F_1 B^m) = 1 - 2B^m - (\beta_0 + \beta_1 - 2)B^{2m}$
+  corrected from the published paper (misprint; Appendix E, the vectors g0 and g1 of (E1)): printed $g_0 = (\alpha_1 - \alpha_0, \alpha_1 + \alpha_0)'$ and $g_1 = (\beta_1 - \beta_0, \beta_1 + \beta_0)'$
 E7 [quant; design other; data_origin secondary; n 2] [[D1:CES]] fitted with ces() from smooth to [[D42:M3 series 1664 and 2721]], each split into in-sample and holdout parts; stationarity of each series assessed by graphical analysis and [[D40:ADF test]] and [[D41:KPSS test]]; point forecasts and 95% prediction intervals.
   setup: studied D1; cases D42; procedure D40, D41; lens D2
   E7.R1 D2 = 0.99999 {part: real part alpha_0, series: M3 series 1664}
@@ -330,6 +337,15 @@ A6 [software] greybox package for R (rmcb, Nemenyi test)
 A7 [data] M4 competition data
 A8 [software] R, the environment for statistical computing in which the experiments were run
 A9 [manuscript] The published article (open access, CC BY).
+
+CORRECTIONS
+C27.statement [correction; Section 3.3, the list of forecasting trajectories; found by P5] printed When $\alpha_1 > 1$ the model produces trajectory with exponential growth.; recorded When $\alpha_1 > 1$ and $\alpha_0 < 2$, the [[D1:CES]] point forecast grows exponentially in magnitude, upward or downward according to the current state.; For $\alpha_1 > 1$ the eigenvalues of $F$ are real with sum $2 - \alpha_0$, so for $\alpha_0 > 2$ the negative one dominates: at $\alpha_0 = 2.2$, $\alpha_1 = 1.2$, inside the stability region, they are 1.087 and −1.287 and the forecast alternates in sign as it diverges.
+C28.statement [correction; Section 3.3, the list of forecasting trajectories; found by P5] printed When $(4 - \alpha_0^2)/4 < \alpha_1 < 1$ trajectory becomes stationary and CES produces exponential decline.; recorded When $(4 - \alpha_0^2)/4 < \alpha_1 < 1$, $\alpha_0 > 0$ and $\alpha_1 < 5 - 2\alpha_0$, the [[D1:CES]] point forecast declines exponentially.; The interval alone does not keep the eigenvalues inside the unit circle: at $\alpha_0 = -1$, $\alpha_1 = 0.9$ they are 1.113 and 1.887. The conditions $\alpha_0 > 0$ and $\alpha_1 < 5 - 2\alpha_0$, which the stationarity condition of Section 3.2 carries, are needed; every stable point satisfies them.
+C30.statement [correction; Section 3.3, the list of forecasting trajectories; found by P5] printed When $0 < \alpha_1 < 1 - \alpha_0$ the diverging harmonic trajectory is produced.; recorded When $\alpha_0 \ge 0$ and $0 < \alpha_1 < 1 - \alpha_0$, the [[D1:CES]] point forecast is a diverging harmonic oscillation.; For $\alpha_0 < 0$ the interval reaches above $(4 - \alpha_0^2)/4$, where the eigenvalues are real: at $\alpha_0 = -1$, $\alpha_1 = 0.9$ the forecast diverges exponentially without oscillating. Every stable point has $\alpha_0 > 0$.
+C25.statement [correction; Section 3.3, the list of forecasting trajectories; found by P5] printed There are several types of forecasting trajectories of CES depending on the particular value of the complex smoothing parameter: a flat line, exponential growth, exponential decline, a harmonic trajectory converging to zero and a diverging harmonic trajectory.; recorded For $0 < \alpha_0 < 2$, the [[D1:CES]] point forecast $w'F^{h-1}v_t$ follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation; on the line $\alpha_0 + \alpha_1 = 1$ it oscillates with constant amplitude.; The five types cover the parameter plane only for $0 < \alpha_0 < 2$ (see the corrections of the growth, decline and divergence conditions), and on the line $\alpha_0 + \alpha_1 = 1$ the eigenvalues are complex with modulus exactly 1: at the stable point $\alpha_0 = 0.8$, $\alpha_1 = 0.2$ the forecast oscillates with constant amplitude, which none of the five types describes.
+C44.statement [correction; Section 3.4.2; found by P5] printed When $\alpha_1$ is close to 1 the influence of $\hat{e}_t$ on $\hat{y}_t$ becomes minimal and the second smoothing parameter $\alpha_0$ behaves similarly to the smoothing parameter in SES.; recorded When $\alpha_1 = 1$, [[D1:CES]] is simple exponential smoothing with smoothing parameter $\alpha_0 - 1$; when $\alpha_1$ is close to 1, it behaves like it over short horizons only.; At $\alpha_1 = 1$ the correspondence is exact. Near 1 it holds only over short horizons: with $\alpha_0 = 1.24$ the response of the forecast to a unit error stays within 0.025 of 0.24 for 10 steps at $\alpha_1 = 0.99$ or 1.01, but drifts by 0.14 to 0.30 over 100 steps.
+E6 [misprint; Equations (E9) to (E11), Appendix E; found by P5] printed $\det(I_2 - F_0 B) = 1 - 2B - (\alpha_0 + \alpha_1 - 2)B^2$ and $\det(I_2 - F_1 B^m) = 1 - 2B^m - (\beta_0 + \beta_1 - 2)B^{2m}$; recorded $\det(I_2 - F_0 B) = 1 - (2 - \alpha_0)B - (\alpha_0 + \alpha_1 - 2)B^2$ and $\det(I_2 - F_1 B^m) = 1 - (2 - \beta_0)B^m - (\beta_0 + \beta_1 - 2)B^{2m}$; The determinant of $I_2 - F_0 B$ with $F_0$ as given in Appendix E has $-(2 - \alpha_0)B$ as its linear term, as the non-seasonal model's autoregressive polynomial in Section 3.4.1 does; the orders of the SARIMA model are unaffected.
+E6 [misprint; Appendix E, the vectors g0 and g1 of (E1); found by P5] printed $g_0 = (\alpha_1 - \alpha_0, \alpha_1 + \alpha_0)'$ and $g_1 = (\beta_1 - \beta_0, \beta_1 + \beta_0)'$; recorded $g_0 = (\alpha_0 - \alpha_1, \alpha_0 + \alpha_1)'$ and $g_1 = (\beta_0 - \beta_1, \beta_0 + \beta_1)'$; The state-space form of CES in Section 3.2 has $(\alpha_0 - \alpha_1)\varepsilon_t$ in the level equation; Appendix E inverts the sign of the first element.
 
 REFERENCES
 B1 10.1007/978-3-540-71918-2 (doi)
