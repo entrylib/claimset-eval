@@ -33,7 +33,11 @@
    "id": "10.1002/nav.22074"
   },
   "autonomy": "human_assisted",
-  "summary": "Exponential smoothing forecasts a series by first choosing a model: with or without a trend, with or without seasonality. This paper proposes complex exponential smoothing (CES), which uses complex variables, pairing each value with its forecast error, so that one model moves smoothly between a level and a trend as its smoothing parameter changes. It shows that CES can be stationary or non-stationary depending on that parameter, and that it corresponds to an ARMA(2,2) model whose coefficients are tied together. A seasonal version handles seasonality without seasonal indices, so model selection reduces to a choice between two models. On the series of the M1, M3, tourism and M4 forecasting competitions, CES was more accurate than exponential smoothing, ARIMA and the Theta method on most error measures, though not on all, and adding it to a combination of forecasts improved the combination."
+  "summary": "Exponential smoothing forecasts a series by first choosing a model: with or without a trend, with or without seasonality. This paper proposes complex exponential smoothing (CES), which uses complex variables, pairing each value with its forecast error, so that one model moves smoothly between a level and a trend as its smoothing parameter changes. It shows that CES can be stationary or non-stationary depending on that parameter, and that it corresponds to an ARMA(2,2) model whose coefficients are tied together. A seasonal version handles seasonality without seasonal indices, so model selection reduces to a choice between two models. On the series of the M1, M3, tourism and M4 forecasting competitions, CES was more accurate than exponential smoothing, ARIMA and the Theta method on most error measures, though not on all, and adding it to a combination of forecasts improved the combination.",
+  "declarations": {
+   "funding": [],
+   "competing_interests": "None declared."
+  }
  },
  "contributors": [
   {

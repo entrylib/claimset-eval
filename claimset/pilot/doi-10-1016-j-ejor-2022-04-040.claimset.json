@@ -29,7 +29,11 @@
    "id": "10.1016/j.ejor.2022.04.040"
   },
   "autonomy": "human_assisted",
-  "summary": "Retailers often forecast many related products at once, and short sales histories make seasonal patterns hard to estimate product by product. This paper sets out a taxonomy for vector exponential smoothing, a model that forecasts a group of series together, which says for each group which Parameters, Initial values and Components (PIC) the series share and which each keeps for itself. It shows how every model of the taxonomy is built from blocks of matrices. In simulations of short quarterly series, wrongly forcing series to share seasonal components cost much accuracy, while sharing only the initial seasonal values was the most robust choice, and sharing smoothing parameters helped. On monthly department-level sales from the M5 competition, a vector model with shared seasonality was more accurate than the univariate models it was compared with, on both long and short histories."
+  "summary": "Retailers often forecast many related products at once, and short sales histories make seasonal patterns hard to estimate product by product. This paper sets out a taxonomy for vector exponential smoothing, a model that forecasts a group of series together, which says for each group which Parameters, Initial values and Components (PIC) the series share and which each keeps for itself. It shows how every model of the taxonomy is built from blocks of matrices. In simulations of short quarterly series, wrongly forcing series to share seasonal components cost much accuracy, while sharing only the initial seasonal values was the most robust choice, and sharing smoothing parameters helped. On monthly department-level sales from the M5 competition, a vector model with shared seasonality was more accurate than the univariate models it was compared with, on both long and short histories.",
+  "declarations": {
+   "funding": [],
+   "competing_interests": "None declared."
+  }
  },
  "contributors": [
   {
