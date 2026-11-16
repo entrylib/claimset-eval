@@ -211,10 +211,19 @@ def object_ids(node, out=None):
     return out
 
 
+def render_command(name, root=ROOT):
+    """`claimset render` for a claimset of the study: a published file (from EntryLib: its paper has a version) is
+    rendered as one, a submission file as a submission."""
+    path = claimset_path(name, root)
+    with open(path, encoding="utf-8") as f:
+        published = "version" in (json.load(f).get("paper") or {})
+    return ["claimset", "render", path] + (["--published"] if published else [])
+
+
 def render_bundle(name, claim, root=ROOT):
     """The reading view of one claim and what it rests on, from the claimset package."""
     try:
-        r = subprocess.run(["claimset", "render", claimset_path(name, root), "--claim", claim],
+        r = subprocess.run(render_command(name, root) + ["--claim", claim],
                            capture_output=True, text=True)
     except FileNotFoundError:
         raise RuntimeError("the claimset package is not installed (pip install git+https://github.com/entrylib/claimset)")
@@ -757,7 +766,7 @@ def cmd_check(args, root=ROOT):
         if not (os.path.exists(claimset_path(name, root)) and os.path.exists(view_path(name, root))):
             continue
         try:
-            r = subprocess.run(["claimset", "render", claimset_path(name, root)], capture_output=True, text=True)
+            r = subprocess.run(render_command(name, root), capture_output=True, text=True)
         except FileNotFoundError:
             problems.append("the claimset package is not installed; cannot check the reading views")
             break
