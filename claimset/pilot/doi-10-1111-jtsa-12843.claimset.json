@@ -4,7 +4,18 @@
   "title": "Online Detection of Forecast Model Inadequacies Using Forecast Errors",
   "published_as": {
    "id_type": "doi",
-   "id": "10.1111/jtsa.12843"
+   "id": "10.1111/jtsa.12843",
+   "corrections": [
+    {
+     "kind": "misprint",
+     "field": "D3.definition",
+     "where": "Section 2.2, the definition of $Q_\\xi(m,k)$",
+     "printed": "$Q_\\xi(m,k) = \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m})$",
+     "recorded": "$Q_\\xi(m,k) = \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m})^2$",
+     "reason": "The detector compares the centred squared forecast errors after the training period with their mean in it, as Page's CUSUM detector compares the same series in both sums; without the square the second sum is of the centred errors themselves, which is zero by the definition of the bias estimate.",
+     "found_by": "P4"
+    }
+   ]
   },
   "summary": "Forecasting models go wrong when the process they forecast changes, and the more complex the model, the harder the change is to spot directly. This paper proposes watching the model's one-step-ahead forecast errors instead, with a sequential changepoint test (Page's CUSUM), whatever the forecasting method. It shows that, when the model keeps a constant bias and cannot fully adapt, a change in the mean or variance of the data appears as a change in the mean of the errors or of their squares, with known limit distributions for the test. Exponential smoothing adapts to mean changes, so with it only variance changes stay visible. In simulations of seasonal data, monitoring forecast errors found changes sooner than monitoring the raw data, with few false alarms. Two examples follow: Royal Mail parcel forecasts and hospital admissions for gallstones.",
   "licence": "CC-BY-4.0",
@@ -249,7 +260,7 @@
    "id": "D3",
    "term": "squared-error detector $D_\\xi(m,k)$",
    "kind": "method",
-   "definition": "[[D24:Page's CUSUM detector]] applied to the centred squared forecast errors of the [[D1:forecast error monitoring framework]]: $$\\begin{aligned} Q_\\xi(m,k) &= \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m})^2 \\\\ D_\\xi(m,k) &= \\max_{0 \\le i \\le k} \\left| Q_\\xi(m,k) - Q_\\xi(m,i) \\right| \\end{aligned}$$ with stopping time $$\\tau_{\\xi,m} = \\min\\{k \\ge 1 : D_\\xi(m,k) \\ge \\hat{\\sigma}_{\\xi,m} c_{\\xi,\\alpha} g(m,k,\\gamma)\\},$$ where $\\hat{b}_{\\mu,m}$ is the mean of the forecast errors in the $m$ Phase I samples and $\\hat{\\sigma}_{\\xi,m}$ the standard deviation of the centred squared forecast errors in that sample. $g(m,k,\\gamma)$ is that of [[D24:Page's CUSUM detector]] and $c_{\\xi,\\alpha}$ comes from the limit distribution of the detector under the null hypothesis. The paper prints the second sum of $Q_\\xi(m,k)$ without the square, a typographical error that the guarantor, an author of the paper, has confirmed.",
+   "definition": "[[D24:Page's CUSUM detector]] applied to the centred squared forecast errors of the [[D1:forecast error monitoring framework]]: $$\\begin{aligned} Q_\\xi(m,k) &= \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m})^2 \\\\ D_\\xi(m,k) &= \\max_{0 \\le i \\le k} \\left| Q_\\xi(m,k) - Q_\\xi(m,i) \\right| \\end{aligned}$$ with stopping time $$\\tau_{\\xi,m} = \\min\\{k \\ge 1 : D_\\xi(m,k) \\ge \\hat{\\sigma}_{\\xi,m} c_{\\xi,\\alpha} g(m,k,\\gamma)\\},$$ where $\\hat{b}_{\\mu,m}$ is the mean of the forecast errors in the $m$ Phase I samples and $\\hat{\\sigma}_{\\xi,m}$ the standard deviation of the centred squared forecast errors in that sample. $g(m,k,\\gamma)$ is that of [[D24:Page's CUSUM detector]] and $c_{\\xi,\\alpha}$ comes from the limit distribution of the detector under the null hypothesis.",
    "part_of": [
     "D1"
    ],
