@@ -2148,6 +2148,12 @@
     "object": "a Gaussian likelihood of the same form as for additive exponential smoothing",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "univariate time series",
+    "conditions": [
+     "additive Gaussian errors"
+    ]
    }
   },
   {
@@ -2364,6 +2370,12 @@
     "object": "all the trajectories of non-seasonal CES",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "seasonal univariate time series",
+    "conditions": [
+     "seasonal CES"
+    ]
    }
   },
   {
@@ -2395,6 +2407,12 @@
     "conditions": [
      "the level of the series does not change"
     ]
+   },
+   "scope": {
+    "data_type": "seasonal univariate time series with a constant level",
+    "conditions": [
+     "seasonal CES"
+    ]
    }
   },
   {
@@ -2420,6 +2438,12 @@
     "object": null,
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "non-seasonal univariate time series",
+    "conditions": [
+     "non-seasonal CES"
+    ]
    }
   },
   {
@@ -2445,6 +2469,12 @@
     "object": null,
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "seasonal univariate time series",
+    "conditions": [
+     "seasonal CES with seasonal period m"
+    ]
    }
   },
   {
@@ -2520,6 +2550,13 @@
     "conditions": [
      "D34"
     ]
+   },
+   "scope": {
+    "population": "the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "CES and the ETS model chosen for comparison",
+     "forecast horizons of the original competitions"
+    ]
    }
   },
   {
@@ -2552,6 +2589,13 @@
     "comparator": "D29",
     "conditions": [
      "D34"
+    ]
+   },
+   "scope": {
+    "population": "the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "CES and the ETS model chosen for comparison",
+     "forecast horizons of the original competitions"
     ]
    }
   },
@@ -2586,6 +2630,13 @@
     "conditions": [
      "D34"
     ]
+   },
+   "scope": {
+    "population": "the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "CES and the ETS model chosen for comparison",
+     "forecast horizons of the original competitions"
+    ]
    }
   },
   {
@@ -2618,6 +2669,13 @@
     "comparator": "D31",
     "conditions": [
      "D34"
+    ]
+   },
+   "scope": {
+    "population": "the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "CES and the ETS model chosen for comparison",
+     "forecast horizons of the original competitions"
     ]
    }
   },
@@ -2652,6 +2710,12 @@
     "object": "seasonal and non-seasonal CES",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "univariate time series, seasonal or non-seasonal",
+    "conditions": [
+     "selection between seasonal and non-seasonal CES"
+    ]
    }
   },
   {

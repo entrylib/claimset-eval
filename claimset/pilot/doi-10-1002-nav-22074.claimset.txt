@@ -175,6 +175,7 @@ C41 [formal; secondary; support: formal_proof E1; uses C16; verification uncheck
   The transition matrix of the [[D1:CES]] state-space form contains the smoothing parameters.
 C42 [methodological; secondary; support: cited B1, at p. 68, own earlier work; assumes C60, C64]
   The [[D39:Akaike information criterion]] of seasonal and non-seasonal [[D1:CES]] can be computed from a Gaussian likelihood of the same form as that of additive exponential smoothing models.
+  scope: data_type: univariate time series | conditions: additive Gaussian errors
 C43 [formal; secondary; support: cited B1, at p. 96, own earlier work; assumes C60, C62, C63; uses C16]
   The conditional variance of [[D1:CES]] $h$ steps ahead, given the level and the [[D3:nonlinear trend component]], can be calculated from its state-space form in the same way as for pure additive ETS models.
 C44 [formal; secondary; support: formal_proof E3; uses C20; verification unchecked]
@@ -191,14 +192,19 @@ C53 [descriptive; secondary; support: empirical_quant E2; inherits C60, C62, C63
   qualifies C3
 C54 [descriptive; secondary; support: empirical_quant E9 (E9.T2); inherits C65, C60, C62, C63, C64]
   On the [[D34:2053 seasonal series]] of the [[D8:M1, M3 and tourism data]], [[D17:CES]] has lower mean and median [[D14:RMSSE]] and [[D15:MASE]] and lower median [[D16:MSIS]] than [[D27:ETS(A,N,A)]], but a higher mean MSIS.
+  scope: population: the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions | conditions: CES and the ETS model chosen for comparison; forecast horizons of the original competitions
 C55 [descriptive; secondary; support: empirical_quant E9 (E9.T2); inherits C65, C60, C62, C63, C64]
   On the [[D34:2053 seasonal series]] of the [[D8:M1, M3 and tourism data]], [[D17:CES]] has lower mean and median [[D14:RMSSE]] and [[D15:MASE]] and lower median [[D16:MSIS]] than [[D29:ETS(A,Ad,A)]], but a higher mean MSIS.
+  scope: population: the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions | conditions: CES and the ETS model chosen for comparison; forecast horizons of the original competitions
 C56 [descriptive; secondary; support: empirical_quant E9 (E9.T2); inherits C65, C60, C62, C63, C64]
   On the [[D34:2053 seasonal series]] of the [[D8:M1, M3 and tourism data]], [[D17:CES]] has lower mean and median [[D14:RMSSE]] and [[D15:MASE]] and lower median [[D16:MSIS]] than [[D30:ETS(M,M,M)]], but a higher mean MSIS.
+  scope: population: the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions | conditions: CES and the ETS model chosen for comparison; forecast horizons of the original competitions
 C57 [descriptive; secondary; support: empirical_quant E9 (E9.T2); inherits C65, C60, C62, C63, C64]
   On the [[D34:2053 seasonal series]] of the [[D8:M1, M3 and tourism data]], [[D17:CES]] has lower mean and median [[D14:RMSSE]] and [[D15:MASE]] and lower median [[D16:MSIS]] than [[D31:ETS(M,Md,M)]], but a higher mean MSIS.
+  scope: population: the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions | conditions: CES and the ETS model chosen for comparison; forecast horizons of the original competitions
 C58 [interpretive; secondary; support: empirical_quant E9 (E9.T2), argument W6; inherits C65; warrant W6]
   Information criteria can effectively identify when to switch between seasonal and non-seasonal [[D1:CES]].
+  scope: data_type: univariate time series, seasonal or non-seasonal | conditions: selection between seasonal and non-seasonal CES
 C59 [interpretive; secondary; support: empirical_quant E2 (E2.T1), empirical_quant E8 (E8.T1), argument W7; inherits C60, C62, C63, C64; warrant W7]
   [[D17:CES]] is a robust forecasting approach.
   scope: excludes: forecasting scenarios for which CES is not appropriate, which the paper does not name
@@ -220,12 +226,16 @@ C48 [formal; secondary; support: argument W4; uses C47; limitations L2; warrant 
   [[D4:seasonal CES]] is a stationary or a non-stationary model depending on the values of its complex smoothing parameters.
 C49 [methodological; secondary; support: argument W3; uses C25; warrant W3]
   [[D4:seasonal CES]] can produce all the trajectories of non-seasonal [[D1:CES]].
+  scope: data_type: seasonal univariate time series | conditions: seasonal CES
 C50 [methodological; secondary; support: argument W3; uses C25; warrant W3]
   [[D4:seasonal CES]] can model multiplicative or other shapes of seasonality when the level of the series does not change.
+  scope: data_type: seasonal univariate time series with a constant level | conditions: seasonal CES
 C51 [methodological; secondary; support: argument W5; warrant W5]
   Non-seasonal [[D1:CES]] has 5 estimated parameters: two smoothing parameters, two initial states and the error variance.
+  scope: data_type: non-seasonal univariate time series | conditions: non-seasonal CES
 C52 [methodological; secondary; support: argument W5; warrant W5]
   [[D4:seasonal CES]] has $4 + 2m + 2 + 1$ estimated parameters: four smoothing parameters, $2m$ initial lagged values, two initial non-seasonal states and the error variance.
+  scope: data_type: seasonal univariate time series | conditions: seasonal CES with seasonal period m
 
 EVIDENCE
 E1 [formal; foundation Complex numbers represented as real 2x2 matrices; linear algebra] Derivation of the state-space form of [[D1:CES]] from the complex-valued method, representing complex variables as real vectors and matrices.
