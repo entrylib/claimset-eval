@@ -74,17 +74,6 @@
   {
    "id": "P1",
    "type": "human",
-   "name": "Ivan Svetunkov",
-   "orcid": "0000-0001-7826-0281",
-   "affiliation": "Department of Management Science, Lancaster University, Lancaster, UK",
-   "positions": [
-    "guarantor",
-    "contributor"
-   ]
-  },
-  {
-   "id": "P2",
-   "type": "human",
    "name": "Thomas Grundy",
    "affiliation": "STOR-i Centre for Doctoral Training, Lancaster University, Lancaster, UK; Peak.ai, Manchester, UK",
    "positions": [
@@ -94,7 +83,7 @@
    "orcid": "0000-0003-1723-3217"
   },
   {
-   "id": "P3",
+   "id": "P2",
    "type": "human",
    "name": "Rebecca Killick",
    "affiliation": "School of Mathematical Sciences, Lancaster University, Lancaster, UK",
@@ -103,6 +92,17 @@
     "contributor"
    ],
    "orcid": "0000-0003-0583-3960"
+  },
+  {
+   "id": "P3",
+   "type": "human",
+   "name": "Ivan Svetunkov",
+   "orcid": "0000-0001-7826-0281",
+   "affiliation": "Department of Management Science, Lancaster University, Lancaster, UK",
+   "positions": [
+    "guarantor",
+    "contributor"
+   ]
   },
   {
    "id": "P4",
