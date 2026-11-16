@@ -196,6 +196,24 @@
    "id": "B11",
    "target": "10.1093/biomet/41.1-2.100",
    "id_type": "doi"
+  },
+  {
+   "id": "B12",
+   "target": "https://CRAN.R-project.org/package=forecast",
+   "id_type": "url",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/forecast/forecast_8.21.1.tar.gz"
+  },
+  {
+   "id": "B13",
+   "target": "https://CRAN.R-project.org/package=smooth",
+   "id_type": "url",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_4.0.2.tar.gz"
+  },
+  {
+   "id": "B14",
+   "target": "https://CRAN.R-project.org/package=sandwich",
+   "id_type": "url",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/sandwich/sandwich_3.1-0.tar.gz"
   }
  ],
  "definitions": [
@@ -232,7 +250,7 @@
    "id": "D3",
    "term": "squared-error detector $D_\\xi(m,k)$",
    "kind": "method",
-   "definition": "[[D24:Page's CUSUM detector]] applied to the centred squared forecast errors of the [[D1:forecast error monitoring framework]], as the paper prints it: $$\\begin{aligned} Q_\\xi(m,k) &= \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m}) \\\\ D_\\xi(m,k) &= \\max_{0 \\le i \\le k} \\left| Q_\\xi(m,k) - Q_\\xi(m,i) \\right| \\end{aligned}$$ with stopping time $$\\tau_{\\xi,m} = \\min\\{k \\ge 1 : D_\\xi(m,k) \\ge \\hat{\\sigma}_{\\xi,m} c_{\\xi,\\alpha} g(m,k,\\gamma)\\},$$ where $\\hat{b}_{\\mu,m}$ is the mean of the forecast errors in the $m$ Phase I samples and $\\hat{\\sigma}_{\\xi,m}$ the standard deviation of the centred squared forecast errors in that sample. $g(m,k,\\gamma)$ is that of [[D24:Page's CUSUM detector]] and $c_{\\xi,\\alpha}$ comes from the limit distribution of the detector under the null hypothesis. In [[D24:Page's CUSUM detector]] both sums of $Q(m,k)$ are over the same series; the paper prints the second sum of $Q_\\xi(m,k)$ without the square.",
+   "definition": "[[D24:Page's CUSUM detector]] applied to the centred squared forecast errors of the [[D1:forecast error monitoring framework]]: $$\\begin{aligned} Q_\\xi(m,k) &= \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m})^2 \\\\ D_\\xi(m,k) &= \\max_{0 \\le i \\le k} \\left| Q_\\xi(m,k) - Q_\\xi(m,i) \\right| \\end{aligned}$$ with stopping time $$\\tau_{\\xi,m} = \\min\\{k \\ge 1 : D_\\xi(m,k) \\ge \\hat{\\sigma}_{\\xi,m} c_{\\xi,\\alpha} g(m,k,\\gamma)\\},$$ where $\\hat{b}_{\\mu,m}$ is the mean of the forecast errors in the $m$ Phase I samples and $\\hat{\\sigma}_{\\xi,m}$ the standard deviation of the centred squared forecast errors in that sample. $g(m,k,\\gamma)$ is that of [[D24:Page's CUSUM detector]] and $c_{\\xi,\\alpha}$ comes from the limit distribution of the detector under the null hypothesis. The paper prints the second sum of $Q_\\xi(m,k)$ without the square, a typographical error that the guarantor, an author of the paper, has confirmed.",
    "part_of": [
     "D1"
    ],
@@ -267,7 +285,8 @@
     "p8.1",
     "p8.2",
     "p8.6"
-   ]
+   ],
+   "source": "B12"
   },
   {
    "id": "D6",
@@ -281,7 +300,8 @@
     "p7.10",
     "p7.11",
     "p8.1"
-   ]
+   ],
+   "source": "B13"
   },
   {
    "id": "D7",
@@ -1836,7 +1856,10 @@
    "model": "ARMA forecasting models from forecast::auto.arima (seasonal, no differencing, AIC); ETS forecasting models from smooth::es",
    "runs": 1000,
    "artefacts": [
-    "A3"
+    "A3",
+    "A8",
+    "A9",
+    "A10"
    ],
    "source_spans": [
     "p8.4",
@@ -1873,7 +1896,10 @@
    "model": "seasonal ARMA forecasting models from forecast::auto.arima (no differencing); ETS(A,N,A) from smooth::es",
    "runs": 1000,
    "artefacts": [
-    "A4"
+    "A4",
+    "A8",
+    "A9",
+    "A10"
    ],
    "results": [
     {
@@ -2379,7 +2405,44 @@
     "level": "public",
     "comment": "Supporting Information (Data S1) on the article's page at the publisher"
    },
-   "description": "The article's Supporting Information: the sequential changepoint set-up, Assumptions A to E, Theorems 1 and 2, Corollaries 1 and 2 for the mean detector, and additional simulations, which this claimset does not restate."
+   "description": "The article's Supporting Information: the sequential changepoint set-up, Assumptions A to E, Theorems 1 and 2, Corollaries 1 and 2 for the mean detector, and additional simulations, which this claimset does not restate.",
+   "locator": "Supporting Information, Data S1"
+  },
+  {
+   "id": "A8",
+   "kind": "software",
+   "uri": "https://CRAN.R-project.org/package=forecast",
+   "version": "8.21.1",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/forecast/forecast_8.21.1.tar.gz",
+   "reference": "B12",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The forecast R package (Arima and auto.arima), used for the ARMA forecasting models. The paper's reference gives no version; 8.21.1 is the last version released in 2023, when the paper was written."
+  },
+  {
+   "id": "A9",
+   "kind": "software",
+   "uri": "https://CRAN.R-project.org/package=smooth",
+   "version": "4.0.2",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_4.0.2.tar.gz",
+   "reference": "B13",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The smooth R package (es function), used for the ETS forecasting models, in the version the paper's reference states."
+  },
+  {
+   "id": "A10",
+   "kind": "software",
+   "uri": "https://CRAN.R-project.org/package=sandwich",
+   "version": "3.1-0",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/sandwich/sandwich_3.1-0.tar.gz",
+   "reference": "B14",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The sandwich R package, used for the Bartlett long run variance estimator of Raw CUSUM. The paper's reference gives no version; 3.1-0 is the last version released in 2023, when the paper was written."
   }
  ],
  "open_questions": [
