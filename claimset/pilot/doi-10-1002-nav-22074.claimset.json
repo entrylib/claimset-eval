@@ -13,6 +13,7 @@
   },
   "contributions": [
    "C1",
+   "C16",
    "C2",
    "C3",
    "C4",
@@ -40,10 +41,10 @@
   },
   "highlights": [
    "D1",
+   "C16",
    "C2",
    "C10",
-   "C4",
-   "C12"
+   "C4"
   ]
  },
  "contributors": [
@@ -565,6 +566,36 @@
    }
   },
   {
+   "id": "C16",
+   "statement": "[[D1:CES]] has the single-source-of-error state-space form $$\\begin{aligned} y_t &= l_{t-1} + \\varepsilon_t \\\\ l_t &= l_{t-1} - (1 - \\alpha_1) c_{t-1} + (\\alpha_0 - \\alpha_1) \\varepsilon_t \\\\ c_t &= l_{t-1} + (1 - \\alpha_0) c_{t-1} + (\\alpha_0 + \\alpha_1) \\varepsilon_t \\end{aligned}$$ with level $l_t$ and [[D3:nonlinear trend component]] $c_t$.",
+   "type": "formal",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E1"
+    }
+   ],
+   "verification": "unchecked",
+   "assumptions": [
+    "C60",
+    "C61"
+   ],
+   "source_spans": [
+    "p4.4-p4.13",
+    "p13.28-p14.3"
+   ],
+   "provenance": "author_stated",
+   "about": {
+    "subject": "D1",
+    "relation": "has the single-source-of-error state-space form",
+    "object": "a level and a nonlinear trend state",
+    "comparator": null,
+    "conditions": []
+   }
+  },
+  {
    "id": "C2",
    "statement": "[[D1:CES]] passes continuously from a stationary to a non-stationary model as its [[D2:complex smoothing parameter]] changes.",
    "type": "formal",
@@ -702,7 +733,7 @@
   },
   {
    "id": "C5",
-   "statement": "[[D1:CES]] has an underlying ARMA(2,2) model whose coefficients $\\phi_1 = 2 - \\alpha_0$, $\\phi_2 = \\alpha_0 + \\alpha_1 - 2$, $\\theta_1 = 2 - 2\\alpha_0 + \\alpha_1$ and $\\theta_2 = 3\\alpha_0 + \\alpha_1 - 2 - \\alpha_0^2 - \\alpha_1^2$ are nonlinear functions of the same two parameters $\\alpha_0$ and $\\alpha_1$.",
+   "statement": "[[D1:CES]] has an underlying ARMA(2,2) model whose coefficients $$\\begin{aligned} \\phi_1 &= 2 - \\alpha_0 \\\\ \\phi_2 &= \\alpha_0 + \\alpha_1 - 2 \\\\ \\theta_1 &= 2 - 2\\alpha_0 + \\alpha_1 \\\\ \\theta_2 &= 3\\alpha_0 + \\alpha_1 - 2 - \\alpha_0^2 - \\alpha_1^2 \\end{aligned}$$ are nonlinear functions of the same two parameters $\\alpha_0$ and $\\alpha_1$.",
    "type": "formal",
    "role": "principal",
    "novelty": "no_prior_found",
@@ -1095,36 +1126,6 @@
     "subject": "D1",
     "relation": "approximates well",
     "object": "additive trend processes",
-    "comparator": null,
-    "conditions": []
-   }
-  },
-  {
-   "id": "C16",
-   "statement": "[[D1:CES]] has the single-source-of-error state-space form $y_t = l_{t-1} + \\varepsilon_t$, $l_t = l_{t-1} - (1 - \\alpha_1) c_{t-1} + (\\alpha_0 - \\alpha_1) \\varepsilon_t$, $c_t = l_{t-1} + (1 - \\alpha_0) c_{t-1} + (\\alpha_0 + \\alpha_1) \\varepsilon_t$, with level $l_t$ and [[D3:nonlinear trend component]] $c_t$.",
-   "type": "formal",
-   "role": "supporting",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "formal_proof",
-     "evidence": "E1"
-    }
-   ],
-   "verification": "unchecked",
-   "assumptions": [
-    "C60",
-    "C61"
-   ],
-   "source_spans": [
-    "p4.4-p4.13",
-    "p13.28-p14.3"
-   ],
-   "provenance": "author_stated",
-   "about": {
-    "subject": "D1",
-    "relation": "has the single-source-of-error state-space form",
-    "object": "a level and a nonlinear trend state",
     "comparator": null,
     "conditions": []
    }
