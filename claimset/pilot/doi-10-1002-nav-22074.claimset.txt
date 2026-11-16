@@ -1,11 +1,12 @@
 CLAIMSET Complex exponential smoothing
+summary Exponential smoothing forecasts a series by first choosing a model: with or without a trend, with or without seasonality. This paper proposes complex exponential smoothing (CES), which uses complex variables, pairing each value with its forecast error, so that one model moves smoothly between a level and a trend as its smoothing parameter changes. It shows that CES can be stationary or non-stationary depending on that parameter, and that it corresponds to an ARMA(2,2) model whose coefficients are tied together. A seasonal version handles seasonality without seasonal indices, so model selection reduces to a choice between two models. On the series of the M1, M3, tourism and M4 forecasting competitions, CES was more accurate than exponential smoothing, ARIMA and the Theta method on most error measures, though not on all, and adding it to a combination of forecasts improved the combination.
 licence CC-BY-4.0; contributions C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12
 
 DEFINITIONS
-D1 [method] CES: Complex exponential smoothing: a forecasting method that combines each past observation $y_t$ and its forecast error $e_t$ into the complex variable $y_t + i e_t$ and forecasts with an exponentially weighted sum of these values, $\hat{y}_t + i\hat{e}_t = (\alpha_0 + i\alpha_1) \sum_{j=1}^{t-1} (1 + i - (\alpha_0 + i\alpha_1))^{j-1} (y_{t-j} + i e_{t-j})$, or recursively $\hat{y}_t + i\hat{e}_t = (\alpha_0 + i\alpha_1)(y_{t-1} + i e_{t-1}) + (1 - \alpha_0 + i - i\alpha_1)(\hat{y}_{t-1} + i\hat{e}_{t-1})$, where $\alpha_0 + i\alpha_1$ is the [[D2:complex smoothing parameter]] and $\hat{e}_t$ carries the information on past forecast errors. [assumes C60, C62, C63, C64]
+D1 [method] CES: Complex exponential smoothing: a forecasting method that combines each past observation $y_t$ and its forecast error $e_t$ into the complex variable $y_t + i e_t$ and forecasts with an exponentially weighted sum of these values, $$\hat{y}_t + i\hat{e}_t = (\alpha_0 + i\alpha_1) \sum_{j=1}^{t-1} (1 + i - (\alpha_0 + i\alpha_1))^{j-1} (y_{t-j} + i e_{t-j})$$, or recursively $$\hat{y}_t + i\hat{e}_t = (\alpha_0 + i\alpha_1)(y_{t-1} + i e_{t-1}) + (1 - \alpha_0 + i - i\alpha_1)(\hat{y}_{t-1} + i\hat{e}_{t-1})$$, where $\alpha_0 + i\alpha_1$ is the [[D2:complex smoothing parameter]] and $\hat{e}_t$ carries the information on past forecast errors. [assumes C60, C62, C63, C64]
 D2 [variable] complex smoothing parameter: The smoothing parameter of [[D1:CES]], the complex number $\alpha_0 + i\alpha_1$; its real part $\alpha_0$ and imaginary part $\alpha_1$ are the two real parameters estimated, and they set how much of the past observations and of the past forecast errors is carried into the forecast. [part of D1]
 D3 [concept] nonlinear trend component: The state $c_t$ of the [[D1:CES]] state-space model, which carries information on both its own previous value $c_{t-1}$ and the previous level $l_{t-1}$; it does not correspond to the trend component of exponential smoothing. [part of D1]
-D4 [method] seasonal CES: [[D1:CES]] extended with a second pair of level and [[D3:nonlinear trend]] states taken at lag $m$, the seasonal period, with its own [[D2:complex smoothing parameter]] $\beta_0 + i\beta_1$: $y_t = l_{0,t-1} + l_{1,t-m} + \varepsilon_t$, $l_{0,t} = l_{0,t-1} - (1 - \alpha_1) c_{0,t-1} + (\alpha_0 - \alpha_1) \varepsilon_t$, $c_{0,t} = l_{0,t-1} + (1 - \alpha_0) c_{0,t-1} + (\alpha_0 + \alpha_1) \varepsilon_t$, $l_{1,t} = l_{1,t-m} - (1 - \beta_1) c_{1,t-m} + (\beta_0 - \beta_1) \varepsilon_t$, $c_{1,t} = l_{1,t-m} + (1 - \beta_0) c_{1,t-m} + (\beta_0 + \beta_1) \varepsilon_t$. [a kind of D1]
+D4 [method] seasonal CES: [[D1:CES]] extended with a second pair of level and [[D3:nonlinear trend]] states taken at lag $m$, the seasonal period, with its own [[D2:complex smoothing parameter]] $\beta_0 + i\beta_1$: $y_t = l_{0,t-1} + l_{1,t-m} + \varepsilon_t$, $$l_{0,t} = l_{0,t-1} - (1 - \alpha_1) c_{0,t-1} + (\alpha_0 - \alpha_1) \varepsilon_t$$, $$c_{0,t} = l_{0,t-1} + (1 - \alpha_0) c_{0,t-1} + (\alpha_0 + \alpha_1) \varepsilon_t$$, $$l_{1,t} = l_{1,t-m} - (1 - \beta_1) c_{1,t-m} + (\beta_0 - \beta_1) \varepsilon_t$$, $$c_{1,t} = l_{1,t-m} + (1 - \beta_0) c_{1,t-m} + (\beta_0 + \beta_1) \varepsilon_t$$. [a kind of D1]
 D5 [method] SCUM: Simple combination of univariate models: the median of the forecasts of [[D9:ETS]], [[D10:ARIMA]], the [[D11:Theta method]] and [[D17:CES]]. [source B13]
 D6 [method] SCUM(noCES): The median of the forecasts of [[D9:ETS]], [[D10:ARIMA]] and the [[D11:Theta method]]: [[D5:SCUM]] without CES. [a kind of D5]
 D7 [method] the six compared methods: The [[D12:four compared methods]] and the two combinations, [[D5:SCUM]] and [[D6:SCUM(noCES)]]. [members D17, D9, D10, D11, D5, D6]
@@ -69,10 +70,13 @@ C7 [formal; principal; support: formal_proof E5; uses C5; verification unchecked
   The parameter space of the ARMA(2,2) model underlying [[D1:CES]] is not restricted to stationary models.
 C8 [methodological; principal; support: argument W1; limitations L2; warrant W1]
   [[D4:seasonal CES]] models seasonality with lag-$m$ level and nonlinear trend states instead of seasonal indices.
+  scope: data_type: seasonal univariate time series | conditions: additive error; seasonal period m
 C9 [methodological; principal; support: argument W1; uses C8; warrant W1]
   [[D4:seasonal CES]] has no seasonal indices that need renormalising.
+  scope: data_type: seasonal univariate time series | conditions: additive error; seasonal period m
 C10 [methodological; principal; support: argument W1; uses C8, C31, C13, C14, C15; limitations L2; warrant W1]
   Model selection for [[D1:CES]] reduces to choosing between the seasonal and the non-seasonal model.
+  scope: data_type: univariate time series, seasonal or non-seasonal | conditions: selection by an information criterion
 C11 [descriptive; principal; support: empirical_quant E2 (E2.T1.r5, E2.T1.r6); uses C35; limitations L3]
   On the [[D8:M1, M3 and tourism data]], [[D5:SCUM]] has lower mean and median [[D14:RMSSE]] and [[D15:MASE]] and lower median [[D16:MSIS]] than [[D6:SCUM(noCES)]], but higher mean MSIS.
   scope: population: time series of the M1, M3 and tourism forecasting competitions
@@ -290,28 +294,28 @@ A8 [software] R, the environment for statistical computing in which the experime
 A9 [manuscript] The published article (open access, CC BY).
 
 REFERENCES
-B1 Hyndman, R. J., Koehler, A. B., Ord, J. K., & Snyder, R. D. (2008). Forecasting with exponential smoothing: The state space approach. Springer-Verlag.
-B2 Hyndman, R. J., Koehler, A. B., Snyder, R. D., & Grose, S. (2002). A state space framework for automatic forecasting using exponential smoothing methods. International Journal of Forecasting, 18(3), 439–454.
-B3 Kourentzes, N., Petropoulos, F., & Trapero, J. R. (2014). Improving forecasting by estimating time series structural components across multiple frequencies. International Journal of Forecasting, 30(2), 291–302.
-B4 Kolassa, S. (2011). Combining exponential smoothing forecasts using Akaike weights. International Journal of Forecasting, 27(2), 238–251.
-B5 Barrow, D., Kourentzes, N., Sandberg, R., & Niklewski, J. (2020). Automatic robust estimation for exponential smoothing: Perspectives from statistics and machine learning. Expert Systems with Applications, 160, 113637.
-B6 Makridakis, S., Andersen, A. P., Carbone, R., Fildes, R., Hibon, M., Lewandowski, R., Newton, J., Parzen, E., & Winkler, R. L. (1982). The accuracy of extrapolation (time series) methods: Results of a forecasting competition. Journal of Forecasting, 1(2), 111–153.
-B7 Makridakis, S., & Hibon, M. (2000). The M3-competition: Results, conclusions and implications. International Journal of Forecasting, 16(4), 451–476.
-B8 Athanasopoulos, G., Hyndman, R. J., Song, H., & Wu, D. C. (2011). The tourism forecasting competition. International Journal of Forecasting, 27(3), 822–844.
-B9 Makridakis, S., Spiliotis, E., & Assimakopoulos, V. (2020). The M4 competition: 100,000 time series and 61 forecasting methods. International Journal of Forecasting, 36(1), 54–74.
-B10 Svetunkov, I. (2021b). Smooth: Forecasting using state space models. R package version 3.1.2 https://github.com/config-i1/smooth
-B11 Hyndman, R. J., & Khandakar, Y. (2008). Automatic time series forecasting: The forecast package for R. Journal of Statistical Software, 27(3), 1–22.
-B12 Svetunkov, I. (2021a). Greybox: Toolbox for model building and forecasting. R package version 0.7.0 https://github.com/config-i1/greybox
-B13 Petropoulos, F., & Svetunkov, I. (2020). A simple combination of univariate models. International Journal of Forecasting, 36(1), 110–115.
-B14 Ord, K., Koehler, A. B., & Snyder, R. D. (1997). Estimation and prediction for a class of dynamic nonlinear statistical models. Journal of the American Statistical Association, 92(440), 1621–1629.
-B15 Svetunkov, I., & Boylan, J. E. (2020). State-space ARIMA for supply-chain forecasting. International Journal of Production Research, 58(3), 818–827.
-B16 Assimakopoulos, V., & Nikolopoulos, K. (2000). The theta model: A decomposition approach to forecasting. International Journal of Forecasting, 16, 521–530.
+B1 10.1007/978-3-540-71918-2 (doi)
+B2 10.1016/S0169-2070(01)00110-8 (doi)
+B3 10.1016/j.ijforecast.2013.09.006 (doi)
+B4 10.1016/j.ijforecast.2010.04.006 (doi)
+B5 10.1016/j.eswa.2020.113637 (doi)
+B6 10.1002/for.3980010202 (doi)
+B7 10.1016/S0169-2070(00)00057-1 (doi)
+B8 10.1016/j.ijforecast.2010.04.009 (doi)
+B9 10.1016/j.ijforecast.2019.04.014 (doi)
+B10 https://github.com/config-i1/smooth (url)
+B11 10.18637/jss.v027.i03 (doi)
+B12 https://github.com/config-i1/greybox (url)
+B13 10.1016/j.ijforecast.2019.01.006 (doi)
+B14 10.1080/01621459.1997.10473684 (doi)
+B15 10.1080/00207543.2019.1600764 (doi)
+B16 10.1016/S0169-2070(00)00066-2 (doi)
 B17 10.1016/j.ijforecast.2021.11.013 (doi)
-B18 Hyndman, R. J., & Koehler, A. B. (2006). Another look at measures of forecast accuracy. International Journal of Forecasting, 22(4), 679–688.
-B19 Gneiting, T., & Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. Journal of the American Statistical Association, 102(477), 359–378.
+B18 10.1016/j.ijforecast.2006.03.001 (doi)
+B19 10.1198/016214506000001437 (doi)
 B20 Demšar, J. (2006). Statistical comparisons of classifiers over multiple data sets. The Journal of Machine Learning Research, 7, 1–30.
-B21 Akaike, H. (1974). A new look at the statistical model identification. IEEE Transactions on Automatic Control, 19(6), 716–723.
-B22 Dickey, D. A., & Fuller, W. A. (1979). Distribution of the estimators for autoregressive time series with a unit root. Journal of the American Statistical Association, 74(366a), 427–431.
-B23 Kwiatkowski, D., Phillips, P. C. B., Schmidt, P., & Shin, Y. (1992). Testing the null hypothesis of stationarity against the alternative of a unit root: How sure are we that economic time series are nonstationary? Journal of Econometrics, 54, 159–178.
+B21 10.1109/TAC.1974.1100705 (doi)
+B22 10.1080/01621459.1979.10482531 (doi)
+B23 10.1016/0304-4076(92)90104-Y (doi)
 B24 R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing. https://www.R-project.org/
 B25 10.1002/nav.22074 (doi)
