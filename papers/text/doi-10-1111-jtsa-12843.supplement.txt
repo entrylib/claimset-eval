@@ -1,101 +1,155 @@
-[s1.1] SUPPLEMENTARY MATERIAL TO Online detection of forecast model inadequacies using forecast errors Grundy, Killick, Svetunkov February 1, 2025 A
+[s1.1] SUPPLEMENTARY MATERIAL TO Online detection of forecast model inadequacies
 
-[s1.2] Preliminary Sequential Changepoint Detection Information
+[s1.2] using forecast errors
 
-[s1.3] Before proceeding with our framework, we first introduce the sequential changepoint detection paradigm used in this paper for identifying a mean change in a generic sequence of data {Yt : t = 1, 2, . . .}. We present the general setup introduced in Chu et al. (1996), along with the detector used for detecting changes; Page’s CUSUM detector (Page, 1954). Moreover, we highlight the key large-sample results from the literature which we utilize within our framework.
+[s1.3] Grundy, Killick, Svetunkov February 1, 2025
 
-[s1.4] Let {Yt : t = 1, 2, . . .} be a univariate time series that follows a change in mean model, ( λ + ϵt , t = 1, . . . , m + k ∗ , Yt = (A1) λ + ϵt + ∆m , t = m + k ∗ + 1, m + k ∗ + 2, . . . . Here λ ∈ R is the pre-change mean level; ∆m ∈ R is the size of the mean change; 1 ≤ k ∗ ≤ ∞ is the time of change after the training period, and {ϵt : t = 1, 2, . . .} are zero-mean random variables. Here m ∈ N is the length of the training period, which is used to estimate model parameters and we assume the data within the training period have no changepoints and exhibit a stationary structure. All asymptotics considered are with respect to m → ∞ throughout. Note the model is trained once using the m data points and is not re-trained once the monitoring period has begun.
+[s1.4] A Preliminary Sequential Changepoint Detection Information
 
-[s1.5] To be as general as possible, we allow for the random variables {ϵt : t = 1, 2, . . .} to exhibit different dependence structures, hence we assume they satisfy some weak invariance principles.
+[s1.5] Before proceeding with our framework, we first introduce the sequential changepoint detection paradigm used in this paper for identifying a mean change in a generic sequence of data {Yt : t = 1, 2, . . .}. We present the general setup introduced in Chu et al. (1996), along with the detector used for detecting changes; Page’s CUSUM detector (Page, 1954). Moreover, we highlight the key large-sample results from the literature which we utilize within our framework.
 
-[s1.6] Assumption A. m P √ ϵt = OP ( m) . t=1
+[s1.6] Let {Yt : t = 1, 2, . . .} be a univariate time series that follows a change in mean model, � λ + ϵt, t = 1, . . . , m + k∗, λ + ϵt + ∆m, t = m + k∗ + 1, m + k∗ + 2, . . . . Yt = (A1)
 
-[s2.1] Assumption B. There exists a sequence of Wiener processes {Wm (i) : i ≥ 0, m ≥ 1} and a constant σ ∈ R+ such that 1/ν 1/m≤i<∞ (mi) sup m+mi X ϵt − σWm (mi) = OP (1) for some ν > 2 . t=m+1
+[s1.7] Here λ ∈ R is the pre-change mean level; ∆m ∈ R is the size of the mean change; 1 ≤ k∗ ≤ ∞ is the time of change after the training period, and {ϵt : t = 1, 2, . . .} are zero-mean random variables. Here m ∈ N is the length of the training period, which is used to estimate model parameters and we assume the data within the training period have no changepoints and exhibit a stationary structure. All asymptotics considered are with respect to m → ∞ throughout. Note the model is trained once using the m data points and is not re-trained once the monitoring period has begun.
+
+[s1.8] To be as general as possible, we allow for the random variables {ϵt : t = 1, 2, . . .} to exhibit different dependence structures, hence we assume they satisfy some weak invariance principles. ���� ���� = OP (√m) . m � Assumption A. ϵt t=1 1
+
+[s2.1] Assumption B. There exists a sequence of Wiener processes {Wm(i) : i ≥ 0, m ≥ 1} and a constant σ ∈ R+ such that m+mi � ϵt −σWm(mi) ����� 1 (mi)1/ν sup 1/m≤i<∞ t=m+1 ����� = OP (1) for some ν > 2 .
 
 [s2.2] Aue and Horváth (2004) give examples of sequences that satisfy Assumptions A and B. Importantly for our framework, we show that the random variables will be i.i.d and therefore will satisfy Assumptions A and B.
 
-[s2.3] To detect a change in mean, we test the hypothesis, H0 : ∆m = 0 , (A2) HA : ∆m ̸= 0 , (A3) and define a stopping rule τm such that lim P (τm < ∞) = α under H0 , lim P (τm < ∞) = 1 under H1 , m→∞ m→∞
+[s2.3] To detect a change in mean, we test the hypothesis, H0 : ∆m = 0 , (A2) HA : ∆m̸= 0 , (A3)
 
-[s2.4] where α is the user-specified false alarm rate. Note here that by assuming that we have a large number of training samples, we control the false alarm rate indefinitely. This differs from the traditional, control chart based, sequential changepoint detection where we generally set a false alarm rate based upon the average run length of the process (Tartakovsky et al., 2014).
+[s2.4] and define a stopping rule τm such that m→∞ P (τm < ∞) = α lim under H0 , m→∞ P (τm < ∞) = 1 lim under H1 ,
 
-[s2.5] To define Page’s CUSUM detector, D(m, k), we first define the CUSUM detector, Q(m, k). Let k ∈ N, be the current time point, then Q(m, k) = m+k X m Yt − t=m+1 k X Yt . m t=1
+[s2.5] where α is the user-specified false alarm rate. Note here that by assuming that we have a large number of training samples, we control the false alarm rate indefinitely. This differs from the traditional, control chart based, sequential changepoint detection where we generally set a false alarm rate based upon the average run length of the process (Tartakovsky et al., 2014).
 
-[s2.6] Using this we gain D(m, k) = max |Q(m, k) − Q(m, i)| , 0≤i≤k (A4)
+[s2.6] To define Page’s CUSUM detector, D(m, k), we first define the CUSUM detector, Q(m, k). Let k ∈ N, be the current time point, then m+k � Q(m, k) = t=m+1 Using this we gain m Yt −k � Yt . m t=1 0≤i≤k |Q(m, k) −Q(m, i)| , D(m, k) = max (A4)
 
-[s2.7] and define the correspond stopping time as τm = min {k ≥ 1 : D(m, k) ≥ σ̂m cα g(m, k, γ)} . Here, σ̂m is a weakly consistent estimator for σ in Assumption B and is estimated using the m training samples. The critical value, cα , is a constant derived from the large sample distribution of the stopping time under H0 and g(m, k, γ) is a weight function defined as   γ √ k k for γ ∈ [0, 1/2) . (A5) g(m, k, γ) = m 1 + m m+k
+[s2.7] and define the correspond stopping time as
+
+[s2.8] τm = min {k ≥ 1 : D(m, k) ≥ ˆ σmcαg(m, k, γ)} .
+
+[s2.9] Here, ˆ σm is a weakly consistent estimator for σ in Assumption B and is estimated using the m training samples. The critical value, cα, is a constant derived from the large sample distribution of the stopping time under H0 and g(m, k, γ) is a weight function defined as � � � √ 1 + k g(m, k, γ) = m m 2 �γ k m + k
+
+[s2.10] for γ ∈ [0, 1/2) . (A5)
 
 [s3.1] The hyper-parameter γ allows a practitioner to tune the stopping time dependent upon when the change is likely to take place. If the change is likely to occur early in the process then increasing γ will lead to a faster detection time, however, if the change occurs later in the process then having a larger γ will decrease the detection time. Throughout this paper, we assume γ = 0 for simplicity but for a more detailed discussion, see Horváth et al. (2004).
 
-[s3.2] The critical constant, cα , can be derived from the limiting distribution of the stopping time under H0 shown in Fremdt (2015).
+[s3.2] The critical constant, cα, can be derived from the limiting distribution of the stopping time under H0 shown in Fremdt (2015).
 
-[s3.3] Theorem 1. (Fremdt, 2015) Let {Yt : t ≥ 1} follow (A1) and Assumptions A and B hold. Then under H0 , for c ∈ R,     1−i D(m, k) lim P ≤ c = P sup sup γ W (i) − W (j) ≤ c , sup m→∞ σ̂m 1≤k<∞ g(m, k, γ) 1−j 0<i<1 0≤j≤i i where {W (i) : i ∈ [0, 1]} denotes a standard Brownian motion.
+[s3.3] Theorem 1. (Fremdt, 2015)
 
-[s3.4] Under HA , Fremdt (2014) derived the limiting distribution of the stopping time, τm , under certain additional assumptions.
+[s3.4] Let {Yt : t ≥ 1} follow (A1) and Assumptions A and B hold. Then under H0, for c ∈ R, � 1 � D(m, k) g(m, k, γ) ≤ c m→∞ P = P lim sup 1≤k<∞ ˆ σm ����W(i) −1 −i ���� ≤ c � � 1 iγ sup 0<i<1 sup 0≤j≤i 1 −j W(j) ,
 
-[s3.5] Assumption C. There exists a θ > 0 such that the changepoint k ∗ = ⌊θmβ ⌋ with 0 ≤ β < 1. √
+[s3.5] where {W(i) : i ∈ [0, 1]} denotes a standard Brownian motion.
 
-[s3.6] Assumption D. m |∆m | → ∞ as m → ∞.
+[s3.6] Under HA, Fremdt (2014) derived the limiting distribution of the stopping time, τm, under certain additional assumptions.
 
-[s3.7] Assumption E. ∆m = O(1).
+[s3.7] Assumption C. There exists a θ > 0 such that the changepoint k∗ = ⌊θmβ⌋ with 0 ≤ β < 1.
 
-[s3.8] These assumptions ensure the change size is bounded and is large enough relative to the size of the training data and the time of the changepoint. For a detailed discussion of these assumptions see Fremdt (2014).
+[s3.8] Assumption D. √m |∆m| → ∞ as m → ∞.
 
-[s3.9] The form of the large sample distribution under HA depends on the asymptotic behavior of the sequence |∆m |mγ−1/2 k ∗1−γ , hence, due to Assumption C, depends on the asymptotic behavior of the term ˜ m = |∆m | mβ(1−γ)−1/2+γ . ∆
+[s3.9] Assumption E. ∆m = O(1).
 
-[s3.10] This leads to three scenarios as m → ∞: ˜m → 0 (I) ∆ ˜ m → C̃ ∈ (0, ∞) (II) ∆ ˜m → ∞ (III) ∆
+[s3.10] These assumptions ensure the change size is bounded and is large enough relative to the size of the training data and the time of the changepoint. For a detailed discussion of these assumptions see Fremdt (2014).
 
-[s3.11] For scenario (II), from Assumption C, we have |∆m |mγ−1/2 k ∗1−γ → θ1−γ C̃ = C ∈ (0, ∞) . Here, for any real c, we define d = d(c) as the unique solution of d=1− c 1−γ d . C
+[s3.11] The form of the large sample distribution under HA depends on the asymptotic behavior of the sequence |∆m|mγ−1/2k∗1−γ, hence, due to Assumption C, depends on the asymptotic behavior of the term ∆m = |∆m| mβ(1−γ)−1/2+γ . ˜
 
-[s4.1] The large sample distribution of the stopping time depends upon the three scenarios (I)-(III). To define the limit distribution, the function Ψ̃(x) is introduced for all real x,  Φ(x) under scenario (I)        P sup W (i) ≤ x under scenario (II) Ψ̃(x) = d<i<1 (      x<0   under scenario (III) P sup W (i) ≤ x = 2Φ(x) − x≥0 0<i<1 where Φ(x) denotes the standard Normal distribution function.
+[s3.12] This leads to three scenarios as m → ∞: (I) ˜ ∆m → 0 (II) ˜ ∆m → ˜ C ∈ (0, ∞) (III) ˜ ∆m → ∞
 
-[s4.2] Theorem 2. (Fremdt, 2014) Let {Yt : t = 1, 2, . . .} be a sequence of random variables according to (A1) that satisfies Assumptions A-E. Then, for all real x under HA and with Ψ(x) = 1 − Ψ̄(−x),   τm − am (cα ) lim P ≤ x = Ψ(x) , m→∞ bm (cα ) where am (c) is the unique solution of  1/(1−γ) σcm1/2−γ k∗ am (c) = + , |∆m | (am (c))γ and bm (c) = σ p   −1 am (c) k∗ 1−γ 1− . |∆m | am (c)
+[s3.13] For scenario (II), from Assumption C, we have |∆m|mγ−1/2k∗1−γ → θ1−γ ˜ C = C ∈ (0, ∞) .
 
-[s4.3] This allows us to quantify the size of changepoints that can be detected within a certain time frame and shows that given a certain change size, asymptotically in m, we will always detect certain changes eventually. B
+[s3.14] Here, for any real c, we define d = d(c) as the unique solution of d = 1 −c 3 C d1−γ .
 
-[s4.4] Additional Theoretical Results
+[s4.1] The large sample distribution of the stopping time depends upon the three scenarios (I)-(III). To define the limit distribution, the function ˜ Ψ(x) is introduced for all real x,
 
-[s4.5] The following corollaries help us to ascertain the limiting distribution under both the null and alternative hypotheses.
+[s4.2] Φ(x) under scenario (I)    � �    P  sup d<i<1 W(i) ≤ x ˜ Ψ(x) = � � �    P  sup 0<i<1 W(i) ≤ x =   under scenario (II) 0 x < 0 2Φ(x) −1 x ≥ 0
 
-[s4.6] Corollary 1. Following from Theorem 1 Let {Yt : t ≥ 1} follow (2) and F be a forecasting model that satisfies Assumptions 1 and 2 from the main text. Under H0 , the limit distribution in Theorem 1, holds for D(m, k) = Dµ (m, k) and σ̂m = σ̂µ,m .
+[s4.3] under scenario (III)
 
-[s4.7] Furthermore, the limiting distribution of τµ,m under HA is also known from the following corollary.
+[s4.4] where Φ(x) denotes the standard Normal distribution function.
 
-[s4.8] Corollary 2. Following from Theorem 2 Let {Yt : t ≥ 1} follow (2) and F be a forecasting model that satisfies Assumption 1 and 2 from the main text. Furthermore, assume ∆µ,m , from Assumptions 2, satisfies Assumptions C-E, then under HA , the limit distribution in Theorem 2, holds with τm = τµ,m and cα = cµ,α .
+[s4.5] Theorem 2. (Fremdt, 2014)
 
-[s5.1] C
+[s4.6] Let {Yt : t = 1, 2, . . .} be a sequence of random variables according to (A1) that satisfies Assumptions A-E. Then, for all real x under HA and with Ψ(x) = 1 −¯ Ψ(−x), �τm −am(cα) m→∞ P lim bm(cα)
 
-[s5.2] Additional Simulation Results C.1
+[s4.7] where am(c) is the unique solution of �σcm1/2−γ am(c) = |∆m| and � am(c) |∆m| � bm(c) = σ � ≤ x = Ψ(x) , �1/(1−γ) k∗ (am(c))γ + , � 1 − ��−1 k∗ am(c) 1 −γ .
 
-[s5.3] Mean Change First, we explore mean changes in the underlying data generating process. We generate two scenarios where the data is generated from: 1. An AR(2) process with ϕ = (0.5, −0.3), λ = 0 and σ 2 = 1. 2. An ARMA(1,1) process with ϕ = 0.6, θ = 0.3, λ = 0 and σ 2 = 1.
+[s4.8] This allows us to quantify the size of changepoints that can be detected within a certain time frame and shows that given a certain change size, asymptotically in m, we will always detect certain changes eventually.
 
-[s5.4] For both scenarios we generate data of length n = 1000, with ntrain = 200. We set m = 200 as the training period for the detectors and once monitoring begins, we introduce a changepoint of size δµ to the process at k ∗ = 100. This leaves 500 time points for the methods to identify if a change has occurred. Note as Raw CUSUM does not require any training of the model the first ntrain = 200 time points are not used by this method. For clarity, to generate the data we used the arima.sim function from the stats package with an extra 50 time points for burn-in that is removed before analysis begins. For ARMA Forecast Errors, we assume the order of the data generating process is known and the parameters are estimated within the training period.
+[s4.9] B Additional Theoretical Results
 
-[s5.5] Figure 1 shows the DP, FDP and ADD of the 2 methods. For both models, we can clearly see the ADD when using the ARMA Forecast Errors is much lower than using the Raw CUSUM across all change sizes. Additionally, the DP for the ARMA Forecast Errors is at least as big as for the Raw CUSUM while both have comparable FDP. These metrics show that for the mean changes presented here using ARMA Forecast Errors has a distinct advantage over the Raw CUSUM. C.2
+[s4.10] The following corollaries help us to ascertain the limiting distribution under both the null and alternative hypotheses.
 
-[s5.6] Variance Change Now we examine variance changes in the underlying data generating process. Again we generate two scenarios, where the data is generated from 1. An AR(1) process with ϕ = 0.9, λ = 0 and σ 2 = 1. 2. An ARMA(2,1) process with ϕ = (0.5, −0.3), θ = 0.6, λ = 0 and σ 2 = 1.
+[s4.11] Corollary 1. Following from Theorem 1
 
-[s5.7] Here n, ntrain , m and k ∗ are the same as in Section C.1 (n = 1000, ntrain = 200, m = 200, k ∗ = 100). Again, for the ARMA Forecast Errors, we assume the order of the ARMA process is known but the parameters need to be estimated. For the ETS Forecast Errors, we assume an ETS(A,N,N) model and the smoothing parameter is to be estimated. The change size, δξ , represents the new variance in the underlying data process after the change has occurred.
+[s4.12] Let {Yt : t ≥ 1} follow (2) and F be a forecasting model that satisfies Assumptions 1 and 2 from the main text. Under H0, the limit distribution in Theorem 1, holds for D(m, k) = Dµ(m, k) and ˆ σm = ˆ σµ,m.
 
-[s5.8] Figure 2 shows that in both scenarios the ADD is nearly always smaller when using ARMA Forecast Errors or ETS Forecast Errors than the Raw CUSUM. The reason the ADD for the Raw CUSUM is lower in the AR(1) scenario with change size δ = 1.5 is probably due to the small DP. This is also evidenced by the standard error bars overlapping with those from ARMA Forecast Errors.
+[s4.13] Furthermore, the limiting distribution of τµ,m under HA is also known from the following corollary.
 
-[s6.1] Figure 1: Detection Probability (DP), False Detection Probability (FDP) and Average Detection Delay (ADD), with error bars showing 2 standard errors either side of the mean, for two scenarios with mean changes of varying sizes.
+[s4.14] Corollary 2. Following from Theorem 2
+
+[s4.15] Let {Yt : t ≥ 1} follow (2) and F be a forecasting model that satisfies Assumption 1 and 2 from the main text. Furthermore, assume ∆µ,m, from Assumptions 2, satisfies Assumptions C-E, then under HA, the limit distribution in Theorem 2, holds with τm = τµ,m and cα = cµ,α. 4
+
+[s5.1] C Additional Simulation Results C.1 Mean Change
+
+[s5.2] First, we explore mean changes in the underlying data generating process. We generate two scenarios where the data is generated from:
+
+[s5.3] 1. An AR(2) process with ϕ = (0.5, −0.3), λ = 0 and σ2 = 1.
+
+[s5.4] 2. An ARMA(1,1) process with ϕ = 0.6, θ = 0.3, λ = 0 and σ2 = 1.
+
+[s5.5] For both scenarios we generate data of length n = 1000, with ntrain = 200. We set m = 200 as the training period for the detectors and once monitoring begins, we introduce a changepoint of size δµ to the process at k∗ = 100. This leaves 500 time points for the methods to identify if a change has occurred. Note as Raw CUSUM does not require any training of the model the first ntrain = 200 time points are not used by this method. For clarity, to generate the data we used the arima.sim function from the stats package with an extra 50 time points for burn-in that is removed before analysis begins. For ARMA Forecast Errors, we assume the order of the data generating process is known and the parameters are estimated within the training period.
+
+[s5.6] Figure 1 shows the DP, FDP and ADD of the 2 methods. For both models, we can clearly see the ADD when using the ARMA Forecast Errors is much lower than using the Raw CUSUM across all change sizes. Additionally, the DP for the ARMA Forecast Errors is at least as big as for the Raw CUSUM while both have comparable FDP. These metrics show that for the mean changes presented here using ARMA Forecast Errors has a distinct advantage over the Raw CUSUM. C.2 Variance Change
+
+[s5.7] Now we examine variance changes in the underlying data generating process. Again we generate two scenarios, where the data is generated from
+
+[s5.8] 1. An AR(1) process with ϕ = 0.9, λ = 0 and σ2 = 1.
+
+[s5.9] 2. An ARMA(2,1) process with ϕ = (0.5, −0.3), θ = 0.6, λ = 0 and σ2 = 1.
+
+[s5.10] Here n, ntrain, m and k∗ are the same as in Section C.1 (n = 1000, ntrain = 200, m = 200, k∗ = 100). Again, for the ARMA Forecast Errors, we assume the order of the ARMA process is known but the parameters need to be estimated. For the ETS Forecast Errors, we assume an ETS(A,N,N) model and the smoothing parameter is to be estimated. The change size, δξ, represents the new variance in the underlying data process after the change has occurred.
+
+[s5.11] Figure 2 shows that in both scenarios the ADD is nearly always smaller when using ARMA Forecast Errors or ETS Forecast Errors than the Raw CUSUM. The reason the ADD for the Raw CUSUM is lower in the AR(1) scenario with change size δ = 1.5 is probably due to the small DP. This is also evidenced by the standard error bars overlapping with those from ARMA Forecast Errors. 5
+
+[s6.1] AR(2) 1.00 l l l l l 0.95 0.90 DP 0.85 0.80 0.5 1.0 1.5 2.0 2.5 0.05 0.04 0.03 FDP 0.02 0.01 l l l l 0.00 l 0.5 1.0 1.5 2.0 2.5 200 l ADD 100 l l l l 0.5 1.0 1.5 2.0 2.5 Change Size ARMA(1,1) 1.00 l l l l 0.75 DP 0.50 l 0.25 0.00 0.5 1.0 1.5 2.0 2.5 0.05 0.04 0.03 FDP 0.02 0.01 l l l 0.00 l l 0.5 1.0 1.5 2.0 2.5 300 l l ADD 200 l 100 l l 0.5 1.0 1.5 2.0 2.5 Change Size
+
+[s6.2] Method l ARMA Forecast Errors ETS Forecast Errors Raw CUSUM
+
+[s6.3] Figure 1: Detection Probability (DP), False Detection Probability (FDP) and Average Detection Delay (ADD), with error bars showing 2 standard errors either side of the mean, for two scenarios with mean changes of varying sizes. 6
 
 [s7.1] The Raw CUSUM also has a much higher FDP in the AR(1) scenario while in the ARMA(2,1) scenario ETS Forecast Errors has a higher FDP; both are still conservative (< 0.05).
 
-[s7.2] Again these scenarios show the benefit of using forecast errors rather than the raw data to detect changepoints in the underlying data.
+[s7.2] Again these scenarios show the benefit of using forecast errors rather than the raw data to detect changepoints in the underlying data. References
 
-[s7.3] References Aue, A. and Horváth, L. (2004). Delay time in sequential detection of change. Statistics & Probability Letters, 67(3):221–231.
+[s7.3] Aue, A. and Horváth, L. (2004). Delay time in sequential detection of change. Statistics & Probability Letters, 67(3):221–231.
 
-[s7.4] Chu, C.-S. J., Stinchcombe, M., and White, H. (1996). Monitoring Structural Change. Econometrica, 64(5):1045.
+[s7.4] Chu, C.-S. J., Stinchcombe, M., and White, H. (1996). Monitoring Structural
 
-[s7.5] Fremdt, S. (2014). Asymptotic distribution of the delay time in page’s sequential procedure. Journal of Statistical Planning and Inference, 145:74–91.
+[s7.5] Change. Econometrica, 64(5):1045.
 
-[s7.6] Fremdt, S. (2015). Page’s sequential procedure for change-point detection in time series regression. Statistics, 49(1):128–155.
+[s7.6] Fremdt, S. (2014). Asymptotic distribution of the delay time in page’s sequential
 
-[s7.7] Horváth, L., Hušková, M., Kokoszka, P., and Steinebach, J. (2004). Monitoring changes in linear models. Journal of Statistical Planning and Inference, 126(1):225–251.
+[s7.7] procedure. Journal of Statistical Planning and Inference, 145:74–91.
 
-[s7.8] Page, E. S. (1954). Continuous Inspection Schemes. Biometrika, 41(1/2):100.
+[s7.8] Fremdt, S. (2015). Page’s sequential procedure for change-point detection in
 
-[s7.9] Tartakovsky, A., Nikiforov, I. V., and Basseville, M. (2014). Sequential analysis: Hypothesis testing and changepoint detection. CRC Press.
+[s7.9] time series regression. Statistics, 49(1):128–155.
 
-[s8.1] Figure 2: Detection Probability (DP), False Detection Probability (FDP) and Average Detection Delay (ADD), with error bars showing 2 standard errors either side of the mean, for two scenarios with variance changes of varying sizes.
+[s7.10] Horváth, L., Hušková, M., Kokoszka, P., and Steinebach, J. (2004). Monitoring
+
+[s7.11] changes in linear models. Journal of Statistical Planning and Inference, 126(1):225–251.
+
+[s7.12] Page, E. S. (1954). Continuous Inspection Schemes. Biometrika, 41(1/2):100.
+
+[s7.13] Tartakovsky, A., Nikiforov, I. V., and Basseville, M. (2014). Sequential analysis:
+
+[s7.14] Hypothesis testing and changepoint detection. CRC Press. 7
+
+[s8.1] AR(1) 1.0 l l l l l 0.8 DP 0.6 0.4 1.5 2.0 2.5 3.0 3.5 0.05 0.04 0.03 FDP 0.02 0.01 l l l l l 0.00 1.5 2.0 2.5 3.0 3.5 200 l 150 ADD 100 l 50 l l l 1.5 2.0 2.5 3.0 3.5 Change Size ARMA(1,2) 1.0 l l l l l 0.8 DP 0.6 0.4 1.5 2.0 2.5 3.0 3.5 0.05 0.04 0.03 FDP 0.02 0.01 l l l l l 0.00 1.5 2.0 2.5 3.0 3.5 200 l 150 ADD 100 l 50 l l l 1.5 2.0 2.5 3.0 3.5 Change Size
+
+[s8.2] Method l ARMA Forecast Errors ETS Forecast Errors Raw CUSUM
+
+[s8.3] Figure 2: Detection Probability (DP), False Detection Probability (FDP) and Average Detection Delay (ADD), with error bars showing 2 standard errors either side of the mean, for two scenarios with variance changes of varying sizes. 8
