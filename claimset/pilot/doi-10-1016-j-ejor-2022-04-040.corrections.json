@@ -1,0 +1,34 @@
+{
+ "source_id": "10.1016/j.ejor.2022.04.040",
+ "id_type": "doi",
+ "corrections": [
+  {
+   "field": "D4.definition",
+   "where": "p6.4",
+   "printed": "W_3 = \\Phi (individual seasonal)",
+   "recorded": "W_3 = I_n",
+   "reason": "The seasonal state enters the measurement undamped: the common seasonal case of the same table has W_3 = 1_n and the individual level W_1 = I_n; the damping matrix belongs to the trend."
+  },
+  {
+   "field": "D4.definition",
+   "where": "p6.12",
+   "printed": "A = \\alpha 1_n' (common level smoothing parameter)",
+   "recorded": "A = \\alpha I_n",
+   "reason": "A is the n by n block G_1 of an individual level; the paper's own example in Section 4.1 has G_1 = \\alpha I_2, and \\Phi = \\phi I_n in the same table."
+  },
+  {
+   "field": "D4.definition",
+   "where": "p6.12",
+   "printed": "B = \\beta 1_n' (common trend smoothing parameter)",
+   "recorded": "B = \\beta I_n",
+   "reason": "B is the n by n block G_2 of an individual trend; the paper's own example in Section 4.1 has G_2 = \\beta I_2."
+  },
+  {
+   "field": "D4.definition",
+   "where": "p6.12",
+   "printed": "\\Gamma = \\gamma 1_n' (common seasonal smoothing parameter)",
+   "recorded": "\\Gamma = \\gamma I_n",
+   "reason": "\\Gamma is the n by n block G_3 of an individual seasonal component, as A and B are for level and trend."
+  }
+ ]
+}

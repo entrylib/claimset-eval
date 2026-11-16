@@ -1,5 +1,5 @@
 {
- "schema_version": "0.39",
+ "schema_version": "0.44",
  "paper": {
   "title": "Complex exponential smoothing",
   "licence": "CC-BY-4.0",
@@ -26,32 +26,13 @@
    "C12"
   ],
   "contribution_record": "complete",
-  "origin": "converted",
+  "origin": "native",
   "study": "pilot",
-  "converted_from": {
-   "source_id": "10.1002/nav.22074",
+  "published_as": {
    "id_type": "doi",
-   "source_version": "version of record",
-   "source_licence": "CC-BY-4.0",
-   "source_authors": [
-    {
-     "name": "Ivan Svetunkov",
-     "orcid": "0000-0001-7826-0281"
-    },
-    {
-     "name": "Nikolaos Kourentzes",
-     "orcid": null
-    },
-    {
-     "name": "John Keith Ord",
-     "orcid": null
-    }
-   ],
-   "source_status_at_conversion": "active",
-   "converter": "P1",
-   "date": "2026-10-23",
-   "corrections": []
-  }
+   "id": "10.1002/nav.22074"
+  },
+  "autonomy": "human_assisted"
  },
  "contributors": [
   {
@@ -59,7 +40,7 @@
    "type": "agent",
    "name": "Claude Code",
    "positions": [
-    "converter"
+    "author"
    ],
    "models": [
     {
@@ -94,11 +75,29 @@
    "affiliation": "Centre for Marketing Analytics and Forecasting, Lancaster University Management School",
    "positions": [
     "guarantor",
-    "conversion_guarantor"
+    "contributor"
    ],
    "credit_roles": [
     "supervision",
     "validation"
+   ]
+  },
+  {
+   "id": "P3",
+   "type": "human",
+   "name": "Nikolaos Kourentzes",
+   "positions": [
+    "coauthor",
+    "contributor"
+   ]
+  },
+  {
+   "id": "P4",
+   "type": "human",
+   "name": "John Keith Ord",
+   "positions": [
+    "coauthor",
+    "contributor"
    ]
   }
  ],
@@ -513,7 +512,7 @@
     "p6.4",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "relations": [
     {
      "type": "extends",
@@ -579,7 +578,7 @@
     "p6.4",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "passes continuously between stationary and non-stationary as changes",
@@ -616,16 +615,13 @@
     "L1",
     "L3"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p1.6",
     "p9.15-p9.16",
     "p9.18",
     "p11.27"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C34"
    ],
@@ -671,15 +667,12 @@
     "L3",
     "L5"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p1.6",
     "p9.22-p10.9",
     "p11.27"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has the lowest mean and median MASE and RMSSE and median MSIS, but not the lowest mean MSIS, of",
@@ -719,7 +712,7 @@
     "p11.25",
     "p14.4-p14.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "has an underlying",
@@ -750,7 +743,7 @@
     "p11.25",
     "p14.4-p14.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the parameter space of the ARMA(2,2) model underlying CES",
     "relation": "differs from",
@@ -781,7 +774,7 @@
     "p11.25",
     "p14.4-p14.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the parameter space of the ARMA(2,2) model underlying CES",
     "relation": "is not restricted to",
@@ -811,7 +804,7 @@
     "p7.6-p7.8",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D4",
     "relation": "models seasonality with",
@@ -837,7 +830,7 @@
     "p7.6-p7.8",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C8"
    ],
@@ -867,7 +860,7 @@
     "p7.6-p7.8",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C8",
     "C31",
@@ -909,15 +902,12 @@
    "limitations": [
     "L3"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p9.16",
     "p9.21",
     "p11.27"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C35"
    ],
@@ -961,14 +951,11 @@
     "L3",
     "L5"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p10.9",
     "p11.27"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D5",
     "relation": "has lower mean and median errors than",
@@ -1006,7 +993,7 @@
     "p11.21",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "encompasses",
@@ -1038,7 +1025,7 @@
     "p11.21",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "warrant": "W2",
    "about": {
     "subject": "D1",
@@ -1069,7 +1056,7 @@
     "p11.21",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "warrant": "W2",
    "about": {
     "subject": "D1",
@@ -1100,7 +1087,7 @@
     "p4.4-p4.13",
     "p13.28-p14.3"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "has the single-source-of-error state-space form",
@@ -1133,7 +1120,7 @@
     "p5.6",
     "p14.14-p15.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "is stationary when",
@@ -1162,7 +1149,7 @@
    "source_spans": [
     "p4.19"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the eigenvalues of the CES transition matrix",
     "relation": "are both real, one of them greater than one,",
@@ -1189,7 +1176,7 @@
    "source_spans": [
     "p4.19"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C18"
    ],
@@ -1220,7 +1207,7 @@
     "p4.19",
     "p6.9-p6.10"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "is equivalent to",
@@ -1253,7 +1240,7 @@
     "p5.4",
     "p5.20"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "novelty": "no_prior_found",
    "about": {
     "subject": "D1",
@@ -1285,7 +1272,7 @@
     "p5.4",
     "p5.20"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "novelty": "no_prior_found",
    "about": {
     "subject": "D1",
@@ -1318,7 +1305,7 @@
     "p4.21-p5.6",
     "p15.12-p16.1"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "is stable when",
@@ -1348,7 +1335,7 @@
     "p4.21-p5.6",
     "p15.12-p16.1"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C17",
     "C23"
@@ -1378,7 +1365,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C26",
     "C27",
@@ -1423,7 +1410,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "is a flat line",
@@ -1451,7 +1438,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "grows exponentially",
@@ -1479,7 +1466,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "declines exponentially",
@@ -1507,7 +1494,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "is a harmonic oscillation converging to zero",
@@ -1535,7 +1522,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "is a diverging harmonic oscillation",
@@ -1563,7 +1550,7 @@
     "p7.3",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C25"
    ],
@@ -1595,7 +1582,7 @@
     "p7.11-p7.12",
     "p8.1-p8.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "estimates a stationary value of",
@@ -1626,7 +1613,7 @@
     "p7.11",
     "p7.13-p8.4"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "estimates a non-stationary value of",
@@ -1658,7 +1645,7 @@
     "p9.14",
     "p9.20"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has the best mean rank, in Nemenyi tests at the 5% level, of",
@@ -1693,7 +1680,7 @@
     "p9.20-p9.21",
     "p10.3"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D5",
     "relation": "has a significantly better mean rank, in Nemenyi tests at the 5% level, than every other method of",
@@ -1726,15 +1713,12 @@
    "limitations": [
     "L1"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p10.10",
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -1769,7 +1753,7 @@
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -1804,7 +1788,7 @@
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has a lower median RMSSE, but higher other errors, than",
@@ -1839,7 +1823,7 @@
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower mean and median errors than",
@@ -1874,7 +1858,7 @@
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -1908,7 +1892,7 @@
    "source_spans": [
     "p4.12-p4.13"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the transition matrix of the CES state-space form",
     "relation": "contains",
@@ -1939,7 +1923,7 @@
     "p4.14-p4.15",
     "p7.6"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D39",
     "relation": "can be computed, for seasonal and non-seasonal CES, from",
@@ -1965,7 +1949,7 @@
    "source_spans": [
     "p5.14"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C16"
    ],
@@ -1998,7 +1982,7 @@
    "source_spans": [
     "p6.5-p6.10"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C20"
    ],
@@ -2028,7 +2012,7 @@
    "source_spans": [
     "p6.5-p6.10"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C44"
    ],
@@ -2059,7 +2043,7 @@
    "source_spans": [
     "p6.5-p6.10"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C44"
    ],
@@ -2091,7 +2075,7 @@
     "p7.2",
     "p16.2-p16.28"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C8"
    ],
@@ -2126,7 +2110,7 @@
    "source_spans": [
     "p7.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D4",
     "relation": "is stationary or non-stationary depending on",
@@ -2151,7 +2135,7 @@
     "p7.3",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C25"
    ],
@@ -2180,7 +2164,7 @@
     "p7.3",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C25"
    ],
@@ -2211,7 +2195,7 @@
    "source_spans": [
     "p7.6-p7.7"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "has, without seasonality, 5 estimated parameters",
@@ -2235,7 +2219,7 @@
    "source_spans": [
     "p7.6-p7.7"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "warrant": "W5",
    "about": {
     "subject": "D4",
@@ -2266,7 +2250,7 @@
     "p9.14",
     "p9.20"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "does not differ significantly, in Nemenyi tests at the 5% level, from each of",
@@ -2302,13 +2286,10 @@
      ]
     }
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p11.22"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -2341,7 +2322,7 @@
    "source_spans": [
     "p11.22"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -2374,7 +2355,7 @@
    "source_spans": [
     "p11.22"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -2407,7 +2388,7 @@
    "source_spans": [
     "p11.22"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -2446,7 +2427,7 @@
     "p11.22",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "information criteria",
     "relation": "can effectively identify when to switch between",
@@ -2485,7 +2466,7 @@
    "source_spans": [
     "p11.28"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "excludes": [
      "forecasting scenarios for which CES is not appropriate, which the paper does not name"
@@ -2515,7 +2496,7 @@
     "p4.5",
     "p4.14"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "C61",
@@ -2533,7 +2514,7 @@
     "p4.5",
     "p14.2"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "C62",
@@ -2551,7 +2532,7 @@
     "p4.5",
     "p5.14"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   },
   {
    "id": "C63",
@@ -2569,7 +2550,7 @@
     "p4.5",
     "p5.14"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   },
   {
    "id": "C64",
@@ -2586,7 +2567,7 @@
    "source_spans": [
     "p4.14-p4.15"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   },
   {
    "id": "C65",
@@ -2604,7 +2585,7 @@
     "p10.21",
     "p11.22"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   }
  ],
  "evidence": [
@@ -2623,7 +2604,8 @@
    ],
    "availability": {
     "level": "public"
-   }
+   },
+   "proof_artefact": "A9"
   },
   {
    "id": "E2",
@@ -2833,7 +2815,8 @@
    ],
    "availability": {
     "level": "public"
-   }
+   },
+   "proof_artefact": "A9"
   },
   {
    "id": "E4",
@@ -2849,7 +2832,8 @@
    },
    "assumptions": [
     "C61"
-   ]
+   ],
+   "proof_artefact": "A9"
   },
   {
    "id": "E5",
@@ -2865,7 +2849,8 @@
    ],
    "availability": {
     "level": "public"
-   }
+   },
+   "proof_artefact": "A9"
   },
   {
    "id": "E6",
@@ -2881,7 +2866,8 @@
    ],
    "availability": {
     "level": "public"
-   }
+   },
+   "proof_artefact": "A9"
   },
   {
    "id": "E7",
@@ -3503,7 +3489,7 @@
     "p10.2",
     "p11.21"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L2",
@@ -3519,7 +3505,7 @@
    "source_spans": [
     "p7.4-p7.5"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L3",
@@ -3536,7 +3522,7 @@
    "source_spans": [
     "p12.1"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L4",
@@ -3550,7 +3536,7 @@
    "source_spans": [
     "p11.28-p12.1"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L5",
@@ -3565,7 +3551,7 @@
    "source_spans": [
     "p10.8"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   }
  ],
  "artefacts": [
@@ -3647,6 +3633,16 @@
    "availability": {
     "level": "public"
    }
+  },
+  {
+   "id": "A9",
+   "kind": "manuscript",
+   "uri": "https://doi.org/10.1002/nav.22074",
+   "reference": "B25",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The published article (open access, CC BY)."
   }
  ],
  "references": [
@@ -3769,6 +3765,11 @@
    "id": "B24",
    "id_type": "reference",
    "target": "R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing. https://www.R-project.org/"
+  },
+  {
+   "id": "B25",
+   "target": "10.1002/nav.22074",
+   "id_type": "doi"
   }
  ],
  "open_questions": [

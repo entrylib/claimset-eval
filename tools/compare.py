@@ -12,6 +12,7 @@ With the converter's report.json, its source flags count towards the errors of t
 """
 
 import argparse
+import os
 import json
 import math
 import re
@@ -307,12 +308,14 @@ def _page(where):
     return int(m.group(1)) if m else None
 
 
-def source_errors(gold, cand, flags=None):
+def source_errors(gold, cand, flags=None, corrections=None):
     """The errors of the source that the gold records (its corrections), and whether the candidate found each: as a
     correction of its own or as a source flag (the converter's report.json), at the same paragraph or on the same
-    page. The converter cannot ask the authors, so a flag counts as finding the error."""
-    errors = [c for c in ((gold.get("paper") or {}).get("converted_from") or {}).get("corrections") or []
-              if isinstance(c, dict)]
+    page. The converter cannot ask the authors, so a flag counts as finding the error. A native gold claimset
+    (its authors' own, with `published_as`) has no `converted_from`: its corrections are given in `corrections`,
+    read from the file beside it (`<name>.corrections.json`)."""
+    errors = [c for c in list(((gold.get("paper") or {}).get("converted_from") or {}).get("corrections") or [])
+              + list(corrections or []) if isinstance(c, dict)]
     found = [c.get("where") for c in ((cand.get("paper") or {}).get("converted_from") or {}).get("corrections") or []
              if isinstance(c, dict)]
     found += [f.get("where") for f in flags or [] if isinstance(f, dict)]
@@ -407,7 +410,12 @@ def main(argv=None):
     if a.report:
         with open(a.report, encoding="utf-8") as f:
             flags = json.load(f).get("source_flags")
-    rep["source errors"] = source_errors(gold, cand, flags)
+    corrections = None
+    beside = re.sub(r"(\.claimset)?\.json$", ".corrections.json", a.gold)
+    if beside != a.gold and os.path.exists(beside):
+        with open(beside, encoding="utf-8") as f:
+            corrections = json.load(f).get("corrections")
+    rep["source errors"] = source_errors(gold, cand, flags, corrections)
     print_report(rep)
     if a.json:
         with open(a.json, "w", encoding="utf-8") as f:

@@ -1,5 +1,5 @@
 CLAIMSET Complex exponential smoothing
-licence CC-BY-4.0; converted from 10.1002/nav.22074 version of record by Ivan Svetunkov, Nikolaos Kourentzes, John Keith Ord; contributions C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12
+licence CC-BY-4.0; contributions C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12
 
 DEFINITIONS
 D1 [method] CES: Complex exponential smoothing: a forecasting method that combines each past observation $y_t$ and its forecast error $e_t$ into the complex variable $y_t + i e_t$ and forecasts with an exponentially weighted sum of these values, $\hat{y}_t + i\hat{e}_t = (\alpha_0 + i\alpha_1) \sum_{j=1}^{t-1} (1 + i - (\alpha_0 + i\alpha_1))^{j-1} (y_{t-j} + i e_{t-j})$, or recursively $\hat{y}_t + i\hat{e}_t = (\alpha_0 + i\alpha_1)(y_{t-1} + i e_{t-1}) + (1 - \alpha_0 + i - i\alpha_1)(\hat{y}_{t-1} + i\hat{e}_{t-1})$, where $\alpha_0 + i\alpha_1$ is the [[D2:complex smoothing parameter]] and $\hat{e}_t$ carries the information on past forecast errors. [assumes C60, C62, C63, C64]
@@ -287,6 +287,7 @@ A5 [software] forecast package for R (thetaf)
 A6 [software] greybox package for R (rmcb, Nemenyi test)
 A7 [data] M4 competition data
 A8 [software] R, the environment for statistical computing in which the experiments were run
+A9 [manuscript] The published article (open access, CC BY).
 
 REFERENCES
 B1 Hyndman, R. J., Koehler, A. B., Ord, J. K., & Snyder, R. D. (2008). Forecasting with exponential smoothing: The state space approach. Springer-Verlag.
@@ -313,3 +314,4 @@ B21 Akaike, H. (1974). A new look at the statistical model identification. IEEE 
 B22 Dickey, D. A., & Fuller, W. A. (1979). Distribution of the estimators for autoregressive time series with a unit root. Journal of the American Statistical Association, 74(366a), 427–431.
 B23 Kwiatkowski, D., Phillips, P. C. B., Schmidt, P., & Shin, Y. (1992). Testing the null hypothesis of stationarity against the alternative of a unit root: How sure are we that economic time series are nonstationary? Journal of Econometrics, 54, 159–178.
 B24 R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing. https://www.R-project.org/
+B25 10.1002/nav.22074 (doi)

@@ -1,5 +1,5 @@
 CLAIMSET A new taxonomy for vector exponential smoothing and its application to seasonal time series
-licence CC-BY-4.0; converted from 10.1016/j.ejor.2022.04.040 version of record by Ivan Svetunkov, Huijing Chen, John E. Boylan; contributions C1, C2, C3, C4, C5, C6, C7
+licence CC-BY-4.0; contributions C1, C2, C3, C4, C5, C6, C7
 
 DEFINITIONS
 D1 [method] VETS: Vector exponential smoothing: a state space model for a group of n time series $y_t = (y_{1,t}, \ldots, y_{n,t})'$, with measurement matrix $W$, transition matrix $F$, persistence matrix $G$ of smoothing parameters, state vector $v_t$ with component lags $l$ and error vector $\epsilon_t$, in one of two forms, [[D2:pure additive VETS]] or [[D3:pure multiplicative VETS]]. [assumes C57]
@@ -378,6 +378,7 @@ A3 [software] smooth package for R (adam)
 A4 [software] forecast package for R (ets)
 A5 [software] greybox package for R (rmcb)
 A6 [software] R, the environment in which the experiments were run
+A7 [manuscript] The published article (open access, CC BY).
 
 REFERENCES
 B1 10.1111/j.1467-842X.2009.00555.x (doi)
@@ -398,3 +399,4 @@ B18 Svetunkov, I., & Pritularga, K. F. (2021). legion: Forecasting using multiva
 B19 Svetunkov, I. (2021c). Time series analysis and forecasting with adam. OpenForecast, (version: 2021-04-13), https://www.openforecast.org/adam/.
 B20 Snyder, R. D., Ord, J. K., Koehler, A. B., McLaren, K. R., & Beaumont, A. N. (2017). Forecasting compositional time series: A state space approach. International Journal of Forecasting, 33(2), 502–512.
 B21 Team, R. C. (2020). R: A language and environment for statistical computing. R Foundation for Statistical ComputingVienna, Austria. https://www.R-project.org/.
+B22 10.1016/j.ejor.2022.04.040 (doi)
