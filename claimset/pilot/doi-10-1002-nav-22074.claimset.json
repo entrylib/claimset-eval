@@ -49,6 +49,40 @@
  "contributors": [
   {
    "id": "P1",
+   "type": "human",
+   "name": "Ivan Svetunkov",
+   "orcid": "0000-0001-7826-0281",
+   "affiliation": "Centre for Marketing Analytics and Forecasting, Lancaster University Management School",
+   "positions": [
+    "guarantor",
+    "contributor"
+   ],
+   "credit_roles": [
+    "supervision",
+    "validation"
+   ]
+  },
+  {
+   "id": "P2",
+   "type": "human",
+   "name": "Nikolaos Kourentzes",
+   "positions": [
+    "coauthor",
+    "contributor"
+   ],
+   "orcid": "0000-0003-0211-5218"
+  },
+  {
+   "id": "P3",
+   "type": "human",
+   "name": "John Keith Ord",
+   "positions": [
+    "coauthor",
+    "contributor"
+   ]
+  },
+  {
+   "id": "P4",
    "type": "agent",
    "name": "Claude Code",
    "positions": [
@@ -78,40 +112,6 @@
    "system": {
     "name": "Claude Code"
    }
-  },
-  {
-   "id": "P2",
-   "type": "human",
-   "name": "Ivan Svetunkov",
-   "orcid": "0000-0001-7826-0281",
-   "affiliation": "Centre for Marketing Analytics and Forecasting, Lancaster University Management School",
-   "positions": [
-    "guarantor",
-    "contributor"
-   ],
-   "credit_roles": [
-    "supervision",
-    "validation"
-   ]
-  },
-  {
-   "id": "P3",
-   "type": "human",
-   "name": "Nikolaos Kourentzes",
-   "positions": [
-    "coauthor",
-    "contributor"
-   ],
-   "orcid": "0000-0003-0211-5218"
-  },
-  {
-   "id": "P4",
-   "type": "human",
-   "name": "John Keith Ord",
-   "positions": [
-    "coauthor",
-    "contributor"
-   ]
   }
  ],
  "models": [
