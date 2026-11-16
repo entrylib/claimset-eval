@@ -1,0 +1,200 @@
+CLAIMSET Online Detection of Forecast Model Inadequacies Using Forecast Errors
+summary Forecasting models go wrong when the process they forecast changes, and the more complex the model, the harder the change is to spot directly. This paper proposes watching the model's one-step-ahead forecast errors instead, with a sequential changepoint test (Page's CUSUM), whatever the forecasting method. It shows that, when the model keeps a constant bias and cannot fully adapt, a change in the mean or variance of the data appears as a change in the mean of the errors or of their squares, with known limit distributions for the test. Exponential smoothing adapts to mean changes, so with it only variance changes stay visible. In simulations of seasonal data, monitoring forecast errors found changes sooner than monitoring the raw data, with few false alarms. Two examples follow: Royal Mail parcel forecasts and hospital admissions for gallstones.
+licence CC-BY-4.0; contributions C1, C2, C3, C4, C5, C6, C7; highlights C1, C2, C5, C4
+declarations funding: Engineering and Physical Sciences Research Council award EP/L015692/1; Royal Mail Group Ltd; UK Research Councils award EP/T014105/1; UK Research Councils award EP/T021020/1; UK Research Councils award EP/R01860X/1; UK Research Councils award NE/T012307/1 | competing interests: Thomas Grundy's PhD project was co-sponsored by Royal Mail.
+
+DEFINITIONS
+D1 [method] forecast error monitoring framework: A framework that monitors a forecasting model online by applying sequential changepoint detection to its one-step-ahead forecast errors. For a univariate series $Y_t$ and a forecasting model $\mathcal{F}$ with one-step-ahead point forecast $\hat{y}_t(1) = \mathbb{E}_{\mathcal{F}}[Y_t | y_{t-1}, \ldots, y_1]$, the forecast errors are $$e_t = Y_t - \hat{y}_t(1).$$ The first $m$ forecast errors are the Phase I (training) sample; monitoring starts at $t = m + 1$ and stops when a detector, [[D2:the mean detector]] or [[D3:the squared-error detector]], crosses its threshold. Any forecasting approach can supply the errors: model-based, machine learning or expert judgement.
+D2 [method] mean detector $D_\mu(m,k)$: [[D24:Page's CUSUM detector]] applied to the forecast errors of the [[D1:forecast error monitoring framework]]: $$\begin{aligned} Q_\mu(m,k) &= \sum_{t=m+1}^{m+k} e_t - \frac{k}{m} \sum_{t=1}^{m} e_t \\ D_\mu(m,k) &= \max_{0 \le i \le k} \left| Q_\mu(m,k) - Q_\mu(m,i) \right| \end{aligned}$$ with stopping time $$\tau_{\mu,m} = \min\{k \ge 1 : D_\mu(m,k) \ge \hat{\sigma}_{\mu,m} c_{\mu,\alpha} g(m,k,\gamma)\},$$ where $\hat{\sigma}_{\mu,m}$ is the standard deviation of the forecast errors in the Phase I sample. The weight function $g(m,k,\gamma)$ is that of [[D24:Page's CUSUM detector]], and the critical constant $c_{\mu,\alpha}$ comes from the limit distribution of the detector under the null hypothesis. [part of D1] [source B11]
+D3 [method] squared-error detector $D_\xi(m,k)$: [[D24:Page's CUSUM detector]] applied to the centred squared forecast errors of the [[D1:forecast error monitoring framework]]: $$\begin{aligned} Q_\xi(m,k) &= \sum_{t=m+1}^{m+k} (e_t - \hat{b}_{\mu,m})^2 - \frac{k}{m} \sum_{t=1}^{m} (e_t - \hat{b}_{\mu,m})^2 \\ D_\xi(m,k) &= \max_{0 \le i \le k} \left| Q_\xi(m,k) - Q_\xi(m,i) \right| \end{aligned}$$ with stopping time $$\tau_{\xi,m} = \min\{k \ge 1 : D_\xi(m,k) \ge \hat{\sigma}_{\xi,m} c_{\xi,\alpha} g(m,k,\gamma)\},$$ where $\hat{b}_{\mu,m}$ is the mean of the forecast errors in the $m$ Phase I samples and $\hat{\sigma}_{\xi,m}$ the standard deviation of the centred squared forecast errors in that sample. $g(m,k,\gamma)$ is that of [[D24:Page's CUSUM detector]] and $c_{\xi,\alpha}$ comes from the limit distribution of the detector under the null hypothesis. The paper prints the second sum of $Q_\xi(m,k)$ without the square, a typographical error that the guarantor, an author of the paper, has confirmed. [part of D1]
+D4 [method] Raw CUSUM: [[D24:Page's CUSUM detector]] applied to the raw data instead of forecast errors; for variance changes, to the centred squared raw data. In the paper's simulations its standard deviation $\hat{\sigma}_m$ is the Bartlett long run variance estimator from the sandwich R package. [source B2]
+D5 [method] ARMA Forecast Errors: The detector of the [[D1:forecast error monitoring framework]], [[D2:$D_\mu(m,k)$]] or [[D3:$D_\xi(m,k)$]] by the type of change, applied to the forecast errors of an ARMA forecasting model fitted with the forecast R package. For seasonal data the model is a seasonal ARMA model chosen by auto.arima using AIC, with no differencing. The standard deviation is the traditional estimator, the errors being taken as i.i.d. [a kind of D1] [source B12]
+D6 [method] ETS Forecast Errors: The detector of the [[D1:forecast error monitoring framework]], [[D2:$D_\mu(m,k)$]] or [[D3:$D_\xi(m,k)$]] by the type of change, applied to the forecast errors of an ETS forecasting model fitted with the es function of the smooth R package. The standard deviation is the traditional estimator, the errors being taken as i.i.d. [a kind of D1] [source B13]
+D7 [method] compared detectors: The three detectors compared in the paper's simulations. [members D4, D5, D6]
+D8 [data] mean change model: A data-generating process with a changepoint at an unknown location $k^*$: $$\begin{aligned} Y_t | y_{t-1}, \ldots, y_1 &\sim F, \quad t = 1, \ldots, m + k^* \\ Y_t | y_{t-1}, \ldots, y_1 &\sim G, \quad t = m + k^* + 1, m + k^* + 2, \ldots \end{aligned}$$ where $F$ and $G$ differ in expectation by $\delta_{\mu,m} \ne 0$. The raw data may be temporally dependent, trended, seasonal or depend on exogenous variables.
+D9 [data] mean and variance change model: The [[D8:mean change model]] extended so that the pre-change distribution $F$ and the post-change distribution $G'$ differ in expectation by $\delta_{\mu,m}$ and in variance by $\delta_{\xi,m}$ (the paper's Definition 1). [a kind of D8]
+D10 [method] ETS(A,N,N) forecasting model: The local level exponential smoothing model with additive error, no trend and no seasonality, whose one-step-ahead forecasts follow $$\hat{y}_t(1) = \hat{y}_{t-1}(1) + \alpha e_{t-1},$$ where $e_{t-1}$ is the forecast error at time $t-1$ and $0 < \alpha < 1$ is the smoothing parameter.
+D11 [method] ARMA forecasting model: A forecasting model for the causal and invertible ARMA($p$,$q$) process $$\phi(B)(Y_t - \lambda_t) = \theta(B)\epsilon_t,$$ with mean parameters $\lambda_t$, autoregressive polynomial $\phi(B) = 1 - \phi_1 B - \cdots - \phi_p B^p$, moving average polynomial $\theta(B) = 1 + \theta_1 B + \cdots + \theta_q B^q$ and independent zero-mean errors $\epsilon_t$ with variance $\sigma_t^2$.
+D12 [variable] average detection delay (ADD): The mean of the detection delays over the simulated series in which a change was signalled within the length of the data.
+D13 [variable] detection probability (DP): The proportion of simulated series in which a change was detected within the length of the monitoring data.
+D14 [variable] false detection probability (FDP): The proportion of simulated series in which a change was detected before the true change had occurred.
+D15 [design] simulation design of the paper: Each scenario is simulated 1000 times with normally distributed innovations. Forecasting models are trained on the first $n_{\text{train}} = 300$ observations and then produce one-step-ahead forecasts sequentially. A change is signalled by the theoretical thresholds of [[D24:Page's CUSUM detector]] with $\gamma = 0$ and a false alarm rate of 0.05.
+D16 [data] seasonal mean change scenario: Simulated data whose errors follow an ARMA(2,1) model with $\phi = (-0.6, 0.3)$, $\theta = -0.3$, $\lambda = 0$ and $\sigma^2 = 1$, with a mean change of size $\delta_\mu$ at $k^* = 100$ and a seasonal component of frequency 12 whose seasonal means are 12 equally spaced points of $y = 10\sin(x)$, $x \in [0, \pi]$.
+D17 [data] seasonal trend change scenario: Simulated data $y_t = 1[t > m + k^*]\beta t + \epsilon_t$ whose errors follow an ARMA(1,1) model with $\phi = 0.2$, $\theta = 0.2$, $\lambda = 0$ and $\sigma^2 = 1$: no trend before the change and a trend of gradient $\beta$ after it, with a seasonal component of frequency 7 whose seasonal means are 7 equally spaced points of $y = 10\cos(x)$, $x \in [0, 2\pi]$.
+D18 [data] autoregressive parameter change scenarios: Simulated data with AR(1) errors, $\lambda = 0$, whose autoregressive parameter changes at the changepoint from $\phi_{\text{pre}} = 0.2$ (scenario 1) or $\phi_{\text{pre}} = 0.8$ (scenario 2) to varying values $\phi_{\text{post}}$, with quarterly seasonality given by quarter means $(-2, 5, 7, -10)$. The ETS forecasting model is ETS(A,N,A) with estimated smoothing parameters.
+D19 [data] Royal Mail forecast errors: Forecast errors of the daily number of parcels to be delivered from one Royal Mail delivery office, from 1 July 2020 to 31 December 2020. The underlying data and forecasts are not known to the authors. July to October is the Phase I sample; monitoring starts on 1 November 2020.
+D20 [data] GRP admissions series: The monthly proportion of A&E admissions related to gallstone-related pathology (GRP) in participating hospitals across England, 2010 to 2020, based on NHS Hospital Episode Statistics. A SARMA(1,0,0)(1,0,0)$_{12}$ model fitted to the data up to 2013 gives one-step-ahead forecasts for the rest; 2013 to 2016 is the Phase I sample of size $m = 36$ and monitoring starts in 2016. [source B4]
+D21 [method] model-based sequential changepoint detection: Sequential changepoint detection that fits the model to the data before and after a potential changepoint and decides by a likelihood-ratio style statistic.
+D22 [variable] detection delay: The number of observations between a change and the time a detector signals it.
+D23 [variable] date of detection: The date of the observation at which a detector first crosses its threshold.
+D24 [method] Page's CUSUM detector $D(m,k)$: The sequential detector of a mean change in a series $Y_t$ that follows the change in mean model $$Y_t = \begin{cases} \lambda + \epsilon_t, & t = 1, \ldots, m + k^* \\ \lambda + \epsilon_t + \Delta_m, & t = m + k^* + 1, m + k^* + 2, \ldots \end{cases}$$ with zero-mean variables $\epsilon_t$, a training period of length $m$ without changepoints and a change of size $\Delta_m$ at time $k^*$ after it. With $$\begin{aligned} Q(m,k) &= \sum_{t=m+1}^{m+k} Y_t - \frac{k}{m} \sum_{t=1}^{m} Y_t \\ D(m,k) &= \max_{0 \le i \le k} \left| Q(m,k) - Q(m,i) \right| \end{aligned}$$ the null hypothesis $H_0: \Delta_m = 0$ is rejected in favour of $H_A: \Delta_m \ne 0$ at the stopping time $$\tau_m = \min\{k \ge 1 : D(m,k) \ge \hat{\sigma}_m c_\alpha g(m,k,\gamma)\},$$ where $\hat{\sigma}_m$ is a weakly consistent estimator, from the $m$ training samples, of the constant $\sigma$ of the weak invariance principle, the weight function is $$g(m,k,\gamma) = \sqrt{m}\left(1 + \frac{k}{m}\right)\left(\frac{k}{m+k}\right)^{\gamma}, \quad \gamma \in [0, 1/2).$$ and the critical value $c_\alpha$ is taken from the limit distribution under $H_0$, so that $\lim_{m\to\infty} P(\tau_m < \infty) = \alpha$ under $H_0$ for the chosen false alarm rate $\alpha$ and $\lim_{m\to\infty} P(\tau_m < \infty) = 1$ under $H_A$. All limits are for $m \to \infty$; the model is trained once and not re-trained during monitoring. The paper takes $\gamma = 0$. [source B10]
+
+CLAIMS
+C1 [formal; principal; extension; support: formal_proof E1; assumes C18, C19; limitations L1; verification unchecked]
+  Under [[D8:the mean change model]], the one-step-ahead forecast errors of a forecasting model that satisfies the two forecasting-model assumptions have a change in mean of size $\Delta_{\mu,m} \ne 0$ at the changepoint: $e_t = b_\mu + \epsilon_{\mu,t}$ for $t \le m + k^*$ and $e_t = b_\mu + \epsilon_{\mu,t} + \Delta_{\mu,m}$ afterwards.
+  scope: data_type: univariate time series | conditions: one-step-ahead forecasts; a single changepoint after the training sample
+  extends B1: Aue et al. (2015) monitor the residuals of ARMA models only; the claim covers the forecast errors of any forecasting model that satisfies the two assumptions.
+C2 [formal; principal; extension; support: formal_proof E2; assumes C18, C19; verification unchecked]
+  Under [[D9:the mean and variance change model]] and the constant-bias assumption, the change in the mean of the centred squared forecast errors is $$\Delta_{\xi,m} = \mathrm{Var}_{G'}[Y_t|\tilde{y}_t] - \mathrm{Var}_F[Y_t|\tilde{y}_t]$$ when $\delta_{\mu,m} = 0$, and $$\Delta_{\xi,m} = \mathrm{Var}_{G'}[Y_t|\tilde{y}_t] - \mathrm{Var}_F[Y_t|\tilde{y}_t] + \Delta_{\mu,m}^2$$ when $\delta_{\mu,m} \ne 0$ and the incomplete-adjustment assumption holds.
+  scope: data_type: univariate time series | conditions: one-step-ahead forecasts
+  extends B1: Aue et al. (2015) monitor the residuals of ARMA models only; the claim covers the forecast errors of any forecasting model that satisfies the two assumptions.
+C3 [formal; principal; extension; support: formal_proof E3; assumes C18, C19, C20, C21; uses C2, C24, C25; verification unchecked]
+  For the [[D3:squared-error detector]] under [[D9:the mean and variance change model]], the limit distribution of Theorem 1 of the paper's Supporting Information holds under the null hypothesis of no change, and the limit distribution of its Theorem 2 holds for the stopping time $\tau_{\xi,m}$ under the alternative when the change size $\Delta_{\xi,m}$ is large enough in the sense of that document's Assumptions C to E.
+  scope: conditions: change sizes satisfying Assumptions C to E of the paper's Supporting Information
+  extends B1: Aue et al. (2015) monitor the residuals of ARMA models only; the claim covers the forecast errors of any forecasting model that satisfies the two assumptions.
+C4 [formal; principal; support: formal_proof E4; verification unchecked]
+  For an [[D10:ETS(A,N,N) forecasting model]] under [[D8:the mean change model]] with pre-change expectation $\lambda$, the expected forecast error $s$ steps after the changepoint is $\mathbb{E}[e_{k^*+s}] = \delta_{\mu,m}$ for $s = 1$ and $$\mathbb{E}[e_{k^*+s}] = (\lambda + \delta_{\mu,m})\left(1 - \sum_{i=0}^{s-2} \alpha(1-\alpha)^i\right) - \lambda\left(\alpha(1-\alpha)^{s-1} - (1-\alpha)^s\right)$$ for $s = 2, 3, \ldots$, an expectation that returns to zero as $s$ grows when $\alpha > 0$ and does not satisfy the incomplete-adjustment assumption unless $\alpha = 0$.
+  scope: conditions: ETS(A,N,N); a change in mean
+  addresses B1: The closest result found: Aue et al. (2015) give the change size in ARMA residuals; the claim gives it for an exponential smoothing forecasting model, where it vanishes.
+C5 [descriptive; principal; support: simulation E5 artefacts A3, simulation E6 artefacts A4; uses C8, C9, C10, C11, C12; limitations L2, L3; strength moderate (author); planning exploratory]
+  On [[D16:the seasonal mean change scenario]], [[D17:the seasonal trend change scenario]] and [[D18:the autoregressive parameter change scenarios]], monitoring forecast errors with the [[D1:forecast error monitoring framework]] detected the changes with a shorter [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]], at a low [[D14:false detection probability (FDP)]].
+  scope: data_type: simulated seasonal time series with ARMA errors and normally distributed innovations | conditions: training sample of 300 observations; false alarm rate 0.05
+  addresses B5: The closest result found: Robbins et al. (2011) showed, for offline changepoint detection, that using residuals within the CUSUM procedure improves on the raw data under temporal dependence; the claim concerns sequential detection with forecast errors of any forecasting model.
+C6 [descriptive; principal; support: empirical_quant E9 (E9.R1, E9.R2) artefacts A5; uses C3, C23; limitations L4; strength low (author); planning exploratory]
+  On [[D19:the Royal Mail forecast errors]], the [[D2:mean detector]] and the [[D3:squared-error detector]] of the [[D1:forecast error monitoring framework]] both signalled a changepoint on 2 December 2020.
+  scope: setting: one Royal Mail delivery office | geography: United Kingdom | period: 1 July 2020 to 31 December 2020
+  addresses B1: The closest result found: Aue et al. (2015) apply residual-based monitoring of ARMA models to EEG and IBM data; here only the forecast errors are known, not the model or the data.
+C7 [descriptive; principal; support: argument W2; uses C13, C14; limitations L5; warrant W2; strength low (author); planning exploratory]
+  On [[D20:the GRP admissions series]], both detectors of the [[D1:forecast error monitoring framework]] have a shorter [[D22:detection delay]] than [[D21:model-based sequential changepoint detection]], whose minimum possible detection delay on data with yearly seasonality is 24 months.
+  scope: setting: A&E admissions in participating hospitals | geography: England | data_type: monthly proportions with yearly seasonality
+  addresses B4, own earlier work: Taib et al. (2021) found the changepoint retrospectively, with all the data from 2010 to 2020; the claim is about detecting it sequentially.
+C8 [descriptive; supporting; support: simulation E5 artefacts A3; limitations L2, L3; strength moderate (author); planning exploratory]
+  On [[D16:the seasonal mean change scenario]], [[D5:ARMA Forecast Errors]] has a high [[D13:detection probability (DP)]] and a lower [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]] across all change sizes.
+  scope: data_type: simulated monthly-type seasonal data with ARMA(2,1) errors | conditions: mean change sizes 0.5 to 2.5
+  addresses B5: Robbins et al. (2011) compared residuals with raw data for offline mean shift testing; this is the sequential case.
+C9 [descriptive; supporting; support: simulation E5 artefacts A3; limitations L2, L3; strength moderate (author); planning exploratory]
+  On [[D17:the seasonal trend change scenario]], [[D5:ARMA Forecast Errors]] and [[D4:Raw CUSUM]] both have an extremely high [[D13:detection probability (DP)]], and [[D5:ARMA Forecast Errors]] has the lower [[D12:average detection delay (ADD)]] across all change sizes.
+  scope: data_type: simulated daily-type seasonal data with ARMA(1,1) errors | conditions: trend gradients 0.008 to 0.042
+  addresses B6: Horváth et al. (2004) monitor changes in linear models, including trend, within a specified model; here the trend change is detected through forecast errors.
+C10 [descriptive; supporting; support: simulation E6 artefacts A4; limitations L2, L3; strength moderate (author); planning exploratory]
+  On [[D18:the autoregressive parameter change scenarios]], [[D5:ARMA Forecast Errors]] and [[D6:ETS Forecast Errors]] each give a better [[D13:detection probability (DP)]] and [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]] in all scenarios.
+  scope: data_type: simulated quarterly-type seasonal data with AR(1) errors
+  addresses B1: Aue et al. (2015) detect changes in ARMA parameters from ARMA residuals; here the comparison is with monitoring the raw data, and includes an ETS forecasting model.
+C11 [descriptive; supporting; not_applicable; support: simulation E6 (E6.R1) artefacts A4; limitations L2; strength moderate (author); planning exploratory]
+  On [[D18:the autoregressive parameter change scenarios]], the [[D14:false detection probability (FDP)]] is below 0.075 for each of the [[D7:compared detectors]].
+  scope: data_type: simulated quarterly-type seasonal data with AR(1) errors | conditions: false alarm rate set at 0.05
+C12 [descriptive; supporting; not_applicable; support: simulation E5 artefacts A3; limitations L2; strength moderate (author); planning exploratory]
+  On [[D16:the seasonal mean change scenario]] and [[D17:the seasonal trend change scenario]], the [[D14:false detection probability (FDP)]] of the [[D7:compared detectors]] is low across all change sizes.
+  scope: data_type: simulated seasonal data with ARMA errors
+C13 [descriptive; supporting; not_applicable; support: empirical_quant E10 (E10.R1) artefacts A6; limitations L5; strength low (author); planning exploratory]
+  On [[D20:the GRP admissions series]], the [[D22:detection delay]] of the [[D2:mean detector]] was 4 data points, counted from the changepoint that the retrospective analysis of Taib et al. (2021) identified.
+  scope: setting: A&E admissions in participating hospitals | geography: England | period: 2010 to 2020 | data_type: monthly proportions
+C14 [descriptive; supporting; not_applicable; support: empirical_quant E10 (E10.R2) artefacts A6; limitations L5; strength low (author); planning exploratory]
+  On [[D20:the GRP admissions series]], the [[D22:detection delay]] of the [[D3:squared-error detector]] was 2 time points.
+  scope: setting: A&E admissions in participating hospitals | geography: England | period: 2010 to 2020 | data_type: monthly proportions
+C23 [formal; supporting; extension; support: formal_proof E11; assumes C18, C19, C20, C21; uses C1, C24, C25; verification unchecked]
+  For the [[D2:mean detector]] under [[D8:the mean change model]], the limit distribution of Theorem 1 of the paper's Supporting Information holds under the null hypothesis of no change with $D(m,k) = D_\mu(m,k)$ and $\hat{\sigma}_m = \hat{\sigma}_{\mu,m}$, and the limit distribution of its Theorem 2 holds under the alternative with $\tau_m = \tau_{\mu,m}$ and $c_\alpha = c_{\mu,\alpha}$ when the change size $\Delta_{\mu,m}$ satisfies its Assumptions C to E.
+  scope: data_type: univariate time series | conditions: one-step-ahead forecasts; change sizes satisfying Assumptions C to E of the paper's Supporting Information
+  extends B1: Aue et al. (2015) give the limit distributions for the residuals of ARMA models; the claim gives them for the forecast errors of any forecasting model that satisfies the two assumptions.
+C18 [formal; supporting; assumption (theorem_condition, unchecked)]
+  The forecasting model has a constant bias before the changepoint: $\mathbb{E}_F[Y_t|\tilde{y}_t] - \mathbb{E}_{\mathcal{F}}[Y_t|\tilde{y}_t] = b_\mu$ for $t = 1, \ldots, m + k^*$, where $b_\mu$ is unknown and may be zero (the paper's Assumption 1, the constant-bias assumption).
+C19 [formal; supporting; assumption (theorem_condition, unchecked)]
+  After the changepoint the forecasting model does not fully adjust to the change: $$\mathbb{E}_G[Y_t|\tilde{y}_t] - \mathbb{E}_{\mathcal{F}}[Y_t|\tilde{y}_t] = b_\mu + \Delta_{\mu,m}$$ for $t = m + k^* + 1, m + k^* + 2, \ldots$, where $\Delta_{\mu,m} \ne 0$ is a function of the change size in the raw data (the paper's Assumption 2, the incomplete-adjustment assumption).
+C20 [formal; supporting; assumption (statistical, unchecked)]
+  The zero-mean variables $\epsilon_t$ of the monitored series, here $\epsilon_{\mu,t}$ and $\epsilon_{\xi,t}$ left in the forecast errors after the bias is removed, satisfy the weak invariance principle of Assumptions A and B of the paper's Supporting Information: $\left|\sum_{t=1}^{m} \epsilon_t\right| = O_P(\sqrt{m})$, and there are Wiener processes $\{W_m(i) : i \ge 0, m \ge 1\}$ and a constant $\sigma > 0$ with $$\sup_{1/m \le i < \infty} \frac{1}{(mi)^{1/\nu}} \left| \sum_{t=m+1}^{m+mi} \epsilon_t - \sigma W_m(mi) \right| = O_P(1) \quad \text{for some } \nu > 2$$.
+C21 [formal; supporting; assumption (theorem_condition, unchecked)]
+  The change is large enough and bounded: the changepoint is $k^* = \lfloor \theta m^\beta \rfloor$ for some $\theta > 0$ and $0 \le \beta < 1$, $\sqrt{m}\,|\Delta_m| \to \infty$ as $m \to \infty$, and $\Delta_m = O(1)$, where $\Delta_m$ is the change size in the monitored series, here $\Delta_{\mu,m}$ or $\Delta_{\xi,m}$, as Assumptions C to E of the paper's Supporting Information require.
+C24 [formal; supporting; synthesis; support: cited B8; assumes C20]
+  For [[D24:Page's CUSUM detector]] under the null hypothesis of no change, $$\lim_{m\to\infty} P\left(\frac{1}{\hat{\sigma}_m} \sup_{1 \le k < \infty} \frac{D(m,k)}{g(m,k,\gamma)} \le c\right) = P\left(\sup_{0<i<1} \sup_{0 \le j \le i} \frac{1}{i^\gamma} \left| W(i) - \frac{1-i}{1-j} W(j) \right| \le c\right)$$ for every real $c$, where $\{W(i) : i \in [0,1]\}$ is a standard Brownian motion (Theorem 1 of the paper's Supporting Information, from Fremdt 2015).
+  scope: conditions: no change in the monitored series; limit for a training sample size going to infinity
+C25 [formal; supporting; synthesis; support: cited B9; assumes C20, C21]
+  For [[D24:Page's CUSUM detector]] under the alternative of a mean change, $$\lim_{m\to\infty} P\left(\frac{\tau_m - a_m(c_\alpha)}{b_m(c_\alpha)} \le x\right) = \Psi(x)$$ for every real $x$, where $a_m(c)$ is the unique solution of $$a_m(c) = \left(\frac{\sigma c\, m^{1/2-\gamma}}{|\Delta_m|} + \frac{k^*}{(a_m(c))^\gamma}\right)^{1/(1-\gamma)},$$ $$b_m(c) = \frac{\sigma \sqrt{a_m(c)}}{|\Delta_m|} \left(1 - \gamma\left(1 - \frac{k^*}{a_m(c)}\right)\right)^{-1},$$ and $\Psi(x) = 1 - \tilde{\Psi}(-x)$ with $\tilde{\Psi}(x)$ equal to $\Phi(x)$ when $\tilde{\Delta}_m = |\Delta_m| m^{\beta(1-\gamma)-1/2+\gamma} \to 0$, to $P(\sup_{d<i<1} W(i) \le x)$ when $\tilde{\Delta}_m \to \tilde{C} \in (0,\infty)$, and to $P(\sup_{0<i<1} W(i) \le x)$ when $\tilde{\Delta}_m \to \infty$, where $\Phi$ is the standard normal distribution function, $W$ a standard Brownian motion and $d = d(c)$ the unique solution of $d = 1 - \frac{c}{C} d^{1-\gamma}$ with $C = \theta^{1-\gamma}\tilde{C}$ (Theorem 2 of the paper's Supporting Information, from Fremdt 2014).
+  scope: conditions: a change in mean satisfying Assumptions C to E of the paper's Supporting Information; limit for a training sample size going to infinity
+C15 [formal; secondary; synthesis; support: cited B1, simulation E7 artefacts A1; assumes C22]
+  An [[D11:ARMA forecasting model]] satisfies the two forecasting-model assumptions for a change of size $\delta_{\mu,m}$ in its mean parameter $\lambda$, the change in its forecast errors being $\Delta_{\mu,m} = \delta_{\mu,m}\left(1 - \sum_{j=1}^{p}\phi_j\right)\sum_{l=0}^{\infty}\psi_l(\theta)$ with $1/\theta(z) = \sum_{l=0}^{\infty}\psi_l(\theta)$.
+  scope: conditions: causal and invertible ARMA process; perfectly estimated ARMA model
+C16 [formal; secondary; synthesis; support: cited B1; assumes C22; uses C2]
+  For a change of size $\delta_{\xi,m}$ in the variance of the data, the change in the squared forecast errors of an [[D11:ARMA forecasting model]] is $\Delta_{\xi,m} = \delta_{\xi,m}$, in agreement with the variance-change formula of the paper's Proposition 1.
+  scope: conditions: causal and invertible ARMA process; perfectly estimated ARMA model
+C17 [formal; secondary; support: argument W1, simulation E8 artefacts A2; assumes C18; uses C2, C3, C4; warrant W1; verification unchecked]
+  A variance change in the raw data produces a mean change in the squared forecast errors of an ETS forecasting model that the [[D3:squared-error detector]] can detect.
+  scope: conditions: variance change sizes satisfying Assumptions C to E of the paper's Supporting Information
+  addresses B2: The closest result found: Inclán and Tiao (1994) detect variance changes from the centred squared data; the claim applies the idea to the squared forecast errors of an ETS model.
+C22 [formal; secondary; assumption (theorem_condition, unchecked)]
+  The ARMA process is causal and invertible, $\phi(x) \ne 0$ and $\theta(x) \ne 0$ for all $|x| \le 1$, and the ARMA forecasting model is perfectly estimated, so that its residuals and forecast errors are identical.
+
+EVIDENCE
+E1 [formal; foundation Kolmogorov probability axioms] Derivation of the mean change in the forecast errors from the two forecasting-model assumptions (Section 2.1 of the paper).
+  assumes C18, C19
+  E1.1 Before the changepoint, $$\mathbb{E}_F[e_t] = \mathbb{E}_F[Y_t|\tilde{y}_t] - \mathbb{E}_{\mathcal{F}}[Y_t|\tilde{y}_t] = b_\mu,$$ so $e_t = b_\mu + \epsilon_{\mu,t}$ with $\epsilon_{\mu,t}$ of zero mean. (by D1, C18; definition of the forecast error)
+  E1.2 After the changepoint, $\mathbb{E}_G[e_t] = b_\mu + \Delta_{\mu,m}$, so $e_t = b_\mu + \epsilon_{\mu,t} + \Delta_{\mu,m}$ with $\Delta_{\mu,m} \ne 0$. (by E1.1, C19; substitution)
+E2 [formal; foundation Kolmogorov probability axioms] Proof of Proposition 1 of the paper: the change size of the centred squared forecast errors.
+  assumes C18, C19
+  E2.1 $$\Delta_{\xi,m} = \mathbb{E}_{G'}[(e_t - b_\mu)^2] - \mathbb{E}_F[(e_t - b_\mu)^2],$$ the difference between the post-change and pre-change expectations of the centred squared forecast errors. (by D9; definition)
+  E2.2 With $\delta_{\mu,m} = 0$, substituting $e_t = Y_t - \mathbb{E}_{\mathcal{F}}[Y_t]$ and $\mathbb{E}_{\mathcal{F}}[Y_t] = \mathbb{E}_F[Y_t] - b_\mu$ gives $\Delta_{\xi,m} = \mathrm{Var}_{G'}[Y_t] - \mathrm{Var}_F[Y_t]$. (by E2.1, C18; substitution)
+  E2.3 With $\delta_{\mu,m} \ne 0$, substituting $\mathbb{E}_{\mathcal{F}}[Y_t] = \mathbb{E}_G[Y_t] - b_\mu - \Delta_{\mu,m}$ after the change gives $\Delta_{\xi,m} = \mathrm{Var}_G[Y_t] - \mathrm{Var}_F[Y_t] + \Delta_{\mu,m}^2$. (by E2.1, C18, C19; substitution)
+E3 [formal; foundation Kolmogorov probability axioms] Corollary 1 and Proposition 2 of the paper: the limit distributions of the squared-error detector follow from Proposition 1 and from Theorems 1 and 2 of the paper's Supporting Information, the limit theory of Page's CUSUM.
+  assumes C18, C19, C20, C21
+  E3.1 The centred squared forecast errors follow a mean change model with change size $\Delta_{\xi,m}$ and zero-mean errors $\epsilon_{\xi,t}$. (by C2, C20; Proposition 1)
+  E3.2 Under the null hypothesis the limit distribution of Theorem 1 of the Supporting Information holds with $D(m,k) = D_\xi(m,k)$ and $\hat{\sigma}_m = \hat{\sigma}_{\xi,m}$. (by E3.1, C24; Theorem 1 of the Supporting Information)
+  E3.3 Under the alternative, with $\Delta_{\xi,m}$ satisfying Assumptions C to E, the limit distribution of Theorem 2 of the Supporting Information holds with $\tau_m = \tau_{\xi,m}$ and $c_\alpha = c_{\xi,\alpha}$. (by E3.1, C21, C25; Theorem 2 of the Supporting Information)
+E4 [formal; foundation Kolmogorov probability axioms] Proof of Proposition 3 of the paper: the expected forecast errors of the ETS(A,N,N) forecasting model after a mean change.
+  E4.1 The forecast error after the changepoint is written by repeated substitution of the previous forecast errors into $\hat{y}_t(1) = \hat{y}_{t-1}(1) + \alpha e_{t-1}$ until the pre-change regime is reached, which gives the stated expectation. (by D10, D8; repeated substitution)
+  E4.2 As $s$ increases the expectation returns to zero when $\alpha > 0$, and faster for larger $\alpha$, so no constant change $\Delta_{\mu,m} \ne 0$ remains. (by E4.1; limit of a geometric sum)
+E5 [simulation; runs 1000] Simulation of a change in mean and a change in trend in seasonal data (Section 4.1 and Figure 3 of the paper): detection probability, false detection probability and average detection delay of the three detectors, 1000 repetitions per change size. The paper reports the values as a figure only.
+  setup: studied D1, D7; cases D16, D17; procedure D15; lens D12, D13, D14
+E6 [simulation; runs 1000] Simulation of a change in the autoregressive parameter of AR(1) errors in quarterly seasonal data (Section 4.2 and Figure 4 of the paper), for pre-change parameters 0.2 and 0.8: detection probability, false detection probability and average detection delay of the three detectors, 1000 repetitions per scenario. The paper reports the values as a figure only. The paper also notes that detection probability and delay are better for all three detectors when the dependence increases after the change.
+  setup: studied D1, D7; cases D18; procedure D15; lens D12, D13, D14
+  E6.R1 D14 = < 0.075 (upper limit) 1 {D7: each detector, scenario: D18}
+E7 [simulation; runs 1] One simulated series from an ARMA(1,1) model with a change in mean at time point 400, its forecast errors from an ARMA forecasting model and the mean detector with its threshold (Figure 1 of the paper).
+  setup: studied D2, D11; cases D8; procedure D15; lens D22
+  E7.R1 D22 = 19 time points {detector: D2, m: 300, changepoint: 400}
+E8 [simulation; runs 1] One simulated series with a trend and a variance change at time point 400, forecast with an ETS(A,A,N) model, its squared forecast errors and the squared-error detector with its threshold (Figure 2 of the paper).
+  setup: studied D3; cases D9; procedure D15; lens D22
+  E8.R1 D22 = 7 time points {detector: D3, m: 300, changepoint: 400}
+E9 [quant; design other; data_origin secondary] Both detectors applied sequentially to the forecast errors of daily parcel volumes of one Royal Mail delivery office, with July to October 2020 as the Phase I sample and monitoring from 1 November 2020, using the theoretical thresholds (Section 5.1 and Figure 5 of the paper).
+  setup: studied D2, D3; cases D19; procedure D1; lens D23
+  E9.R1 D23 = 2020-12-02 {detector: D2}
+  E9.R2 D23 = 2020-12-02 {detector: D3}
+E10 [quant; design other; data_origin secondary; n 36] Both detectors applied sequentially to the one-step-ahead forecast errors of a SARMA(1,0,0)(1,0,0)$_{12}$ model of the monthly proportion of GRP A&E admissions, fitted on the data up to 2013, with 2013 to 2016 as the Phase I sample of size 36 and monitoring from 2016 (Section 6 and Figure 6 of the paper).
+  setup: studied D2, D3; cases D20; procedure D1; lens D22
+  E10.R1 D22 = 4 observations {detector: D2, reference: the changepoint identified by Taib et al. (2021)}
+  E10.R2 D22 = 2 observations {detector: D3}
+E11 [formal; foundation Kolmogorov probability axioms] Corollaries 1 and 2 of the paper's Supporting Information: the limit distributions of the mean detector follow from the mean change in the forecast errors and from Theorems 1 and 2.
+  assumes C18, C19, C20, C21
+  E11.1 The forecast errors follow the change in mean model of [[D24:Page's CUSUM detector]] with $\lambda = b_\mu$, $\Delta_m = \Delta_{\mu,m}$ and zero-mean errors $\epsilon_{\mu,t}$. (by C1, C20; substitution)
+  E11.2 Under the null hypothesis the limit distribution of Theorem 1 holds with $D(m,k) = D_\mu(m,k)$ and $\hat{\sigma}_m = \hat{\sigma}_{\mu,m}$. (by E11.1, C24; Theorem 1 of the Supporting Information)
+  E11.3 Under the alternative, with $\Delta_{\mu,m}$ satisfying Assumptions C to E, the limit distribution of Theorem 2 holds with $\tau_m = \tau_{\mu,m}$ and $c_\alpha = c_{\mu,\alpha}$. (by E11.1, C21, C25; Theorem 2 of the Supporting Information)
+
+WARRANTS
+W1 [deductive; premises C2, C3, C4] The variance-change formula of Proposition 1 needs only the constant-bias assumption, which an ETS forecasting model can satisfy, so a variance change in the raw data gives a mean change in its squared forecast errors; the limit distributions of the squared-error detector then apply. The mean of the forecast errors themselves returns to zero after a mean change, so only the variance change remains detectable.
+W2 [deductive; premises C13, C14] A model-based sequential detector must fit the post-change model, here a SARMA(1,0,0)(1,0,0) model with a 12-month season, which the paper states needs at least two years of data after the change; the detectors on the forecast errors signalled four and two observations after it.
+
+LIMITATIONS
+L1 [model_specification; affects C1; reduces_transferability; mitigation none] Forecasting models that adapt to a change in mean, such as ETS models with a positive smoothing parameter, do not satisfy the incomplete-adjustment assumption, so a mean change does not stay in their forecast errors.
+L2 [model_specification; affects C5, C8, C9, C10, C11, C12; could_bias_magnitude; mitigation none] The two forecasting-model assumptions that make the thresholds theoretically valid are not necessarily satisfied in all the simulated scenarios.
+L3 [sampling; affects C5, C8, C9, C10; reduces_transferability; mitigation none] All simulated data have an ARMA error structure with normally distributed innovations and a training sample of 300 observations.
+L4 [measurement; affects C6; reduces_precision; mitigation none] The start of the Christmas peak season at the delivery office is inferred from the rise in the mean and variance of the forecast errors; the underlying parcel volumes and forecasts are not known to the authors.
+L5 [sample_size; affects C13, C14, C7; reduces_transferability; mitigation none] The application uses one monthly series with a Phase I sample of 36 observations.
+
+OPEN QUESTIONS
+O1 [from C1, C2] Whether a multivariate sequential changepoint algorithm on the vector of forecast errors of several variables or products detects changes, and how it should treat the sparsity of a change, is left as future work.
+O2 [from C1] How to combine the information in forecast errors from several forecast horizons, beyond the one-step-ahead errors studied, is not established.
+
+ARTEFACTS
+A0 [manuscript] The published article, Journal of Time Series Analysis 47, 715-726 (open access, CC BY).
+A1 [figure, data_plot] Data from an ARMA(1,1) model with a change in mean at time point 400, the forecast errors of an ARMA forecasting model, and the mean detector with its threshold. shows E7.R1
+A2 [figure, data_plot] Data with a variance change at time point 400 with the prediction intervals of an ETS forecasting model, the squared forecast errors, and the squared-error detector with its threshold. shows E8.R1
+A3 [figure, data_plot] Detection probability, false detection probability and average detection delay of the three detectors for a change in mean (top) and a change in trend (bottom) in seasonal data.
+A4 [figure, data_plot] Detection probability, false detection probability and average detection delay of the three detectors for a change in the autoregressive parameter, pre-change parameter 0.2 (top) and 0.8 (bottom). shows E6.R1
+A5 [figure, data_plot] Forecast errors of the number of parcels to be delivered from one Royal Mail delivery office in 2020, and the two detectors with their thresholds. shows E9.R1, E9.R2
+A6 [figure, data_plot] The proportion of GRP A&E admissions, the forecast errors of a SARIMA(1,0,0)(1,0,0)12 model, and the two detectors with their thresholds. shows E10.R1, E10.R2
+A7 [manuscript] The article's Supporting Information: the sequential changepoint set-up, Assumptions A to E, Theorems 1 and 2, Corollaries 1 and 2 for the mean detector, and additional simulations, which this claimset does not restate.
+A8 [software] The forecast R package (Arima and auto.arima), used for the ARMA forecasting models. The paper's reference gives no version; 8.21.1 is the last version released in 2023, when the paper was written.
+A9 [software] The smooth R package (es function), used for the ETS forecasting models, in the version the paper's reference states.
+A10 [software] The sandwich R package, used for the Bartlett long run variance estimator of Raw CUSUM. The paper's reference gives no version; 3.1-0 is the last version released in 2023, when the paper was written.
+
+REFERENCES
+B1 10.3150/14-BEJ604 (doi)
+B2 10.1080/01621459.1994.10476824 (doi)
+B4 10.1016/j.hpb.2021.04.009 (doi)
+B5 10.1111/j.1467-9892.2010.00707.x (doi)
+B6 10.1016/j.jspi.2003.07.014 (doi)
+B7 10.1111/jtsa.12843 (doi)
+B8 10.1080/02331888.2013.870568 (doi)
+B9 10.1016/j.jspi.2013.09.001 (doi)
+B10 10.2307/2171955 (doi)
+B11 10.1093/biomet/41.1-2.100 (doi)
+B12 https://CRAN.R-project.org/package=forecast (url)
+B13 https://CRAN.R-project.org/package=smooth (url)
+B14 https://CRAN.R-project.org/package=sandwich (url)
