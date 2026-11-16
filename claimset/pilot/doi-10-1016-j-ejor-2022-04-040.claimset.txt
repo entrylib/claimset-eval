@@ -1,11 +1,13 @@
 CLAIMSET A new taxonomy for vector exponential smoothing and its application to seasonal time series
-licence CC-BY-4.0; converted from 10.1016/j.ejor.2022.04.040 version of record by Ivan Svetunkov, Huijing Chen, John E. Boylan; contributions C1, C2, C3, C4, C5, C6, C7
+summary Retailers often forecast many related products at once, and short sales histories make seasonal patterns hard to estimate product by product. This paper sets out a taxonomy for vector exponential smoothing, a model that forecasts a group of series together, which says for each group which Parameters, Initial values and Components (PIC) the series share and which each keeps for itself. It shows how every model of the taxonomy is built from blocks of matrices. In simulations of short quarterly series, wrongly forcing series to share seasonal components cost much accuracy, while sharing only the initial seasonal values was the most robust choice, and sharing smoothing parameters helped. On monthly department-level sales from the M5 competition, a vector model with shared seasonality was more accurate than the univariate models it was compared with, on both long and short histories.
+licence CC-BY-4.0; contributions C1, C2, C3, C4, C5, C6, C7; highlights D4, C1, C3, C4, C5
+declarations funding: none | competing interests: None declared.
 
 DEFINITIONS
 D1 [method] VETS: Vector exponential smoothing: a state space model for a group of n time series $y_t = (y_{1,t}, \ldots, y_{n,t})'$, with measurement matrix $W$, transition matrix $F$, persistence matrix $G$ of smoothing parameters, state vector $v_t$ with component lags $l$ and error vector $\epsilon_t$, in one of two forms, [[D2:pure additive VETS]] or [[D3:pure multiplicative VETS]]. [assumes C57]
 D2 [method] pure additive VETS: [[D1:VETS]] on the original data, written VETS(A,N,N), VETS(A,N,A) and so on: $y_t = W v_{t-l} + \epsilon_t$, $v_t = F v_{t-l} + G \epsilon_t$, with $\epsilon_t \sim N(0_n, \Sigma)$. [a kind of D1] [assumes C55]
 D3 [method] pure multiplicative VETS: [[D1:VETS]] on the logarithms of data, states and errors, written VETS(M,N,N;LN), VETS(M,N,M;LN) and so on: $\log y_t = W \log v_{t-l} + \log \epsilon_t$, $\log v_t = F \log v_{t-l} + G \log \epsilon_t$, the logarithm taken element-wise, with $\log \epsilon_t \sim N(0_n, \Sigma)$. [a kind of D1] [assumes C56]
-D4 [concept] PIC taxonomy: A classification of [[D1:VETS]] models by which of their Parameters, Initial values and Components are common to all series of the group rather than individual, written VETS(...)PIC(P,I,C): P lists the common smoothing parameters (L level, T trend, S seasonal) and D for a common damping parameter, I the common initial values (L, T, S), C the common components (L, T, S); N means none is common. PIC(N,N,N) has everything individual. A model of the taxonomy is built from block matrices for level (1), trend (2) and seasonal (3) components: $W = (W_1 \; W_2 \; W_3)$, $F = \begin{pmatrix} F_{1,1} & F_{1,2} & F_{1,3} \\ F_{2,1} & F_{2,2} & F_{2,3} \\ F_{3,1} & F_{3,2} & F_{3,3} \end{pmatrix}$, $G = \begin{pmatrix} G_1 \\ G_2 \\ G_3 \end{pmatrix}$, with the values: individual level $F_{1,1} = I_n$, $W_1 = I_n$, $G_1 = A$; individual trend $F_{2,2} = \Phi$, $W_2 = \Phi$, $G_2 = B$; individual seasonal $F_{3,3} = I_n$, $W_3 = I_n$, $G_3 = \Gamma$; common level $F_{1,1} = 1$, $W_1 = 1_n$, $G_1 = \alpha_n'$; common trend $F_{2,2} = \phi$, $W_2 = \phi 1_n$, $G_2 = \beta_n'$; common seasonal $F_{3,3} = 1$, $W_3 = 1_n$, $G_3 = \gamma_n'$; level and trend both individual $F_{1,2} = \Phi$, $F_{2,1} = O_n$; individual level with common trend $F_{1,2} = \phi 1_n$, $F_{2,1} = 0_n'$; both common $F_{1,2} = \phi$, $F_{2,1} = 0$; every block between level and seasonal or between trend and seasonal is zero: $O_n$ when both are individual, $0_n'$ or $0_n$ when one is common, $0$ when both are. Individual smoothing and damping parameters give $A = \mathrm{diag}(\alpha_1, \ldots, \alpha_n)$, $B = \mathrm{diag}(\beta_1, \ldots, \beta_n)$, $\Gamma = \mathrm{diag}(\gamma_1, \ldots, \gamma_n)$, $\Phi = \mathrm{diag}(\phi_1, \ldots, \phi_n)$ (not stated in the paper); common ones give $A = \alpha I_n$, $B = \beta I_n$, $\Gamma = \gamma I_n$, $\Phi = \phi I_n$ and $\alpha_n = \alpha 1_n$, $\beta_n = \beta 1_n$, $\gamma_n = \gamma 1_n$, $\phi_n = \phi 1_n$. A common component is one state shared by all series ($l_{1,t} = \cdots = l_{n,t} = l_t$, and so for trend and seasonal); common initial values only set the starting states equal and leave the matrices unchanged. A common level with individual trends is not feasible.
+D4 [concept] PIC taxonomy: A classification of [[D1:VETS]] models by which of their Parameters, Initial values and Components are common to all series of the group rather than individual, written VETS(...)PIC(P,I,C): P lists the common smoothing parameters (L level, T trend, S seasonal) and D for a common damping parameter, I the common initial values (L, T, S), C the common components (L, T, S); N means none is common. PIC(N,N,N) has everything individual. A model of the taxonomy is built from block matrices for level (1), trend (2) and seasonal (3) components: $W = (W_1 \; W_2 \; W_3)$, $$F = \begin{pmatrix} F_{1,1} & F_{1,2} & F_{1,3} \\ F_{2,1} & F_{2,2} & F_{2,3} \\ F_{3,1} & F_{3,2} & F_{3,3} \end{pmatrix}$$, $G = \begin{pmatrix} G_1 \\ G_2 \\ G_3 \end{pmatrix}$, with the values: individual level $F_{1,1} = I_n$, $W_1 = I_n$, $G_1 = A$; individual trend $F_{2,2} = \Phi$, $W_2 = \Phi$, $G_2 = B$; individual seasonal $F_{3,3} = I_n$, $W_3 = I_n$, $G_3 = \Gamma$; common level $F_{1,1} = 1$, $W_1 = 1_n$, $G_1 = \alpha_n'$; common trend $F_{2,2} = \phi$, $W_2 = \phi 1_n$, $G_2 = \beta_n'$; common seasonal $F_{3,3} = 1$, $W_3 = 1_n$, $G_3 = \gamma_n'$; level and trend both individual $F_{1,2} = \Phi$, $F_{2,1} = O_n$; individual level with common trend $F_{1,2} = \phi 1_n$, $F_{2,1} = 0_n'$; both common $F_{1,2} = \phi$, $F_{2,1} = 0$; every block between level and seasonal or between trend and seasonal is zero: $O_n$ when both are individual, $0_n'$ or $0_n$ when one is common, $0$ when both are. Individual smoothing and damping parameters give $A = \mathrm{diag}(\alpha_1, \ldots, \alpha_n)$, $B = \mathrm{diag}(\beta_1, \ldots, \beta_n)$, $\Gamma = \mathrm{diag}(\gamma_1, \ldots, \gamma_n)$, $\Phi = \mathrm{diag}(\phi_1, \ldots, \phi_n)$ (not stated in the paper); common ones give $A = \alpha I_n$, $B = \beta I_n$, $\Gamma = \gamma I_n$, $\Phi = \phi I_n$ and $\alpha_n = \alpha 1_n$, $\beta_n = \beta 1_n$, $\gamma_n = \gamma 1_n$, $\phi_n = \phi 1_n$. A common component is one state shared by all series ($l_{1,t} = \cdots = l_{n,t} = l_t$, and so for trend and seasonal); common initial values only set the starting states equal and leave the matrices unchanged. A common level with individual trends is not feasible.
 D5 [method] VETS-PIC selection procedure: The proposed procedure for choosing the [[D4:PIC]] restrictions of a [[D1:VETS]] model by an information criterion (the paper recommends the [[D44:multivariate AICc]] without saying which criterion its implementation uses): first the restrictions on initial values, then on smoothing parameters, then on components; the ETS components are chosen beforehand when the series are grouped. Implemented as auto.vets() in the legion package.
 D6 [method] nine PIC variants of VETS(M,N,M;LN): VETS(M,N,M;LN) estimated by maximum likelihood with vets() from the legion package under the restrictions [[D7:PIC(LS,S,S)]], [[D8:PIC(S,S,S)]], [[D9:PIC(N,S,S)]], [[D10:PIC(LS,S,N)]], [[D11:PIC(S,S,N)]], [[D12:PIC(N,S,N)]], [[D13:PIC(LS,N,N)]], [[D14:PIC(S,N,N)]] and [[D15:PIC(N,N,N)]]. [members D7, D8, D9, D10, D11, D12, D13, D14, D15]
 D7 [method] PIC(LS,S,S): VETS(M,N,M;LN) with PIC(LS,S,S) restrictions: common level and seasonal smoothing parameters, common initial seasonal indices and a common seasonal component; one of the [[D6:nine PIC variants]]. [a kind of D3]
@@ -57,16 +59,20 @@ C2 [descriptive; principal; support: simulation E2 (E2.T2.r1, E2.T2.r2, E2.T2.r3
   scope: conditions: 16 in-sample quarters and 8 held out
 C3 [interpretive; principal; support: simulation E2 artefacts A2, argument W1; uses C14, C15, C16, C17, C18, C19; limitations L3, L5, L6, L7; inherits C56, C57; warrant W1]
   The [[D17:PIC(*,S,N) variants]] of VETS(M,N,M;LN), with common initial seasonal indices and individual seasonal components, can be considered the most robust of the [[D6:nine PIC variants]] of the [[D4:PIC taxonomy]] to model misspecification.
+  scope: data_type: simulated groups of quarterly seasonal series | conditions: VETS(M,N,M;LN) data and models; 16 or 56 in-sample quarters and 8 held out
 C4 [descriptive; principal; extension; support: simulation E2 (E2.T7) artefacts A2; uses C20, C21; limitations L3, L5, L6, L7]
   On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, common smoothing parameters lower the [[D40:rPinballU]] of the [[D6:nine PIC variants]] of VETS(M,N,M;LN) on data from every PIC variant.
   scope: conditions: 16 in-sample quarters and 8 held out
   extends B9: Common smoothing parameters for level and trend, set arbitrarily rather than optimised, forecast non-seasonal telecommunications series better than individually optimised ones.
 C5 [descriptive; principal; support: empirical_quant E3 (E3.T1.r4); limitations L4, L7, L8; inherits C60, C58, C59, C56, C57]
   On the [[D33:long histories]] of the [[D32:M5 departmental data]], [[D25:VETS D]] has the lowest geometric mean and median [[D37:rMAE]] of [[D29:the five models]] over all series.
+  scope: population: 69 monthly department-store series of the M5 competition | setting: retail sales | conditions: 51 observations for estimation and 12 held out
 C6 [descriptive; principal; support: empirical_quant E3 (E3.T1.r9); limitations L4, L7, L8; inherits C60, C58, C59, C56, C57]
   On the [[D34:short histories]] of the [[D32:M5 departmental data]], [[D25:VETS D]] has the lowest geometric mean and median [[D37:rMAE]] of [[D29:the five models]] over all series.
+  scope: population: 69 monthly department-store series of the M5 competition | setting: retail sales | conditions: 24 observations for estimation and 12 held out
 C7 [descriptive; principal; support: empirical_quant E3 (E3.T2); limitations L4, L7; inherits C60, C58, C59, C56, C57]
   On the [[D33:long histories]] of the [[D32:M5 departmental data]], the [[D42:coverage]] of the 95% prediction interval of [[D25:VETS D]] is the closest to the nominal level of [[D29:the five models]].
+  scope: population: 69 monthly department-store series of the M5 competition | setting: retail sales | conditions: 51 observations for estimation and 12 held out; 95% prediction interval
 C14 [descriptive; supporting; support: simulation E2 (E2.T2.r4, E2.T2.r5, E2.T2.r6) artefacts A2; inherits C56, C57]
   On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, the [[D37:rMAE]] of each of the [[D17:PIC(*,S,N) variants]] of VETS(M,N,M;LN) is close to that of the correct variant on data from every variant.
   scope: conditions: 16 in-sample quarters and 8 held out
@@ -181,7 +187,7 @@ C23 [interpretive; secondary; support: argument W5; warrant W5]
 C25 [methodological; secondary; support: argument W7; warrant W7]
   Mixed [[D1:VETS]] models, with both additive and multiplicative components, would need a different formulation with complex interactions between the components.
 C27 [methodological; secondary; support: argument W8; warrant W8]
-  A [[D1:VETS]] model with likelihood estimation and a full covariance matrix of the errors, for n series of seasonal period m, has $k = n(n+1)/2 + \sum_{a} \eta^P_a + \sum_{a \in \{L,T\}} \eta^I_a + (m-1)\eta^I_S$ estimated parameters.
+  A [[D1:VETS]] model with likelihood estimation and a full covariance matrix of the errors, for n series of seasonal period m, has $$k = n(n+1)/2 + \sum_{a} \eta^P_a + \sum_{a \in \{L,T\}} \eta^I_a + (m-1)\eta^I_S$$ estimated parameters.
 C28 [methodological; secondary; support: argument W8; warrant W8]
   With a diagonal covariance matrix of the errors, the first term of the parameter count of a [[D1:VETS]] model, n(n+1)/2, becomes n.
 C29 [methodological; secondary; support: argument W8; warrant W8]
@@ -378,23 +384,25 @@ A3 [software] smooth package for R (adam)
 A4 [software] forecast package for R (ets)
 A5 [software] greybox package for R (rmcb)
 A6 [software] R, the environment in which the experiments were run
+A7 [manuscript] The published article (open access, CC BY).
 
 REFERENCES
 B1 10.1111/j.1467-842X.2009.00555.x (doi)
 B2 10.1177/0047287511434115 (doi)
 B3 10.2307/2533213 (doi)
-B5 Davydenko, A., & Fildes, R. (2013). Measuring forecasting accuracy: The case of judgmental adjustments to SKU-level demand forecasts. International Journal of Forecasting, 29(3), 510–522.
+B5 10.1016/j.ijforecast.2012.09.002 (doi)
 B6 10.1177/1471082X0901000401 (doi)
-B8 Fildes, R. (1992). The evaluation of extrapolative forecasting methods. International Journal of Forecasting, 8(1), 81–98.
-B9 Fildes, R., Hibon, M., Makridakis, S., & Meade, N. (1998). Generalising about univariate forecasting methods: Further empirical evidence. International Journal of Forecasting, 14(3), 339–358.
-B11 Svetunkov, I. (2021a). greybox: Toolbox for model building and forecasting. R package version 0.6.9, https://www.github.com/config-i1/greybox.
-B12 Hyndman, R. J., Koehler, A. B., Ord, J. K., & Snyder, R. D. (2008). Forecasting with exponential smoothing. Springer Berlin Heidelberg.
+B8 10.1016/0169-2070(92)90009-X (doi)
+B9 10.1016/S0169-2070(98)00009-0 (doi)
+B11 https://www.github.com/config-i1/greybox (url)
+B12 10.1007/978-3-540-71918-2 (doi)
 B13 10.1016/j.ijforecast.2004.10.003 (doi)
-B14 Hyndman, R. J., & Khandakar, Y. (2008). Automatic time series forecasting: The forecast package for R. Journal of Statistical Software, 26(3), 1–22.
+B14 10.18637/jss.v027.i03 (doi)
 B15 Ouwehand, P., Hyndman, R. J., de Kok, T. G., & van Donselaar, K. H. (2007). A state space model for exponential smoothing with group seasonality. Monash Econometrics and Business Statistics Working Papers 7/07. Monash University, Department of Econometrics and Business Statistics. https://www.ideas.repec.org/p/msh/ebswps/2007-7.html
-B16 Svetunkov, I. (2021b). smooth: Forecasting using state space models. R package version 3.1.1, https://www.github.com/config-i1/smooth.
+B16 https://www.github.com/config-i1/smooth (url)
 B17 10.1016/j.ijforecast.2021.07.007 (doi)
-B18 Svetunkov, I., & Pritularga, K. F. (2021). legion: Forecasting using multivariate models. R package version 0.1.0, https://www.github.com/config-i1/legion.
+B18 https://www.github.com/config-i1/legion (url)
 B19 Svetunkov, I. (2021c). Time series analysis and forecasting with adam. OpenForecast, (version: 2021-04-13), https://www.openforecast.org/adam/.
-B20 Snyder, R. D., Ord, J. K., Koehler, A. B., McLaren, K. R., & Beaumont, A. N. (2017). Forecasting compositional time series: A state space approach. International Journal of Forecasting, 33(2), 502–512.
+B20 10.1016/j.ijforecast.2016.11.008 (doi)
 B21 Team, R. C. (2020). R: A language and environment for statistical computing. R Foundation for Statistical ComputingVienna, Austria. https://www.R-project.org/.
+B22 10.1016/j.ejor.2022.04.040 (doi)

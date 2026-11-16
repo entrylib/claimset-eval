@@ -93,5 +93,11 @@ class TestSourceErrors(unittest.TestCase):
         self.assertEqual(rep["recall"], 0.0)
         self.assertIsNone(source_errors({}, {}, [])["recall"])
 
+    def test_corrections_beside_a_native_gold_count_as_its_errors(self):
+        from compare import source_errors
+        rep = source_errors({"paper": {"origin": "native"}}, {}, [{"where": "p6.4"}],
+                            corrections=[{"where": "p6.4", "printed": "x"}, {"where": "p8.1", "printed": "y"}])
+        self.assertEqual((rep["gold"], rep["same paragraph"], rep["recall"]), (2, 1, 0.5))
+
 if __name__ == "__main__":
     unittest.main()

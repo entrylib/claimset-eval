@@ -1,5 +1,5 @@
 {
- "schema_version": "0.39",
+ "schema_version": "0.44",
  "paper": {
   "title": "A new taxonomy for vector exponential smoothing and its application to seasonal time series",
   "licence": "CC-BY-4.0",
@@ -22,61 +22,25 @@
    "C7"
   ],
   "contribution_record": "complete",
-  "origin": "converted",
+  "origin": "native",
   "study": "pilot",
-  "converted_from": {
-   "source_id": "10.1016/j.ejor.2022.04.040",
+  "published_as": {
    "id_type": "doi",
-   "source_version": "version of record",
-   "source_licence": "CC-BY-4.0",
-   "source_authors": [
-    {
-     "name": "Ivan Svetunkov",
-     "orcid": "0000-0001-7826-0281"
-    },
-    {
-     "name": "Huijing Chen",
-     "orcid": null
-    },
-    {
-     "name": "John E. Boylan",
-     "orcid": null
-    }
-   ],
-   "source_status_at_conversion": "active",
-   "converter": "P1",
-   "date": "2026-10-25",
-   "corrections": [
-    {
-     "field": "D4.definition",
-     "where": "p6.4",
-     "printed": "W_3 = \\Phi (individual seasonal)",
-     "recorded": "W_3 = I_n",
-     "reason": "The seasonal state enters the measurement undamped: the common seasonal case of the same table has W_3 = 1_n and the individual level W_1 = I_n; the damping matrix belongs to the trend."
-    },
-    {
-     "field": "D4.definition",
-     "where": "p6.12",
-     "printed": "A = \\alpha 1_n' (common level smoothing parameter)",
-     "recorded": "A = \\alpha I_n",
-     "reason": "A is the n by n block G_1 of an individual level; the paper's own example in Section 4.1 has G_1 = \\alpha I_2, and \\Phi = \\phi I_n in the same table."
-    },
-    {
-     "field": "D4.definition",
-     "where": "p6.12",
-     "printed": "B = \\beta 1_n' (common trend smoothing parameter)",
-     "recorded": "B = \\beta I_n",
-     "reason": "B is the n by n block G_2 of an individual trend; the paper's own example in Section 4.1 has G_2 = \\beta I_2."
-    },
-    {
-     "field": "D4.definition",
-     "where": "p6.12",
-     "printed": "\\Gamma = \\gamma 1_n' (common seasonal smoothing parameter)",
-     "recorded": "\\Gamma = \\gamma I_n",
-     "reason": "\\Gamma is the n by n block G_3 of an individual seasonal component, as A and B are for level and trend."
-    }
-   ]
-  }
+   "id": "10.1016/j.ejor.2022.04.040"
+  },
+  "autonomy": "human_assisted",
+  "summary": "Retailers often forecast many related products at once, and short sales histories make seasonal patterns hard to estimate product by product. This paper sets out a taxonomy for vector exponential smoothing, a model that forecasts a group of series together, which says for each group which Parameters, Initial values and Components (PIC) the series share and which each keeps for itself. It shows how every model of the taxonomy is built from blocks of matrices. In simulations of short quarterly series, wrongly forcing series to share seasonal components cost much accuracy, while sharing only the initial seasonal values was the most robust choice, and sharing smoothing parameters helped. On monthly department-level sales from the M5 competition, a vector model with shared seasonality was more accurate than the univariate models it was compared with, on both long and short histories.",
+  "declarations": {
+   "funding": [],
+   "competing_interests": "None declared."
+  },
+  "highlights": [
+   "D4",
+   "C1",
+   "C3",
+   "C4",
+   "C5"
+  ]
  },
  "contributors": [
   {
@@ -84,7 +48,7 @@
    "type": "agent",
    "name": "Claude Code",
    "positions": [
-    "converter"
+    "author"
    ],
    "models": [
     {
@@ -119,12 +83,32 @@
    "affiliation": "Centre for Marketing Analytics and Forecasting, Lancaster University Management School",
    "positions": [
     "guarantor",
-    "conversion_guarantor"
+    "contributor"
    ],
    "credit_roles": [
     "supervision",
     "validation"
    ]
+  },
+  {
+   "id": "P3",
+   "type": "human",
+   "name": "Huijing Chen",
+   "positions": [
+    "coauthor",
+    "contributor"
+   ],
+   "orcid": "0000-0001-9422-4221"
+  },
+  {
+   "id": "P4",
+   "type": "human",
+   "name": "John E. Boylan",
+   "positions": [
+    "coauthor",
+    "contributor"
+   ],
+   "orcid": "0000-0001-5036-5137"
   }
  ],
  "models": [
@@ -175,7 +159,7 @@
   {
    "id": "D4",
    "term": "PIC taxonomy",
-   "definition": "A classification of [[D1:VETS]] models by which of their Parameters, Initial values and Components are common to all series of the group rather than individual, written VETS(...)PIC(P,I,C): P lists the common smoothing parameters (L level, T trend, S seasonal) and D for a common damping parameter, I the common initial values (L, T, S), C the common components (L, T, S); N means none is common. PIC(N,N,N) has everything individual. A model of the taxonomy is built from block matrices for level (1), trend (2) and seasonal (3) components: $W = (W_1 \\; W_2 \\; W_3)$, $F = \\begin{pmatrix} F_{1,1} & F_{1,2} & F_{1,3} \\\\ F_{2,1} & F_{2,2} & F_{2,3} \\\\ F_{3,1} & F_{3,2} & F_{3,3} \\end{pmatrix}$, $G = \\begin{pmatrix} G_1 \\\\ G_2 \\\\ G_3 \\end{pmatrix}$, with the values: individual level $F_{1,1} = I_n$, $W_1 = I_n$, $G_1 = A$; individual trend $F_{2,2} = \\Phi$, $W_2 = \\Phi$, $G_2 = B$; individual seasonal $F_{3,3} = I_n$, $W_3 = I_n$, $G_3 = \\Gamma$; common level $F_{1,1} = 1$, $W_1 = 1_n$, $G_1 = \\alpha_n'$; common trend $F_{2,2} = \\phi$, $W_2 = \\phi 1_n$, $G_2 = \\beta_n'$; common seasonal $F_{3,3} = 1$, $W_3 = 1_n$, $G_3 = \\gamma_n'$; level and trend both individual $F_{1,2} = \\Phi$, $F_{2,1} = O_n$; individual level with common trend $F_{1,2} = \\phi 1_n$, $F_{2,1} = 0_n'$; both common $F_{1,2} = \\phi$, $F_{2,1} = 0$; every block between level and seasonal or between trend and seasonal is zero: $O_n$ when both are individual, $0_n'$ or $0_n$ when one is common, $0$ when both are. Individual smoothing and damping parameters give $A = \\mathrm{diag}(\\alpha_1, \\ldots, \\alpha_n)$, $B = \\mathrm{diag}(\\beta_1, \\ldots, \\beta_n)$, $\\Gamma = \\mathrm{diag}(\\gamma_1, \\ldots, \\gamma_n)$, $\\Phi = \\mathrm{diag}(\\phi_1, \\ldots, \\phi_n)$ (not stated in the paper); common ones give $A = \\alpha I_n$, $B = \\beta I_n$, $\\Gamma = \\gamma I_n$, $\\Phi = \\phi I_n$ and $\\alpha_n = \\alpha 1_n$, $\\beta_n = \\beta 1_n$, $\\gamma_n = \\gamma 1_n$, $\\phi_n = \\phi 1_n$. A common component is one state shared by all series ($l_{1,t} = \\cdots = l_{n,t} = l_t$, and so for trend and seasonal); common initial values only set the starting states equal and leave the matrices unchanged. A common level with individual trends is not feasible.",
+   "definition": "A classification of [[D1:VETS]] models by which of their Parameters, Initial values and Components are common to all series of the group rather than individual, written VETS(...)PIC(P,I,C): P lists the common smoothing parameters (L level, T trend, S seasonal) and D for a common damping parameter, I the common initial values (L, T, S), C the common components (L, T, S); N means none is common. PIC(N,N,N) has everything individual. A model of the taxonomy is built from block matrices for level (1), trend (2) and seasonal (3) components: $W = (W_1 \\; W_2 \\; W_3)$, $$F = \\begin{pmatrix} F_{1,1} & F_{1,2} & F_{1,3} \\\\ F_{2,1} & F_{2,2} & F_{2,3} \\\\ F_{3,1} & F_{3,2} & F_{3,3} \\end{pmatrix}$$, $G = \\begin{pmatrix} G_1 \\\\ G_2 \\\\ G_3 \\end{pmatrix}$, with the values: individual level $F_{1,1} = I_n$, $W_1 = I_n$, $G_1 = A$; individual trend $F_{2,2} = \\Phi$, $W_2 = \\Phi$, $G_2 = B$; individual seasonal $F_{3,3} = I_n$, $W_3 = I_n$, $G_3 = \\Gamma$; common level $F_{1,1} = 1$, $W_1 = 1_n$, $G_1 = \\alpha_n'$; common trend $F_{2,2} = \\phi$, $W_2 = \\phi 1_n$, $G_2 = \\beta_n'$; common seasonal $F_{3,3} = 1$, $W_3 = 1_n$, $G_3 = \\gamma_n'$; level and trend both individual $F_{1,2} = \\Phi$, $F_{2,1} = O_n$; individual level with common trend $F_{1,2} = \\phi 1_n$, $F_{2,1} = 0_n'$; both common $F_{1,2} = \\phi$, $F_{2,1} = 0$; every block between level and seasonal or between trend and seasonal is zero: $O_n$ when both are individual, $0_n'$ or $0_n$ when one is common, $0$ when both are. Individual smoothing and damping parameters give $A = \\mathrm{diag}(\\alpha_1, \\ldots, \\alpha_n)$, $B = \\mathrm{diag}(\\beta_1, \\ldots, \\beta_n)$, $\\Gamma = \\mathrm{diag}(\\gamma_1, \\ldots, \\gamma_n)$, $\\Phi = \\mathrm{diag}(\\phi_1, \\ldots, \\phi_n)$ (not stated in the paper); common ones give $A = \\alpha I_n$, $B = \\beta I_n$, $\\Gamma = \\gamma I_n$, $\\Phi = \\phi I_n$ and $\\alpha_n = \\alpha 1_n$, $\\beta_n = \\beta 1_n$, $\\gamma_n = \\gamma 1_n$, $\\phi_n = \\phi 1_n$. A common component is one state shared by all series ($l_{1,t} = \\cdots = l_{n,t} = l_t$, and so for trend and seasonal); common initial values only set the starting states equal and leave the matrices unchanged. A common level with individual trends is not feasible.",
    "kind": "concept"
   },
   {
@@ -574,7 +558,7 @@
     "p5.21-p6.17",
     "p14.17"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D4",
     "relation": "builds every feasible model by inserting block values into the block matrices of",
@@ -615,7 +599,7 @@
     "p9.6",
     "p12.6"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -676,13 +660,20 @@
     "p12.5",
     "p15.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "can be considered the most robust to model misspecification of",
     "object": null,
     "comparator": "D6",
     "conditions": []
+   },
+   "scope": {
+    "data_type": "simulated groups of quarterly seasonal series",
+    "conditions": [
+     "VETS(M,N,M;LN) data and models",
+     "16 or 56 in-sample quarters and 8 held out"
+    ]
    }
   },
   {
@@ -727,7 +718,7 @@
     "p15.3",
     "p15.5"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -772,7 +763,7 @@
     "p13.3",
     "p15.4"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "has the lowest geometric mean and median error of",
@@ -783,6 +774,13 @@
     "conditions": [
      "D32",
      "D33"
+    ]
+   },
+   "scope": {
+    "population": "69 monthly department-store series of the M5 competition",
+    "setting": "retail sales",
+    "conditions": [
+     "51 observations for estimation and 12 held out"
     ]
    }
   },
@@ -810,7 +808,7 @@
     "p13.3",
     "p15.4"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "has the lowest geometric mean and median error of",
@@ -821,6 +819,13 @@
     "conditions": [
      "D32",
      "D34"
+    ]
+   },
+   "scope": {
+    "population": "69 monthly department-store series of the M5 competition",
+    "setting": "retail sales",
+    "conditions": [
+     "24 observations for estimation and 12 held out"
     ]
    }
   },
@@ -846,7 +851,7 @@
    "source_spans": [
     "p13.9"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "has the coverage closest to the nominal level of",
@@ -857,6 +862,14 @@
     "conditions": [
      "D32",
      "D33"
+    ]
+   },
+   "scope": {
+    "population": "69 monthly department-store series of the M5 competition",
+    "setting": "retail sales",
+    "conditions": [
+     "51 observations for estimation and 12 held out",
+     "95% prediction interval"
     ]
    }
   },
@@ -878,7 +891,7 @@
     "p4.6",
     "p5.9"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "making initial values common",
     "relation": "reduces",
@@ -907,7 +920,7 @@
     "p4.7",
     "p5.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "a common component",
     "relation": "requires",
@@ -935,7 +948,7 @@
    "source_spans": [
     "p5.4"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "a common level",
     "relation": "cannot be combined with",
@@ -964,7 +977,7 @@
     "p5.9",
     "p6.13-p6.16"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "making a component common",
     "relation": "changes",
@@ -992,7 +1005,7 @@
    "source_spans": [
     "p5.9"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "making a component common",
     "relation": "leaves unchanged",
@@ -1020,7 +1033,7 @@
    "source_spans": [
     "p6.17"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "making initial values common",
     "relation": "leaves unchanged",
@@ -1055,7 +1068,7 @@
     "p9.6",
     "p10.5"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -1096,7 +1109,7 @@
    "source_spans": [
     "p9.6"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -1137,7 +1150,7 @@
    "source_spans": [
     "p9.7-p9.8"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -1180,7 +1193,7 @@
    "source_spans": [
     "p10.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -1221,7 +1234,7 @@
    "source_spans": [
     "p10.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -1262,7 +1275,7 @@
    "source_spans": [
     "p10.12"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -1304,7 +1317,7 @@
     "p10.14",
     "p11.7"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -1346,7 +1359,7 @@
     "p10.14",
     "p11.7"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "conditions": [
      "16 in-sample quarters and 8 held out"
@@ -1389,7 +1402,7 @@
     "p4.1",
     "p7.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D3",
     "relation": "is more desirable than",
@@ -1417,7 +1430,7 @@
     "p3.10",
     "p12.15"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "a multiplicative form of VETS",
     "relation": "is more natural than",
@@ -1449,7 +1462,7 @@
    "source_spans": [
     "p3.12-p3.16"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D3",
     "relation": "should produce as point forecasts",
@@ -1475,7 +1488,7 @@
     "p3.17",
     "p4.1"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "mixed VETS models",
     "relation": "would need",
@@ -1507,7 +1520,7 @@
    "source_spans": [
     "p4.18-p5.3"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the group-seasonal model of Ouwehand et al. (2007)",
     "relation": "is a collection of",
@@ -1518,7 +1531,7 @@
   },
   {
    "id": "C27",
-   "statement": "A [[D1:VETS]] model with likelihood estimation and a full covariance matrix of the errors, for n series of seasonal period m, has $k = n(n+1)/2 + \\sum_{a} \\eta^P_a + \\sum_{a \\in \\{L,T\\}} \\eta^I_a + (m-1)\\eta^I_S$ estimated parameters.",
+   "statement": "A [[D1:VETS]] model with likelihood estimation and a full covariance matrix of the errors, for n series of seasonal period m, has $$k = n(n+1)/2 + \\sum_{a} \\eta^P_a + \\sum_{a \\in \\{L,T\\}} \\eta^I_a + (m-1)\\eta^I_S$$ estimated parameters.",
    "type": "methodological",
    "role": "secondary",
    "novelty": "no_prior_found",
@@ -1532,7 +1545,7 @@
    "source_spans": [
     "p5.6-p5.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "has the number of estimated parameters",
@@ -1560,7 +1573,7 @@
    "source_spans": [
     "p5.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the first term of the parameter count of VETS",
     "relation": "becomes n",
@@ -1587,7 +1600,7 @@
    "source_spans": [
     "p5.12-p5.13"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "is estimable only when",
@@ -1617,7 +1630,7 @@
    "source_spans": [
     "p6.30"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the smoothing parameters of VETS",
     "relation": "need not be restricted to",
@@ -1645,7 +1658,7 @@
    "source_spans": [
     "p6.30-p6.31"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the stability condition of Hyndman et al. (2008) and Snyder et al. (2017)",
     "relation": "applies to",
@@ -1677,7 +1690,7 @@
    "source_spans": [
     "p12.6"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D16",
     "relation": "should be applied only to",
@@ -1715,7 +1728,7 @@
     "p15.2",
     "p15.5"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D10",
     "relation": "is one of the most robust, in accuracy and prediction intervals, of",
@@ -1750,7 +1763,7 @@
    "source_spans": [
     "p12.7"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D13",
     "relation": "is one of the most robust, in accuracy and prediction intervals, of",
@@ -1774,13 +1787,10 @@
      ]
     }
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p13.3"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "has the lowest geometric mean, but not the lowest median, error of",
@@ -1810,13 +1820,10 @@
      ]
     }
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p13.3"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "has neither the lowest geometric mean nor the lowest median error of",
@@ -1853,13 +1860,10 @@
      ]
     }
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p13.3"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "has the lowest median, but not the lowest geometric mean, error of",
@@ -1905,7 +1909,7 @@
     "p13.3",
     "p14.15"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "using cross-sectional information for estimation",
     "relation": "improves forecasting accuracy",
@@ -1934,7 +1938,7 @@
    "source_spans": [
     "p13.8"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D24",
     "relation": "has coverage above the nominal level",
@@ -1966,7 +1970,7 @@
    "source_spans": [
     "p13.8"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D24",
     "relation": "has coverage above the nominal level",
@@ -1998,7 +2002,7 @@
    "source_spans": [
     "p13.8"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D24",
     "relation": "has the highest error of",
@@ -2031,7 +2035,7 @@
    "source_spans": [
     "p13.8"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D24",
     "relation": "has the highest error of",
@@ -2065,7 +2069,7 @@
    "source_spans": [
     "p13.9"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "has higher rPinballU but lower rPinballL than",
@@ -2098,7 +2102,7 @@
    "source_spans": [
     "p14.6"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "has higher error than",
@@ -2136,7 +2140,7 @@
     "p14.7-p14.8",
     "p15.5"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "population": "11 groups of M5 departmental series"
    },
@@ -2172,7 +2176,7 @@
     "p14.15",
     "p15.1"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the accuracy gains of VETS",
     "relation": "arise mainly from",
@@ -2226,7 +2230,7 @@
    "source_spans": [
     "p14.8"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the frequent choice of PIC(LS,S,N)",
     "relation": "confirms",
@@ -2256,7 +2260,7 @@
     "p14.8",
     "p15.1"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "needs common seasonal components for only one group",
@@ -2285,7 +2289,7 @@
    "source_spans": [
     "p14.14"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D31",
     "relation": "do not include the model with the lowest error, at horizons of 3, 6 or 12 months, of",
@@ -2321,13 +2325,10 @@
      ]
     }
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p14.14"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D31",
     "relation": "include the model with the lowest error at horizons of 3 and 12 months, but not at 6 months, of",
@@ -2361,7 +2362,7 @@
    "source_spans": [
     "p14.15"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "is recommended over",
@@ -2392,7 +2393,7 @@
    "source_spans": [
     "p14.15"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D25",
     "relation": "is recommended over",
@@ -2420,7 +2421,7 @@
    "source_spans": [
     "p15.1"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the full PIC framework",
     "relation": "should be considered first, and the elements not needed dropped",
@@ -2447,7 +2448,7 @@
    "source_spans": [
     "p15.1"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "dropping the PIC elements not needed",
     "relation": "reduces",
@@ -2472,7 +2473,7 @@
     "p3.9",
     "p6.19"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "C56",
@@ -2490,7 +2491,7 @@
     "p3.12",
     "p6.25"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "C57",
@@ -2507,7 +2508,7 @@
    "source_spans": [
     "p6.19-p6.21"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   },
   {
    "id": "C58",
@@ -2524,7 +2525,7 @@
    "source_spans": [
     "p12.9-p12.11"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "C59",
@@ -2542,7 +2543,7 @@
     "p12.11",
     "p14.15"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "C60",
@@ -2560,7 +2561,7 @@
     "p12.15",
     "p14.15"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   }
  ],
  "evidence": [
@@ -2574,7 +2575,8 @@
    },
    "source_spans": [
     "p4.2-p6.17"
-   ]
+   ],
+   "proof_artefact": "A7"
   },
   {
    "id": "E2",
@@ -5348,7 +5350,8 @@
    },
    "source_spans": [
     "p6.18-p6.28"
-   ]
+   ],
+   "proof_artefact": "A7"
   }
  ],
  "warrants": [
@@ -5485,7 +5488,7 @@
    "source_spans": [
     "p3.17-p4.1"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L2",
@@ -5499,7 +5502,7 @@
    "source_spans": [
     "p14.8"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L3",
@@ -5517,7 +5520,7 @@
     "p8.3",
     "p8.7"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L4",
@@ -5535,7 +5538,7 @@
     "p12.9-p12.14",
     "p15.6"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   },
   {
    "id": "L5",
@@ -5550,7 +5553,7 @@
    "source_spans": [
     "p15.6"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L6",
@@ -5566,7 +5569,7 @@
    "source_spans": [
     "p10.3"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L7",
@@ -5587,7 +5590,7 @@
     "p12.11",
     "p15.6"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L8",
@@ -5603,7 +5606,7 @@
    "source_spans": [
     "p13.4-p13.5"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   }
  ],
  "open_questions": [
@@ -5695,7 +5698,8 @@
    "reference": "B18",
    "availability": {
     "level": "public"
-   }
+   },
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/legion/legion_0.1.0.tar.gz"
   },
   {
    "id": "A3",
@@ -5706,7 +5710,8 @@
    "reference": "B16",
    "availability": {
     "level": "public"
-   }
+   },
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_3.1.1.tar.gz"
   },
   {
    "id": "A4",
@@ -5726,7 +5731,8 @@
    "reference": "B11",
    "availability": {
     "level": "public"
-   }
+   },
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/greybox/greybox_0.6.9.tar.gz"
   },
   {
    "id": "A6",
@@ -5737,6 +5743,16 @@
    "availability": {
     "level": "public"
    }
+  },
+  {
+   "id": "A7",
+   "kind": "manuscript",
+   "uri": "https://doi.org/10.1016/j.ejor.2022.04.040",
+   "reference": "B22",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The published article (open access, CC BY)."
   }
  ],
  "references": [
@@ -5757,8 +5773,8 @@
   },
   {
    "id": "B5",
-   "id_type": "reference",
-   "target": "Davydenko, A., & Fildes, R. (2013). Measuring forecasting accuracy: The case of judgmental adjustments to SKU-level demand forecasts. International Journal of Forecasting, 29(3), 510–522."
+   "id_type": "doi",
+   "target": "10.1016/j.ijforecast.2012.09.002"
   },
   {
    "id": "B6",
@@ -5767,23 +5783,24 @@
   },
   {
    "id": "B8",
-   "id_type": "reference",
-   "target": "Fildes, R. (1992). The evaluation of extrapolative forecasting methods. International Journal of Forecasting, 8(1), 81–98."
+   "id_type": "doi",
+   "target": "10.1016/0169-2070(92)90009-X"
   },
   {
    "id": "B9",
-   "id_type": "reference",
-   "target": "Fildes, R., Hibon, M., Makridakis, S., & Meade, N. (1998). Generalising about univariate forecasting methods: Further empirical evidence. International Journal of Forecasting, 14(3), 339–358."
+   "id_type": "doi",
+   "target": "10.1016/S0169-2070(98)00009-0"
   },
   {
    "id": "B11",
-   "id_type": "reference",
-   "target": "Svetunkov, I. (2021a). greybox: Toolbox for model building and forecasting. R package version 0.6.9, https://www.github.com/config-i1/greybox."
+   "id_type": "url",
+   "target": "https://www.github.com/config-i1/greybox",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/greybox/greybox_0.6.9.tar.gz"
   },
   {
    "id": "B12",
-   "id_type": "reference",
-   "target": "Hyndman, R. J., Koehler, A. B., Ord, J. K., & Snyder, R. D. (2008). Forecasting with exponential smoothing. Springer Berlin Heidelberg."
+   "id_type": "doi",
+   "target": "10.1007/978-3-540-71918-2"
   },
   {
    "id": "B13",
@@ -5792,8 +5809,8 @@
   },
   {
    "id": "B14",
-   "id_type": "reference",
-   "target": "Hyndman, R. J., & Khandakar, Y. (2008). Automatic time series forecasting: The forecast package for R. Journal of Statistical Software, 26(3), 1–22."
+   "id_type": "doi",
+   "target": "10.18637/jss.v027.i03"
   },
   {
    "id": "B15",
@@ -5802,8 +5819,9 @@
   },
   {
    "id": "B16",
-   "id_type": "reference",
-   "target": "Svetunkov, I. (2021b). smooth: Forecasting using state space models. R package version 3.1.1, https://www.github.com/config-i1/smooth."
+   "id_type": "url",
+   "target": "https://www.github.com/config-i1/smooth",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_3.1.1.tar.gz"
   },
   {
    "id": "B17",
@@ -5812,8 +5830,9 @@
   },
   {
    "id": "B18",
-   "id_type": "reference",
-   "target": "Svetunkov, I., & Pritularga, K. F. (2021). legion: Forecasting using multivariate models. R package version 0.1.0, https://www.github.com/config-i1/legion."
+   "id_type": "url",
+   "target": "https://www.github.com/config-i1/legion",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/legion/legion_0.1.0.tar.gz"
   },
   {
    "id": "B19",
@@ -5822,13 +5841,18 @@
   },
   {
    "id": "B20",
-   "id_type": "reference",
-   "target": "Snyder, R. D., Ord, J. K., Koehler, A. B., McLaren, K. R., & Beaumont, A. N. (2017). Forecasting compositional time series: A state space approach. International Journal of Forecasting, 33(2), 502–512."
+   "id_type": "doi",
+   "target": "10.1016/j.ijforecast.2016.11.008"
   },
   {
    "id": "B21",
    "id_type": "reference",
    "target": "Team, R. C. (2020). R: A language and environment for statistical computing. R Foundation for Statistical ComputingVienna, Austria. https://www.R-project.org/."
+  },
+  {
+   "id": "B22",
+   "target": "10.1016/j.ejor.2022.04.040",
+   "id_type": "doi"
   }
  ]
 }

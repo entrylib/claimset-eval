@@ -1,5 +1,5 @@
 {
- "schema_version": "0.39",
+ "schema_version": "0.44",
  "paper": {
   "title": "Complex exponential smoothing",
   "licence": "CC-BY-4.0",
@@ -26,32 +26,25 @@
    "C12"
   ],
   "contribution_record": "complete",
-  "origin": "converted",
+  "origin": "native",
   "study": "pilot",
-  "converted_from": {
-   "source_id": "10.1002/nav.22074",
+  "published_as": {
    "id_type": "doi",
-   "source_version": "version of record",
-   "source_licence": "CC-BY-4.0",
-   "source_authors": [
-    {
-     "name": "Ivan Svetunkov",
-     "orcid": "0000-0001-7826-0281"
-    },
-    {
-     "name": "Nikolaos Kourentzes",
-     "orcid": null
-    },
-    {
-     "name": "John Keith Ord",
-     "orcid": null
-    }
-   ],
-   "source_status_at_conversion": "active",
-   "converter": "P1",
-   "date": "2026-10-23",
-   "corrections": []
-  }
+   "id": "10.1002/nav.22074"
+  },
+  "autonomy": "human_assisted",
+  "summary": "Exponential smoothing forecasts a series by first choosing a model: with or without a trend, with or without seasonality. This paper proposes complex exponential smoothing (CES), which uses complex variables, pairing each value with its forecast error, so that one model moves smoothly between a level and a trend as its smoothing parameter changes. It shows that CES can be stationary or non-stationary depending on that parameter, and that it corresponds to an ARMA(2,2) model whose coefficients are tied together. A seasonal version handles seasonality without seasonal indices, so model selection reduces to a choice between two models. On the series of the M1, M3, tourism and M4 forecasting competitions, CES was more accurate than exponential smoothing, ARIMA and the Theta method on most error measures, though not on all, and adding it to a combination of forecasts improved the combination.",
+  "declarations": {
+   "funding": [],
+   "competing_interests": "None declared."
+  },
+  "highlights": [
+   "D1",
+   "C2",
+   "C10",
+   "C4",
+   "C12"
+  ]
  },
  "contributors": [
   {
@@ -59,7 +52,7 @@
    "type": "agent",
    "name": "Claude Code",
    "positions": [
-    "converter"
+    "author"
    ],
    "models": [
     {
@@ -94,11 +87,30 @@
    "affiliation": "Centre for Marketing Analytics and Forecasting, Lancaster University Management School",
    "positions": [
     "guarantor",
-    "conversion_guarantor"
+    "contributor"
    ],
    "credit_roles": [
     "supervision",
     "validation"
+   ]
+  },
+  {
+   "id": "P3",
+   "type": "human",
+   "name": "Nikolaos Kourentzes",
+   "positions": [
+    "coauthor",
+    "contributor"
+   ],
+   "orcid": "0000-0003-0211-5218"
+  },
+  {
+   "id": "P4",
+   "type": "human",
+   "name": "John Keith Ord",
+   "positions": [
+    "coauthor",
+    "contributor"
    ]
   }
  ],
@@ -117,7 +129,7 @@
   {
    "id": "D1",
    "term": "CES",
-   "definition": "Complex exponential smoothing: a forecasting method that combines each past observation $y_t$ and its forecast error $e_t$ into the complex variable $y_t + i e_t$ and forecasts with an exponentially weighted sum of these values, $\\hat{y}_t + i\\hat{e}_t = (\\alpha_0 + i\\alpha_1) \\sum_{j=1}^{t-1} (1 + i - (\\alpha_0 + i\\alpha_1))^{j-1} (y_{t-j} + i e_{t-j})$, or recursively $\\hat{y}_t + i\\hat{e}_t = (\\alpha_0 + i\\alpha_1)(y_{t-1} + i e_{t-1}) + (1 - \\alpha_0 + i - i\\alpha_1)(\\hat{y}_{t-1} + i\\hat{e}_{t-1})$, where $\\alpha_0 + i\\alpha_1$ is the [[D2:complex smoothing parameter]] and $\\hat{e}_t$ carries the information on past forecast errors.",
+   "definition": "Complex exponential smoothing: a forecasting method that combines each past observation $y_t$ and its forecast error $e_t$ into the complex variable $y_t + i e_t$ and forecasts with an exponentially weighted sum of these values, $$\\hat{y}_t + i\\hat{e}_t = (\\alpha_0 + i\\alpha_1) \\sum_{j=1}^{t-1} (1 + i - (\\alpha_0 + i\\alpha_1))^{j-1} (y_{t-j} + i e_{t-j})$$, or recursively $$\\hat{y}_t + i\\hat{e}_t = (\\alpha_0 + i\\alpha_1)(y_{t-1} + i e_{t-1}) + (1 - \\alpha_0 + i - i\\alpha_1)(\\hat{y}_{t-1} + i\\hat{e}_{t-1})$$, where $\\alpha_0 + i\\alpha_1$ is the [[D2:complex smoothing parameter]] and $\\hat{e}_t$ carries the information on past forecast errors.",
    "kind": "method",
    "assumptions": [
     "C60",
@@ -147,7 +159,7 @@
   {
    "id": "D4",
    "term": "seasonal CES",
-   "definition": "[[D1:CES]] extended with a second pair of level and [[D3:nonlinear trend]] states taken at lag $m$, the seasonal period, with its own [[D2:complex smoothing parameter]] $\\beta_0 + i\\beta_1$: $y_t = l_{0,t-1} + l_{1,t-m} + \\varepsilon_t$, $l_{0,t} = l_{0,t-1} - (1 - \\alpha_1) c_{0,t-1} + (\\alpha_0 - \\alpha_1) \\varepsilon_t$, $c_{0,t} = l_{0,t-1} + (1 - \\alpha_0) c_{0,t-1} + (\\alpha_0 + \\alpha_1) \\varepsilon_t$, $l_{1,t} = l_{1,t-m} - (1 - \\beta_1) c_{1,t-m} + (\\beta_0 - \\beta_1) \\varepsilon_t$, $c_{1,t} = l_{1,t-m} + (1 - \\beta_0) c_{1,t-m} + (\\beta_0 + \\beta_1) \\varepsilon_t$.",
+   "definition": "[[D1:CES]] extended with a second pair of level and [[D3:nonlinear trend]] states taken at lag $m$, the seasonal period, with its own [[D2:complex smoothing parameter]] $\\beta_0 + i\\beta_1$: $y_t = l_{0,t-1} + l_{1,t-m} + \\varepsilon_t$, $$l_{0,t} = l_{0,t-1} - (1 - \\alpha_1) c_{0,t-1} + (\\alpha_0 - \\alpha_1) \\varepsilon_t$$, $$c_{0,t} = l_{0,t-1} + (1 - \\alpha_0) c_{0,t-1} + (\\alpha_0 + \\alpha_1) \\varepsilon_t$$, $$l_{1,t} = l_{1,t-m} - (1 - \\beta_1) c_{1,t-m} + (\\beta_0 - \\beta_1) \\varepsilon_t$$, $$c_{1,t} = l_{1,t-m} + (1 - \\beta_0) c_{1,t-m} + (\\beta_0 + \\beta_1) \\varepsilon_t$$.",
    "kind": "method",
    "broader": [
     "D1"
@@ -513,7 +525,7 @@
     "p6.4",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "relations": [
     {
      "type": "extends",
@@ -579,7 +591,7 @@
     "p6.4",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "passes continuously between stationary and non-stationary as changes",
@@ -616,16 +628,13 @@
     "L1",
     "L3"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p1.6",
     "p9.15-p9.16",
     "p9.18",
     "p11.27"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C34"
    ],
@@ -671,15 +680,12 @@
     "L3",
     "L5"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p1.6",
     "p9.22-p10.9",
     "p11.27"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has the lowest mean and median MASE and RMSSE and median MSIS, but not the lowest mean MSIS, of",
@@ -719,7 +725,7 @@
     "p11.25",
     "p14.4-p14.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "has an underlying",
@@ -750,7 +756,7 @@
     "p11.25",
     "p14.4-p14.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the parameter space of the ARMA(2,2) model underlying CES",
     "relation": "differs from",
@@ -781,7 +787,7 @@
     "p11.25",
     "p14.4-p14.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the parameter space of the ARMA(2,2) model underlying CES",
     "relation": "is not restricted to",
@@ -811,13 +817,20 @@
     "p7.6-p7.8",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D4",
     "relation": "models seasonality with",
     "object": "lag-m level and nonlinear trend states",
     "comparator": "seasonal indices",
     "conditions": []
+   },
+   "scope": {
+    "data_type": "seasonal univariate time series",
+    "conditions": [
+     "additive error",
+     "seasonal period m"
+    ]
    }
   },
   {
@@ -837,7 +850,7 @@
     "p7.6-p7.8",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C8"
    ],
@@ -848,6 +861,13 @@
     "object": "seasonal indices that need renormalising",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "seasonal univariate time series",
+    "conditions": [
+     "additive error",
+     "seasonal period m"
+    ]
    }
   },
   {
@@ -867,7 +887,7 @@
     "p7.6-p7.8",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C8",
     "C31",
@@ -885,6 +905,12 @@
     "object": "choosing between the seasonal and the non-seasonal model",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "univariate time series, seasonal or non-seasonal",
+    "conditions": [
+     "selection by an information criterion"
+    ]
    }
   },
   {
@@ -909,15 +935,12 @@
    "limitations": [
     "L3"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p9.16",
     "p9.21",
     "p11.27"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C35"
    ],
@@ -961,14 +984,11 @@
     "L3",
     "L5"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p10.9",
     "p11.27"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D5",
     "relation": "has lower mean and median errors than",
@@ -1006,7 +1026,7 @@
     "p11.21",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "encompasses",
@@ -1038,7 +1058,7 @@
     "p11.21",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "warrant": "W2",
    "about": {
     "subject": "D1",
@@ -1069,7 +1089,7 @@
     "p11.21",
     "p11.24"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "warrant": "W2",
    "about": {
     "subject": "D1",
@@ -1100,7 +1120,7 @@
     "p4.4-p4.13",
     "p13.28-p14.3"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "has the single-source-of-error state-space form",
@@ -1133,7 +1153,7 @@
     "p5.6",
     "p14.14-p15.11"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "is stationary when",
@@ -1162,7 +1182,7 @@
    "source_spans": [
     "p4.19"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the eigenvalues of the CES transition matrix",
     "relation": "are both real, one of them greater than one,",
@@ -1189,7 +1209,7 @@
    "source_spans": [
     "p4.19"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C18"
    ],
@@ -1220,7 +1240,7 @@
     "p4.19",
     "p6.9-p6.10"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "is equivalent to",
@@ -1253,7 +1273,7 @@
     "p5.4",
     "p5.20"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "novelty": "no_prior_found",
    "about": {
     "subject": "D1",
@@ -1285,7 +1305,7 @@
     "p5.4",
     "p5.20"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "novelty": "no_prior_found",
    "about": {
     "subject": "D1",
@@ -1318,7 +1338,7 @@
     "p4.21-p5.6",
     "p15.12-p16.1"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "is stable when",
@@ -1348,7 +1368,7 @@
     "p4.21-p5.6",
     "p15.12-p16.1"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C17",
     "C23"
@@ -1378,7 +1398,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C26",
     "C27",
@@ -1423,7 +1443,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "is a flat line",
@@ -1451,7 +1471,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "grows exponentially",
@@ -1479,7 +1499,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "declines exponentially",
@@ -1507,7 +1527,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "is a harmonic oscillation converging to zero",
@@ -1535,7 +1555,7 @@
     "p5.7-p5.13",
     "p6.1-p6.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the CES point forecast",
     "relation": "is a diverging harmonic oscillation",
@@ -1563,7 +1583,7 @@
     "p7.3",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C25"
    ],
@@ -1595,7 +1615,7 @@
     "p7.11-p7.12",
     "p8.1-p8.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "estimates a stationary value of",
@@ -1626,7 +1646,7 @@
     "p7.11",
     "p7.13-p8.4"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "estimates a non-stationary value of",
@@ -1658,7 +1678,7 @@
     "p9.14",
     "p9.20"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has the best mean rank, in Nemenyi tests at the 5% level, of",
@@ -1693,7 +1713,7 @@
     "p9.20-p9.21",
     "p10.3"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D5",
     "relation": "has a significantly better mean rank, in Nemenyi tests at the 5% level, than every other method of",
@@ -1726,15 +1746,12 @@
    "limitations": [
     "L1"
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p10.10",
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -1769,7 +1786,7 @@
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -1804,7 +1821,7 @@
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has a lower median RMSSE, but higher other errors, than",
@@ -1839,7 +1856,7 @@
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower mean and median errors than",
@@ -1874,7 +1891,7 @@
     "p10.21",
     "p11.21"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -1908,7 +1925,7 @@
    "source_spans": [
     "p4.12-p4.13"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "the transition matrix of the CES state-space form",
     "relation": "contains",
@@ -1939,7 +1956,7 @@
     "p4.14-p4.15",
     "p7.6"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D39",
     "relation": "can be computed, for seasonal and non-seasonal CES, from",
@@ -1965,7 +1982,7 @@
    "source_spans": [
     "p5.14"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C16"
    ],
@@ -1998,7 +2015,7 @@
    "source_spans": [
     "p6.5-p6.10"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C20"
    ],
@@ -2028,7 +2045,7 @@
    "source_spans": [
     "p6.5-p6.10"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C44"
    ],
@@ -2059,7 +2076,7 @@
    "source_spans": [
     "p6.5-p6.10"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C44"
    ],
@@ -2091,7 +2108,7 @@
     "p7.2",
     "p16.2-p16.28"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C8"
    ],
@@ -2126,7 +2143,7 @@
    "source_spans": [
     "p7.2"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D4",
     "relation": "is stationary or non-stationary depending on",
@@ -2151,7 +2168,7 @@
     "p7.3",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C25"
    ],
@@ -2180,7 +2197,7 @@
     "p7.3",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "depends_on": [
     "C25"
    ],
@@ -2211,7 +2228,7 @@
    "source_spans": [
     "p7.6-p7.7"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D1",
     "relation": "has, without seasonality, 5 estimated parameters",
@@ -2235,7 +2252,7 @@
    "source_spans": [
     "p7.6-p7.7"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "warrant": "W5",
    "about": {
     "subject": "D4",
@@ -2266,7 +2283,7 @@
     "p9.14",
     "p9.20"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "does not differ significantly, in Nemenyi tests at the 5% level, from each of",
@@ -2302,13 +2319,10 @@
      ]
     }
    ],
-   "field_provenance": {
-    "statement": "inferred"
-   },
    "source_spans": [
     "p11.22"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -2341,7 +2355,7 @@
    "source_spans": [
     "p11.22"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -2374,7 +2388,7 @@
    "source_spans": [
     "p11.22"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -2407,7 +2421,7 @@
    "source_spans": [
     "p11.22"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "D17",
     "relation": "has lower errors, except mean MSIS, than",
@@ -2446,7 +2460,7 @@
     "p11.22",
     "p11.26"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "about": {
     "subject": "information criteria",
     "relation": "can effectively identify when to switch between",
@@ -2485,7 +2499,7 @@
    "source_spans": [
     "p11.28"
    ],
-   "provenance": "extracted",
+   "provenance": "author_stated",
    "scope": {
     "excludes": [
      "forecasting scenarios for which CES is not appropriate, which the paper does not name"
@@ -2515,7 +2529,7 @@
     "p4.5",
     "p4.14"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "C61",
@@ -2533,7 +2547,7 @@
     "p4.5",
     "p14.2"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "C62",
@@ -2551,7 +2565,7 @@
     "p4.5",
     "p5.14"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   },
   {
    "id": "C63",
@@ -2569,7 +2583,7 @@
     "p4.5",
     "p5.14"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   },
   {
    "id": "C64",
@@ -2586,7 +2600,7 @@
    "source_spans": [
     "p4.14-p4.15"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   },
   {
    "id": "C65",
@@ -2604,7 +2618,7 @@
     "p10.21",
     "p11.22"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   }
  ],
  "evidence": [
@@ -2623,7 +2637,8 @@
    ],
    "availability": {
     "level": "public"
-   }
+   },
+   "proof_artefact": "A9"
   },
   {
    "id": "E2",
@@ -2833,7 +2848,8 @@
    ],
    "availability": {
     "level": "public"
-   }
+   },
+   "proof_artefact": "A9"
   },
   {
    "id": "E4",
@@ -2849,7 +2865,8 @@
    },
    "assumptions": [
     "C61"
-   ]
+   ],
+   "proof_artefact": "A9"
   },
   {
    "id": "E5",
@@ -2865,7 +2882,8 @@
    ],
    "availability": {
     "level": "public"
-   }
+   },
+   "proof_artefact": "A9"
   },
   {
    "id": "E6",
@@ -2881,7 +2899,8 @@
    ],
    "availability": {
     "level": "public"
-   }
+   },
+   "proof_artefact": "A9"
   },
   {
    "id": "E7",
@@ -3503,7 +3522,7 @@
     "p10.2",
     "p11.21"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L2",
@@ -3519,7 +3538,7 @@
    "source_spans": [
     "p7.4-p7.5"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L3",
@@ -3536,7 +3555,7 @@
    "source_spans": [
     "p12.1"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L4",
@@ -3550,7 +3569,7 @@
    "source_spans": [
     "p11.28-p12.1"
    ],
-   "provenance": "extracted"
+   "provenance": "author_stated"
   },
   {
    "id": "L5",
@@ -3565,7 +3584,7 @@
    "source_spans": [
     "p10.8"
    ],
-   "provenance": "inferred"
+   "provenance": "author_stated"
   }
  ],
  "artefacts": [
@@ -3605,7 +3624,8 @@
    "reference": "B10",
    "availability": {
     "level": "public"
-   }
+   },
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_3.1.2.tar.gz"
   },
   {
    "id": "A5",
@@ -3627,7 +3647,8 @@
    "reference": "B12",
    "availability": {
     "level": "public"
-   }
+   },
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/greybox/greybox_0.7.0.tar.gz"
   },
   {
    "id": "A7",
@@ -3647,88 +3668,100 @@
    "availability": {
     "level": "public"
    }
+  },
+  {
+   "id": "A9",
+   "kind": "manuscript",
+   "uri": "https://doi.org/10.1002/nav.22074",
+   "reference": "B25",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The published article (open access, CC BY)."
   }
  ],
  "references": [
   {
    "id": "B1",
-   "id_type": "reference",
-   "target": "Hyndman, R. J., Koehler, A. B., Ord, J. K., & Snyder, R. D. (2008). Forecasting with exponential smoothing: The state space approach. Springer-Verlag."
+   "id_type": "doi",
+   "target": "10.1007/978-3-540-71918-2"
   },
   {
    "id": "B2",
-   "id_type": "reference",
-   "target": "Hyndman, R. J., Koehler, A. B., Snyder, R. D., & Grose, S. (2002). A state space framework for automatic forecasting using exponential smoothing methods. International Journal of Forecasting, 18(3), 439–454."
+   "id_type": "doi",
+   "target": "10.1016/S0169-2070(01)00110-8"
   },
   {
    "id": "B3",
-   "id_type": "reference",
-   "target": "Kourentzes, N., Petropoulos, F., & Trapero, J. R. (2014). Improving forecasting by estimating time series structural components across multiple frequencies. International Journal of Forecasting, 30(2), 291–302."
+   "id_type": "doi",
+   "target": "10.1016/j.ijforecast.2013.09.006"
   },
   {
    "id": "B4",
-   "id_type": "reference",
-   "target": "Kolassa, S. (2011). Combining exponential smoothing forecasts using Akaike weights. International Journal of Forecasting, 27(2), 238–251."
+   "id_type": "doi",
+   "target": "10.1016/j.ijforecast.2010.04.006"
   },
   {
    "id": "B5",
-   "id_type": "reference",
-   "target": "Barrow, D., Kourentzes, N., Sandberg, R., & Niklewski, J. (2020). Automatic robust estimation for exponential smoothing: Perspectives from statistics and machine learning. Expert Systems with Applications, 160, 113637."
+   "id_type": "doi",
+   "target": "10.1016/j.eswa.2020.113637"
   },
   {
    "id": "B6",
-   "id_type": "reference",
-   "target": "Makridakis, S., Andersen, A. P., Carbone, R., Fildes, R., Hibon, M., Lewandowski, R., Newton, J., Parzen, E., & Winkler, R. L. (1982). The accuracy of extrapolation (time series) methods: Results of a forecasting competition. Journal of Forecasting, 1(2), 111–153."
+   "id_type": "doi",
+   "target": "10.1002/for.3980010202"
   },
   {
    "id": "B7",
-   "id_type": "reference",
-   "target": "Makridakis, S., & Hibon, M. (2000). The M3-competition: Results, conclusions and implications. International Journal of Forecasting, 16(4), 451–476."
+   "id_type": "doi",
+   "target": "10.1016/S0169-2070(00)00057-1"
   },
   {
    "id": "B8",
-   "id_type": "reference",
-   "target": "Athanasopoulos, G., Hyndman, R. J., Song, H., & Wu, D. C. (2011). The tourism forecasting competition. International Journal of Forecasting, 27(3), 822–844."
+   "id_type": "doi",
+   "target": "10.1016/j.ijforecast.2010.04.009"
   },
   {
    "id": "B9",
-   "id_type": "reference",
-   "target": "Makridakis, S., Spiliotis, E., & Assimakopoulos, V. (2020). The M4 competition: 100,000 time series and 61 forecasting methods. International Journal of Forecasting, 36(1), 54–74."
+   "id_type": "doi",
+   "target": "10.1016/j.ijforecast.2019.04.014"
   },
   {
    "id": "B10",
-   "id_type": "reference",
-   "target": "Svetunkov, I. (2021b). Smooth: Forecasting using state space models. R package version 3.1.2 https://github.com/config-i1/smooth"
+   "id_type": "url",
+   "target": "https://github.com/config-i1/smooth",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_3.1.2.tar.gz"
   },
   {
    "id": "B11",
-   "id_type": "reference",
-   "target": "Hyndman, R. J., & Khandakar, Y. (2008). Automatic time series forecasting: The forecast package for R. Journal of Statistical Software, 27(3), 1–22."
+   "id_type": "doi",
+   "target": "10.18637/jss.v027.i03"
   },
   {
    "id": "B12",
-   "id_type": "reference",
-   "target": "Svetunkov, I. (2021a). Greybox: Toolbox for model building and forecasting. R package version 0.7.0 https://github.com/config-i1/greybox"
+   "id_type": "url",
+   "target": "https://github.com/config-i1/greybox",
+   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/greybox/greybox_0.7.0.tar.gz"
   },
   {
    "id": "B13",
-   "id_type": "reference",
-   "target": "Petropoulos, F., & Svetunkov, I. (2020). A simple combination of univariate models. International Journal of Forecasting, 36(1), 110–115."
+   "id_type": "doi",
+   "target": "10.1016/j.ijforecast.2019.01.006"
   },
   {
    "id": "B14",
-   "id_type": "reference",
-   "target": "Ord, K., Koehler, A. B., & Snyder, R. D. (1997). Estimation and prediction for a class of dynamic nonlinear statistical models. Journal of the American Statistical Association, 92(440), 1621–1629."
+   "id_type": "doi",
+   "target": "10.1080/01621459.1997.10473684"
   },
   {
    "id": "B15",
-   "id_type": "reference",
-   "target": "Svetunkov, I., & Boylan, J. E. (2020). State-space ARIMA for supply-chain forecasting. International Journal of Production Research, 58(3), 818–827."
+   "id_type": "doi",
+   "target": "10.1080/00207543.2019.1600764"
   },
   {
    "id": "B16",
-   "id_type": "reference",
-   "target": "Assimakopoulos, V., & Nikolopoulos, K. (2000). The theta model: A decomposition approach to forecasting. International Journal of Forecasting, 16, 521–530."
+   "id_type": "doi",
+   "target": "10.1016/S0169-2070(00)00066-2"
   },
   {
    "id": "B17",
@@ -3737,13 +3770,13 @@
   },
   {
    "id": "B18",
-   "id_type": "reference",
-   "target": "Hyndman, R. J., & Koehler, A. B. (2006). Another look at measures of forecast accuracy. International Journal of Forecasting, 22(4), 679–688."
+   "id_type": "doi",
+   "target": "10.1016/j.ijforecast.2006.03.001"
   },
   {
    "id": "B19",
-   "id_type": "reference",
-   "target": "Gneiting, T., & Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. Journal of the American Statistical Association, 102(477), 359–378."
+   "id_type": "doi",
+   "target": "10.1198/016214506000001437"
   },
   {
    "id": "B20",
@@ -3752,23 +3785,28 @@
   },
   {
    "id": "B21",
-   "id_type": "reference",
-   "target": "Akaike, H. (1974). A new look at the statistical model identification. IEEE Transactions on Automatic Control, 19(6), 716–723."
+   "id_type": "doi",
+   "target": "10.1109/TAC.1974.1100705"
   },
   {
    "id": "B22",
-   "id_type": "reference",
-   "target": "Dickey, D. A., & Fuller, W. A. (1979). Distribution of the estimators for autoregressive time series with a unit root. Journal of the American Statistical Association, 74(366a), 427–431."
+   "id_type": "doi",
+   "target": "10.1080/01621459.1979.10482531"
   },
   {
    "id": "B23",
-   "id_type": "reference",
-   "target": "Kwiatkowski, D., Phillips, P. C. B., Schmidt, P., & Shin, Y. (1992). Testing the null hypothesis of stationarity against the alternative of a unit root: How sure are we that economic time series are nonstationary? Journal of Econometrics, 54, 159–178."
+   "id_type": "doi",
+   "target": "10.1016/0304-4076(92)90104-Y"
   },
   {
    "id": "B24",
    "id_type": "reference",
    "target": "R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing. https://www.R-project.org/"
+  },
+  {
+   "id": "B25",
+   "target": "10.1002/nav.22074",
+   "id_type": "doi"
   }
  ],
  "open_questions": [
