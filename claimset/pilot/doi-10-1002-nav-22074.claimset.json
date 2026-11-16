@@ -38,8 +38,8 @@
      "field": "C27.statement",
      "where": "Section 3.3, the list of forecasting trajectories",
      "printed": "When $\\alpha_1 > 1$ the model produces trajectory with exponential growth.",
-     "recorded": "When $\\alpha_1 > 1$ and $\\alpha_0 < 2$, the [[D1:CES]] point forecast grows exponentially in magnitude, upward or downward according to the current state.",
-     "reason": "For $\\alpha_1 > 1$ the eigenvalues of $F$ are real with sum $2 - \\alpha_0$, so for $\\alpha_0 > 2$ the negative one dominates: at $\\alpha_0 = 2.2$, $\\alpha_1 = 1.2$, inside the stability region, they are 1.087 and −1.287 and the forecast alternates in sign as it diverges.",
+     "recorded": "When $\\alpha_1 > 1$ and $\\alpha_0 < 2$, the [[D1:CES]] point forecast eventually grows exponentially in magnitude, upward or downward according to the current state, unless the state lies on the eigenvector of the smaller eigenvalue of $F$.",
+     "reason": "For $\\alpha_1 > 1$ the eigenvalues of $F$ are real with sum $2 - \\alpha_0$, so for $\\alpha_0 > 2$ the negative one dominates: at $\\alpha_0 = 2.2$, $\\alpha_1 = 1.2$, inside the stability region, they are 1.087 and $-1.287$ and the forecast alternates in sign as it diverges. The growth is eventual, not from the first step, and a state on the eigenvector of the smaller eigenvalue (the zero state included) does not grow.",
      "found_by": "P5"
     },
     {
@@ -47,8 +47,8 @@
      "field": "C28.statement",
      "where": "Section 3.3, the list of forecasting trajectories",
      "printed": "When $(4 - \\alpha_0^2)/4 < \\alpha_1 < 1$ trajectory becomes stationary and CES produces exponential decline.",
-     "recorded": "When $(4 - \\alpha_0^2)/4 < \\alpha_1 < 1$, $\\alpha_0 > 0$ and $\\alpha_1 < 5 - 2\\alpha_0$, the [[D1:CES]] point forecast declines exponentially.",
-     "reason": "The interval alone does not keep the eigenvalues inside the unit circle: at $\\alpha_0 = -1$, $\\alpha_1 = 0.9$ they are 1.113 and 1.887. The conditions $\\alpha_0 > 0$ and $\\alpha_1 < 5 - 2\\alpha_0$, which the stationarity condition of Section 3.2 carries, are needed; every stable point satisfies them.",
+     "recorded": "When $(4 - \\alpha_0^2)/4 < \\alpha_1 < 1$, $0 < \\alpha_0 < 4$ and $\\alpha_1 < 5 - 2\\alpha_0$, the [[D1:CES]] point forecast declines exponentially in magnitude and, when $\\alpha_0 > 2$, eventually alternates in sign, unless the state lies on the eigenvector of the eigenvalue of $F$ of smaller modulus.",
+     "reason": "The interval alone does not keep the eigenvalues of $F$ inside the unit circle: at $\\alpha_0 = -1$, $\\alpha_1 = 0.9$ they are 1.113 and 1.887, and at $\\alpha_0 = 5$, $\\alpha_1 = -5.1$ they are $-1.113$ and $-1.887$. The conditions $0 < \\alpha_0 < 4$ and $\\alpha_1 < 5 - 2\\alpha_0$, which the stationarity condition of Section 3.2 carries, are needed. For $2 < \\alpha_0 < 4$ the dominant eigenvalue is negative, so the decline eventually alternates in sign, except from a state on the eigenvector of the other eigenvalue.",
      "found_by": "P5"
     },
     {
@@ -65,8 +65,8 @@
      "field": "C25.statement",
      "where": "Section 3.3, the list of forecasting trajectories",
      "printed": "There are several types of forecasting trajectories of CES depending on the particular value of the complex smoothing parameter: a flat line, exponential growth, exponential decline, a harmonic trajectory converging to zero and a diverging harmonic trajectory.",
-     "recorded": "For $0 < \\alpha_0 < 2$, the [[D1:CES]] point forecast $w'F^{h-1}v_t$ follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation; on the line $\\alpha_0 + \\alpha_1 = 1$ it oscillates with constant amplitude.",
-     "reason": "The five types cover the parameter plane only for $0 < \\alpha_0 < 2$ (see the corrections of the growth, decline and divergence conditions), and on the line $\\alpha_0 + \\alpha_1 = 1$ the eigenvalues are complex with modulus exactly 1: at the stable point $\\alpha_0 = 0.8$, $\\alpha_1 = 0.2$ the forecast oscillates with constant amplitude, which none of the five types describes.",
+     "recorded": "For $0 < \\alpha_0 < 2$ and almost every state, the [[D1:CES]] point forecast $w'F^{h-1}v_t$ eventually follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation, except on the line $\\alpha_0 + \\alpha_1 = 1$, where it oscillates with constant amplitude, and on the curve $\\alpha_1 = (4 - \\alpha_0^2)/4$, where the eigenvalue is repeated, it goes to zero as $(A + Bh)\\lambda^h$ without oscillating.",
+     "reason": "The five types cover the parameter plane only for $0 < \\alpha_0 < 2$ (see the corrections of the growth, decline and divergence conditions). On the line $\\alpha_0 + \\alpha_1 = 1$ the eigenvalues are complex with modulus exactly 1: at the stable point $\\alpha_0 = 0.8$, $\\alpha_1 = 0.2$ the forecast oscillates with constant amplitude, which none of the five types describes. On $\\alpha_1 = (4 - \\alpha_0^2)/4$ the eigenvalue $(2 - \\alpha_0)/2$ is repeated, and the trajectory also depends on the state, not on the parameter alone. In the growth and decline cases the forecast is a sum of two exponentials, so it takes its shape only eventually.",
      "found_by": "P5"
     },
     {
@@ -1721,7 +1721,7 @@
   },
   {
    "id": "C25",
-   "statement": "For $0 < \\alpha_0 < 2$, the [[D1:CES]] point forecast $w'F^{h-1}v_t$ follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation; on the line $\\alpha_0 + \\alpha_1 = 1$ it oscillates with constant amplitude.",
+   "statement": "For $0 < \\alpha_0 < 2$ and almost every state, the [[D1:CES]] point forecast $w'F^{h-1}v_t$ eventually follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation, except on the line $\\alpha_0 + \\alpha_1 = 1$, where it oscillates with constant amplitude, and on the curve $\\alpha_1 = (4 - \\alpha_0^2)/4$, where the eigenvalue is repeated, it goes to zero as $(A + Bh)\\lambda^h$ without oscillating.",
    "type": "formal",
    "role": "supporting",
    "novelty": "no_prior_found",
@@ -1731,7 +1731,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p5.7-p5.13",
     "p6.1-p6.2"
@@ -1776,6 +1776,12 @@
      "outcome": "confirmed",
      "extent": "partial",
      "notes": "Check of the corrected statement. For 0<a0<2 the eigenvalues of F put every value of a1 in one of the listed cases: a1>1 real with the root above 1 dominant (growth), a1=1 flat, (4-a0^2)/4<a1<1 real in (-1,1) with the positive root dominant (decline), 1-a0<a1<(4-a0^2)/4 complex of modulus below 1, a1=1-a0 complex of modulus exactly 1 (constant amplitude), a1<1-a0 complex of modulus above 1; 49,823 random points with 0<a0<2 gave no exception, and the boundaries a1=1 and a0+a1=1 were checked at a0=0.3, 1.0, 1.7. Two parts do not hold as worded. On the boundary a1=(4-a0^2)/4 the eigenvalue (2-a0)/2 is repeated and the forecast is (A+Bh)((2-a0)/2)^h: it goes to zero without oscillating, but it is a linear term times an exponential, not an exponential decline, so this boundary belongs to none of the cases unless 'exponential decline' is read loosely. The trajectory is also not set by the parameter alone: with a1>1, a state on the eigenvector of the smaller eigenvalue gives no growth (a0=1.5, a1=2.5, state (-0.686,1): -0.686, 0.814, -0.965, 1.145, an alternating divergence), and a zero state gives a zero forecast; the statement needs 'for all states except those on one line' or 'for a generic state'."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Check of the reworded statement. For 0<a0<2 the eigenvalues of F, (2-a0 +- sqrt(a0^2+4a1-4))/2, put every a1 off the two named sets in exactly one case: a1>1 real with the eigenvalue above 1 dominant (growth), a1=1 flat (w'F^k=(1,0) for every k and state), (4-a0^2)/4<a1<1 real in (-1,1) with the positive one dominant (decline), 1-a0<a1<(4-a0^2)/4 complex of modulus below 1, a1<1-a0 complex of modulus above 1; 100,000 random points gave no exception. 'Eventually' and 'almost every state' are both needed and sufficient: with real eigenvalues the forecast is A lam1^(h-1)+B lam2^(h-1), which follows the dominant term once it outgrows the other, and the dominant coefficient is zero only on one line of states, the eigenvector of the other eigenvalue (a0=1.5, a1=2.5 from state (-0.686,1): -0.686, 0.814, -0.965, 1.145), since the first element of an eigenvector of F is zero only if a1=1 (sympy). The exceptions hold as worded: on a0+a1=1 the eigenvalues are complex of modulus 1 (discriminant a0(a0-4)<0) and the forecast is exactly R cos(wh+phi) with cos w=(2-a0)/2 (5,000 random parameter and state draws); on a1=(4-a0^2)/4 the matrix F-lam I is non-zero with square zero, so the forecast is (A+Bh)lam^h with lam=(2-a0)/2 in (0,1), going to zero with at most one sign change (2,000 draws). The line, the curve and a1=1 do not meet for 0<a0<2 (they meet only at a0=0 or 4), so the cases do not overlap."
     }
    ]
   },
@@ -1817,7 +1823,7 @@
   },
   {
    "id": "C27",
-   "statement": "When $\\alpha_1 > 1$ and $\\alpha_0 < 2$, the [[D1:CES]] point forecast grows exponentially in magnitude, upward or downward according to the current state.",
+   "statement": "When $\\alpha_1 > 1$ and $\\alpha_0 < 2$, the [[D1:CES]] point forecast eventually grows exponentially in magnitude, upward or downward according to the current state, unless the state lies on the eigenvector of the smaller eigenvalue of $F$.",
    "type": "formal",
    "role": "supporting",
    "novelty": "no_prior_found",
@@ -1827,7 +1833,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p5.7-p5.13",
     "p6.1-p6.2"
@@ -1855,12 +1861,18 @@
      "outcome": "confirmed",
      "extent": "partial",
      "notes": "Check of the corrected statement. For a1>1 the eigenvalues are real with lam1>1>lam2, and a0<2 gives lam1+lam2=2-a0>0, so lam1 is the larger in modulus (27,981 random points, no exception); the forecast is A lam1^(h-1)+B lam2^(h-1), which grows like lam1^h with the sign of A. Not covered by the wording: A=0 when the state lies on the eigenvector of lam2, (lam2-1+a0, 1), including the zero state, and then there is no growth (decay if |lam2|<1, alternating divergence if lam2<-1, e.g. a0=1.5, a1=2.5). The growth is also asymptotic, not from the first step: a0=1.5, a1=1.1 from state (10,-40) gives 10, 6, 9, 8.1, 9.45 before rising. The statement is correct with 'eventually' and 'unless the state lies on the eigenvector of the smaller eigenvalue'."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Check of the reworded statement. For a1>1 the discriminant a0^2+4(a1-1) is positive and the characteristic polynomial at 1 is 1-a1<0, so the eigenvalues are real with lam1>1>lam2; a0<2 gives lam1+lam2=2-a0>0, so lam1>|lam2| (50,000 random points, no exception). The forecast is exactly A lam1^(h-1)+B lam2^(h-1) (checked against iterating F for random states), and A is zero only when the state is on the eigenvector of lam2, because the eigenvector (lam-1+a0, 1) of F has a zero first element only if a1=1 (sympy). So off that line the forecast eventually behaves as A lam1^h, growing in magnitude with the sign of A, which the state sets; on it the forecast is B lam2^h, with no such growth (a0=1.5, a1=1.1: -0.064, 0.036, -0.020). 'Eventually' is needed and correct: a0=1.5, a1=1.1 from state (10,-40) gives 10, 6, 9, 8.1, 9.45, 9.59, 10.46."
     }
    ]
   },
   {
    "id": "C28",
-   "statement": "When $(4 - \\alpha_0^2)/4 < \\alpha_1 < 1$, $\\alpha_0 > 0$ and $\\alpha_1 < 5 - 2\\alpha_0$, the [[D1:CES]] point forecast declines exponentially.",
+   "statement": "When $(4 - \\alpha_0^2)/4 < \\alpha_1 < 1$, $0 < \\alpha_0 < 4$ and $\\alpha_1 < 5 - 2\\alpha_0$, the [[D1:CES]] point forecast declines exponentially in magnitude and, when $\\alpha_0 > 2$, eventually alternates in sign, unless the state lies on the eigenvector of the eigenvalue of $F$ of smaller modulus.",
    "type": "formal",
    "role": "supporting",
    "novelty": "no_prior_found",
@@ -1870,7 +1882,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "disputed",
+   "verification": "agent_checked",
    "source_spans": [
     "p5.7-p5.13",
     "p6.1-p6.2"
@@ -1897,7 +1909,14 @@
      "by": "P5",
      "outcome": "disputed",
      "extent": "full",
-     "notes": "Check of the corrected statement. The corrected conditions still do not confine the eigenvalues to the unit circle: an upper bound a0<4 is missing. Counterexample: (a0,a1)=(5,-5.1) satisfies (4-25)/4=-5.25<a1<1, a0>0 and a1<5-2a0=-5, and has eigenvalues -1.113 and -1.887; the forecast from state (10,3) is 10, -8.3, 3.9, 5.73, -25.4, 64.1, -139. Of 8,675 random points meeting the stated conditions in a0 in (-4,8), a1 in (-12,4), 6,591 had an eigenvalue outside the unit circle, all with a0>4; none of the 2,084 with a0<4 did. Correct version: add a0<4 (the paper's (C7) has 0<a0<4), which makes both eigenvalues real and inside (-1,1). For 2<a0<4 the negative eigenvalue dominates and the decline alternates in sign (a0=2.2, a1=0.5: eigenvalues 0.743, -0.943; 10, 8.5, 5.3, 4.89, 2.73, 2.88), so a decline without alternation needs 0<a0<2. My first report named only a0>0 and a1<5-2a0 as the missing conditions; that list was incomplete."
+     "notes": "Check of the corrected statement. The corrected conditions still do not confine the eigenvalues to the unit circle: an upper bound a0<4 is missing. Counterexample: (a0,a1)=(5,-5.1) satisfies (4-25)/4=-5.25<a1<1, a0>0 and a1<5-2a0=-5, and has eigenvalues -1.113 and -1.887; the forecast from state (10,3) is 10, -8.3, 3.9, 5.73, -25.4, 64.1, -139. Of 8,675 random points meeting the stated conditions in a0 in (-4,8), a1 in (-12,4), 6,591 had an eigenvalue outside the unit circle, all with a0>4; none of the 2,084 with a0<4 did. Correct version: add a0<4 (the paper's (C7) has 0<a0<4), which makes both eigenvalues real and inside (-1,1). For 2<a0<4 the negative eigenvalue dominates and the decline alternates in sign (a0=2.2, a1=0.5: eigenvalues 0.743, -0.943; 10, 8.5, 5.3, 4.89, 2.73, 2.88), so a decline without alternation needs 0<a0<2. My first report named only a0>0 and a1<5-2a0 as the missing conditions; that list was incomplete.",
+     "resolution": "The authors reworded the claim (paper.published_as.corrections) and the checker checked it again, confirming it."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Check of the reworded statement. Under the stated conditions the eigenvalues of F are real and distinct, the characteristic polynomial is positive at 1 (1-a1) and at -1 (5-2a0-a1), and their sum 2-a0 lies in (-2,2), so both are in (-1,1): the forecast A lam1^h+B lam2^h is bounded by (|A|+|B|)rho^h with rho<1 for every state (47,633 random points and states, no exception). 'Declines exponentially in magnitude' is confirmed in that sense of a geometric envelope; the magnitude need not fall at every early step (a0=1.5, a1=0.9 from state (0,1): 0, -0.1, -0.05, -0.065, -0.0525). For a0>2 the sum of the eigenvalues is negative, so the negative one is strictly the larger in modulus (23,960 points; the moduli are equal only at a0=2), and its coefficient is zero only for a state on the eigenvector of the other eigenvalue; off that line the sign is that of B(-1)^h from the step at which the dominant term overtakes (no violation in 23,845 draws, checked in logarithms; that step had median 2 and 90% quantile 12). The exception is correctly placed: when the smaller-modulus eigenvalue is positive (a0+a1>2) a state on its eigenvector never alternates (17,887 cases, e.g. a0=2.2, a1=0.5: 1.943, 1.443, 1.071), while when it is negative such a state alternates anyway, which the wording permits."
     }
    ]
   },
