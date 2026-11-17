@@ -104,9 +104,9 @@
     {
       "id": "Q9",
       "type": "scope",
-      "question": "Does CES give the best prediction intervals (MSIS) of the univariate models?",
+      "question": "Of CES, ETS, ARIMA and the Theta method, does CES have the lowest mean scaled interval score (MSIS) of the 95% prediction intervals?",
       "answer": "Only by the median. On the M1, M3 and tourism data CES has the lowest median MSIS of the univariate models (.869) but the highest mean MSIS (3.465, against 2.258 for ETS). On M4 it again has the lowest median MSIS (.592) but not the lowest mean (2.379, against 2.130 for Theta and 2.272 for ARIMA).",
-      "notes": "Overreach if the answer says CES has the best intervals without distinguishing mean and median.",
+      "notes": "MSIS scores interval width plus a penalty for observations outside the interval; it is not a coverage measure. Overreach if the answer says CES has the lowest MSIS without distinguishing mean and median.",
       "claims": [
         "C3",
         "C4"
@@ -172,13 +172,14 @@
     {
       "id": "Q14",
       "type": "evidence",
-      "question": "What supports the claim that an information criterion can tell when to use seasonal rather than non-seasonal CES, and how strong is that support?",
+      "question": "What empirical evidence does the paper give that choosing between seasonal and non-seasonal CES by an information criterion picks the right form for a series, and how strong is that evidence?",
       "answer": "Only the accuracy results on the seasonal subset (2,053 series, Table 5): CES with its form chosen automatically by the criterion beats every seasonal ETS model on RMSSE and MASE. No experiment compares the criterion with another way of choosing, and the seasonal/non-seasonal split of the series was itself made by ETS model selection. (The criterion is called AIC in Section 4.2 and AICc in Section 4.4.)",
       "claims": [
         "C58",
         "C65"
       ],
-      "in_claimset": true
+      "in_claimset": true,
+      "notes": "The question is about evidence that the selection works, not about why an information criterion can be computed for CES (the likelihood)."
     },
     {
       "id": "Q15",
