@@ -3,144 +3,225 @@
     "doi-10-1002-nav-22074"
   ],
   "author": "Ivan Svetunkov",
-  "written": "",
+  "written": "2026-11-17",
   "title_for_the_author": "Complex exponential smoothing",
   "how": "Write each question and its reference answer from the paper, not from the claimset; add `claims` (the claims that answer it) and `in_claimset` only after writing it. Delete this key and `title_for_the_author`, then rename the file without the leading underscore to include it.",
   "questions": [
     {
       "id": "Q1",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "On the M1, M3 and tourism competition data, what were the mean and median RMSSE of CES, and how did they compare with ETS, ARIMA and the Theta method?",
+      "answer": "Over the 5,315 series of the M1, M3 and tourism data, CES had mean RMSSE 1.959 and median RMSSE 1.170, the lowest of the univariate models: ETS 1.970 and 1.181, ARIMA 2.134 and 1.271, Theta 1.965 and 1.238 (Table 1). The combination SCUM was lower still (1.867 and 1.128).",
+      "notes": "Must give the CES values and say it was lowest among the univariate models; must not say CES beat SCUM.",
+      "claims": [
+        "C3"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q2",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "On the M4 competition data, how did CES compare with ETS, ARIMA and the Theta method on MASE and RMSSE, and were any series left out?",
+      "answer": "CES had the lowest mean MASE (2.921) and RMSSE (2.339) of the univariate models, and the lowest medians (1.803 and 1.529) (Table 3). Ten series (19357, 43160, 51552, 62738, 92370, 92435, 93159, 93196, 93412, 93491) were excluded because influential outliers and structural breaks made ETS break down.",
+      "notes": "Must mention the exclusion of 10 series and why.",
+      "claims": [
+        "C4",
+        "C12"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q3",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What complex smoothing parameter did CES estimate on M3 series 1664, and what did the authors conclude from it?",
+      "answer": "α0 + iα1 = 0.99999 + 0.99884i. It satisfies the stationarity condition (11), so the model produces a stationary trajectory: CES identified the series as stationary, in agreement with graphical analysis and the ADF and KPSS tests. The implied ARMA is stationary with long memory, and all holdout observations lay inside the 95% prediction interval.",
+      "notes": "Must give the value and that it indicates a stationary model.",
+      "claims": [
+        "C32"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q4",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Why is the mean MSIS of CES on the M1, M3 and tourism data so much higher than its median MSIS?",
+      "answer": "Mostly because of one M1 series (number 47) on which CES failed to identify the trend: its MSIS was 523.034 against 25.590 for ETS. All models underforecast an unpredictable increase in the holdout, but ETS selected ETS(M,N,N) with a high smoothing parameter (0.881), whose prediction interval exploded and happened to cover it better than the more conservative CES interval.",
+      "notes": "Must name the single M1 series and the two MSIS values.",
+      "claims": [
+        "C3"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q5",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Under what value of the complex smoothing parameter does CES become equivalent to ETS(A,N,N), and how do its parameters then relate to the smoothing parameter of simple exponential smoothing?",
+      "answer": "When α1 = 1, CES is equivalent to ETS(A,N,N). With α1 close to 1, α0 − 1 in CES corresponds to α in SES (for example α0 = 1.24 corresponds to α = 0.24); α0 near 1 corresponds to a stationary series (SES α near 0) and α0 near 2 to a random walk.",
+      "notes": "Must give α1 = 1 and α0 − 1 ↔ α.",
+      "claims": [
+        "C20",
+        "C44",
+        "C45",
+        "C46"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q6",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What ARMA model underlies non-seasonal CES, and what are its coefficients?",
+      "answer": "ARMA(2,2), with φ1 = 2 − α0, φ2 = α0 + α1 − 2, θ1,1 = 2 − 2α0 + α1 and θ1,2 = 3α0 + α1 − 2 − α0² − α1² (equation 17, Appendix B). The AR and MA coefficients are linked through the same two parameters.",
+      "notes": "Must say ARMA(2,2); the coefficients should match.",
+      "claims": [
+        "C5"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q7",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Does CES forecast more accurately than the damped trend model ETS(A,Ad,N) on non-seasonal series?",
+      "answer": "No, not in general. On the 3,262 non-seasonal series (Table 4), ETS(A,Ad,N) has lower mean RMSSE (2.502 vs 2.534), mean and median MASE (2.907 vs 2.949; 1.863 vs 1.880) and mean and median MSIS (3.769 vs 4.269; .854 vs .863); CES is better only on median RMSSE (1.654 vs 1.660). The paper says CES lags behind the damped trend model on mean error measures and is second best in most cases.",
+      "notes": "Overreach if the answer says CES beats all ETS models on non-seasonal data.",
+      "claims": [
+        "C38"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q8",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Are the accuracy advantages of CES over ETS, ARIMA and the Theta method on the M1, M3 and tourism data statistically significant?",
+      "answer": "Not in all cases. In Nemenyi tests at the 5% level CES has the best mean rank of the univariate models on RMSSE and MASE, but the differences are not all statistically significant. Only SCUM is significantly better than all the other approaches on every measure.",
+      "notes": "Overreach if the answer says CES is significantly better than all univariate benchmarks.",
+      "claims": [
+        "C34",
+        "C53",
+        "C35"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q9",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Does CES give the best prediction intervals (MSIS) of the univariate models?",
+      "answer": "Only by the median. On the M1, M3 and tourism data CES has the lowest median MSIS of the univariate models (.869) but the highest mean MSIS (3.465, against 2.258 for ETS). On M4 it again has the lowest median MSIS (.592) but not the lowest mean (2.379, against 2.130 for Theta and 2.272 for ARIMA).",
+      "notes": "Overreach if the answer says CES has the best intervals without distinguishing mean and median.",
+      "claims": [
+        "C3",
+        "C4"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q10",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Do the paper's results apply to CES with a multiplicative error term?",
+      "answer": "No. The paper builds CES on an additive error term only; a multiplicative error version is named as future research and is not developed or evaluated.",
+      "notes": "Overreach if the answer extends the results to multiplicative errors.",
+      "claims": [
+        "C60",
+        "C16"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q11",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "On seasonal series, does CES outperform every seasonal ETS model on every error measure?",
+      "answer": "No. On the 2,053 seasonal series (Table 5) CES has the lowest mean and median RMSSE and MASE and the lowest median MSIS, but not the lowest mean MSIS: ETS(M,Md,M) ranks first (1.934 against 2.188 for CES), and ETS(A,N,A), ETS(A,Ad,A) and ETS(M,M,M) are also below CES on mean MSIS.",
+      "notes": "Must note the mean MSIS exception.",
+      "claims": [
+        "C54",
+        "C55",
+        "C56",
+        "C57"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q12",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What evidence does the paper give that including CES improves the SCUM combination, and is there any measure on which it does not?",
+      "answer": "SCUM (with CES) is compared with SCUM(noCES). On the M1, M3 and tourism data SCUM has lower mean and median RMSSE and MASE (e.g. mean RMSSE 1.867 vs 1.911) and lower median MSIS, and in Nemenyi tests it is significantly better than every other approach, SCUM(noCES) included. On M4 SCUM is lower on every reported measure. The exception is mean MSIS on the M1, M3 and tourism data, where SCUM (2.333) is worse than SCUM(noCES) (2.223).",
+      "notes": "Must mention the mean MSIS exception.",
+      "claims": [
+        "C11",
+        "C12",
+        "C35"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q13",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What supports the claim that CES can model both stationary and non-stationary series without a model selection step, and what limits that support?",
+      "answer": "The eigenvalues of the CES transition matrix show that the model is stationary or not depending on α0 and α1 (condition 11; non-stationary when α1 > 1), passing between the two without a switch. Two M3 series illustrate it: on a stationary series (1664) CES estimated a stationary parameter, on a trended one (2721) a non-stationary one. The illustration is two series only; stationarity is not imposed, and one region (0 < α1 < 1 − α0) gives a diverging harmonic trajectory of no use in forecasting. The choice between seasonal and non-seasonal CES still needs an information criterion.",
+      "claims": [
+        "C1",
+        "C2",
+        "C17",
+        "C19",
+        "C30",
+        "C32",
+        "C33",
+        "C10"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q14",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What supports the claim that an information criterion can tell when to use seasonal rather than non-seasonal CES, and how strong is that support?",
+      "answer": "Only the accuracy results on the seasonal subset (2,053 series, Table 5): CES with its form chosen automatically by the criterion beats every seasonal ETS model on RMSSE and MASE. No experiment compares the criterion with another way of choosing, and the seasonal/non-seasonal split of the series was itself made by ETS model selection. (The criterion is called AIC in Section 4.2 and AICc in Section 4.4.)",
+      "claims": [
+        "C58",
+        "C65"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q15",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "How is the stability region of CES derived, and is it derived for seasonal CES?",
+      "answer": "For non-seasonal CES it is derived from the invertibility conditions of the underlying ARMA(2,2), which correspond to stability of the state-space model (Appendix D), giving three inequalities (15): (α0 − 2.5)² + α1² > 1.25, (α0 − 0.5)² + (α1 − 1)² > 0.25 and (α0 − 1.5)² + (α1 − 0.5)² < 1.5. For seasonal CES it is not derived: stability is checked numerically through the eigenvalues of the discount matrix (21), as the restrictions cannot be easily analysed.",
+      "notes": "Must say the seasonal restrictions are not derived.",
+      "claims": [
+        "C23",
+        "C47"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q16",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How long did CES take to estimate per series compared with ETS and auto.ssarima?",
+      "in_claimset": false
     },
     {
       "id": "Q17",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How did CES perform on the hourly series of the M4 competition?",
+      "in_claimset": false
     },
     {
       "id": "Q18",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How did CES compare with machine learning methods such as gradient boosting or neural networks in the empirical evaluation?",
+      "in_claimset": false
     },
     {
       "id": "Q19",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "What were the typical (for example median) estimated values of α0 and α1 across the M3 series?",
+      "in_claimset": false
     },
     {
       "id": "Q20",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "What share of the holdout observations fell inside the 95% prediction intervals of CES across the M1, M3 and tourism series?",
+      "in_claimset": false
     }
-  ]
+  ],
+  "drafted": "Questions and reference answers drafted from the paper text by an AI assistant, for the author to audit and amend; claims and in_claimset set afterwards from the gold claimset."
 }
