@@ -239,3 +239,17 @@ class TestChatCompletions(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class RenderCommandTest(unittest.TestCase):
+    """A claimset published on EntryLib (its paper has a version) is rendered with --published; a submission file is
+    not."""
+
+    def test_published_and_submission(self):
+        with tempfile.TemporaryDirectory() as root:
+            os.makedirs(os.path.dirname(rs.claimset_path("a", root)), exist_ok=True)
+            for name, paper in (("a", {"title": "T", "id": "entrylib:2026.000001", "version": 1}), ("b", {"title": "T"})):
+                with open(rs.claimset_path(name, root), "w") as f:
+                    json.dump({"paper": paper}, f)
+            self.assertEqual(rs.render_command("a", root)[-1], "--published")
+            self.assertNotIn("--published", rs.render_command("b", root))

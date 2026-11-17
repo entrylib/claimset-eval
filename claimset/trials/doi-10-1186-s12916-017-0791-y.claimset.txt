@@ -25,16 +25,16 @@ C3 [causal; secondary; support: empirical_quant E1 (E1.R4); limitations L4]
 EVIDENCE
 E1 [quant; design experiment; data_origin primary; n 67; preregistered] SMILES: 12-week randomised trial of dietary support against social support, 67 adults with major depression, two sites in Victoria, Australia.
   setup: studied D1, D2; cases D3; procedure D7; lens D4, D5, D6
-  E1.R1 D4 = -7.1 1 95% confidence interval -10.4 to -3.9 n 67 {D8: D1, comparator: D2, statistic: difference in change from baseline, MMRM}
-  E1.R2 D4 = -1.16 1 95% confidence interval -1.73 to -0.59 {D8: D1, comparator: D2, statistic: Cohen's d}
-  E1.R3 D5 = 4.1 95% confidence interval 2.3 to 27.8 {D8: D1, comparator: D2, statistic: number needed to treat}
-  E1.R4 D6 = -2.3 95% confidence interval -4.4 to -0.2 {D8: D1, comparator: D2, statistic: difference in change from baseline}
+  E1.R1 D4 (difference, in change from baseline, MMRM) = -7.1 1 95% confidence interval -10.4 to -3.9 n 67 {D8: D1, comparator: D2}
+  E1.R2 D4 (standardised_mean_difference, Cohen's d) = -1.16 1 95% confidence interval -1.73 to -0.59 {D8: D1, comparator: D2}
+  E1.R3 D5 (nnt) = 4.1 95% confidence interval 2.3 to 27.8 {D8: D1, comparator: D2}
+  E1.R4 D6 (difference, in change from baseline) = -2.3 95% confidence interval -4.4 to -0.2 {D8: D1, comparator: D2}
   E1.T1 Remission at 12 weeks by arm, among completers
-  | row | D8 | participants in remission (1) | completers (1) | D5 {statistic: proportion} (%) |
+  | row | D8 | participants in remission (count) (1) | completers (count) (1) | D5 (proportion) (%) |
   | r1 | D1 | 10 | 31 | 32.3 |
   | r2 | D2 | 2 | 25 | 8 |
   E1.T2 Participant flow: randomised and completing by arm
-  | row | D8 | randomised (1) | completed 12 weeks (1) |
+  | row | D8 | randomised (count) (1) | completed 12 weeks (count) (1) |
   | r1 | D1 | 33 | 31 |
   | r2 | D2 | 34 | 25 |
 

@@ -1,0 +1,2509 @@
+{
+ "schema_version": "0.42",
+ "paper": {
+  "id": "entrylib:2026.000006",
+  "correction_reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6.",
+  "title": "Staying Positive: Challenges and Solutions in Using Pure Multiplicative ETS Models",
+  "published_as": {
+   "id_type": "doi",
+   "id": "10.1093/imaman/dpad028"
+  },
+  "summary": "Pure multiplicative exponential smoothing (ETS) models are widely used for strictly positive time series, yet standard implementations assume normally distributed errors that can produce negative forecasts and unrealistic prediction intervals on low-volume data. This work shows that conventional point forecasts from pure multiplicative ETS models generally underestimate conditional expectations, with the bias increasing as the damping parameter, trend smoothing parameter, error variance, or forecast horizon grows. To preserve positivity, we formulate pure multiplicative ETS models with Log-Normal, Gamma, and Inverse Gaussian error distributions, deriving their concentrated log-likelihoods, scale estimators, and conditional moments. Simulation experiments and an electric vehicle charging case study demonstrate that information criteria reliably select among these distributions, and that positive distributions prevent negative prediction intervals without requiring transformation to logarithmic ETS models.",
+  "licence": "CC-BY-4.0",
+  "classification": {
+   "keywords": [
+    "exponential smoothing",
+    "state space models",
+    "multiplicative error models",
+    "positive time series forecasting",
+    "predictive distributions"
+   ],
+   "subfield": "openalex:subfields/1803",
+   "topics": [
+    "openalex:T11918",
+    "openalex:T10282",
+    "openalex:T10466"
+   ]
+  },
+  "declarations": {
+   "funding": [],
+   "competing_interests": "None declared."
+  },
+  "contributions": [
+   "C1",
+   "C3",
+   "C4",
+   "C5",
+   "C9",
+   "C10"
+  ],
+  "highlights": [
+   "C1",
+   "C4",
+   "C5",
+   "C9",
+   "C10"
+  ],
+  "autonomy": "human_assisted",
+  "contribution_record": "partial",
+  "origin": "native",
+  "version": 2,
+  "date": "2026-11-13",
+  "status": "corrected",
+  "previous_version": "entrylib:2026.000006@v1",
+  "status_notice": {
+   "date": "2026-11-13",
+   "reason_code": "correction",
+   "statement": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6.",
+   "issued_by": "Ivan Svetunkov (ORCID 0000-0001-7826-0281)"
+  },
+  "changes": [
+   {
+    "op": "replace",
+    "path": "/artefacts/3/uri",
+    "value": "https://entrylib.org/p/2026.000006/v2/files/files/simulation-results.csv",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/artefacts/3/version",
+    "value": "sha256:2dbe10316b91c825b5294044bac70a581d6113ab50ee84504bda9bbc2d56e88f",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/2/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Re-derived Eqs. (2.1)-(2.9) via logarithmic state-space expansion and Jensen's inequality; confirmed ordering holds for non-negative persistence vector g."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/2/verification",
+    "value": "agent_checked",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/3/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Verified Eqs. (2.6)-(2.11) for h=1, h<=m without trend, and ETS(M,N,N) product expectation."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/3/relations",
+    "value": [
+     {
+      "type": "extends",
+      "target": "978-3-540-71918-2",
+      "id_type": "isbn",
+      "locator": "Chapter 2, pp. 21-23",
+      "note": "Identifies the exact boundary cases where conventional point forecasts coincide with conditional expectations."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/3/verification",
+    "value": "agent_checked",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/4/assessments",
+    "value": [
+     {
+      "by": "author",
+      "strength": "high",
+      "rationale": "Exploratory simulation across 10,000 Monte Carlo iterations and a broad parameter grid with 534,884 degrees of freedom and $R^2 = 0.986$."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/4/depends_on",
+    "value": [
+     "C1",
+     "C2"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/4/support",
+    "value": [
+     {
+      "kind": "simulation",
+      "evidence": "E2",
+      "artefacts": [
+       "A3"
+      ],
+      "results": [
+       "E2.T1.r2",
+       "E2.T1.r3",
+       "E2.T1.r4",
+       "E2.T1.r5",
+       "E2.T1.r6"
+      ]
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/5/assessments",
+    "value": [
+     {
+      "by": "author",
+      "strength": "high",
+      "rationale": "Exploratory methodological derivation directly established by deriving valid parameter restrictions and scalability properties on $(0, \\infty)$."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/5/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Verified support (0, infinity), unit-mean parameter restrictions in Table 2, and scalability properties in Eq. (4.1)."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/5/depends_on",
+    "value": [
+     "C8"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/5/limitations",
+    "value": [
+     "L6"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/5/relations",
+    "value": [
+     {
+      "type": "extends",
+      "target": "10.1111/j.1467-842X.2009.00555.x",
+      "id_type": "doi",
+      "locator": "Section 2",
+      "note": "Implements Log-Normal, Gamma, and Inverse Gaussian distributions directly within original $ETS(M,*,*)$ rather than sidestepping the taxonomy via logarithmic ETS."
+     },
+     {
+      "type": "supports",
+      "target": "entrylib:2026.000003@v4#C17",
+      "id_type": "claimset",
+      "self": true,
+      "note": "Provides the conventional multiplicative ETS formulation with Gamma, Log-Normal, and Inverse Gaussian errors subsequently extended to unobserved periods in entrylib:2026.000003."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/5/verification",
+    "value": "agent_checked",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/6/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Verified concentrated log-likelihood expressions in Table 3 from the respective PDFs under unit-mean parameter restrictions."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/6/depends_on",
+    "value": [
+     "C6",
+     "C7"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/6/relations",
+    "value": [
+     {
+      "type": "extends",
+      "target": "978-3-540-71918-2",
+      "id_type": "isbn",
+      "locator": "p. 68",
+      "note": "Generalises the Normal multiplicative ETS log-likelihood to Inverse Gaussian, Log-Normal, and Gamma distributions."
+     },
+     {
+      "type": "supports",
+      "target": "entrylib:2026.000003@v4#C17",
+      "id_type": "claimset",
+      "self": true,
+      "note": "Establishes the full-sample concentrated log-likelihoods for multiplicative ETS distributions later generalised to intermittent/missing-data settings in entrylib:2026.000003."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/6/verification",
+    "value": "agent_checked",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/7/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Re-derived first-order conditions with respect to sigma^2 from Table 3 log-likelihoods for Normal, Inverse Gaussian, and Gamma distributions."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/7/verification",
+    "value": "agent_checked",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/8/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Verified that differentiating the Table 3 Log-Normal log-likelihood yields the corrected estimator in entrylib:2026.000003@v4#C7."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/8/verification",
+    "value": "agent_checked",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/9/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Verified product expectation and variance in Eq. (4.5) and positivity bound alpha in [0, 1] in Eq. (4.7)."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/9/relations",
+    "value": [
+     {
+      "type": "extends",
+      "target": "978-3-540-71918-2",
+      "id_type": "isbn",
+      "locator": "Chapter 6",
+      "note": "Extends the closed-form ETS(M,N,N) conditional mean and variance formulas from Normal errors to Inverse Gaussian, Log-Normal, and Gamma distributions."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/9/statement",
+    "value": "Among pure multiplicative [[D1:ETS(M,*,*)]] models, [[D2:ETS(M,N,N)]] is the only model with closed-form conditional $h$-steps-ahead mean $E(l_{t+h}|t)=l_t$ and variance $V(l_{t+h}|t)=l_t^2((1+\\alpha^2\\sigma^2)^h-1)$ across [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], and [[D5:Gamma error distribution]], requiring $\\alpha \\in [0,1]$ to ensure positivity of the level.",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/9/verification",
+    "value": "agent_checked",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/10/assessments",
+    "value": [
+     {
+      "by": "author",
+      "strength": "moderate",
+      "rationale": "Exploratory simulation evaluated across 10,000 replications for five DGPs, though tested at a single parameterisation and noise level ($\\sigma = 0.1$)."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/10/depends_on",
+    "value": [
+     "C4",
+     "C5",
+     "C11"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/claims/10/relations",
+    "value": [
+     {
+      "type": "extends",
+      "target": "10.1080/03610927808837599",
+      "id_type": "doi",
+      "locator": "Section 1",
+      "note": "Applies AICc model selection across competing positive error distributions within pure multiplicative ETS models."
+     },
+     {
+      "type": "supports",
+      "target": "entrylib:2026.000003@v4#C17",
+      "id_type": "claimset",
+      "self": true,
+      "note": "Evaluates fully observed pure multiplicative ETS models across Gamma, Log-Normal, and Inverse Gaussian distributions, whereas entrylib:2026.000003#C17 derives moment equations under unobserved periods."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/10/support",
+    "value": [
+     {
+      "kind": "simulation",
+      "evidence": "E5",
+      "artefacts": [
+       "A3"
+      ],
+      "results": [
+       "E5.T1.r1",
+       "E5.T1.r2",
+       "E5.T1.r3",
+       "E5.T1.r4",
+       "E5.T1.r6",
+       "E5.T2.r1",
+       "E5.T2.r2",
+       "E5.T2.r3",
+       "E5.T2.r4",
+       "E5.T2.r6"
+      ]
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/11/assessments",
+    "value": [
+     {
+      "by": "author",
+      "strength": "moderate",
+      "rationale": "Exploratory simulation consistent across all five DGPs, though evaluated at a single noise level where logarithmic transformation remains well-behaved."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/11/relations",
+    "value": [
+     {
+      "type": "extends",
+      "target": "10.1111/j.1467-842X.2009.00555.x",
+      "id_type": "doi",
+      "locator": "Section 4",
+      "note": "Benchmarks Akram's logarithmic ETS model against pure multiplicative ETS with positive error distributions across full predictive distributions."
+     },
+     {
+      "type": "supports",
+      "target": "entrylib:2026.000003@v4#C17",
+      "id_type": "claimset",
+      "self": true,
+      "note": "Compares predictive distributions of conventional multiplicative ETS against logarithmic ETS on complete series, whereas entrylib:2026.000003#C17 studies moment propagation with unobserved periods."
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/11/statement",
+    "value": "Across all five data-generating processes in [[D15:Simulation experiment 2 synthetic series]], [[D10:Akram's log-ETS model]] achieves lower mean [[D11:scaled pinball score (SPS)]] over the 48-step horizon than pure multiplicative [[D3:ETS(M,Md,M)]] models with [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], [[D5:Gamma error distribution]], or [[D9:AICc]]-selected distributions, driven by lower pinball loss in the central quantiles ($\\tau \\in [0.2, 0.8]$) and similar performance in the distribution tails ($\\tau < 0.2$ and $\\tau > 0.8$).",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/11/support",
+    "value": [
+     {
+      "kind": "simulation",
+      "evidence": "E5",
+      "artefacts": [
+       "A3"
+      ],
+      "results": [
+       "E5.T1.r1",
+       "E5.T1.r2",
+       "E5.T1.r3",
+       "E5.T1.r4",
+       "E5.T1.r5",
+       "E5.T1.r6"
+      ]
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/12/scope/conditions",
+    "value": [
+     "511 daily EV charging observations (holdout 14) and low-volume initial 49 observations (holdout 14) at 95% prediction interval level"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/12/statement",
+    "value": "On the [[D16:Daily EV charging dataset]], [[D3:ETS(M,Md,M)]] with a [[D5:Gamma error distribution]] achieves a lower [[D9:AICc]] ($6398.57$) than additive [[D12:ETS(A,Ad,A)]] with [[D7:Normal error distribution]] ($6418.296$), and on the initial $49$-observation low-volume subsample generates strictly positive $95\\%$ prediction intervals unlike the [[D7:Normal error distribution]] model.",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/contributors/0/positions",
+    "value": [
+     "guarantor",
+     "contributor"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/contributors/1/orcid",
+    "value": "0000-0001-5036-5137",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/contributors/1/positions",
+    "value": [
+     "coauthor",
+     "contributor"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/contributors/3",
+    "value": {
+     "id": "P4",
+     "type": "agent",
+     "name": "Gemini",
+     "label": "proof checking",
+     "positions": [
+      "contributor"
+     ],
+     "models": [
+      {
+       "model": "M1",
+       "role": "sole"
+      }
+     ],
+     "credit_roles": [
+      "validation"
+     ],
+     "ai_tasks": [
+      {
+       "task": "review",
+       "extent": "full"
+      }
+     ],
+     "tools": [
+      "none"
+     ],
+     "record_source": "self_reported"
+    },
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/definitions/0/definition",
+    "value": "Pure multiplicative exponential smoothing state space model family written in logarithmic state space form as $$\\begin{aligned} \\log y_t &= w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t) \\\\ \\log v_t &= F \\log v_{t-l} + \\log(1_k + g \\epsilon_t) \\end{aligned}$$ with conventional multi-step point forecast $$\\hat{y}_{t+h} = \\exp\\left((w_1' F_1^{h-1} + w_m' F_m^{\\lceil h/m \\rceil - 1}) \\log v_t\\right).$$",
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/evidence/0/steps",
+    "value": [
+     {
+      "id": "E1.1",
+      "statement": "Reformulate pure multiplicative ETS in logarithmic state space form: $\\log y_t = w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t)$ and $\\log v_t = F \\log v_{t-l} + \\log(1_k + g \\epsilon_t)$.",
+      "by": [
+       "D1",
+       "C12"
+      ],
+      "rule": "logarithmic_transformation"
+     },
+     {
+      "id": "E1.2",
+      "statement": "Expand $h$-steps-ahead recursion into non-seasonal and seasonal components and take conditional expectation $E(\\log y_{t+h}|t)$.",
+      "by": [
+       "E1.1",
+       "C12"
+      ],
+      "rule": "recursive_substitution"
+     },
+     {
+      "id": "E1.3",
+      "statement": "Apply Jensen's inequality and non-negativity of $g$ to show point forecast $\\hat{y}_{t+h} \\le \\tilde{y}_{t+h} \\le \\mu_{y,t+h}$, with equality only at $h=1$, $h \\le m$ without trend, or for $ETS(M,N,N)$.",
+      "by": [
+       "E1.2",
+       "C13"
+      ],
+      "rule": "jensens_inequality"
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/evidence/2/steps",
+    "value": [
+     {
+      "id": "E3.1",
+      "statement": "Impose $E(1 + \\epsilon_t) = 1$ on each distribution: $\\mu = 1$ for Normal and Inverse Gaussian, $\\mu = -\\sigma^2 / 2$ for Log-Normal, and $\\xi = \\sigma^{-2}$ for Gamma.",
+      "by": [
+       "D4",
+       "D5",
+       "D6",
+       "D7",
+       "C12"
+      ],
+      "rule": "moment_constraint"
+     },
+     {
+      "id": "E3.2",
+      "statement": "Substitute parameter restrictions into probability density functions and Jacobian terms to obtain concentrated log-likelihood functions.",
+      "by": [
+       "E3.1",
+       "D1"
+      ],
+      "rule": "likelihood_derivation"
+     },
+     {
+      "id": "E3.3",
+      "statement": "Differentiate log-likelihoods with respect to $\\sigma^2$ to obtain closed-form scale MLEs for Normal and Inverse Gaussian, method-of-moments estimator for Gamma, and the corrected Log-Normal scale MLE referenced in `entrylib:2026.000003@v4#C7`.",
+      "by": [
+       "E3.2",
+       "B2"
+      ],
+      "rule": "maximum_likelihood_estimation"
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/evidence/3/steps",
+    "value": [
+     {
+      "id": "E4.1",
+      "statement": "Expand level recursion $l_{t+h} = l_t \\prod_{j=1}^h (1 + \\alpha \\epsilon_{t+j})$ under i.i.d. unit-mean errors to derive $E(l_{t+h}|t) = l_t$ and $V(l_{t+h}|t) = l_t^2((1 + \\alpha^2 \\sigma^2)^h - 1)$.",
+      "by": [
+       "D2",
+       "C12"
+      ],
+      "rule": "independent_product_moments"
+     },
+     {
+      "id": "E4.2",
+      "statement": "Enforce positivity of level update $1 + \\alpha \\epsilon_t > 0$ for all $1 + \\epsilon_t > 0$ to establish $\\alpha \\in [0, 1]$.",
+      "by": [
+       "E4.1",
+       "C13"
+      ],
+      "rule": "positivity_bound"
+     }
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/evidence/4/setup/lens",
+    "value": [
+     "D9",
+     "D11",
+     "D17",
+     "D18"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "replace",
+    "path": "/evidence/4/setup/studied",
+    "value": [
+     "D3",
+     "D7",
+     "D6",
+     "D5",
+     "D4",
+     "D10"
+    ],
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/limitations/5",
+    "value": {
+     "id": "L6",
+     "category": "model_specification",
+     "statement": "Multi-step conditional predictive distributions for $ETS(M,*,*)$ models with Log-Normal, Gamma, or Inverse Gaussian errors have no closed form because none of these distributions is closed under both convolution and product, requiring simulation.",
+     "affects": [
+      "C4"
+     ],
+     "impact": "reduces_transferability",
+     "mitigation": "none"
+    },
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   },
+   {
+    "op": "add",
+    "path": "/paper/published_as",
+    "value": {
+     "id_type": "doi",
+     "id": "10.1093/imaman/dpad028"
+    },
+    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+   }
+  ]
+ },
+ "contributors": [
+  {
+   "id": "P1",
+   "type": "human",
+   "name": "Ivan Svetunkov",
+   "orcid": "0000-0001-7826-0281",
+   "positions": [
+    "guarantor",
+    "contributor"
+   ],
+   "credit_roles": [
+    "conceptualization",
+    "formal_analysis",
+    "methodology",
+    "software",
+    "writing_original_draft",
+    "writing_review_editing"
+   ]
+  },
+  {
+   "id": "P2",
+   "type": "human",
+   "name": "John E. Boylan",
+   "orcid": "0000-0001-5036-5137",
+   "positions": [
+    "coauthor",
+    "contributor"
+   ],
+   "credit_roles": [
+    "conceptualization",
+    "methodology",
+    "writing_review_editing"
+   ]
+  },
+  {
+   "id": "P3",
+   "type": "agent",
+   "name": "Gemini",
+   "label": "claimset preparation",
+   "positions": [
+    "author"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "credit_roles": [
+    "writing_original_draft"
+   ],
+   "ai_tasks": [
+    {
+     "task": "json_preparation",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "code_execution"
+   ],
+   "record_source": "self_reported"
+  },
+  {
+   "id": "P4",
+   "type": "agent",
+   "name": "Gemini",
+   "label": "proof checking",
+   "positions": [
+    "contributor"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "credit_roles": [
+    "validation"
+   ],
+   "ai_tasks": [
+    {
+     "task": "review",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "none"
+   ],
+   "record_source": "self_reported"
+  }
+ ],
+ "models": [
+  {
+   "id": "M1",
+   "provider": "Google",
+   "name": "Gemini",
+   "version": "2026",
+   "identifier": "gemini",
+   "weights": "api_only",
+   "accessed": "2026-11-12"
+  }
+ ],
+ "references": [
+  {
+   "id": "B1",
+   "target": "10.1093/imaman/dpad028",
+   "id_type": "doi"
+  },
+  {
+   "id": "B2",
+   "target": "entrylib:2026.000003@v4#C7",
+   "id_type": "claimset"
+  },
+  {
+   "id": "B3",
+   "target": "978-3-540-71918-2",
+   "id_type": "isbn"
+  },
+  {
+   "id": "B4",
+   "target": "10.1111/j.1467-842X.2009.00555.x",
+   "id_type": "doi"
+  },
+  {
+   "id": "B6",
+   "target": "10.1080/03610927808837599",
+   "id_type": "doi"
+  },
+  {
+   "id": "B7",
+   "target": "10.1201/9781003452652",
+   "id_type": "doi"
+  }
+ ],
+ "definitions": [
+  {
+   "id": "D1",
+   "term": "ETS(M,*,*)",
+   "kind": "method",
+   "definition": "Pure multiplicative exponential smoothing state space model family written in logarithmic state space form as $$\\begin{aligned} \\log y_t &= w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t) \\\\ \\log v_t &= F \\log v_{t-l} + \\log(1_k + g \\epsilon_t) \\end{aligned}$$ with conventional multi-step point forecast $$\\hat{y}_{t+h} = \\exp\\left((w_1' F_1^{h-1} + w_m' F_m^{\\lceil h/m \\rceil - 1}) \\log v_t\\right).$$",
+   "source": "B7"
+  },
+  {
+   "id": "D2",
+   "term": "ETS(M,N,N)",
+   "kind": "method",
+   "broader": [
+    "D1"
+   ],
+   "definition": "Pure multiplicative exponential smoothing model with no trend and no seasonality, defined by $$\\begin{aligned} y_t &= l_{t-1}(1 + \\epsilon_t) \\\\ l_t &= l_{t-1}(1 + \\alpha \\epsilon_t) \\end{aligned}$$ where $l_t$ is the level, $\\alpha \\in [0,1]$ is the smoothing parameter, and $1+\\epsilon_t$ is the positive multiplicative error term.",
+   "source": "B3"
+  },
+  {
+   "id": "D3",
+   "term": "ETS(M,Md,M)",
+   "kind": "method",
+   "broader": [
+    "D1"
+   ],
+   "definition": "Pure multiplicative exponential smoothing model with damped multiplicative trend and multiplicative seasonality, defined by $$\\begin{aligned} y_t &= l_{t-1} b_{t-1}^{\\phi} s_{t-m} (1 + \\epsilon_t) \\\\ l_t &= l_{t-1} b_{t-1}^{\\phi} (1 + \\alpha \\epsilon_t) \\\\ b_t &= b_{t-1}^{\\phi} (1 + \\beta \\epsilon_t) \\\\ s_t &= s_{t-m} (1 + \\gamma \\epsilon_t) \\end{aligned}$$ where $\\phi$ is the dampening parameter, $\\alpha, \\beta, \\gamma$ are smoothing parameters, and $m$ is the seasonal lag.",
+   "source": "B3"
+  },
+  {
+   "id": "D4",
+   "term": "Log-Normal error distribution",
+   "kind": "concept",
+   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = -\\sigma^2/2$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = e^{\\sigma^2} - 1$."
+  },
+  {
+   "id": "D5",
+   "term": "Gamma error distribution",
+   "kind": "concept",
+   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with shape $\\xi = \\sigma^{-2}$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = \\sigma^2$."
+  },
+  {
+   "id": "D6",
+   "term": "Inverse Gaussian error distribution",
+   "kind": "concept",
+   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = 1$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = \\sigma^2$."
+  },
+  {
+   "id": "D7",
+   "term": "Normal error distribution",
+   "kind": "concept",
+   "definition": "Classical Gaussian distribution on $(-\\infty, \\infty)$ applied to $1+\\epsilon_t$ with mean $\\mu = 1$ and variance $\\sigma^2$.",
+   "source": "B3"
+  },
+  {
+   "id": "D8",
+   "term": "percentage difference (PD)",
+   "kind": "variable",
+   "unit": "1",
+   "definition": "Relative deviation of the conventional point forecast $\\hat{y}_{t+h}$ from the conditional expectation $\\mu_{y,t+h}$, defined as $$PD = \\frac{\\mu_{y,t+h} - \\hat{y}_{t+h}}{\\mu_{y,t+h}}$$ lying in $[0, 1)$."
+  },
+  {
+   "id": "D9",
+   "term": "AICc",
+   "kind": "variable",
+   "unit": "1",
+   "definition": "Corrected Akaike Information Criterion used to select among ETS component structures and error distributions.",
+   "source": "B6"
+  },
+  {
+   "id": "D10",
+   "term": "Akram's log-ETS model",
+   "kind": "method",
+   "definition": "Additive error ETS model $ETS(A,Ad,A)$ with Normal errors applied to the natural logarithms of strictly positive time series and exponentiated back to the original scale.",
+   "source": "B4"
+  },
+  {
+   "id": "D11",
+   "term": "scaled pinball score (SPS)",
+   "kind": "variable",
+   "unit": "1",
+   "definition": "Quantile forecast accuracy measure scaled by the in-sample mean $\\bar{y}$, defined for probability level $\\tau$ over horizon $h$ as $$SPS = \\frac{1}{\\bar{y}} \\left( (1-\\tau) \\sum_{y_{t+j} < \\hat{q}_{\\tau,t+j}} (\\hat{q}_{\\tau,t+j} - y_{t+j}) + \\tau \\sum_{y_{t+j} \\ge \\hat{q}_{\\tau,t+j}} (y_{t+j} - \\hat{q}_{\\tau,t+j}) \\right).$$"
+  },
+  {
+   "id": "D12",
+   "term": "ETS(A,Ad,A)",
+   "kind": "method",
+   "definition": "Pure additive exponential smoothing model with additive error, damped additive trend, and additive seasonality under Normal errors.",
+   "source": "B3"
+  },
+  {
+   "id": "D13",
+   "term": "ETS(M,Md,N)",
+   "kind": "method",
+   "broader": [
+    "D1"
+   ],
+   "definition": "Pure multiplicative exponential smoothing model with damped multiplicative trend and no seasonality.",
+   "source": "B3"
+  },
+  {
+   "id": "D14",
+   "term": "Simulation experiment 1 synthetic series",
+   "kind": "data",
+   "definition": "10,000 iterations of 100-observation time series simulated from $ETS(M,Md,N)$ with Inverse Gaussian errors across parameter grids $\\sigma \\in \\{0.01, 0.05, 0.1, 0.5, 1\\}$, $\\alpha, \\beta \\in \\{0, 0.1, 0.2, 0.5\\}$, $\\phi \\in \\{0.5, 0.9, 0.95, 1\\}$, and horizons $h \\in \\{10, 50, 100\\}$."
+  },
+  {
+   "id": "D15",
+   "term": "Simulation experiment 2 synthetic series",
+   "kind": "data",
+   "definition": "10,000 simulated time series of length 500 generated for each of five data-generating processes ($ETS(M,Md,M)$ with Normal, Inverse Gaussian, Gamma, Log-Normal errors, and Akram's exponentiated $ETS(A,Ad,A)$) with $\\sigma=0.1$, $\\alpha=0.1$, $\\beta=0.05$, $\\gamma=0.2$, $\\phi=0.95$, $l_0=100$, $b_0=1$, and holdout horizon $48$."
+  },
+  {
+   "id": "D16",
+   "term": "Daily EV charging dataset",
+   "kind": "data",
+   "definition": "511 daily aggregated observations of electricity used by electric vehicles in a geographical area starting from low volume with 7-day multiplicative seasonality, holding out the last 14 observations."
+  },
+  {
+   "id": "D17",
+   "term": "quantile bias",
+   "kind": "variable",
+   "unit": "1",
+   "definition": "Mean across quantile levels $\\tau \\in \\{0.01, 0.02, \\dots, 0.99\\}$ of empirical quantile coverage minus nominal target level $\\tau$."
+  },
+  {
+   "id": "D18",
+   "term": "quantile precision",
+   "kind": "variable",
+   "unit": "1",
+   "definition": "Mean across quantile levels $\\tau \\in \\{0.01, 0.02, \\dots, 0.99\\}$ of the absolute difference between empirical quantile coverage and nominal target level $\\tau$."
+  },
+  {
+   "id": "D19",
+   "term": "Box-Cox odds regression procedure",
+   "kind": "design",
+   "definition": "Transformation of percentage difference $PD$ into odds $PD/(1-PD)$ followed by Box-Cox transformation ($\\lambda = 0.146$) and linear regression on scaled parameters $\\sigma$, horizon, $\\alpha$, $\\beta$, and $\\phi$ using `greybox::alm` (`distribution='dbcnorm'`)."
+  },
+  {
+   "id": "D20",
+   "term": "48-step quantile forecast simulation procedure",
+   "kind": "design",
+   "definition": "Estimation of $ETS(M,Md,M)$ with each candidate distribution, AICc-based automatic selection (`smooth::auto.adam`), and Akram's log-ETS model on 500 observations, evaluating 99 quantile levels ($\\tau = 0.01, \\dots, 0.99$) over a 48-step holdout."
+  },
+  {
+   "id": "D21",
+   "term": "two-dimensional AICc selection procedure",
+   "kind": "design",
+   "definition": "Simultaneous selection of pure multiplicative ETS component structure and error distribution by minimising $AICc$ via `smooth::auto.adam` with a 14-day holdout evaluation."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C12",
+   "statement": "The multiplicative error term $(1+\\epsilon_t)$ in pure multiplicative ETS models is independent and identically distributed with unit expectation $E(1+\\epsilon_t) = 1$.",
+   "type": "formal",
+   "role": "supporting",
+   "support": [
+    {
+     "kind": "assumption"
+    }
+   ],
+   "assumption_category": "statistical",
+   "check": "unchecked",
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C13",
+   "statement": "Smoothing parameters $\\alpha, \\beta, \\gamma$ in pure multiplicative ETS models lie within $[0, 1]$ so that state update terms $(1 + g\\epsilon_t)$ remain strictly positive whenever $1 + \\epsilon_t > 0$.",
+   "type": "formal",
+   "role": "supporting",
+   "support": [
+    {
+     "kind": "assumption"
+    }
+   ],
+   "assumption_category": "methodological",
+   "check": "tested",
+   "check_evidence": "E1",
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C1",
+   "statement": "In general, the conventional multi-step point forecast $\\hat{y}_{t+h}$ of a pure multiplicative [[D1:ETS(M,*,*)]] model does not coincide with the conditional arithmetic expectation $\\mu_{y,t+h}$ or the conditional geometric expectation $\\tilde{y}_{t+h}$, satisfying $\\hat{y}_{t+h} \\le \\tilde{y}_{t+h} \\le \\mu_{y,t+h}$ when smoothing parameters are non-zero.",
+   "about": {
+    "subject": "D1",
+    "relation": "produces point forecasts bounded above by conditional geometric and arithmetic expectations",
+    "object": null,
+    "comparator": null,
+    "conditions": [
+     "non-zero smoothing parameters",
+     "horizon $h > 1$"
+    ]
+   },
+   "type": "formal",
+   "role": "principal",
+   "novelty": "extension",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "pure multiplicative ETS models with non-zero smoothing parameters and forecast horizon $h > 1$"
+    ]
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "target": "978-3-540-71918-2",
+     "id_type": "isbn",
+     "locator": "Chapter 2, pp. 21-23",
+     "note": "Derives the explicit ordering between point forecasts, geometric conditional expectations, and arithmetic conditional expectations using logarithmic state space recursion."
+    }
+   ],
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E1"
+    },
+    {
+     "kind": "cited",
+     "reference": "B3",
+     "locator": "pp. 21-23",
+     "self": false
+    }
+   ],
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P4",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Re-derived Eqs. (2.1)-(2.9) via logarithmic state-space expansion and Jensen's inequality; confirmed ordering holds for non-negative persistence vector g."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C2",
+   "statement": "The conventional point forecast of a pure multiplicative [[D1:ETS(M,*,*)]] model coincides with both the conditional geometric and conditional arithmetic expectations only when $h=1$, when $h \\le m$ for non-trended models with multiplicative seasonality, or for [[D2:ETS(M,N,N)]].",
+   "about": {
+    "subject": "D1",
+    "relation": "coincides with conditional geometric and arithmetic expectations under exact special cases",
+    "object": "D2",
+    "comparator": null,
+    "conditions": [
+     "$h = 1$, $h \\le m$ without trend, or $ETS(M,N,N)$"
+    ]
+   },
+   "type": "formal",
+   "role": "supporting",
+   "novelty": "extension",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "pure multiplicative ETS models with unit-mean i.i.d. multiplicative errors"
+    ]
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "target": "978-3-540-71918-2",
+     "id_type": "isbn",
+     "locator": "Chapter 2, pp. 21-23",
+     "note": "Identifies the exact boundary cases where conventional point forecasts coincide with conditional expectations."
+    }
+   ],
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E1"
+    }
+   ],
+   "assumptions": [
+    "C12"
+   ],
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P4",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Verified Eqs. (2.6)-(2.11) for h=1, h<=m without trend, and ETS(M,N,N) product expectation."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C3",
+   "statement": "For [[D13:ETS(M,Md,N)]] simulated on [[D14:Simulation experiment 1 synthetic series]] with an [[D6:Inverse Gaussian error distribution]], the [[D8:percentage difference (PD)]] between the conditional expectation and the point forecast increases with the damping parameter $\\phi$, the trend smoothing parameter $\\beta$, the forecast horizon $h$, the scale parameter $\\sigma$, and the level smoothing parameter $\\alpha$, with $\\phi$ having the largest effect and $\\alpha$ having the smallest effect among the scaled predictors.",
+   "about": {
+    "subject": "D13",
+    "relation": "exhibits increasing forecast bias with respect to model parameters and horizon",
+    "object": "D8",
+    "comparator": null,
+    "conditions": [
+     "D14",
+     "D6"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "$ETS(M,Md,N)$ simulated over $10,000$ iterations with Inverse Gaussian errors across parameter grids"
+    ]
+   },
+   "relations": [
+    {
+     "type": "contradicts",
+     "target": "978-3-540-71918-2",
+     "id_type": "isbn",
+     "locator": "Chapter 2, p. 23",
+     "note": "Shows that the difference between point forecasts and conditional expectations is non-negligible and grows substantially with horizon and parameter values."
+    }
+   ],
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E2",
+     "artefacts": [
+      "A3"
+     ],
+     "results": [
+      "E2.T1.r2",
+      "E2.T1.r3",
+      "E2.T1.r4",
+      "E2.T1.r5",
+      "E2.T1.r6"
+     ]
+    }
+   ],
+   "depends_on": [
+    "C1",
+    "C2"
+   ],
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "limitations": [
+    "L2"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "high",
+     "rationale": "Exploratory simulation across 10,000 Monte Carlo iterations and a broad parameter grid with 534,884 degrees of freedom and $R^2 = 0.986$."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "unverifiable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C4",
+   "statement": "[[D4:Log-Normal error distribution]], [[D5:Gamma error distribution]], and [[D6:Inverse Gaussian error distribution]] distributions defined on $(0, \\infty)$ can be applied directly to the multiplicative error term $(1+\\epsilon_t)$ of conventional [[D1:ETS(M,*,*)]] models without transforming the model into [[D10:Akram's log-ETS model]], provided $E(1+\\epsilon_t)=1$.",
+   "about": {
+    "subject": "D1",
+    "relation": "supports positive error distributions directly on the multiplicative error term",
+    "object": null,
+    "comparator": "D10",
+    "conditions": [
+     "unit expectation restriction $E(1 + \\epsilon_t) = 1$"
+    ]
+   },
+   "type": "methodological",
+   "role": "principal",
+   "novelty": "extension",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "strictly positive time series modelled within the original $ETS(M,*,*)$ taxonomy"
+    ]
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "target": "10.1111/j.1467-842X.2009.00555.x",
+     "id_type": "doi",
+     "locator": "Section 2",
+     "note": "Implements Log-Normal, Gamma, and Inverse Gaussian distributions directly within original $ETS(M,*,*)$ rather than sidestepping the taxonomy via logarithmic ETS."
+    },
+    {
+     "type": "supports",
+     "target": "entrylib:2026.000003@v4#C17",
+     "id_type": "claimset",
+     "self": true,
+     "note": "Provides the conventional multiplicative ETS formulation with Gamma, Log-Normal, and Inverse Gaussian errors subsequently extended to unobserved periods in entrylib:2026.000003."
+    }
+   ],
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E3"
+    },
+    {
+     "kind": "cited",
+     "reference": "B4",
+     "locator": "Section 2",
+     "self": false
+    }
+   ],
+   "depends_on": [
+    "C8"
+   ],
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "limitations": [
+    "L6"
+   ],
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P4",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Verified support (0, infinity), unit-mean parameter restrictions in Table 2, and scalability properties in Eq. (4.1)."
+    }
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "high",
+     "rationale": "Exploratory methodological derivation directly established by deriving valid parameter restrictions and scalability properties on $(0, \\infty)$."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C5",
+   "statement": "Concentrated log-likelihood functions for [[D1:ETS(M,*,*)]] models under the unit-mean restriction $E(1+\\epsilon_t)=1$ take closed forms for [[D7:Normal error distribution]] $\\mathcal{N}(1,\\sigma^2)$, [[D6:Inverse Gaussian error distribution]] $\\mathcal{IG}(1,\\sigma^2)$, [[D4:Log-Normal error distribution]] $\\log\\mathcal{N}(-\\sigma^2/2,\\sigma^2)$, and [[D5:Gamma error distribution]] $\\Gamma(\\sigma^{-2},\\sigma^2)$ error distributions.",
+   "about": {
+    "subject": "D1",
+    "relation": "admits closed-form concentrated log-likelihood functions across four error distributions",
+    "object": null,
+    "comparator": null,
+    "conditions": [
+     "unit expectation restriction $E(1 + \\epsilon_t) = 1$"
+    ]
+   },
+   "type": "formal",
+   "role": "principal",
+   "novelty": "extension",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "$ETS(M,*,*)$ models estimated via maximum likelihood on strictly positive observations"
+    ]
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "target": "978-3-540-71918-2",
+     "id_type": "isbn",
+     "locator": "p. 68",
+     "note": "Generalises the Normal multiplicative ETS log-likelihood to Inverse Gaussian, Log-Normal, and Gamma distributions."
+    },
+    {
+     "type": "supports",
+     "target": "entrylib:2026.000003@v4#C17",
+     "id_type": "claimset",
+     "self": true,
+     "note": "Establishes the full-sample concentrated log-likelihoods for multiplicative ETS distributions later generalised to intermittent/missing-data settings in entrylib:2026.000003."
+    }
+   ],
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E3"
+    }
+   ],
+   "depends_on": [
+    "C6",
+    "C7"
+   ],
+   "assumptions": [
+    "C12"
+   ],
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P4",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Verified concentrated log-likelihood expressions in Table 3 from the respective PDFs under unit-mean parameter restrictions."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C6",
+   "statement": "The maximum likelihood estimator of the scale parameter $\\sigma^2$ in [[D1:ETS(M,*,*)]] has closed form $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\epsilon_t^2$ for the [[D7:Normal error distribution]] and $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\frac{\\epsilon_t^2}{1+\\epsilon_t}$ for the [[D6:Inverse Gaussian error distribution]], whereas the [[D5:Gamma error distribution]] has no closed-form MLE under $\\xi = \\sigma^{-2}$ and uses $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\epsilon_t^2$ via the method of moments.",
+   "about": {
+    "subject": "D1",
+    "relation": "has closed-form scale MLE for Normal and Inverse Gaussian but requires numerical optimisation or method of moments for Gamma",
+    "object": null,
+    "comparator": null,
+    "conditions": [
+     "$E(1 + \\epsilon_t) = 1$"
+    ]
+   },
+   "type": "formal",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "sample size $T$ with unit-mean multiplicative error distributions"
+    ]
+   },
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E3"
+    }
+   ],
+   "assumptions": [
+    "C12"
+   ],
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P4",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Re-derived first-order conditions with respect to sigma^2 from Table 3 log-likelihoods for Normal, Inverse Gaussian, and Gamma distributions."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C7",
+   "statement": "Under the unit-mean restriction $\\mu = -\\sigma^2/2$, the concentrated log-likelihood of [[D1:ETS(M,*,*)]] with a [[D4:Log-Normal error distribution]] is non-convex and its maximum likelihood scale estimator is given by the corrected formula in `entrylib:2026.000003@v4#C7` rather than the quadratic root formula printed in Section 4.1 of the 2023 published article.",
+   "about": {
+    "subject": "D1",
+    "relation": "has a non-convex log-likelihood under Log-Normal errors with scale estimator corrected in entrylib:2026.000003@v4#C7",
+    "object": "D4",
+    "comparator": null,
+    "conditions": [
+     "$\\mu = -\\sigma^2 / 2$"
+    ]
+   },
+   "type": "formal",
+   "role": "supporting",
+   "novelty": "refutation",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "$ETS(M,*,*)$ models with Log-Normal error distribution constrained to $E(1 + \\epsilon_t) = 1$"
+    ]
+   },
+   "relations": [
+    {
+     "type": "contradicts",
+     "target": "10.1093/imaman/dpad028",
+     "id_type": "doi",
+     "locator": "Section 4.1, pp. 9-10",
+     "self": true,
+     "note": "Author erratum: the quadratic root expression for the Log-Normal scale parameter in Section 4.1 of the 2023 article was superseded by the corrected derivation in entrylib:2026.000003@v4#C7."
+    },
+    {
+     "type": "extends",
+     "target": "entrylib:2026.000003@v4#C7",
+     "id_type": "claimset",
+     "self": true,
+     "note": "References the corrected Log-Normal scale MLE formula."
+    }
+   ],
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E3"
+    },
+    {
+     "kind": "cited",
+     "reference": "B2",
+     "self": true
+    }
+   ],
+   "assumptions": [
+    "C12"
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P4",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Verified that differentiating the Table 3 Log-Normal log-likelihood yields the corrected estimator in entrylib:2026.000003@v4#C7."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C8",
+   "statement": "Among pure multiplicative [[D1:ETS(M,*,*)]] models, [[D2:ETS(M,N,N)]] is the only model with closed-form conditional $h$-steps-ahead mean $E(l_{t+h}|t)=l_t$ and variance $V(l_{t+h}|t)=l_t^2((1+\\alpha^2\\sigma^2)^h-1)$ across [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], and [[D5:Gamma error distribution]], requiring $\\alpha \\in [0,1]$ to ensure positivity of the level.",
+   "about": {
+    "subject": "D2",
+    "relation": "is the unique pure multiplicative ETS model with closed-form conditional mean and variance for arbitrary horizon $h$",
+    "object": null,
+    "comparator": "D1",
+    "conditions": [
+     "$\\alpha \\in [0, 1]$",
+     "$E(1 + \\epsilon_t) = 1$"
+    ]
+   },
+   "type": "formal",
+   "role": "supporting",
+   "novelty": "extension",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "$ETS(M,N,N)$ with $\\alpha \\in [0, 1]$ and unit-mean error distributions"
+    ]
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "target": "978-3-540-71918-2",
+     "id_type": "isbn",
+     "locator": "Chapter 6",
+     "note": "Extends the closed-form ETS(M,N,N) conditional mean and variance formulas from Normal errors to Inverse Gaussian, Log-Normal, and Gamma distributions."
+    }
+   ],
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E4"
+    }
+   ],
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P4",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Verified product expectation and variance in Eq. (4.5) and positivity bound alpha in [0, 1] in Eq. (4.7)."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C9",
+   "statement": "Selecting among [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], and [[D5:Gamma error distribution]] in [[D3:ETS(M,Md,M)]] via [[D9:AICc]] achieves mean [[D11:scaled pinball score (SPS)]], [[D17:quantile bias]], and [[D18:quantile precision]] comparable to specifying the true data-generating distribution across [[D15:Simulation experiment 2 synthetic series]].",
+   "about": {
+    "subject": "D9",
+    "relation": "selects error distributions with predictive accuracy and calibration comparable to the true data-generating distribution",
+    "object": [
+     "D11",
+     "D17",
+     "D18"
+    ],
+    "comparator": null,
+    "conditions": [
+     "D15",
+     "D3"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "$10,000$ simulated series of length $500$ per DGP with standard deviation $\\sigma = 0.1$ and forecast horizon $48$"
+    ]
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "target": "10.1080/03610927808837599",
+     "id_type": "doi",
+     "locator": "Section 1",
+     "note": "Applies AICc model selection across competing positive error distributions within pure multiplicative ETS models."
+    },
+    {
+     "type": "supports",
+     "target": "entrylib:2026.000003@v4#C17",
+     "id_type": "claimset",
+     "self": true,
+     "note": "Evaluates fully observed pure multiplicative ETS models across Gamma, Log-Normal, and Inverse Gaussian distributions, whereas entrylib:2026.000003#C17 derives moment equations under unobserved periods."
+    }
+   ],
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E5",
+     "artefacts": [
+      "A3"
+     ],
+     "results": [
+      "E5.T1.r1",
+      "E5.T1.r2",
+      "E5.T1.r3",
+      "E5.T1.r4",
+      "E5.T1.r6",
+      "E5.T2.r1",
+      "E5.T2.r2",
+      "E5.T2.r3",
+      "E5.T2.r4",
+      "E5.T2.r6"
+     ]
+    }
+   ],
+   "depends_on": [
+    "C4",
+    "C5",
+    "C11"
+   ],
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "limitations": [
+    "L4"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Exploratory simulation evaluated across 10,000 replications for five DGPs, though tested at a single parameterisation and noise level ($\\sigma = 0.1$)."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "unverifiable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C10",
+   "statement": "Across all five data-generating processes in [[D15:Simulation experiment 2 synthetic series]], [[D10:Akram's log-ETS model]] achieves lower mean [[D11:scaled pinball score (SPS)]] over the 48-step horizon than pure multiplicative [[D3:ETS(M,Md,M)]] models with [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], [[D5:Gamma error distribution]], or [[D9:AICc]]-selected distributions, driven by lower pinball loss in the central quantiles ($\\tau \\in [0.2, 0.8]$) and similar performance in the distribution tails ($\\tau < 0.2$ and $\\tau > 0.8$).",
+   "about": {
+    "subject": "D10",
+    "relation": "achieves lower mean scaled pinball score than pure multiplicative $ETS(M,Md,M)$ models primarily in central quantiles",
+    "object": "D11",
+    "comparator": "D3",
+    "conditions": [
+     "D15"
+    ]
+   },
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "$10,000$ simulated series of length $500$ per DGP, $99$ quantile levels from $0.01$ to $0.99$, horizon $48$"
+    ]
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "target": "10.1111/j.1467-842X.2009.00555.x",
+     "id_type": "doi",
+     "locator": "Section 4",
+     "note": "Benchmarks Akram's logarithmic ETS model against pure multiplicative ETS with positive error distributions across full predictive distributions."
+    },
+    {
+     "type": "supports",
+     "target": "entrylib:2026.000003@v4#C17",
+     "id_type": "claimset",
+     "self": true,
+     "note": "Compares predictive distributions of conventional multiplicative ETS against logarithmic ETS on complete series, whereas entrylib:2026.000003#C17 studies moment propagation with unobserved periods."
+    }
+   ],
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E5",
+     "artefacts": [
+      "A3"
+     ],
+     "results": [
+      "E5.T1.r1",
+      "E5.T1.r2",
+      "E5.T1.r3",
+      "E5.T1.r4",
+      "E5.T1.r5",
+      "E5.T1.r6"
+     ]
+    }
+   ],
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "limitations": [
+    "L4"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Exploratory simulation consistent across all five DGPs, though evaluated at a single noise level where logarithmic transformation remains well-behaved."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "unverifiable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C11",
+   "statement": "On the [[D16:Daily EV charging dataset]], [[D3:ETS(M,Md,M)]] with a [[D5:Gamma error distribution]] achieves a lower [[D9:AICc]] ($6398.57$) than additive [[D12:ETS(A,Ad,A)]] with [[D7:Normal error distribution]] ($6418.296$), and on the initial $49$-observation low-volume subsample generates strictly positive $95\\%$ prediction intervals unlike the [[D7:Normal error distribution]] model.",
+   "about": {
+    "subject": "D3",
+    "relation": "achieves lower AICc than additive $ETS(A,Ad,A)$ and preserves strictly positive 95% prediction intervals on low-volume data",
+    "object": "D9",
+    "comparator": "D12",
+    "conditions": [
+     "D16"
+    ]
+   },
+   "type": "descriptive",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "511 daily EV charging observations (holdout 14) and low-volume initial 49 observations (holdout 14) at 95% prediction interval level"
+    ]
+   },
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E6",
+     "results": [
+      "E6.R1",
+      "E6.R2"
+     ]
+    }
+   ],
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "limitations": [
+    "L5"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "low",
+     "rationale": "Single empirical case study on one proprietary EV charging series."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "unverifiable",
+   "verifiability_flags": []
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "profile": "formal",
+   "description": "Analytical derivation of recursive conditional expectations and point forecasts for pure multiplicative ETS models in logarithmic state space form (Section 2, Eqs. 2.1-2.11).",
+   "foundation": "classical_probability",
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "steps": [
+    {
+     "id": "E1.1",
+     "statement": "Reformulate pure multiplicative ETS in logarithmic state space form: $\\log y_t = w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t)$ and $\\log v_t = F \\log v_{t-l} + \\log(1_k + g \\epsilon_t)$.",
+     "by": [
+      "D1",
+      "C12"
+     ],
+     "rule": "logarithmic_transformation"
+    },
+    {
+     "id": "E1.2",
+     "statement": "Expand $h$-steps-ahead recursion into non-seasonal and seasonal components and take conditional expectation $E(\\log y_{t+h}|t)$.",
+     "by": [
+      "E1.1",
+      "C12"
+     ],
+     "rule": "recursive_substitution"
+    },
+    {
+     "id": "E1.3",
+     "statement": "Apply Jensen's inequality and non-negativity of $g$ to show point forecast $\\hat{y}_{t+h} \\le \\tilde{y}_{t+h} \\le \\mu_{y,t+h}$, with equality only at $h=1$, $h \\le m$ without trend, or for $ETS(M,N,N)$.",
+     "by": [
+      "E1.2",
+      "C13"
+     ],
+     "rule": "jensens_inequality"
+    }
+   ],
+   "availability": {
+    "level": "public"
+   }
+  },
+  {
+   "id": "E2",
+   "profile": "simulation",
+   "description": "Monte Carlo simulation of $10,000$ iterations of $100$ observations from $ETS(M,Md,N)$ with Inverse Gaussian errors using `smooth::sim.es()`, followed by Box-Cox odds regression (`greybox::alm` with `distribution='dbcnorm'`) of percentage difference $PD$ on scaled parameters $\\sigma$, horizon, $\\alpha$, $\\beta$, and $\\phi$ (Section 3, Table 1).",
+   "setup": {
+    "studied": [
+     "D13",
+     "D6"
+    ],
+    "cases": [
+     "D14"
+    ],
+    "procedure": [
+     "D19"
+    ],
+    "lens": [
+     "D8"
+    ]
+   },
+   "model": "$ETS(M,Md,N)$ with Inverse Gaussian errors via `smooth::sim.es` v3.2.0",
+   "runs": 10000,
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Box-Cox odds regression output for percentage difference $PD$ in Simulation Experiment 1 ($\\lambda = 0.146$, $R^2 = 0.986$, $\\text{df} = 534,884$).",
+     "artefact": "A3",
+     "row_labels": [
+      "variable"
+     ],
+     "columns": [
+      "estimate",
+      "std_error",
+      "lower_0.05pct",
+      "upper_99.95pct"
+     ],
+     "units": [
+      "1",
+      "1",
+      "1",
+      "1"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "(Intercept)"
+       ],
+       "values": [
+        -9.222,
+        0.006,
+        -9.242,
+        -9.202
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "sigma"
+       ],
+       "values": [
+        2.755,
+        0.003,
+        2.745,
+        2.765
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "horizon"
+       ],
+       "values": [
+        3.656,
+        0.003,
+        3.646,
+        3.667
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "alpha"
+       ],
+       "values": [
+        1.578,
+        0.007,
+        1.555,
+        1.6
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "beta"
+       ],
+       "values": [
+        3.739,
+        0.007,
+        3.716,
+        3.762
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "phi"
+       ],
+       "values": [
+        6.167,
+        0.006,
+        6.148,
+        6.187
+       ]
+      }
+     ]
+    }
+   ],
+   "artefacts": [
+    "A3"
+   ],
+   "availability": {
+    "level": "unavailable",
+    "reason": "other"
+   }
+  },
+  {
+   "id": "E3",
+   "profile": "formal",
+   "description": "Analytical derivation of unit-mean parameter restrictions, concentrated log-likelihoods, and scale estimators for Normal, Inverse Gaussian, Log-Normal, and Gamma distributions in $ETS(M,*,*)$ models (Section 4.1, Tables 2-3), with author erratum referencing `entrylib:2026.000003@v4#C7` for the Log-Normal scale MLE.",
+   "foundation": "mathematical_statistics",
+   "assumptions": [
+    "C12"
+   ],
+   "steps": [
+    {
+     "id": "E3.1",
+     "statement": "Impose $E(1 + \\epsilon_t) = 1$ on each distribution: $\\mu = 1$ for Normal and Inverse Gaussian, $\\mu = -\\sigma^2 / 2$ for Log-Normal, and $\\xi = \\sigma^{-2}$ for Gamma.",
+     "by": [
+      "D4",
+      "D5",
+      "D6",
+      "D7",
+      "C12"
+     ],
+     "rule": "moment_constraint"
+    },
+    {
+     "id": "E3.2",
+     "statement": "Substitute parameter restrictions into probability density functions and Jacobian terms to obtain concentrated log-likelihood functions.",
+     "by": [
+      "E3.1",
+      "D1"
+     ],
+     "rule": "likelihood_derivation"
+    },
+    {
+     "id": "E3.3",
+     "statement": "Differentiate log-likelihoods with respect to $\\sigma^2$ to obtain closed-form scale MLEs for Normal and Inverse Gaussian, method-of-moments estimator for Gamma, and the corrected Log-Normal scale MLE referenced in `entrylib:2026.000003@v4#C7`.",
+     "by": [
+      "E3.2",
+      "B2"
+     ],
+     "rule": "maximum_likelihood_estimation"
+    }
+   ],
+   "availability": {
+    "level": "public"
+   }
+  },
+  {
+   "id": "E4",
+   "profile": "formal",
+   "description": "Analytical derivation of closed-form conditional $h$-steps-ahead mean and variance, one-step-ahead predictive distributions via scalability, and smoothing parameter domain restrictions for $ETS(M,N,N)$ (Section 4.2, Eqs. 4.2-4.7).",
+   "foundation": "classical_probability",
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "steps": [
+    {
+     "id": "E4.1",
+     "statement": "Expand level recursion $l_{t+h} = l_t \\prod_{j=1}^h (1 + \\alpha \\epsilon_{t+j})$ under i.i.d. unit-mean errors to derive $E(l_{t+h}|t) = l_t$ and $V(l_{t+h}|t) = l_t^2((1 + \\alpha^2 \\sigma^2)^h - 1)$.",
+     "by": [
+      "D2",
+      "C12"
+     ],
+     "rule": "independent_product_moments"
+    },
+    {
+     "id": "E4.2",
+     "statement": "Enforce positivity of level update $1 + \\alpha \\epsilon_t > 0$ for all $1 + \\epsilon_t > 0$ to establish $\\alpha \\in [0, 1]$.",
+     "by": [
+      "E4.1",
+      "C13"
+     ],
+     "rule": "positivity_bound"
+    }
+   ],
+   "availability": {
+    "level": "public"
+   }
+  },
+  {
+   "id": "E5",
+   "profile": "simulation",
+   "description": "Monte Carlo simulation of $10,000$ series of length $500$ for each of five DGPs ($ETS(M,Md,M)$ with Normal, Inverse Gaussian, Gamma, Log-Normal, and Akram's exponentiated $ETS(A,Ad,A)$), evaluating 48-step quantile forecasts across 99 probability levels via scaled pinball score, quantile bias, and quantile precision (Section 5, Tables 4-5).",
+   "setup": {
+    "studied": [
+     "D3",
+     "D7",
+     "D6",
+     "D5",
+     "D4",
+     "D10"
+    ],
+    "cases": [
+     "D15"
+    ],
+    "procedure": [
+     "D20"
+    ],
+    "lens": [
+     "D9",
+     "D11",
+     "D17",
+     "D18"
+    ]
+   },
+   "model": "$ETS(M,Md,M)$ and Akram $ETS(A,Ad,A)$ via `smooth::adam` and `smooth::auto.adam` v3.2.0",
+   "runs": 10000,
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Mean scaled pinball scores ($SPS$) across $10,000$ simulated series for applied models (rows) against data-generating processes (columns) over forecast horizon $48$.",
+     "artefact": "A3",
+     "row_labels": [
+      "applied_model"
+     ],
+     "columns": [
+      {
+       "variable": "D11",
+       "conditions": {
+        "DGP": "Normal"
+       }
+      },
+      {
+       "variable": "D11",
+       "conditions": {
+        "DGP": "Inverse Gaussian"
+       }
+      },
+      {
+       "variable": "D11",
+       "conditions": {
+        "DGP": "Gamma"
+       }
+      },
+      {
+       "variable": "D11",
+       "conditions": {
+        "DGP": "Log-Normal"
+       }
+      },
+      {
+       "variable": "D11",
+       "conditions": {
+        "DGP": "Akram"
+       }
+      }
+     ],
+     "units": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Normal"
+       ],
+       "values": [
+        5.255,
+        5.204,
+        5.193,
+        9.417,
+        5.192
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Inverse Gaussian"
+       ],
+       "values": [
+        5.3,
+        5.221,
+        5.224,
+        9.464,
+        5.229
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Gamma"
+       ],
+       "values": [
+        5.287,
+        5.192,
+        5.231,
+        9.388,
+        5.214
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Log-Normal"
+       ],
+       "values": [
+        5.215,
+        5.295,
+        5.224,
+        9.423,
+        5.22
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Akram"
+       ],
+       "values": [
+        5.11,
+        5.052,
+        5.074,
+        9.18,
+        5.089
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "Auto (AICc)"
+       ],
+       "values": [
+        5.258,
+        5.175,
+        5.208,
+        9.332,
+        5.178
+       ]
+      }
+     ]
+    },
+    {
+     "id": "T2",
+     "description": "Quantile bias and quantile precision across 99 quantile levels ($0.01$ to $0.99$) for applied models against data-generating processes.",
+     "artefact": "A3",
+     "row_labels": [
+      "applied_model"
+     ],
+     "columns": [
+      {
+       "variable": "D17",
+       "conditions": {
+        "DGP": "Normal"
+       }
+      },
+      {
+       "variable": "D17",
+       "conditions": {
+        "DGP": "Inverse Gaussian"
+       }
+      },
+      {
+       "variable": "D17",
+       "conditions": {
+        "DGP": "Gamma"
+       }
+      },
+      {
+       "variable": "D17",
+       "conditions": {
+        "DGP": "Log-Normal"
+       }
+      },
+      {
+       "variable": "D17",
+       "conditions": {
+        "DGP": "Akram"
+       }
+      },
+      {
+       "variable": "D18",
+       "conditions": {
+        "DGP": "Normal"
+       }
+      },
+      {
+       "variable": "D18",
+       "conditions": {
+        "DGP": "Inverse Gaussian"
+       }
+      },
+      {
+       "variable": "D18",
+       "conditions": {
+        "DGP": "Gamma"
+       }
+      },
+      {
+       "variable": "D18",
+       "conditions": {
+        "DGP": "Log-Normal"
+       }
+      },
+      {
+       "variable": "D18",
+       "conditions": {
+        "DGP": "Akram"
+       }
+      }
+     ],
+     "units": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Normal"
+       ],
+       "values": [
+        -0.002,
+        0.003,
+        0.011,
+        0.007,
+        -0.01,
+        0.007,
+        0.011,
+        0.005,
+        0.009,
+        0.01
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Inverse Gaussian"
+       ],
+       "values": [
+        -0.004,
+        0.009,
+        0.001,
+        0.001,
+        -0.013,
+        0.009,
+        0.009,
+        0.006,
+        0.009,
+        0.015
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Gamma"
+       ],
+       "values": [
+        -0.004,
+        0.008,
+        0.001,
+        0.003,
+        -0.012,
+        0.011,
+        0.009,
+        0.005,
+        0.008,
+        0.014
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Log-Normal"
+       ],
+       "values": [
+        -0.005,
+        0.008,
+        0.0,
+        0.001,
+        -0.013,
+        0.008,
+        0.004,
+        0.008,
+        0.004,
+        0.014
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Akram"
+       ],
+       "values": [
+        0.0,
+        0.004,
+        0.01,
+        0.006,
+        -0.007,
+        0.004,
+        0.01,
+        0.005,
+        0.008,
+        0.007
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "Auto (AICc)"
+       ],
+       "values": [
+        -0.003,
+        0.008,
+        0.0,
+        0.002,
+        -0.012,
+        0.008,
+        0.004,
+        0.009,
+        0.007,
+        0.013
+       ]
+      }
+     ]
+    }
+   ],
+   "artefacts": [
+    "A3"
+   ],
+   "availability": {
+    "level": "unavailable",
+    "reason": "other"
+   }
+  },
+  {
+   "id": "E6",
+   "profile": "quant",
+   "description": "Empirical application of automatic pure multiplicative ETS selection via `smooth::auto.adam()` to $511$ daily EV charging observations (holdout $14$) and a low-volume initial $49$-observation subsample (holdout $14$) comparing Gamma and Normal error distributions (Section 6, Figs. 4-6).",
+   "setup": {
+    "studied": [
+     "D3",
+     "D12",
+     "D5",
+     "D7"
+    ],
+    "cases": [
+     "D16"
+    ],
+    "procedure": [
+     "D21"
+    ],
+    "lens": [
+     "D9"
+    ]
+   },
+   "design": "benchmark",
+   "estimand": "$AICc$ and 95% prediction interval positivity",
+   "n": 511,
+   "data_origin": "secondary",
+   "preregistered": false,
+   "results": [
+    {
+     "id": "R1",
+     "variable": "D9",
+     "value": 6398.57,
+     "unit": "1",
+     "n": 497,
+     "conditions": {
+      "model": "D3",
+      "distribution": "D5"
+     }
+    },
+    {
+     "id": "R2",
+     "variable": "D9",
+     "value": 6418.296,
+     "unit": "1",
+     "n": 497,
+     "conditions": {
+      "model": "D12",
+      "distribution": "D7"
+     }
+    }
+   ],
+   "availability": {
+    "level": "unavailable",
+    "reason": "legal"
+   }
+  }
+ ],
+ "warrants": [],
+ "limitations": [
+  {
+   "id": "L1",
+   "category": "model_specification",
+   "statement": "Conditional expectations for pure multiplicative ETS models other than $ETS(M,N,N)$ lack closed-form analytical expressions and require Monte Carlo simulation.",
+   "affects": [
+    "C1"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none"
+  },
+  {
+   "id": "L2",
+   "category": "model_specification",
+   "statement": "Simulation experiment 1 evaluates point forecast bias exclusively on $ETS(M,Md,N)$ with Inverse Gaussian errors and known true parameters.",
+   "affects": [
+    "C3"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none"
+  },
+  {
+   "id": "L3",
+   "category": "model_specification",
+   "statement": "The Log-Normal concentrated log-likelihood under unit-mean restriction is non-convex, creating potential local optima during numerical optimisation.",
+   "affects": [
+    "C7"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none"
+  },
+  {
+   "id": "L4",
+   "category": "model_specification",
+   "statement": "Simulation experiment 2 uses a single fixed parameter vector with error standard deviation $\\sigma = 0.1$, where multiplicative errors remain small enough that Normal and logarithmic approximations behave regularly.",
+   "affects": [
+    "C9",
+    "C10"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none"
+  },
+  {
+   "id": "L5",
+   "category": "sampling",
+   "statement": "The real-life demonstration relies on a single proprietary daily electric vehicle charging series that cannot be publicly shared under a non-disclosure agreement.",
+   "affects": [
+    "C11"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none"
+  },
+  {
+   "id": "L6",
+   "category": "model_specification",
+   "statement": "Multi-step conditional predictive distributions for $ETS(M,*,*)$ models with Log-Normal, Gamma, or Inverse Gaussian errors have no closed form because none of these distributions is closed under both convolution and product, requiring simulation.",
+   "affects": [
+    "C4"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none"
+  }
+ ],
+ "artefacts": [
+  {
+   "id": "A0",
+   "kind": "manuscript",
+   "uri": "https://doi.org/10.1093/imaman/dpad028",
+   "reference": "B1",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The published article, IMA Journal of Management Mathematics (2023)."
+  },
+  {
+   "id": "A1",
+   "kind": "code",
+   "uri": "https://github.com/config-i1/smooth",
+   "version": "v3.2.0",
+   "licence": "GPL-2.0-or-later",
+   "availability": {
+    "level": "unavailable",
+    "reason": "other"
+   },
+   "description": "R simulation and estimation code using smooth package v3.2.0 (shared on reasonable request to the corresponding author)."
+  },
+  {
+   "id": "A2",
+   "kind": "data",
+   "uri": "https://doi.org/10.1093/imaman/dpad028",
+   "licence": "CC-BY-4.0",
+   "availability": {
+    "level": "unavailable",
+    "reason": "legal"
+   },
+   "description": "Daily electric vehicle charging demand dataset (511 observations) analysed in Section 6 (restricted by non-disclosure agreement)."
+  },
+  {
+   "id": "A3",
+   "kind": "table",
+   "uri": "https://entrylib.org/p/2026.000006/v2/files/files/simulation-results.csv",
+   "version": "sha256:2dbe10316b91c825b5294044bac70a581d6113ab50ee84504bda9bbc2d56e88f",
+   "licence": "CC-BY-4.0",
+   "availability": {
+    "level": "public"
+   },
+   "description": "Full simulation results tables (Table 1 from Section 3 and Tables 4-5 from Section 5) exported as CSV."
+  }
+ ],
+ "open_questions": [
+  {
+   "id": "O1",
+   "question": "How can a pure multiplicative state space model be formulated so that it retains positive support without exhibiting explosive multiplicative trends in place of $ETS(M,M,*)$?",
+   "claims": [
+    "C1",
+    "C3"
+   ]
+  }
+ ]
+}
