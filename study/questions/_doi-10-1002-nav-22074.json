@@ -172,7 +172,7 @@
     {
       "id": "Q14",
       "type": "evidence",
-      "question": "What empirical evidence supports the idea of using an information criterion to choose between seasonal and non-seasonal CES?",
+      "question": "What empirical evidence supports the idea of using an information criterion to choose between seasonal and non-seasonal CES, and how strong is it?",
       "answer": "Only the accuracy results on the seasonal subset (2,053 series, Table 5): CES with its form chosen automatically by the criterion beats every seasonal ETS model on RMSSE and MASE. No experiment compares the criterion with another way of choosing, and the seasonal/non-seasonal split of the series was itself made by ETS model selection. (The criterion is called AIC in Section 4.2 and AICc in Section 4.4.)",
       "claims": [
         "C58",
