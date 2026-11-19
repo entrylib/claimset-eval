@@ -6,7 +6,8 @@
 
 Each mode copies its proof document into $CLAIMSET_RUN_DIR and writes its checks to $CLAIMSET_RESULTS:
 - "relative error of the numerical check" for every check, with conditions {hypothesis, check, ...}. For an
-  equality it is |computed - stated| / max(|stated|, 1e-300); for an inequality it is the relative violation,
+  equality it is |computed - stated| / max(|stated|, 1e-300), and for influence-function values, which cross zero,
+  |computed - stated| / max(|stated|, 1); for an inequality it is the relative violation,
   max(0, (bound - value) / |bound|), which is 0 when the inequality holds.
 - "largest relative error of the numerical checks" for every hypothesis (the diagnostic the plans name).
 Other results (growth exponents, simulated standard deviations) are named for what they are.
@@ -42,6 +43,11 @@ def rel(computed, stated):
     return abs(computed - stated) / max(abs(stated), mp.mpf("1e-300"))
 
 
+def scaled(computed, stated):
+    """|computed - stated| / max(|stated|, 1): the error of an influence-function value, which crosses zero."""
+    return abs(computed - stated) / max(abs(stated), mp.mpf(1))
+
+
 def violation(value, bound):
     """Relative violation of value >= bound (0 when it holds)."""
     return max(mp.mpf(0), (bound - value) / abs(bound))
@@ -67,9 +73,28 @@ DISTS = {
 SYMMETRIC = ("normal", "uniform", "Laplace", "t(5)")
 
 
-def integral(fn, lo, hi, points=()):
-    pts = [lo] + sorted(p for p in points if lo < p < hi) + [hi]
-    return mp.quad(fn, pts)
+def integral(fn, lo, hi, points=(), heavy=False):
+    """The integral of fn over (lo, hi), split at the points. With heavy=True an infinite end is reached from the
+    nearest finite point by the substitution y = a +- exp(u), which keeps slowly decaying (heavy-tailed) integrands
+    accurate (Student t with few degrees of freedom, Cauchy)."""
+    if not heavy:
+        pts = [lo] + sorted(p for p in points if lo < p < hi) + [hi]
+        return mp.quad(fn, pts)
+    if lo >= hi:
+        return mp.mpf(0)
+    inner = sorted(p for p in points if lo < p < hi)
+    if lo == -mp.inf and hi == mp.inf and not inner:
+        inner = [mp.mpf(0)]
+    finite = ([lo] if lo != -mp.inf else []) + inner + ([hi] if hi != mp.inf else [])
+    total = mp.quad(fn, finite) if len(finite) > 1 else mp.mpf(0)
+    upts = [-mp.inf, -20, 0, 5, 20, 60, 200, mp.inf]
+    if hi == mp.inf:
+        a = finite[-1]
+        total += mp.quad(lambda u: fn(a + mp.exp(u)) * mp.exp(u), upts)
+    if lo == -mp.inf:
+        a = finite[0]
+        total += mp.quad(lambda u: fn(a - mp.exp(u)) * mp.exp(u), upts)
+    return total
 
 
 class Law:
@@ -315,8 +340,8 @@ def properties():
                 gA, gH = (Ap - Am) / (2 * e), (Hp - Hm) / (2 * e)
                 iA, iH = IF(x)
                 cond = {"distribution": n, "k": k, "side": "above" if side > 0 else "below"}
-                check("H17", "Asymmetry: central difference against the derived influence function", rel(gA, iA), **cond)
-                check("H17", "Hypotailedness: central difference against the derived influence function", rel(gH, iH), **cond)
+                check("H17", "Asymmetry: central difference against the derived influence function", scaled(gA, iA), **cond)
+                check("H17", "Hypotailedness: central difference against the derived influence function", scaled(gH, iH), **cond)
                 logs[("A", side)].append((k, iA))
                 logs[("H", side)].append((k, iH))
                 if k >= 10:
@@ -336,9 +361,9 @@ def properties():
 # ---------- PL2: closed forms ----------
 
 def distributions():
-    def num_parts(pdf, lo, hi, centre, pts=()):
-        R = integral(lambda y: mp.sqrt(y - centre) * pdf(y), centre, hi, pts)
-        I = integral(lambda y: mp.sqrt(centre - y) * pdf(y), lo, centre, pts)
+    def num_parts(pdf, lo, hi, centre, pts=(), heavy=False):
+        R = integral(lambda y: mp.sqrt(y - centre) * pdf(y), centre, hi, pts, heavy)
+        I = integral(lambda y: mp.sqrt(centre - y) * pdf(y), lo, centre, pts, heavy)
         return R, I
 
     def var_of(pdf, lo, hi, centre):
@@ -395,7 +420,7 @@ def distributions():
     for nu in ("0.75", "1", "1.5", "3", "5", "30"):
         nu = mp.mpf(nu)
         pdf = lambda y, nu=nu: mp.gamma((nu + 1) / 2) / (mp.sqrt(nu * mp.pi) * mp.gamma(nu / 2)) * (1 + y * y / nu) ** (-(nu + 1) / 2)
-        R, I = num_parts(pdf, -mp.inf, mp.inf, 0, (1, 10, 100))
+        R, I = num_parts(pdf, -mp.inf, mp.inf, 0, (1, 10, 100), heavy=True)
         part = mp.gamma(0.75) * mp.gamma((nu - mp.mpf(0.5)) / 2) * nu ** mp.mpf(0.25) / (2 * mp.sqrt(mp.pi) * mp.gamma(nu / 2))
         cond = {"nu": float(nu)}
         check("H14", "real part about 0", rel(R, part), **cond)
@@ -407,7 +432,7 @@ def distributions():
     for g in (1, 2):
         g = mp.mpf(g)
         pdf = lambda y, g=g: g / (mp.pi * (y * y + g * g))
-        R, I = num_parts(pdf, -mp.inf, mp.inf, 0, (g, 100 * g))
+        R, I = num_parts(pdf, -mp.inf, mp.inf, 0, (g, 100 * g), heavy=True)
         part = mp.sqrt(g) / 2 * mp.sec(mp.pi / 4)
         cond = {"gamma": float(g)}
         check("H15", "real part about 0", rel(R, part), **cond)
