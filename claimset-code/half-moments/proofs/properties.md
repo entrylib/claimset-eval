@@ -129,7 +129,7 @@ Symmetric with $P(D = 0) = 0$: $D$ and $-D$ have the same law, so the law of $D$
 
 The parts of CE are $u \mapsto 2u^p - 1$ applied to $H_\pm \in (0, 1]$; as in H7 they lie in $(-1, 1]$ and are 0 when $H_\pm = h_U$. ∎
 
-*Remark.* Without the condition $P(D = 0) = 0$ the symmetric case gives $H_\pm = H\,(1 - P(D = 0))^{-1/4}$: an atom at the mean raises both one-sided values above $H$.
+*Remark.* Without the condition $P(D = 0) = 0$ the symmetric case gives $H_\pm = H\,(1 - p_0)^{-3/4}$ with $p_0 = P(D = 0)$, because $\nu = (1 - p_0)\,\mathrm{E}[|D|^{0.5} \mid D \ne 0]$ and $\sigma^2 = (1 - p_0)\,\mathrm{E}[D^2 \mid D \ne 0]$: an atom at the mean raises both one-sided values above $H$. (Corrected after the independent check; the run RN6 holds the earlier text with the exponent $-1/4$.)
 
 ## H17. Influence functions
 
