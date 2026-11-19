@@ -1,0 +1,166 @@
+H10 relative error 0 {'quantity': 'real part'}
+H10 relative error 0 {'quantity': 'imaginary part'}
+H10 relative error 0 {'quantity': 'Hypotailedness'}
+H10 absolute value 0 {'quantity': 'Extremity'}
+H11 relative error 0 {'quantity': 'each part'}
+H11 relative error 0 {'quantity': 'Hypotailedness'}
+H12 relative error 1.43645e-31 {'quantity': 'each part'}
+H12 relative error 1.32319e-31 {'quantity': 'Hypotailedness'}
+H13 absolute error of total probability 0 {'shape': 0.5}
+H13 relative error 0 {'quantity': 'each part', 'shape': 0.5}
+H13 relative error 0 {'quantity': 'Hypotailedness', 'shape': 0.5}
+H13 absolute error of total probability 0 {'shape': 1.0}
+H13 relative error 0 {'quantity': 'each part', 'shape': 1.0}
+H13 relative error 0 {'quantity': 'Hypotailedness', 'shape': 1.0}
+H13 absolute error of total probability 0 {'shape': 2.0}
+H13 relative error 0 {'quantity': 'each part', 'shape': 2.0}
+H13 relative error 0 {'quantity': 'Hypotailedness', 'shape': 2.0}
+H13 absolute error of total probability 0 {'shape': 3.5}
+H13 relative error 2.63457e-31 {'quantity': 'each part', 'shape': 3.5}
+H13 relative error 1.15616e-31 {'quantity': 'Hypotailedness', 'shape': 3.5}
+H13 absolute error of total probability 0 {'shape': 8.0}
+H13 relative error 1.32565e-31 {'quantity': 'each part', 'shape': 8.0}
+H13 relative error 1.13201e-31 {'quantity': 'Hypotailedness', 'shape': 8.0}
+H14 relative error 0.000222304 {'quantity': 'each part', 'nu': 0.6}
+H14 relative error 6.2918e-19 {'quantity': 'each part', 'nu': 1.0}
+H14 relative error 1.78204e-31 {'quantity': 'each part', 'nu': 1.5}
+H14 relative error 1.02811e-31 {'quantity': 'each part', 'nu': 2.5}
+H14 relative error 2.51353e-19 {'quantity': 'Hypotailedness', 'nu': 2.5}
+H14 relative error 0 {'quantity': 'each part', 'nu': 5.0}
+H14 relative error 2.54306e-31 {'quantity': 'Hypotailedness', 'nu': 5.0}
+H14 relative error 0 {'quantity': 'each part', 'nu': 30.0}
+H14 relative error 0 {'quantity': 'Hypotailedness', 'nu': 30.0}
+H15 relative error 9.54199e-19 {'quantity': 'each part'}
+H16 relative error 4.53296e-31 {'quantity': 'real part', 'shape': 0.4, 'rate': 1.0}
+H16 relative error 1.90947e-14 {'quantity': 'imaginary part', 'shape': 0.4, 'rate': 1.0}
+H16 ratio of real to imaginary part 0.583254 {'shape': 0.4, 'rate': 1.0}
+H16 relative error 0 {'quantity': 'real part', 'shape': 1.0, 'rate': 1.0}
+H16 relative error 0 {'quantity': 'imaginary part', 'shape': 1.0, 'rate': 1.0}
+H16 relative error 1.51227e-31 {'quantity': 'exponential real part', 'rate': 1.0}
+H16 relative error 1.06737e-31 {'quantity': 'exponential imaginary part', 'rate': 1.0}
+H16 ratio of real to imaginary part 0.705803 {'shape': 1.0, 'rate': 1.0}
+H16 relative error 1.30967e-31 {'quantity': 'real part', 'shape': 1.0, 'rate': 3.0}
+H16 relative error 0 {'quantity': 'imaginary part', 'shape': 1.0, 'rate': 3.0}
+H16 relative error 1.30967e-31 {'quantity': 'exponential real part', 'rate': 3.0}
+H16 relative error 1.84873e-31 {'quantity': 'exponential imaginary part', 'rate': 3.0}
+H16 ratio of real to imaginary part 0.705803 {'shape': 1.0, 'rate': 3.0}
+H16 relative error 1.82401e-31 {'quantity': 'real part', 'shape': 2.5, 'rate': 0.7}
+H16 relative error 1.46235e-31 {'quantity': 'imaginary part', 'shape': 2.5, 'rate': 0.7}
+H16 ratio of real to imaginary part 0.801725 {'shape': 2.5, 'rate': 0.7}
+H16 relative error 1.12301e-31 {'quantity': 'real part', 'shape': 7.0, 'rate': 2.0}
+H16 relative error 0 {'quantity': 'imaginary part', 'shape': 7.0, 'rate': 2.0}
+H16 ratio of real to imaginary part 0.876387 {'shape': 7.0, 'rate': 2.0}
+H2 smallest mass 0.00861204 {'b': 0.05}
+H2 absolute mean 1.75029e-30 {'b': 0.05}
+H2 real minus imaginary part over their sum 1.16699e-30 {'b': 0.05}
+H2 gap between 1 and the nearest positive interval 0.92625 {'b': 0.05}
+H2 smallest mass 0.081135 {'b': 0.3}
+H2 absolute mean 9.86076e-32 {'b': 0.3}
+H2 real minus imaginary part over their sum 1.17421e-31 {'b': 0.3}
+H2 gap between 1 and the nearest positive interval 0.595 {'b': 0.3}
+H2 smallest mass 0.137618 {'b': 0.5}
+H2 absolute mean 4.93038e-32 {'b': 0.5}
+H2 real minus imaginary part over their sum 1.04758e-31 {'b': 0.5}
+H2 gap between 1 and the nearest positive interval 0.375 {'b': 0.5}
+H2 smallest mass 0.209771 {'b': 0.8}
+H2 absolute mean 0 {'b': 0.8}
+H2 real minus imaginary part over their sum 1.48878e-31 {'b': 0.8}
+H2 gap between 1 and the nearest positive interval 0.12 {'b': 0.8}
+H2 smallest mass 0.244318 {'b': 0.97}
+H2 absolute mean 4.93038e-32 {'b': 0.97}
+H2 real minus imaginary part over their sum 1.18344e-30 {'b': 0.97}
+H2 gap between 1 and the nearest positive interval 0.01545 {'b': 0.97}
+H6 derivative of the L_3/2 objective at the mean, level tau* -5.52314e-32 {'shape': 1.0}
+H6 objective at mean minus objective at mean+0.05 -0.000769386 {'shape': 1.0}
+H6 objective at mean minus objective at mean-0.05 -0.000782316 {'shape': 1.0}
+H6 derivative of the L_3/2 objective at the mean, level tau* 1.08278e-31 {'shape': 2.5}
+H6 objective at mean minus objective at mean+0.05 -0.000628784 {'shape': 2.5}
+H6 objective at mean minus objective at mean-0.05 -0.000632989 {'shape': 2.5}
+H8 smallest ratio of sample Hypotailedness to the bound in a random search 1 {'n': 2}
+H8 ratio of sample Hypotailedness to the bound at the equality case 1 {'n': 2}
+H8 smallest ratio of sample Hypotailedness to the bound in a random search 1 {'n': 3}
+H8 ratio of sample Hypotailedness to the bound at the equality case 1 {'n': 3}
+H8 smallest ratio of sample Hypotailedness to the bound in a random search 1 {'n': 5}
+H8 ratio of sample Hypotailedness to the bound at the equality case 1 {'n': 5}
+H8 smallest ratio of sample Hypotailedness to the bound in a random search 1 {'n': 12}
+H8 ratio of sample Hypotailedness to the bound at the equality case 1 {'n': 12}
+H8 smallest ratio of sample Hypotailedness to the bound in a random search 1.17684 {'n': 50}
+H8 ratio of sample Hypotailedness to the bound at the equality case 1 {'n': 50}
+H9 one-sided over two-sided Hypotailedness 1.18218 {'atom': 0.2}
+H9 (1 - atom)^(-1/4) 1.05737 {'atom': 0.2}
+H9 (1 - atom)^(-3/4) 1.18218 {'atom': 0.2}
+H9 one-sided over two-sided Hypotailedness 1.68179 {'atom': 0.5}
+H9 (1 - atom)^(-1/4) 1.18921 {'atom': 0.5}
+H9 (1 - atom)^(-3/4) 1.68179 {'atom': 0.5}
+H17 relative error of the influence function against a finite difference 4.52291e-12 {'coefficient': 'Asymmetry', 'shape': 1.0, 'x': -30.0}
+H17 relative error of the influence function against a finite difference 8.61101e-09 {'coefficient': 'Hypotailedness', 'shape': 1.0, 'x': -30.0}
+H17 relative error of the influence function against a finite difference 2.38439e-08 {'coefficient': 'Extremity', 'shape': 1.0, 'x': -30.0}
+H17 relative error of the influence function against a finite difference 5.18829e-14 {'coefficient': 'Asymmetry', 'shape': 1.0, 'x': -2.0}
+H17 relative error of the influence function against a finite difference 9.85157e-13 {'coefficient': 'Hypotailedness', 'shape': 1.0, 'x': -2.0}
+H17 relative error of the influence function against a finite difference 2.20987e-12 {'coefficient': 'Extremity', 'shape': 1.0, 'x': -2.0}
+H17 relative error of the influence function against a finite difference 7.52769e-15 {'coefficient': 'Asymmetry', 'shape': 1.0, 'x': 0.3}
+H17 relative error of the influence function against a finite difference 3.03742e-12 {'coefficient': 'Hypotailedness', 'shape': 1.0, 'x': 0.3}
+H17 relative error of the influence function against a finite difference 3.04653e-12 {'coefficient': 'Extremity', 'shape': 1.0, 'x': 0.3}
+H17 relative error of the influence function against a finite difference 5.50201e-13 {'coefficient': 'Asymmetry', 'shape': 1.0, 'x': 4.0}
+H17 relative error of the influence function against a finite difference 2.24515e-10 {'coefficient': 'Hypotailedness', 'shape': 1.0, 'x': 4.0}
+H17 relative error of the influence function against a finite difference 2.23829e-10 {'coefficient': 'Extremity', 'shape': 1.0, 'x': 4.0}
+H17 relative error of the influence function against a finite difference 8.36001e-12 {'coefficient': 'Asymmetry', 'shape': 1.0, 'x': 40.0}
+H17 relative error of the influence function against a finite difference 2.23909e-08 {'coefficient': 'Hypotailedness', 'shape': 1.0, 'x': 40.0}
+H17 relative error of the influence function against a finite difference 5.91078e-08 {'coefficient': 'Extremity', 'shape': 1.0, 'x': 40.0}
+H17 influence function of Asymmetry over x -0.978867 {'shape': 1.0, 'x': 40.0}
+H17 influence function of Hypotailedness over x^2 -0.178557 {'shape': 1.0, 'x': 40.0}
+H17 relative error of the influence function against a finite difference 4.30573e-11 {'coefficient': 'Asymmetry', 'shape': 1.0, 'x': 400.0}
+H17 relative error of the influence function against a finite difference 0.000229178 {'coefficient': 'Hypotailedness', 'shape': 1.0, 'x': 400.0}
+H17 relative error of the influence function against a finite difference 0.000620142 {'coefficient': 'Extremity', 'shape': 1.0, 'x': 400.0}
+H17 influence function of Asymmetry over x -1.20346 {'shape': 1.0, 'x': 400.0}
+H17 influence function of Hypotailedness over x^2 -0.195353 {'shape': 1.0, 'x': 400.0}
+H17 minus kappa_A -1.29858 {'shape': 1.0}
+H17 minus H over 4 sigma^2 -0.196986 {'shape': 1.0}
+H18 mean of the influence function 2.79769e-32 {'coefficient': 'Asymmetry', 'distribution': 'gamma', 'shape': 1.0}
+H18 ratio of simulated to asymptotic standard deviation 1.01103 {'coefficient': 'Asymmetry', 'distribution': 'gamma', 'shape': 1.0, 'n': 4000, 'replications': 4000}
+H18 Monte Carlo standard error of the ratio (normal approximation) 0.0111803 {'coefficient': 'Asymmetry', 'distribution': 'gamma', 'shape': 1.0, 'n': 4000, 'replications': 4000}
+H18 skewness of the simulated estimates 0.0144476 {'coefficient': 'Asymmetry', 'distribution': 'gamma', 'shape': 1.0, 'n': 4000, 'replications': 4000}
+H18 mean of the influence function 4.32009e-32 {'coefficient': 'Hypotailedness', 'distribution': 'gamma', 'shape': 1.0}
+H18 ratio of simulated to asymptotic standard deviation 1.00648 {'coefficient': 'Hypotailedness', 'distribution': 'gamma', 'shape': 1.0, 'n': 4000, 'replications': 4000}
+H18 Monte Carlo standard error of the ratio (normal approximation) 0.0111803 {'coefficient': 'Hypotailedness', 'distribution': 'gamma', 'shape': 1.0, 'n': 4000, 'replications': 4000}
+H18 skewness of the simulated estimates -0.0608917 {'coefficient': 'Hypotailedness', 'distribution': 'gamma', 'shape': 1.0, 'n': 4000, 'replications': 4000}
+H18 mean of the influence function 1.64408e-31 {'coefficient': 'Extremity', 'distribution': 'gamma', 'shape': 1.0}
+H18 ratio of simulated to asymptotic standard deviation 1.0079 {'coefficient': 'Extremity', 'distribution': 'gamma', 'shape': 1.0, 'n': 4000, 'replications': 4000}
+H18 Monte Carlo standard error of the ratio (normal approximation) 0.0111803 {'coefficient': 'Extremity', 'distribution': 'gamma', 'shape': 1.0, 'n': 4000, 'replications': 4000}
+H18 skewness of the simulated estimates 0.0247369 {'coefficient': 'Extremity', 'distribution': 'gamma', 'shape': 1.0, 'n': 4000, 'replications': 4000}
+H17 relative error of the influence function against a finite difference 3.98344e-12 {'coefficient': 'Asymmetry', 'shape': 2.5, 'x': -30.0}
+H17 relative error of the influence function against a finite difference 1.69126e-09 {'coefficient': 'Hypotailedness', 'shape': 2.5, 'x': -30.0}
+H17 relative error of the influence function against a finite difference 4.59583e-09 {'coefficient': 'Extremity', 'shape': 2.5, 'x': -30.0}
+H17 relative error of the influence function against a finite difference 5.72409e-14 {'coefficient': 'Asymmetry', 'shape': 2.5, 'x': -2.0}
+H17 relative error of the influence function against a finite difference 9.73165e-13 {'coefficient': 'Hypotailedness', 'shape': 2.5, 'x': -2.0}
+H17 relative error of the influence function against a finite difference 1.89857e-12 {'coefficient': 'Extremity', 'shape': 2.5, 'x': -2.0}
+H17 relative error of the influence function against a finite difference 1.76509e-14 {'coefficient': 'Asymmetry', 'shape': 2.5, 'x': 0.3}
+H17 relative error of the influence function against a finite difference 9.81582e-12 {'coefficient': 'Hypotailedness', 'shape': 2.5, 'x': 0.3}
+H17 relative error of the influence function against a finite difference 9.85864e-12 {'coefficient': 'Extremity', 'shape': 2.5, 'x': 0.3}
+H17 relative error of the influence function against a finite difference 1.20261e-14 {'coefficient': 'Asymmetry', 'shape': 2.5, 'x': 4.0}
+H17 relative error of the influence function against a finite difference 1.70897e-14 {'coefficient': 'Hypotailedness', 'shape': 2.5, 'x': 4.0}
+H17 relative error of the influence function against a finite difference 3.75982e-14 {'coefficient': 'Extremity', 'shape': 2.5, 'x': 4.0}
+H17 relative error of the influence function against a finite difference 9.52091e-13 {'coefficient': 'Asymmetry', 'shape': 2.5, 'x': 40.0}
+H17 relative error of the influence function against a finite difference 3.1062e-09 {'coefficient': 'Hypotailedness', 'shape': 2.5, 'x': 40.0}
+H17 relative error of the influence function against a finite difference 8.07274e-09 {'coefficient': 'Extremity', 'shape': 2.5, 'x': 40.0}
+H17 influence function of Asymmetry over x -0.570488 {'shape': 2.5, 'x': 40.0}
+H17 influence function of Hypotailedness over x^2 -0.0664283 {'shape': 2.5, 'x': 40.0}
+H17 relative error of the influence function against a finite difference 4.59586e-10 {'coefficient': 'Asymmetry', 'shape': 2.5, 'x': 400.0}
+H17 relative error of the influence function against a finite difference 3.69729e-05 {'coefficient': 'Hypotailedness', 'shape': 2.5, 'x': 400.0}
+H17 relative error of the influence function against a finite difference 0.000100763 {'coefficient': 'Extremity', 'shape': 2.5, 'x': 400.0}
+H17 influence function of Asymmetry over x -0.759182 {'shape': 2.5, 'x': 400.0}
+H17 influence function of Hypotailedness over x^2 -0.0795272 {'shape': 2.5, 'x': 400.0}
+H17 minus kappa_A -0.832863 {'shape': 2.5}
+H17 minus H over 4 sigma^2 -0.0808371 {'shape': 2.5}
+H18 mean of the influence function 3.16266e-32 {'coefficient': 'Asymmetry', 'distribution': 'gamma', 'shape': 2.5}
+H18 ratio of simulated to asymptotic standard deviation 0.999155 {'coefficient': 'Asymmetry', 'distribution': 'gamma', 'shape': 2.5, 'n': 4000, 'replications': 4000}
+H18 Monte Carlo standard error of the ratio (normal approximation) 0.0111803 {'coefficient': 'Asymmetry', 'distribution': 'gamma', 'shape': 2.5, 'n': 4000, 'replications': 4000}
+H18 skewness of the simulated estimates -0.00860212 {'coefficient': 'Asymmetry', 'distribution': 'gamma', 'shape': 2.5, 'n': 4000, 'replications': 4000}
+H18 mean of the influence function -1.20982e-31 {'coefficient': 'Hypotailedness', 'distribution': 'gamma', 'shape': 2.5}
+H18 ratio of simulated to asymptotic standard deviation 0.989631 {'coefficient': 'Hypotailedness', 'distribution': 'gamma', 'shape': 2.5, 'n': 4000, 'replications': 4000}
+H18 Monte Carlo standard error of the ratio (normal approximation) 0.0111803 {'coefficient': 'Hypotailedness', 'distribution': 'gamma', 'shape': 2.5, 'n': 4000, 'replications': 4000}
+H18 skewness of the simulated estimates -0.013295 {'coefficient': 'Hypotailedness', 'distribution': 'gamma', 'shape': 2.5, 'n': 4000, 'replications': 4000}
+H18 mean of the influence function -5.13766e-31 {'coefficient': 'Extremity', 'distribution': 'gamma', 'shape': 2.5}
+H18 ratio of simulated to asymptotic standard deviation 0.990929 {'coefficient': 'Extremity', 'distribution': 'gamma', 'shape': 2.5, 'n': 4000, 'replications': 4000}
+H18 Monte Carlo standard error of the ratio (normal approximation) 0.0111803 {'coefficient': 'Extremity', 'distribution': 'gamma', 'shape': 2.5, 'n': 4000, 'replications': 4000}
+H18 skewness of the simulated estimates 0.0527351 {'coefficient': 'Extremity', 'distribution': 'gamma', 'shape': 2.5, 'n': 4000, 'replications': 4000}

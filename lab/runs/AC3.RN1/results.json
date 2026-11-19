@@ -1,0 +1,1542 @@
+[
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H10",
+"quantity": "real part"
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H10",
+"quantity": "imaginary part"
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H10",
+"quantity": "Hypotailedness"
+}
+},
+{
+"variable": "absolute value",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H10",
+"quantity": "Extremity"
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H11",
+"quantity": "each part"
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H11",
+"quantity": "Hypotailedness"
+}
+},
+{
+"variable": "relative error",
+"value": 1.4364479065911055e-31,
+"conditions": {
+"hypothesis": "H12",
+"quantity": "each part"
+}
+},
+{
+"variable": "relative error",
+"value": 1.3231924215643833e-31,
+"conditions": {
+"hypothesis": "H12",
+"quantity": "Hypotailedness"
+}
+},
+{
+"variable": "absolute error of total probability",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"shape": 0.5
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "each part",
+"shape": 0.5
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "Hypotailedness",
+"shape": 0.5
+}
+},
+{
+"variable": "absolute error of total probability",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"shape": 1.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "each part",
+"shape": 1.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "Hypotailedness",
+"shape": 1.0
+}
+},
+{
+"variable": "absolute error of total probability",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"shape": 2.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "each part",
+"shape": 2.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "Hypotailedness",
+"shape": 2.0
+}
+},
+{
+"variable": "absolute error of total probability",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"shape": 3.5
+}
+},
+{
+"variable": "relative error",
+"value": 2.6345674478099006e-31,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "each part",
+"shape": 3.5
+}
+},
+{
+"variable": "relative error",
+"value": 1.1561649015527134e-31,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "Hypotailedness",
+"shape": 3.5
+}
+},
+{
+"variable": "absolute error of total probability",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H13",
+"shape": 8.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.325645711124477e-31,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "each part",
+"shape": 8.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.1320110127318869e-31,
+"conditions": {
+"hypothesis": "H13",
+"quantity": "Hypotailedness",
+"shape": 8.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.00022230359369006432,
+"conditions": {
+"hypothesis": "H14",
+"quantity": "each part",
+"nu": 0.6
+}
+},
+{
+"variable": "relative error",
+"value": 6.291800007244208e-19,
+"conditions": {
+"hypothesis": "H14",
+"quantity": "each part",
+"nu": 1.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.7820407363179555e-31,
+"conditions": {
+"hypothesis": "H14",
+"quantity": "each part",
+"nu": 1.5
+}
+},
+{
+"variable": "relative error",
+"value": 1.0281054681469475e-31,
+"conditions": {
+"hypothesis": "H14",
+"quantity": "each part",
+"nu": 2.5
+}
+},
+{
+"variable": "relative error",
+"value": 2.513528616842534e-19,
+"conditions": {
+"hypothesis": "H14",
+"quantity": "Hypotailedness",
+"nu": 2.5
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H14",
+"quantity": "each part",
+"nu": 5.0
+}
+},
+{
+"variable": "relative error",
+"value": 2.5430586274248006e-31,
+"conditions": {
+"hypothesis": "H14",
+"quantity": "Hypotailedness",
+"nu": 5.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H14",
+"quantity": "each part",
+"nu": 30.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H14",
+"quantity": "Hypotailedness",
+"nu": 30.0
+}
+},
+{
+"variable": "relative error",
+"value": 9.541987154764933e-19,
+"conditions": {
+"hypothesis": "H15",
+"quantity": "each part"
+}
+},
+{
+"variable": "relative error",
+"value": 4.532956340218871e-31,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "real part",
+"shape": 0.4,
+"rate": 1.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.9094680084327215e-14,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "imaginary part",
+"shape": 0.4,
+"rate": 1.0
+}
+},
+{
+"variable": "ratio of real to imaginary part",
+"value": 0.5832544323502683,
+"conditions": {
+"hypothesis": "H16",
+"shape": 0.4,
+"rate": 1.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "real part",
+"shape": 1.0,
+"rate": 1.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "imaginary part",
+"shape": 1.0,
+"rate": 1.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.5122722819754378e-31,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "exponential real part",
+"rate": 1.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.0673656465594922e-31,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "exponential imaginary part",
+"rate": 1.0
+}
+},
+{
+"variable": "ratio of real to imaginary part",
+"value": 0.7058025590241086,
+"conditions": {
+"hypothesis": "H16",
+"shape": 1.0,
+"rate": 1.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.3096662136297928e-31,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "real part",
+"shape": 1.0,
+"rate": 3.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "imaginary part",
+"shape": 1.0,
+"rate": 3.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.3096662136297928e-31,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "exponential real part",
+"rate": 3.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.8487315300946452e-31,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "exponential imaginary part",
+"rate": 3.0
+}
+},
+{
+"variable": "ratio of real to imaginary part",
+"value": 0.7058025590241086,
+"conditions": {
+"hypothesis": "H16",
+"shape": 1.0,
+"rate": 3.0
+}
+},
+{
+"variable": "relative error",
+"value": 1.8240094526594024e-31,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "real part",
+"shape": 2.5,
+"rate": 0.7
+}
+},
+{
+"variable": "relative error",
+"value": 1.4623537492492355e-31,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "imaginary part",
+"shape": 2.5,
+"rate": 0.7
+}
+},
+{
+"variable": "ratio of real to imaginary part",
+"value": 0.8017248743514604,
+"conditions": {
+"hypothesis": "H16",
+"shape": 2.5,
+"rate": 0.7
+}
+},
+{
+"variable": "relative error",
+"value": 1.1230122542644248e-31,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "real part",
+"shape": 7.0,
+"rate": 2.0
+}
+},
+{
+"variable": "relative error",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H16",
+"quantity": "imaginary part",
+"shape": 7.0,
+"rate": 2.0
+}
+},
+{
+"variable": "ratio of real to imaginary part",
+"value": 0.8763873737498088,
+"conditions": {
+"hypothesis": "H16",
+"shape": 7.0,
+"rate": 2.0
+}
+},
+{
+"variable": "smallest mass",
+"value": 0.00861204225735661,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.05
+}
+},
+{
+"variable": "absolute mean",
+"value": 1.75028513345912e-30,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.05
+}
+},
+{
+"variable": "real minus imaginary part over their sum",
+"value": 1.1669933060910236e-30,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.05
+}
+},
+{
+"variable": "gap between 1 and the nearest positive interval",
+"value": 0.92625,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.05
+}
+},
+{
+"variable": "smallest mass",
+"value": 0.08113501887846468,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.3
+}
+},
+{
+"variable": "absolute mean",
+"value": 9.860761315262648e-32,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.3
+}
+},
+{
+"variable": "real minus imaginary part over their sum",
+"value": 1.174205175862728e-31,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.3
+}
+},
+{
+"variable": "gap between 1 and the nearest positive interval",
+"value": 0.595,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.3
+}
+},
+{
+"variable": "smallest mass",
+"value": 0.13761755737559278,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.5
+}
+},
+{
+"variable": "absolute mean",
+"value": 4.930380657631324e-32,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.5
+}
+},
+{
+"variable": "real minus imaginary part over their sum",
+"value": 1.0475831347105628e-31,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.5
+}
+},
+{
+"variable": "gap between 1 and the nearest positive interval",
+"value": 0.375,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.5
+}
+},
+{
+"variable": "smallest mass",
+"value": 0.2097705112354428,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.8
+}
+},
+{
+"variable": "absolute mean",
+"value": 0.0,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.8
+}
+},
+{
+"variable": "real minus imaginary part over their sum",
+"value": 1.4887781251297177e-31,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.8
+}
+},
+{
+"variable": "gap between 1 and the nearest positive interval",
+"value": 0.12,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.8
+}
+},
+{
+"variable": "smallest mass",
+"value": 0.24431788862535112,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.97
+}
+},
+{
+"variable": "absolute mean",
+"value": 4.930380657631324e-32,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.97
+}
+},
+{
+"variable": "real minus imaginary part over their sum",
+"value": 1.1834390509557549e-30,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.97
+}
+},
+{
+"variable": "gap between 1 and the nearest positive interval",
+"value": 0.01545,
+"conditions": {
+"hypothesis": "H2",
+"b": 0.97
+}
+},
+{
+"variable": "derivative of the L_3/2 objective at the mean, level tau*",
+"value": -5.523142078683343e-32,
+"conditions": {
+"hypothesis": "H6",
+"shape": 1.0
+}
+},
+{
+"variable": "objective at mean minus objective at mean+0.05",
+"value": -0.0007693861597206785,
+"conditions": {
+"hypothesis": "H6",
+"shape": 1.0
+}
+},
+{
+"variable": "objective at mean minus objective at mean-0.05",
+"value": -0.0007823159323755883,
+"conditions": {
+"hypothesis": "H6",
+"shape": 1.0
+}
+},
+{
+"variable": "derivative of the L_3/2 objective at the mean, level tau*",
+"value": 1.0827770341589754e-31,
+"conditions": {
+"hypothesis": "H6",
+"shape": 2.5
+}
+},
+{
+"variable": "objective at mean minus objective at mean+0.05",
+"value": -0.0006287835605902432,
+"conditions": {
+"hypothesis": "H6",
+"shape": 2.5
+}
+},
+{
+"variable": "objective at mean minus objective at mean-0.05",
+"value": -0.0006329890135250248,
+"conditions": {
+"hypothesis": "H6",
+"shape": 2.5
+}
+},
+{
+"variable": "smallest ratio of sample Hypotailedness to the bound in a random search",
+"value": 0.9999999999999999,
+"conditions": {
+"hypothesis": "H8",
+"n": 2
+}
+},
+{
+"variable": "ratio of sample Hypotailedness to the bound at the equality case",
+"value": 1.0000000000000002,
+"conditions": {
+"hypothesis": "H8",
+"n": 2
+}
+},
+{
+"variable": "smallest ratio of sample Hypotailedness to the bound in a random search",
+"value": 1.0000000000000002,
+"conditions": {
+"hypothesis": "H8",
+"n": 3
+}
+},
+{
+"variable": "ratio of sample Hypotailedness to the bound at the equality case",
+"value": 1.0000000000000002,
+"conditions": {
+"hypothesis": "H8",
+"n": 3
+}
+},
+{
+"variable": "smallest ratio of sample Hypotailedness to the bound in a random search",
+"value": 1.0000000000000002,
+"conditions": {
+"hypothesis": "H8",
+"n": 5
+}
+},
+{
+"variable": "ratio of sample Hypotailedness to the bound at the equality case",
+"value": 1.0000000000000002,
+"conditions": {
+"hypothesis": "H8",
+"n": 5
+}
+},
+{
+"variable": "smallest ratio of sample Hypotailedness to the bound in a random search",
+"value": 1.0,
+"conditions": {
+"hypothesis": "H8",
+"n": 12
+}
+},
+{
+"variable": "ratio of sample Hypotailedness to the bound at the equality case",
+"value": 1.0,
+"conditions": {
+"hypothesis": "H8",
+"n": 12
+}
+},
+{
+"variable": "smallest ratio of sample Hypotailedness to the bound in a random search",
+"value": 1.1768447014290766,
+"conditions": {
+"hypothesis": "H8",
+"n": 50
+}
+},
+{
+"variable": "ratio of sample Hypotailedness to the bound at the equality case",
+"value": 1.0000000000000002,
+"conditions": {
+"hypothesis": "H8",
+"n": 50
+}
+},
+{
+"variable": "one-sided over two-sided Hypotailedness",
+"value": 1.1821770112539696,
+"conditions": {
+"hypothesis": "H9",
+"atom": 0.2
+}
+},
+{
+"variable": "(1 - atom)^(-1/4)",
+"value": 1.057371263440564,
+"conditions": {
+"hypothesis": "H9",
+"atom": 0.2
+}
+},
+{
+"variable": "(1 - atom)^(-3/4)",
+"value": 1.1821770112539698,
+"conditions": {
+"hypothesis": "H9",
+"atom": 0.2
+}
+},
+{
+"variable": "one-sided over two-sided Hypotailedness",
+"value": 1.681792830507429,
+"conditions": {
+"hypothesis": "H9",
+"atom": 0.5
+}
+},
+{
+"variable": "(1 - atom)^(-1/4)",
+"value": 1.189207115002721,
+"conditions": {
+"hypothesis": "H9",
+"atom": 0.5
+}
+},
+{
+"variable": "(1 - atom)^(-3/4)",
+"value": 1.681792830507429,
+"conditions": {
+"hypothesis": "H9",
+"atom": 0.5
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 4.522913206871355e-12,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 1.0,
+"x": -30.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 8.611010377473174e-09,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 1.0,
+"x": -30.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 2.3843921482069915e-08,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 1.0,
+"x": -30.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 5.188287879211311e-14,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 1.0,
+"x": -2.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 9.851571864807063e-13,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 1.0,
+"x": -2.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 2.2098657562062987e-12,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 1.0,
+"x": -2.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 7.527692067888265e-15,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 1.0,
+"x": 0.3
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 3.0374152473708935e-12,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 1.0,
+"x": 0.3
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 3.04652761704034e-12,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 1.0,
+"x": 0.3
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 5.502013968651726e-13,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 1.0,
+"x": 4.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 2.2451479314805466e-10,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 1.0,
+"x": 4.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 2.2382882420488469e-10,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 1.0,
+"x": 4.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 8.360012929173628e-12,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 1.0,
+"x": 40.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 2.239091179043159e-08,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 1.0,
+"x": 40.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 5.910784291671197e-08,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 1.0,
+"x": 40.0
+}
+},
+{
+"variable": "influence function of Asymmetry over x",
+"value": -0.9788669985204186,
+"conditions": {
+"hypothesis": "H17",
+"shape": 1.0,
+"x": 40.0
+}
+},
+{
+"variable": "influence function of Hypotailedness over x^2",
+"value": -0.1785574805341439,
+"conditions": {
+"hypothesis": "H17",
+"shape": 1.0,
+"x": 40.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 4.305734125005463e-11,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 1.0,
+"x": 400.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 0.0002291782332238407,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 1.0,
+"x": 400.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 0.0006201417427080815,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 1.0,
+"x": 400.0
+}
+},
+{
+"variable": "influence function of Asymmetry over x",
+"value": -1.2034554819543954,
+"conditions": {
+"hypothesis": "H17",
+"shape": 1.0,
+"x": 400.0
+}
+},
+{
+"variable": "influence function of Hypotailedness over x^2",
+"value": -0.19535262759021527,
+"conditions": {
+"hypothesis": "H17",
+"shape": 1.0,
+"x": 400.0
+}
+},
+{
+"variable": "minus kappa_A",
+"value": -1.298580018981688,
+"conditions": {
+"hypothesis": "H17",
+"shape": 1.0
+}
+},
+{
+"variable": "minus H over 4 sigma^2",
+"value": -0.1969862897934694,
+"conditions": {
+"hypothesis": "H17",
+"shape": 1.0
+}
+},
+{
+"variable": "mean of the influence function",
+"value": 2.797685256604889e-32,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Asymmetry",
+"distribution": "gamma",
+"shape": 1.0
+}
+},
+{
+"variable": "ratio of simulated to asymptotic standard deviation",
+"value": 1.0110280986489137,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Asymmetry",
+"distribution": "gamma",
+"shape": 1.0,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "Monte Carlo standard error of the ratio (normal approximation)",
+"value": 0.011180339887498949,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Asymmetry",
+"distribution": "gamma",
+"shape": 1.0,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "skewness of the simulated estimates",
+"value": 0.014447599616092134,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Asymmetry",
+"distribution": "gamma",
+"shape": 1.0,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "mean of the influence function",
+"value": 4.3200918596892915e-32,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Hypotailedness",
+"distribution": "gamma",
+"shape": 1.0
+}
+},
+{
+"variable": "ratio of simulated to asymptotic standard deviation",
+"value": 1.0064824286007787,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Hypotailedness",
+"distribution": "gamma",
+"shape": 1.0,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "Monte Carlo standard error of the ratio (normal approximation)",
+"value": 0.011180339887498949,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Hypotailedness",
+"distribution": "gamma",
+"shape": 1.0,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "skewness of the simulated estimates",
+"value": -0.06089172654948382,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Hypotailedness",
+"distribution": "gamma",
+"shape": 1.0,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "mean of the influence function",
+"value": 1.64407874489457e-31,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Extremity",
+"distribution": "gamma",
+"shape": 1.0
+}
+},
+{
+"variable": "ratio of simulated to asymptotic standard deviation",
+"value": 1.0079002823154815,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Extremity",
+"distribution": "gamma",
+"shape": 1.0,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "Monte Carlo standard error of the ratio (normal approximation)",
+"value": 0.011180339887498949,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Extremity",
+"distribution": "gamma",
+"shape": 1.0,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "skewness of the simulated estimates",
+"value": 0.024736865332095615,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Extremity",
+"distribution": "gamma",
+"shape": 1.0,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 3.983441159177164e-12,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 2.5,
+"x": -30.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 1.6912614267915343e-09,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 2.5,
+"x": -30.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 4.595833421508957e-09,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 2.5,
+"x": -30.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 5.724092500877908e-14,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 2.5,
+"x": -2.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 9.731650614353335e-13,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 2.5,
+"x": -2.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 1.8985704579069568e-12,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 2.5,
+"x": -2.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 1.7650900050498307e-14,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 2.5,
+"x": 0.3
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 9.81582328949809e-12,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 2.5,
+"x": 0.3
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 9.858640471579976e-12,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 2.5,
+"x": 0.3
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 1.2026129854372051e-14,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 2.5,
+"x": 4.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 1.7089717187238332e-14,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 2.5,
+"x": 4.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 3.759824418929132e-14,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 2.5,
+"x": 4.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 9.52091177595934e-13,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 2.5,
+"x": 40.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 3.106201786187696e-09,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 2.5,
+"x": 40.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 8.072744221255097e-09,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 2.5,
+"x": 40.0
+}
+},
+{
+"variable": "influence function of Asymmetry over x",
+"value": -0.5704878235391082,
+"conditions": {
+"hypothesis": "H17",
+"shape": 2.5,
+"x": 40.0
+}
+},
+{
+"variable": "influence function of Hypotailedness over x^2",
+"value": -0.06642829254250714,
+"conditions": {
+"hypothesis": "H17",
+"shape": 2.5,
+"x": 40.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 4.595857043373076e-10,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Asymmetry",
+"shape": 2.5,
+"x": 400.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 3.697294550178673e-05,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Hypotailedness",
+"shape": 2.5,
+"x": 400.0
+}
+},
+{
+"variable": "relative error of the influence function against a finite difference",
+"value": 0.00010076275156234606,
+"conditions": {
+"hypothesis": "H17",
+"coefficient": "Extremity",
+"shape": 2.5,
+"x": 400.0
+}
+},
+{
+"variable": "influence function of Asymmetry over x",
+"value": -0.7591822397572356,
+"conditions": {
+"hypothesis": "H17",
+"shape": 2.5,
+"x": 400.0
+}
+},
+{
+"variable": "influence function of Hypotailedness over x^2",
+"value": -0.07952720655594288,
+"conditions": {
+"hypothesis": "H17",
+"shape": 2.5,
+"x": 400.0
+}
+},
+{
+"variable": "minus kappa_A",
+"value": -0.8328633890058224,
+"conditions": {
+"hypothesis": "H17",
+"shape": 2.5
+}
+},
+{
+"variable": "minus H over 4 sigma^2",
+"value": -0.0808370573672105,
+"conditions": {
+"hypothesis": "H17",
+"shape": 2.5
+}
+},
+{
+"variable": "mean of the influence function",
+"value": 3.1626568330971954e-32,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Asymmetry",
+"distribution": "gamma",
+"shape": 2.5
+}
+},
+{
+"variable": "ratio of simulated to asymptotic standard deviation",
+"value": 0.9991554989580937,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Asymmetry",
+"distribution": "gamma",
+"shape": 2.5,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "Monte Carlo standard error of the ratio (normal approximation)",
+"value": 0.011180339887498949,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Asymmetry",
+"distribution": "gamma",
+"shape": 2.5,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "skewness of the simulated estimates",
+"value": -0.008602115607642177,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Asymmetry",
+"distribution": "gamma",
+"shape": 2.5,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "mean of the influence function",
+"value": -1.2098234978916032e-31,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Hypotailedness",
+"distribution": "gamma",
+"shape": 2.5
+}
+},
+{
+"variable": "ratio of simulated to asymptotic standard deviation",
+"value": 0.9896311813912575,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Hypotailedness",
+"distribution": "gamma",
+"shape": 2.5,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "Monte Carlo standard error of the ratio (normal approximation)",
+"value": 0.011180339887498949,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Hypotailedness",
+"distribution": "gamma",
+"shape": 2.5,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "skewness of the simulated estimates",
+"value": -0.013295028703223497,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Hypotailedness",
+"distribution": "gamma",
+"shape": 2.5,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "mean of the influence function",
+"value": -5.137661387417959e-31,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Extremity",
+"distribution": "gamma",
+"shape": 2.5
+}
+},
+{
+"variable": "ratio of simulated to asymptotic standard deviation",
+"value": 0.9909289465093288,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Extremity",
+"distribution": "gamma",
+"shape": 2.5,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "Monte Carlo standard error of the ratio (normal approximation)",
+"value": 0.011180339887498949,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Extremity",
+"distribution": "gamma",
+"shape": 2.5,
+"n": 4000,
+"replications": 4000
+}
+},
+{
+"variable": "skewness of the simulated estimates",
+"value": 0.05273514871188337,
+"conditions": {
+"hypothesis": "H18",
+"coefficient": "Extremity",
+"distribution": "gamma",
+"shape": 2.5,
+"n": 4000,
+"replications": 4000
+}
+}
+]
