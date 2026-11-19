@@ -66,11 +66,11 @@ The distribution is not symmetric about 0: its density is positive on $J_1 \ni -
 
 ## H4. Range and sign of Asymmetry
 
-*Statement.* For $y$ with a finite mean that is not constant, $A \in [-1, 1]$; $A = 0$ when $R = I$; $A < 0$ exactly when $I > R$.
+*Statement* (as reworded after the first verdict; the first version stated $[-1, 1]$). For $y$ with a finite mean that is not constant, $A \in (-1, 1)$; $A = 0$ when $R = I$; $A < 0$ exactly when $I > R$.
 
 *Proof.* By Lemma 0, $p_\pm > 0$, so $R = \mathrm{E}[D_+^{0.5}] > 0$ and $I > 0$; $\nu > 0$ and $\phi = \arctan(I/R) \in (0, \pi/2)$. For $t = I/R > 0$, $\arctan 1 - \arctan t = \arctan\frac{1 - t}{1 + t}$ (the subtraction formula, valid as $1 \cdot t > -1$), so
 $$A = \frac{4}{\pi}\left(\arctan 1 - \arctan\frac{I}{R}\right) = \frac{4}{\pi}\arctan\frac{R - I}{R + I} = \frac{4}{\pi}\arctan\frac{R - I}{\nu}. \tag{A}$$
-Since $|R - I| < R + I$ (both positive), the argument lies in $(-1, 1)$ and $\arctan$ maps it into $(-\pi/4, \pi/4)$; hence $A \in (-1, 1) \subset [-1, 1]$. $\arctan$ is odd and increasing, so $A = 0$ iff $R = I$ and $A < 0$ iff $I > R$. ∎
+Since $|R - I| < R + I$ (both positive), the argument lies in $(-1, 1)$ and $\arctan$ maps it into $(-\pi/4, \pi/4)$; hence $A \in (-1, 1)$. $\arctan$ is odd and increasing, so $A = 0$ iff $R = I$ and $A < 0$ iff $I > R$. ∎
 
 *Remark.* The bounds $\pm 1$ are not attained by any non-constant distribution with a finite mean: $A = \pm 1$ would need $I = 0$ or $R = 0$, i.e. no probability on one side of the mean, which Lemma 0 excludes. The manuscript's "the boundary values are only possible if the centre is set at the maximum or minimum" agrees: they need a centre other than the mean.
 

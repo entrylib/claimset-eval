@@ -151,8 +151,28 @@ def law(name):
 
 # ---------- PL1: properties ----------
 
+def _h4(names):
+    # H4: identity (A) and the range, strictly inside (-1, 1); mirror images too
+    for n in names:
+        L = law(n)
+        for mirror in (False, True):
+            R, I = (L.I, L.R) if mirror else (L.R, L.I)
+            phi = mp.atan2(I, R)
+            a1 = 1 - phi / (mp.pi / 4)
+            cond = {"distribution": n + (" mirrored" if mirror else "")}
+            check("H4", "1 - phi/(pi/4) against (4/pi) arctan((R - I)/nu)", rel(a1, asym(R, I)) if a1 else a1 - asym(R, I), **cond)
+            check("H4", "Asymmetry within [-1, 1]", max(mp.mpf(0), abs(a1) - 1), **cond)
+            check("H4", "Asymmetry strictly inside (-1, 1): the parts are both positive", 0 if (R > 0 and I > 0 and abs(a1) < 1) else 1, **cond)
+            check("H4", "sign of Asymmetry against the larger part", 0 if (a1 < 0) == (I > R) or abs(R - I) < mp.mpf("1e-30") else 1, **cond)
+
+
+
 def properties():
     names = list(DISTS)
+    only = os.environ.get("HM_ONLY")                    # e.g. "H4": check one hypothesis (a re-decided wording)
+    if only == "H4":
+        _h4(names)
+        return
 
     # H1: symmetry gives equal parts
     for n in SYMMETRIC:
@@ -205,17 +225,7 @@ def properties():
                 err = max(rel(T.R, mp.sqrt(-c) * L.I), rel(T.I, mp.sqrt(-c) * L.R))
             check("H3", "parts of a + c y against the stated transform", err, distribution=n, c=float(c))
 
-    # H4: identity (A) and the range; mirror images too
-    for n in names:
-        L = law(n)
-        for mirror in (False, True):
-            R, I = (L.I, L.R) if mirror else (L.R, L.I)
-            phi = mp.atan2(I, R)
-            a1 = 1 - phi / (mp.pi / 4)
-            cond = {"distribution": n + (" mirrored" if mirror else "")}
-            check("H4", "1 - phi/(pi/4) against (4/pi) arctan((R - I)/nu)", rel(a1, asym(R, I)) if a1 else a1 - asym(R, I), **cond)
-            check("H4", "Asymmetry within [-1, 1]", max(mp.mpf(0), abs(a1) - 1), **cond)
-            check("H4", "sign of Asymmetry against the larger part", 0 if (a1 < 0) == (I > R) or abs(R - I) < mp.mpf("1e-30") else 1, **cond)
+    _h4(names)
 
     # H5: decomposition
     for n in names:
