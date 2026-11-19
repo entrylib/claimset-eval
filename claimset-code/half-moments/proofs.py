@@ -20,7 +20,7 @@ from pathlib import Path
 import mpmath as mp
 import numpy as np
 
-mp.mp.dps = 40
+mp.mp.dps = int(os.environ.get("HM_DPS", 40))      # 40 digits; lower only in exploratory test runs
 HERE = Path(__file__).resolve().parent
 RESULTS = []
 WORST = {}
