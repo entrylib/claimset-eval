@@ -13,6 +13,7 @@
   },
   "contributions": [
    "C1",
+   "C16",
    "C2",
    "C3",
    "C4",
@@ -30,7 +31,72 @@
   "study": "pilot",
   "published_as": {
    "id_type": "doi",
-   "id": "10.1002/nav.22074"
+   "id": "10.1002/nav.22074",
+   "corrections": [
+    {
+     "kind": "correction",
+     "field": "C27.statement",
+     "where": "Section 3.3, the list of forecasting trajectories",
+     "printed": "When $\\alpha_1 > 1$ the model produces trajectory with exponential growth.",
+     "recorded": "When $\\alpha_1 > 1$ and $\\alpha_0 < 2$, the [[D1:CES]] point forecast eventually grows exponentially in magnitude, upward or downward according to the current state, unless the state lies on the eigenvector of the smaller eigenvalue of $F$.",
+     "reason": "For $\\alpha_1 > 1$ the eigenvalues of $F$ are real with sum $2 - \\alpha_0$, so for $\\alpha_0 > 2$ the negative one dominates: at $\\alpha_0 = 2.2$, $\\alpha_1 = 1.2$, inside the stability region, they are 1.087 and $-1.287$ and the forecast alternates in sign as it diverges. The growth is eventual, not from the first step, and a state on the eigenvector of the smaller eigenvalue (the zero state included) does not grow.",
+     "found_by": "P5"
+    },
+    {
+     "kind": "correction",
+     "field": "C28.statement",
+     "where": "Section 3.3, the list of forecasting trajectories",
+     "printed": "When $(4 - \\alpha_0^2)/4 < \\alpha_1 < 1$ trajectory becomes stationary and CES produces exponential decline.",
+     "recorded": "When $(4 - \\alpha_0^2)/4 < \\alpha_1 < 1$, $0 < \\alpha_0 < 4$ and $\\alpha_1 < 5 - 2\\alpha_0$, the [[D1:CES]] point forecast declines exponentially in magnitude and, when $\\alpha_0 > 2$, eventually alternates in sign, unless the state lies on the eigenvector of the eigenvalue of $F$ of smaller modulus.",
+     "reason": "The interval alone does not keep the eigenvalues of $F$ inside the unit circle: at $\\alpha_0 = -1$, $\\alpha_1 = 0.9$ they are 1.113 and 1.887, and at $\\alpha_0 = 5$, $\\alpha_1 = -5.1$ they are $-1.113$ and $-1.887$. The conditions $0 < \\alpha_0 < 4$ and $\\alpha_1 < 5 - 2\\alpha_0$, which the stationarity condition of Section 3.2 carries, are needed. For $2 < \\alpha_0 < 4$ the dominant eigenvalue is negative, so the decline eventually alternates in sign, except from a state on the eigenvector of the other eigenvalue.",
+     "found_by": "P5"
+    },
+    {
+     "kind": "correction",
+     "field": "C30.statement",
+     "where": "Section 3.3, the list of forecasting trajectories",
+     "printed": "When $0 < \\alpha_1 < 1 - \\alpha_0$ the diverging harmonic trajectory is produced.",
+     "recorded": "When $\\alpha_0 \\ge 0$ and $0 < \\alpha_1 < 1 - \\alpha_0$, the [[D1:CES]] point forecast is a diverging harmonic oscillation.",
+     "reason": "For $\\alpha_0 < 0$ the interval reaches above $(4 - \\alpha_0^2)/4$, where the eigenvalues are real: at $\\alpha_0 = -1$, $\\alpha_1 = 0.9$ the forecast diverges exponentially without oscillating. Every stable point has $\\alpha_0 > 0$.",
+     "found_by": "P5"
+    },
+    {
+     "kind": "correction",
+     "field": "C25.statement",
+     "where": "Section 3.3, the list of forecasting trajectories",
+     "printed": "There are several types of forecasting trajectories of CES depending on the particular value of the complex smoothing parameter: a flat line, exponential growth, exponential decline, a harmonic trajectory converging to zero and a diverging harmonic trajectory.",
+     "recorded": "For $0 < \\alpha_0 < 2$ and almost every state, the [[D1:CES]] point forecast $w'F^{h-1}v_t$ eventually follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation, except on the line $\\alpha_0 + \\alpha_1 = 1$, where it oscillates with constant amplitude, and on the curve $\\alpha_1 = (4 - \\alpha_0^2)/4$, where the eigenvalue is repeated, it goes to zero as $(A + Bh)\\lambda^h$ without oscillating.",
+     "reason": "The five types cover the parameter plane only for $0 < \\alpha_0 < 2$ (see the corrections of the growth, decline and divergence conditions). On the line $\\alpha_0 + \\alpha_1 = 1$ the eigenvalues are complex with modulus exactly 1: at the stable point $\\alpha_0 = 0.8$, $\\alpha_1 = 0.2$ the forecast oscillates with constant amplitude, which none of the five types describes. On $\\alpha_1 = (4 - \\alpha_0^2)/4$ the eigenvalue $(2 - \\alpha_0)/2$ is repeated, and the trajectory also depends on the state, not on the parameter alone. In the growth and decline cases the forecast is a sum of two exponentials, so it takes its shape only eventually.",
+     "found_by": "P5"
+    },
+    {
+     "kind": "correction",
+     "field": "C44.statement",
+     "where": "Section 3.4.2",
+     "printed": "When $\\alpha_1$ is close to 1 the influence of $\\hat{e}_t$ on $\\hat{y}_t$ becomes minimal and the second smoothing parameter $\\alpha_0$ behaves similarly to the smoothing parameter in SES.",
+     "recorded": "When $\\alpha_1 = 1$, [[D1:CES]] is simple exponential smoothing with smoothing parameter $\\alpha_0 - 1$; when $\\alpha_1$ is close to 1, it behaves like it over short horizons only.",
+     "reason": "At $\\alpha_1 = 1$ the correspondence is exact. Near 1 it holds only over short horizons: with $\\alpha_0 = 1.24$ the response of the forecast to a unit error stays within 0.025 of 0.24 for 10 steps at $\\alpha_1 = 0.99$ or 1.01, but drifts by 0.14 to 0.30 over 100 steps.",
+     "found_by": "P5"
+    },
+    {
+     "kind": "misprint",
+     "field": "E6",
+     "where": "Equations (E9) to (E11), Appendix E",
+     "printed": "$\\det(I_2 - F_0 B) = 1 - 2B - (\\alpha_0 + \\alpha_1 - 2)B^2$ and $\\det(I_2 - F_1 B^m) = 1 - 2B^m - (\\beta_0 + \\beta_1 - 2)B^{2m}$",
+     "recorded": "$\\det(I_2 - F_0 B) = 1 - (2 - \\alpha_0)B - (\\alpha_0 + \\alpha_1 - 2)B^2$ and $\\det(I_2 - F_1 B^m) = 1 - (2 - \\beta_0)B^m - (\\beta_0 + \\beta_1 - 2)B^{2m}$",
+     "reason": "The determinant of $I_2 - F_0 B$ with $F_0$ as given in Appendix E has $-(2 - \\alpha_0)B$ as its linear term, as the non-seasonal model's autoregressive polynomial in Section 3.4.1 does; the orders of the SARIMA model are unaffected.",
+     "found_by": "P5"
+    },
+    {
+     "kind": "misprint",
+     "field": "E6",
+     "where": "Appendix E, the vectors g0 and g1 of (E1)",
+     "printed": "$g_0 = (\\alpha_1 - \\alpha_0, \\alpha_1 + \\alpha_0)'$ and $g_1 = (\\beta_1 - \\beta_0, \\beta_1 + \\beta_0)'$",
+     "recorded": "$g_0 = (\\alpha_0 - \\alpha_1, \\alpha_0 + \\alpha_1)'$ and $g_1 = (\\beta_0 - \\beta_1, \\beta_0 + \\beta_1)'$",
+     "reason": "The state-space form of CES in Section 3.2 has $(\\alpha_0 - \\alpha_1)\\varepsilon_t$ in the level equation; Appendix E inverts the sign of the first element.",
+     "found_by": "P5"
+    }
+   ]
   },
   "autonomy": "human_assisted",
   "summary": "Exponential smoothing forecasts a series by first choosing a model: with or without a trend, with or without seasonality. This paper proposes complex exponential smoothing (CES), which uses complex variables, pairing each value with its forecast error, so that one model moves smoothly between a level and a trend as its smoothing parameter changes. It shows that CES can be stationary or non-stationary depending on that parameter, and that it corresponds to an ARMA(2,2) model whose coefficients are tied together. A seasonal version handles seasonality without seasonal indices, so model selection reduces to a choice between two models. On the series of the M1, M3, tourism and M4 forecasting competitions, CES was more accurate than exponential smoothing, ARIMA and the Theta method on most error measures, though not on all, and adding it to a combination of forecasts improved the combination.",
@@ -40,10 +106,10 @@
   },
   "highlights": [
    "D1",
+   "C16",
    "C2",
    "C10",
-   "C4",
-   "C12"
+   "C4"
   ]
  },
  "contributors": [
@@ -111,6 +177,36 @@
    "record_source": "user_reported",
    "system": {
     "name": "Claude Code"
+   },
+   "label": "JSON preparation"
+  },
+  {
+   "id": "P5",
+   "type": "agent",
+   "name": "Claude Code",
+   "label": "proof checking",
+   "positions": [
+    "contributor"
+   ],
+   "models": [
+    {
+     "model": "M2",
+     "role": "sole"
+    }
+   ],
+   "ai_tasks": [
+    {
+     "task": "review",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "file_access",
+    "code_execution"
+   ],
+   "record_source": "harness",
+   "system": {
+    "name": "Claude Code"
    }
   }
  ],
@@ -123,6 +219,15 @@
    "identifier": "claude-opus-5-5",
    "weights": "api_only",
    "accessed": "2026-10-23"
+  },
+  {
+   "id": "M2",
+   "provider": "Anthropic",
+   "name": "Claude Fable",
+   "version": "5.2",
+   "identifier": "claude-fable-5-2",
+   "weights": "api_only",
+   "accessed": "2026-11-16"
   }
  ],
  "definitions": [
@@ -502,7 +607,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "depends_on": [
     "C17",
     "C18",
@@ -562,7 +667,61 @@
     "object": "D2",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "From F=[[1,-(1-a1)],[1,1-a0]] the characteristic polynomial is lam^2-(2-a0)lam+(2-a0-a1) (sympy), so both eigenvalues are inside the unit circle exactly on the triangle a1<1, a1<5-2a0, a1>1-a0 and at least one is on or outside it elsewhere (200,000 random points, no mismatch). Both cases therefore occur, e.g. (a0,a1)=(1.5,0.9) stationary and (1.5,1.1) non-stationary. The resultant of the AR and MA polynomials of the underlying ARMA(2,2) is (a0^2+a1^2)(a1-1)(a0+a1-2), so the unstable AR root is not cancelled except on the line a0+a1=2 (at a1=1 the cancelled factor is not the unit root). The result does not need C25, which is disputed below."
+    }
+   ]
+  },
+  {
+   "id": "C16",
+   "statement": "[[D1:CES]] has the single-source-of-error state-space form $$\\begin{aligned} y_t &= l_{t-1} + \\varepsilon_t \\\\ l_t &= l_{t-1} - (1 - \\alpha_1) c_{t-1} + (\\alpha_0 - \\alpha_1) \\varepsilon_t \\\\ c_t &= l_{t-1} + (1 - \\alpha_0) c_{t-1} + (\\alpha_0 + \\alpha_1) \\varepsilon_t \\end{aligned}$$ with level $l_t$ and [[D3:nonlinear trend component]] $c_t$.",
+   "type": "formal",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E1"
+    }
+   ],
+   "verification": "agent_checked",
+   "assumptions": [
+    "C60",
+    "C61"
+   ],
+   "source_spans": [
+    "p4.4-p4.13",
+    "p13.28-p14.3"
+   ],
+   "provenance": "author_stated",
+   "about": {
+    "subject": "D1",
+    "relation": "has the single-source-of-error state-space form",
+    "object": "a level and a nonlinear trend state",
+    "comparator": null,
+    "conditions": []
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B14",
+     "self": true,
+     "note": "Exponential smoothing methods can be written as state-space models with a single source of error."
+    }
+   ],
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Paper equation (6) is garbled in the text, so the real and imaginary parts were re-derived from the recursion in definition D1 with sympy. Setting l_{t-1}=yhat_t, c_{t-1}=ehat_t and y_{t-1}=yhat_{t-1}+e_{t-1} gives exactly the three stated equations (symbolic difference 0), with e_t=eps_t as C61 assumes. A 200-step simulation of the complex recursion and of the state-space form with a0=1.3, a1=0.8 agreed to 1e-15."
+    }
+   ]
   },
   {
    "id": "C2",
@@ -576,7 +735,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "depends_on": [
     "C17",
     "C18",
@@ -598,7 +757,23 @@
     "object": "D2",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B1",
+     "self": true,
+     "note": "The exponential smoothing models of the ETS framework are non-stationary."
+    }
+   ],
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Read as: the eigenvalues of F, (2-a0 +- sqrt(a0^2+4a1-4))/2, are continuous functions of (a0,a1), and the stationarity boundary a1=1 (eigenvalue exactly 1, by p(1)=1-a1) lies inside the parameter space and inside the stability region, so one model with no change of form crosses from stationary to non-stationary. Checked symbolically and by example: (1.5,0.9) and (1.5,1.1) are both stable, with largest eigenvalues 0.930 and 1.064. 'Continuously' is the claimset's word; the paper says the transition needs no switching between models, which is what was verified. The result does not need C25."
+    }
+   ]
   },
   {
    "id": "C3",
@@ -650,7 +825,14 @@
     "conditions": [
      "D8"
     ]
-   }
+   },
+   "relations": [
+    {
+     "type": "addresses",
+     "reference": "B2",
+     "note": "The trend alternatives of exponential smoothing in a state space framework make the selection of a model difficult."
+    }
+   ]
   },
   {
    "id": "C4",
@@ -698,11 +880,18 @@
     "conditions": [
      "D32"
     ]
-   }
+   },
+   "relations": [
+    {
+     "type": "addresses",
+     "reference": "B2",
+     "note": "The trend alternatives of exponential smoothing in a state space framework make the selection of a model difficult."
+    }
+   ]
   },
   {
    "id": "C5",
-   "statement": "[[D1:CES]] has an underlying ARMA(2,2) model whose coefficients $\\phi_1 = 2 - \\alpha_0$, $\\phi_2 = \\alpha_0 + \\alpha_1 - 2$, $\\theta_1 = 2 - 2\\alpha_0 + \\alpha_1$ and $\\theta_2 = 3\\alpha_0 + \\alpha_1 - 2 - \\alpha_0^2 - \\alpha_1^2$ are nonlinear functions of the same two parameters $\\alpha_0$ and $\\alpha_1$.",
+   "statement": "[[D1:CES]] has an underlying ARMA(2,2) model whose coefficients $$\\begin{aligned} \\phi_1 &= 2 - \\alpha_0 \\\\ \\phi_2 &= \\alpha_0 + \\alpha_1 - 2 \\\\ \\theta_1 &= 2 - 2\\alpha_0 + \\alpha_1 \\\\ \\theta_2 &= 3\\alpha_0 + \\alpha_1 - 2 - \\alpha_0^2 - \\alpha_1^2 \\end{aligned}$$ are functions of the same two parameters $\\alpha_0$ and $\\alpha_1$, so that the autoregressive and moving-average coefficients are tied together; $\\theta_2$ is nonlinear in them.",
    "type": "formal",
    "role": "principal",
    "novelty": "no_prior_found",
@@ -712,7 +901,7 @@
      "evidence": "E5"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "depends_on": [
     "C16"
    ],
@@ -732,7 +921,28 @@
     "object": "ARMA(2,2) model with coefficients nonlinear in the two parameters",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B26",
+     "note": "Exponential smoothing methods have equivalent ARIMA models: simple exponential smoothing corresponds to ARIMA(0,1,1)."
+    }
+   ],
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Computed y_t=[1+B w'(I-FB)^{-1}g]eps_t with sympy: det(I-FB)=1-(2-a0)B-(a0+a1-2)B^2 and the numerator is 1-(2-2a0+a1)B-(3a0+a1-2-a0^2-a1^2)B^2, so all four coefficients are as stated under the convention (1-phi1 B-phi2 B^2)y_t=(1-theta1 B-theta2 B^2)eps_t; on simulated series for (a0,a1)=(1.3,0.8),(0.7,1.2),(1.9,0.4) the identity held to 1e-16. The paper's own route (B1)-(B4) divides by 1-a1 and is garbled in the text; the transfer-function route used here needs no such division. Not confirmed as worded: only theta2 is a nonlinear function of a0 and a1; phi1, phi2 and theta1 are linear (affine) in them, so 'nonlinear' holds for the map as a whole, not for each coefficient. At a1=1 and on a0+a1=2 the AR and MA polynomials share a factor, so the minimal model there is of lower order."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Check of the corrected statement. The four coefficients are unchanged and were reproduced before (sympy transfer function 1+B w'(I-FB)^{-1}g and simulated series). The new wording holds in every part: all four are functions of a0 and a1 only, (phi1,phi2) fixes (a0,a1) and hence (theta1,theta2), so the AR and MA coefficients are tied together, and theta2 is the one coefficient that is nonlinear (quadratic) while the other three are affine. As before, at a1=1 and on a0+a1=2 the two polynomials share a factor, so the ARMA(2,2) form holds there but is not minimal."
+    }
+   ]
   },
   {
    "id": "C6",
@@ -746,7 +956,7 @@
      "evidence": "E5"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "depends_on": [
     "C5"
    ],
@@ -763,7 +973,27 @@
     "object": null,
     "comparator": "the parameter space of the general ARMA(2,2) model",
     "conditions": []
-   }
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B26",
+     "note": "Exponential smoothing methods have equivalent ARIMA models: simple exponential smoothing corresponds to ARIMA(0,1,1)."
+    },
+    {
+     "type": "qualifies",
+     "reference": "B27",
+     "note": "The coefficients of a general ARMA(2,2) model are free parameters, restricted only by the stationarity and invertibility conditions."
+    }
+   ],
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "With the coefficients of C5, (phi1,phi2) fixes a0=2-phi1 and a1=phi1+phi2, and then theta1 and theta2 are determined, so the CES coefficients fill only a two-dimensional surface in the four-dimensional coefficient space of a general ARMA(2,2). That surface also leaves the stationary region of the general model (C7), so the two parameter spaces differ. Checked symbolically."
+    }
+   ]
   },
   {
    "id": "C7",
@@ -777,7 +1007,7 @@
      "evidence": "E5"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "depends_on": [
     "C5"
    ],
@@ -794,7 +1024,22 @@
     "object": "stationary models",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "relations": [
+    {
+     "type": "qualifies",
+     "reference": "B27",
+     "note": "The coefficients of a general ARMA(2,2) model are free parameters, restricted only by the stationarity and invertibility conditions."
+    }
+   ],
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "The AR polynomial 1-(2-a0)B-(a0+a1-2)B^2 has a root on or inside the unit circle whenever a1>=1, and such points lie in the admissible (stable) region: for (a0,a1)=(1.5,1.1) the eigenvalues of the discount matrix are inside the unit circle while F has eigenvalue 1.064. In 200,000 random draws, 4,638 of the 6,882 stable points were non-stationary."
+    }
+   ]
   },
   {
    "id": "C8",
@@ -831,7 +1076,21 @@
      "additive error",
      "seasonal period m"
     ]
-   }
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B1",
+     "self": true,
+     "note": "Conventional seasonal exponential smoothing models represent seasonality with a set of seasonal components."
+    },
+    {
+     "type": "extends",
+     "reference": "B27",
+     "locator": "p. 300",
+     "note": "Seasonal ARIMA models describe seasonality through relations between observations a seasonal period apart."
+    }
+   ]
   },
   {
    "id": "C9",
@@ -868,7 +1127,15 @@
      "additive error",
      "seasonal period m"
     ]
-   }
+   },
+   "relations": [
+    {
+     "type": "addresses",
+     "reference": "B1",
+     "self": true,
+     "note": "The seasonal components of conventional exponential smoothing models need to be renormalised."
+    }
+   ]
   },
   {
    "id": "C10",
@@ -911,7 +1178,14 @@
     "conditions": [
      "selection by an information criterion"
     ]
-   }
+   },
+   "relations": [
+    {
+     "type": "addresses",
+     "reference": "B2",
+     "note": "The trend alternatives of exponential smoothing in a state space framework make the selection of a model difficult."
+    }
+   ]
   },
   {
    "id": "C11",
@@ -956,7 +1230,15 @@
     "conditions": [
      "D8"
     ]
-   }
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B13",
+     "self": true,
+     "note": "A median combination of ETS, ARIMA, Theta and CES forecasts (SCUM) is accurate on the M4 competition data."
+    }
+   ]
   },
   {
    "id": "C12",
@@ -1001,7 +1283,15 @@
     "conditions": [
      "D32"
     ]
-   }
+   },
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B13",
+     "self": true,
+     "note": "A median combination of ETS, ARIMA, Theta and CES forecasts (SCUM) is accurate on the M4 competition data."
+    }
+   ]
   },
   {
    "id": "C13",
@@ -1033,6 +1323,12 @@
     "object": "level processes",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "non-seasonal univariate time series generated by level processes",
+    "conditions": [
+     "non-seasonal CES"
+    ]
    }
   },
   {
@@ -1066,6 +1362,12 @@
     "object": "multiplicative trend processes",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "non-seasonal univariate time series generated by multiplicative trend processes",
+    "conditions": [
+     "non-seasonal CES"
+    ]
    }
   },
   {
@@ -1097,36 +1399,12 @@
     "object": "additive trend processes",
     "comparator": null,
     "conditions": []
-   }
-  },
-  {
-   "id": "C16",
-   "statement": "[[D1:CES]] has the single-source-of-error state-space form $y_t = l_{t-1} + \\varepsilon_t$, $l_t = l_{t-1} - (1 - \\alpha_1) c_{t-1} + (\\alpha_0 - \\alpha_1) \\varepsilon_t$, $c_t = l_{t-1} + (1 - \\alpha_0) c_{t-1} + (\\alpha_0 + \\alpha_1) \\varepsilon_t$, with level $l_t$ and [[D3:nonlinear trend component]] $c_t$.",
-   "type": "formal",
-   "role": "supporting",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "formal_proof",
-     "evidence": "E1"
-    }
-   ],
-   "verification": "unchecked",
-   "assumptions": [
-    "C60",
-    "C61"
-   ],
-   "source_spans": [
-    "p4.4-p4.13",
-    "p13.28-p14.3"
-   ],
-   "provenance": "author_stated",
-   "about": {
-    "subject": "D1",
-    "relation": "has the single-source-of-error state-space form",
-    "object": "a level and a nonlinear trend state",
-    "comparator": null,
-    "conditions": []
+   },
+   "scope": {
+    "data_type": "non-seasonal univariate time series generated by additive trend processes",
+    "conditions": [
+     "non-seasonal CES"
+    ]
    }
   },
   {
@@ -1147,7 +1425,7 @@
      "self": true
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p4.17-p4.19",
     "p5.6",
@@ -1164,7 +1442,15 @@
      "α1 < 1",
      "α1 > 1 − α0"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "The eigenvalues of F are the roots of lam^2-phi1 lam-phi2 with phi1=2-a0, phi2=a0+a1-2; the standard conditions phi1+phi2<1, phi2-phi1<1, phi2>-1 reduce to a1<1, a1<5-2a0, a1>1-a0 (sympy: p(1)=1-a1, p(-1)=5-2a0-a1, product of roots 2-a0-a1). Numerically, over 200,000 random (a0,a1) in [-3,6]x[-4,4] the spectral radius of F was below 1 exactly when the three inequalities held, so the condition is also necessary. The paper's Appendix C reaches the same system by a longer case analysis."
+    }
+   ]
   },
   {
    "id": "C18",
@@ -1178,7 +1464,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p4.19"
    ],
@@ -1191,7 +1477,15 @@
     "conditions": [
      "α1 > 1"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "The discriminant a0^2+4(a1-1) is positive when a1>1, so both eigenvalues are real, and the characteristic polynomial at 1 equals 1-a1<0, so exactly one eigenvalue is above 1 and the other below 1. Checked symbolically and on every random draw with a1>1 (about 75,000 points), for any a0."
+    }
+   ]
   },
   {
    "id": "C19",
@@ -1205,7 +1499,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p4.19"
    ],
@@ -1221,7 +1515,15 @@
     "conditions": [
      "α1 > 1"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Given C18, the forecast w'F^{h-1}v_t contains a term in lam1^{h-1} with lam1>1, which is non-zero unless the state lies exactly on the other eigenvector, so the trajectory does not settle (example a0=1.5, a1=1.1: 10, 10.3, 11.15, ... 19.36 over 12 steps). One exception for the generated series rather than the trajectory: on the line a0+a1=2 the persistence vector satisfies Fg=0, the explosive mode is not excited by the errors and, from a zero initial state, y_t is a stationary MA(1); no point of that line with a1>1 is in the stability region."
+    }
+   ]
   },
   {
    "id": "C20",
@@ -1235,7 +1537,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p4.19",
     "p6.9-p6.10"
@@ -1249,7 +1551,15 @@
     "conditions": [
      "α1 = 1"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "With a1=1 the state equations become y_t=l_{t-1}+eps_t, l_t=l_{t-1}+(a0-1)eps_t, which is ETS(A,N,N) with smoothing parameter a0-1; c_t no longer enters l_t or y_t. Sympy confirms it on the ARMA side: AR=(1-B)(1-(1-a0)B), MA=(1-(2-a0)B)(1-(1-a0)B), leaving (1-B)y_t=(1-(2-a0)B)eps_t, the ARIMA(0,1,1) of ETS(A,N,N). The equivalence is for y_t; the unused state c_t keeps the eigenvalue 1-a0 in the discount matrix, so CES at a1=1 is stable only for 1<a0<2."
+    }
+   ]
   },
   {
    "id": "C21",
@@ -1281,6 +1591,12 @@
     "object": "stable, or at least forecastable",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "univariate time series",
+    "conditions": [
+     "estimation of the complex smoothing parameter"
+    ]
    }
   },
   {
@@ -1313,6 +1629,12 @@
     "object": "stationary",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "univariate time series",
+    "conditions": [
+     "estimation of the complex smoothing parameter"
+    ]
    }
   },
   {
@@ -1333,7 +1655,7 @@
      "self": true
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p4.21-p5.6",
     "p15.12-p16.1"
@@ -1349,7 +1671,15 @@
      "(α0 − 0.5)² + (α1 − 1)² > 0.25",
      "(α0 − 1.5)² + (α1 − 0.5)² < 1.5"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "D=F-gw'=[[1-a0+a1,-(1-a1)],[1-a0-a1,1-a0]] has characteristic polynomial lam^2-theta1 lam-theta2 with theta1, theta2 of C5 (sympy, difference 0), and discriminant 8a1+4a0-4a0a1-4-3a1^2 as in paper (14). The conditions theta2-theta1<1, theta2+theta1<1, theta2>-1 are identically the three stated circle inequalities, in that order (sympy, differences 0); theta2<1 is implied. Over 200,000 random (a0,a1) the spectral radius of D was below 1 exactly when the three inequalities held, so the condition is necessary as well as sufficient. The paper's (D2) and (D3) list the same inequalities in a different order."
+    }
+   ]
   },
   {
    "id": "C24",
@@ -1363,7 +1693,7 @@
      "evidence": "E4"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p4.21-p5.6",
     "p15.12-p16.1"
@@ -1379,11 +1709,19 @@
     "object": "D2",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Using C17 and C23: (a0,a1)=(1.5,0.9) satisfies all three stability inequalities and all three stationarity inequalities; (1.5,1.1) satisfies the stability inequalities but has a1>1 and an eigenvalue of F equal to 1.064. Random sampling found 2,244 stable-and-stationary and 4,638 stable-and-non-stationary points."
+    }
+   ]
   },
   {
    "id": "C25",
-   "statement": "The [[D1:CES]] point forecast $w'F^{h-1}v_t$ follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation.",
+   "statement": "For $0 < \\alpha_0 < 2$ and almost every state, the [[D1:CES]] point forecast $w'F^{h-1}v_t$ eventually follows one of five trajectories set by the [[D2:complex smoothing parameter]]: a flat line, exponential growth, exponential decline, harmonic oscillation converging to zero, or diverging harmonic oscillation, except on the line $\\alpha_0 + \\alpha_1 = 1$, where it oscillates with constant amplitude, and on the curve $\\alpha_1 = (4 - \\alpha_0^2)/4$, where the eigenvalue is repeated, it goes to zero as $(A + Bh)\\lambda^h$ without oscillating.",
    "type": "formal",
    "role": "supporting",
    "novelty": "no_prior_found",
@@ -1393,7 +1731,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p5.7-p5.13",
     "p6.1-p6.2"
@@ -1424,6 +1762,27 @@
      "target": "C37",
      "id_type": "local"
     }
+   ],
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "The five shapes all occur (verified by eigenvalues of F and by iterating w'F^{h-1}v_t), but the forecast is not always one of them and the parameter conditions of C27, C28 and C30 do not select them as stated. Counterexamples: (a0,a1)=(2.2,1.2), inside the stability region, has eigenvalues 1.087 and -1.287, so the forecast is a sign-alternating term of growing amplitude on top of growth, which is neither plain exponential growth nor one of the other four; (0.8,0.2), also stable, has complex eigenvalues of modulus exactly 1 (a0+a1=1), an oscillation that neither converges nor diverges. Correct version: the shape is set by the eigenvalues (2-a0 +- sqrt(a0^2+4a1-4))/2 and by the state v_t; the five-way list holds for 0<a0<2 away from the boundaries a0+a1=1 and a1=(4-a0^2)/4, with the direction (growth or fall) depending on v_t.",
+     "resolution": "The authors corrected the claim (paper.published_as.corrections) and the checker checked the corrected statement again, confirming it."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Check of the corrected statement. For 0<a0<2 the eigenvalues of F put every value of a1 in one of the listed cases: a1>1 real with the root above 1 dominant (growth), a1=1 flat, (4-a0^2)/4<a1<1 real in (-1,1) with the positive root dominant (decline), 1-a0<a1<(4-a0^2)/4 complex of modulus below 1, a1=1-a0 complex of modulus exactly 1 (constant amplitude), a1<1-a0 complex of modulus above 1; 49,823 random points with 0<a0<2 gave no exception, and the boundaries a1=1 and a0+a1=1 were checked at a0=0.3, 1.0, 1.7. Two parts do not hold as worded. On the boundary a1=(4-a0^2)/4 the eigenvalue (2-a0)/2 is repeated and the forecast is (A+Bh)((2-a0)/2)^h: it goes to zero without oscillating, but it is a linear term times an exponential, not an exponential decline, so this boundary belongs to none of the cases unless 'exponential decline' is read loosely. The trajectory is also not set by the parameter alone: with a1>1, a state on the eigenvector of the smaller eigenvalue gives no growth (a0=1.5, a1=2.5, state (-0.686,1): -0.686, 0.814, -0.965, 1.145, an alternating divergence), and a zero state gives a zero forecast; the statement needs 'for all states except those on one line' or 'for a generic state'."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Check of the reworded statement. For 0<a0<2 the eigenvalues of F, (2-a0 +- sqrt(a0^2+4a1-4))/2, put every a1 off the two named sets in exactly one case: a1>1 real with the eigenvalue above 1 dominant (growth), a1=1 flat (w'F^k=(1,0) for every k and state), (4-a0^2)/4<a1<1 real in (-1,1) with the positive one dominant (decline), 1-a0<a1<(4-a0^2)/4 complex of modulus below 1, a1<1-a0 complex of modulus above 1; 100,000 random points gave no exception. 'Eventually' and 'almost every state' are both needed and sufficient: with real eigenvalues the forecast is A lam1^(h-1)+B lam2^(h-1), which follows the dominant term once it outgrows the other, and the dominant coefficient is zero only on one line of states, the eigenvector of the other eigenvalue (a0=1.5, a1=2.5 from state (-0.686,1): -0.686, 0.814, -0.965, 1.145), since the first element of an eigenvector of F is zero only if a1=1 (sympy). The exceptions hold as worded: on a0+a1=1 the eigenvalues are complex of modulus 1 (discriminant a0(a0-4)<0) and the forecast is exactly R cos(wh+phi) with cos w=(2-a0)/2 (5,000 random parameter and state draws); on a1=(4-a0^2)/4 the matrix F-lam I is non-zero with square zero, so the forecast is (A+Bh)lam^h with lam=(2-a0)/2 in (0,1), going to zero with at most one sign change (2,000 draws). The line, the curve and a1=1 do not meet for 0<a0<2 (they meet only at a0=0 or 4), so the cases do not overlap."
+    }
    ]
   },
   {
@@ -1438,7 +1797,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p5.7-p5.13",
     "p6.1-p6.2"
@@ -1452,11 +1811,19 @@
     "conditions": [
      "α1 = 1"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "With a1=1, F=[[1,0],[1,1-a0]] and w'F^k=(1,0) for every k (sympy, k=0..3, and by induction since the first row of F is (1,0)), so the forecast equals l_t at every horizon, for any a0."
+    }
+   ]
   },
   {
    "id": "C27",
-   "statement": "When $\\alpha_1 > 1$, the [[D1:CES]] point forecast grows exponentially.",
+   "statement": "When $\\alpha_1 > 1$ and $\\alpha_0 < 2$, the [[D1:CES]] point forecast eventually grows exponentially in magnitude, upward or downward according to the current state, unless the state lies on the eigenvector of the smaller eigenvalue of $F$.",
    "type": "formal",
    "role": "supporting",
    "novelty": "no_prior_found",
@@ -1466,7 +1833,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p5.7-p5.13",
     "p6.1-p6.2"
@@ -1480,11 +1847,32 @@
     "conditions": [
      "α1 > 1"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "For a1>1 the eigenvalues are real with lam1>1>lam2 (C18), but lam1+lam2=2-a0, so for a0>2 the negative eigenvalue has the larger modulus and the forecast is dominated by a sign-alternating diverging term, not exponential growth. Example inside the stability region: (a0,a1)=(2.2,1.2) gives eigenvalues 1.087 and -1.287 and, from v_t=(10,3), forecasts 10, 10.6, 11.88, 12.46, 14.14, 14.62, ... 24.3, 22.99; 525 of the random stable points with a1>1 behave this way. Correct version: when a1>1 and a0<2 the forecast is dominated by lam1^h and grows exponentially in magnitude, upward or downward according to the state v_t.",
+     "resolution": "The authors corrected the claim (paper.published_as.corrections) and the checker checked the corrected statement again, confirming it."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Check of the corrected statement. For a1>1 the eigenvalues are real with lam1>1>lam2, and a0<2 gives lam1+lam2=2-a0>0, so lam1 is the larger in modulus (27,981 random points, no exception); the forecast is A lam1^(h-1)+B lam2^(h-1), which grows like lam1^h with the sign of A. Not covered by the wording: A=0 when the state lies on the eigenvector of lam2, (lam2-1+a0, 1), including the zero state, and then there is no growth (decay if |lam2|<1, alternating divergence if lam2<-1, e.g. a0=1.5, a1=2.5). The growth is also asymptotic, not from the first step: a0=1.5, a1=1.1 from state (10,-40) gives 10, 6, 9, 8.1, 9.45 before rising. The statement is correct with 'eventually' and 'unless the state lies on the eigenvector of the smaller eigenvalue'."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Check of the reworded statement. For a1>1 the discriminant a0^2+4(a1-1) is positive and the characteristic polynomial at 1 is 1-a1<0, so the eigenvalues are real with lam1>1>lam2; a0<2 gives lam1+lam2=2-a0>0, so lam1>|lam2| (50,000 random points, no exception). The forecast is exactly A lam1^(h-1)+B lam2^(h-1) (checked against iterating F for random states), and A is zero only when the state is on the eigenvector of lam2, because the eigenvector (lam-1+a0, 1) of F has a zero first element only if a1=1 (sympy). So off that line the forecast eventually behaves as A lam1^h, growing in magnitude with the sign of A, which the state sets; on it the forecast is B lam2^h, with no such growth (a0=1.5, a1=1.1: -0.064, 0.036, -0.020). 'Eventually' is needed and correct: a0=1.5, a1=1.1 from state (10,-40) gives 10, 6, 9, 8.1, 9.45, 9.59, 10.46."
+    }
+   ]
   },
   {
    "id": "C28",
-   "statement": "When $(4 - \\alpha_0^2)/4 < \\alpha_1 < 1$, the [[D1:CES]] point forecast declines exponentially.",
+   "statement": "When $(4 - \\alpha_0^2)/4 < \\alpha_1 < 1$, $0 < \\alpha_0 < 4$ and $\\alpha_1 < 5 - 2\\alpha_0$, the [[D1:CES]] point forecast declines exponentially in magnitude and, when $\\alpha_0 > 2$, eventually alternates in sign, unless the state lies on the eigenvector of the eigenvalue of $F$ of smaller modulus.",
    "type": "formal",
    "role": "supporting",
    "novelty": "no_prior_found",
@@ -1494,7 +1882,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p5.7-p5.13",
     "p6.1-p6.2"
@@ -1508,7 +1896,29 @@
     "conditions": [
      "(4 − α0²)/4 < α1 < 1"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "The stated interval makes the eigenvalues real and gives p(1)=1-a1>0, but that alone does not put them inside the unit circle: the statement omits the conditions a0>0 and a1<5-2a0 that the paper's (C7) carries. Counterexamples: (a0,a1)=(-1,0.9) satisfies 0.75<a1<1 and has eigenvalues 1.113 and 1.887 (exponential divergence); (3.5,0.5) has eigenvalues 0.851 and -2.351. With those two conditions added (they hold at every point of the stability region with a1<1, where also a0<2, so the dominant eigenvalue is positive) the claim is correct: no violation among the random stable points.",
+     "resolution": "The authors corrected the claim (paper.published_as.corrections) and the checker checked the corrected statement again."
+    },
+    {
+     "by": "P5",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "Check of the corrected statement. The corrected conditions still do not confine the eigenvalues to the unit circle: an upper bound a0<4 is missing. Counterexample: (a0,a1)=(5,-5.1) satisfies (4-25)/4=-5.25<a1<1, a0>0 and a1<5-2a0=-5, and has eigenvalues -1.113 and -1.887; the forecast from state (10,3) is 10, -8.3, 3.9, 5.73, -25.4, 64.1, -139. Of 8,675 random points meeting the stated conditions in a0 in (-4,8), a1 in (-12,4), 6,591 had an eigenvalue outside the unit circle, all with a0>4; none of the 2,084 with a0<4 did. Correct version: add a0<4 (the paper's (C7) has 0<a0<4), which makes both eigenvalues real and inside (-1,1). For 2<a0<4 the negative eigenvalue dominates and the decline alternates in sign (a0=2.2, a1=0.5: eigenvalues 0.743, -0.943; 10, 8.5, 5.3, 4.89, 2.73, 2.88), so a decline without alternation needs 0<a0<2. My first report named only a0>0 and a1<5-2a0 as the missing conditions; that list was incomplete.",
+     "resolution": "The authors reworded the claim (paper.published_as.corrections) and the checker checked it again, confirming it."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Check of the reworded statement. Under the stated conditions the eigenvalues of F are real and distinct, the characteristic polynomial is positive at 1 (1-a1) and at -1 (5-2a0-a1), and their sum 2-a0 lies in (-2,2), so both are in (-1,1): the forecast A lam1^h+B lam2^h is bounded by (|A|+|B|)rho^h with rho<1 for every state (47,633 random points and states, no exception). 'Declines exponentially in magnitude' is confirmed in that sense of a geometric envelope; the magnitude need not fall at every early step (a0=1.5, a1=0.9 from state (0,1): 0, -0.1, -0.05, -0.065, -0.0525). For a0>2 the sum of the eigenvalues is negative, so the negative one is strictly the larger in modulus (23,960 points; the moduli are equal only at a0=2), and its coefficient is zero only for a state on the eigenvector of the other eigenvalue; off that line the sign is that of B(-1)^h from the step at which the dominant term overtakes (no violation in 23,845 draws, checked in logarithms; that step had median 2 and 90% quantile 12). The exception is correctly placed: when the smaller-modulus eigenvalue is positive (a0+a1>2) a state on its eigenvector never alternates (17,887 cases, e.g. a0=2.2, a1=0.5: 1.943, 1.443, 1.071), while when it is negative such a state alternates anyway, which the wording permits."
+    }
+   ]
   },
   {
    "id": "C29",
@@ -1522,7 +1932,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p5.7-p5.13",
     "p6.1-p6.2"
@@ -1536,11 +1946,19 @@
     "conditions": [
      "1 − α0 < α1 < (4 − α0²)/4"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "The upper bound a1<(4-a0^2)/4 makes the discriminant a0^2+4a1-4 negative, so the eigenvalues are complex conjugates with squared modulus 2-a0-a1, which is below 1 because a1>1-a0. The forecast is therefore a damped sinusoid; all 7,493 random points in the region had complex eigenvalues of modulus below 1, e.g. (1,0.5) gives 0.5+-0.5i."
+    }
+   ]
   },
   {
    "id": "C30",
-   "statement": "When $0 < \\alpha_1 < 1 - \\alpha_0$, the [[D1:CES]] point forecast is a diverging harmonic oscillation.",
+   "statement": "When $\\alpha_0 \\ge 0$ and $0 < \\alpha_1 < 1 - \\alpha_0$, the [[D1:CES]] point forecast is a diverging harmonic oscillation.",
    "type": "formal",
    "role": "supporting",
    "novelty": "no_prior_found",
@@ -1550,7 +1968,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p5.7-p5.13",
     "p6.1-p6.2"
@@ -1564,7 +1982,22 @@
     "conditions": [
      "0 < α1 < 1 − α0"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "For a0>=0 the claim holds: a1<1-a0<=(4-a0^2)/4 gives complex eigenvalues of squared modulus 2-a0-a1>1. For a0<0 the interval 0<a1<1-a0 extends above (4-a0^2)/4 and the eigenvalues there are real: (a0,a1)=(-1,0.9) gives 1.113 and 1.887, an exponential divergence without oscillation. Correct version: add a0>=0, or replace the upper bound by min(1-a0,(4-a0^2)/4); the lower bound 0<a1 is not needed. All points of the stability region have a0>0.27, so the claim is correct there (no violation among the random stable points).",
+     "resolution": "The authors corrected the claim (paper.published_as.corrections) and the checker checked the corrected statement again, confirming it."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Check of the corrected statement. With a0>=0 and 0<a1<1-a0 (so a0<1) the discriminant satisfies a0^2+4a1-4 < a0^2-4a0 <= 0, so the eigenvalues are complex, and their squared modulus 2-a0-a1 exceeds 1. Complex eigenvalues leave no real invariant line, so every non-zero state gives an oscillation of growing amplitude; 817 random points in the region gave no exception. The only state for which nothing diverges is the zero state."
+    }
+   ]
   },
   {
    "id": "C31",
@@ -1593,6 +2026,12 @@
     "object": "seasonality whose amplitude changes nonlinearly",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "seasonal univariate time series",
+    "conditions": [
+     "seasonal CES"
+    ]
    }
   },
   {
@@ -1624,6 +2063,12 @@
     "conditions": [
      "M3 series 1664, stationary by graphical analysis and the ADF and KPSS tests"
     ]
+   },
+   "scope": {
+    "population": "M3 competition series 1664",
+    "conditions": [
+     "non-seasonal CES"
+    ]
    }
   },
   {
@@ -1654,6 +2099,12 @@
     "comparator": null,
     "conditions": [
      "the trended M3 series 2721"
+    ]
+   },
+   "scope": {
+    "population": "M3 competition series 2721",
+    "conditions": [
+     "non-seasonal CES"
     ]
    }
   },
@@ -1764,6 +2215,13 @@
     "conditions": [
      "D33"
     ]
+   },
+   "scope": {
+    "population": "the 3262 non-seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "non-seasonal CES",
+     "forecast horizons of the original competitions"
+    ]
    }
   },
   {
@@ -1798,6 +2256,13 @@
     "comparator": "D20",
     "conditions": [
      "D33"
+    ]
+   },
+   "scope": {
+    "population": "the 3262 non-seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "non-seasonal CES",
+     "forecast horizons of the original competitions"
     ]
    }
   },
@@ -1834,6 +2299,13 @@
     "conditions": [
      "D33"
     ]
+   },
+   "scope": {
+    "population": "the 3262 non-seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "non-seasonal CES",
+     "forecast horizons of the original competitions"
+    ]
    }
   },
   {
@@ -1868,6 +2340,13 @@
     "comparator": "D22",
     "conditions": [
      "D33"
+    ]
+   },
+   "scope": {
+    "population": "the 3262 non-seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "non-seasonal CES",
+     "forecast horizons of the original competitions"
     ]
    }
   },
@@ -1904,6 +2383,13 @@
     "conditions": [
      "D33"
     ]
+   },
+   "scope": {
+    "population": "the 3262 non-seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "non-seasonal CES",
+     "forecast horizons of the original competitions"
+    ]
    }
   },
   {
@@ -1918,7 +2404,7 @@
      "evidence": "E1"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "depends_on": [
     "C16"
    ],
@@ -1932,7 +2418,15 @@
     "object": "the smoothing parameters",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "The transition matrix read off the state-space form of C16 is F=[[1,-(1-a1)],[1,1-a0]], whose entries (1,2) and (2,2) contain a1 and a0."
+    }
+   ]
   },
   {
    "id": "C42",
@@ -1963,6 +2457,12 @@
     "object": "a Gaussian likelihood of the same form as for additive exponential smoothing",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "univariate time series",
+    "conditions": [
+     "additive Gaussian errors"
+    ]
    }
   },
   {
@@ -2001,7 +2501,7 @@
   },
   {
    "id": "C44",
-   "statement": "When $\\alpha_1$ is close to 1, [[D1:CES]] behaves like simple exponential smoothing with smoothing parameter $\\alpha_0 - 1$.",
+   "statement": "When $\\alpha_1 = 1$, [[D1:CES]] is simple exponential smoothing with smoothing parameter $\\alpha_0 - 1$; when $\\alpha_1$ is close to 1, it behaves like it over short horizons only.",
    "type": "formal",
    "role": "secondary",
    "novelty": "no_prior_found",
@@ -2011,7 +2511,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p6.5-p6.10"
    ],
@@ -2027,7 +2527,21 @@
     "conditions": [
      "α1 close to 1"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "At a1=1 the correspondence is exact (C20): l_t=l_{t-1}+(a0-1)eps_t, simple exponential smoothing with parameter a0-1, and the coefficient -(1-a1) of ehat_{t-1} in yhat_t vanishes. For a1 near 1 it holds only approximately and over short horizons: with a0=1.24 the response of the forecast to a unit error stays within 0.025 of 0.24 for 10 steps at a1=0.99 or 1.01, but drifts by 0.14 and 0.30 over 100 steps, because for a1<1 the model is stationary and for a1>1 explosive. 'Close to 1' is not quantified in the paper, so the approximate part is confirmed only in this sense."
+    },
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Check of the corrected statement. At a1=1 the state equations reduce exactly to y_t=l_{t-1}+eps_t, l_t=l_{t-1}+(a0-1)eps_t, which is simple exponential smoothing with parameter a0-1 (and (1-B)y_t=(1-(2-a0)B)eps_t after the common factor cancels), for any a0. Near a1=1 the agreement is short-horizon only, as now stated: with a0=1.24 the response of the forecast to a unit error stays within 0.025 of 0.24 over 10 steps at a1=0.99 and 1.01, but departs by 0.14 and 0.30 over 100 steps, since the model is stationary for a1<1 and explosive for a1>1."
+    }
+   ]
   },
   {
    "id": "C45",
@@ -2041,7 +2555,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p6.5-p6.10"
    ],
@@ -2058,7 +2572,15 @@
      "α1 close to 1",
      "a stationary series"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Given C44, a smoothing parameter a0-1 near 0 means a0 near 1. Directly: at (a0,a1)=(1,1) the model is y_t=l+eps_t with a constant level (AR and MA polynomials both 1-B, which cancel), a stationary series, and this is simple exponential smoothing with parameter 0."
+    }
+   ]
   },
   {
    "id": "C46",
@@ -2072,7 +2594,7 @@
      "evidence": "E3"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p6.5-p6.10"
    ],
@@ -2089,7 +2611,15 @@
      "α1 close to 1",
      "a random walk"
     ]
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Given C44, a random walk is simple exponential smoothing with parameter 1, so a0-1=1. Directly: at (a0,a1)=(2,1), l_t=l_{t-1}+eps_t and y_t=l_{t-1}+eps_t give y_t-y_{t-1}=eps_t (sympy: AR=(1-B)(1+B), MA=1+B). This point is on the boundary of the stability region of C23 (the discount matrix has eigenvalue -1 from the unused state c_t), so it is approached, not attained, by stable CES."
+    }
+   ]
   },
   {
    "id": "C47",
@@ -2103,7 +2633,7 @@
      "evidence": "E6"
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p7.2",
     "p16.2-p16.28"
@@ -2118,7 +2648,15 @@
     "object": "SARIMA(2,0,2m+2)(2,0,0)_m model",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Re-derived with sympy from the seasonal state-space form in D4 for m=2, 4 and 12: A0(B)A1(B^m)y_t=[A0A1+N0A1+A0N1]eps_t with A0=1-(2-a0)B-(a0+a1-2)B^2, A1 the same in B^m with b0,b1, N0=(a0-a1)B+(a0^2-2a0+a1^2)B^2 and N1 likewise in B^m; the AR side is order 2 times seasonal order 2, and the MA polynomial has degree 2m+2 with a leading coefficient that is not identically zero. The identity held to 1e-16 on simulated series (m=4, three parameter sets). The orders are as stated, but the paper's printed (E9)-(E11) are not: they show the determinant as 1-2B-(a0+a1-2)B^2 (it is 1-(2-a0)B-...), and Appendix E uses g0=(a1-a0,a1+a0), the opposite sign in the first element to the main text."
+    }
+   ]
   },
   {
    "id": "C48",
@@ -2133,7 +2671,7 @@
     }
    ],
    "warrant": "W4",
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "depends_on": [
     "C47"
    ],
@@ -2150,7 +2688,15 @@
     "object": "its complex smoothing parameters",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "By C47 the AR polynomial is A0(B)A1(B^m), so its roots are those of the non-seasonal CES in (a0,a1) and the m-th roots of those in (b0,b1); the model is stationary when both pairs satisfy the inequalities of C17 and not when either fails. Examples with m=4: (a0,a1,b0,b1)=(1.3,0.8,1.2,0.7) has largest inverse AR root 0.896; (1.5,0.9,1.4,1.05) has 1.009 and (1.2,1.1,1.3,0.6) has 1.078, with no AR root cancelled by an MA root."
+    }
+   ]
   },
   {
    "id": "C49",
@@ -2179,6 +2725,12 @@
     "object": "all the trajectories of non-seasonal CES",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "seasonal univariate time series",
+    "conditions": [
+     "seasonal CES"
+    ]
    }
   },
   {
@@ -2210,6 +2762,12 @@
     "conditions": [
      "the level of the series does not change"
     ]
+   },
+   "scope": {
+    "data_type": "seasonal univariate time series with a constant level",
+    "conditions": [
+     "seasonal CES"
+    ]
    }
   },
   {
@@ -2235,6 +2793,12 @@
     "object": null,
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "non-seasonal univariate time series",
+    "conditions": [
+     "non-seasonal CES"
+    ]
    }
   },
   {
@@ -2260,6 +2824,12 @@
     "object": null,
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "seasonal univariate time series",
+    "conditions": [
+     "seasonal CES with seasonal period m"
+    ]
    }
   },
   {
@@ -2335,6 +2905,13 @@
     "conditions": [
      "D34"
     ]
+   },
+   "scope": {
+    "population": "the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "CES and the ETS model chosen for comparison",
+     "forecast horizons of the original competitions"
+    ]
    }
   },
   {
@@ -2367,6 +2944,13 @@
     "comparator": "D29",
     "conditions": [
      "D34"
+    ]
+   },
+   "scope": {
+    "population": "the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "CES and the ETS model chosen for comparison",
+     "forecast horizons of the original competitions"
     ]
    }
   },
@@ -2401,6 +2985,13 @@
     "conditions": [
      "D34"
     ]
+   },
+   "scope": {
+    "population": "the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "CES and the ETS model chosen for comparison",
+     "forecast horizons of the original competitions"
+    ]
    }
   },
   {
@@ -2433,6 +3024,13 @@
     "comparator": "D31",
     "conditions": [
      "D34"
+    ]
+   },
+   "scope": {
+    "population": "the 2053 seasonal time series of the M1, M3 and tourism forecasting competitions",
+    "conditions": [
+     "CES and the ETS model chosen for comparison",
+     "forecast horizons of the original competitions"
     ]
    }
   },
@@ -2467,6 +3065,12 @@
     "object": "seasonal and non-seasonal CES",
     "comparator": null,
     "conditions": []
+   },
+   "scope": {
+    "data_type": "univariate time series, seasonal or non-seasonal",
+    "conditions": [
+     "selection between seasonal and non-seasonal CES"
+    ]
    }
   },
   {
@@ -3807,6 +4411,16 @@
    "id": "B25",
    "target": "10.1002/nav.22074",
    "id_type": "doi"
+  },
+  {
+   "id": "B26",
+   "target": "10.1002/for.3980040103",
+   "id_type": "doi"
+  },
+  {
+   "id": "B27",
+   "target": "9781118675021",
+   "id_type": "isbn"
   }
  ],
  "open_questions": [
