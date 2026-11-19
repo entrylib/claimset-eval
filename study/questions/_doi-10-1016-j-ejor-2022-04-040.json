@@ -3,144 +3,231 @@
     "doi-10-1016-j-ejor-2022-04-040"
   ],
   "author": "Ivan Svetunkov",
-  "written": "",
+  "written": "2026-11-17",
   "title_for_the_author": "A new taxonomy for vector exponential smoothing",
   "how": "Write each question and its reference answer from the paper, not from the claimset; add `claims` (the claims that answer it) and `in_claimset` only after writing it. Delete this key and `title_for_the_author`, then rename the file without the leading underscore to include it.",
   "questions": [
     {
       "id": "Q1",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What data from the M5 competition were used in the empirical analysis, and how were they split for estimation and evaluation?",
+      "answer": "The M5 series were aggregated to monthly frequency and to department-store level to avoid intermittence, giving 70 series of 63 observations. They were grouped by department into seasonal and non-seasonal groups (classified by adam()); one group of a single series was removed, leaving 11 groups. Long histories: the first 51 observations for estimation and the last 12 held out. Short histories: the last 36 observations, 24 for estimation and the same last 12 held out.",
+      "notes": "Must give the aggregation, the 63 observations and both splits with the 12-observation holdout.",
+      "claims": [
+        "C5",
+        "C6"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q2",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Which PIC restrictions did the automatic selection choose for the 11 VETS D models on the M5 data, and how often was each chosen?",
+      "answer": "Table 13: PIC(LS,S,N) in 6 groups, PIC(L,L,N) in 2, and PIC(N,N,N), PIC(L,N,N) and PIC(LS,S,S) in 1 each. Only one (seasonal) group had common seasonal components.",
+      "notes": "Must give PIC(LS,S,N) as the most frequent, chosen in 6 of 11.",
+      "claims": [
+        "C45",
+        "C48"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q3",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "On the M5 data, which model had the lowest overall geometric mean and median rMAE (relative to Naïve forecasts), with long and with short histories?",
+      "answer": "VETS D on both measures and both lengths (Table 11). Long: geometric mean 0.894 and median 0.934, against 0.906 and 0.960 for VETS F and at least 0.917 and 0.957 for the ETS models. Short: 0.936 and 0.974, against 1.011 and 1.000 for VETS F and at least 0.991 and 0.988 for the ETS models.",
+      "notes": "Must name VETS D for both lengths; this is over all series, not the seasonal or non-seasonal subsets.",
+      "claims": [
+        "C5",
+        "C6"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q4",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What coverage did the 95% prediction intervals of each model reach on the M5 data with long and with short histories?",
+      "answer": "Table 12, long / short: ETS LN 0.934 / 0.854, ETS (ADAM) 0.925 / 0.815, ETS 0.937 / 0.886, VETS D 0.947 / 0.970, VETS F 0.982 / 0.972. The ETS models are below 95% in all cases, worse on short histories; VETS F is a little too wide on both; VETS D is closest to 95% on long data.",
+      "notes": "Must give the VETS D and VETS F values and say the ETS models fall short of 95%.",
+      "claims": [
+        "C7",
+        "C39",
+        "C40"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q5",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "How were the data generated in the simulation experiment?",
+      "answer": "With sim.ves() from the legion package: VETS(A,N,A) data exponentiated to give VETS(M,N,M;LN), from each of the nine PIC variants studied. Quarterly seasonality (m = 4), 24 or 64 observations (6 or 16 years) with the last 8 held out, groups of 2, 10, 20, 30, 40 and 50 series, initial level from [4, 10], seasonal indices from (−1, 1) normalised, independent normal errors with standard deviation 0.3, smoothing parameters set by variant (α = 0.3 and γ = 0.1 for PIC(LS,*,*); α in [0, 0.3] and γ = 0.1 for PIC(S,*,*); α in [0, 0.3] and γ in [0, 1 − α] for PIC(N,*,*)), and 1000 iterations.",
+      "notes": "Must give the model, quarterly data, the two sample lengths and the group sizes.",
+      "claims": [
+        "C2",
+        "C4"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q6",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What does the model name VETS(M,Md,M;LN)PIC(LTSD,LTS,S) mean?",
+      "answer": "A pure multiplicative vector ETS model with a multiplicative damped trend and multiplicative seasonality, applied to log-transformed data (LN). PIC(LTSD,LTS,S): the smoothing parameters of level, trend and seasonality and the damping parameter are common to all series (P = LTSD); the initial level, trend and seasonal indices are common (I = LTS); and only the seasonal component is common, while level and trend are individual (C = S).",
+      "notes": "Must read each of P, I and C correctly.",
+      "claims": [
+        "C1"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q7",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "In the space-planning evaluation on the M5 data (forecasts 3, 6 and 12 months ahead), do the VETS models have the lowest GMRAE?",
+      "answer": "Not on long histories: at every horizon a univariate ETS model is lower (ETS (ADAM) 0.716 at 3 months, ETS 0.827 at 6 and 0.939 at 12). On short histories a VETS model is lowest at 3 months (VETS D 1.037) and 12 months (VETS F 0.872), but not at 6 months, where ETS (0.946) is lower than both VETS models. The paper says the VETS models do much better on short histories.",
+      "notes": "Overreach if the answer says VETS has the lowest GMRAE at every horizon on short data, or on long data.",
+      "claims": [
+        "C49",
+        "C50"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q8",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "On short M5 histories, are the prediction intervals of VETS D better than those of the univariate ETS models?",
+      "answer": "In coverage yes: 0.970 against 0.815–0.886 for the ETS models. In relative pinball no: VETS D has higher upper and lower pinball values than all three ETS models (e.g. upper 2.515). The paper therefore does not recommend VETS when the pinball measure matters most and the history is short.",
+      "notes": "Overreach if the answer says VETS D has better intervals without separating coverage and pinball.",
+      "claims": [
+        "C44",
+        "C52"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q9",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Are the differences in rMAE between the VETS and ETS models on the M5 data statistically significant?",
+      "answer": "No. In the MCB test VETS F on long histories has the lowest mean rank, but it is not significantly different from VETS D, ETS LN, ETS (ADAM) and ETS on long histories or from VETS D on short ones; the ETS models do worse in mean rank on short histories, but those differences are not significant either.",
+      "notes": "Overreach if the answer says VETS is significantly more accurate than ETS.",
+      "claims": [
+        "C5",
+        "C6",
+        "C38"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q10",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Do the paper's simulation and empirical results cover vector ETS models with a trend component?",
+      "answer": "No. The simulation uses only VETS(M,N,M;LN), and on the M5 data models with trend were excluded because the trends in the two trended series were weak. The paper names the trend element as something that may change how the methods behave, for future work.",
+      "notes": "Overreach if the answer extends the findings to trended models.",
+      "claims": [
+        "C2",
+        "C5"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q11",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Do common seasonal components (PIC(*,S,S)) improve forecast accuracy?",
+      "answer": "Only when the series share very similar seasonal patterns. In the simulation they do well when the data have common seasonality, but when the data have individual seasonal components they are much worse than the correct method and can cause significant damage to accuracy and intervals. The paper recommends them only for homogeneous series; on the M5 data they were chosen for only one of the 11 groups.",
+      "notes": "Overreach if the answer says common seasonal components improve accuracy in general.",
+      "claims": [
+        "C2",
+        "C15",
+        "C32",
+        "C48"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q12",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What evidence supports the finding that common smoothing parameters improve forecasts, and what limits it?",
+      "answer": "In the simulation, within each block of methods the pinball values improve as smoothing parameters are made common (PIC(LS,*,*) better than PIC(S,*,*), better than PIC(N,*,*)) for every data generating process, and rMAE improves slightly with them on data with common seasonality. On the M5 data the selection chose common smoothing parameters for most groups. Limits: on data generated with individual parameters (PIC(N,N,N)), restricting them lowers point accuracy, though not substantially; the explanation, that averaged parameters overfit less, is offered but not tested; and the simulation covers one model on quarterly data with a restricted range of smoothing parameters.",
+      "notes": "Must mention at least one limit.",
+      "claims": [
+        "C4",
+        "C20",
+        "C21"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q13",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What evidence supports the claim that PIC(LS,S,N) is one of the most robust variants, and how strong is it?",
+      "answer": "In the simulation the PIC(*,S,N) methods have rMAE close to that of the correct method on every data generating process, and in pinball values they do better than the other methods except the correct one (on data with individual seasonal components they are worse than the correct method, but less so than PIC(*,S,S)); with 50 series of common seasonality PIC(LS,S,N) has a 35% lower pinball value than PIC(N,N,N). On the M5 data it was the restriction chosen most often (6 of 11 groups). The support is limited: the simulation covers only VETS(M,N,M;LN) on quarterly data with nine variants and restricted parameter ranges, and being chosen often by the selection procedure is not itself evidence of accuracy.",
+      "claims": [
+        "C3",
+        "C33",
+        "C14",
+        "C17",
+        "C45",
+        "C47"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q14",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What evidence supports the claim that using cross-sectional information improves forecast accuracy on the M5 data, and how strong is it?",
+      "answer": "Table 11: VETS is almost always better than Naïve and than the univariate ETS models on long histories, and VETS D is lowest overall on both long and short histories. The evidence is limited: one data set of 69 series in 11 groups with a single 12-month holdout, the MCB test does not show the differences to be significant, and the result assumes the series are correctly grouped.",
+      "notes": "Must mention the lack of significance or the small data set.",
+      "claims": [
+        "C38",
+        "C46",
+        "C5",
+        "C6"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q15",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Why does the paper recommend estimating VETS with a diagonal covariance matrix (VETS D) rather than a full one (VETS F)?",
+      "answer": "VETS D has far fewer parameters to estimate (n variances instead of n(n+1)/2 variances and covariances), so it is easier to estimate, especially on small samples. On the M5 data it is more accurate than VETS F on both long and short histories, its coverage is closest to 95% on long data, and it has lower relative pinball values; VETS F gives intervals that are a little too wide and the highest pinball values, which the authors attribute to estimation difficulties. VETS F, however, had the lowest mean rank on long histories in the MCB test (not significant) and the best coverage in the space-planning evaluation on short histories.",
+      "claims": [
+        "C51",
+        "C28",
+        "C7",
+        "C41",
+        "C42"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q16",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How long did VETS take to estimate compared with the univariate ETS models?",
+      "in_claimset": false
     },
     {
       "id": "Q17",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How did VETS perform on the original daily, store-and-item-level M5 data?",
+      "in_claimset": false
     },
     {
       "id": "Q18",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "What values of the smoothing parameters did VETS estimate for the M5 groups?",
+      "in_claimset": false
     },
     {
       "id": "Q19",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How did VETS compare with hierarchical forecast reconciliation on the M5 data?",
+      "in_claimset": false
     },
     {
       "id": "Q20",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "What was the accuracy of VETS on the M5 data measured by the competition's own error measure, WRMSSE?",
+      "in_claimset": false
     }
-  ]
+  ],
+  "drafted": "Questions and reference answers drafted from the paper text by an AI assistant, for the author to audit and amend; claims and in_claimset set afterwards from the gold claimset."
 }
