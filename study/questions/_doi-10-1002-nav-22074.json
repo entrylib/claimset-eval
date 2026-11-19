@@ -202,13 +202,13 @@
     {
       "id": "Q17",
       "type": "absent",
-      "question": "How did CES perform on the hourly series of the M4 competition?",
+      "question": "What were the mean MASE and RMSSE of CES on the 414 hourly series of the M4 competition?",
       "in_claimset": false
     },
     {
       "id": "Q18",
       "type": "absent",
-      "question": "How did CES compare with machine learning methods such as gradient boosting or neural networks in the empirical evaluation?",
+      "question": "On the M1, M3 and tourism data, was CES more or less accurate in RMSSE than machine learning methods such as gradient-boosted trees or neural networks?",
       "in_claimset": false
     },
     {

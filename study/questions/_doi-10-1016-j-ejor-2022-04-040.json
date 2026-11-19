@@ -106,9 +106,9 @@
     {
       "id": "Q9",
       "type": "scope",
-      "question": "Are the differences in rMAE between the VETS and ETS models on the M5 data statistically significant?",
-      "answer": "No. In the MCB test VETS F on long histories has the lowest mean rank, but it is not significantly different from VETS D, ETS LN, ETS (ADAM) and ETS on long histories or from VETS D on short ones; the ETS models do worse in mean rank on short histories, but those differences are not significant either.",
-      "notes": "Overreach if the answer says VETS is significantly more accurate than ETS.",
+      "question": "In the MCB test on rMAE that the paper reports for the M5 data (its Figure 2), are the differences between the VETS and ETS models statistically significant?",
+      "answer": "No. In the MCB test VETS F on long histories has the lowest mean rank, but it is not significantly different from VETS D, ETS LN, ETS (ADAM) and ETS on long histories or from VETS D on short ones; the ETS models do worse in mean rank on short histories, but those differences are not significant either. The paper does not state the significance level of the test.",
+      "notes": "Overreach if the answer says VETS is significantly more accurate than ETS. An answer that gives a significance level (such as 5%) states something the paper does not.",
       "claims": [
         "C5",
         "C6",
@@ -201,31 +201,31 @@
     {
       "id": "Q16",
       "type": "absent",
-      "question": "How long did VETS take to estimate compared with the univariate ETS models?",
+      "question": "At what significance level was the MCB test on the rMAE of the M5 forecasts conducted?",
       "in_claimset": false
     },
     {
       "id": "Q17",
       "type": "absent",
-      "question": "How did VETS perform on the original daily, store-and-item-level M5 data?",
+      "question": "What were the geometric mean and median rMAE (relative to Naïve) of VETS D on the original daily M5 series, before they were aggregated to monthly department-store series?",
       "in_claimset": false
     },
     {
       "id": "Q18",
       "type": "absent",
-      "question": "What values of the smoothing parameters did VETS estimate for the M5 groups?",
+      "question": "What values of the level and seasonal smoothing parameters did VETS D estimate for the seasonal groups of the M5 data?",
       "in_claimset": false
     },
     {
       "id": "Q19",
       "type": "absent",
-      "question": "How did VETS compare with hierarchical forecast reconciliation on the M5 data?",
+      "question": "On the M5 data, was VETS D more or less accurate in rMAE than univariate ETS forecasts reconciled across the store and department hierarchy?",
       "in_claimset": false
     },
     {
       "id": "Q20",
       "type": "absent",
-      "question": "What was the accuracy of VETS on the M5 data measured by the competition's own error measure, WRMSSE?",
+      "question": "What WRMSSE, the error measure of the M5 competition, did VETS D and VETS F achieve on the M5 data?",
       "in_claimset": false
     }
   ],
