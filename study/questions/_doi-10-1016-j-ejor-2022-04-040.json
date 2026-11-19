@@ -108,7 +108,7 @@
       "type": "scope",
       "question": "In the MCB test on rMAE that the paper reports for the M5 data (its Figure 2), are the differences between the VETS and ETS models statistically significant?",
       "answer": "No. In the MCB test VETS F on long histories has the lowest mean rank, but it is not significantly different from VETS D, ETS LN, ETS (ADAM) and ETS on long histories or from VETS D on short ones; the ETS models do worse in mean rank on short histories, but those differences are not significant either. The paper does not state the significance level of the test.",
-      "notes": "Overreach if the answer says VETS is significantly more accurate than ETS. An answer that gives a significance level (such as 5%) states something the paper does not.",
+      "notes": "Overreach if the answer says VETS is significantly more accurate than ETS. An answer that gives a significance level (such as 5%) states something the paper does not. A right answer need not mention that VETS F has the lowest mean rank.",
       "claims": [
         "C5",
         "C6",
@@ -160,6 +160,7 @@
       "type": "evidence",
       "question": "What evidence supports the claim that PIC(LS,S,N) is one of the most robust variants, and how strong is it?",
       "answer": "In the simulation the PIC(*,S,N) methods have rMAE close to that of the correct method on every data generating process, and in pinball values they do better than the other methods except the correct one (on data with individual seasonal components they are worse than the correct method, but less so than PIC(*,S,S)); with 50 series of common seasonality PIC(LS,S,N) has a 35% lower pinball value than PIC(N,N,N). On the M5 data it was the restriction chosen most often (6 of 11 groups). The support is limited: the simulation covers only VETS(M,N,M;LN) on quarterly data with nine variants and restricted parameter ranges, and being chosen often by the selection procedure is not itself evidence of accuracy.",
+      "notes": "A right answer need not give the 35% figure.",
       "claims": [
         "C3",
         "C33",
@@ -189,6 +190,7 @@
       "type": "evidence",
       "question": "Why does the paper recommend estimating VETS with a diagonal covariance matrix (VETS D) rather than a full one (VETS F)?",
       "answer": "VETS D has far fewer parameters to estimate (n variances instead of n(n+1)/2 variances and covariances), so it is easier to estimate, especially on small samples. On the M5 data it is more accurate than VETS F on both long and short histories, its coverage is closest to 95% on long data, and it has lower relative pinball values; VETS F gives intervals that are a little too wide and the highest pinball values, which the authors attribute to estimation difficulties. VETS F, however, had the lowest mean rank on long histories in the MCB test (not significant) and the best coverage in the space-planning evaluation on short histories.",
+      "notes": "A right answer need not mention VETS F's mean rank in the MCB test or its coverage in the space-planning evaluation.",
       "claims": [
         "C51",
         "C28",

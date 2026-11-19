@@ -46,7 +46,7 @@
       "type": "lookup",
       "question": "Why is the mean MSIS of CES on the M1, M3 and tourism data so much higher than its median MSIS?",
       "answer": "Mostly because of one M1 series (number 47) on which CES failed to identify the trend: its MSIS was 523.034 against 25.590 for ETS. All models underforecast an unpredictable increase in the holdout, but ETS selected ETS(M,N,N) with a high smoothing parameter (0.881), whose prediction interval exploded and happened to cover it better than the more conservative CES interval.",
-      "notes": "Must name the single M1 series and the two MSIS values.",
+      "notes": "Must name the single M1 series and the two MSIS values. A right answer need not explain why the ETS interval was wider (ETS(M,N,N) with smoothing parameter 0.881).",
       "claims": [
         "C3"
       ],
@@ -57,7 +57,7 @@
       "type": "lookup",
       "question": "Under what value of the complex smoothing parameter does CES become equivalent to ETS(A,N,N), and how do its parameters then relate to the smoothing parameter of simple exponential smoothing?",
       "answer": "When α1 = 1, CES is equivalent to ETS(A,N,N). With α1 close to 1, α0 − 1 in CES corresponds to α in SES (for example α0 = 1.24 corresponds to α = 0.24); α0 near 1 corresponds to a stationary series (SES α near 0) and α0 near 2 to a random walk.",
-      "notes": "Must give α1 = 1 and α0 − 1 ↔ α.",
+      "notes": "Must give α1 = 1 and α0 − 1 ↔ α. A right answer need not give the example α0 = 1.24.",
       "claims": [
         "C20",
         "C44",
@@ -174,12 +174,12 @@
       "type": "evidence",
       "question": "What empirical evidence supports the idea of using an information criterion to choose between seasonal and non-seasonal CES, and how strong is it?",
       "answer": "Only the accuracy results on the seasonal subset (2,053 series, Table 5): CES with its form chosen automatically by the criterion beats every seasonal ETS model on RMSSE and MASE. No experiment compares the criterion with another way of choosing, and the seasonal/non-seasonal split of the series was itself made by ETS model selection. (The criterion is called AIC in Section 4.2 and AICc in Section 4.4.)",
+      "notes": "The question is about evidence that the selection works, not about why an information criterion can be computed for CES (the likelihood).",
       "claims": [
         "C58",
         "C65"
       ],
-      "in_claimset": true,
-      "notes": "The question is about evidence that the selection works, not about why an information criterion can be computed for CES (the likelihood)."
+      "in_claimset": true
     },
     {
       "id": "Q15",
