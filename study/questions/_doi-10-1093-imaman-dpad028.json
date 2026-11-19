@@ -3,144 +3,207 @@
     "doi-10-1093-imaman-dpad028"
   ],
   "author": "Ivan Svetunkov",
-  "written": "",
+  "written": "2026-11-19",
   "title_for_the_author": "Staying positive (pure multiplicative ETS)",
   "how": "Write each question and its reference answer from the paper, not from the claimset; add `claims` (the claims that answer it) and `in_claimset` only after writing it. Delete this key and `title_for_the_author`, then rename the file without the leading underscore to include it.",
   "questions": [
     {
       "id": "Q1",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "In simulation experiment 1, which variable had the largest effect on the percentage difference between the conditional expectation and the point forecast of ETS(M,Md,N), which had the smallest, and in what order did the others fall?",
+      "answer": "All five variables increase the difference (all regression coefficients positive, 99.9% intervals excluding zero; Table 1). The damping parameter φ has the largest effect (6.167), followed by β (3.739), the forecast horizon (3.656) and the scale σ (2.755); α has the smallest (1.578). All variables were scaled to lie between 0 and 1.",
+      "notes": "Must give φ as the largest and α as the smallest. Section 8 lists φ, β and then the error variance, while Table 1 puts the horizon before σ; accept either order for horizon and σ.",
+      "claims": [
+        "C3"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q2",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "How was simulation experiment 1 set up?",
+      "answer": "Series of 100 observations were generated from ETS(M,Md,N) with an Inverse Gaussian error distribution (sim.es() from smooth 3.2.0), and the same model with the known parameters was applied to produce point forecasts and conditional expectations. The grid was σ ∈ {0.01, 0.05, 0.1, 0.5, 1}, α, β ∈ {0.1, 0.2, 0.5}, φ ∈ {0.5, 0.9, 0.95, 1} and h ∈ {10, 50, 100}, with 10,000 iterations. The percentage difference between the conditional expectation and the point forecast was averaged over the horizon and regressed on the scaled variables (a Box-Cox transformed odds regression with alm() from greybox).",
+      "notes": "Must give the model, the Inverse Gaussian distribution, known parameters and the varied factors.",
+      "claims": [
+        "C3"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q3",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Which model and error distribution did automatic selection choose for the electric vehicle charging data, with what AICc, and how did it compare with an additive model?",
+      "answer": "ETS(M,Md,M) with the Gamma distribution, selected by AICc among pure multiplicative models and distributions with auto.adam(), with AICc 6,398.570. An ETS(A,Ad,A) model with the Normal distribution had AICc 6,418.296, so the pure multiplicative model was preferred.",
+      "notes": "A right answer need not give the estimated parameters (α = 0.1683, β = 0, γ = 0.0013, φ = 0.9925, σ = 0.276).",
+      "claims": [
+        "C11"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q4",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "In simulation experiment 2, which approach had the lowest mean scaled pinball score for each data generating process?",
+      "answer": "Akram's approach (ETS(A,Ad,A) on the logarithms of the data) on every one of the five data generating processes: 5.110 on Normal, 5.052 on Inverse Gaussian, 5.074 on Gamma, 9.180 on Log-Normal and 5.089 on Akram's data (Table 4).",
+      "notes": "Must name Akram's approach for all five.",
+      "claims": [
+        "C10"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q5",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What restrictions does the paper place on the parameters of the Inverse Gaussian, Log-Normal and Gamma distributions of the error term 1 + ϵt in ETS(M,*,*) models, and why?",
+      "answer": "The expectation of 1 + ϵt must equal 1: for the Inverse Gaussian μ = 1, for the Log-Normal μ = −σ²/2, and for the Gamma the shape ξ = 1/σ². This guarantees that the one-step-ahead point forecast equals the expectation of the model, which the construction of the model needs (fitted values are the one-step-ahead forecasts that start the recursion).",
+      "notes": "Must give the unit-mean condition and at least the restriction for each distribution.",
+      "claims": [
+        "C4",
+        "C12"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q6",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "In which cases does the conventional point forecast of a pure multiplicative ETS model coincide with its conditional geometric and arithmetic expectations?",
+      "answer": "Only in three cases: for h = 1 in all models; for h ≤ m in non-trended models with multiplicative seasonality; and for the ETS(M,N,N) model.",
+      "claims": [
+        "C2"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q7",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Does the paper show that ETS models with positive error distributions forecast better than Akram's model on the logarithms of the data?",
+      "answer": "No. In simulation experiment 2 Akram's approach has the lowest mean scaled pinball score on every data generating process. The authors attribute this to its better performance in the middle quantiles (0.2 to 0.8); in the tails, which matter more in practice, the approaches perform very similarly. They argue that the ETS models with positive distributions are competitive, not better, and prefer them because Akram's approach is detached from the ETS framework.",
+      "notes": "Overreach if the answer says the positive distributions forecast better than Akram's approach.",
+      "claims": [
+        "C10"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q8",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "In simulation experiment 2, does the ETS model with the distribution that generated the data have the lowest mean scaled pinball score on that data?",
+      "answer": "Not necessarily. For example, on Inverse Gaussian data the Inverse Gaussian model (5.221) is beaten by the Gamma (5.192) and Normal (5.204) models, and on Gamma data the Gamma model (5.231) is beaten by the Normal model (5.193). The paper says the differences between the models are typically small and not statistically significant at the 5% level, except for Akram's approach.",
+      "notes": "Overreach if the answer says the correct distribution always gives the best score.",
+      "claims": [
+        "C9",
+        "C10"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q9",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Of the ETS(M,Md,M) models in simulation experiment 2 (leaving out Akram's approach), does the one with the distribution selected by AICc have the lowest mean scaled pinball score on every data generating process?",
+      "answer": "No. It is lowest on the Inverse Gaussian (5.175), Log-Normal (9.332) and Akram (5.178) data, but the Normal model is lower on the Normal data (5.255 against 5.258) and on the Gamma data (5.193 against 5.208). The paper describes the AICc selection as performing well in the majority of cases.",
+      "notes": "Overreach if the answer says the AICc selection is always best.",
+      "claims": [
+        "C9"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q10",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Does the paper derive the restriction of the smoothing parameters to [0, 1] for every pure multiplicative ETS model?",
+      "answer": "No. It derives α ∈ [0, 1] for ETS(M,N,N) from the requirement that 1 + αϵt stay positive. For more complicated pure multiplicative models it states that the smoothing parameters should have similar restrictions for the same reasons, without deriving them.",
+      "notes": "Overreach if the answer says the restriction is proved for all pure multiplicative models.",
+      "claims": [
+        "C13"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q11",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Does the electric vehicle charging example show that ETS(M,Md,M) with the Gamma distribution forecasts the holdout more accurately than with the Normal distribution?",
+      "answer": "No accuracy measure is reported for the holdout. The example shows that the Gamma model has a lower AICc than an additive ETS(A,Ad,A) model, and that on the first 49 observations the Normal model gives a 95% prediction interval that covers negative values while the Gamma model gives a reasonable, positive one.",
+      "notes": "Overreach if the answer claims an accuracy advantage.",
+      "claims": [
+        "C11"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q12",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What evidence does the paper give that the conventional point forecast formula of pure multiplicative ETS models should not be used as the conditional expectation, and what limits it?",
+      "answer": "A derivation shows that the point forecast is at most the conditional geometric expectation, which is at most the arithmetic expectation (by Jensen's inequality), coinciding only in three special cases. An example with ETS(M,M,N) on M3 series N2703 shows the difference growing exponentially with the horizon, and simulation experiment 1 shows it increasing with φ, β, the horizon, σ and α. Limits: the example is one series, and the simulation covers only ETS(M,Md,N) with Inverse Gaussian errors and known parameters.",
+      "notes": "A right answer need not name the M3 series.",
+      "claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q13",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Why does the paper say that the Log-Normal distribution should be used with care in ETS(M,*,*) models?",
+      "answer": "Because of the restriction μ = −σ²/2, the maximum likelihood estimate of the scale comes from an equation with two roots: the derivative of the log-likelihood has two roots, so the likelihood is not convex, which may violate the identification and compactness assumptions and make the estimates inconsistent. The closed-form estimate also exists only when the mean of log²(1 + ϵt) is at most 1; otherwise the scale must be found by numerical optimisation.",
+      "notes": "Must mention the non-convex likelihood.",
+      "claims": [
+        "C7"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q14",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Why do the authors consider the Inverse Gaussian distribution the most convenient of the positive distributions, and what supports that?",
+      "answer": "Its unit-mean restriction is simply μ = 1, its scale has a closed-form maximum likelihood estimate, and the convolution of i.i.d. Inverse Gaussian variables is well defined. The Log-Normal has a non-convex likelihood and a problematic scale estimate, and the Gamma has no closed-form maximum likelihood estimate of the scale. Folks and Chhikara (1978) found that data can be described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, so the choice can rest on convenience. The support is an argument, not an empirical result: in the simulation the models perform very similarly.",
+      "claims": [
+        "C6",
+        "C7"
+      ],
+      "in_claimset": false
     },
     {
       "id": "Q15",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What evidence supports the claim that the ETS models with all the distributions considered are well calibrated, and what limits it?",
+      "answer": "In simulation experiment 2 the quantile bias and quantile precision are small and close to zero for every model on every data generating process (Table 5; bias between −0.013 and 0.011), and the quantile coverage plots fluctuate randomly around the nominal levels, with a new run giving different shapes. Limits: one model form (ETS(M,Md,M)) with one fixed set of parameters, an error standard deviation of 0.1 and 500 observations.",
+      "claims": [
+        "C9"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q16",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "What was the mean absolute error of ETS(M,Md,M) with the Gamma distribution on the 14-day holdout of the electric vehicle charging data?",
+      "in_claimset": false
     },
     {
       "id": "Q17",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "Which company provided the electric vehicle charging data?",
+      "in_claimset": false
     },
     {
       "id": "Q18",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How much longer did computing the conditional expectation by simulation take than computing the conventional point forecast?",
+      "in_claimset": false
     },
     {
       "id": "Q19",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How accurate were pure multiplicative ETS models with the Gamma distribution on intermittent demand data in this paper's experiments?",
+      "in_claimset": false
     },
     {
       "id": "Q20",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "What smoothing parameters did ETS(M,M,N) estimate on M3 series N2703?",
+      "in_claimset": false
     }
-  ]
+  ],
+  "drafted": "Questions and reference answers drafted from the paper text by an AI assistant, for the author to audit and amend; claims and in_claimset set afterwards from the gold claimset."
 }
