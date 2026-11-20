@@ -4,8 +4,6 @@
   ],
   "author": "Ivan Svetunkov",
   "written": "2026-11-17",
-  "title_for_the_author": "Complex exponential smoothing",
-  "how": "Write each question and its reference answer from the paper, not from the claimset; add `claims` (the claims that answer it) and `in_claimset` only after writing it. Delete this key and `title_for_the_author`, then rename the file without the leading underscore to include it.",
   "questions": [
     {
       "id": "Q1",

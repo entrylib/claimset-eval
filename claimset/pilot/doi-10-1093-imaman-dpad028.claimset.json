@@ -1,8 +1,8 @@
 {
- "schema_version": "0.42",
+ "schema_version": "0.44",
  "paper": {
   "id": "entrylib:2026.000006",
-  "correction_reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6.",
+  "correction_reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks.",
   "title": "Staying Positive: Challenges and Solutions in Using Pure Multiplicative ETS Models",
   "published_as": {
    "id_type": "doi",
@@ -47,557 +47,512 @@
   "autonomy": "human_assisted",
   "contribution_record": "partial",
   "origin": "native",
-  "version": 2,
-  "date": "2026-11-13",
+  "version": 4,
+  "date": "2026-11-20",
   "status": "corrected",
-  "previous_version": "entrylib:2026.000006@v1",
+  "previous_version": "entrylib:2026.000006@v3",
   "status_notice": {
-   "date": "2026-11-13",
+   "date": "2026-11-20",
    "reason_code": "correction",
-   "statement": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6.",
+   "statement": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks.",
    "issued_by": "Ivan Svetunkov (ORCID 0000-0001-7826-0281)"
   },
   "changes": [
    {
-    "op": "replace",
-    "path": "/artefacts/3/uri",
-    "value": "https://entrylib.org/p/2026.000006/v2/files/files/simulation-results.csv",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "op": "remove",
+    "path": "/claims/0/name",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/claims/0/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/artefacts/3/version",
-    "value": "sha256:2dbe10316b91c825b5294044bac70a581d6113ab50ee84504bda9bbc2d56e88f",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/1/check",
+    "value": "unchecked",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
-    "op": "add",
-    "path": "/claims/2/checks",
-    "value": [
-     {
-      "by": "P4",
-      "outcome": "confirmed",
-      "extent": "full",
-      "notes": "Re-derived Eqs. (2.1)-(2.9) via logarithmic state-space expansion and Jensen's inequality; confirmed ordering holds for non-negative persistence vector g."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "op": "remove",
+    "path": "/claims/1/check_evidence",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/claims/1/name",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/2/verification",
-    "value": "agent_checked",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/1/statement",
+    "value": "The smoothing parameters $\\alpha$, $\\beta$ and $\\gamma$ of the pure multiplicative ETS models other than [[D2:ETS(M,N,N)]] lie in $[0, 1]$, by analogy with the restriction derived for ETS(M,N,N) and without a derivation for these models.",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
-    "op": "add",
-    "path": "/claims/3/checks",
-    "value": [
-     {
-      "by": "P4",
-      "outcome": "confirmed",
-      "extent": "full",
-      "notes": "Verified Eqs. (2.6)-(2.11) for h=1, h<=m without trend, and ETS(M,N,N) product expectation."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "add",
-    "path": "/claims/3/relations",
-    "value": [
-     {
-      "type": "extends",
-      "target": "978-3-540-71918-2",
-      "id_type": "isbn",
-      "locator": "Chapter 2, pp. 21-23",
-      "note": "Identifies the exact boundary cases where conventional point forecasts coincide with conditional expectations."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "op": "remove",
+    "path": "/claims/1/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/3/verification",
-    "value": "agent_checked",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/2/name",
+    "value": "Point forecasts fall below the conditional means",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/claims/2/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/4/assessments",
-    "value": [
-     {
-      "by": "author",
-      "strength": "high",
-      "rationale": "Exploratory simulation across 10,000 Monte Carlo iterations and a broad parameter grid with 534,884 degrees of freedom and $R^2 = 0.986$."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/3/name",
+    "value": "Three cases where the point forecast is the conditional mean",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
-    "op": "add",
-    "path": "/claims/4/depends_on",
-    "value": [
-     "C1",
-     "C2"
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "op": "remove",
+    "path": "/claims/3/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/4/support",
-    "value": [
-     {
-      "kind": "simulation",
-      "evidence": "E2",
-      "artefacts": [
-       "A3"
-      ],
-      "results": [
-       "E2.T1.r2",
-       "E2.T1.r3",
-       "E2.T1.r4",
-       "E2.T1.r5",
-       "E2.T1.r6"
-      ]
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/4/name",
+    "value": "Bias of point forecasts grows with φ, β, the horizon, σ and α",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/claims/4/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/5/assessments",
-    "value": [
-     {
-      "by": "author",
-      "strength": "high",
-      "rationale": "Exploratory methodological derivation directly established by deriving valid parameter restrictions and scalability properties on $(0, \\infty)$."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/5/name",
+    "value": "Positive error distributions in the original ETS(M,*,*)",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
-    "op": "add",
-    "path": "/claims/5/checks",
-    "value": [
-     {
-      "by": "P4",
-      "outcome": "confirmed",
-      "extent": "full",
-      "notes": "Verified support (0, infinity), unit-mean parameter restrictions in Table 2, and scalability properties in Eq. (4.1)."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "add",
-    "path": "/claims/5/depends_on",
-    "value": [
-     "C8"
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "add",
-    "path": "/claims/5/limitations",
-    "value": [
-     "L6"
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "op": "remove",
+    "path": "/claims/5/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/5/relations",
-    "value": [
-     {
-      "type": "extends",
-      "target": "10.1111/j.1467-842X.2009.00555.x",
-      "id_type": "doi",
-      "locator": "Section 2",
-      "note": "Implements Log-Normal, Gamma, and Inverse Gaussian distributions directly within original $ETS(M,*,*)$ rather than sidestepping the taxonomy via logarithmic ETS."
-     },
-     {
-      "type": "supports",
-      "target": "entrylib:2026.000003@v4#C17",
-      "id_type": "claimset",
-      "self": true,
-      "note": "Provides the conventional multiplicative ETS formulation with Gamma, Log-Normal, and Inverse Gaussian errors subsequently extended to unobserved periods in entrylib:2026.000003."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/5/verification",
-    "value": "agent_checked",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "add",
-    "path": "/claims/6/checks",
-    "value": [
-     {
-      "by": "P4",
-      "outcome": "confirmed",
-      "extent": "full",
-      "notes": "Verified concentrated log-likelihood expressions in Table 3 from the respective PDFs under unit-mean parameter restrictions."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "add",
     "path": "/claims/6/depends_on",
     "value": [
      "C6",
-     "C7"
+     "C7",
+     "C18"
     ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/6/relations",
-    "value": [
-     {
-      "type": "extends",
-      "target": "978-3-540-71918-2",
-      "id_type": "isbn",
-      "locator": "p. 68",
-      "note": "Generalises the Normal multiplicative ETS log-likelihood to Inverse Gaussian, Log-Normal, and Gamma distributions."
-     },
-     {
-      "type": "supports",
-      "target": "entrylib:2026.000003@v4#C17",
-      "id_type": "claimset",
-      "self": true,
-      "note": "Establishes the full-sample concentrated log-likelihoods for multiplicative ETS distributions later generalised to intermittent/missing-data settings in entrylib:2026.000003."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/6/name",
+    "value": "Closed-form log-likelihoods for four error distributions",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/6/verification",
-    "value": "agent_checked",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/6/statement",
+    "value": "Concentrated log-likelihood functions for [[D1:ETS(M,*,*)]] models under the unit-mean restriction $E(1+\\epsilon_t)=1$ take closed forms for [[D7:Normal error distribution]] $\\mathcal{N}(1,\\sigma^2)$, [[D6:Inverse Gaussian error distribution]] $\\mathcal{IG}(1,\\sigma^2)$, [[D4:Log-Normal error distribution]] $\\log\\mathcal{N}(-\\frac{\\sigma^2}{2},\\sigma^2)$, and [[D5:Gamma error distribution]] $\\Gamma(\\sigma^{-2},\\sigma^2)$ error distributions.",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
-    "op": "add",
+    "op": "remove",
+    "path": "/claims/6/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/7/about/relation",
+    "value": "has a closed-form maximum likelihood estimator of the scale for the Normal and Inverse Gaussian distributions",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
     "path": "/claims/7/checks",
     "value": [
      {
       "by": "P4",
       "outcome": "confirmed",
       "extent": "full",
-      "notes": "Re-derived first-order conditions with respect to sigma^2 from Table 3 log-likelihoods for Normal, Inverse Gaussian, and Gamma distributions."
+      "notes": "Re-derived the first-order conditions with respect to sigma^2 from the Table 3 log-likelihoods for the Normal and Inverse Gaussian distributions."
      }
     ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/7/verification",
-    "value": "agent_checked",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/7/name",
+    "value": "Closed-form scale estimators for the Normal and Inverse Gaussian",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/7/statement",
+    "value": "The maximum likelihood estimator of the scale parameter $\\sigma^2$ in [[D1:ETS(M,*,*)]] has the closed form $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\epsilon_t^2$ for the [[D7:Normal error distribution]] and $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\frac{\\epsilon_t^2}{1+\\epsilon_t}$ for the [[D6:Inverse Gaussian error distribution]].",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/claims/7/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/8/about/conditions",
+    "value": [
+     "$\\mu = -\\frac{\\sigma^2}{2}$"
+    ],
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/8/name",
+    "value": "The Log-Normal likelihood is not convex",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/8/statement",
+    "value": "Under the unit-mean restriction $\\mu = -\\frac{\\sigma^2}{2}$, the concentrated log-likelihood of [[D1:ETS(M,*,*)]] with a [[D4:Log-Normal error distribution]] is non-convex and its maximum likelihood scale estimator is given by the corrected formula in `entrylib:2026.000003@v4#C7` rather than the quadratic root formula printed in Section 4.1 of the 2023 published article.",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/claims/8/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/9/assumptions",
+    "value": [
+     "C12"
+    ],
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "add",
-    "path": "/claims/8/checks",
+    "path": "/claims/9/depends_on",
     "value": [
-     {
-      "by": "P4",
-      "outcome": "confirmed",
-      "extent": "full",
-      "notes": "Verified that differentiating the Table 3 Log-Normal log-likelihood yields the corrected estimator in entrylib:2026.000003@v4#C7."
-     }
+     "C14"
     ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/8/verification",
-    "value": "agent_checked",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/claims/9/name",
+    "value": "Only ETS(M,N,N) has closed-form conditional moments",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
-    "op": "add",
-    "path": "/claims/9/checks",
-    "value": [
-     {
-      "by": "P4",
-      "outcome": "confirmed",
-      "extent": "full",
-      "notes": "Verified product expectation and variance in Eq. (4.5) and positivity bound alpha in [0, 1] in Eq. (4.7)."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "add",
-    "path": "/claims/9/relations",
-    "value": [
-     {
-      "type": "extends",
-      "target": "978-3-540-71918-2",
-      "id_type": "isbn",
-      "locator": "Chapter 6",
-      "note": "Extends the closed-form ETS(M,N,N) conditional mean and variance formulas from Normal errors to Inverse Gaussian, Log-Normal, and Gamma distributions."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "op": "remove",
+    "path": "/claims/9/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/claims/9/statement",
-    "value": "Among pure multiplicative [[D1:ETS(M,*,*)]] models, [[D2:ETS(M,N,N)]] is the only model with closed-form conditional $h$-steps-ahead mean $E(l_{t+h}|t)=l_t$ and variance $V(l_{t+h}|t)=l_t^2((1+\\alpha^2\\sigma^2)^h-1)$ across [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], and [[D5:Gamma error distribution]], requiring $\\alpha \\in [0,1]$ to ensure positivity of the level.",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/9/verification",
-    "value": "agent_checked",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/10/assessments",
-    "value": [
-     {
-      "by": "author",
-      "strength": "moderate",
-      "rationale": "Exploratory simulation evaluated across 10,000 replications for five DGPs, though tested at a single parameterisation and noise level ($\\sigma = 0.1$)."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "add",
     "path": "/claims/10/depends_on",
     "value": [
+     "C11",
+     "C17",
      "C4",
-     "C5",
-     "C11"
+     "C5"
     ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/10/name",
+    "value": "AICc-selected distribution does as well as the true one",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/claims/10/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/11/name",
+    "value": "Akram's log-ETS has the lowest pinball scores",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/claims/11/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/claims/12/name",
+    "value": "Gamma ETS(M,Md,M) preferred on the EV charging data",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/claims/12/summary",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "add",
-    "path": "/claims/10/relations",
-    "value": [
-     {
-      "type": "extends",
-      "target": "10.1080/03610927808837599",
-      "id_type": "doi",
-      "locator": "Section 1",
-      "note": "Applies AICc model selection across competing positive error distributions within pure multiplicative ETS models."
-     },
-     {
-      "type": "supports",
-      "target": "entrylib:2026.000003@v4#C17",
-      "id_type": "claimset",
-      "self": true,
-      "note": "Evaluates fully observed pure multiplicative ETS models across Gamma, Log-Normal, and Inverse Gaussian distributions, whereas entrylib:2026.000003#C17 derives moment equations under unobserved periods."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/10/support",
-    "value": [
-     {
-      "kind": "simulation",
-      "evidence": "E5",
-      "artefacts": [
-       "A3"
-      ],
-      "results": [
-       "E5.T1.r1",
-       "E5.T1.r2",
-       "E5.T1.r3",
-       "E5.T1.r4",
-       "E5.T1.r6",
-       "E5.T2.r1",
-       "E5.T2.r2",
-       "E5.T2.r3",
-       "E5.T2.r4",
-       "E5.T2.r6"
-      ]
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/11/assessments",
-    "value": [
-     {
-      "by": "author",
-      "strength": "moderate",
-      "rationale": "Exploratory simulation consistent across all five DGPs, though evaluated at a single noise level where logarithmic transformation remains well-behaved."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/11/relations",
-    "value": [
-     {
-      "type": "extends",
-      "target": "10.1111/j.1467-842X.2009.00555.x",
-      "id_type": "doi",
-      "locator": "Section 4",
-      "note": "Benchmarks Akram's logarithmic ETS model against pure multiplicative ETS with positive error distributions across full predictive distributions."
-     },
-     {
-      "type": "supports",
-      "target": "entrylib:2026.000003@v4#C17",
-      "id_type": "claimset",
-      "self": true,
-      "note": "Compares predictive distributions of conventional multiplicative ETS against logarithmic ETS on complete series, whereas entrylib:2026.000003#C17 studies moment propagation with unobserved periods."
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/11/statement",
-    "value": "Across all five data-generating processes in [[D15:Simulation experiment 2 synthetic series]], [[D10:Akram's log-ETS model]] achieves lower mean [[D11:scaled pinball score (SPS)]] over the 48-step horizon than pure multiplicative [[D3:ETS(M,Md,M)]] models with [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], [[D5:Gamma error distribution]], or [[D9:AICc]]-selected distributions, driven by lower pinball loss in the central quantiles ($\\tau \\in [0.2, 0.8]$) and similar performance in the distribution tails ($\\tau < 0.2$ and $\\tau > 0.8$).",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/11/support",
-    "value": [
-     {
-      "kind": "simulation",
-      "evidence": "E5",
-      "artefacts": [
-       "A3"
-      ],
-      "results": [
-       "E5.T1.r1",
-       "E5.T1.r2",
-       "E5.T1.r3",
-       "E5.T1.r4",
-       "E5.T1.r5",
-       "E5.T1.r6"
-      ]
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/12/scope/conditions",
-    "value": [
-     "511 daily EV charging observations (holdout 14) and low-volume initial 49 observations (holdout 14) at 95% prediction interval level"
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/12/statement",
-    "value": "On the [[D16:Daily EV charging dataset]], [[D3:ETS(M,Md,M)]] with a [[D5:Gamma error distribution]] achieves a lower [[D9:AICc]] ($6398.57$) than additive [[D12:ETS(A,Ad,A)]] with [[D7:Normal error distribution]] ($6418.296$), and on the initial $49$-observation low-volume subsample generates strictly positive $95\\%$ prediction intervals unlike the [[D7:Normal error distribution]] model.",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/contributors/0/positions",
-    "value": [
-     "guarantor",
-     "contributor"
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "add",
-    "path": "/contributors/1/orcid",
-    "value": "0000-0001-5036-5137",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/contributors/1/positions",
-    "value": [
-     "coauthor",
-     "contributor"
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "add",
-    "path": "/contributors/3",
+    "path": "/claims/13",
     "value": {
-     "id": "P4",
-     "type": "agent",
-     "name": "Gemini",
-     "label": "proof checking",
-     "positions": [
-      "contributor"
-     ],
-     "models": [
+     "id": "C14",
+     "name": "Smoothing parameter of ETS(M,N,N) restricted to [0, 1]",
+     "statement": "In [[D2:ETS(M,N,N)]] with a non-negative smoothing parameter $\\alpha$, the level update term $1 + \\alpha\\epsilon_t$ is positive for every error with $1 + \\epsilon_t > 0$ only when $\\alpha \\le 1$.",
+     "about": {
+      "subject": "D2",
+      "relation": "keeps a positive level for every positive error term only when",
+      "object": null,
+      "comparator": null,
+      "conditions": [
+       "$0 \\le \\alpha \\le 1$",
+       "$1 + \\epsilon_t > 0$"
+      ]
+     },
+     "type": "formal",
+     "role": "supporting",
+     "novelty": "no_prior_found",
+     "planning": "exploratory",
+     "support": [
       {
-       "model": "M1",
-       "role": "sole"
+       "kind": "formal_proof",
+       "evidence": "E4"
       }
      ],
-     "credit_roles": [
-      "validation"
+     "assumptions": [
+      "C12"
      ],
-     "ai_tasks": [
-      {
-       "task": "review",
-       "extent": "full"
-      }
-     ],
-     "tools": [
-      "none"
-     ],
-     "record_source": "self_reported"
+     "verification": "unchecked",
+     "provenance": "author_stated"
     },
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "add",
+    "path": "/claims/14",
+    "value": {
+     "id": "C18",
+     "name": "No closed-form scale estimator for the Gamma",
+     "statement": "Under the unit-mean restriction $\\xi = \\sigma^{-2}$, the maximum likelihood estimator of the scale parameter $\\sigma^2$ in [[D1:ETS(M,*,*)]] with the [[D5:Gamma error distribution]] has no closed form, and the method of moments gives $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\epsilon_t^2$.",
+     "about": {
+      "subject": "D5",
+      "relation": "has no closed-form maximum likelihood estimator of the scale in",
+      "object": "D1",
+      "comparator": null,
+      "conditions": [
+       "$\\xi = \\sigma^{-2}$"
+      ]
+     },
+     "type": "formal",
+     "role": "supporting",
+     "novelty": "no_prior_found",
+     "planning": "exploratory",
+     "scope": {
+      "conditions": [
+       "sample size $T$ with unit-mean multiplicative error distributions"
+      ]
+     },
+     "support": [
+      {
+       "kind": "formal_proof",
+       "evidence": "E3"
+      }
+     ],
+     "assumptions": [
+      "C12"
+     ],
+     "verification": "agent_checked",
+     "checks": [
+      {
+       "by": "P4",
+       "outcome": "confirmed",
+       "extent": "full",
+       "notes": "Re-derived the first-order condition with respect to sigma^2 from the Table 3 log-likelihood for the Gamma distribution (checked as part of C6 in version 2)."
+      }
+     ],
+     "provenance": "author_stated"
+    },
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "add",
+    "path": "/claims/15",
+    "value": {
+     "id": "C15",
+     "name": "The Inverse Gaussian is the most convenient distribution",
+     "statement": "Of the [[D4:Log-Normal error distribution]], the [[D5:Gamma error distribution]] and the [[D6:Inverse Gaussian error distribution]], the Inverse Gaussian is the most convenient for the error term of [[D1:ETS(M,*,*)]] models.",
+     "about": {
+      "subject": "D6",
+      "relation": "is the most convenient positive distribution for the error term of",
+      "object": "D1",
+      "comparator": null,
+      "conditions": []
+     },
+     "type": "interpretive",
+     "role": "secondary",
+     "novelty": "no_prior_found",
+     "planning": "exploratory",
+     "support": [
+      {
+       "kind": "argument",
+       "warrant": "W1"
+      },
+      {
+       "kind": "cited",
+       "reference": "B8"
+      }
+     ],
+     "provenance": "author_stated"
+    },
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "add",
+    "path": "/claims/16",
+    "value": {
+     "id": "C16",
+     "name": "Bias grows exponentially with the horizon on M3 series N2703",
+     "statement": "On [[D22:M3 series N2703]], for [[D23:ETS(M,M,N)]] the difference between the conventional point forecast and the conditional expectation obtained by simulation is negligible at short horizons and grows exponentially with the horizon from 1 to 18 steps ahead.",
+     "about": {
+      "subject": "D23",
+      "relation": "has a gap between point forecast and conditional expectation that grows with the horizon",
+      "object": null,
+      "comparator": null,
+      "conditions": [
+       "D22"
+      ]
+     },
+     "type": "descriptive",
+     "role": "secondary",
+     "novelty": "no_prior_found",
+     "planning": "exploratory",
+     "scope": {
+      "conditions": [
+       "one series, horizons 1 to 18"
+      ]
+     },
+     "relations": [
+      {
+       "type": "contradicts",
+       "target": "978-3-540-71918-2",
+       "id_type": "isbn",
+       "locator": "p. 23",
+       "note": "Hyndman et al. (2008) say the difference between the point forecast and the expectation will in general be negligible."
+      },
+      {
+       "type": "supports",
+       "target": "C1",
+       "id_type": "local",
+       "note": "An example of the gap between the conventional point forecast and the conditional expectation."
+      }
+     ],
+     "support": [
+      {
+       "kind": "empirical_quant",
+       "evidence": "E7",
+       "results": [
+        "E7.R1"
+       ]
+      }
+     ],
+     "assumptions": [
+      "C12"
+     ],
+     "provenance": "author_stated"
+    },
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "add",
+    "path": "/claims/17",
+    "value": {
+     "id": "C17",
+     "name": "Distributions do not differ significantly in pinball score",
+     "statement": "In [[D15:Simulation experiment 2 synthetic series]], the differences in mean [[D11:scaled pinball score (SPS)]] between the [[D3:ETS(M,Md,M)]] models with different error distributions are typically small and not statistically significant at the 5% level, with the exception of [[D10:Akram's log-ETS model]].",
+     "about": {
+      "subject": "D3",
+      "relation": "does not differ significantly in mean scaled pinball score across error distributions",
+      "object": "D11",
+      "comparator": null,
+      "conditions": [
+       "D15"
+      ]
+     },
+     "type": "descriptive",
+     "role": "supporting",
+     "novelty": "no_prior_found",
+     "planning": "exploratory",
+     "scope": {
+      "conditions": [
+       "5% significance level; the test is not named in the paper"
+      ]
+     },
+     "support": [
+      {
+       "kind": "simulation",
+       "evidence": "E5",
+       "artefacts": [
+        "A3"
+       ]
+      }
+     ],
+     "assumptions": [
+      "C12",
+      "C13"
+     ],
+     "limitations": [
+      "L4"
+     ],
+     "provenance": "author_stated"
+    },
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/definitions/0/definition",
-    "value": "Pure multiplicative exponential smoothing state space model family written in logarithmic state space form as $$\\begin{aligned} \\log y_t &= w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t) \\\\ \\log v_t &= F \\log v_{t-l} + \\log(1_k + g \\epsilon_t) \\end{aligned}$$ with conventional multi-step point forecast $$\\hat{y}_{t+h} = \\exp\\left((w_1' F_1^{h-1} + w_m' F_m^{\\lceil h/m \\rceil - 1}) \\log v_t\\right).$$",
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/definitions/3/definition",
+    "value": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = -\\frac{\\sigma^2}{2}$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = e^{\\sigma^2} - 1$.",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
-    "path": "/evidence/0/steps",
-    "value": [
-     {
-      "id": "E1.1",
-      "statement": "Reformulate pure multiplicative ETS in logarithmic state space form: $\\log y_t = w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t)$ and $\\log v_t = F \\log v_{t-l} + \\log(1_k + g \\epsilon_t)$.",
-      "by": [
-       "D1",
-       "C12"
-      ],
-      "rule": "logarithmic_transformation"
-     },
-     {
-      "id": "E1.2",
-      "statement": "Expand $h$-steps-ahead recursion into non-seasonal and seasonal components and take conditional expectation $E(\\log y_{t+h}|t)$.",
-      "by": [
-       "E1.1",
-       "C12"
-      ],
-      "rule": "recursive_substitution"
-     },
-     {
-      "id": "E1.3",
-      "statement": "Apply Jensen's inequality and non-negativity of $g$ to show point forecast $\\hat{y}_{t+h} \\le \\tilde{y}_{t+h} \\le \\mu_{y,t+h}$, with equality only at $h=1$, $h \\le m$ without trend, or for $ETS(M,N,N)$.",
-      "by": [
-       "E1.2",
-       "C13"
-      ],
-      "rule": "jensens_inequality"
-     }
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "path": "/definitions/13/definition",
+    "value": "10,000 iterations of 100-observation time series simulated from $ETS(M,Md,N)$ with Inverse Gaussian errors across parameter grids $\\sigma \\in \\{0.01, 0.05, 0.1, 0.5, 1\\}$, $\\alpha, \\beta \\in \\{0.1, 0.2, 0.5\\}$, $\\phi \\in \\{0.5, 0.9, 0.95, 1\\}$, and horizons $h \\in \\{10, 50, 100\\}$.",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/definitions/18/definition",
+    "value": "Transformation of percentage difference $PD$ into odds $\\frac{PD}{1-PD}$ followed by Box-Cox transformation ($\\lambda = 0.146$) and linear regression on scaled parameters $\\sigma$, horizon, $\\alpha$, $\\beta$, and $\\phi$ using `greybox::alm` (`distribution='dbcnorm'`).",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "add",
+    "path": "/definitions/21",
+    "value": {
+     "id": "D22",
+     "term": "M3 series N2703",
+     "kind": "data",
+     "definition": "Series N2703 of the M3 forecasting competition, a series with a negative trend.",
+     "source": "B9"
+    },
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "add",
+    "path": "/definitions/22",
+    "value": {
+     "id": "D23",
+     "term": "ETS(M,M,N)",
+     "kind": "method",
+     "definition": "The ETS model with multiplicative error, multiplicative trend and no seasonality."
+    },
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
@@ -605,7 +560,7 @@
     "value": [
      {
       "id": "E3.1",
-      "statement": "Impose $E(1 + \\epsilon_t) = 1$ on each distribution: $\\mu = 1$ for Normal and Inverse Gaussian, $\\mu = -\\sigma^2 / 2$ for Log-Normal, and $\\xi = \\sigma^{-2}$ for Gamma.",
+      "statement": "Impose $E(1 + \\epsilon_t) = 1$ on each distribution: $\\mu = 1$ for Normal and Inverse Gaussian, $\\mu = -\\frac{\\sigma^2}{2}$ for Log-Normal, and $\\xi = \\sigma^{-2}$ for Gamma.",
       "by": [
        "D4",
        "D5",
@@ -634,7 +589,15 @@
       "rule": "maximum_likelihood_estimation"
      }
     ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/evidence/3/assumptions",
+    "value": [
+     "C12"
+    ],
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "replace",
@@ -654,60 +617,104 @@
       "statement": "Enforce positivity of level update $1 + \\alpha \\epsilon_t > 0$ for all $1 + \\epsilon_t > 0$ to establish $\\alpha \\in [0, 1]$.",
       "by": [
        "E4.1",
-       "C13"
+       "D2"
       ],
       "rule": "positivity_bound"
      }
     ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/evidence/4/setup/lens",
-    "value": [
-     "D9",
-     "D11",
-     "D17",
-     "D18"
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
-   },
-   {
-    "op": "replace",
-    "path": "/evidence/4/setup/studied",
-    "value": [
-     "D3",
-     "D7",
-     "D6",
-     "D5",
-     "D4",
-     "D10"
-    ],
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "add",
-    "path": "/limitations/5",
+    "path": "/evidence/6",
     "value": {
-     "id": "L6",
-     "category": "model_specification",
-     "statement": "Multi-step conditional predictive distributions for $ETS(M,*,*)$ models with Log-Normal, Gamma, or Inverse Gaussian errors have no closed form because none of these distributions is closed under both convolution and product, requiring simulation.",
-     "affects": [
-      "C4"
+     "id": "E7",
+     "profile": "quant",
+     "description": "ETS(M,M,N) fitted to [[D22:M3 series N2703]] with adam() from the smooth package 3.2.0, producing forecasts 1 to 18 steps ahead; the conventional point forecast compared with the conditional expectation obtained by simulation (Section 2, Fig. 1).",
+     "setup": {
+      "studied": [
+       "D23"
+      ],
+      "cases": [
+       "D22"
+      ],
+      "lens": [
+       "D1"
+      ]
+     },
+     "results": [
+      {
+       "id": "R1",
+       "variable": "difference between the conventional point forecast and the simulated conditional expectation",
+       "conditions": {
+        "horizons": "1 to 18 steps ahead"
+       },
+       "value": {
+        "text": "Negligible at short horizons; grows exponentially with the horizon.",
+        "locator": "Fig. 1b"
+       }
+      }
      ],
-     "impact": "reduces_transferability",
-     "mitigation": "none"
+     "design": "other",
+     "n": 1,
+     "data_origin": "secondary",
+     "preregistered": false,
+     "availability": {
+      "level": "public"
+     }
     },
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "replace",
+    "path": "/limitations/3/affects",
+    "value": [
+     "C9",
+     "C10",
+     "C17"
+    ],
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "remove",
+    "path": "/paper/sections",
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    },
    {
     "op": "add",
-    "path": "/paper/published_as",
+    "path": "/references/6",
     "value": {
-     "id_type": "doi",
-     "id": "10.1093/imaman/dpad028"
+     "id": "B8",
+     "target": "10.1111/j.2517-6161.1978.tb01039.x",
+     "id_type": "doi"
     },
-    "reason": "Adds paper.published_as with the published article's DOI, adds co-author John E. Boylan's ORCID iD and coauthor position, adds independent proof verification checks for formal claims C1, C2, C4, C5, C6, C7, and C8, links related EntryLib claimsets and prior work on C2, C4, C5, C8, C9, and C10, cites specific table rows on C3, C9, and C10, adds limitation L6 to C4, and updates evidence setup definitions on E5 and result precision on E6."
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "add",
+    "path": "/references/7",
+    "value": {
+     "id": "B9",
+     "target": "10.1016/S0169-2070(00)00057-1",
+     "id_type": "doi"
+    },
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
+   },
+   {
+    "op": "add",
+    "path": "/warrants/0",
+    "value": {
+     "id": "W1",
+     "reasoning": "deductive",
+     "premises": [
+      "C4",
+      "C6",
+      "C7",
+      "C18"
+     ],
+     "text": "The Inverse Gaussian meets the unit-mean condition with its location set to 1, its scale has a closed-form maximum likelihood estimate, and the convolution of i.i.d. Inverse Gaussian variables is well defined. The Log-Normal has a non-convex likelihood and a scale estimate that exists only in some cases, and the Gamma has no closed-form maximum likelihood estimate of its scale. Since Folks & Chhikara (1978) found that data can be described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, the choice between them can rest on convenience. The argument is not tested: in the simulations the models with the three distributions perform very similarly."
+    },
+    "reason": "Brings the claimset to specification 0.44 and corrects it against the published paper: the grid of smoothing parameters in simulation experiment 1 (D14) is alpha, beta in {0.1, 0.2, 0.5} as printed, not {0, 0.1, 0.2, 0.5}; C13 stated the [0, 1] restriction of the smoothing parameters as holding for all pure multiplicative ETS models, but the paper derives it only for ETS(M,N,N) (now C14, from E4 without assuming it) and assumes it for the others, as C13 now says; adds the paper's argument that the Inverse Gaussian is the most convenient positive distribution (C15, W1, with Folks & Chhikara 1978 as B8), the example of M3 series N2703 that the paper uses against the claim that the gap between point forecast and expectation is negligible (C16, E7, D22, D23, B9), and the paper's statement that the differences between the distributions in simulation experiment 2 are not significant at the 5% level (C17); and splits C6, which held two results that stand or fall separately, into C6 (closed-form scale estimators for the Normal and Inverse Gaussian) and C18 (no closed form for the Gamma, whose scale is estimated by the method of moments). Also gives every claim a name and writes fractions with \\frac, as specification 0.44 as amended on 2026-11-17 and 2026-11-20 asks."
    }
   ]
  },
@@ -843,6 +850,16 @@
    "id": "B7",
    "target": "10.1201/9781003452652",
    "id_type": "doi"
+  },
+  {
+   "id": "B8",
+   "target": "10.1111/j.2517-6161.1978.tb01039.x",
+   "id_type": "doi"
+  },
+  {
+   "id": "B9",
+   "target": "10.1016/S0169-2070(00)00057-1",
+   "id_type": "doi"
   }
  ],
  "definitions": [
@@ -877,7 +894,7 @@
    "id": "D4",
    "term": "Log-Normal error distribution",
    "kind": "concept",
-   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = -\\sigma^2/2$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = e^{\\sigma^2} - 1$."
+   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = -\\frac{\\sigma^2}{2}$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = e^{\\sigma^2} - 1$."
   },
   {
    "id": "D5",
@@ -948,7 +965,7 @@
    "id": "D14",
    "term": "Simulation experiment 1 synthetic series",
    "kind": "data",
-   "definition": "10,000 iterations of 100-observation time series simulated from $ETS(M,Md,N)$ with Inverse Gaussian errors across parameter grids $\\sigma \\in \\{0.01, 0.05, 0.1, 0.5, 1\\}$, $\\alpha, \\beta \\in \\{0, 0.1, 0.2, 0.5\\}$, $\\phi \\in \\{0.5, 0.9, 0.95, 1\\}$, and horizons $h \\in \\{10, 50, 100\\}$."
+   "definition": "10,000 iterations of 100-observation time series simulated from $ETS(M,Md,N)$ with Inverse Gaussian errors across parameter grids $\\sigma \\in \\{0.01, 0.05, 0.1, 0.5, 1\\}$, $\\alpha, \\beta \\in \\{0.1, 0.2, 0.5\\}$, $\\phi \\in \\{0.5, 0.9, 0.95, 1\\}$, and horizons $h \\in \\{10, 50, 100\\}$."
   },
   {
    "id": "D15",
@@ -980,7 +997,7 @@
    "id": "D19",
    "term": "Box-Cox odds regression procedure",
    "kind": "design",
-   "definition": "Transformation of percentage difference $PD$ into odds $PD/(1-PD)$ followed by Box-Cox transformation ($\\lambda = 0.146$) and linear regression on scaled parameters $\\sigma$, horizon, $\\alpha$, $\\beta$, and $\\phi$ using `greybox::alm` (`distribution='dbcnorm'`)."
+   "definition": "Transformation of percentage difference $PD$ into odds $\\frac{PD}{1-PD}$ followed by Box-Cox transformation ($\\lambda = 0.146$) and linear regression on scaled parameters $\\sigma$, horizon, $\\alpha$, $\\beta$, and $\\phi$ using `greybox::alm` (`distribution='dbcnorm'`)."
   },
   {
    "id": "D20",
@@ -993,6 +1010,19 @@
    "term": "two-dimensional AICc selection procedure",
    "kind": "design",
    "definition": "Simultaneous selection of pure multiplicative ETS component structure and error distribution by minimising $AICc$ via `smooth::auto.adam` with a 14-day holdout evaluation."
+  },
+  {
+   "id": "D22",
+   "term": "M3 series N2703",
+   "kind": "data",
+   "definition": "Series N2703 of the M3 forecasting competition, a series with a negative trend.",
+   "source": "B9"
+  },
+  {
+   "id": "D23",
+   "term": "ETS(M,M,N)",
+   "kind": "method",
+   "definition": "The ETS model with multiplicative error, multiplicative trend and no seasonality."
   }
  ],
  "claims": [
@@ -1014,7 +1044,7 @@
   },
   {
    "id": "C13",
-   "statement": "Smoothing parameters $\\alpha, \\beta, \\gamma$ in pure multiplicative ETS models lie within $[0, 1]$ so that state update terms $(1 + g\\epsilon_t)$ remain strictly positive whenever $1 + \\epsilon_t > 0$.",
+   "statement": "The smoothing parameters $\\alpha$, $\\beta$ and $\\gamma$ of the pure multiplicative ETS models other than [[D2:ETS(M,N,N)]] lie in $[0, 1]$, by analogy with the restriction derived for ETS(M,N,N) and without a derivation for these models.",
    "type": "formal",
    "role": "supporting",
    "support": [
@@ -1023,14 +1053,14 @@
     }
    ],
    "assumption_category": "methodological",
-   "check": "tested",
-   "check_evidence": "E1",
+   "check": "unchecked",
    "provenance": "author_stated",
    "verifiability": "not_applicable",
    "verifiability_flags": []
   },
   {
    "id": "C1",
+   "name": "Point forecasts fall below the conditional means",
    "statement": "In general, the conventional multi-step point forecast $\\hat{y}_{t+h}$ of a pure multiplicative [[D1:ETS(M,*,*)]] model does not coincide with the conditional arithmetic expectation $\\mu_{y,t+h}$ or the conditional geometric expectation $\\tilde{y}_{t+h}$, satisfying $\\hat{y}_{t+h} \\le \\tilde{y}_{t+h} \\le \\mu_{y,t+h}$ when smoothing parameters are non-zero.",
    "about": {
     "subject": "D1",
@@ -1094,6 +1124,7 @@
   },
   {
    "id": "C2",
+   "name": "Three cases where the point forecast is the conditional mean",
    "statement": "The conventional point forecast of a pure multiplicative [[D1:ETS(M,*,*)]] model coincides with both the conditional geometric and conditional arithmetic expectations only when $h=1$, when $h \\le m$ for non-trended models with multiplicative seasonality, or for [[D2:ETS(M,N,N)]].",
    "about": {
     "subject": "D1",
@@ -1146,6 +1177,7 @@
   },
   {
    "id": "C3",
+   "name": "Bias of point forecasts grows with φ, β, the horizon, σ and α",
    "statement": "For [[D13:ETS(M,Md,N)]] simulated on [[D14:Simulation experiment 1 synthetic series]] with an [[D6:Inverse Gaussian error distribution]], the [[D8:percentage difference (PD)]] between the conditional expectation and the point forecast increases with the damping parameter $\\phi$, the trend smoothing parameter $\\beta$, the forecast horizon $h$, the scale parameter $\\sigma$, and the level smoothing parameter $\\alpha$, with $\\phi$ having the largest effect and $\\alpha$ having the smallest effect among the scaled predictors.",
    "about": {
     "subject": "D13",
@@ -1215,6 +1247,7 @@
   },
   {
    "id": "C4",
+   "name": "Positive error distributions in the original ETS(M,*,*)",
    "statement": "[[D4:Log-Normal error distribution]], [[D5:Gamma error distribution]], and [[D6:Inverse Gaussian error distribution]] distributions defined on $(0, \\infty)$ can be applied directly to the multiplicative error term $(1+\\epsilon_t)$ of conventional [[D1:ETS(M,*,*)]] models without transforming the model into [[D10:Akram's log-ETS model]], provided $E(1+\\epsilon_t)=1$.",
    "about": {
     "subject": "D1",
@@ -1294,7 +1327,8 @@
   },
   {
    "id": "C5",
-   "statement": "Concentrated log-likelihood functions for [[D1:ETS(M,*,*)]] models under the unit-mean restriction $E(1+\\epsilon_t)=1$ take closed forms for [[D7:Normal error distribution]] $\\mathcal{N}(1,\\sigma^2)$, [[D6:Inverse Gaussian error distribution]] $\\mathcal{IG}(1,\\sigma^2)$, [[D4:Log-Normal error distribution]] $\\log\\mathcal{N}(-\\sigma^2/2,\\sigma^2)$, and [[D5:Gamma error distribution]] $\\Gamma(\\sigma^{-2},\\sigma^2)$ error distributions.",
+   "name": "Closed-form log-likelihoods for four error distributions",
+   "statement": "Concentrated log-likelihood functions for [[D1:ETS(M,*,*)]] models under the unit-mean restriction $E(1+\\epsilon_t)=1$ take closed forms for [[D7:Normal error distribution]] $\\mathcal{N}(1,\\sigma^2)$, [[D6:Inverse Gaussian error distribution]] $\\mathcal{IG}(1,\\sigma^2)$, [[D4:Log-Normal error distribution]] $\\log\\mathcal{N}(-\\frac{\\sigma^2}{2},\\sigma^2)$, and [[D5:Gamma error distribution]] $\\Gamma(\\sigma^{-2},\\sigma^2)$ error distributions.",
    "about": {
     "subject": "D1",
     "relation": "admits closed-form concentrated log-likelihood functions across four error distributions",
@@ -1337,7 +1371,8 @@
    ],
    "depends_on": [
     "C6",
-    "C7"
+    "C7",
+    "C18"
    ],
    "assumptions": [
     "C12"
@@ -1357,10 +1392,11 @@
   },
   {
    "id": "C6",
-   "statement": "The maximum likelihood estimator of the scale parameter $\\sigma^2$ in [[D1:ETS(M,*,*)]] has closed form $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\epsilon_t^2$ for the [[D7:Normal error distribution]] and $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\frac{\\epsilon_t^2}{1+\\epsilon_t}$ for the [[D6:Inverse Gaussian error distribution]], whereas the [[D5:Gamma error distribution]] has no closed-form MLE under $\\xi = \\sigma^{-2}$ and uses $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\epsilon_t^2$ via the method of moments.",
+   "name": "Closed-form scale estimators for the Normal and Inverse Gaussian",
+   "statement": "The maximum likelihood estimator of the scale parameter $\\sigma^2$ in [[D1:ETS(M,*,*)]] has the closed form $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\epsilon_t^2$ for the [[D7:Normal error distribution]] and $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\frac{\\epsilon_t^2}{1+\\epsilon_t}$ for the [[D6:Inverse Gaussian error distribution]].",
    "about": {
     "subject": "D1",
-    "relation": "has closed-form scale MLE for Normal and Inverse Gaussian but requires numerical optimisation or method of moments for Gamma",
+    "relation": "has a closed-form maximum likelihood estimator of the scale for the Normal and Inverse Gaussian distributions",
     "object": null,
     "comparator": null,
     "conditions": [
@@ -1391,7 +1427,7 @@
      "by": "P4",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived first-order conditions with respect to sigma^2 from Table 3 log-likelihoods for Normal, Inverse Gaussian, and Gamma distributions."
+     "notes": "Re-derived the first-order conditions with respect to sigma^2 from the Table 3 log-likelihoods for the Normal and Inverse Gaussian distributions."
     }
    ],
    "provenance": "author_stated",
@@ -1400,14 +1436,15 @@
   },
   {
    "id": "C7",
-   "statement": "Under the unit-mean restriction $\\mu = -\\sigma^2/2$, the concentrated log-likelihood of [[D1:ETS(M,*,*)]] with a [[D4:Log-Normal error distribution]] is non-convex and its maximum likelihood scale estimator is given by the corrected formula in `entrylib:2026.000003@v4#C7` rather than the quadratic root formula printed in Section 4.1 of the 2023 published article.",
+   "name": "The Log-Normal likelihood is not convex",
+   "statement": "Under the unit-mean restriction $\\mu = -\\frac{\\sigma^2}{2}$, the concentrated log-likelihood of [[D1:ETS(M,*,*)]] with a [[D4:Log-Normal error distribution]] is non-convex and its maximum likelihood scale estimator is given by the corrected formula in `entrylib:2026.000003@v4#C7` rather than the quadratic root formula printed in Section 4.1 of the 2023 published article.",
    "about": {
     "subject": "D1",
     "relation": "has a non-convex log-likelihood under Log-Normal errors with scale estimator corrected in entrylib:2026.000003@v4#C7",
     "object": "D4",
     "comparator": null,
     "conditions": [
-     "$\\mu = -\\sigma^2 / 2$"
+     "$\\mu = -\\frac{\\sigma^2}{2}$"
     ]
    },
    "type": "formal",
@@ -1468,6 +1505,7 @@
   },
   {
    "id": "C8",
+   "name": "Only ETS(M,N,N) has closed-form conditional moments",
    "statement": "Among pure multiplicative [[D1:ETS(M,*,*)]] models, [[D2:ETS(M,N,N)]] is the only model with closed-form conditional $h$-steps-ahead mean $E(l_{t+h}|t)=l_t$ and variance $V(l_{t+h}|t)=l_t^2((1+\\alpha^2\\sigma^2)^h-1)$ across [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], and [[D5:Gamma error distribution]], requiring $\\alpha \\in [0,1]$ to ensure positivity of the level.",
    "about": {
     "subject": "D2",
@@ -1504,8 +1542,7 @@
     }
    ],
    "assumptions": [
-    "C12",
-    "C13"
+    "C12"
    ],
    "verification": "agent_checked",
    "checks": [
@@ -1518,10 +1555,14 @@
    ],
    "provenance": "author_stated",
    "verifiability": "open",
-   "verifiability_flags": []
+   "verifiability_flags": [],
+   "depends_on": [
+    "C14"
+   ]
   },
   {
    "id": "C9",
+   "name": "AICc-selected distribution does as well as the true one",
    "statement": "Selecting among [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], and [[D5:Gamma error distribution]] in [[D3:ETS(M,Md,M)]] via [[D9:AICc]] achieves mean [[D11:scaled pinball score (SPS)]], [[D17:quantile bias]], and [[D18:quantile precision]] comparable to specifying the true data-generating distribution across [[D15:Simulation experiment 2 synthetic series]].",
    "about": {
     "subject": "D9",
@@ -1584,9 +1625,10 @@
     }
    ],
    "depends_on": [
+    "C11",
+    "C17",
     "C4",
-    "C5",
-    "C11"
+    "C5"
    ],
    "assumptions": [
     "C12",
@@ -1608,6 +1650,7 @@
   },
   {
    "id": "C10",
+   "name": "Akram's log-ETS has the lowest pinball scores",
    "statement": "Across all five data-generating processes in [[D15:Simulation experiment 2 synthetic series]], [[D10:Akram's log-ETS model]] achieves lower mean [[D11:scaled pinball score (SPS)]] over the 48-step horizon than pure multiplicative [[D3:ETS(M,Md,M)]] models with [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], [[D5:Gamma error distribution]], or [[D9:AICc]]-selected distributions, driven by lower pinball loss in the central quantiles ($\\tau \\in [0.2, 0.8]$) and similar performance in the distribution tails ($\\tau < 0.2$ and $\\tau > 0.8$).",
    "about": {
     "subject": "D10",
@@ -1680,6 +1723,7 @@
   },
   {
    "id": "C11",
+   "name": "Gamma ETS(M,Md,M) preferred on the EV charging data",
    "statement": "On the [[D16:Daily EV charging dataset]], [[D3:ETS(M,Md,M)]] with a [[D5:Gamma error distribution]] achieves a lower [[D9:AICc]] ($6398.57$) than additive [[D12:ETS(A,Ad,A)]] with [[D7:Normal error distribution]] ($6418.296$), and on the initial $49$-observation low-volume subsample generates strictly positive $95\\%$ prediction intervals unlike the [[D7:Normal error distribution]] model.",
    "about": {
     "subject": "D3",
@@ -1722,6 +1766,206 @@
      "strength": "low",
      "rationale": "Single empirical case study on one proprietary EV charging series."
     }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "unverifiable",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C14",
+   "name": "Smoothing parameter of ETS(M,N,N) restricted to [0, 1]",
+   "statement": "In [[D2:ETS(M,N,N)]] with a non-negative smoothing parameter $\\alpha$, the level update term $1 + \\alpha\\epsilon_t$ is positive for every error with $1 + \\epsilon_t > 0$ only when $\\alpha \\le 1$.",
+   "about": {
+    "subject": "D2",
+    "relation": "keeps a positive level for every positive error term only when",
+    "object": null,
+    "comparator": null,
+    "conditions": [
+     "$0 \\le \\alpha \\le 1$",
+     "$1 + \\epsilon_t > 0$"
+    ]
+   },
+   "type": "formal",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E4"
+    }
+   ],
+   "assumptions": [
+    "C12"
+   ],
+   "verification": "unchecked",
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C18",
+   "name": "No closed-form scale estimator for the Gamma",
+   "statement": "Under the unit-mean restriction $\\xi = \\sigma^{-2}$, the maximum likelihood estimator of the scale parameter $\\sigma^2$ in [[D1:ETS(M,*,*)]] with the [[D5:Gamma error distribution]] has no closed form, and the method of moments gives $\\hat{\\sigma}^2 = \\frac{1}{T}\\sum_{t=1}^T \\epsilon_t^2$.",
+   "about": {
+    "subject": "D5",
+    "relation": "has no closed-form maximum likelihood estimator of the scale in",
+    "object": "D1",
+    "comparator": null,
+    "conditions": [
+     "$\\xi = \\sigma^{-2}$"
+    ]
+   },
+   "type": "formal",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "sample size $T$ with unit-mean multiplicative error distributions"
+    ]
+   },
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E3"
+    }
+   ],
+   "assumptions": [
+    "C12"
+   ],
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P4",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Re-derived the first-order condition with respect to sigma^2 from the Table 3 log-likelihood for the Gamma distribution (checked as part of C6 in version 2)."
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C15",
+   "name": "The Inverse Gaussian is the most convenient distribution",
+   "statement": "Of the [[D4:Log-Normal error distribution]], the [[D5:Gamma error distribution]] and the [[D6:Inverse Gaussian error distribution]], the Inverse Gaussian is the most convenient for the error term of [[D1:ETS(M,*,*)]] models.",
+   "about": {
+    "subject": "D6",
+    "relation": "is the most convenient positive distribution for the error term of",
+    "object": "D1",
+    "comparator": null,
+    "conditions": []
+   },
+   "type": "interpretive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "support": [
+    {
+     "kind": "argument",
+     "warrant": "W1"
+    },
+    {
+     "kind": "cited",
+     "reference": "B8"
+    }
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C16",
+   "name": "Bias grows exponentially with the horizon on M3 series N2703",
+   "statement": "On [[D22:M3 series N2703]], for [[D23:ETS(M,M,N)]] the difference between the conventional point forecast and the conditional expectation obtained by simulation is negligible at short horizons and grows exponentially with the horizon from 1 to 18 steps ahead.",
+   "about": {
+    "subject": "D23",
+    "relation": "has a gap between point forecast and conditional expectation that grows with the horizon",
+    "object": null,
+    "comparator": null,
+    "conditions": [
+     "D22"
+    ]
+   },
+   "type": "descriptive",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "one series, horizons 1 to 18"
+    ]
+   },
+   "relations": [
+    {
+     "type": "contradicts",
+     "target": "978-3-540-71918-2",
+     "id_type": "isbn",
+     "locator": "p. 23",
+     "note": "Hyndman et al. (2008) say the difference between the point forecast and the expectation will in general be negligible."
+    },
+    {
+     "type": "supports",
+     "target": "C1",
+     "id_type": "local",
+     "note": "An example of the gap between the conventional point forecast and the conditional expectation."
+    }
+   ],
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E7",
+     "results": [
+      "E7.R1"
+     ]
+    }
+   ],
+   "assumptions": [
+    "C12"
+   ],
+   "provenance": "author_stated",
+   "verifiability": "open",
+   "verifiability_flags": []
+  },
+  {
+   "id": "C17",
+   "name": "Distributions do not differ significantly in pinball score",
+   "statement": "In [[D15:Simulation experiment 2 synthetic series]], the differences in mean [[D11:scaled pinball score (SPS)]] between the [[D3:ETS(M,Md,M)]] models with different error distributions are typically small and not statistically significant at the 5% level, with the exception of [[D10:Akram's log-ETS model]].",
+   "about": {
+    "subject": "D3",
+    "relation": "does not differ significantly in mean scaled pinball score across error distributions",
+    "object": "D11",
+    "comparator": null,
+    "conditions": [
+     "D15"
+    ]
+   },
+   "type": "descriptive",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "conditions": [
+     "5% significance level; the test is not named in the paper"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E5",
+     "artefacts": [
+      "A3"
+     ]
+    }
+   ],
+   "assumptions": [
+    "C12",
+    "C13"
+   ],
+   "limitations": [
+    "L4"
    ],
    "provenance": "author_stated",
    "verifiability": "unverifiable",
@@ -1907,7 +2151,7 @@
    "steps": [
     {
      "id": "E3.1",
-     "statement": "Impose $E(1 + \\epsilon_t) = 1$ on each distribution: $\\mu = 1$ for Normal and Inverse Gaussian, $\\mu = -\\sigma^2 / 2$ for Log-Normal, and $\\xi = \\sigma^{-2}$ for Gamma.",
+     "statement": "Impose $E(1 + \\epsilon_t) = 1$ on each distribution: $\\mu = 1$ for Normal and Inverse Gaussian, $\\mu = -\\frac{\\sigma^2}{2}$ for Log-Normal, and $\\xi = \\sigma^{-2}$ for Gamma.",
      "by": [
       "D4",
       "D5",
@@ -1946,8 +2190,7 @@
    "description": "Analytical derivation of closed-form conditional $h$-steps-ahead mean and variance, one-step-ahead predictive distributions via scalability, and smoothing parameter domain restrictions for $ETS(M,N,N)$ (Section 4.2, Eqs. 4.2-4.7).",
    "foundation": "classical_probability",
    "assumptions": [
-    "C12",
-    "C13"
+    "C12"
    ],
    "steps": [
     {
@@ -1964,7 +2207,7 @@
      "statement": "Enforce positivity of level update $1 + \\alpha \\epsilon_t > 0$ for all $1 + \\epsilon_t > 0$ to establish $\\alpha \\in [0, 1]$.",
      "by": [
       "E4.1",
-      "C13"
+      "D2"
      ],
      "rule": "positivity_bound"
     }
@@ -2384,9 +2627,57 @@
     "level": "unavailable",
     "reason": "legal"
    }
+  },
+  {
+   "id": "E7",
+   "profile": "quant",
+   "description": "ETS(M,M,N) fitted to [[D22:M3 series N2703]] with adam() from the smooth package 3.2.0, producing forecasts 1 to 18 steps ahead; the conventional point forecast compared with the conditional expectation obtained by simulation (Section 2, Fig. 1).",
+   "setup": {
+    "studied": [
+     "D23"
+    ],
+    "cases": [
+     "D22"
+    ],
+    "lens": [
+     "D1"
+    ]
+   },
+   "results": [
+    {
+     "id": "R1",
+     "variable": "difference between the conventional point forecast and the simulated conditional expectation",
+     "conditions": {
+      "horizons": "1 to 18 steps ahead"
+     },
+     "value": {
+      "text": "Negligible at short horizons; grows exponentially with the horizon.",
+      "locator": "Fig. 1b"
+     }
+    }
+   ],
+   "design": "other",
+   "n": 1,
+   "data_origin": "secondary",
+   "preregistered": false,
+   "availability": {
+    "level": "public"
+   }
   }
  ],
- "warrants": [],
+ "warrants": [
+  {
+   "id": "W1",
+   "reasoning": "deductive",
+   "premises": [
+    "C4",
+    "C6",
+    "C7",
+    "C18"
+   ],
+   "text": "The Inverse Gaussian meets the unit-mean condition with its location set to 1, its scale has a closed-form maximum likelihood estimate, and the convolution of i.i.d. Inverse Gaussian variables is well defined. The Log-Normal has a non-convex likelihood and a scale estimate that exists only in some cases, and the Gamma has no closed-form maximum likelihood estimate of its scale. Since Folks & Chhikara (1978) found that data can be described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, the choice between them can rest on convenience. The argument is not tested: in the simulations the models with the three distributions perform very similarly."
+  }
+ ],
  "limitations": [
   {
    "id": "L1",
@@ -2424,7 +2715,8 @@
    "statement": "Simulation experiment 2 uses a single fixed parameter vector with error standard deviation $\\sigma = 0.1$, where multiplicative errors remain small enough that Normal and logarithmic approximations behave regularly.",
    "affects": [
     "C9",
-    "C10"
+    "C10",
+    "C17"
    ],
    "impact": "reduces_transferability",
    "mitigation": "none"
