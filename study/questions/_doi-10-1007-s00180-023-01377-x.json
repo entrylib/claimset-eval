@@ -3,144 +3,210 @@
     "doi-10-1007-s00180-023-01377-x"
   ],
   "author": "Ivan Svetunkov",
-  "written": "",
+  "written": "2026-11-20",
   "title_for_the_author": "Multi-step estimators and shrinkage",
   "how": "Write each question and its reference answer from the paper, not from the claimset; add `claims` (the claims that answer it) and `in_claimset` only after writing it. Delete this key and `title_for_the_author`, then rename the file without the leading underscore to include it.",
   "questions": [
     {
       "id": "Q1",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "How was the simulation experiment designed?",
+      "answer": "Two data generating processes, ETS(A,N,N) with α = 0.2 and ARIMA(0,1,1) with θ = 0.6, each giving 500 series of 5,000 observations, of which sub-samples of 20, 50, 100, 200, 500, 1,000 and 5,000 observations were used. Four models were fitted (ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1)) with MSE_h, TMSE, GTMSE, MSCE and the conventional MSE_1, for horizons 10, 20, 50, 100 and 200, skipping cases where the sample was not longer than the horizon (smooth package v2.5.3). GPL was not included.",
+      "notes": "Must give the two data generating processes, the sample sizes and the horizons.",
+      "claims": [
+        "C5",
+        "C14"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q2",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "On the mean surface temperature data, which model and data were used, and which estimator gave the most accurate forecasts?",
+      "answer": "An ARIMA(1,1,2) model on the monthly HadCRUT4 series for a location in Greenland (322.5°, 62.5°), January 1849 to December 2017, 2,016 observations, with the last 60 held out. MSE_h (h = 60) was the most accurate on RMSE (1.128) and MAE (0.784) and the least biased on ME (0.009); the conventional MSE did worst on every measure (1.217, 0.849, −0.450), and GPL was very close to it.",
+      "notes": "Must name MSE_h as the most accurate.",
+      "claims": [
+        "C18",
+        "C16"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q3",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "On the Air Passengers data, which model and horizon were used, and which estimator gave the most accurate forecasts?",
+      "answer": "A misspecified ETS(A,A,A) model with a 12-month horizon. GTMSE had the lowest RMSE (18.672), MAE (15.005) and ME (8.369); MSE_h was the worst (RMSE 77.194) and the conventional MSE also poor (RMSE 49.423).",
+      "notes": "Must name GTMSE as the most accurate.",
+      "claims": [
+        "C17"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q4",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "How is the Geometric Trace Mean Squared Error (GTMSE) defined, and how is it derived?",
+      "answer": "GTMSE is the sum over horizons j = 1, …, h of the logarithms of the in-sample mean squared j-step-ahead errors. It is derived from the Generalised Variance of the General Predictive Likelihood by setting the off-diagonal elements of the covariance matrix of the 1- to h-step errors to zero, so that the determinant is the product of the variances.",
+      "claims": [
+        "C4"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q5",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What happens to an ARIMA(1,1,1) model estimated with a multi-step loss function as the forecast horizon grows?",
+      "answer": "Both φ̂1 and θ̂1 tend to −1, and the model degenerates: (1 − B)(1 + B)y_t = (1 − B)e_t reduces to (1 + B)y_t = e_t, an ARIMA(1,0,0) model.",
+      "claims": [
+        "C8"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q6",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "How do multi-step loss functions shrink the smoothing parameters of ETS(A,N,A)?",
+      "answer": "Stepwise, as complete seasonal cycles accumulate: γ̂ does not shrink while h ≤ m; α̂ shrinks faster than γ̂ on shorter horizons, and γ̂ shrinks faster once h > 2m. As h → ∞ the model becomes deterministic.",
+      "claims": [
+        "C10"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q7",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Did TMSE, GTMSE and MSCE give more accurate forecasts than MSE_h in both real-data examples?",
+      "answer": "No. On the Air Passengers data they did (MSE_h was the worst), but on the mean surface temperature data MSE_h was the most accurate on RMSE, MAE and ME; there TMSE, GTMSE and MSCE beat only the conventional MSE and GPL. The conclusions' sentence that TMSE, GTMSE and MSCE are more accurate than both MSE_1 and MSE_h does not hold for the temperature data.",
+      "notes": "Overreach if the answer says these estimators beat MSE_h on both series.",
+      "claims": [
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q8",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Do multi-step loss functions shrink the coefficients of exogenous variables in a regression?",
+      "answer": "No. A conventional regression has no dynamic elements (its persistence vector is zero), so multi-step loss functions impose no shrinkage on its coefficients; the shrinkage is a univariate, dynamic-model effect.",
+      "notes": "Overreach if the answer extends the shrinkage to regression coefficients.",
+      "claims": [
+        "C2"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q9",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Does the General Predictive Likelihood shrink the parameters as the other multi-step estimators do?",
+      "answer": "Not when the model is correctly specified: the covariances between the multi-step errors cancel the effect, and GPL gives estimates similar to the conventional one-step estimator (Corollary 4.7). Under misspecification it may give different estimates. GPL was not included in the simulations for this reason.",
+      "notes": "Overreach if the answer says GPL gives identical estimates in every case, or that it shrinks like MSE_h.",
+      "claims": [
+        "C3",
+        "C13"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q10",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Are multi-step estimators always less efficient than the conventional one-step estimator MSE_1?",
+      "answer": "No. The paper argues they are in general less efficient, but that MSE_h can be more efficient where the true parameters make c_j close to zero. In the simulations, multi-step estimators were more efficient than MSE_1 on small samples for a parameter whose true value is zero (β of ETS(A,A,N) fitted to ETS(A,N,N) data).",
+      "notes": "Overreach if the answer says they are always less efficient.",
+      "claims": [
+        "C11",
+        "C14"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q11",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "In the simulations, is the shrinkage from multi-step estimators beneficial for both ETS and ARIMA models?",
+      "answer": "No. It helps remove redundant ETS parameters (the trend parameter β of ETS(A,A,N) on ETS(A,N,N) data shrinks to zero faster), but for ARIMA it can be damaging: fitting ARIMA(1,1,1) to ETS(A,N,N) data, the multi-step estimators force the AR parameter negative on small samples, worse than MSE_1. When the parameters matter, MSE_1 is preferred.",
+      "notes": "Overreach if the answer says the shrinkage is beneficial in general.",
+      "claims": [
+        "C15",
+        "C9",
+        "C14"
+      ],
+      "in_claimset": false
     },
     {
       "id": "Q12",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What supports the claim that GTMSE is the least biased and most efficient of the multi-step estimators, and what limits it?",
+      "answer": "Analytically, the logarithms in GTMSE balance the one-step variance against the sum of ĉ_j terms, so its shrinkage is milder than that of MSE_h, TMSE or MSCE. In the simulations GTMSE converges fastest and is the least biased and most efficient multi-step estimator in most settings. Limits: it is still outperformed by MSE_1 in the simulations; only two data generating processes and pure additive models were simulated; it rests on the artificial restriction of zero covariances; and on the temperature data it was not the most accurate.",
+      "notes": "Must mention that MSE_1 still did better in the simulations.",
+      "claims": [
+        "C4",
+        "C5",
+        "C14"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q13",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What supports the claim that the shrinkage grows with the forecast horizon and weakens with the sample size?",
+      "answer": "Analytically, minimising MSE_h minimises the h-step variance s_1²(1 + Σĉ_j²), pushing ĉ_j² towards zero with a strength that grows with h and falls with T (and similarly for TMSE and MSCE). In the simulations, longer horizons give larger bias and slower convergence for the same sample size, and the shrinkage is negligible on large samples (h = 1 and h = 10 look alike). Even so, at h = 200 the ARIMA(0,1,1) estimates remain biased at 5,000 observations.",
+      "claims": [
+        "C1",
+        "C14"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q14",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Why does the paper hold that the covariances between forecast errors at different horizons are not zero?",
+      "answer": "Proposition 2.2 expresses each covariance through the coefficients c_j of the state space model (σ_ij = σ_1²c_{|i−j|} when i or j is 1, and σ_1²(c_{|i−j|} + Σ c c) otherwise), so all covariances vanish only when every c_j = 0, a deterministic model. Assuming zero correlation, as some literature does (Martinez 2017), is therefore unrealistic, and TMSE, which ignores the covariances, has no likelihood for which it is optimal.",
+      "claims": [
+        "C7"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q15",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What supports the claim that the AR(1) estimates from GTMSE, MSCE and GPL on the temperature data are realistic, and how strong is that support?",
+      "answer": "Climatologists argue the AR(1) parameter should be positive; the GTMSE, MSCE and GPL estimates (0.691, 0.634, 0.532) are positive and similar to those found by others in the field (Hartmann et al. 2013; Cahill et al. 2015; Rahmstorf et al. 2017), while MSE_h gives −0.786. The support is weak: it rests on one series and on agreement with other studies, and the conventional MSE also gives a positive AR(1) estimate (0.558), close to GPL's.",
+      "claims": [
+        "C18"
+      ],
+      "in_claimset": false
     },
     {
       "id": "Q16",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How long did estimation with GTMSE take compared with the conventional MSE_1?",
+      "in_claimset": false
     },
     {
       "id": "Q17",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "What forecast accuracy (for example RMSE) did each estimator achieve in the simulation experiments?",
+      "in_claimset": false
     },
     {
       "id": "Q18",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How did the multi-step estimators behave for multiplicative ETS models in the paper's simulations?",
+      "in_claimset": false
     },
     {
       "id": "Q19",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How did the direct multi-step estimator, with a separate model for each horizon, perform on the mean surface temperature data?",
+      "in_claimset": false
     },
     {
       "id": "Q20",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "What coverage did the prediction intervals of each estimator achieve on the Air Passengers data?",
+      "in_claimset": false
     }
-  ]
+  ],
+  "drafted": "Questions and reference answers drafted from the paper text by an AI assistant, for the author to audit and amend; claims and in_claimset set afterwards from the gold claimset."
 }
