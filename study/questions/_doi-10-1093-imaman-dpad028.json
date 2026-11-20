@@ -12,7 +12,7 @@
       "type": "lookup",
       "question": "In simulation experiment 1, which variable had the largest effect on the percentage difference between the conditional expectation and the point forecast of ETS(M,Md,N), which had the smallest, and in what order did the others fall?",
       "answer": "All five variables increase the difference (all regression coefficients positive, 99.9% intervals excluding zero; Table 1). The damping parameter φ has the largest effect (6.167), followed by β (3.739), the forecast horizon (3.656) and the scale σ (2.755); α has the smallest (1.578). All variables were scaled to lie between 0 and 1.",
-      "notes": "Must give φ as the largest and α as the smallest. Section 8 lists φ, β and then the error variance, while Table 1 puts the horizon before σ; accept either order for horizon and σ.",
+      "notes": "Must give φ as the largest and α as the smallest, in the order of Table 1.",
       "claims": [
         "C3"
       ],
@@ -91,6 +91,7 @@
       "answer": "Not necessarily. For example, on Inverse Gaussian data the Inverse Gaussian model (5.221) is beaten by the Gamma (5.192) and Normal (5.204) models, and on Gamma data the Gamma model (5.231) is beaten by the Normal model (5.193). The paper says the differences between the models are typically small and not statistically significant at the 5% level, except for Akram's approach.",
       "notes": "Overreach if the answer says the correct distribution always gives the best score.",
       "claims": [
+        "C17",
         "C9",
         "C10"
       ],
@@ -114,6 +115,7 @@
       "answer": "No. It derives α ∈ [0, 1] for ETS(M,N,N) from the requirement that 1 + αϵt stay positive. For more complicated pure multiplicative models it states that the smoothing parameters should have similar restrictions for the same reasons, without deriving them.",
       "notes": "Overreach if the answer says the restriction is proved for all pure multiplicative models.",
       "claims": [
+        "C14",
         "C13"
       ],
       "in_claimset": true
@@ -138,7 +140,8 @@
       "claims": [
         "C1",
         "C2",
-        "C3"
+        "C3",
+        "C16"
       ],
       "in_claimset": true
     },
@@ -159,10 +162,9 @@
       "question": "Why do the authors consider the Inverse Gaussian distribution the most convenient of the positive distributions, and what supports that?",
       "answer": "Its unit-mean restriction is simply μ = 1, its scale has a closed-form maximum likelihood estimate, and the convolution of i.i.d. Inverse Gaussian variables is well defined. The Log-Normal has a non-convex likelihood and a problematic scale estimate, and the Gamma has no closed-form maximum likelihood estimate of the scale. Folks and Chhikara (1978) found that data can be described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, so the choice can rest on convenience. The support is an argument, not an empirical result: in the simulation the models perform very similarly.",
       "claims": [
-        "C6",
-        "C7"
+        "C15"
       ],
-      "in_claimset": false
+      "in_claimset": true
     },
     {
       "id": "Q15",
