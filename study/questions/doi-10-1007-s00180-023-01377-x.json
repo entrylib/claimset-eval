@@ -126,11 +126,11 @@
       "answer": "No. It helps remove redundant ETS parameters (the trend parameter β of ETS(A,A,N) on ETS(A,N,N) data shrinks to zero faster), but for ARIMA it can be damaging: fitting ARIMA(1,1,1) to ETS(A,N,N) data, the multi-step estimators force the AR parameter negative on small samples, worse than MSE_1. When the parameters matter, MSE_1 is preferred.",
       "notes": "Overreach if the answer says the shrinkage is beneficial in general.",
       "claims": [
+        "C22",
         "C15",
-        "C9",
         "C14"
       ],
-      "in_claimset": false
+      "in_claimset": true
     },
     {
       "id": "Q12",
@@ -173,9 +173,10 @@
       "answer": "Climatologists argue that the AR(1) parameter should be positive. The GTMSE, MSCE and GPL estimates (0.691, 0.634, 0.532) are similar to those found by others in the field (Hartmann et al. 2013; Cahill et al. 2015; Rahmstorf et al. 2017), whereas MSE_h shrinks it to −0.786, which the paper calls unrealistic. The paper concludes that the shrinkage is beneficial compared with the model estimated by MSE.",
       "notes": "An answer may add that the conventional MSE also gives a positive AR(1) estimate (0.558), close to GPL's; it need not.",
       "claims": [
+        "C23",
         "C18"
       ],
-      "in_claimset": false
+      "in_claimset": true
     },
     {
       "id": "Q16",
