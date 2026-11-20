@@ -3,144 +3,214 @@
     "doi-10-1111-jtsa-12843"
   ],
   "author": "Ivan Svetunkov",
-  "written": "",
+  "written": "2026-11-20",
   "title_for_the_author": "Online detection of forecast model inadequacies",
   "how": "Write each question and its reference answer from the paper, not from the claimset; add `claims` (the claims that answer it) and `in_claimset` only after writing it. Delete this key and `title_for_the_author`, then rename the file without the leading underscore to include it.",
   "questions": [
     {
       "id": "Q1",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "How were the forecasting models trained and the detection thresholds set in the simulation study?",
+      "answer": "Each forecasting model is trained once on the first 300 observations and then produces one-step-ahead forecasts sequentially, without re-training. ARMA models are fitted with the forecast R package (Arima, auto.arima) and ETS models with es() from the smooth R package. Changes are signalled using the theoretical thresholds (Theorem 1 of the Supporting Information and Corollaries 1 and 2) with γ = 0 and a false alarm rate of 0.05. For the Raw CUSUM the standard deviation in the threshold is a Bartlett long-run variance estimate (sandwich package); for the forecast errors, assumed i.i.d., the ordinary standard deviation is used. Each scenario is repeated 1,000 times, with normally distributed innovations unless stated otherwise.",
+      "notes": "Must give the training size of 300, the theoretical thresholds with a 0.05 false alarm rate, and the 1,000 repetitions.",
+      "claims": [
+        "C5"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q2",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "When did the framework detect a change in the Royal Mail forecast errors, with which detectors, and what data were used for training?",
+      "answer": "Both the mean detector D_μ(m,k) and the squared-error detector D_ξ(m,k) signalled a changepoint on 2 December 2020. The forecast errors of one delivery office from 1 July to 31 December 2020 were used: July to October as the Phase I (training) sample, with monitoring from 1 November. The change corresponds to a rise in the mean and variance of the forecast errors, taken as the start of the Christmas peak season.",
+      "notes": "Must give 2 December 2020 and both detectors.",
+      "claims": [
+        "C6"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q3",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "How was the framework applied to the gallstone-related pathology (GRP) admissions data, and how quickly did it detect the change?",
+      "answer": "A SARMA(1,0,0)(1,0,0)12 model was fitted to the monthly proportion of GRP A&E admissions up to 2013 and used to produce one-step-ahead forecasts up to 2020. Data from 2013 to 2016 formed the Phase I sample (m = 36), with monitoring from 2016. The mean detector signalled four data points after the changepoint found in the retrospective analysis of Taib et al. (2021), and the squared-error detector two time points after the change. A model-based sequential approach would have a minimum detection delay of 24 months because of the yearly seasonality.",
+      "notes": "Must give the two delays (4 and 2) and the 24-month minimum of the model-based approach.",
+      "claims": [
+        "C7",
+        "C13",
+        "C14"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q4",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "In the illustration with data from an ARMA(1,1) model, what were the model's parameters and how long after the change did the mean detector signal it?",
+      "answer": "λ = 0, φ = −0.8 and θ = 0.2, with a change in mean at time point 400 and m = 300. The mean detector D_μ(m,k) crossed its threshold 19 time points after the change (at time 419).",
+      "claims": [
+        "C15"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q5",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "In the illustration with a variance change, which forecasting model was used and how long after the change did the detector signal it?",
+      "answer": "The data have a trend and a variance change at time point 400. An ETS(A,A,N) model was used, with prediction intervals of ±2 standard errors. The squared-error detector D_ξ(m,k), with m = 300, reached its threshold 7 time points after the change.",
+      "claims": [
+        "C17"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q6",
       "type": "lookup",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "According to the paper, how large is the change in the forecast errors of a perfectly specified AR(1) forecasting model, one time point after a change of size δ_μ,m in the mean of the raw data?",
+      "answer": "Δ_μ,m = δ_μ,m(1 − φ), where φ is the autoregressive parameter.",
+      "notes": "The claimset gives the general ARMA formula (C15), from which the AR(1) case follows.",
+      "claims": [
+        "C15"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q7",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Can the framework detect mean changes when the forecasting model is the ETS(A,N,N) local level model?",
+      "answer": "Generally not. Proposition 3 shows that the expected forecast errors of ETS(A,N,N) return to zero after a mean change whenever α > 0, faster for larger α, so Assumption 2 is not satisfied unless α = 0; a mean change manifests in the forecast errors only if α is small. The framework can still detect variance changes with ETS models, through the squared forecast errors.",
+      "notes": "Overreach if the answer says the framework detects mean changes with ETS models in general.",
+      "claims": [
+        "C4",
+        "C17"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q8",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Are the theoretical thresholds of the detectors guaranteed to be valid in all the simulated scenarios?",
+      "answer": "No. The paper states that Assumptions 1 and 2, which the theoretical validity of the stopping rule requires, are not necessarily satisfied in all the simulated scenarios; it shows only that the performance is still satisfactory.",
+      "notes": "Overreach if the answer says the thresholds are theoretically valid in every simulation.",
+      "claims": [
+        "C5"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q9",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Does the paper show that monitoring forecast errors detects changes faster than the Raw CUSUM for any kind of data and change?",
+      "answer": "No. It shows this in simulations of specific scenarios: a mean change and a trend change in seasonal data with ARMA errors, and a change in the autoregressive parameter of AR(1) errors in quarterly seasonal data (with simpler structures in the Supporting Information). All simulated data have an ARMA error structure, mostly normal innovations and a training sample of 300. The applications have no Raw CUSUM comparison.",
+      "notes": "Overreach if the answer generalises beyond the simulated scenarios.",
+      "claims": [
+        "C5",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q10",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Do the paper's results apply to forecast errors more than one step ahead?",
+      "answer": "No results are given for them. The paper focuses on one-step-ahead forecast errors; it says the framework is general for h steps ahead and names combining information from several forecast horizons as future work.",
+      "notes": "Overreach if the answer says the results were shown for h > 1.",
+      "claims": [
+        "C1"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q11",
       "type": "scope",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Did the false detection probability stay at or below the nominal 5% in every simulated scenario?",
+      "answer": "The paper does not show that. It reports the false detection probability as low across all scenarios of the mean and trend changes, and as below 0.075 for all methods in the autoregressive parameter scenarios, a bound above the nominal 0.05.",
+      "notes": "Overreach if the answer says the false detection probability stayed at or below 0.05 everywhere.",
+      "claims": [
+        "C11",
+        "C12"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q12",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What supports the claim that monitoring forecast errors greatly reduces the detection delay while keeping a low false positive rate, and what limits it?",
+      "answer": "In the simulations, the ARMA Forecast Errors have a high detection probability and a lower average detection delay than the Raw CUSUM for mean and trend changes in seasonal data, forecast errors do better than the Raw CUSUM in all autoregressive parameter scenarios, and the false detection probability is low. In the GRP application the detectors signal 4 and 2 points after the change, against a 24-month minimum for a model-based approach. Limits: the simulations use ARMA errors with normal innovations and one training size; the assumptions behind the thresholds do not hold in every scenario; the Raw CUSUM does not account for seasonality, and model-based sequential detection is not simulated, only argued.",
+      "notes": "Must mention at least one limit.",
+      "claims": [
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q13",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "Why, according to the paper, does the Raw CUSUM do worse than forecast-error monitoring in the autoregressive parameter change scenarios?",
+      "answer": "The Raw CUSUM does not take the seasonality into account, so the variance is overestimated in the Phase I (training) period, and a larger variance estimate makes changes much harder to detect.",
+      "claims": [
+        "C10"
+      ],
+      "in_claimset": false
     },
     {
       "id": "Q14",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What supports the claim that mean and variance changes in the raw data show up as a mean change in the centred squared forecast errors, and under what conditions?",
+      "answer": "Proposition 1, proved from the definition of the forecast errors: under Assumption 1 the change size is Var_G′[Y_t] − Var_F[Y_t] when the mean does not change, plus Δ²_μ,m when it does and Assumption 2 holds. Proposition 2 and Corollary 1 then give the limiting distributions of the detector, provided the change size satisfies Assumptions C–E (large enough and bounded). For ARMA models the result agrees with Aue et al. (2015), where a variance change of size δ gives a change of δ in the squared errors.",
+      "notes": "Must mention the forecasting-model assumptions.",
+      "claims": [
+        "C2",
+        "C3",
+        "C16"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q15",
       "type": "evidence",
-      "question": "",
-      "in_claimset": null,
-      "answer": ""
+      "question": "What evidence shows that the framework identified the start of the Christmas peak season at Royal Mail, and what limits it?",
+      "answer": "Both detectors signalled a change on 2 December 2020, where the forecast errors show a rise in mean and variance. The evidence is limited: one delivery office in one year, no known true start date of the peak, and only the forecast errors were available; the underlying volumes and forecasts were unknown to the authors, and the data are not available.",
+      "claims": [
+        "C6"
+      ],
+      "in_claimset": true
     },
     {
       "id": "Q16",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "What was the average detection delay of a model-based sequential changepoint method in the paper's simulations?",
+      "in_claimset": false
     },
     {
       "id": "Q17",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "Which forecasting model does Royal Mail use to produce the forecasts whose errors were monitored?",
+      "in_claimset": false
     },
     {
       "id": "Q18",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How many hospitals contributed to the GRP admissions data?",
+      "in_claimset": false
     },
     {
       "id": "Q19",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "How much did detecting the Christmas peak on 2 December reduce staffing costs at the Royal Mail delivery office?",
+      "in_claimset": false
     },
     {
       "id": "Q20",
       "type": "absent",
-      "question": "",
-      "in_claimset": null
+      "question": "Which value of the tuning parameter γ gave the shortest detection delays in the simulations?",
+      "in_claimset": false
     }
-  ]
+  ],
+  "drafted": "Questions and reference answers drafted from the paper text by an AI assistant, for the author to audit and amend; claims and in_claimset set afterwards from the gold claimset."
 }
