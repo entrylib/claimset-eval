@@ -102,7 +102,7 @@
       "type": "scope",
       "question": "Does the General Predictive Likelihood shrink the parameters as the other multi-step estimators do?",
       "answer": "Not when the model is correctly specified: the covariances between the multi-step errors cancel the effect, and GPL gives estimates similar to the conventional one-step estimator (Corollary 4.7). Under misspecification it may give different estimates. GPL was not included in the simulations for this reason.",
-      "notes": "Overreach if the answer says GPL gives identical estimates in every case, or that it shrinks like MSE_h.",
+      "notes": "Overreach if the answer says GPL gives identical estimates in every case, or that it shrinks like MSE_h. An answer that adds that an independent check found the GPL shrinks in small samples, approaching MSE_1 only when T is much larger than h, is not wrong.",
       "claims": [
         "C3",
         "C13"
