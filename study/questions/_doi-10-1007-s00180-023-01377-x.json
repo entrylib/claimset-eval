@@ -57,6 +57,7 @@
       "type": "lookup",
       "question": "What happens to an ARIMA(1,1,1) model estimated with a multi-step loss function as the forecast horizon grows?",
       "answer": "Both φ̂1 and θ̂1 tend to −1, and the model degenerates: (1 − B)(1 + B)y_t = (1 − B)e_t reduces to (1 + B)y_t = e_t, an ARIMA(1,0,0) model.",
+      "notes": "The reference answer is what the paper states. An independent proof check found the minimum at φ̂ = 0, θ̂ = −1 (a deterministic level); an answer that reports this dispute alongside the paper's statement is not wrong.",
       "claims": [
         "C8"
       ],
@@ -67,6 +68,7 @@
       "type": "lookup",
       "question": "How do multi-step loss functions shrink the smoothing parameters of ETS(A,N,A)?",
       "answer": "Stepwise, as complete seasonal cycles accumulate: γ̂ does not shrink while h ≤ m; α̂ shrinks faster than γ̂ on shorter horizons, and γ̂ shrinks faster once h > 2m. As h → ∞ the model becomes deterministic.",
+      "notes": "The reference answer is what the paper states. An independent proof check found that the switch at h > 2m rests on misprinted coefficients in Table 1; an answer that reports this dispute alongside the paper's statement is not wrong.",
       "claims": [
         "C10"
       ],
@@ -112,7 +114,7 @@
       "type": "scope",
       "question": "Are multi-step estimators always less efficient than the conventional one-step estimator MSE_1?",
       "answer": "No. The paper argues they are in general less efficient, but that MSE_h can be more efficient where the true parameters make c_j close to zero. In the simulations, multi-step estimators were more efficient than MSE_1 on small samples for a parameter whose true value is zero (β of ETS(A,A,N) fitted to ETS(A,N,N) data).",
-      "notes": "Overreach if the answer says they are always less efficient.",
+      "notes": "Overreach if the answer says they are always less efficient. An answer that notes the efficiency argument is disputed (argued, not proved; not an asymptotic effect) is not wrong.",
       "claims": [
         "C11",
         "C14"
@@ -171,11 +173,11 @@
       "type": "evidence",
       "question": "On what does the paper base its view that the AR(1) estimates from GTMSE, MSCE and GPL on the temperature data are realistic?",
       "answer": "Climatologists argue that the AR(1) parameter should be positive. The GTMSE, MSCE and GPL estimates (0.691, 0.634, 0.532) are similar to those found by others in the field (Hartmann et al. 2013; Cahill et al. 2015; Rahmstorf et al. 2017), whereas MSE_h shrinks it to −0.786, which the paper calls unrealistic. The paper concludes that the shrinkage is beneficial compared with the model estimated by MSE.",
+      "notes": "An answer may add that the conventional MSE also gives a positive AR(1) estimate (0.558), close to GPL's; it need not.",
       "claims": [
         "C18"
       ],
-      "in_claimset": false,
-      "notes": "An answer may add that the conventional MSE also gives a positive AR(1) estimate (0.558), close to GPL's; it need not."
+      "in_claimset": false
     },
     {
       "id": "Q16",
