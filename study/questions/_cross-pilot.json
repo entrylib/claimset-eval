@@ -1,0 +1,118 @@
+{
+  "papers": [
+    "doi-10-1002-nav-22074",
+    "doi-10-1016-j-ejor-2022-04-040",
+    "doi-10-1093-imaman-dpad028",
+    "doi-10-1111-jtsa-12843",
+    "doi-10-1007-s00180-023-01377-x"
+  ],
+  "author": "Ivan Svetunkov",
+  "written": "2026-11-21",
+  "drafted": "Questions and reference answers drafted from the paper texts (main texts only) by an AI assistant, for the author to audit and amend; in_claimset set afterwards from the gold claimsets.",
+  "questions": [
+    {
+      "id": "X1",
+      "type": "cross",
+      "question": "Which of these papers use data from the M forecasting competitions, and from which competitions?",
+      "answer": "Complex exponential smoothing uses M1 and M3 (with the tourism competition data) and M4, and illustrates CES on two M3 series (1664 and 2721). The vector exponential smoothing paper uses M5 (Walmart sales aggregated to monthly department-store series). Staying positive uses one M3 series (N2703). The forecast-error monitoring paper and the multi-step estimators paper use none.",
+      "notes": "Must give all five papers correctly; the tourism competition is not an M competition.",
+      "in_claimset": true
+    },
+    {
+      "id": "X2",
+      "type": "cross",
+      "question": "Which of these papers choose between models or settings by an information criterion, and what does each choose?",
+      "answer": "Complex exponential smoothing chooses between seasonal and non-seasonal CES (auto.ces, AIC/AICc), and its ETS benchmark selects ETS models by AICc. The vector exponential smoothing paper selects the PIC restrictions (auto.vets; it recommends the multivariate AICc of Bedrick and Tsai). Staying positive selects the ETS components and the error distribution by AICc (auto.adam). The forecast-error monitoring paper picks the seasonal ARMA forecasting model by AIC (auto.arima). The multi-step estimators paper fixes its models and selects none.",
+      "in_claimset": true
+    },
+    {
+      "id": "X3",
+      "type": "cross",
+      "question": "Which of these papers evaluate prediction intervals or quantile forecasts, and with what measures?",
+      "answer": "Complex exponential smoothing: the mean scaled interval score (MSIS) of 95% intervals. Vector exponential smoothing: 95% coverage and relative pinball values for the upper and lower bounds, in the simulation and on M5. Staying positive: scaled pinball score, quantile bias, quantile precision and quantile coverage over 99 quantile levels. The forecast-error monitoring paper evaluates detection (detection probability, false detection probability, detection delay), not intervals, though it motivates variance detection by miscalibrated intervals. Multi-step estimators evaluates point forecasts only (RMSE, MAE, ME).",
+      "in_claimset": true
+    },
+    {
+      "id": "X4",
+      "type": "cross",
+      "question": "How do these papers treat ETS models fitted to the logarithms of the data, and what do they find about them?",
+      "answer": "The vector exponential smoothing paper builds its pure multiplicative models on log-transformed data (VETS(M,·,·;LN), following Akram et al.), argues that their point forecasts should be geometric means, and on M5 finds univariate ETS on logs (ETS LN) slightly more accurate than the multiplicative ETS models. Staying positive compares ETS with positive error distributions against Akram's log-ETS: the log model has the lowest mean pinball score in every simulated process, from the middle quantiles, but the authors prefer to stay within the ETS framework, which the log model leaves. The other three papers do not consider log models.",
+      "in_claimset": true
+    },
+    {
+      "id": "X5",
+      "type": "cross",
+      "question": "Which versions of the smooth package for R do these papers use, and for what?",
+      "answer": "Complex exponential smoothing: version 3.1.2 (auto.ces, with es() for the ETS benchmark and auto.ssarima for ARIMA). Vector exponential smoothing: 3.1.1 (adam(), with the legion package 0.1.0 for VETS). Staying positive: 3.2.0 (sim.es(), adam(), auto.adam()). Forecast-error monitoring: 4.0.2 (es() for the ETS forecasting models). Multi-step estimators: 2.5.3 for the simulations (sim.es, sim.ssarima, es, ssarima) and 3.2.1 for the temperature example (msarima).",
+      "notes": "A right answer gives the version for each paper; the functions are secondary.",
+      "in_claimset": false
+    },
+    {
+      "id": "X6",
+      "type": "cross",
+      "question": "Where does each paper report its own method doing worse than a benchmark it compares with?",
+      "answer": "Complex exponential smoothing: the highest mean MSIS of the univariate models, not the lowest mean MASE, and behind ETS(A,Ad,N) on most measures for non-seasonal series. Vector exponential smoothing: VETS F has worse pinball values than the ETS models; on long histories the VETS models do not have the lowest GMRAE at any space-planning horizon, and on short histories VETS D has worse pinball values than ETS. Staying positive: Akram's log-ETS has lower mean pinball scores than the ETS models with positive distributions. Forecast-error monitoring: in its main text, monitoring forecast errors beats the Raw CUSUM in every scenario; its loss is that ETS forecasting models cannot detect mean changes. Multi-step estimators: in the simulations MSE_1 is less biased and more efficient than GTMSE and the other multi-step estimators, and on the temperature data MSE_h, not GTMSE, is the most accurate.",
+      "notes": "Must give at least one loss for each of the four papers that report one, and say that the monitoring paper reports none against the Raw CUSUM.",
+      "in_claimset": true
+    },
+    {
+      "id": "X7",
+      "type": "cross",
+      "question": "Which of these papers test whether differences between methods are statistically significant, with which test, and what do they find?",
+      "answer": "Complex exponential smoothing: Nemenyi tests at 5% on RMSSE, MASE and MSIS; CES has the best mean rank of the univariate models on RMSSE and MASE but not all differences are significant, and SCUM is significantly better than all the others. Vector exponential smoothing: an MCB test on rMAE; VETS F has the lowest mean rank on long histories but the differences are not significant. Staying positive: the differences between the error distributions are small and not significant at the 5% level, except for Akram's model, without naming the test. The other two papers report no such test.",
+      "in_claimset": true
+    },
+    {
+      "id": "X8",
+      "type": "cross",
+      "question": "Which of these papers use a real data set that is not publicly available?",
+      "answer": "Staying positive: the electric vehicle charging data, under a non-disclosure agreement. Forecast-error monitoring: the Royal Mail forecast errors (not available) and the GRP admissions data (available on request). The others use public data: M-competition data, M5, the HadCRUT temperature series and the Air Passengers series.",
+      "in_claimset": true
+    },
+    {
+      "id": "X9",
+      "type": "cross",
+      "question": "Which of these papers use ARIMA or ARMA models, and in what role?",
+      "answer": "Complex exponential smoothing: ARIMA as a benchmark (auto.ssarima), and it shows that CES has an underlying ARMA(2,2) (seasonal CES a SARIMA). Forecast-error monitoring: ARMA forecasting models whose errors are monitored, a SARMA(1,0,0)(1,0,0)12 for the GRP data, and ARMA error processes in the simulations. Multi-step estimators: ARIMA(0,1,1) as a data generating process, ARIMA(0,1,1) and ARIMA(1,1,1) as fitted models, its analysis of ARIMA(1,1,1) under multi-step losses, and ARIMA(1,1,2) for the temperature data. Vector exponential smoothing and Staying positive do not use ARIMA models.",
+      "in_claimset": true
+    },
+    {
+      "id": "X10",
+      "type": "cross",
+      "question": "What does each paper that analyses the ETS(A,N,N) model show about it?",
+      "answer": "Complex exponential smoothing: CES with α1 = 1 is equivalent to ETS(A,N,N), and α0 − 1 plays the role of the SES smoothing parameter. Forecast-error monitoring: after a mean change the expected forecast errors of ETS(A,N,N) return to zero (for α > 0), so mean changes cannot be detected from them. Multi-step estimators: multi-step loss functions shrink its smoothing parameter towards zero, towards a global level model. Staying positive analyses the multiplicative ETS(M,N,N), not ETS(A,N,N); the vector exponential smoothing paper does not analyse it.",
+      "in_claimset": true
+    },
+    {
+      "id": "X11",
+      "type": "cross",
+      "question": "How many simulation replications does each paper use?",
+      "answer": "Complex exponential smoothing has no simulation. Vector exponential smoothing: 1000 iterations. Staying positive: 10,000 iterations in the first experiment and 10,000 series in the second. Forecast-error monitoring: 1000 repetitions of each scenario. Multi-step estimators: 500 series of 5000 observations.",
+      "in_claimset": true
+    },
+    {
+      "id": "X12",
+      "type": "cross",
+      "question": "Does any of these papers evaluate its method on intermittent demand data?",
+      "answer": "None does. The vector exponential smoothing paper aggregates the M5 data to monthly department-store series to avoid intermittence, and Staying positive only points to other work (iETS) for intermittent data.",
+      "notes": "An answer that says no paper does is right if it does not invent an evaluation.",
+      "in_claimset": false
+    },
+    {
+      "id": "X13",
+      "type": "cross",
+      "question": "Does any of these papers compare its method with machine learning methods such as neural networks or gradient boosting?",
+      "answer": "None does. Complex exponential smoothing discusses machine learning in its introduction (the M5 results), and the monitoring paper says its framework can be used with any forecasting model, neural networks included, but no paper compares against a machine learning method.",
+      "notes": "An answer that says no paper does is right if it does not invent a comparison.",
+      "in_claimset": false
+    },
+    {
+      "id": "X14",
+      "type": "cross",
+      "question": "Which of these papers recommend a choice between estimators or models according to whether forecasts or parameters matter?",
+      "answer": "Multi-step estimators: when the parameters are of main interest and the model approximates the data well, MSE_1 should be preferred, especially on small samples; when forecast accuracy matters, multi-step estimators can be advantageous. Vector exponential smoothing recommends VETS with a diagonal covariance matrix, except when the pinball measure matters most and the history is short. The other papers make no recommendation of that kind.",
+      "notes": "Must give the multi-step estimators recommendation.",
+      "in_claimset": false
+    }
+  ]
+}
