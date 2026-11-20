@@ -154,9 +154,10 @@
       "question": "Why, according to the paper, does the Raw CUSUM do worse than forecast-error monitoring in the autoregressive parameter change scenarios?",
       "answer": "The Raw CUSUM does not take the seasonality into account, so the variance is overestimated in the Phase I (training) period, and a larger variance estimate makes changes much harder to detect.",
       "claims": [
+        "C26",
         "C10"
       ],
-      "in_claimset": false
+      "in_claimset": true
     },
     {
       "id": "Q14",

@@ -504,6 +504,7 @@
  "claims": [
   {
    "id": "C1",
+   "name": "Mean changes appear in the forecast errors",
    "statement": "Under [[D8:the mean change model]], the one-step-ahead forecast errors of a forecasting model that satisfies the two forecasting-model assumptions have a change in mean of size $\\Delta_{\\mu,m} \\ne 0$ at the changepoint: $e_t = b_\\mu + \\epsilon_{\\mu,t}$ for $t \\le m + k^*$ and $e_t = b_\\mu + \\epsilon_{\\mu,t} + \\Delta_{\\mu,m}$ afterwards.",
    "type": "formal",
    "role": "principal",
@@ -554,6 +555,7 @@
   },
   {
    "id": "C2",
+   "name": "Variance and mean changes appear in the squared forecast errors",
    "statement": "Under [[D9:the mean and variance change model]] and the constant-bias assumption, the change in the mean of the centred squared forecast errors is $$\\Delta_{\\xi,m} = \\mathrm{Var}_{G'}[Y_t|\\tilde{y}_t] - \\mathrm{Var}_F[Y_t|\\tilde{y}_t]$$ when $\\delta_{\\mu,m} = 0$, and $$\\Delta_{\\xi,m} = \\mathrm{Var}_{G'}[Y_t|\\tilde{y}_t] - \\mathrm{Var}_F[Y_t|\\tilde{y}_t] + \\Delta_{\\mu,m}^2$$ when $\\delta_{\\mu,m} \\ne 0$ and the incomplete-adjustment assumption holds.",
    "type": "formal",
    "role": "principal",
@@ -600,6 +602,7 @@
   },
   {
    "id": "C3",
+   "name": "Limit distributions of the squared-error detector",
    "statement": "For the [[D3:squared-error detector]] under [[D9:the mean and variance change model]], the limit distribution of Theorem 1 of the paper's Supporting Information holds under the null hypothesis of no change, and the limit distribution of its Theorem 2 holds for the stopping time $\\tau_{\\xi,m}$ under the alternative when the change size $\\Delta_{\\xi,m}$ is large enough in the sense of that document's Assumptions C to E.",
    "type": "formal",
    "role": "principal",
@@ -657,6 +660,7 @@
   },
   {
    "id": "C4",
+   "name": "ETS(A,N,N) forecast errors return to zero after a mean change",
    "statement": "For an [[D10:ETS(A,N,N) forecasting model]] under [[D8:the mean change model]] with pre-change expectation $\\lambda$, the expected forecast error $s$ steps after the changepoint is $\\mathbb{E}[e_{k^*+s}] = \\delta_{\\mu,m}$ for $s = 1$ and $$\\mathbb{E}[e_{k^*+s}] = (\\lambda + \\delta_{\\mu,m})\\left(1 - \\sum_{i=0}^{s-2} \\alpha(1-\\alpha)^i\\right) - \\lambda\\left(\\alpha(1-\\alpha)^{s-1} - (1-\\alpha)^s\\right)$$ for $s = 2, 3, \\ldots$, an expectation that returns to zero as $s$ grows when $\\alpha > 0$ and does not satisfy the incomplete-adjustment assumption unless $\\alpha = 0$.",
    "type": "formal",
    "role": "principal",
@@ -705,6 +709,7 @@
   },
   {
    "id": "C5",
+   "name": "Monitoring forecast errors detects changes sooner than the Raw CUSUM",
    "statement": "On [[D16:the seasonal mean change scenario]], [[D17:the seasonal trend change scenario]] and [[D18:the autoregressive parameter change scenarios]], monitoring forecast errors with the [[D1:forecast error monitoring framework]] detected the changes with a shorter [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]], at a low [[D14:false detection probability (FDP)]].",
    "type": "descriptive",
    "role": "principal",
@@ -783,6 +788,7 @@
   },
   {
    "id": "C6",
+   "name": "Both detectors signal the Royal Mail peak on 2 December 2020",
    "statement": "On [[D19:the Royal Mail forecast errors]], the [[D2:mean detector]] and the [[D3:squared-error detector]] of the [[D1:forecast error monitoring framework]] both signalled a changepoint on 2 December 2020.",
    "type": "descriptive",
    "role": "principal",
@@ -847,6 +853,7 @@
   },
   {
    "id": "C7",
+   "name": "Shorter delay than model-based detection on GRP admissions",
    "statement": "On [[D20:the GRP admissions series]], both detectors of the [[D1:forecast error monitoring framework]] have a shorter [[D22:detection delay]] than [[D21:model-based sequential changepoint detection]], whose minimum possible detection delay on data with yearly seasonality is 24 months.",
    "type": "descriptive",
    "role": "principal",
@@ -905,6 +912,7 @@
   },
   {
    "id": "C8",
+   "name": "ARMA forecast errors detect seasonal mean changes sooner",
    "statement": "On [[D16:the seasonal mean change scenario]], [[D5:ARMA Forecast Errors]] has a high [[D13:detection probability (DP)]] and a lower [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]] across all change sizes.",
    "type": "descriptive",
    "role": "supporting",
@@ -964,6 +972,7 @@
   },
   {
    "id": "C9",
+   "name": "ARMA forecast errors detect seasonal trend changes sooner",
    "statement": "On [[D17:the seasonal trend change scenario]], [[D5:ARMA Forecast Errors]] and [[D4:Raw CUSUM]] both have an extremely high [[D13:detection probability (DP)]], and [[D5:ARMA Forecast Errors]] has the lower [[D12:average detection delay (ADD)]] across all change sizes.",
    "type": "descriptive",
    "role": "supporting",
@@ -1023,6 +1032,7 @@
   },
   {
    "id": "C10",
+   "name": "Forecast errors beat the Raw CUSUM on autoregressive changes",
    "statement": "On [[D18:the autoregressive parameter change scenarios]], [[D5:ARMA Forecast Errors]] and [[D6:ETS Forecast Errors]] each give a better [[D13:detection probability (DP)]] and [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]] in all scenarios.",
    "type": "descriptive",
    "role": "supporting",
@@ -1079,6 +1089,7 @@
   },
   {
    "id": "C11",
+   "name": "False detection probability below 0.075 for autoregressive changes",
    "statement": "On [[D18:the autoregressive parameter change scenarios]], the [[D14:false detection probability (FDP)]] is below 0.075 for each of the [[D7:compared detectors]].",
    "type": "descriptive",
    "role": "supporting",
@@ -1128,6 +1139,7 @@
   },
   {
    "id": "C12",
+   "name": "Low false detection probability for mean and trend changes",
    "statement": "On [[D16:the seasonal mean change scenario]] and [[D17:the seasonal trend change scenario]], the [[D14:false detection probability (FDP)]] of the [[D7:compared detectors]] is low across all change sizes.",
    "type": "descriptive",
    "role": "supporting",
@@ -1172,6 +1184,7 @@
   },
   {
    "id": "C13",
+   "name": "Mean detector signals 4 points after the GRP change",
    "statement": "On [[D20:the GRP admissions series]], the [[D22:detection delay]] of the [[D2:mean detector]] was 4 data points, counted from the changepoint that the retrospective analysis of Taib et al. (2021) identified.",
    "type": "descriptive",
    "role": "supporting",
@@ -1223,6 +1236,7 @@
   },
   {
    "id": "C14",
+   "name": "Squared-error detector signals 2 points after the GRP change",
    "statement": "On [[D20:the GRP admissions series]], the [[D22:detection delay]] of the [[D3:squared-error detector]] was 2 time points.",
    "type": "descriptive",
    "role": "supporting",
@@ -1274,6 +1288,7 @@
   },
   {
    "id": "C23",
+   "name": "Limit distributions of the mean detector",
    "type": "formal",
    "role": "supporting",
    "novelty": "extension",
@@ -1331,6 +1346,7 @@
   },
   {
    "id": "C15",
+   "name": "ARMA models satisfy the forecasting-model assumptions",
    "statement": "An [[D11:ARMA forecasting model]] satisfies the two forecasting-model assumptions for a change of size $\\delta_{\\mu,m}$ in its mean parameter $\\lambda$, the change in its forecast errors being $\\Delta_{\\mu,m} = \\delta_{\\mu,m}\\left(1 - \\sum_{j=1}^{p}\\phi_j\\right)\\sum_{l=0}^{\\infty}\\psi_l(\\theta)$ with $1/\\theta(z) = \\sum_{l=0}^{\\infty}\\psi_l(\\theta)$.",
    "type": "formal",
    "role": "secondary",
@@ -1376,6 +1392,7 @@
   },
   {
    "id": "C16",
+   "name": "A variance change passes unchanged into ARMA squared errors",
    "statement": "For a change of size $\\delta_{\\xi,m}$ in the variance of the data, the change in the squared forecast errors of an [[D11:ARMA forecasting model]] is $\\Delta_{\\xi,m} = \\delta_{\\xi,m}$, in agreement with the variance-change formula of the paper's Proposition 1.",
    "type": "formal",
    "role": "secondary",
@@ -1416,6 +1433,7 @@
   },
   {
    "id": "C17",
+   "name": "ETS squared forecast errors reveal variance changes",
    "statement": "A variance change in the raw data produces a mean change in the squared forecast errors of an ETS forecasting model that the [[D3:squared-error detector]] can detect.",
    "type": "formal",
    "role": "secondary",
@@ -1579,6 +1597,7 @@
   },
   {
    "id": "C24",
+   "name": "Null limit distribution of Page's CUSUM detector",
    "type": "formal",
    "role": "supporting",
    "novelty": "synthesis",
@@ -1616,6 +1635,7 @@
   },
   {
    "id": "C25",
+   "name": "Limit distribution of the stopping time under a mean change",
    "type": "formal",
    "role": "supporting",
    "novelty": "synthesis",
@@ -1654,6 +1674,40 @@
     "s4.1-s4.4",
     "s4.5-s4.7",
     "s4.8"
+   ],
+   "provenance": "author_stated"
+  },
+  {
+   "id": "C26",
+   "name": "Raw CUSUM overestimates the training variance of seasonal data",
+   "statement": "On [[D18:the autoregressive parameter change scenarios]], the Phase I (training) variance estimate of [[D4:Raw CUSUM]] includes the seasonal variation that it does not model, and is too large.",
+   "type": "interpretive",
+   "role": "secondary",
+   "about": {
+    "subject": "D4",
+    "relation": "overestimates the training-period variance of",
+    "object": "D18",
+    "comparator": null,
+    "conditions": []
+   },
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "support": [
+    {
+     "kind": "argument",
+     "warrant": "W3"
+    }
+   ],
+   "relations": [
+    {
+     "type": "explains",
+     "target": "C10",
+     "id_type": "local",
+     "note": "Why the Raw CUSUM detects the autoregressive parameter changes worse than monitoring forecast errors."
+    }
+   ],
+   "source_spans": [
+    "p8.13"
    ],
    "provenance": "author_stated"
   }
@@ -2197,6 +2251,14 @@
     "C14"
    ],
    "text": "A model-based sequential detector must fit the post-change model, here a SARMA(1,0,0)(1,0,0) model with a 12-month season, which the paper states needs at least two years of data after the change; the detectors on the forecast errors signalled four and two observations after it."
+  },
+  {
+   "id": "W3",
+   "reasoning": "abductive",
+   "premises": [
+    "C10"
+   ],
+   "text": "The Raw CUSUM monitors the raw data, whose quarterly seasonal pattern (quarter means -2, 5, 7 and -10) it does not model, so its estimate of the variance in the Phase I (training) period includes the seasonal variation and is too large. The threshold grows with that estimate, so a change must be larger to be detected. The forecasting models capture the seasonality, and their forecast errors do not carry it. The paper gives this as the reason for the results of the autoregressive parameter change scenarios; it does not report the variance estimates."
   }
  ],
  "limitations": [
