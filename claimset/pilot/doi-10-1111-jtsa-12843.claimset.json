@@ -728,7 +728,7 @@
      "note": "Aue et al. (2015) monitor the residuals of ARMA models only; the claim covers the forecast errors of any forecasting model that satisfies the two assumptions."
     }
    ],
-   "verification": "unchecked",
+   "verification": "disputed",
    "source_spans": [
     "p5.6",
     "p5.7",
@@ -738,7 +738,19 @@
     "s3.3-s3.5",
     "s4.5-s4.7"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "Null part confirmed: Q_ξ is Page's statistic on the centred squared errors, the constant b_ξ cancels, and estimating b_μ adds a term that vanishes under the null, so Theorem 1 applies with H0: Δ_ξ = 0, given the invariance principle for ε_ξ (moments above order 4) and uncorrelated ε_ξ. Alternative part not established: Theorem 2 assumes one invariance constant σ over the whole series, but a variance change alters the long-run variance of the centred squared errors (for Gaussian errors from 2σ⁴ to 2(σ²+δ)²), so its limit does not follow for variance changes as stated. Proposition 2's second part speaks of D_ξ converging to a limit that Theorem 2 gives for τ."
+    }
+   ],
+   "limitations": [
+    "L6",
+    "L7"
+   ]
   },
   {
    "id": "C4",
@@ -1438,7 +1450,7 @@
      "note": "Aue et al. (2015) give the limit distributions for the residuals of ARMA models; the claim gives them for the forecast errors of any forecasting model that satisfies the two assumptions."
     }
    ],
-   "verification": "unchecked",
+   "verification": "disputed",
    "source_spans": [
     "p4.9",
     "s4.10",
@@ -1446,7 +1458,18 @@
     "s4.13",
     "s4.14-s4.15"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "The substitution into Theorems 1 and 2 is right (b_μ cancels; D = D_μ, σ̂ = σ̂_μ, τ = τ_μ). The null limit needs H0: Δ_μ = 0 rather than no change in the raw data, which may change while the errors do not (as with ETS), and needs only C18 and C20; C19 (Δ ≠ 0) contradicts the null. The alternative limit needs the error distribution to be unchanged after the change apart from its mean, which the mean change model (any F and G differing in mean) does not ensure. Estimating the model once, and using out-of-sample errors, is not addressed."
+    }
+   ],
+   "limitations": [
+    "L7"
+   ]
   },
   {
    "id": "C15",
@@ -1547,7 +1570,7 @@
   {
    "id": "C17",
    "name": "ETS squared forecast errors reveal variance changes",
-   "statement": "A variance change in the raw data produces a mean change in the squared forecast errors of an ETS forecasting model that the [[D3:squared-error detector]] can detect.",
+   "statement": "For an ETS forecasting model with a constant bias before the change, a change in the conditional variance of the raw data, with no change in its mean, shifts the mean of the squared forecast errors by the size of the variance change, and the paper shows the [[D3:squared-error detector]] detecting it for an ETS model through one example and a simulation.",
    "type": "formal",
    "role": "secondary",
    "about": {
@@ -1600,7 +1623,18 @@
     "p7.8",
     "p11.9"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Proposition 1 with δ_μ = 0 needs only Assumption 1 and gives Δ_ξ = δ_ξ, so a pure variance change shifts the mean of the squared ETS errors; C4 is not needed for this. The detectability part rests on C3 (whose alternative limit is not established for variance changes) and on Assumptions C to E; the paper shows it for ETS only by the ETS(A,A,N) example and simulation, as the statement now says. Assumption 1 may fail for a misspecified ETS model."
+    }
+   ],
+   "limitations": [
+    "L6"
+   ]
   },
   {
    "id": "C18",
@@ -2726,6 +2760,38 @@
    "mitigation": "none",
    "source_spans": [
     "p11.6"
+   ]
+  },
+  {
+   "id": "L6",
+   "category": "other",
+   "statement": "The limit distribution under a variance change (Proposition 2) is taken from Theorem 2 of the Supporting Information, which assumes one invariance constant σ for the whole series; a variance change alters the long-run variance of the centred squared forecast errors, so the theorem does not apply as stated and the paper does not address this. Found by the independent proof check.",
+   "affects": [
+    "C3",
+    "C17"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none",
+   "source_spans": [
+    "p5.9",
+    "p5.10",
+    "s3.6-s3.9"
+   ]
+  },
+  {
+   "id": "L7",
+   "category": "other",
+   "statement": "The limit distributions of the detectors need the monitored errors to keep their distribution, apart from the change in mean, after the changepoint, and the null hypothesis is that the errors do not change (Δ = 0), not that the raw data do not; the paper states neither. Found by the independent proof check.",
+   "affects": [
+    "C3",
+    "C23"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none",
+   "source_spans": [
+    "p4.9",
+    "p5.6",
+    "p5.7"
    ]
   }
  ],

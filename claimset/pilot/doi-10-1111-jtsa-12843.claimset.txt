@@ -40,7 +40,7 @@ C2 "Variance and mean changes appear in the squared forecast errors" [formal; pr
   Under [[D9:the mean and variance change model]] and the constant-bias assumption, the change in the mean of the centred squared forecast errors is $$\Delta_{\xi,m} = \mathrm{Var}_{G'}[Y_t|\tilde{y}_t] - \mathrm{Var}_F[Y_t|\tilde{y}_t]$$ when $\delta_{\mu,m} = 0$, and $$\Delta_{\xi,m} = \mathrm{Var}_{G'}[Y_t|\tilde{y}_t] - \mathrm{Var}_F[Y_t|\tilde{y}_t] + \Delta_{\mu,m}^2$$ when $\delta_{\mu,m} \ne 0$ and the incomplete-adjustment assumption holds.
   scope: data_type: univariate time series | conditions: one-step-ahead forecasts
   extends B1: Aue et al. (2015) monitor the residuals of ARMA models only; the claim covers the forecast errors of any forecasting model that satisfies the two assumptions.
-C3 "Limit distributions of the squared-error detector" [formal; principal; extension; support: formal_proof E3; assumes C18, C19, C20, C21; uses C2, C24, C25; verification unchecked]
+C3 "Limit distributions of the squared-error detector" [formal; principal; extension; support: formal_proof E3; assumes C18, C19, C20, C21; uses C2, C24, C25; limitations L6, L7; verification disputed]
   For the [[D3:squared-error detector]] under [[D9:the mean and variance change model]], the limit distribution of Theorem 1 of the paper's Supporting Information holds under the null hypothesis of no change, and the limit distribution of its Theorem 2 holds for the stopping time $\tau_{\xi,m}$ under the alternative when the change size $\Delta_{\xi,m}$ is large enough in the sense of that document's Assumptions C to E.
   scope: conditions: change sizes satisfying Assumptions C to E of the paper's Supporting Information
   extends B1: Aue et al. (2015) monitor the residuals of ARMA models only; the claim covers the forecast errors of any forecasting model that satisfies the two assumptions.
@@ -85,7 +85,7 @@ C13 "Mean detector signals 4 points after the GRP change" [descriptive; supporti
 C14 "Squared-error detector signals 2 points after the GRP change" [descriptive; supporting; not_applicable; support: empirical_quant E10 (E10.R2) artefacts A6; limitations L5; strength low (author); planning exploratory]
   On [[D20:the GRP admissions series]], the [[D22:detection delay]] of the [[D3:squared-error detector]] was 2 time points.
   scope: setting: A&E admissions in participating hospitals | geography: England | period: 2010 to 2020 | data_type: monthly proportions
-C23 "Limit distributions of the mean detector" [formal; supporting; extension; support: formal_proof E11; assumes C18, C19, C20, C21; uses C1, C24, C25; verification unchecked]
+C23 "Limit distributions of the mean detector" [formal; supporting; extension; support: formal_proof E11; assumes C18, C19, C20, C21; uses C1, C24, C25; limitations L7; verification disputed]
   For the [[D2:mean detector]] under [[D8:the mean change model]], the limit distribution of Theorem 1 of the paper's Supporting Information holds under the null hypothesis of no change with $D(m,k) = D_\mu(m,k)$ and $\hat{\sigma}_m = \hat{\sigma}_{\mu,m}$, and the limit distribution of its Theorem 2 holds under the alternative with $\tau_m = \tau_{\mu,m}$ and $c_\alpha = c_{\mu,\alpha}$ when the change size $\Delta_{\mu,m}$ satisfies its Assumptions C to E.
   scope: data_type: univariate time series | conditions: one-step-ahead forecasts; change sizes satisfying Assumptions C to E of the paper's Supporting Information
   extends B1: Aue et al. (2015) give the limit distributions for the residuals of ARMA models; the claim gives them for the forecast errors of any forecasting model that satisfies the two assumptions.
@@ -109,8 +109,8 @@ C15 "ARMA models satisfy the forecasting-model assumptions" [formal; secondary; 
 C16 "A variance change passes unchanged into ARMA squared errors" [formal; secondary; synthesis; support: cited B1; assumes C22; uses C2; verification agent_checked]
   For a change of size $\delta_{\xi,m}$ in the innovation variance of the data, with no change in its mean, the change in the squared forecast errors of an [[D11:ARMA forecasting model]] is $\Delta_{\xi,m} = \delta_{\xi,m}$, in agreement with the variance-change formula of the paper's Proposition 1.
   scope: conditions: causal and invertible ARMA process; perfectly estimated ARMA model
-C17 "ETS squared forecast errors reveal variance changes" [formal; secondary; support: argument W1, simulation E8 artefacts A2; assumes C18; uses C2, C3, C4; warrant W1; verification unchecked]
-  A variance change in the raw data produces a mean change in the squared forecast errors of an ETS forecasting model that the [[D3:squared-error detector]] can detect.
+C17 "ETS squared forecast errors reveal variance changes" [formal; secondary; support: argument W1, simulation E8 artefacts A2; assumes C18; uses C2, C3, C4; limitations L6; warrant W1; verification unchecked]
+  For an ETS forecasting model with a constant bias before the change, a change in the conditional variance of the raw data, with no change in its mean, shifts the mean of the squared forecast errors by the size of the variance change, and the paper shows the [[D3:squared-error detector]] detecting it for an ETS model through one example and a simulation.
   scope: conditions: variance change sizes satisfying Assumptions C to E of the paper's Supporting Information
   addresses B2: The closest result found: Inclán and Tiao (1994) detect variance changes from the centred squared data; the claim applies the idea to the squared forecast errors of an ETS model.
 C22 [formal; secondary; assumption (theorem_condition, unchecked)]
@@ -193,6 +193,8 @@ L2 [model_specification; affects C5, C8, C9, C10, C11, C12; could_bias_magnitude
 L3 [sampling; affects C5, C8, C9, C10, C27, C28, C29; reduces_transferability; mitigation none] All simulated data have an ARMA error structure with normally distributed innovations and a training sample of 300 observations (200 in the simulations of the Supporting Information).
 L4 [measurement; affects C6; reduces_precision; mitigation none] The start of the Christmas peak season at the delivery office is inferred from the rise in the mean and variance of the forecast errors; the underlying parcel volumes and forecasts are not known to the authors.
 L5 [sample_size; affects C13, C14, C7; reduces_transferability; mitigation none] The application uses one monthly series with a Phase I sample of 36 observations.
+L6 [other; affects C3, C17; reduces_precision; mitigation none] The limit distribution under a variance change (Proposition 2) is taken from Theorem 2 of the Supporting Information, which assumes one invariance constant σ for the whole series; a variance change alters the long-run variance of the centred squared forecast errors, so the theorem does not apply as stated and the paper does not address this. Found by the independent proof check.
+L7 [other; affects C3, C23; reduces_precision; mitigation none] The limit distributions of the detectors need the monitored errors to keep their distribution, apart from the change in mean, after the changepoint, and the null hypothesis is that the errors do not change (Δ = 0), not that the raw data do not; the paper states neither. Found by the independent proof check.
 
 OPEN QUESTIONS
 O1 [from C1, C2] Whether a multivariate sequential changepoint algorithm on the vector of forecast errors of several variables or products detects changes, and how it should treat the sparsity of a change, is left as future work.
