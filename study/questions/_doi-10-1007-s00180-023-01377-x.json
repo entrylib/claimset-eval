@@ -10,7 +10,7 @@
     {
       "id": "Q1",
       "type": "lookup",
-      "question": "How was the simulation experiment designed?",
+      "question": "How were the simulation experiments designed?",
       "answer": "Two data generating processes, ETS(A,N,N) with α = 0.2 and ARIMA(0,1,1) with θ = 0.6, each giving 500 series of 5,000 observations, of which sub-samples of 20, 50, 100, 200, 500, 1,000 and 5,000 observations were used. Four models were fitted (ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1)) with MSE_h, TMSE, GTMSE, MSCE and the conventional MSE_1, for horizons 10, 20, 50, 100 and 200, skipping cases where the sample was not longer than the horizon (smooth package v2.5.3). GPL was not included.",
       "notes": "Must give the two data generating processes, the sample sizes and the horizons.",
       "claims": [
@@ -75,13 +75,12 @@
     {
       "id": "Q7",
       "type": "scope",
-      "question": "Did TMSE, GTMSE and MSCE give more accurate forecasts than MSE_h in both real-data examples?",
-      "answer": "No. On the Air Passengers data they did (MSE_h was the worst), but on the mean surface temperature data MSE_h was the most accurate on RMSE, MAE and ME; there TMSE, GTMSE and MSCE beat only the conventional MSE and GPL. The conclusions' sentence that TMSE, GTMSE and MSCE are more accurate than both MSE_1 and MSE_h does not hold for the temperature data.",
-      "notes": "Overreach if the answer says these estimators beat MSE_h on both series.",
+      "question": "On the mean surface temperature data, did TMSE, GTMSE and MSCE give more accurate forecasts than MSE_h?",
+      "answer": "No. On that series MSE_h (h = 60) was the most accurate in RMSE (1.128) and MAE (0.784) and the least biased in ME (0.009); TMSE, GTMSE and MSCE (RMSE 1.198, 1.190, 1.185) were more accurate than the conventional MSE and GPL, but not than MSE_h. They did beat MSE_h on the Air Passengers data.",
+      "notes": "Overreach if the answer says these estimators beat MSE_h on the temperature data, for example by citing the conclusions (p30.2), which say they are more accurate than both MSE_1 and MSE_h without naming the series.",
       "claims": [
-        "C16",
-        "C17",
-        "C18"
+        "C18",
+        "C16"
       ],
       "in_claimset": true
     },
@@ -150,7 +149,7 @@
       "id": "Q13",
       "type": "evidence",
       "question": "What supports the claim that the shrinkage grows with the forecast horizon and weakens with the sample size?",
-      "answer": "Analytically, minimising MSE_h minimises the h-step variance s_1²(1 + Σĉ_j²), pushing ĉ_j² towards zero with a strength that grows with h and falls with T (and similarly for TMSE and MSCE). In the simulations, longer horizons give larger bias and slower convergence for the same sample size, and the shrinkage is negligible on large samples (h = 1 and h = 10 look alike). Even so, at h = 200 the ARIMA(0,1,1) estimates remain biased at 5,000 observations.",
+      "answer": "Analytically, minimising MSE_h minimises the estimated h-step variance s_1²(1 + Σ ĉ_j²), pushing ĉ_j² towards zero with a strength that grows with h and falls with the sample size T; TMSE and MSCE shrink too, TMSE more weakly because the short horizons weigh in. In the simulations, longer horizons give larger bias and slower convergence for the same sample size, and on large samples the effect is negligible (the estimates for h = 1 and h = 10 look alike). At h = 200 the ARIMA(0,1,1) estimates remain biased and inefficient even at 5,000 observations.",
       "claims": [
         "C1",
         "C14"
@@ -170,12 +169,13 @@
     {
       "id": "Q15",
       "type": "evidence",
-      "question": "What supports the claim that the AR(1) estimates from GTMSE, MSCE and GPL on the temperature data are realistic, and how strong is that support?",
-      "answer": "Climatologists argue the AR(1) parameter should be positive; the GTMSE, MSCE and GPL estimates (0.691, 0.634, 0.532) are positive and similar to those found by others in the field (Hartmann et al. 2013; Cahill et al. 2015; Rahmstorf et al. 2017), while MSE_h gives −0.786. The support is weak: it rests on one series and on agreement with other studies, and the conventional MSE also gives a positive AR(1) estimate (0.558), close to GPL's.",
+      "question": "On what does the paper base its view that the AR(1) estimates from GTMSE, MSCE and GPL on the temperature data are realistic?",
+      "answer": "Climatologists argue that the AR(1) parameter should be positive. The GTMSE, MSCE and GPL estimates (0.691, 0.634, 0.532) are similar to those found by others in the field (Hartmann et al. 2013; Cahill et al. 2015; Rahmstorf et al. 2017), whereas MSE_h shrinks it to −0.786, which the paper calls unrealistic. The paper concludes that the shrinkage is beneficial compared with the model estimated by MSE.",
       "claims": [
         "C18"
       ],
-      "in_claimset": false
+      "in_claimset": false,
+      "notes": "An answer may add that the conventional MSE also gives a positive AR(1) estimate (0.558), close to GPL's; it need not."
     },
     {
       "id": "Q16",
