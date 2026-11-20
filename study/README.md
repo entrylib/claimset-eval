@@ -29,6 +29,7 @@ One file per paper in `study/questions/<name>.json`, and files for questions acr
 - `notes` (optional): what a right answer must include;
 - `claims` (optional): the claims that answer it, which enables the `bundle` condition;
 - `in_claimset` (optional): whether the claimset holds the answer. Mark it after writing the question, so that the questions come from the paper and not from the claimset; the report gives scores for each value separately.
+- `kind` (optional, cross questions only): what the question asks of the papers: `identification` (which paper holds something), `comparison` (the same quantity across papers, reported differently) or `relation` (whether papers agree, conflict or connect); the report gives the score of each kind.
 
 About 20 questions a paper, a quarter of them `absent`, is the plan. Write and commit the questions and reference answers before the first run, and do not change them afterwards: the run records the hash of every input in `manifest.json` and refuses to continue if one changed.
 
