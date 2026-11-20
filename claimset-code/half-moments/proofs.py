@@ -167,11 +167,50 @@ def _h4(names):
 
 
 
+def _g(v):
+    return (3 + v) / 4 - v ** mp.mpf(0.25)
+
+
+def _h20(names):
+    # H20: 1 - H = E[g(V)], E = 2(1 - E[g(V)])^p - 1, kappa - 1 = E[(V - 1)^2]; the properties of g
+    for n in names:
+        L = law(n)
+        s2 = L.var
+        Eg = integral(lambda y: _g((y - L.mean) ** 2 / s2) * L.pdf(y), L.lo, L.hi, (L.mean,))
+        H = hypo(L.R, L.I, s2)
+        cond = {"distribution": n}
+        check("H20", "1 - Hypotailedness against E[g(V)]", rel(1 - H, Eg), **cond)
+        check("H20", "Extremity against 2(1 - E[g(V)])^p - 1", rel(extr(H), 2 * (1 - Eg) ** P - 1), **cond)
+        m4 = integral(lambda y: (y - L.mean) ** 4 * L.pdf(y), L.lo, L.hi, (L.mean,))
+        EV1 = integral(lambda y: ((y - L.mean) ** 2 / s2 - 1) ** 2 * L.pdf(y), L.lo, L.hi, (L.mean,))
+        check("H20", "kurtosis - 1 against E[(V - 1)^2]", rel(m4 / s2 ** 2 - 1, EV1), **cond)
+        put("1 - Hypotailedness", 1 - H, hypothesis="H20", **cond)
+        put("kurtosis - 1", m4 / s2 ** 2 - 1, hypothesis="H20", **cond)
+    grid = [mp.mpf(k) / 64 for k in range(0, 64 * 8 + 1)] + [mp.mpf(10) ** k for k in range(1, 13)]
+    check("H20", "g positive away from 1", max([0] + [1 for v in grid if v != 1 and not _g(v) > 0]), function="g")
+    check("H20", "g zero at 1", _g(mp.mpf(1)), function="g")
+    check("H20", "g second derivative positive", max([0] + [1 for v in grid if v > 0 and not mp.diff(_g, v, 2) > 0]),
+          function="g")
+    check("H20", "g(0) against 3/4", rel(_g(mp.mpf(0)), mp.mpf(3) / 4), function="g")
+    check("H20", "g(0) against 8 times (3/32)(0 - 1)^2", rel(_g(mp.mpf(0)), 8 * mp.mpf(3) / 32), function="g")
+    for d in (mp.mpf("1e-6"), mp.mpf("-1e-6"), mp.mpf("1e-10"), mp.mpf("-1e-10")):
+        ratio = _g(1 + d) / (mp.mpf(3) / 32 * d ** 2)
+        # Taylor: ratio - 1 = O(|v - 1|), the remainder over |v - 1| tends to a third-derivative constant (7/12)
+        check("H20", "Taylor remainder (g(v)/((3/32)(v - 1)^2) - 1)/|v - 1| within 1", max(mp.mpf(0), abs(ratio - 1) / abs(d) - 1),
+              function="g", v_minus_1=float(d))
+    for v in (mp.mpf(10) ** 4, mp.mpf(10) ** 8, mp.mpf(10) ** 12):
+        check("H20", "g(v) - v/4 against 3/4 - v^(1/4)", rel(_g(v) - v / 4, mp.mpf(3) / 4 - v ** mp.mpf(0.25)), function="g", v=float(v))
+
+
+
 def properties():
     names = list(DISTS)
     only = os.environ.get("HM_ONLY")                    # e.g. "H4": check one hypothesis (a re-decided wording)
     if only == "H4":
         _h4(names)
+        return
+    if only == "H20":
+        _h20(names)
         return
 
     # H1: symmetry gives equal parts

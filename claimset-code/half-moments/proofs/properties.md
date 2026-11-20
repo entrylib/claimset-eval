@@ -1,6 +1,6 @@
-# Properties of the half central moment and its coefficients (hypotheses H1–H9, H17)
+# Properties of the half central moment and its coefficients (hypotheses H1–H9, H17, H20)
 
-Study `half-moments`, plan PL1. Proofs written by the research agent (AC1) for checking by an independent agent.
+Study `half-moments`, plans PL1 (H1–H9, H17), PL7 (the reworded H4) and PL8 (H20). Proofs written by the research agent (AC1) for checking by an independent agent.
 
 ## Notation
 
@@ -155,3 +155,15 @@ $$\mathrm{IF}_H(x) = \frac{\mathrm{IF}_\nu(x)}{\sigma^{0.5}} - \frac{\nu}{4\sigm
 quadratic and $\to -\infty$ in both directions. *Extremity.* $\mathrm{IF}_E = 2pH^{p-1}\,\mathrm{IF}_H$, with $2pH^{p-1} > 0$: the same. ∎
 
 *For comparison* (standard results, not proved here): moment skewness and excess kurtosis have influence functions growing like $|x|^3$ and $x^4$ (Ruppert 1987); L-moment ratios like $|x|$; quartile and octile measures and the medcouple have bounded influence functions (Brys et al. 2004).
+
+## H20. What Hypotailedness and Extremity measure
+
+*Statement.* For $y$ with a finite positive variance $\sigma^2$, let $V = D^2/\sigma^2$, the squared standardised deviation, and $g(v) = (3 + v)/4 - v^{1/4}$ for $v \ge 0$. Then
+$$1 - H = \mathrm{E}[g(V)], \qquad E = 2\left(1 - \mathrm{E}[g(V)]\right)^{p} - 1,$$
+so $E$ is a strictly decreasing function of $\mathrm{E}[g(V)]$; and when $\mathrm{E}[D^4] < \infty$, the kurtosis $\kappa = \mathrm{E}[D^4]/\sigma^4$ (excess kurtosis plus 3) satisfies $\kappa - 1 = \mathrm{E}[(V - 1)^2]$. The function $g$ is strictly convex on $[0, \infty)$, zero only at $v = 1$, with $g(v) = \frac{3}{32}(v - 1)^2 + O(|v - 1|^3)$ as $v \to 1$, $g(0) = \frac{3}{4} = 8 \times \frac{3}{32}(0 - 1)^2$, and $g(v) = \frac{v}{4} + O(v^{1/4})$ as $v \to \infty$.
+
+*Proof.* $\mathrm{E}[V] = \mathrm{E}[D^2]/\sigma^2 = 1$. Since $|D|^{0.5} = (D^2)^{1/4}$, $H = \mathrm{E}|D|^{0.5}/\sigma^{0.5} = \mathrm{E}[(D^2/\sigma^2)^{1/4}] = \mathrm{E}[V^{1/4}]$. All three terms of $g(V)$ are integrable ($\mathrm{E}V = 1$, $0 \le V^{1/4} \le 1 + V$), so by linearity $\mathrm{E}[g(V)] = (3 + \mathrm{E}V)/4 - \mathrm{E}[V^{1/4}] = 1 - H$. Then $E = 2H^p - 1 = 2(1 - \mathrm{E}[g(V)])^p - 1$, and since $p > 0$ (H7) and $1 - \mathrm{E}[g(V)] = H \in (0, 1]$, $E$ is strictly decreasing in $\mathrm{E}[g(V)]$. With a finite fourth moment, $\mathrm{E}[V^2] = \mathrm{E}[D^4]/\sigma^4 = \kappa$, so $\mathrm{E}[(V - 1)^2] = \mathrm{E}[V^2] - 2\mathrm{E}[V] + 1 = \kappa - 1$.
+
+The function: $g'(v) = \frac{1}{4}(1 - v^{-3/4})$ and $g''(v) = \frac{3}{16}v^{-7/4} > 0$ for $v > 0$; $g$ is continuous on $[0, \infty)$, so it is strictly convex there. $g(1) = 1 - 1 = 0$ and $g'(1) = 0$, so by strict convexity $g(v) > g(1) + g'(1)(v - 1) = 0$ for $v \ne 1$. Taylor's theorem at 1 with $g''(1) = 3/16$ and $g'''$ bounded near 1 gives $g(v) = \frac{3}{32}(v - 1)^2 + O(|v - 1|^3)$. $g(0) = 3/4$, and $\frac{3}{32}(0 - 1)^2 = \frac{3}{32}$, whose 8-fold is $\frac{3}{4}$. Finally $g(v) - v/4 = 3/4 - v^{1/4} = O(v^{1/4})$. ∎
+
+*Reading.* $V$ has mean 1 whatever the distribution, and it equals 1 exactly where $y = \mu_1 \pm \sigma$. So $\mathrm{E}[(V - 1)^2] = \kappa - 1$ and $\mathrm{E}[g(V)] = 1 - H$ both measure how far the probability lies from the two points $\mu_1 \pm \sigma$, the reading of kurtosis given by Moors (1986); each is 0 only for a distribution on those two points (H7: $H = 1$ exactly when $|D|$ is constant). They differ in the loss: scaled to agree near $v = 1$, Hypotailedness gives a value at the mean 8 times the weight kurtosis gives it ($g(0) = 3/4$ against $3/32$), and a value far out a weight that grows linearly in $V$, that is with the squared distance from the mean, where kurtosis's grows with $V^2$, the fourth power. Hypotailedness and Extremity thus measure the same thing as kurtosis, the spread of the probability away from $\mu_1 \pm \sigma$, with more weight on the centre and less on the tails: a low Extremity says that much probability lies near the mean or far out, relative to the two points $\mu_1 \pm \sigma$. This is also why one outlying value moves them quadratically and kurtosis quartically (H17).
