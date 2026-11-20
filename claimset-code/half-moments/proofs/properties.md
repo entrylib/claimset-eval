@@ -1,6 +1,6 @@
-# Properties of the half central moment and its coefficients (hypotheses H1–H9, H17, H20)
+# Properties of the half central moment and its coefficients (hypotheses H1–H9, H17, H20–H22)
 
-Study `half-moments`, plans PL1 (H1–H9, H17), PL7 (the reworded H4) and PL8 (H20). Proofs written by the research agent (AC1) for checking by an independent agent.
+Study `half-moments`, plans PL1 (H1–H9, H17), PL7 (the reworded H4), PL8 (H20) and PL9 (H21, the reworded H20, and H22). Proofs written by the research agent (AC1) for checking by an independent agent.
 
 ## Notation
 
@@ -167,3 +167,24 @@ so $E$ is a strictly decreasing function of $\mathrm{E}[g(V)]$; and when $\mathr
 The function: $g'(v) = \frac{1}{4}(1 - v^{-3/4})$ and $g''(v) = \frac{3}{16}v^{-7/4} > 0$ for $v > 0$; $g$ is continuous on $[0, \infty)$, so it is strictly convex there. $g(1) = 1 - 1 = 0$ and $g'(1) = 0$, so by strict convexity $g(v) > g(1) + g'(1)(v - 1) = 0$ for $v \ne 1$. Taylor's theorem at 1 with $g''(1) = 3/16$ and $g'''$ bounded near 1 gives $g(v) = \frac{3}{32}(v - 1)^2 + O(|v - 1|^3)$. $g(0) = 3/4$, and $\frac{3}{32}(0 - 1)^2 = \frac{3}{32}$, whose 8-fold is $\frac{3}{4}$. Finally $g(v) - v/4 = 3/4 - v^{1/4} = O(v^{1/4})$. ∎
 
 *Reading.* $V$ has mean 1 whatever the distribution, and it equals 1 exactly where $y = \mu_1 \pm \sigma$. So $\mathrm{E}[(V - 1)^2] = \kappa - 1$ and $\mathrm{E}[g(V)] = 1 - H$ both measure how far the probability lies from the two points $\mu_1 \pm \sigma$, the reading of kurtosis given by Moors (1986); each is 0 only for a distribution on those two points (H7: $H = 1$ exactly when $|D|$ is constant). They differ in the loss: scaled to agree near $v = 1$, Hypotailedness gives a value at the mean 8 times the weight kurtosis gives it ($g(0) = 3/4$ against $3/32$), and a value far out a weight that grows linearly in $V$, that is with the squared distance from the mean, where kurtosis's grows with $V^2$, the fourth power. Hypotailedness and Extremity thus measure the same thing as kurtosis, the spread of the probability away from $\mu_1 \pm \sigma$, with more weight on the centre and less on the tails: a low Extremity says that much probability lies near the mean or far out, relative to the two points $\mu_1 \pm \sigma$. This is also why one outlying value moves them quadratically and kurtosis quartically (H17).
+
+## H21. H20 with the scaling of the comparison made explicit
+
+*Statement.* As H20, with its last part worded: Hypotailedness, Extremity and kurtosis all measure how far $V$ spreads from 1; with $g$ scaled by $32/3$, so that it agrees with the kurtosis loss $(v - 1)^2$ to second order at $v = 1$, Hypotailedness gives a value at the mean 8 times the weight kurtosis gives it, and a value far out a weight linear rather than quadratic in $V$.
+
+*Proof.* Everything but the scaled comparison is proved in H20. Let $k = 32/3$. Then $k\,g''(1) = \frac{32}{3}\cdot\frac{3}{16} = 2$, the second derivative of $(v - 1)^2$; both functions and their first derivatives vanish at $v = 1$, so $k\,g(v) = (v - 1)^2 + O(|v - 1|^3)$. At $v = 0$: $k\,g(0) = \frac{32}{3}\cdot\frac{3}{4} = 8 = 8\,(0 - 1)^2$. For large $v$: $k\,g(v) = \frac{8v}{3} + 8 - \frac{32}{3}v^{1/4}$, linear in $v$, while $(v - 1)^2$ is quadratic. ∎
+
+*Why the scaling matters.* The factor 8 compares two losses, and a loss can be multiplied by any positive constant without changing what it measures. The comparison means something only once the scales are fixed; matching the two losses near $v = 1$, where both are smallest, is the natural choice, and it is the one used here.
+
+## H22. Extremity and kurtosis order distributions differently
+
+*Statement.* The Extremity coefficient and excess kurtosis do not order distributions alike: the exponential and Student $t_5$ distributions have the same excess kurtosis, 6, but Extremity $-0.434$ and $-0.480$; the Laplace distribution has a smaller excess kurtosis, 3, but a smaller Extremity, $-0.579$, than either.
+
+*Proof.* Hypotailedness does not depend on location or scale (H3 and $\sigma^{0.5}$), so take the exponential with rate 1, $t_5$ and the Laplace with scale 1.
+- Exponential: $\sigma = 1$, and by the closed form of H16 at $a = \lambda = 1$, $H = R + I = \frac{\sqrt{\pi}}{2e} + \frac{2e - \sqrt{\pi}\,\mathrm{erfi}(1)}{2e} = 1 - \frac{\sqrt{\pi}\,(\mathrm{erfi}(1) - 1)}{2e} = 0.787945\ldots$ Its central moments are $\sigma^2 = 1$ and $\mu_4 = 9$, so the excess kurtosis is $9 - 3 = 6$.
+- $t_5$: by H14 at $\nu = 5$, $H = \frac{\Gamma(0.75)\,\Gamma(2.25)\,3^{0.25}}{\sqrt{\pi}\,\Gamma(2.5)} = 0.775504\ldots$ For $\nu > 4$, $\sigma^2 = \nu/(\nu - 2)$ and $\mu_4 = 3\nu^2/((\nu - 2)(\nu - 4))$, so the excess kurtosis is $6/(\nu - 4) = 6$.
+- Laplace: by H12, $H = \frac{\sqrt{\pi}}{2}\,2^{-0.25} = 0.745225\ldots$ With scale $b$, $\sigma^2 = 2b^2$ and $\mu_4 = 24b^4$, so the excess kurtosis is $24/4 - 3 = 3$.
+
+With $E = 2H^p - 1$ and $p = 5.2988\ldots$ (H7), $E = -0.43430\ldots$, $-0.48005\ldots$ and $-0.57898\ldots$, which round to the stated values. As $u \mapsto 2u^p - 1$ is increasing, the order of $E$ is that of $H$: $0.7879 > 0.7755 > 0.7452$. So the exponential and $t_5$, equal in kurtosis, differ in Extremity, and the Laplace, lower in kurtosis than both, is lower in Extremity than both. ∎
+
+*Reading.* By H20, $1 - H = \mathrm{E}[g(V)]$ and the excess kurtosis plus 2 is $\mathrm{E}[(V - 1)^2]$: two losses of the same $V$ that weigh its values differently. The Laplace distribution has a sharp peak at its mean, much probability with $V$ near 0, where $g$ weighs more than the kurtosis loss; $t_5$ and the exponential have more probability far out, where $g$ weighs less.

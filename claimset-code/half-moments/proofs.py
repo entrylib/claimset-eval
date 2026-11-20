@@ -171,7 +171,7 @@ def _g(v):
     return (3 + v) / 4 - v ** mp.mpf(0.25)
 
 
-def _h20(names):
+def _h20(names, label="H20"):
     # H20: 1 - H = E[g(V)], E = 2(1 - E[g(V)])^p - 1, kappa - 1 = E[(V - 1)^2]; the properties of g
     for n in names:
         L = law(n)
@@ -179,27 +179,59 @@ def _h20(names):
         Eg = integral(lambda y: _g((y - L.mean) ** 2 / s2) * L.pdf(y), L.lo, L.hi, (L.mean,))
         H = hypo(L.R, L.I, s2)
         cond = {"distribution": n}
-        check("H20", "1 - Hypotailedness against E[g(V)]", rel(1 - H, Eg), **cond)
-        check("H20", "Extremity against 2(1 - E[g(V)])^p - 1", rel(extr(H), 2 * (1 - Eg) ** P - 1), **cond)
+        check(label, "1 - Hypotailedness against E[g(V)]", rel(1 - H, Eg), **cond)
+        check(label, "Extremity against 2(1 - E[g(V)])^p - 1", rel(extr(H), 2 * (1 - Eg) ** P - 1), **cond)
         m4 = integral(lambda y: (y - L.mean) ** 4 * L.pdf(y), L.lo, L.hi, (L.mean,))
         EV1 = integral(lambda y: ((y - L.mean) ** 2 / s2 - 1) ** 2 * L.pdf(y), L.lo, L.hi, (L.mean,))
-        check("H20", "kurtosis - 1 against E[(V - 1)^2]", rel(m4 / s2 ** 2 - 1, EV1), **cond)
-        put("1 - Hypotailedness", 1 - H, hypothesis="H20", **cond)
-        put("kurtosis - 1", m4 / s2 ** 2 - 1, hypothesis="H20", **cond)
+        check(label, "kurtosis - 1 against E[(V - 1)^2]", rel(m4 / s2 ** 2 - 1, EV1), **cond)
+        put("1 - Hypotailedness", 1 - H, hypothesis=label, **cond)
+        put("kurtosis - 1", m4 / s2 ** 2 - 1, hypothesis=label, **cond)
     grid = [mp.mpf(k) / 64 for k in range(0, 64 * 8 + 1)] + [mp.mpf(10) ** k for k in range(1, 13)]
-    check("H20", "g positive away from 1", max([0] + [1 for v in grid if v != 1 and not _g(v) > 0]), function="g")
-    check("H20", "g zero at 1", _g(mp.mpf(1)), function="g")
-    check("H20", "g second derivative positive", max([0] + [1 for v in grid if v > 0 and not mp.diff(_g, v, 2) > 0]),
+    check(label, "g positive away from 1", max([0] + [1 for v in grid if v != 1 and not _g(v) > 0]), function="g")
+    check(label, "g zero at 1", _g(mp.mpf(1)), function="g")
+    check(label, "g second derivative positive", max([0] + [1 for v in grid if v > 0 and not mp.diff(_g, v, 2) > 0]),
           function="g")
-    check("H20", "g(0) against 3/4", rel(_g(mp.mpf(0)), mp.mpf(3) / 4), function="g")
-    check("H20", "g(0) against 8 times (3/32)(0 - 1)^2", rel(_g(mp.mpf(0)), 8 * mp.mpf(3) / 32), function="g")
+    check(label, "g(0) against 3/4", rel(_g(mp.mpf(0)), mp.mpf(3) / 4), function="g")
+    check(label, "g(0) against 8 times (3/32)(0 - 1)^2", rel(_g(mp.mpf(0)), 8 * mp.mpf(3) / 32), function="g")
     for d in (mp.mpf("1e-6"), mp.mpf("-1e-6"), mp.mpf("1e-10"), mp.mpf("-1e-10")):
         ratio = _g(1 + d) / (mp.mpf(3) / 32 * d ** 2)
         # Taylor: ratio - 1 = O(|v - 1|), the remainder over |v - 1| tends to a third-derivative constant (7/12)
-        check("H20", "Taylor remainder (g(v)/((3/32)(v - 1)^2) - 1)/|v - 1| within 1", max(mp.mpf(0), abs(ratio - 1) / abs(d) - 1),
+        check(label, "Taylor remainder (g(v)/((3/32)(v - 1)^2) - 1)/|v - 1| within 1", max(mp.mpf(0), abs(ratio - 1) / abs(d) - 1),
               function="g", v_minus_1=float(d))
     for v in (mp.mpf(10) ** 4, mp.mpf(10) ** 8, mp.mpf(10) ** 12):
-        check("H20", "g(v) - v/4 against 3/4 - v^(1/4)", rel(_g(v) - v / 4, mp.mpf(3) / 4 - v ** mp.mpf(0.25)), function="g", v=float(v))
+        check(label, "g(v) - v/4 against 3/4 - v^(1/4)", rel(_g(v) - v / 4, mp.mpf(3) / 4 - v ** mp.mpf(0.25)), function="g", v=float(v))
+
+    if label == "H21":
+        # the scaling made explicit: (32/3) g agrees with (v - 1)^2 to second order at 1
+        k = mp.mpf(32) / 3
+        check(label, "(32/3) g''(1) against 2, the second derivative of (v - 1)^2", rel(k * mp.diff(_g, mp.mpf(1), 2), 2), function="g")
+        check(label, "(32/3) g(0) against 8 (v - 1)^2 at v = 0", rel(k * _g(mp.mpf(0)), 8), function="g")
+        for v in (mp.mpf(10) ** 4, mp.mpf(10) ** 8, mp.mpf(10) ** 12):
+            check(label, "(32/3) g(v) - 8v/3 against 8 - (32/3) v^(1/4)", rel(k * _g(v) - 8 * v / 3, 8 - k * v ** mp.mpf(0.25)), function="g", v=float(v))
+
+
+def _h22():
+    # H22: Extremity and excess kurtosis order the exponential, Student t(5) and Laplace distributions differently
+    closed = {
+        "exponential": (mp.sqrt(mp.pi) + 2 * mp.e - mp.sqrt(mp.pi) * mp.erfi(1)) / (2 * mp.e),           # H16, a = 1, rate 1
+        "t(5)": mp.gamma(0.75) * mp.gamma(mp.mpf(2.25)) * 3 ** mp.mpf(0.25) / (mp.sqrt(mp.pi) * mp.gamma(mp.mpf(2.5))),  # H14, nu = 5
+        "Laplace": mp.sqrt(mp.pi) / 2 * mp.mpf(2) ** mp.mpf(-0.25),                                      # H12
+    }
+    excess = {"exponential": mp.mpf(6), "t(5)": mp.mpf(6), "Laplace": mp.mpf(3)}
+    stated = {"exponential": mp.mpf("-0.434"), "t(5)": mp.mpf("-0.480"), "Laplace": mp.mpf("-0.579")}
+    E = {}
+    for n, H in closed.items():
+        L = law(n)
+        cond = {"distribution": n}
+        check("H22", "closed-form Hypotailedness against numerical integration", rel(H, hypo(L.R, L.I, L.var)), **cond)
+        m4 = integral(lambda y: (y - L.mean) ** 4 * L.pdf(y), L.lo, L.hi, (L.mean,))
+        check("H22", "excess kurtosis against the stated value", rel(m4 / L.var ** 2 - 3, excess[n]), **cond)
+        E[n] = extr(H)
+        check("H22", "Extremity rounds to the stated value", 0 if abs(E[n] - stated[n]) <= mp.mpf("0.0005") else 1, **cond)
+        put("Extremity", E[n], hypothesis="H22", **cond)
+        put("excess kurtosis", excess[n], hypothesis="H22", **cond)
+    check("H22", "Extremity of the exponential above that of t(5)", 0 if E["exponential"] > E["t(5)"] else 1)
+    check("H22", "Extremity of the Laplace below both", 0 if E["Laplace"] < min(E["exponential"], E["t(5)"]) else 1)
 
 
 
@@ -211,6 +243,10 @@ def properties():
         return
     if only == "H20":
         _h20(names)
+        return
+    if only == "H21,H22":
+        _h20(names, "H21")
+        _h22()
         return
 
     # H1: symmetry gives equal parts
