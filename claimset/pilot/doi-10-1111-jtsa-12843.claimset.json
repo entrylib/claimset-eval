@@ -499,6 +499,25 @@
     "s2.7-s2.10",
     "s3.1"
    ]
+  },
+  {
+   "id": "D25",
+   "term": "supplementary mean change scenarios",
+   "kind": "data",
+   "definition": "Simulated series of length 1000 from (1) an AR(2) process with $\\phi = (0.5, -0.3)$ and (2) an ARMA(1,1) process with $\\phi = 0.6$ and $\\theta = 0.3$, both with $\\lambda = 0$ and $\\sigma^2 = 1$ (arima.sim, 50 burn-in points removed), with a mean change of size $\\delta_\\mu$ at $k^* = 100$ after monitoring begins; the forecasting models are trained on $n_{\\text{train}} = 200$ observations, the detectors use $m = 200$, and 500 time points remain to detect the change. The ARMA forecasting model has the known order with parameters estimated in the training period; the Raw CUSUM does not use the first 200 points.",
+   "source_spans": [
+    "s5.2-s5.5"
+   ]
+  },
+  {
+   "id": "D26",
+   "term": "supplementary variance change scenarios",
+   "kind": "data",
+   "definition": "Simulated series as in the [[D25:supplementary mean change scenarios]] ($n = 1000$, $n_{\\text{train}} = 200$, $m = 200$, $k^* = 100$) from (1) an AR(1) process with $\\phi = 0.9$ and (2) an ARMA(2,1) process with $\\phi = (0.5, -0.3)$ and $\\theta = 0.6$, both with $\\lambda = 0$ and $\\sigma^2 = 1$, whose variance changes to $\\delta_\\xi$ at the changepoint. The ARMA forecasting model has the known order with estimated parameters; the ETS forecasting model is ETS(A,N,N) with an estimated smoothing parameter. The Supporting Information's Figure 2 labels the second scenario ARMA(1,2).",
+   "source_spans": [
+    "s5.7-s5.10",
+    "s8.1"
+   ]
   }
  ],
  "claims": [
@@ -854,7 +873,7 @@
   {
    "id": "C7",
    "name": "Shorter delay than model-based detection on GRP admissions",
-   "statement": "On [[D20:the GRP admissions series]], both detectors of the [[D1:forecast error monitoring framework]] have a shorter [[D22:detection delay]] than [[D21:model-based sequential changepoint detection]], whose minimum possible detection delay on data with yearly seasonality is 24 months.",
+   "statement": "On [[D20:the GRP admissions series]], the two detectors of the [[D1:forecast error monitoring framework]] signal 4 and 2 observations after the change, a shorter [[D22:detection delay]] than that of [[D21:model-based sequential changepoint detection]], whose minimum possible detection delay on data with yearly seasonality is 24 months.",
    "type": "descriptive",
    "role": "principal",
    "about": {
@@ -871,12 +890,26 @@
    "scope": {
     "setting": "A&E admissions in participating hospitals",
     "geography": "England",
-    "data_type": "monthly proportions with yearly seasonality"
+    "data_type": "monthly proportions with yearly seasonality",
+    "conditions": [
+     "a model-based detector needs at least 24 months of post-change data to fit a model with yearly seasonality"
+    ]
    },
    "support": [
     {
      "kind": "argument",
      "warrant": "W2"
+    },
+    {
+     "kind": "empirical_quant",
+     "evidence": "E10",
+     "artefacts": [
+      "A6"
+     ],
+     "results": [
+      "E10.R1",
+      "E10.R2"
+     ]
     }
    ],
    "depends_on": [
@@ -1710,6 +1743,168 @@
     "p8.13"
    ],
    "provenance": "author_stated"
+  },
+  {
+   "id": "C27",
+   "name": "ARMA forecast errors detect mean changes sooner without seasonality",
+   "statement": "On [[D25:the supplementary mean change scenarios]], [[D5:ARMA Forecast Errors]] has a much lower [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]] across all change sizes, a [[D13:detection probability (DP)]] at least as high, and a comparable [[D14:false detection probability (FDP)]].",
+   "type": "descriptive",
+   "role": "secondary",
+   "about": {
+    "subject": "D5",
+    "relation": "detects with a shorter delay than",
+    "object": [
+     "D12",
+     "D13",
+     "D14"
+    ],
+    "comparator": "D4",
+    "conditions": [
+     "D25"
+    ]
+   },
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "data_type": "simulated AR(2) and ARMA(1,1) data without seasonality",
+    "conditions": [
+     "mean change sizes 0.5 to 2.5"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E12",
+     "artefacts": [
+      "A11"
+     ]
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Values shown in a figure of the Supporting Information and not tabulated."
+    }
+   ],
+   "source_spans": [
+    "s5.6"
+   ],
+   "provenance": "author_stated",
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C5",
+     "id_type": "local",
+     "note": "The same comparison on simpler data without seasonality, in the Supporting Information."
+    }
+   ]
+  },
+  {
+   "id": "C28",
+   "name": "Forecast errors detect variance changes sooner, with one exception",
+   "statement": "On [[D26:the supplementary variance change scenarios]], [[D5:ARMA Forecast Errors]] and [[D6:ETS Forecast Errors]] nearly always have a smaller [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]], the exception being the AR(1) scenario at change size 1.5, where [[D4:Raw CUSUM]], at a small [[D13:detection probability (DP)]], has the lower ADD with error bars overlapping those of ARMA Forecast Errors.",
+   "type": "descriptive",
+   "role": "secondary",
+   "about": {
+    "subject": "forecast-error detectors (D5, D6)",
+    "relation": "detect variance changes with a shorter delay than",
+    "object": "D12",
+    "comparator": "D4",
+    "conditions": [
+     "D26"
+    ]
+   },
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "data_type": "simulated AR(1) and ARMA(2,1) data without seasonality",
+    "conditions": [
+     "variance change sizes 1.5 to 3.5"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E13",
+     "artefacts": [
+      "A12"
+     ]
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Values shown in a figure of the Supporting Information and not tabulated."
+    }
+   ],
+   "source_spans": [
+    "s5.11"
+   ],
+   "provenance": "author_stated",
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C5",
+     "id_type": "local",
+     "note": "The same comparison on simpler data without seasonality, in the Supporting Information."
+    }
+   ]
+  },
+  {
+   "id": "C29",
+   "name": "False detection probabilities below 0.05 for variance changes",
+   "statement": "On [[D26:the supplementary variance change scenarios]], the [[D14:false detection probability (FDP)]] of each of the [[D7:compared detectors]] is below 0.05, with [[D4:Raw CUSUM]] much higher than the others in the AR(1) scenario and [[D6:ETS Forecast Errors]] the highest in the ARMA(2,1) scenario.",
+   "type": "descriptive",
+   "role": "secondary",
+   "about": {
+    "subject": "D7",
+    "relation": "has a false detection probability below 0.05 on",
+    "object": "D14",
+    "comparator": null,
+    "conditions": [
+     "D26"
+    ]
+   },
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "data_type": "simulated AR(1) and ARMA(2,1) data without seasonality",
+    "conditions": [
+     "false alarm rate set at 0.05"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E13",
+     "artefacts": [
+      "A12"
+     ]
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "source_spans": [
+    "s7.1"
+   ],
+   "provenance": "author_stated",
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C5",
+     "id_type": "local",
+     "note": "The same comparison on simpler data without seasonality, in the Supporting Information."
+    }
+   ]
   }
  ],
  "evidence": [
@@ -2168,6 +2363,28 @@
      "conditions": {
       "detector": "D3"
      }
+    },
+    {
+     "id": "R3",
+     "variable": "date of the signal",
+     "value": {
+      "text": "2017-07-01",
+      "locator": "Figure 6"
+     },
+     "conditions": {
+      "detector": "D2"
+     }
+    },
+    {
+     "id": "R4",
+     "variable": "date of the signal",
+     "value": {
+      "text": "2017-05-01",
+      "locator": "Figure 6"
+     },
+     "conditions": {
+      "detector": "D3"
+     }
     }
    ],
    "source_spans": [
@@ -2230,6 +2447,76 @@
     "level": "public",
     "comment": "in the paper's Supporting Information"
    }
+  },
+  {
+   "id": "E12",
+   "profile": "simulation",
+   "description": "Simulation of mean changes in AR(2) and ARMA(1,1) data without seasonality (Supporting Information, Section C.1 and Figure 1): detection probability, false detection probability and average detection delay of ARMA Forecast Errors and Raw CUSUM. The values are shown in a figure only.",
+   "setup": {
+    "studied": [
+     "D5",
+     "D4"
+    ],
+    "cases": [
+     "D25"
+    ],
+    "procedure": [
+     "D1"
+    ],
+    "lens": [
+     "D12",
+     "D13",
+     "D14"
+    ]
+   },
+   "model": "ARMA forecasting models of the known order, parameters estimated in the training period",
+   "artefacts": [
+    "A11",
+    "A7"
+   ],
+   "source_spans": [
+    "s5.2-s5.6"
+   ],
+   "availability": {
+    "level": "not_stated"
+   },
+   "runs": 1000
+  },
+  {
+   "id": "E13",
+   "profile": "simulation",
+   "description": "Simulation of variance changes in AR(1) and ARMA(2,1) data without seasonality (Supporting Information, Section C.2 and Figure 2): detection probability, false detection probability and average detection delay of ARMA Forecast Errors, ETS Forecast Errors and Raw CUSUM. The values are shown in a figure only.",
+   "setup": {
+    "studied": [
+     "D5",
+     "D6",
+     "D4"
+    ],
+    "cases": [
+     "D26"
+    ],
+    "procedure": [
+     "D1"
+    ],
+    "lens": [
+     "D12",
+     "D13",
+     "D14"
+    ]
+   },
+   "model": "ARMA forecasting models of the known order with estimated parameters; ETS(A,N,N) with an estimated smoothing parameter",
+   "artefacts": [
+    "A12",
+    "A7"
+   ],
+   "source_spans": [
+    "s5.7-s5.11",
+    "s7.1"
+   ],
+   "availability": {
+    "level": "not_stated"
+   },
+   "runs": 1000
   }
  ],
  "warrants": [
@@ -2298,12 +2585,15 @@
   {
    "id": "L3",
    "category": "sampling",
-   "statement": "All simulated data have an ARMA error structure with normally distributed innovations and a training sample of 300 observations.",
+   "statement": "All simulated data have an ARMA error structure with normally distributed innovations and a training sample of 300 observations (200 in the simulations of the Supporting Information).",
    "affects": [
     "C5",
     "C8",
     "C9",
-    "C10"
+    "C10",
+    "C27",
+    "C28",
+    "C29"
    ],
    "impact": "reduces_transferability",
    "mitigation": "none",
@@ -2502,6 +2792,36 @@
     "level": "public"
    },
    "description": "The sandwich R package, used for the Bartlett long run variance estimator of Raw CUSUM. The paper's reference gives no version; 3.1-0 is the last version released in 2023, when the paper was written."
+  },
+  {
+   "id": "A11",
+   "kind": "figure",
+   "function": "data_plot",
+   "reference": "B7",
+   "locator": "Supporting Information, Figure 1",
+   "description": "Detection probability, false detection probability and average detection delay of ARMA Forecast Errors and Raw CUSUM for mean changes of varying sizes in the AR(2) and ARMA(1,1) scenarios.",
+   "availability": {
+    "level": "public"
+   },
+   "source_spans": [
+    "s6.1",
+    "s6.3"
+   ]
+  },
+  {
+   "id": "A12",
+   "kind": "figure",
+   "function": "data_plot",
+   "reference": "B7",
+   "locator": "Supporting Information, Figure 2",
+   "description": "Detection probability, false detection probability and average detection delay of ARMA Forecast Errors, ETS Forecast Errors and Raw CUSUM for variance changes of varying sizes in the AR(1) and ARMA(2,1) scenarios.",
+   "availability": {
+    "level": "public"
+   },
+   "source_spans": [
+    "s8.1",
+    "s8.3"
+   ]
   }
  ],
  "open_questions": [
