@@ -7284,3 +7284,48 @@ RS7116,RN16,relative error of the numerical check,"{""check"": ""Extremity of th
 RS7117,RN16,relative error of the numerical check,"{""check"": ""Extremity of the Laplace below both"", ""hypothesis"": ""H22""}",0.0
 RS7118,RN16,largest relative error of the numerical checks,"{""hypothesis"": ""H21""}",1.5789059840525912e-33
 RS7119,RN16,largest relative error of the numerical checks,"{""hypothesis"": ""H22""}",1.5403987159537888e-41
+RS7120,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness at most 1"", ""distribution"": ""normal"", ""hypothesis"": ""H23""}",0.0
+RS7121,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness positive"", ""distribution"": ""normal"", ""hypothesis"": ""H23""}",0.0
+RS7122,RN17,relative error of the numerical check,"{""check"": ""Extremity in (-1, 1]"", ""distribution"": ""normal"", ""hypothesis"": ""H24""}",0.0
+RS7123,RN17,relative error of the numerical check,"{""check"": ""Extremity negative exactly when Hypotailedness is below 2 x 3^-0.75"", ""distribution"": ""normal"", ""hypothesis"": ""H24""}",0.0
+RS7124,RN17,Extremity,"{""distribution"": ""normal"", ""hypothesis"": ""H24""}",-0.29131458199842614
+RS7125,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness at most 1"", ""distribution"": ""uniform"", ""hypothesis"": ""H23""}",0.0
+RS7126,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness positive"", ""distribution"": ""uniform"", ""hypothesis"": ""H23""}",0.0
+RS7127,RN17,relative error of the numerical check,"{""check"": ""Extremity in (-1, 1]"", ""distribution"": ""uniform"", ""hypothesis"": ""H24""}",0.0
+RS7128,RN17,Extremity,"{""distribution"": ""uniform"", ""hypothesis"": ""H24""}",-1.1479437019748901e-41
+RS7129,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness at most 1"", ""distribution"": ""Laplace"", ""hypothesis"": ""H23""}",0.0
+RS7130,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness positive"", ""distribution"": ""Laplace"", ""hypothesis"": ""H23""}",0.0
+RS7131,RN17,relative error of the numerical check,"{""check"": ""Extremity in (-1, 1]"", ""distribution"": ""Laplace"", ""hypothesis"": ""H24""}",0.0
+RS7132,RN17,relative error of the numerical check,"{""check"": ""Extremity negative exactly when Hypotailedness is below 2 x 3^-0.75"", ""distribution"": ""Laplace"", ""hypothesis"": ""H24""}",0.0
+RS7133,RN17,Extremity,"{""distribution"": ""Laplace"", ""hypothesis"": ""H24""}",-0.5789765009974367
+RS7134,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness at most 1"", ""distribution"": ""t(5)"", ""hypothesis"": ""H23""}",0.0
+RS7135,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness positive"", ""distribution"": ""t(5)"", ""hypothesis"": ""H23""}",0.0
+RS7136,RN17,relative error of the numerical check,"{""check"": ""Extremity in (-1, 1]"", ""distribution"": ""t(5)"", ""hypothesis"": ""H24""}",0.0
+RS7137,RN17,relative error of the numerical check,"{""check"": ""Extremity negative exactly when Hypotailedness is below 2 x 3^-0.75"", ""distribution"": ""t(5)"", ""hypothesis"": ""H24""}",0.0
+RS7138,RN17,Extremity,"{""distribution"": ""t(5)"", ""hypothesis"": ""H24""}",-0.4800545799805087
+RS7139,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness at most 1"", ""distribution"": ""exponential"", ""hypothesis"": ""H23""}",0.0
+RS7140,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness positive"", ""distribution"": ""exponential"", ""hypothesis"": ""H23""}",0.0
+RS7141,RN17,relative error of the numerical check,"{""check"": ""Extremity in (-1, 1]"", ""distribution"": ""exponential"", ""hypothesis"": ""H24""}",0.0
+RS7142,RN17,relative error of the numerical check,"{""check"": ""Extremity negative exactly when Hypotailedness is below 2 x 3^-0.75"", ""distribution"": ""exponential"", ""hypothesis"": ""H24""}",0.0
+RS7143,RN17,Extremity,"{""distribution"": ""exponential"", ""hypothesis"": ""H24""}",-0.4343045726707279
+RS7144,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness at most 1"", ""distribution"": ""gamma(2)"", ""hypothesis"": ""H23""}",0.0
+RS7145,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness positive"", ""distribution"": ""gamma(2)"", ""hypothesis"": ""H23""}",0.0
+RS7146,RN17,relative error of the numerical check,"{""check"": ""Extremity in (-1, 1]"", ""distribution"": ""gamma(2)"", ""hypothesis"": ""H24""}",0.0
+RS7147,RN17,relative error of the numerical check,"{""check"": ""Extremity negative exactly when Hypotailedness is below 2 x 3^-0.75"", ""distribution"": ""gamma(2)"", ""hypothesis"": ""H24""}",0.0
+RS7148,RN17,Extremity,"{""distribution"": ""gamma(2)"", ""hypothesis"": ""H24""}",-0.36667987158952026
+RS7149,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness at most 1"", ""distribution"": ""lognormal(0,1)"", ""hypothesis"": ""H23""}",0.0
+RS7150,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness positive"", ""distribution"": ""lognormal(0,1)"", ""hypothesis"": ""H23""}",0.0
+RS7151,RN17,relative error of the numerical check,"{""check"": ""Extremity in (-1, 1]"", ""distribution"": ""lognormal(0,1)"", ""hypothesis"": ""H24""}",0.0
+RS7152,RN17,relative error of the numerical check,"{""check"": ""Extremity negative exactly when Hypotailedness is below 2 x 3^-0.75"", ""distribution"": ""lognormal(0,1)"", ""hypothesis"": ""H24""}",0.0
+RS7153,RN17,Extremity,"{""distribution"": ""lognormal(0,1)"", ""hypothesis"": ""H24""}",-0.7280898023025305
+RS7154,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness at most 1"", ""distribution"": ""beta(2,5)"", ""hypothesis"": ""H23""}",0.0
+RS7155,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness positive"", ""distribution"": ""beta(2,5)"", ""hypothesis"": ""H23""}",0.0
+RS7156,RN17,relative error of the numerical check,"{""check"": ""Extremity in (-1, 1]"", ""distribution"": ""beta(2,5)"", ""hypothesis"": ""H24""}",0.0
+RS7157,RN17,relative error of the numerical check,"{""check"": ""Extremity negative exactly when Hypotailedness is below 2 x 3^-0.75"", ""distribution"": ""beta(2,5)"", ""hypothesis"": ""H24""}",0.0
+RS7158,RN17,Extremity,"{""distribution"": ""beta(2,5)"", ""hypothesis"": ""H24""}",-0.2192782883382768
+RS7159,RN17,relative error of the numerical check,"{""check"": ""Hypotailedness of the two-point law at +-1 equals 1"", ""hypothesis"": ""H23""}",0.0
+RS7160,RN17,relative error of the numerical check,"{""check"": ""Extremity of the two-point law at +-1 equals 1"", ""hypothesis"": ""H24""}",0.0
+RS7161,RN17,relative error of the numerical check,"{""check"": ""Extremity of the uniform distribution"", ""hypothesis"": ""H24""}",1.1479437019748901e-41
+RS7162,RN17,relative error of the numerical check,"{""check"": ""2 (2 x 3^-0.75)^p - 1 = 0"", ""hypothesis"": ""H24""}",1.1479437019748901e-41
+RS7163,RN17,largest relative error of the numerical checks,"{""hypothesis"": ""H23""}",0.0
+RS7164,RN17,largest relative error of the numerical checks,"{""hypothesis"": ""H24""}",1.1479437019748901e-41

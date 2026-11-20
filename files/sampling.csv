@@ -1,0 +1,1171 @@
+quantity,coefficient,distribution,n,interval,value
+true value,Asymmetry,"normal(0,1)",,,0.0
+true value,Hypotailedness,"normal(0,1)",,,0.8221789586624586
+true value,Extremity,"normal(0,1)",,,-0.29131458199842575
+true value,"Complex Extremity, real part","normal(0,1)",,,-0.29131458199842575
+true value,"Complex Extremity, imaginary part","normal(0,1)",,,-0.29131458199842575
+bias,Asymmetry,"normal(0,1)",20,,0.0012912981835548397
+Monte Carlo standard error of the bias,Asymmetry,"normal(0,1)",20,,0.0008371300387096655
+standard deviation,Asymmetry,"normal(0,1)",20,,0.08371300387096656
+Monte Carlo standard error of the standard deviation,Asymmetry,"normal(0,1)",20,,0.0005858676085208987
+root mean squared error,Asymmetry,"normal(0,1)",20,,0.08371877735250081
+Monte Carlo standard error of the root mean squared error,Asymmetry,"normal(0,1)",20,,0.0005864657317899704
+sqrt(n) times the standard deviation,Asymmetry,"normal(0,1)",20,,0.3743759345123685
+coverage of the 95% interval,Asymmetry,"normal(0,1)",20,"normal approximation, jackknife standard error",0.9643
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",20,"normal approximation, jackknife standard error",0.0018554112751624626
+coverage of the 95% interval,Asymmetry,"normal(0,1)",20,"percentile bootstrap, 999 resamples",0.9885
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",20,"percentile bootstrap, 999 resamples",0.0023840878758971907
+bias,Hypotailedness,"normal(0,1)",20,,0.008097001973529694
+Monte Carlo standard error of the bias,Hypotailedness,"normal(0,1)",20,,0.0004217017006007856
+standard deviation,Hypotailedness,"normal(0,1)",20,,0.04217017006007856
+Monte Carlo standard error of the standard deviation,Hypotailedness,"normal(0,1)",20,,0.0002981115266805513
+root mean squared error,Hypotailedness,"normal(0,1)",20,,0.04293840765015628
+Monte Carlo standard error of the root mean squared error,Hypotailedness,"normal(0,1)",20,,0.0002869603832248791
+sqrt(n) times the standard deviation,Hypotailedness,"normal(0,1)",20,,0.1885907337541241
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",20,"normal approximation, jackknife standard error",0.9461
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",20,"normal approximation, jackknife standard error",0.0022582026038422674
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",20,"percentile bootstrap, 999 resamples",0.997
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",20,"percentile bootstrap, 999 resamples",0.0012229063741758816
+bias,Extremity,"normal(0,1)",20,,0.05944718898947532
+Monte Carlo standard error of the bias,Extremity,"normal(0,1)",20,,0.002001666830665861
+standard deviation,Extremity,"normal(0,1)",20,,0.20016668306658608
+Monte Carlo standard error of the standard deviation,Extremity,"normal(0,1)",20,,0.0013745472415466241
+root mean squared error,Extremity,"normal(0,1)",20,,0.20879813844603243
+Monte Carlo standard error of the root mean squared error,Extremity,"normal(0,1)",20,,0.0015453410580745775
+sqrt(n) times the standard deviation,Extremity,"normal(0,1)",20,,0.8951726203350852
+coverage of the 95% interval,Extremity,"normal(0,1)",20,"normal approximation, jackknife standard error",0.9596
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",20,"normal approximation, jackknife standard error",0.0019689550528135475
+coverage of the 95% interval,Extremity,"normal(0,1)",20,"percentile bootstrap, 999 resamples",0.997
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",20,"percentile bootstrap, 999 resamples",0.0012229063741758816
+bias,"Complex Extremity, real part","normal(0,1)",20,,0.11241322881102825
+Monte Carlo standard error of the bias,"Complex Extremity, real part","normal(0,1)",20,,0.0028509511972959357
+standard deviation,"Complex Extremity, real part","normal(0,1)",20,,0.28509511972959356
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part","normal(0,1)",20,,0.0019256665997299327
+root mean squared error,"Complex Extremity, real part","normal(0,1)",20,,0.30644385029336535
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part","normal(0,1)",20,,0.0023254491192748316
+sqrt(n) times the standard deviation,"Complex Extremity, real part","normal(0,1)",20,,1.2749841355376255
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",20,"normal approximation, jackknife standard error",0.9795
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",20,"normal approximation, jackknife standard error",0.001417030345476058
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",20,"percentile bootstrap, 999 resamples",0.9965
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",20,"percentile bootstrap, 999 resamples",0.0013205585939290896
+bias,"Complex Extremity, imaginary part","normal(0,1)",20,,0.1164689533092561
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part","normal(0,1)",20,,0.0028804272162574972
+standard deviation,"Complex Extremity, imaginary part","normal(0,1)",20,,0.28804272162574973
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",20,,0.001990747482829576
+root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",20,,0.31068525826883814
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",20,,0.0023969825030726627
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",20,,1.2881662119584503
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",20,"normal approximation, jackknife standard error",0.9799
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",20,"normal approximation, jackknife standard error",0.0014034240271564402
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",20,"percentile bootstrap, 999 resamples",0.9965
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",20,"percentile bootstrap, 999 resamples",0.0013205585939290896
+bias,Asymmetry,"normal(0,1)",50,,0.0010615171621296618
+Monte Carlo standard error of the bias,Asymmetry,"normal(0,1)",50,,0.0005270965401980332
+standard deviation,Asymmetry,"normal(0,1)",50,,0.05270965401980333
+Monte Carlo standard error of the standard deviation,Asymmetry,"normal(0,1)",50,,0.00037543128419278494
+root mean squared error,Asymmetry,"normal(0,1)",50,,0.052717706843243624
+Monte Carlo standard error of the root mean squared error,Asymmetry,"normal(0,1)",50,,0.00037566594656347714
+sqrt(n) times the standard deviation,Asymmetry,"normal(0,1)",50,,0.372713537913997
+coverage of the 95% interval,Asymmetry,"normal(0,1)",50,"normal approximation, jackknife standard error",0.9633
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",50,"normal approximation, jackknife standard error",0.0018802422716235256
+coverage of the 95% interval,Asymmetry,"normal(0,1)",50,"percentile bootstrap, 999 resamples",0.9695
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",50,"percentile bootstrap, 999 resamples",0.0038451105315712303
+bias,Hypotailedness,"normal(0,1)",50,,0.0025694558472888485
+Monte Carlo standard error of the bias,Hypotailedness,"normal(0,1)",50,,0.000270683523395255
+standard deviation,Hypotailedness,"normal(0,1)",50,,0.0270683523395255
+Monte Carlo standard error of the standard deviation,Hypotailedness,"normal(0,1)",50,,0.00019132448039953557
+root mean squared error,Hypotailedness,"normal(0,1)",50,,0.027188683898968415
+Monte Carlo standard error of the root mean squared error,Hypotailedness,"normal(0,1)",50,,0.0001885705550293411
+sqrt(n) times the standard deviation,Hypotailedness,"normal(0,1)",50,,0.1914021549482523
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",50,"normal approximation, jackknife standard error",0.9555
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",50,"normal approximation, jackknife standard error",0.002062031765031761
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",50,"percentile bootstrap, 999 resamples",0.9755
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",50,"percentile bootstrap, 999 resamples",0.0034568591235397466
+bias,Extremity,"normal(0,1)",50,,0.020606864440805617
+Monte Carlo standard error of the bias,Extremity,"normal(0,1)",50,,0.0012506794906876422
+standard deviation,Extremity,"normal(0,1)",50,,0.12506794906876423
+Monte Carlo standard error of the standard deviation,Extremity,"normal(0,1)",50,,0.0008782026410001827
+root mean squared error,Extremity,"normal(0,1)",50,,0.12674805934277777
+Monte Carlo standard error of the root mean squared error,Extremity,"normal(0,1)",50,,0.0009187078735308834
+sqrt(n) times the standard deviation,Extremity,"normal(0,1)",50,,0.8843639489561694
+coverage of the 95% interval,Extremity,"normal(0,1)",50,"normal approximation, jackknife standard error",0.9619
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",50,"normal approximation, jackknife standard error",0.0019143769221341973
+coverage of the 95% interval,Extremity,"normal(0,1)",50,"percentile bootstrap, 999 resamples",0.9755
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",50,"percentile bootstrap, 999 resamples",0.0034568591235397466
+bias,"Complex Extremity, real part","normal(0,1)",50,,0.04334270460301626
+Monte Carlo standard error of the bias,"Complex Extremity, real part","normal(0,1)",50,,0.0017705233779376898
+standard deviation,"Complex Extremity, real part","normal(0,1)",50,,0.17705233779376897
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part","normal(0,1)",50,,0.0012587359037223185
+root mean squared error,"Complex Extremity, real part","normal(0,1)",50,,0.18227173562434573
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part","normal(0,1)",50,,0.0013827267108692395
+sqrt(n) times the standard deviation,"Complex Extremity, real part","normal(0,1)",50,,1.251949086789053
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",50,"normal approximation, jackknife standard error",0.9953
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",50,"normal approximation, jackknife standard error",0.000683952483729684
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",50,"percentile bootstrap, 999 resamples",0.991
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",50,"percentile bootstrap, 999 resamples",0.002111752826445369
+bias,"Complex Extremity, imaginary part","normal(0,1)",50,,0.04128848915666872
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part","normal(0,1)",50,,0.0017663509522300694
+standard deviation,"Complex Extremity, imaginary part","normal(0,1)",50,,0.17663509522300694
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",50,,0.001269567369984096
+root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",50,,0.18138791637150098
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",50,,0.0013879748333796972
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",50,,1.2489987362771975
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",50,"normal approximation, jackknife standard error",0.9927
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",50,"normal approximation, jackknife standard error",0.0008512761009214328
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",50,"percentile bootstrap, 999 resamples",0.99
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",50,"percentile bootstrap, 999 resamples",0.0022248595461287
+bias,Asymmetry,"normal(0,1)",100,,0.0007364797327462682
+Monte Carlo standard error of the bias,Asymmetry,"normal(0,1)",100,,0.00037237531702769813
+standard deviation,Asymmetry,"normal(0,1)",100,,0.03723753170276981
+Monte Carlo standard error of the standard deviation,Asymmetry,"normal(0,1)",100,,0.00026014191480903395
+root mean squared error,Asymmetry,"normal(0,1)",100,,0.037242952438478895
+Monte Carlo standard error of the root mean squared error,Asymmetry,"normal(0,1)",100,,0.00026007352478037626
+sqrt(n) times the standard deviation,Asymmetry,"normal(0,1)",100,,0.3723753170276981
+coverage of the 95% interval,Asymmetry,"normal(0,1)",100,"normal approximation, jackknife standard error",0.9603
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",100,"normal approximation, jackknife standard error",0.001952534506737332
+coverage of the 95% interval,Asymmetry,"normal(0,1)",100,"percentile bootstrap, 999 resamples",0.9655
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",100,"percentile bootstrap, 999 resamples",0.00408103847078167
+bias,Hypotailedness,"normal(0,1)",100,,0.002124919736356534
+Monte Carlo standard error of the bias,Hypotailedness,"normal(0,1)",100,,0.00019200199341223718
+standard deviation,Hypotailedness,"normal(0,1)",100,,0.019200199341223717
+Monte Carlo standard error of the standard deviation,Hypotailedness,"normal(0,1)",100,,0.00013714891744777665
+root mean squared error,Hypotailedness,"normal(0,1)",100,,0.01931647156866933
+Monte Carlo standard error of the root mean squared error,Hypotailedness,"normal(0,1)",100,,0.00013607528009169925
+sqrt(n) times the standard deviation,Hypotailedness,"normal(0,1)",100,,0.19200199341223717
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",100,"normal approximation, jackknife standard error",0.954
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",100,"normal approximation, jackknife standard error",0.002094850830011532
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",100,"percentile bootstrap, 999 resamples",0.9575
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",100,"percentile bootstrap, 999 resamples",0.004510751046111944
+bias,Extremity,"normal(0,1)",100,,0.01418832627073191
+Monte Carlo standard error of the bias,Extremity,"normal(0,1)",100,,0.0008866983686468316
+standard deviation,Extremity,"normal(0,1)",100,,0.08866983686468316
+Monte Carlo standard error of the standard deviation,Extremity,"normal(0,1)",100,,0.0006359153614814955
+root mean squared error,Extremity,"normal(0,1)",100,,0.0897934426223725
+Monte Carlo standard error of the root mean squared error,Extremity,"normal(0,1)",100,,0.0006597922774755436
+sqrt(n) times the standard deviation,Extremity,"normal(0,1)",100,,0.8866983686468316
+coverage of the 95% interval,Extremity,"normal(0,1)",100,"normal approximation, jackknife standard error",0.9589
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",100,"normal approximation, jackknife standard error",0.001985215101695532
+coverage of the 95% interval,Extremity,"normal(0,1)",100,"percentile bootstrap, 999 resamples",0.9575
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",100,"percentile bootstrap, 999 resamples",0.004510751046111944
+bias,"Complex Extremity, real part","normal(0,1)",100,,0.02612029001001931
+Monte Carlo standard error of the bias,"Complex Extremity, real part","normal(0,1)",100,,0.00123583934628045
+standard deviation,"Complex Extremity, real part","normal(0,1)",100,,0.123583934628045
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part","normal(0,1)",100,,0.0008752563594258675
+root mean squared error,"Complex Extremity, real part","normal(0,1)",100,,0.126308080301565
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part","normal(0,1)",100,,0.0009365776014906672
+sqrt(n) times the standard deviation,"Complex Extremity, real part","normal(0,1)",100,,1.23583934628045
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",100,"normal approximation, jackknife standard error",0.9963
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",100,"normal approximation, jackknife standard error",0.0006071498991188285
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",100,"percentile bootstrap, 999 resamples",0.9785
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",100,"percentile bootstrap, 999 resamples",0.003243281517229114
+bias,"Complex Extremity, imaginary part","normal(0,1)",100,,0.023957654367090686
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part","normal(0,1)",100,,0.0012579696627878815
+standard deviation,"Complex Extremity, imaginary part","normal(0,1)",100,,0.12579696627878814
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",100,,0.0008976209044659113
+root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",100,,0.12805179983134576
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",100,,0.0009515624369766234
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",100,,1.2579696627878814
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",100,"normal approximation, jackknife standard error",0.9966
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",100,"normal approximation, jackknife standard error",0.0005821030836544296
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",100,"percentile bootstrap, 999 resamples",0.979
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",100,"percentile bootstrap, 999 resamples",0.00320616593457045
+bias,Asymmetry,"normal(0,1)",200,,0.00032922794143229467
+Monte Carlo standard error of the bias,Asymmetry,"normal(0,1)",200,,0.0002609117682156931
+standard deviation,Asymmetry,"normal(0,1)",200,,0.02609117682156931
+Monte Carlo standard error of the standard deviation,Asymmetry,"normal(0,1)",200,,0.00018047380862747746
+root mean squared error,Asymmetry,"normal(0,1)",200,,0.026091949410134572
+Monte Carlo standard error of the root mean squared error,Asymmetry,"normal(0,1)",200,,0.00018047714287957922
+sqrt(n) times the standard deviation,Asymmetry,"normal(0,1)",200,,0.36898496119337865
+coverage of the 95% interval,Asymmetry,"normal(0,1)",200,"normal approximation, jackknife standard error",0.9602
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",200,"normal approximation, jackknife standard error",0.001954890278250929
+coverage of the 95% interval,Asymmetry,"normal(0,1)",200,"percentile bootstrap, 999 resamples",0.9595
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",200,"percentile bootstrap, 999 resamples",0.004407933189148855
+bias,Hypotailedness,"normal(0,1)",200,,0.0008891574087012133
+Monte Carlo standard error of the bias,Hypotailedness,"normal(0,1)",200,,0.00013715204717095318
+standard deviation,Hypotailedness,"normal(0,1)",200,,0.013715204717095317
+Monte Carlo standard error of the standard deviation,Hypotailedness,"normal(0,1)",200,,9.618228207076381e-05
+root mean squared error,Hypotailedness,"normal(0,1)",200,,0.01374331221522813
+Monte Carlo standard error of the root mean squared error,Hypotailedness,"normal(0,1)",200,,9.569349791330258e-05
+sqrt(n) times the standard deviation,Hypotailedness,"normal(0,1)",200,,0.19396228521639647
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",200,"normal approximation, jackknife standard error",0.9554
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",200,"normal approximation, jackknife standard error",0.002064239327209904
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",200,"percentile bootstrap, 999 resamples",0.9615
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",200,"percentile bootstrap, 999 resamples",0.004302194207610808
+bias,Extremity,"normal(0,1)",200,,0.006320931176975797
+Monte Carlo standard error of the bias,Extremity,"normal(0,1)",200,,0.0006288075975834542
+standard deviation,Extremity,"normal(0,1)",200,,0.06288075975834542
+Monte Carlo standard error of the standard deviation,Extremity,"normal(0,1)",200,,0.0004369885222016569
+root mean squared error,Extremity,"normal(0,1)",200,,0.06319453077392093
+Monte Carlo standard error of the root mean squared error,Extremity,"normal(0,1)",200,,0.000443644501613445
+sqrt(n) times the standard deviation,Extremity,"normal(0,1)",200,,0.8892682326257644
+coverage of the 95% interval,Extremity,"normal(0,1)",200,"normal approximation, jackknife standard error",0.9575
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",200,"normal approximation, jackknife standard error",0.002017269193736919
+coverage of the 95% interval,Extremity,"normal(0,1)",200,"percentile bootstrap, 999 resamples",0.9615
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",200,"percentile bootstrap, 999 resamples",0.004302194207610808
+bias,"Complex Extremity, real part","normal(0,1)",200,,0.011114659777150093
+Monte Carlo standard error of the bias,"Complex Extremity, real part","normal(0,1)",200,,0.0008792154966696794
+standard deviation,"Complex Extremity, real part","normal(0,1)",200,,0.08792154966696794
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part","normal(0,1)",200,,0.0006135744162152211
+root mean squared error,"Complex Extremity, real part","normal(0,1)",200,,0.0886169370826668
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part","normal(0,1)",200,,0.0006320878163184397
+sqrt(n) times the standard deviation,"Complex Extremity, real part","normal(0,1)",200,,1.2433984796388575
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",200,"normal approximation, jackknife standard error",0.9979
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",200,"normal approximation, jackknife standard error",0.0004577761461675336
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",200,"percentile bootstrap, 999 resamples",0.98
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",200,"percentile bootstrap, 999 resamples",0.003130495168499707
+bias,"Complex Extremity, imaginary part","normal(0,1)",200,,0.012329517847048221
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part","normal(0,1)",200,,0.0008809267808055068
+standard deviation,"Complex Extremity, imaginary part","normal(0,1)",200,,0.08809267808055068
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",200,,0.0006239541465307644
+root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",200,,0.08894695559574299
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",200,,0.0006433166361966108
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",200,,1.2458186008728185
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",200,"normal approximation, jackknife standard error",0.9984
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",200,"normal approximation, jackknife standard error",0.0003996798718975032
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",200,"percentile bootstrap, 999 resamples",0.9765
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",200,"percentile bootstrap, 999 resamples",0.0033873108803297025
+bias,Asymmetry,"normal(0,1)",500,,9.842339519242923e-05
+Monte Carlo standard error of the bias,Asymmetry,"normal(0,1)",500,,0.0001658260888151032
+standard deviation,Asymmetry,"normal(0,1)",500,,0.01658260888151032
+Monte Carlo standard error of the standard deviation,Asymmetry,"normal(0,1)",500,,0.00011740485661255792
+root mean squared error,Asymmetry,"normal(0,1)",500,,0.01658207183044792
+Monte Carlo standard error of the root mean squared error,Asymmetry,"normal(0,1)",500,,0.00011740681898355478
+sqrt(n) times the standard deviation,Asymmetry,"normal(0,1)",500,,0.37079840703348826
+coverage of the 95% interval,Asymmetry,"normal(0,1)",500,"normal approximation, jackknife standard error",0.957
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",500,"normal approximation, jackknife standard error",0.0020285709255532585
+coverage of the 95% interval,Asymmetry,"normal(0,1)",500,"percentile bootstrap, 999 resamples",0.9575
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",500,"percentile bootstrap, 999 resamples",0.004510751046111944
+bias,Hypotailedness,"normal(0,1)",500,,0.0003733976480281287
+Monte Carlo standard error of the bias,Hypotailedness,"normal(0,1)",500,,8.66848018074599e-05
+standard deviation,Hypotailedness,"normal(0,1)",500,,0.00866848018074599
+Monte Carlo standard error of the standard deviation,Hypotailedness,"normal(0,1)",500,,6.0587665107243994e-05
+root mean squared error,Hypotailedness,"normal(0,1)",500,,0.008676085533964881
+Monte Carlo standard error of the root mean squared error,Hypotailedness,"normal(0,1)",500,,6.044835718273239e-05
+sqrt(n) times the standard deviation,Hypotailedness,"normal(0,1)",500,,0.19383310945757698
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",500,"normal approximation, jackknife standard error",0.953
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",500,"normal approximation, jackknife standard error",0.002116388433156826
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",500,"percentile bootstrap, 999 resamples",0.9495
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",500,"percentile bootstrap, 999 resamples",0.0048964145045124596
+bias,Extremity,"normal(0,1)",500,,0.002604964792031206
+Monte Carlo standard error of the bias,Extremity,"normal(0,1)",500,,0.00039650094372485324
+standard deviation,Extremity,"normal(0,1)",500,,0.039650094372485324
+Monte Carlo standard error of the standard deviation,Extremity,"normal(0,1)",500,,0.00027608303597108906
+root mean squared error,Extremity,"normal(0,1)",500,,0.039733595512064346
+Monte Carlo standard error of the root mean squared error,Extremity,"normal(0,1)",500,,0.000277760976978816
+sqrt(n) times the standard deviation,Extremity,"normal(0,1)",500,,0.8866030633115906
+coverage of the 95% interval,Extremity,"normal(0,1)",500,"normal approximation, jackknife standard error",0.9563
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",500,"normal approximation, jackknife standard error",0.00204426783959441
+coverage of the 95% interval,Extremity,"normal(0,1)",500,"percentile bootstrap, 999 resamples",0.9495
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",500,"percentile bootstrap, 999 resamples",0.0048964145045124596
+bias,"Complex Extremity, real part","normal(0,1)",500,,0.005281122366098401
+Monte Carlo standard error of the bias,"Complex Extremity, real part","normal(0,1)",500,,0.0005535975394985048
+standard deviation,"Complex Extremity, real part","normal(0,1)",500,,0.055359753949850474
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part","normal(0,1)",500,,0.0003911217679097475
+root mean squared error,"Complex Extremity, real part","normal(0,1)",500,,0.05560832797880144
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part","normal(0,1)",500,,0.0003964632538660556
+sqrt(n) times the standard deviation,"Complex Extremity, real part","normal(0,1)",500,,1.2378817304952814
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",500,"normal approximation, jackknife standard error",0.9987
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",500,"normal approximation, jackknife standard error",0.00036032069049666963
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",500,"percentile bootstrap, 999 resamples",0.972
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",500,"percentile bootstrap, 999 resamples",0.0036889022757454573
+bias,"Complex Extremity, imaginary part","normal(0,1)",500,,0.004313697092758639
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part","normal(0,1)",500,,0.0005595139764824697
+standard deviation,"Complex Extremity, imaginary part","normal(0,1)",500,,0.05595139764824697
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",500,,0.0003953069341205516
+root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",500,,0.056114648938672435
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",500,,0.0003988282318700688
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",500,,1.251111285776021
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",500,"normal approximation, jackknife standard error",0.9992
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",500,"normal approximation, jackknife standard error",0.00028272955275316074
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",500,"percentile bootstrap, 999 resamples",0.9705
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",500,"percentile bootstrap, 999 resamples",0.0037835003634200943
+bias,Asymmetry,"normal(0,1)",1000,,-2.0626606134360005e-05
+Monte Carlo standard error of the bias,Asymmetry,"normal(0,1)",1000,,0.00012016832833375921
+standard deviation,Asymmetry,"normal(0,1)",1000,,0.01201683283337592
+Monte Carlo standard error of the standard deviation,Asymmetry,"normal(0,1)",1000,,8.384610387870575e-05
+root mean squared error,Asymmetry,"normal(0,1)",1000,,0.012016249680122647
+Monte Carlo standard error of the root mean squared error,Asymmetry,"normal(0,1)",1000,,8.385949610843156e-05
+sqrt(n) times the standard deviation,Asymmetry,"normal(0,1)",1000,,0.3800056201496256
+coverage of the 95% interval,Asymmetry,"normal(0,1)",1000,"normal approximation, jackknife standard error",0.9477
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",1000,"normal approximation, jackknife standard error",0.002226313320267388
+coverage of the 95% interval,Asymmetry,"normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.938
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.005392402062161169
+bias,Hypotailedness,"normal(0,1)",1000,,8.61006295784783e-05
+Monte Carlo standard error of the bias,Hypotailedness,"normal(0,1)",1000,,6.15237122048334e-05
+standard deviation,Hypotailedness,"normal(0,1)",1000,,0.006152371220483339
+Monte Carlo standard error of the standard deviation,Hypotailedness,"normal(0,1)",1000,,4.4158525560873684e-05
+root mean squared error,Hypotailedness,"normal(0,1)",1000,,0.0061526660713776766
+Monte Carlo standard error of the root mean squared error,Hypotailedness,"normal(0,1)",1000,,4.415060072226219e-05
+sqrt(n) times the standard deviation,Hypotailedness,"normal(0,1)",1000,,0.1945550606759733
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",1000,"normal approximation, jackknife standard error",0.9513
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",1000,"normal approximation, jackknife standard error",0.00215240121724552
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.947
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.005009540897128201
+bias,Extremity,"normal(0,1)",1000,,0.0008453467825154104
+Monte Carlo standard error of the bias,Extremity,"normal(0,1)",1000,,0.00028117587766646955
+standard deviation,Extremity,"normal(0,1)",1000,,0.028117587766646954
+Monte Carlo standard error of the standard deviation,Extremity,"normal(0,1)",1000,,0.00020142329041314088
+root mean squared error,Extremity,"normal(0,1)",1000,,0.028128887164685736
+Monte Carlo standard error of the root mean squared error,Extremity,"normal(0,1)",1000,,0.00020194063966570943
+sqrt(n) times the standard deviation,Extremity,"normal(0,1)",1000,,0.8891561965229138
+coverage of the 95% interval,Extremity,"normal(0,1)",1000,"normal approximation, jackknife standard error",0.9516
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",1000,"normal approximation, jackknife standard error",0.002146099718093267
+coverage of the 95% interval,Extremity,"normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.947
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.005009540897128201
+bias,"Complex Extremity, real part","normal(0,1)",1000,,0.0017855369754364858
+Monte Carlo standard error of the bias,"Complex Extremity, real part","normal(0,1)",1000,,0.00039592554178965246
+standard deviation,"Complex Extremity, real part","normal(0,1)",1000,,0.03959255417896525
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part","normal(0,1)",1000,,0.00028013868083702557
+root mean squared error,"Complex Extremity, real part","normal(0,1)",1000,,0.03963081795358643
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part","normal(0,1)",1000,,0.00028127226585667646
+sqrt(n) times the standard deviation,"Complex Extremity, real part","normal(0,1)",1000,,1.2520264958914802
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",1000,"normal approximation, jackknife standard error",0.9988
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",1000,"normal approximation, jackknife standard error",0.0003462022530255947
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.9595
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.004407933189148855
+bias,"Complex Extremity, imaginary part","normal(0,1)",1000,,0.002152366318049881
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part","normal(0,1)",1000,,0.0003944731279427663
+standard deviation,"Complex Extremity, imaginary part","normal(0,1)",1000,,0.03944731279427663
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",1000,,0.0002820145921983996
+root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",1000,,0.03950401952216897
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",1000,,0.0002838822175240171
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",1000,,1.2474335600301527
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",1000,"normal approximation, jackknife standard error",0.999
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",1000,"normal approximation, jackknife standard error",0.0003160696125855823
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.964
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",1000,"percentile bootstrap, 999 resamples",0.0041655731898503495
+bias,Asymmetry,"normal(0,1)",2000,,-9.30982094247836e-05
+Monte Carlo standard error of the bias,Asymmetry,"normal(0,1)",2000,,8.342896106751737e-05
+standard deviation,Asymmetry,"normal(0,1)",2000,,0.008342896106751737
+Monte Carlo standard error of the standard deviation,Asymmetry,"normal(0,1)",2000,,5.868004602969056e-05
+root mean squared error,Asymmetry,"normal(0,1)",2000,,0.008342998401840107
+Monte Carlo standard error of the root mean squared error,Asymmetry,"normal(0,1)",2000,,5.866822072792458e-05
+sqrt(n) times the standard deviation,Asymmetry,"normal(0,1)",2000,,0.3731056564783045
+coverage of the 95% interval,Asymmetry,"normal(0,1)",2000,"normal approximation, jackknife standard error",0.9503
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",2000,"normal approximation, jackknife standard error",0.0021732443488940672
+coverage of the 95% interval,Asymmetry,"normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.95
+Monte Carlo standard error of the coverage,Asymmetry,"normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.004873397172404485
+bias,Hypotailedness,"normal(0,1)",2000,,1.4555325817955378e-06
+Monte Carlo standard error of the bias,Hypotailedness,"normal(0,1)",2000,,4.2906777832780254e-05
+standard deviation,Hypotailedness,"normal(0,1)",2000,,0.0042906777832780255
+Monte Carlo standard error of the standard deviation,Hypotailedness,"normal(0,1)",2000,,3.0496258621353954e-05
+root mean squared error,Hypotailedness,"normal(0,1)",2000,,0.004290463490918754
+Monte Carlo standard error of the root mean squared error,Hypotailedness,"normal(0,1)",2000,,3.0500518721817947e-05
+sqrt(n) times the standard deviation,Hypotailedness,"normal(0,1)",2000,,0.19188494385915553
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",2000,"normal approximation, jackknife standard error",0.9535
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",2000,"normal approximation, jackknife standard error",0.0021056531053333543
+coverage of the 95% interval,Hypotailedness,"normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.9545
+Monte Carlo standard error of the coverage,Hypotailedness,"normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.004659922209651143
+bias,Extremity,"normal(0,1)",2000,,0.0002264219725461314
+Monte Carlo standard error of the bias,Extremity,"normal(0,1)",2000,,0.00019597046865575028
+standard deviation,Extremity,"normal(0,1)",2000,,0.019597046865575028
+Monte Carlo standard error of the standard deviation,Extremity,"normal(0,1)",2000,,0.00013946172029443517
+root mean squared error,Extremity,"normal(0,1)",2000,,0.019597375036892326
+Monte Carlo standard error of the root mean squared error,Extremity,"normal(0,1)",2000,,0.00013955305164622874
+sqrt(n) times the standard deviation,Extremity,"normal(0,1)",2000,,0.8764065789934989
+coverage of the 95% interval,Extremity,"normal(0,1)",2000,"normal approximation, jackknife standard error",0.9537
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",2000,"normal approximation, jackknife standard error",0.0021013402865790206
+coverage of the 95% interval,Extremity,"normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.9545
+Monte Carlo standard error of the coverage,Extremity,"normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.004659922209651143
+bias,"Complex Extremity, real part","normal(0,1)",2000,,0.0006718406947670563
+Monte Carlo standard error of the bias,"Complex Extremity, real part","normal(0,1)",2000,,0.00027389091976042705
+standard deviation,"Complex Extremity, real part","normal(0,1)",2000,,0.027389091976042702
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part","normal(0,1)",2000,,0.0001923741586280897
+root mean squared error,"Complex Extremity, real part","normal(0,1)",2000,,0.027395961617642565
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part","normal(0,1)",2000,,0.00019269729425665675
+sqrt(n) times the standard deviation,"Complex Extremity, real part","normal(0,1)",2000,,1.2248774300085106
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",2000,"normal approximation, jackknife standard error",0.9992
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",2000,"normal approximation, jackknife standard error",0.00028272955275316074
+coverage of the 95% interval,"Complex Extremity, real part","normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.974
+Monte Carlo standard error of the coverage,"Complex Extremity, real part","normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.0035583704135460676
+bias,"Complex Extremity, imaginary part","normal(0,1)",2000,,0.0008740570399887737
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part","normal(0,1)",2000,,0.00027723787435726736
+standard deviation,"Complex Extremity, imaginary part","normal(0,1)",2000,,0.027723787435726736
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",2000,,0.00019536232216372254
+root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",2000,,0.027736176821103794
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part","normal(0,1)",2000,,0.00019594370617103155
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part","normal(0,1)",2000,,1.2398454660007914
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",2000,"normal approximation, jackknife standard error",0.9987
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",2000,"normal approximation, jackknife standard error",0.00036032069049666963
+coverage of the 95% interval,"Complex Extremity, imaginary part","normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.964
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part","normal(0,1)",2000,"percentile bootstrap, 999 resamples",0.0041655731898503495
+true value,Asymmetry,t(5),,,0.0
+true value,Hypotailedness,t(5),,,0.7755040492517496
+true value,Extremity,t(5),,,-0.4800545799805083
+true value,"Complex Extremity, real part",t(5),,,-0.4800545799805083
+true value,"Complex Extremity, imaginary part",t(5),,,-0.4800545799805083
+bias,Asymmetry,t(5),20,,0.00030355660236642005
+Monte Carlo standard error of the bias,Asymmetry,t(5),20,,0.0010995237347629942
+standard deviation,Asymmetry,t(5),20,,0.10995237347629941
+Monte Carlo standard error of the standard deviation,Asymmetry,t(5),20,,0.0008837815597785962
+root mean squared error,Asymmetry,t(5),20,,0.10994729476999042
+Monte Carlo standard error of the root mean squared error,Asymmetry,t(5),20,,0.0008838791178498384
+sqrt(n) times the standard deviation,Asymmetry,t(5),20,,0.4917219627609007
+coverage of the 95% interval,Asymmetry,t(5),20,"normal approximation, jackknife standard error",0.958
+Monte Carlo standard error of the coverage,Asymmetry,t(5),20,"normal approximation, jackknife standard error",0.0020058913230780982
+coverage of the 95% interval,Asymmetry,t(5),20,"percentile bootstrap, 999 resamples",0.98
+Monte Carlo standard error of the coverage,Asymmetry,t(5),20,"percentile bootstrap, 999 resamples",0.003130495168499707
+bias,Hypotailedness,t(5),20,,0.02547804652678931
+Monte Carlo standard error of the bias,Hypotailedness,t(5),20,,0.0005303106501789004
+standard deviation,Hypotailedness,t(5),20,,0.05303106501789004
+Monte Carlo standard error of the standard deviation,Hypotailedness,t(5),20,,0.00041752887171978454
+root mean squared error,Hypotailedness,t(5),20,,0.05883148376819356
+Monte Carlo standard error of the root mean squared error,Hypotailedness,t(5),20,,0.0003724039356146135
+sqrt(n) times the standard deviation,Hypotailedness,t(5),20,,0.23716213259842647
+coverage of the 95% interval,Hypotailedness,t(5),20,"normal approximation, jackknife standard error",0.892
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),20,"normal approximation, jackknife standard error",0.003103804117530615
+coverage of the 95% interval,Hypotailedness,t(5),20,"percentile bootstrap, 999 resamples",0.9385
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),20,"percentile bootstrap, 999 resamples",0.005372045699731156
+bias,Extremity,t(5),20,,0.1270958828931676
+Monte Carlo standard error of the bias,Extremity,t(5),20,,0.0021240464289164073
+standard deviation,Extremity,t(5),20,,0.21240464289164074
+Monte Carlo standard error of the standard deviation,Extremity,t(5),20,,0.001478033584484562
+root mean squared error,Extremity,t(5),20,,0.24751683618915096
+Monte Carlo standard error of the root mean squared error,Extremity,t(5),20,,0.0018540232723058124
+sqrt(n) times the standard deviation,Extremity,t(5),20,,0.9499024404845524
+coverage of the 95% interval,Extremity,t(5),20,"normal approximation, jackknife standard error",0.9387
+Monte Carlo standard error of the coverage,Extremity,t(5),20,"normal approximation, jackknife standard error",0.0023987978239109692
+coverage of the 95% interval,Extremity,t(5),20,"percentile bootstrap, 999 resamples",0.9385
+Monte Carlo standard error of the coverage,Extremity,t(5),20,"percentile bootstrap, 999 resamples",0.005372045699731156
+bias,"Complex Extremity, real part",t(5),20,,0.19976921327930158
+Monte Carlo standard error of the bias,"Complex Extremity, real part",t(5),20,,0.003018710302576463
+standard deviation,"Complex Extremity, real part",t(5),20,,0.3018710302576463
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",t(5),20,,0.0020266401267703764
+root mean squared error,"Complex Extremity, real part",t(5),20,,0.3619734035411345
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",t(5),20,,0.0027092501228465835
+sqrt(n) times the standard deviation,"Complex Extremity, real part",t(5),20,,1.350008288187986
+coverage of the 95% interval,"Complex Extremity, real part",t(5),20,"normal approximation, jackknife standard error",0.9817
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),20,"normal approximation, jackknife standard error",0.0013403398822686723
+coverage of the 95% interval,"Complex Extremity, real part",t(5),20,"percentile bootstrap, 999 resamples",0.9545
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),20,"percentile bootstrap, 999 resamples",0.004659922209651143
+bias,"Complex Extremity, imaginary part",t(5),20,,0.1987440148269684
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",t(5),20,,0.003004883319263998
+standard deviation,"Complex Extremity, imaginary part",t(5),20,,0.3004883319263998
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",t(5),20,,0.0020967400192430587
+root mean squared error,"Complex Extremity, imaginary part",t(5),20,,0.36025462069165753
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",t(5),20,,0.0027612600285372236
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",t(5),20,,1.3438246732659005
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),20,"normal approximation, jackknife standard error",0.9794
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),20,"normal approximation, jackknife standard error",0.001420409800022513
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),20,"percentile bootstrap, 999 resamples",0.9555
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),20,"percentile bootstrap, 999 resamples",0.004610843198374891
+bias,Asymmetry,t(5),50,,0.0011861160450048669
+Monte Carlo standard error of the bias,Asymmetry,t(5),50,,0.0007173535933493095
+standard deviation,Asymmetry,t(5),50,,0.07173535933493094
+Monte Carlo standard error of the standard deviation,Asymmetry,t(5),50,,0.0005481170021355028
+root mean squared error,Asymmetry,t(5),50,,0.0717415782793074
+Monte Carlo standard error of the root mean squared error,Asymmetry,t(5),50,,0.0005481103059059024
+sqrt(n) times the standard deviation,Asymmetry,t(5),50,,0.5072455903658337
+coverage of the 95% interval,Asymmetry,t(5),50,"normal approximation, jackknife standard error",0.9531
+Monte Carlo standard error of the coverage,Asymmetry,t(5),50,"normal approximation, jackknife standard error",0.0021142466743499927
+coverage of the 95% interval,Asymmetry,t(5),50,"percentile bootstrap, 999 resamples",0.9585
+Monte Carlo standard error of the coverage,Asymmetry,t(5),50,"percentile bootstrap, 999 resamples",0.004459694496263168
+bias,Hypotailedness,t(5),50,,0.011433378119464876
+Monte Carlo standard error of the bias,Hypotailedness,t(5),50,,0.0003930602491512517
+standard deviation,Hypotailedness,t(5),50,,0.03930602491512517
+Monte Carlo standard error of the standard deviation,Hypotailedness,t(5),50,,0.0003533940134396046
+root mean squared error,Hypotailedness,t(5),50,,0.04093325339490664
+Monte Carlo standard error of the root mean squared error,Hypotailedness,t(5),50,,0.000311297309725479
+sqrt(n) times the standard deviation,Hypotailedness,t(5),50,,0.277935567589724
+coverage of the 95% interval,Hypotailedness,t(5),50,"normal approximation, jackknife standard error",0.9044
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),50,"normal approximation, jackknife standard error",0.002940419017759204
+coverage of the 95% interval,Hypotailedness,t(5),50,"percentile bootstrap, 999 resamples",0.8965
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),50,"percentile bootstrap, 999 resamples",0.006811304941052046
+bias,Extremity,t(5),50,,0.057352265928879764
+Monte Carlo standard error of the bias,Extremity,t(5),50,,0.0014249307656643148
+standard deviation,Extremity,t(5),50,,0.14249307656643148
+Monte Carlo standard error of the standard deviation,Extremity,t(5),50,,0.001017512122150997
+root mean squared error,Extremity,t(5),50,,0.1535953412342214
+Monte Carlo standard error of the root mean squared error,Extremity,t(5),50,,0.001091288281633
+sqrt(n) times the standard deviation,Extremity,t(5),50,,1.0075782071225763
+coverage of the 95% interval,Extremity,t(5),50,"normal approximation, jackknife standard error",0.9372
+Monte Carlo standard error of the coverage,Extremity,t(5),50,"normal approximation, jackknife standard error",0.0024260288539092022
+coverage of the 95% interval,Extremity,t(5),50,"percentile bootstrap, 999 resamples",0.8965
+Monte Carlo standard error of the coverage,Extremity,t(5),50,"percentile bootstrap, 999 resamples",0.006811304941052046
+bias,"Complex Extremity, real part",t(5),50,,0.09239882015101447
+Monte Carlo standard error of the bias,"Complex Extremity, real part",t(5),50,,0.001957322171987214
+standard deviation,"Complex Extremity, real part",t(5),50,,0.1957322171987214
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",t(5),50,,0.001360560158193016
+root mean squared error,"Complex Extremity, real part",t(5),50,,0.21643662283620582
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",t(5),50,,0.001576068972409562
+sqrt(n) times the standard deviation,"Complex Extremity, real part",t(5),50,,1.3840357807789407
+coverage of the 95% interval,"Complex Extremity, real part",t(5),50,"normal approximation, jackknife standard error",0.9906
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),50,"normal approximation, jackknife standard error",0.0009649683932647724
+coverage of the 95% interval,"Complex Extremity, real part",t(5),50,"percentile bootstrap, 999 resamples",0.9235
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),50,"percentile bootstrap, 999 resamples",0.005943389184631948
+bias,"Complex Extremity, imaginary part",t(5),50,,0.09151604558462884
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",t(5),50,,0.002002981442848323
+standard deviation,"Complex Extremity, imaginary part",t(5),50,,0.2002981442848323
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",t(5),50,,0.0014192964442495898
+root mean squared error,"Complex Extremity, imaginary part",t(5),50,,0.2202056340531163
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",t(5),50,,0.001624828458007883
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",t(5),50,,1.4163217608288645
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),50,"normal approximation, jackknife standard error",0.991
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),50,"normal approximation, jackknife standard error",0.0009444045743218321
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),50,"percentile bootstrap, 999 resamples",0.9205
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),50,"percentile bootstrap, 999 resamples",0.006048956521582876
+bias,Asymmetry,t(5),100,,3.892594507241043e-05
+Monte Carlo standard error of the bias,Asymmetry,t(5),100,,0.0005243400212169492
+standard deviation,Asymmetry,t(5),100,,0.05243400212169492
+Monte Carlo standard error of the standard deviation,Asymmetry,t(5),100,,0.00042269497363961727
+root mean squared error,Asymmetry,t(5),100,,0.05243139480568162
+Monte Carlo standard error of the root mean squared error,Asymmetry,t(5),100,,0.00042275966876265407
+sqrt(n) times the standard deviation,Asymmetry,t(5),100,,0.5243400212169492
+coverage of the 95% interval,Asymmetry,t(5),100,"normal approximation, jackknife standard error",0.9497
+Monte Carlo standard error of the coverage,Asymmetry,t(5),100,"normal approximation, jackknife standard error",0.002185632860294702
+coverage of the 95% interval,Asymmetry,t(5),100,"percentile bootstrap, 999 resamples",0.942
+Monte Carlo standard error of the coverage,Asymmetry,t(5),100,"percentile bootstrap, 999 resamples",0.005226662414964259
+bias,Hypotailedness,t(5),100,,0.006378928574021336
+Monte Carlo standard error of the bias,Hypotailedness,t(5),100,,0.00031338596675279057
+standard deviation,Hypotailedness,t(5),100,,0.03133859667527906
+Monte Carlo standard error of the standard deviation,Hypotailedness,t(5),100,,0.00037051786002743024
+root mean squared error,Hypotailedness,t(5),100,,0.03197968355947444
+Monte Carlo standard error of the root mean squared error,Hypotailedness,t(5),100,,0.0003401524407165165
+sqrt(n) times the standard deviation,Hypotailedness,t(5),100,,0.31338596675279057
+coverage of the 95% interval,Hypotailedness,t(5),100,"normal approximation, jackknife standard error",0.9036
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),100,"normal approximation, jackknife standard error",0.0029513901809147505
+coverage of the 95% interval,Hypotailedness,t(5),100,"percentile bootstrap, 999 resamples",0.893
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),100,"percentile bootstrap, 999 resamples",0.0069119823495145
+bias,Extremity,t(5),100,,0.03260670038338165
+Monte Carlo standard error of the bias,Extremity,t(5),100,,0.0010899408259343716
+standard deviation,Extremity,t(5),100,,0.10899408259343717
+Monte Carlo standard error of the standard deviation,Extremity,t(5),100,,0.0008432986089367854
+root mean squared error,Extremity,t(5),100,,0.11376167623269531
+Monte Carlo standard error of the root mean squared error,Extremity,t(5),100,,0.000830352049422066
+sqrt(n) times the standard deviation,Extremity,t(5),100,,1.0899408259343717
+coverage of the 95% interval,Extremity,t(5),100,"normal approximation, jackknife standard error",0.9273
+Monte Carlo standard error of the coverage,Extremity,t(5),100,"normal approximation, jackknife standard error",0.0025964342857079975
+coverage of the 95% interval,Extremity,t(5),100,"percentile bootstrap, 999 resamples",0.893
+Monte Carlo standard error of the coverage,Extremity,t(5),100,"percentile bootstrap, 999 resamples",0.0069119823495145
+bias,"Complex Extremity, real part",t(5),100,,0.05225897956337194
+Monte Carlo standard error of the bias,"Complex Extremity, real part",t(5),100,,0.0014802739196203873
+standard deviation,"Complex Extremity, real part",t(5),100,,0.14802739196203873
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",t(5),100,,0.0010822404324447765
+root mean squared error,"Complex Extremity, real part",t(5),100,,0.15697426064553022
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",t(5),100,,0.001125893153740917
+sqrt(n) times the standard deviation,"Complex Extremity, real part",t(5),100,,1.4802739196203873
+coverage of the 95% interval,"Complex Extremity, real part",t(5),100,"normal approximation, jackknife standard error",0.9936
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),100,"normal approximation, jackknife standard error",0.0007974358908401328
+coverage of the 95% interval,"Complex Extremity, real part",t(5),100,"percentile bootstrap, 999 resamples",0.91
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),100,"percentile bootstrap, 999 resamples",0.0063992187023104614
+bias,"Complex Extremity, imaginary part",t(5),100,,0.0539801494160545
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",t(5),100,,0.0015005936519619587
+standard deviation,"Complex Extremity, imaginary part",t(5),100,,0.15005936519619587
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",t(5),100,,0.0010842899424825699
+root mean squared error,"Complex Extremity, imaginary part",t(5),100,,0.15946603974751658
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",t(5),100,,0.0011294309925757658
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",t(5),100,,1.5005936519619587
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),100,"normal approximation, jackknife standard error",0.9919
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),100,"normal approximation, jackknife standard error",0.000896347588829244
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),100,"percentile bootstrap, 999 resamples",0.9105
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),100,"percentile bootstrap, 999 resamples",0.006383171233799076
+bias,Asymmetry,t(5),200,,0.0004888565789148478
+Monte Carlo standard error of the bias,Asymmetry,t(5),200,,0.00036915473015525094
+standard deviation,Asymmetry,t(5),200,,0.03691547301552509
+Monte Carlo standard error of the standard deviation,Asymmetry,t(5),200,,0.0002757099432867683
+root mean squared error,Asymmetry,t(5),200,,0.03691686407998265
+Monte Carlo standard error of the root mean squared error,Asymmetry,t(5),200,,0.00027573113139827435
+sqrt(n) times the standard deviation,Asymmetry,t(5),200,,0.522063625999736
+coverage of the 95% interval,Asymmetry,t(5),200,"normal approximation, jackknife standard error",0.9515
+Monte Carlo standard error of the coverage,Asymmetry,t(5),200,"normal approximation, jackknife standard error",0.0021482027371735653
+coverage of the 95% interval,Asymmetry,t(5),200,"percentile bootstrap, 999 resamples",0.952
+Monte Carlo standard error of the coverage,Asymmetry,t(5),200,"percentile bootstrap, 999 resamples",0.004779958158812692
+bias,Hypotailedness,t(5),200,,0.0036603133617660877
+Monte Carlo standard error of the bias,Hypotailedness,t(5),200,,0.0002397192775695408
+standard deviation,Hypotailedness,t(5),200,,0.02397192775695408
+Monte Carlo standard error of the standard deviation,Hypotailedness,t(5),200,,0.0003353116806505716
+root mean squared error,Hypotailedness,t(5),200,,0.024248582411326852
+Monte Carlo standard error of the root mean squared error,Hypotailedness,t(5),200,,0.0003171919053116167
+sqrt(n) times the standard deviation,Hypotailedness,t(5),200,,0.3390142535011251
+coverage of the 95% interval,Hypotailedness,t(5),200,"normal approximation, jackknife standard error",0.9036
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),200,"normal approximation, jackknife standard error",0.0029513901809147505
+coverage of the 95% interval,Hypotailedness,t(5),200,"percentile bootstrap, 999 resamples",0.8935
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),200,"percentile bootstrap, 999 resamples",0.0068977441964746715
+bias,Extremity,t(5),200,,0.01867147255138596
+Monte Carlo standard error of the bias,Extremity,t(5),200,,0.0008220962759962401
+standard deviation,Extremity,t(5),200,,0.08220962759962401
+Monte Carlo standard error of the standard deviation,Extremity,t(5),200,,0.0007035974019690274
+root mean squared error,Extremity,t(5),200,,0.0842992936804278
+Monte Carlo standard error of the root mean squared error,Extremity,t(5),200,,0.000671466414034356
+sqrt(n) times the standard deviation,Extremity,t(5),200,,1.1626197030902978
+coverage of the 95% interval,Extremity,t(5),200,"normal approximation, jackknife standard error",0.9184
+Monte Carlo standard error of the coverage,Extremity,t(5),200,"normal approximation, jackknife standard error",0.002737543424313119
+coverage of the 95% interval,Extremity,t(5),200,"percentile bootstrap, 999 resamples",0.8935
+Monte Carlo standard error of the coverage,Extremity,t(5),200,"percentile bootstrap, 999 resamples",0.0068977441964746715
+bias,"Complex Extremity, real part",t(5),200,,0.030986227481486328
+Monte Carlo standard error of the bias,"Complex Extremity, real part",t(5),200,,0.0011287039209175536
+standard deviation,"Complex Extremity, real part",t(5),200,,0.11287039209175537
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",t(5),200,,0.0008658092636856205
+root mean squared error,"Complex Extremity, real part",t(5),200,,0.11704100876162984
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",t(5),200,,0.000854109218043664
+sqrt(n) times the standard deviation,"Complex Extremity, real part",t(5),200,,1.5962283928652938
+coverage of the 95% interval,"Complex Extremity, real part",t(5),200,"normal approximation, jackknife standard error",0.9924
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),200,"normal approximation, jackknife standard error",0.0008684607072286029
+coverage of the 95% interval,"Complex Extremity, real part",t(5),200,"percentile bootstrap, 999 resamples",0.9075
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),200,"percentile bootstrap, 999 resamples",0.006478570444164362
+bias,"Complex Extremity, imaginary part",t(5),200,,0.029992873809839116
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",t(5),200,,0.001129923202559593
+standard deviation,"Complex Extremity, imaginary part",t(5),200,,0.11299232025595929
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",t(5),200,,0.0008666334125237709
+root mean squared error,"Complex Extremity, imaginary part",t(5),200,,0.11689978695341802
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",t(5),200,,0.000852629431069635
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",t(5),200,,1.5979527174998183
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),200,"normal approximation, jackknife standard error",0.9922
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),200,"normal approximation, jackknife standard error",0.0008797249570178186
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),200,"percentile bootstrap, 999 resamples",0.902
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),200,"percentile bootstrap, 999 resamples",0.006648157639526908
+bias,Asymmetry,t(5),500,,-1.4324767694410135e-05
+Monte Carlo standard error of the bias,Asymmetry,t(5),500,,0.00023631157760902531
+standard deviation,Asymmetry,t(5),500,,0.023631157760902532
+Monte Carlo standard error of the standard deviation,Asymmetry,t(5),500,,0.00016957589342018878
+root mean squared error,Asymmetry,t(5),500,,0.02362998051539445
+Monte Carlo standard error of the root mean squared error,Asymmetry,t(5),500,,0.00016959950023292115
+sqrt(n) times the standard deviation,Asymmetry,t(5),500,,0.5284087514039979
+coverage of the 95% interval,Asymmetry,t(5),500,"normal approximation, jackknife standard error",0.9512
+Monte Carlo standard error of the coverage,Asymmetry,t(5),500,"normal approximation, jackknife standard error",0.002154496692965667
+coverage of the 95% interval,Asymmetry,t(5),500,"percentile bootstrap, 999 resamples",0.952
+Monte Carlo standard error of the coverage,Asymmetry,t(5),500,"percentile bootstrap, 999 resamples",0.004779958158812692
+bias,Hypotailedness,t(5),500,,0.001245329855033117
+Monte Carlo standard error of the bias,Hypotailedness,t(5),500,,0.00016720465102744873
+standard deviation,Hypotailedness,t(5),500,,0.016720465102744872
+Monte Carlo standard error of the standard deviation,Hypotailedness,t(5),500,,0.000265974807245752
+root mean squared error,Hypotailedness,t(5),500,,0.016765942929182976
+Monte Carlo standard error of the root mean squared error,Hypotailedness,t(5),500,,0.0002599496301758833
+sqrt(n) times the standard deviation,Hypotailedness,t(5),500,,0.37388096585150543
+coverage of the 95% interval,Hypotailedness,t(5),500,"normal approximation, jackknife standard error",0.9162
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),500,"normal approximation, jackknife standard error",0.002770876395655353
+coverage of the 95% interval,Hypotailedness,t(5),500,"percentile bootstrap, 999 resamples",0.9155
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),500,"percentile bootstrap, 999 resamples",0.006219314672855845
+bias,Extremity,t(5),500,,0.007122095954933738
+Monte Carlo standard error of the bias,Extremity,t(5),500,,0.000569279575998739
+standard deviation,Extremity,t(5),500,,0.056927957599873895
+Monte Carlo standard error of the standard deviation,Extremity,t(5),500,,0.0005654114973856529
+root mean squared error,Extremity,t(5),500,,0.05736891604387061
+Monte Carlo standard error of the root mean squared error,Extremity,t(5),500,,0.0005433210343304995
+sqrt(n) times the standard deviation,Extremity,t(5),500,,1.272947830135438
+coverage of the 95% interval,Extremity,t(5),500,"normal approximation, jackknife standard error",0.9254
+Monte Carlo standard error of the coverage,Extremity,t(5),500,"normal approximation, jackknife standard error",0.002627448191687136
+coverage of the 95% interval,Extremity,t(5),500,"percentile bootstrap, 999 resamples",0.9155
+Monte Carlo standard error of the coverage,Extremity,t(5),500,"percentile bootstrap, 999 resamples",0.006219314672855845
+bias,"Complex Extremity, real part",t(5),500,,0.013606818194003778
+Monte Carlo standard error of the bias,"Complex Extremity, real part",t(5),500,,0.0007864643705565473
+standard deviation,"Complex Extremity, real part",t(5),500,,0.07864643705565473
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",t(5),500,,0.0006737927430115509
+root mean squared error,"Complex Extremity, real part",t(5),500,,0.0798109581242299
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",t(5),500,,0.0006443661356091089
+sqrt(n) times the standard deviation,"Complex Extremity, real part",t(5),500,,1.758587794446024
+coverage of the 95% interval,"Complex Extremity, real part",t(5),500,"normal approximation, jackknife standard error",0.9908
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),500,"normal approximation, jackknife standard error",0.0009547439447307318
+coverage of the 95% interval,"Complex Extremity, real part",t(5),500,"percentile bootstrap, 999 resamples",0.91
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),500,"percentile bootstrap, 999 resamples",0.0063992187023104614
+bias,"Complex Extremity, imaginary part",t(5),500,,0.011985423331182632
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",t(5),500,,0.0007742608073274161
+standard deviation,"Complex Extremity, imaginary part",t(5),500,,0.07742608073274161
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",t(5),500,,0.0006748606788628263
+root mean squared error,"Complex Extremity, imaginary part",t(5),500,,0.07834442462781202
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",t(5),500,,0.0006461649419710815
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",t(5),500,,1.7312997974979698
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),500,"normal approximation, jackknife standard error",0.9922
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),500,"normal approximation, jackknife standard error",0.0008797249570178186
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),500,"percentile bootstrap, 999 resamples",0.9225
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),500,"percentile bootstrap, 999 resamples",0.005978869040211535
+bias,Asymmetry,t(5),1000,,-1.8431201082897664e-05
+Monte Carlo standard error of the bias,Asymmetry,t(5),1000,,0.00016549379031223808
+standard deviation,Asymmetry,t(5),1000,,0.016549379031223808
+Monte Carlo standard error of the standard deviation,Asymmetry,t(5),1000,,0.00011582688876260069
+root mean squared error,Asymmetry,t(5),1000,,0.01654856180559663
+Monte Carlo standard error of the root mean squared error,Asymmetry,t(5),1000,,0.00011584107432317738
+sqrt(n) times the standard deviation,Asymmetry,t(5),1000,,0.5233373160009807
+coverage of the 95% interval,Asymmetry,t(5),1000,"normal approximation, jackknife standard error",0.9497
+Monte Carlo standard error of the coverage,Asymmetry,t(5),1000,"normal approximation, jackknife standard error",0.002185632860294702
+coverage of the 95% interval,Asymmetry,t(5),1000,"percentile bootstrap, 999 resamples",0.9525
+Monte Carlo standard error of the coverage,Asymmetry,t(5),1000,"percentile bootstrap, 999 resamples",0.00475624589355933
+bias,Hypotailedness,t(5),1000,,0.000763576744489014
+Monte Carlo standard error of the bias,Hypotailedness,t(5),1000,,0.00012169965216747636
+standard deviation,Hypotailedness,t(5),1000,,0.012169965216747635
+Monte Carlo standard error of the standard deviation,Hypotailedness,t(5),1000,,0.00017749813271899386
+root mean squared error,Hypotailedness,t(5),1000,,0.012193288810498753
+Monte Carlo standard error of the root mean squared error,Hypotailedness,t(5),1000,,0.00017385963720105082
+sqrt(n) times the standard deviation,Hypotailedness,t(5),1000,,0.3848480912994727
+coverage of the 95% interval,Hypotailedness,t(5),1000,"normal approximation, jackknife standard error",0.9193
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),1000,"normal approximation, jackknife standard error",0.0027237384235642014
+coverage of the 95% interval,Hypotailedness,t(5),1000,"percentile bootstrap, 999 resamples",0.9125
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),1000,"percentile bootstrap, 999 resamples",0.006318375978050056
+bias,Extremity,t(5),1000,,0.00415028570796927
+Monte Carlo standard error of the bias,Extremity,t(5),1000,,0.0004185788899380149
+standard deviation,Extremity,t(5),1000,,0.04185788899380149
+Monte Carlo standard error of the standard deviation,Extremity,t(5),1000,,0.00044899660819874333
+root mean squared error,Extremity,t(5),1000,,0.042061057216718656
+Monte Carlo standard error of the root mean squared error,Extremity,t(5),1000,,0.00043397851647979525
+sqrt(n) times the standard deviation,Extremity,t(5),1000,,1.3236626726690632
+coverage of the 95% interval,Extremity,t(5),1000,"normal approximation, jackknife standard error",0.9267
+Monte Carlo standard error of the coverage,Extremity,t(5),1000,"normal approximation, jackknife standard error",0.002606282985402775
+coverage of the 95% interval,Extremity,t(5),1000,"percentile bootstrap, 999 resamples",0.9125
+Monte Carlo standard error of the coverage,Extremity,t(5),1000,"percentile bootstrap, 999 resamples",0.006318375978050056
+bias,"Complex Extremity, real part",t(5),1000,,0.007913514536308675
+Monte Carlo standard error of the bias,"Complex Extremity, real part",t(5),1000,,0.0005837767041610255
+standard deviation,"Complex Extremity, real part",t(5),1000,,0.058377670416102555
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",t(5),1000,,0.0005686679697131404
+root mean squared error,"Complex Extremity, real part",t(5),1000,,0.05890870326434918
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",t(5),1000,,0.0005447472735906609
+sqrt(n) times the standard deviation,"Complex Extremity, real part",t(5),1000,,1.846064030095136
+coverage of the 95% interval,"Complex Extremity, real part",t(5),1000,"normal approximation, jackknife standard error",0.9918
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),1000,"normal approximation, jackknife standard error",0.0009018181634897351
+coverage of the 95% interval,"Complex Extremity, real part",t(5),1000,"percentile bootstrap, 999 resamples",0.9065
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),1000,"percentile bootstrap, 999 resamples",0.006509905913298595
+bias,"Complex Extremity, imaginary part",t(5),1000,,0.006746514550828475
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",t(5),1000,,0.0005837794844775249
+standard deviation,"Complex Extremity, imaginary part",t(5),1000,,0.058377948447752494
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",t(5),1000,,0.0005631109438818108
+root mean squared error,"Complex Extremity, imaginary part",t(5),1000,,0.058763590130849655
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",t(5),1000,,0.000542727449502342
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",t(5),1000,,1.8460728222278902
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),1000,"normal approximation, jackknife standard error",0.992
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),1000,"normal approximation, jackknife standard error",0.0008908422980528039
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),1000,"percentile bootstrap, 999 resamples",0.9275
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),1000,"percentile bootstrap, 999 resamples",0.005798437289477226
+bias,Asymmetry,t(5),2000,,-5.0918493168194856e-05
+Monte Carlo standard error of the bias,Asymmetry,t(5),2000,,0.00011846348328110201
+standard deviation,Asymmetry,t(5),2000,,0.0118463483281102
+Monte Carlo standard error of the standard deviation,Asymmetry,t(5),2000,,8.335306014881084e-05
+root mean squared error,Asymmetry,t(5),2000,,0.01184586543090013
+Monte Carlo standard error of the root mean squared error,Asymmetry,t(5),2000,,8.336389127359806e-05
+sqrt(n) times the standard deviation,Asymmetry,t(5),2000,,0.5297848029359078
+coverage of the 95% interval,Asymmetry,t(5),2000,"normal approximation, jackknife standard error",0.9526
+Monte Carlo standard error of the coverage,Asymmetry,t(5),2000,"normal approximation, jackknife standard error",0.00212492917529032
+coverage of the 95% interval,Asymmetry,t(5),2000,"percentile bootstrap, 999 resamples",0.9485
+Monte Carlo standard error of the coverage,Asymmetry,t(5),2000,"percentile bootstrap, 999 resamples",0.004942051699446293
+bias,Hypotailedness,t(5),2000,,0.00038140236327555144
+Monte Carlo standard error of the bias,Hypotailedness,t(5),2000,,9.11954366207145e-05
+standard deviation,Hypotailedness,t(5),2000,,0.00911954366207145
+Monte Carlo standard error of the standard deviation,Hypotailedness,t(5),2000,,0.00018094611532479984
+root mean squared error,Hypotailedness,t(5),2000,,0.009127060192607433
+Monte Carlo standard error of the root mean squared error,Hypotailedness,t(5),2000,,0.0001792159502302254
+sqrt(n) times the standard deviation,Hypotailedness,t(5),2000,,0.4078383910433827
+coverage of the 95% interval,Hypotailedness,t(5),2000,"normal approximation, jackknife standard error",0.9246
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),2000,"normal approximation, jackknife standard error",0.0026403567940715893
+coverage of the 95% interval,Hypotailedness,t(5),2000,"percentile bootstrap, 999 resamples",0.918
+Monte Carlo standard error of the coverage,Hypotailedness,t(5),2000,"percentile bootstrap, 999 resamples",0.006134981662564281
+bias,Extremity,t(5),2000,,0.0021597973984807117
+Monte Carlo standard error of the bias,Extremity,t(5),2000,,0.0003135086545972223
+standard deviation,Extremity,t(5),2000,,0.03135086545972223
+Monte Carlo standard error of the standard deviation,Extremity,t(5),2000,,0.0004155586655141579
+root mean squared error,Extremity,t(5),2000,,0.031423608993869256
+Monte Carlo standard error of the root mean squared error,Extremity,t(5),2000,,0.00040734398438921186
+sqrt(n) times the standard deviation,Extremity,t(5),2000,,1.4020533264277821
+coverage of the 95% interval,Extremity,t(5),2000,"normal approximation, jackknife standard error",0.9287
+Monte Carlo standard error of the coverage,Extremity,t(5),2000,"normal approximation, jackknife standard error",0.0025732529996096384
+coverage of the 95% interval,Extremity,t(5),2000,"percentile bootstrap, 999 resamples",0.918
+Monte Carlo standard error of the coverage,Extremity,t(5),2000,"percentile bootstrap, 999 resamples",0.006134981662564281
+bias,"Complex Extremity, real part",t(5),2000,,0.0036865406328471795
+Monte Carlo standard error of the bias,"Complex Extremity, real part",t(5),2000,,0.00043726858135483606
+standard deviation,"Complex Extremity, real part",t(5),2000,,0.043726858135483604
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",t(5),2000,,0.0005080431285650835
+root mean squared error,"Complex Extremity, real part",t(5),2000,,0.043879807433785556
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",t(5),2000,,0.0004947897504564829
+sqrt(n) times the standard deviation,"Complex Extremity, real part",t(5),2000,,1.9555245446686211
+coverage of the 95% interval,"Complex Extremity, real part",t(5),2000,"normal approximation, jackknife standard error",0.9922
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),2000,"normal approximation, jackknife standard error",0.0008797249570178186
+coverage of the 95% interval,"Complex Extremity, real part",t(5),2000,"percentile bootstrap, 999 resamples",0.9105
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",t(5),2000,"percentile bootstrap, 999 resamples",0.006383171233799076
+bias,"Complex Extremity, imaginary part",t(5),2000,,0.004097457907872082
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",t(5),2000,,0.00043116230960196707
+standard deviation,"Complex Extremity, imaginary part",t(5),2000,,0.043116230960196705
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",t(5),2000,,0.00047040900863347705
+root mean squared error,"Complex Extremity, imaginary part",t(5),2000,,0.04330834368320482
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",t(5),2000,,0.00045661883316872455
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",t(5),2000,,1.9282164672116173
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),2000,"normal approximation, jackknife standard error",0.99
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),2000,"normal approximation, jackknife standard error",0.0009949874371066203
+coverage of the 95% interval,"Complex Extremity, imaginary part",t(5),2000,"percentile bootstrap, 999 resamples",0.9145
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",t(5),2000,"percentile bootstrap, 999 resamples",0.006252589463574273
+true value,Asymmetry,exponential(1),,,-0.2174546348702223
+true value,Hypotailedness,exponential(1),,,0.7879451591738776
+true value,Extremity,exponential(1),,,-0.43430457267072753
+true value,"Complex Extremity, real part",exponential(1),,,-0.5789765009974362
+true value,"Complex Extremity, imaginary part",exponential(1),,,0.20491343969984935
+bias,Asymmetry,exponential(1),20,,0.019271294449851623
+Monte Carlo standard error of the bias,Asymmetry,exponential(1),20,,0.0009316803178284958
+standard deviation,Asymmetry,exponential(1),20,,0.09316803178284958
+Monte Carlo standard error of the standard deviation,Asymmetry,exponential(1),20,,0.0006626027261174314
+root mean squared error,Asymmetry,exponential(1),20,,0.09513567631466295
+Monte Carlo standard error of the root mean squared error,Asymmetry,exponential(1),20,,0.0006651891554904309
+sqrt(n) times the standard deviation,Asymmetry,exponential(1),20,,0.41666010479262516
+coverage of the 95% interval,Asymmetry,exponential(1),20,"normal approximation, jackknife standard error",0.943
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),20,"normal approximation, jackknife standard error",0.002318426190328259
+coverage of the 95% interval,Asymmetry,exponential(1),20,"percentile bootstrap, 999 resamples",0.9515
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),20,"percentile bootstrap, 999 resamples",0.004803527349771207
+bias,Hypotailedness,exponential(1),20,,0.025692810176135672
+Monte Carlo standard error of the bias,Hypotailedness,exponential(1),20,,0.0005642438211292411
+standard deviation,Hypotailedness,exponential(1),20,,0.0564243821129241
+Monte Carlo standard error of the standard deviation,Hypotailedness,exponential(1),20,,0.00043260123083935535
+root mean squared error,Hypotailedness,exponential(1),20,,0.061996072621437304
+Monte Carlo standard error of the root mean squared error,Hypotailedness,exponential(1),20,,0.0003790348246232321
+sqrt(n) times the standard deviation,Hypotailedness,exponential(1),20,,0.25233750798584303
+coverage of the 95% interval,Hypotailedness,exponential(1),20,"normal approximation, jackknife standard error",0.8852
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),20,"normal approximation, jackknife standard error",0.0031878042599883705
+coverage of the 95% interval,Hypotailedness,exponential(1),20,"percentile bootstrap, 999 resamples",0.932
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),20,"percentile bootstrap, 999 resamples",0.005629209535982825
+bias,Extremity,exponential(1),20,,0.1403878633623849
+Monte Carlo standard error of the bias,Extremity,exponential(1),20,,0.002399133121096537
+standard deviation,Extremity,exponential(1),20,,0.2399133121096537
+Monte Carlo standard error of the standard deviation,Extremity,exponential(1),20,,0.0016049299313053197
+root mean squared error,Extremity,exponential(1),20,,0.27795933815424695
+Monte Carlo standard error of the root mean squared error,Extremity,exponential(1),20,,0.0020128716637833072
+sqrt(n) times the standard deviation,Extremity,exponential(1),20,,1.0729249491686184
+coverage of the 95% interval,Extremity,exponential(1),20,"normal approximation, jackknife standard error",0.9306
+Monte Carlo standard error of the coverage,Extremity,exponential(1),20,"normal approximation, jackknife standard error",0.002541331147253345
+coverage of the 95% interval,Extremity,exponential(1),20,"percentile bootstrap, 999 resamples",0.932
+Monte Carlo standard error of the coverage,Extremity,exponential(1),20,"percentile bootstrap, 999 resamples",0.005629209535982825
+bias,"Complex Extremity, real part",exponential(1),20,,0.22831953833320967
+Monte Carlo standard error of the bias,"Complex Extremity, real part",exponential(1),20,,0.003210672273772045
+standard deviation,"Complex Extremity, real part",exponential(1),20,,0.3210672273772045
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",exponential(1),20,,0.0023852914916318016
+root mean squared error,"Complex Extremity, real part",exponential(1),20,,0.3939589669799711
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",exponential(1),20,,0.0032427580861701787
+sqrt(n) times the standard deviation,"Complex Extremity, real part",exponential(1),20,,1.4358562915256217
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),20,"normal approximation, jackknife standard error",0.9679
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),20,"normal approximation, jackknife standard error",0.0017626568015356823
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),20,"percentile bootstrap, 999 resamples",0.952
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),20,"percentile bootstrap, 999 resamples",0.004779958158812692
+bias,"Complex Extremity, imaginary part",exponential(1),20,,0.03265805021155194
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",exponential(1),20,,0.002651382370593863
+standard deviation,"Complex Extremity, imaginary part",exponential(1),20,,0.26513823705938633
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",exponential(1),20,,0.001690606619583022
+root mean squared error,"Complex Extremity, imaginary part",exponential(1),20,,0.2671288138073175
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",exponential(1),20,,0.0016973512103712729
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",exponential(1),20,,1.1857342429984836
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),20,"normal approximation, jackknife standard error",0.9709
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),20,"normal approximation, jackknife standard error",0.0016808685254950792
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),20,"percentile bootstrap, 999 resamples",0.999
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),20,"percentile bootstrap, 999 resamples",0.0007067531393633852
+bias,Asymmetry,exponential(1),50,,0.00925709243223205
+Monte Carlo standard error of the bias,Asymmetry,exponential(1),50,,0.000591236000563395
+standard deviation,Asymmetry,exponential(1),50,,0.0591236000563395
+Monte Carlo standard error of the standard deviation,Asymmetry,exponential(1),50,,0.00043164795268952347
+root mean squared error,Asymmetry,exponential(1),50,,0.05984099166885952
+Monte Carlo standard error of the root mean squared error,Asymmetry,exponential(1),50,,0.00043150725951403616
+sqrt(n) times the standard deviation,Asymmetry,exponential(1),50,,0.41806698527999003
+coverage of the 95% interval,Asymmetry,exponential(1),50,"normal approximation, jackknife standard error",0.9449
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),50,"normal approximation, jackknife standard error",0.0022817534923825584
+coverage of the 95% interval,Asymmetry,exponential(1),50,"percentile bootstrap, 999 resamples",0.9505
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),50,"percentile bootstrap, 999 resamples",0.004850244839180801
+bias,Hypotailedness,exponential(1),50,,0.011972743255826424
+Monte Carlo standard error of the bias,Hypotailedness,exponential(1),50,,0.00041762847617699965
+standard deviation,Hypotailedness,exponential(1),50,,0.041762847617699966
+Monte Carlo standard error of the standard deviation,Hypotailedness,exponential(1),50,,0.0003308853944601689
+root mean squared error,Hypotailedness,exponential(1),50,,0.04344315376057599
+Monte Carlo standard error of the root mean squared error,Hypotailedness,exponential(1),50,,0.0002984987560852733
+sqrt(n) times the standard deviation,Hypotailedness,exponential(1),50,,0.295307927521361
+coverage of the 95% interval,Hypotailedness,exponential(1),50,"normal approximation, jackknife standard error",0.8894
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),50,"normal approximation, jackknife standard error",0.0031363615862970906
+coverage of the 95% interval,Hypotailedness,exponential(1),50,"percentile bootstrap, 999 resamples",0.9
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),50,"percentile bootstrap, 999 resamples",0.006708203932499368
+bias,Extremity,exponential(1),50,,0.06559367140264788
+Monte Carlo standard error of the bias,Extremity,exponential(1),50,,0.0016481784178998984
+standard deviation,Extremity,exponential(1),50,,0.16481784178998984
+Monte Carlo standard error of the standard deviation,Extremity,exponential(1),50,,0.0011141488436874456
+root mean squared error,Extremity,exponential(1),50,,0.17738301555755398
+Monte Carlo standard error of the root mean squared error,Extremity,exponential(1),50,,0.0012462429290266953
+sqrt(n) times the standard deviation,Extremity,exponential(1),50,,1.1654381359023336
+coverage of the 95% interval,Extremity,exponential(1),50,"normal approximation, jackknife standard error",0.9174
+Monte Carlo standard error of the coverage,Extremity,exponential(1),50,"normal approximation, jackknife standard error",0.0027527666083415063
+coverage of the 95% interval,Extremity,exponential(1),50,"percentile bootstrap, 999 resamples",0.9
+Monte Carlo standard error of the coverage,Extremity,exponential(1),50,"percentile bootstrap, 999 resamples",0.006708203932499368
+bias,"Complex Extremity, real part",exponential(1),50,,0.09391122040583777
+Monte Carlo standard error of the bias,"Complex Extremity, real part",exponential(1),50,,0.001978731983336308
+standard deviation,"Complex Extremity, real part",exponential(1),50,,0.1978731983336308
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",exponential(1),50,,0.0014477880625297724
+root mean squared error,"Complex Extremity, real part",exponential(1),50,,0.21901873106342376
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",exponential(1),50,,0.001793676858775598
+sqrt(n) times the standard deviation,"Complex Extremity, real part",exponential(1),50,,1.39917480356781
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),50,"normal approximation, jackknife standard error",0.9824
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),50,"normal approximation, jackknife standard error",0.0013149235719234769
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),50,"percentile bootstrap, 999 resamples",0.9375
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),50,"percentile bootstrap, 999 resamples",0.005412658773652742
+bias,"Complex Extremity, imaginary part",exponential(1),50,,0.018425688534796536
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",exponential(1),50,,0.0016853432869351065
+standard deviation,"Complex Extremity, imaginary part",exponential(1),50,,0.16853432869351065
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",exponential(1),50,,0.0011615178434933099
+root mean squared error,"Complex Extremity, imaginary part",exponential(1),50,,0.16953019071586864
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",exponential(1),50,,0.0011677160803073045
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",exponential(1),50,,1.1917176668190392
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),50,"normal approximation, jackknife standard error",0.9901
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),50,"normal approximation, jackknife standard error",0.0009900499987374385
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),50,"percentile bootstrap, 999 resamples",0.9985
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),50,"percentile bootstrap, 999 resamples",0.0008653756409790912
+bias,Asymmetry,exponential(1),100,,0.003739684166202406
+Monte Carlo standard error of the bias,Asymmetry,exponential(1),100,,0.0004177399159435541
+standard deviation,Asymmetry,exponential(1),100,,0.04177399159435541
+Monte Carlo standard error of the standard deviation,Asymmetry,exponential(1),100,,0.00029516199379054687
+root mean squared error,Asymmetry,exponential(1),100,,0.041938968808863775
+Monte Carlo standard error of the root mean squared error,Asymmetry,exponential(1),100,,0.0002950359261580973
+sqrt(n) times the standard deviation,Asymmetry,exponential(1),100,,0.4177399159435541
+coverage of the 95% interval,Asymmetry,exponential(1),100,"normal approximation, jackknife standard error",0.9504
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),100,"normal approximation, jackknife standard error",0.0021711711125565387
+coverage of the 95% interval,Asymmetry,exponential(1),100,"percentile bootstrap, 999 resamples",0.95
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),100,"percentile bootstrap, 999 resamples",0.004873397172404485
+bias,Hypotailedness,exponential(1),100,,0.006388466717434982
+Monte Carlo standard error of the bias,Hypotailedness,exponential(1),100,,0.0003102956635043775
+standard deviation,Hypotailedness,exponential(1),100,,0.031029566350437753
+Monte Carlo standard error of the standard deviation,Hypotailedness,exponential(1),100,,0.00023450071087182842
+root mean squared error,Hypotailedness,exponential(1),100,,0.03167886064076807
+Monte Carlo standard error of the root mean squared error,Hypotailedness,exponential(1),100,,0.00022013133212331733
+sqrt(n) times the standard deviation,Hypotailedness,exponential(1),100,,0.31029566350437754
+coverage of the 95% interval,Hypotailedness,exponential(1),100,"normal approximation, jackknife standard error",0.9036
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),100,"normal approximation, jackknife standard error",0.0029513901809147505
+coverage of the 95% interval,Hypotailedness,exponential(1),100,"percentile bootstrap, 999 resamples",0.89
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),100,"percentile bootstrap, 999 resamples",0.006996427659884721
+bias,Extremity,exponential(1),100,,0.034832146423608934
+Monte Carlo standard error of the bias,Extremity,exponential(1),100,,0.0012002097658769138
+standard deviation,Extremity,exponential(1),100,,0.12002097658769137
+Monte Carlo standard error of the standard deviation,Extremity,exponential(1),100,,0.0008177803460400716
+root mean squared error,Extremity,exponential(1),100,,0.1249674867397788
+Monte Carlo standard error of the root mean squared error,Extremity,exponential(1),100,,0.0008677199386302181
+sqrt(n) times the standard deviation,Extremity,exponential(1),100,,1.2002097658769137
+coverage of the 95% interval,Extremity,exponential(1),100,"normal approximation, jackknife standard error",0.9272
+Monte Carlo standard error of the coverage,Extremity,exponential(1),100,"normal approximation, jackknife standard error",0.0025980792905529264
+coverage of the 95% interval,Extremity,exponential(1),100,"percentile bootstrap, 999 resamples",0.89
+Monte Carlo standard error of the coverage,Extremity,exponential(1),100,"percentile bootstrap, 999 resamples",0.006996427659884721
+bias,"Complex Extremity, real part",exponential(1),100,,0.05075010683684256
+Monte Carlo standard error of the bias,"Complex Extremity, real part",exponential(1),100,,0.0013771450523414313
+standard deviation,"Complex Extremity, real part",exponential(1),100,,0.13771450523414314
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",exponential(1),100,,0.0009782309195325496
+root mean squared error,"Complex Extremity, real part",exponential(1),100,,0.14676158137380704
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",exponential(1),100,,0.001142105939239636
+sqrt(n) times the standard deviation,"Complex Extremity, real part",exponential(1),100,,1.3771450523414313
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),100,"normal approximation, jackknife standard error",0.9856
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),100,"normal approximation, jackknife standard error",0.001191328670015121
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),100,"percentile bootstrap, 999 resamples",0.9315
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),100,"percentile bootstrap, 999 resamples",0.0056483515294287415
+bias,"Complex Extremity, imaginary part",exponential(1),100,,0.007942800294577806
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",exponential(1),100,,0.001187920365956814
+standard deviation,"Complex Extremity, imaginary part",exponential(1),100,,0.1187920365956814
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",exponential(1),100,,0.0008260169598462912
+root mean squared error,"Complex Extremity, imaginary part",exponential(1),100,,0.11905135396236952
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",exponential(1),100,,0.0008282709818964948
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",exponential(1),100,,1.187920365956814
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),100,"normal approximation, jackknife standard error",0.9967
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),100,"normal approximation, jackknife standard error",0.0005735076285455992
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),100,"percentile bootstrap, 999 resamples",0.9955
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),100,"percentile bootstrap, 999 resamples",0.0014966211945579198
+bias,Asymmetry,exponential(1),200,,0.0015123237131201284
+Monte Carlo standard error of the bias,Asymmetry,exponential(1),200,,0.0002999312847122354
+standard deviation,Asymmetry,exponential(1),200,,0.02999312847122354
+Monte Carlo standard error of the standard deviation,Asymmetry,exponential(1),200,,0.00021219474918152782
+root mean squared error,Asymmetry,exponential(1),200,,0.030029733927043646
+Monte Carlo standard error of the root mean squared error,Asymmetry,exponential(1),200,,0.00021185547399205648
+sqrt(n) times the standard deviation,Asymmetry,exponential(1),200,,0.4241668906200295
+coverage of the 95% interval,Asymmetry,exponential(1),200,"normal approximation, jackknife standard error",0.9512
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),200,"normal approximation, jackknife standard error",0.002154496692965667
+coverage of the 95% interval,Asymmetry,exponential(1),200,"percentile bootstrap, 999 resamples",0.9505
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),200,"percentile bootstrap, 999 resamples",0.004850244839180801
+bias,Hypotailedness,exponential(1),200,,0.002876232776464094
+Monte Carlo standard error of the bias,Hypotailedness,exponential(1),200,,0.00023355369843449693
+standard deviation,Hypotailedness,exponential(1),200,,0.023355369843449693
+Monte Carlo standard error of the standard deviation,Hypotailedness,exponential(1),200,,0.0001805751842173043
+root mean squared error,Hypotailedness,exponential(1),200,,0.023530649548592443
+Monte Carlo standard error of the root mean squared error,Hypotailedness,exponential(1),200,,0.0001739494873536096
+sqrt(n) times the standard deviation,Hypotailedness,exponential(1),200,,0.3302948078684615
+coverage of the 95% interval,Hypotailedness,exponential(1),200,"normal approximation, jackknife standard error",0.911
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),200,"normal approximation, jackknife standard error",0.0028474374444401756
+coverage of the 95% interval,Hypotailedness,exponential(1),200,"percentile bootstrap, 999 resamples",0.9075
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),200,"percentile bootstrap, 999 resamples",0.006478570444164362
+bias,Extremity,exponential(1),200,,0.016691522633240252
+Monte Carlo standard error of the bias,Extremity,exponential(1),200,,0.0008892820730840216
+standard deviation,Extremity,exponential(1),200,,0.08892820730840216
+Monte Carlo standard error of the standard deviation,Extremity,exponential(1),200,,0.0006306432751599156
+root mean squared error,Extremity,exponential(1),200,,0.090476749280114
+Monte Carlo standard error of the root mean squared error,Extremity,exponential(1),200,,0.0006410391827507537
+sqrt(n) times the standard deviation,Extremity,exponential(1),200,,1.2576347685306852
+coverage of the 95% interval,Extremity,exponential(1),200,"normal approximation, jackknife standard error",0.9243
+Monte Carlo standard error of the coverage,Extremity,exponential(1),200,"normal approximation, jackknife standard error",0.00264517504146701
+coverage of the 95% interval,Extremity,exponential(1),200,"percentile bootstrap, 999 resamples",0.9075
+Monte Carlo standard error of the coverage,Extremity,exponential(1),200,"percentile bootstrap, 999 resamples",0.006478570444164362
+bias,"Complex Extremity, real part",exponential(1),200,,0.025136781702696842
+Monte Carlo standard error of the bias,"Complex Extremity, real part",exponential(1),200,,0.000988058455853572
+standard deviation,"Complex Extremity, real part",exponential(1),200,,0.09880584558535718
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",exponential(1),200,,0.000719166813416529
+root mean squared error,"Complex Extremity, real part",exponential(1),200,,0.10194840193300875
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",exponential(1),200,,0.0007796301476988976
+sqrt(n) times the standard deviation,"Complex Extremity, real part",exponential(1),200,,1.3973256686855393
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),200,"normal approximation, jackknife standard error",0.9868
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),200,"normal approximation, jackknife standard error",0.0011413045167701734
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),200,"percentile bootstrap, 999 resamples",0.9305
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),200,"percentile bootstrap, 999 resamples",0.005686376262612245
+bias,"Complex Extremity, imaginary part",exponential(1),200,,0.0024110351662539053
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",exponential(1),200,,0.0008364316727499561
+standard deviation,"Complex Extremity, imaginary part",exponential(1),200,,0.08364316727499561
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",exponential(1),200,,0.0005801305687832096
+root mean squared error,"Complex Extremity, imaginary part",exponential(1),200,,0.08367372887843967
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",exponential(1),200,,0.0005801389398855532
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",exponential(1),200,,1.1828930156014024
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),200,"normal approximation, jackknife standard error",0.9988
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),200,"normal approximation, jackknife standard error",0.0003462022530255947
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),200,"percentile bootstrap, 999 resamples",0.9975
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),200,"percentile bootstrap, 999 resamples",0.001116635571706353
+bias,Asymmetry,exponential(1),500,,0.0004154582601798573
+Monte Carlo standard error of the bias,Asymmetry,exponential(1),500,,0.0001878557055513195
+standard deviation,Asymmetry,exponential(1),500,,0.01878557055513195
+Monte Carlo standard error of the standard deviation,Asymmetry,exponential(1),500,,0.0001326676165236195
+root mean squared error,Asymmetry,exponential(1),500,,0.018789225020784756
+Monte Carlo standard error of the root mean squared error,Asymmetry,exponential(1),500,,0.00013270106325337488
+sqrt(n) times the standard deviation,Asymmetry,exponential(1),500,,0.420058127573935
+coverage of the 95% interval,Asymmetry,exponential(1),500,"normal approximation, jackknife standard error",0.9511
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),500,"normal approximation, jackknife standard error",0.002156589668898561
+coverage of the 95% interval,Asymmetry,exponential(1),500,"percentile bootstrap, 999 resamples",0.937
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),500,"percentile bootstrap, 999 resamples",0.00543281694887652
+bias,Hypotailedness,exponential(1),500,,0.001166797481300219
+Monte Carlo standard error of the bias,Hypotailedness,exponential(1),500,,0.00014838890591324611
+standard deviation,Hypotailedness,exponential(1),500,,0.014838890591324611
+Monte Carlo standard error of the standard deviation,Hypotailedness,exponential(1),500,,0.0001079579050141332
+root mean squared error,Hypotailedness,exponential(1),500,,0.01488395347601814
+Monte Carlo standard error of the root mean squared error,Hypotailedness,exponential(1),500,,0.00010607163243609206
+sqrt(n) times the standard deviation,Hypotailedness,exponential(1),500,,0.3318076807288388
+coverage of the 95% interval,Hypotailedness,exponential(1),500,"normal approximation, jackknife standard error",0.9305
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),500,"normal approximation, jackknife standard error",0.0025430247737684352
+coverage of the 95% interval,Hypotailedness,exponential(1),500,"percentile bootstrap, 999 resamples",0.916
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),500,"percentile bootstrap, 999 resamples",0.006202580108309766
+bias,Extremity,exponential(1),500,,0.0067374626320960695
+Monte Carlo standard error of the bias,Extremity,exponential(1),500,,0.0005642186317692388
+standard deviation,Extremity,exponential(1),500,,0.05642186317692388
+Monte Carlo standard error of the standard deviation,Extremity,exponential(1),500,,0.00039560199550465753
+root mean squared error,Extremity,exponential(1),500,,0.05681990588174159
+Monte Carlo standard error of the root mean squared error,Extremity,exponential(1),500,,0.0003970970769610651
+sqrt(n) times the standard deviation,Extremity,exponential(1),500,,1.2616312148079405
+coverage of the 95% interval,Extremity,exponential(1),500,"normal approximation, jackknife standard error",0.9371
+Monte Carlo standard error of the coverage,Extremity,exponential(1),500,"normal approximation, jackknife standard error",0.002427830101139698
+coverage of the 95% interval,Extremity,exponential(1),500,"percentile bootstrap, 999 resamples",0.916
+Monte Carlo standard error of the coverage,Extremity,exponential(1),500,"percentile bootstrap, 999 resamples",0.006202580108309766
+bias,"Complex Extremity, real part",exponential(1),500,,0.010327498613815544
+Monte Carlo standard error of the bias,"Complex Extremity, real part",exponential(1),500,,0.0006235414158809037
+standard deviation,"Complex Extremity, real part",exponential(1),500,,0.06235414158809038
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",exponential(1),500,,0.000438418283102191
+root mean squared error,"Complex Extremity, real part",exponential(1),500,,0.0632005332011421
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",exponential(1),500,,0.000456174405380149
+sqrt(n) times the standard deviation,"Complex Extremity, real part",exponential(1),500,,1.394280992696168
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),500,"normal approximation, jackknife standard error",0.9894
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),500,"normal approximation, jackknife standard error",0.0010240917927607882
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),500,"percentile bootstrap, 999 resamples",0.9395
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),500,"percentile bootstrap, 999 resamples",0.005331029450303197
+bias,"Complex Extremity, imaginary part",exponential(1),500,,0.0012622194431039235
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",exponential(1),500,,0.0005351544571111721
+standard deviation,"Complex Extremity, imaginary part",exponential(1),500,,0.05351544571111721
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",exponential(1),500,,0.0003761984389808867
+root mean squared error,"Complex Extremity, imaginary part",exponential(1),500,,0.053527653949048765
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",exponential(1),500,,0.0003760765622782217
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",exponential(1),500,,1.1966417445625765
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),500,"normal approximation, jackknife standard error",0.9993
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),500,"normal approximation, jackknife standard error",0.00026448251359967713
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),500,"percentile bootstrap, 999 resamples",0.9835
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),500,"percentile bootstrap, 999 resamples",0.002848486440199423
+bias,Asymmetry,exponential(1),1000,,0.0005745733549131216
+Monte Carlo standard error of the bias,Asymmetry,exponential(1),1000,,0.00013447475634690577
+standard deviation,Asymmetry,exponential(1),1000,,0.013447475634690578
+Monte Carlo standard error of the standard deviation,Asymmetry,exponential(1),1000,,9.506339681700622e-05
+root mean squared error,Asymmetry,exponential(1),1000,,0.013459073223133836
+Monte Carlo standard error of the root mean squared error,Asymmetry,exponential(1),1000,,9.501968101128433e-05
+sqrt(n) times the standard deviation,Asymmetry,exponential(1),1000,,0.42524651785240614
+coverage of the 95% interval,Asymmetry,exponential(1),1000,"normal approximation, jackknife standard error",0.9473
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),1000,"normal approximation, jackknife standard error",0.0022343390521583776
+coverage of the 95% interval,Asymmetry,exponential(1),1000,"percentile bootstrap, 999 resamples",0.9525
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),1000,"percentile bootstrap, 999 resamples",0.00475624589355933
+bias,Hypotailedness,exponential(1),1000,,0.0007939899235330783
+Monte Carlo standard error of the bias,Hypotailedness,exponential(1),1000,,0.00010697635237341303
+standard deviation,Hypotailedness,exponential(1),1000,,0.010697635237341303
+Monte Carlo standard error of the standard deviation,Hypotailedness,exponential(1),1000,,7.90264123184644e-05
+root mean squared error,Hypotailedness,exponential(1),1000,,0.010726526731888161
+Monte Carlo standard error of the root mean squared error,Hypotailedness,exponential(1),1000,,7.79909287787375e-05
+sqrt(n) times the standard deviation,Hypotailedness,exponential(1),1000,,0.3382889292767446
+coverage of the 95% interval,Hypotailedness,exponential(1),1000,"normal approximation, jackknife standard error",0.9331
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),1000,"normal approximation, jackknife standard error",0.0024984873423733803
+coverage of the 95% interval,Hypotailedness,exponential(1),1000,"percentile bootstrap, 999 resamples",0.933
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),1000,"percentile bootstrap, 999 resamples",0.0055906618570612885
+bias,Extremity,exponential(1),1000,,0.004214845438868797
+Monte Carlo standard error of the bias,Extremity,exponential(1),1000,,0.0004069308892717875
+standard deviation,Extremity,exponential(1),1000,,0.04069308892717875
+Monte Carlo standard error of the standard deviation,Extremity,exponential(1),1000,,0.00029017559893879715
+root mean squared error,Extremity,exponential(1),1000,,0.04090876209029293
+Monte Carlo standard error of the root mean squared error,Extremity,exponential(1),1000,,0.00029037036672968836
+sqrt(n) times the standard deviation,Extremity,exponential(1),1000,,1.286828460376626
+coverage of the 95% interval,Extremity,exponential(1),1000,"normal approximation, jackknife standard error",0.9353
+Monte Carlo standard error of the coverage,Extremity,exponential(1),1000,"normal approximation, jackknife standard error",0.0024599575199584236
+coverage of the 95% interval,Extremity,exponential(1),1000,"percentile bootstrap, 999 resamples",0.933
+Monte Carlo standard error of the coverage,Extremity,exponential(1),1000,"percentile bootstrap, 999 resamples",0.0055906618570612885
+bias,"Complex Extremity, real part",exponential(1),1000,,0.0055556423585433334
+Monte Carlo standard error of the bias,"Complex Extremity, real part",exponential(1),1000,,0.0004453035221849923
+standard deviation,"Complex Extremity, real part",exponential(1),1000,,0.044530352218499235
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",exponential(1),1000,,0.00031211159860860025
+root mean squared error,"Complex Extremity, real part",exponential(1),1000,,0.04487336777524916
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",exponential(1),1000,,0.00031882116986150166
+sqrt(n) times the standard deviation,"Complex Extremity, real part",exponential(1),1000,,1.4081733801998955
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),1000,"normal approximation, jackknife standard error",0.9897
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),1000,"normal approximation, jackknife standard error",0.0010096489488926324
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),1000,"percentile bootstrap, 999 resamples",0.9435
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),1000,"percentile bootstrap, 999 resamples",0.005162739098579358
+bias,"Complex Extremity, imaginary part",exponential(1),1000,,0.0009404927288704235
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",exponential(1),1000,,0.00038425094466787327
+standard deviation,"Complex Extremity, imaginary part",exponential(1),1000,,0.038425094466787324
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",exponential(1),1000,,0.00027441253880110554
+root mean squared error,"Complex Extremity, imaginary part",exponential(1),1000,,0.038434681767462446
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",exponential(1),1000,,0.0002744284096982088
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",exponential(1),1000,,1.2151081782218116
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),1000,"normal approximation, jackknife standard error",0.9994
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),1000,"normal approximation, jackknife standard error",0.0002448754785600316
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),1000,"percentile bootstrap, 999 resamples",0.98
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),1000,"percentile bootstrap, 999 resamples",0.003130495168499707
+bias,Asymmetry,exponential(1),2000,,0.000284279681177807
+Monte Carlo standard error of the bias,Asymmetry,exponential(1),2000,,9.39334228590574e-05
+standard deviation,Asymmetry,exponential(1),2000,,0.00939334228590574
+Monte Carlo standard error of the standard deviation,Asymmetry,exponential(1),2000,,6.698572536034699e-05
+root mean squared error,Asymmetry,exponential(1),2000,,0.009397173551094255
+Monte Carlo standard error of the root mean squared error,Asymmetry,exponential(1),2000,,6.701211122846414e-05
+sqrt(n) times the standard deviation,Asymmetry,exponential(1),2000,,0.42008303774417005
+coverage of the 95% interval,Asymmetry,exponential(1),2000,"normal approximation, jackknife standard error",0.9515
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),2000,"normal approximation, jackknife standard error",0.0021482027371735653
+coverage of the 95% interval,Asymmetry,exponential(1),2000,"percentile bootstrap, 999 resamples",0.9455
+Monte Carlo standard error of the coverage,Asymmetry,exponential(1),2000,"percentile bootstrap, 999 resamples",0.005075911248239078
+bias,Hypotailedness,exponential(1),2000,,0.0003891062279686164
+Monte Carlo standard error of the bias,Hypotailedness,exponential(1),2000,,7.633195516234651e-05
+standard deviation,Hypotailedness,exponential(1),2000,,0.007633195516234651
+Monte Carlo standard error of the standard deviation,Hypotailedness,exponential(1),2000,,5.375874182499e-05
+root mean squared error,Hypotailedness,exponential(1),2000,,0.0076427253567251715
+Monte Carlo standard error of the root mean squared error,Hypotailedness,exponential(1),2000,,5.3414425487636864e-05
+sqrt(n) times the standard deviation,Hypotailedness,exponential(1),2000,,0.3413668811969456
+coverage of the 95% interval,Hypotailedness,exponential(1),2000,"normal approximation, jackknife standard error",0.9379
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),2000,"normal approximation, jackknife standard error",0.0024133708790817885
+coverage of the 95% interval,Hypotailedness,exponential(1),2000,"percentile bootstrap, 999 resamples",0.9345
+Monte Carlo standard error of the coverage,Hypotailedness,exponential(1),2000,"percentile bootstrap, 999 resamples",0.005532167296819575
+bias,Extremity,exponential(1),2000,,0.0020865005899995404
+Monte Carlo standard error of the bias,Extremity,exponential(1),2000,,0.0002903868182937073
+standard deviation,Extremity,exponential(1),2000,,0.029038681829370732
+Monte Carlo standard error of the standard deviation,Extremity,exponential(1),2000,,0.00020204266931857844
+root mean squared error,Extremity,exponential(1),2000,,0.02911209718648342
+Monte Carlo standard error of the root mean squared error,Extremity,exponential(1),2000,,0.00020215740385603012
+sqrt(n) times the standard deviation,Extremity,exponential(1),2000,,1.2986493309492182
+coverage of the 95% interval,Extremity,exponential(1),2000,"normal approximation, jackknife standard error",0.9386
+Monte Carlo standard error of the coverage,Extremity,exponential(1),2000,"normal approximation, jackknife standard error",0.002400625751757237
+coverage of the 95% interval,Extremity,exponential(1),2000,"percentile bootstrap, 999 resamples",0.9345
+Monte Carlo standard error of the coverage,Extremity,exponential(1),2000,"percentile bootstrap, 999 resamples",0.005532167296819575
+bias,"Complex Extremity, real part",exponential(1),2000,,0.0029194833600010295
+Monte Carlo standard error of the bias,"Complex Extremity, real part",exponential(1),2000,,0.00031586609761047525
+standard deviation,"Complex Extremity, real part",exponential(1),2000,,0.031586609761047525
+Monte Carlo standard error of the standard deviation,"Complex Extremity, real part",exponential(1),2000,,0.00022338216525465463
+root mean squared error,"Complex Extremity, real part",exponential(1),2000,,0.03171967099284615
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, real part",exponential(1),2000,,0.0002252434768434452
+sqrt(n) times the standard deviation,"Complex Extremity, real part",exponential(1),2000,,1.412596132089213
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),2000,"normal approximation, jackknife standard error",0.9907
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),2000,"normal approximation, jackknife standard error",0.0009598703037389986
+coverage of the 95% interval,"Complex Extremity, real part",exponential(1),2000,"percentile bootstrap, 999 resamples",0.951
+Monte Carlo standard error of the coverage,"Complex Extremity, real part",exponential(1),2000,"percentile bootstrap, 999 resamples",0.004826955562256609
+bias,"Complex Extremity, imaginary part",exponential(1),2000,,0.00010437295991588824
+Monte Carlo standard error of the bias,"Complex Extremity, imaginary part",exponential(1),2000,,0.00026748419311817376
+standard deviation,"Complex Extremity, imaginary part",exponential(1),2000,,0.026748419311817376
+Monte Carlo standard error of the standard deviation,"Complex Extremity, imaginary part",exponential(1),2000,,0.00019103392070017386
+root mean squared error,"Complex Extremity, imaginary part",exponential(1),2000,,0.02674728549969133
+Monte Carlo standard error of the root mean squared error,"Complex Extremity, imaginary part",exponential(1),2000,,0.00019109155920104452
+sqrt(n) times the standard deviation,"Complex Extremity, imaginary part",exponential(1),2000,,1.196225677437836
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),2000,"normal approximation, jackknife standard error",0.9993
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),2000,"normal approximation, jackknife standard error",0.00026448251359967713
+coverage of the 95% interval,"Complex Extremity, imaginary part",exponential(1),2000,"percentile bootstrap, 999 resamples",0.9705
+Monte Carlo standard error of the coverage,"Complex Extremity, imaginary part",exponential(1),2000,"percentile bootstrap, 999 resamples",0.0037835003634200943
