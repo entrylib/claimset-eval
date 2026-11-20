@@ -1,6 +1,6 @@
-# Properties of the half central moment and its coefficients (hypotheses H1–H9, H17, H20–H22)
+# Properties of the half central moment and its coefficients (hypotheses H1–H9, H17, H20–H24)
 
-Study `half-moments`, plans PL1 (H1–H9, H17), PL7 (the reworded H4), PL8 (H20) and PL9 (H21, the reworded H20, and H22). Proofs written by the research agent (AC1) for checking by an independent agent.
+Study `half-moments`, plans PL1 (H1–H9, H17), PL7 (the reworded H4), PL8 (H20), PL9 (H21, the reworded H20, and H22) and PL10 (H23 and H24, H7 split in two). Proofs written by the research agent (AC1) for checking by an independent agent.
 
 ## Notation
 
@@ -188,3 +188,19 @@ The function: $g'(v) = \frac{1}{4}(1 - v^{-3/4})$ and $g''(v) = \frac{3}{16}v^{-
 With $E = 2H^p - 1$ and $p = 5.2988\ldots$ (H7), $E = -0.43430\ldots$, $-0.48005\ldots$ and $-0.57898\ldots$, which round to the stated values. As $u \mapsto 2u^p - 1$ is increasing, the order of $E$ is that of $H$: $0.7879 > 0.7755 > 0.7452$. So the exponential and $t_5$, equal in kurtosis, differ in Extremity, and the Laplace, lower in kurtosis than both, is lower in Extremity than both. ∎
 
 *Reading.* By H20, $1 - H = \mathrm{E}[g(V)]$ and the excess kurtosis plus 2 is $\mathrm{E}[(V - 1)^2]$: two losses of the same $V$ that weigh its values differently. The Laplace distribution has a sharp peak at its mean, much probability with $V$ near 0, where $g$ weighs more than the kurtosis loss; $t_5$ and the exponential have more probability far out, where $g$ weighs less.
+
+## H23 and H24. H7 split in two
+
+H7 states two results, one about Hypotailedness and one about Extremity; they are recorded as two hypotheses. Each proof is the corresponding part of the proof of H7, written out in full here.
+
+### H23. Range of Hypotailedness
+
+*Statement.* For $y$ with a finite positive variance, $H \in (0, 1]$, and $H = 1$ exactly when $|y - \mu_1|$ is constant with probability one.
+
+*Proof.* Lemma J with $Z = D^2$, whose mean $\sigma^2$ is finite, and $r = \frac{1}{4}$: $\nu = \mathrm{E}[(D^2)^{0.25}] \le (\sigma^2)^{0.25} = \sigma^{0.5}$, with equality if and only if $D^2$, that is $|D|$, is constant almost surely. Since $\sigma > 0$, $D$ is not almost surely 0, so $\mathrm{E}|D|^{0.5} = \nu > 0$. Dividing by $\sigma^{0.5} > 0$ gives $0 < H \le 1$, with $H = 1$ exactly when $|D|$ is constant almost surely. ∎
+
+### H24. Range and zero of Extremity
+
+*Statement.* For $y$ with a finite positive variance, $E \in (-1, 1]$, $E = 0$ for the uniform distribution, and $E < 0$ exactly when $H < h_U = 2 \times 3^{-0.75}$.
+
+*Proof.* $0 < h_U < 1$, so $\log h_U < 0$ and $p = \frac{\log 0.5}{\log h_U} > 0$. The map $u \mapsto 2u^p - 1$ is then continuous and strictly increasing on $[0, 1]$, with $0 \mapsto -1$, $1 \mapsto 1$, and $h_U \mapsto 2h_U^p - 1 = 2 \times 0.5 - 1 = 0$, since $h_U^p = \exp(p \log h_U) = \exp(\log 0.5) = 0.5$. By H23, $H \in (0, 1]$, so $E = 2H^p - 1 \in (-1, 1]$, and by strict monotonicity $E < 0$ exactly when $H < h_U$. For the uniform distribution $H = h_U$ (H10), so $E = 0$. ∎

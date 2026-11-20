@@ -235,6 +235,27 @@ def _h22():
 
 
 
+def _h23_h24(names):
+    # H23 (Hypotailedness in (0, 1], 1 exactly for constant |D|) and H24 (Extremity in (-1, 1], 0 at the uniform,
+    # negative exactly below the uniform Hypotailedness): the two parts of H7
+    for n in names:
+        L = law(n)
+        h = hypo(L.R, L.I, L.var)
+        check("H23", "Hypotailedness at most 1", max(mp.mpf(0), h - 1), distribution=n)
+        check("H23", "Hypotailedness positive", 0 if h > 0 else 1, distribution=n)
+        e = extr(h)
+        check("H24", "Extremity in (-1, 1]", 0 if -1 < e <= 1 else 1, distribution=n)
+        if abs(h - HU) > mp.mpf("1e-30"):   # the uniform sits on the boundary (Extremity 0, checked below)
+            check("H24", "Extremity negative exactly when Hypotailedness is below 2 x 3^-0.75", 0 if (e < 0) == (h < HU) else 1, distribution=n)
+        put("Extremity", e, hypothesis="H24", distribution=n)
+    check("H23", "Hypotailedness of the two-point law at +-1 equals 1", rel(hypo(mp.mpf(0.5), mp.mpf(0.5), mp.mpf(1)), 1))
+    check("H24", "Extremity of the two-point law at +-1 equals 1", rel(extr(hypo(mp.mpf(0.5), mp.mpf(0.5), mp.mpf(1))), 1))
+    U = law("uniform")
+    check("H24", "Extremity of the uniform distribution", extr(hypo(U.R, U.I, U.var)))
+    check("H24", "2 (2 x 3^-0.75)^p - 1 = 0", 2 * HU ** P - 1)
+
+
+
 def properties():
     names = list(DISTS)
     only = os.environ.get("HM_ONLY")                    # e.g. "H4": check one hypothesis (a re-decided wording)
@@ -243,6 +264,9 @@ def properties():
         return
     if only == "H20":
         _h20(names)
+        return
+    if only == "H23,H24":
+        _h23_h24(names)
         return
     if only == "H21,H22":
         _h20(names, "H21")
