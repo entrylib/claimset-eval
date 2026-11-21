@@ -7329,3 +7329,770 @@ RS7161,RN17,relative error of the numerical check,"{""check"": ""Extremity of th
 RS7162,RN17,relative error of the numerical check,"{""check"": ""2 (2 x 3^-0.75)^p - 1 = 0"", ""hypothesis"": ""H24""}",1.1479437019748901e-41
 RS7163,RN17,largest relative error of the numerical checks,"{""hypothesis"": ""H23""}",0.0
 RS7164,RN17,largest relative error of the numerical checks,"{""hypothesis"": ""H24""}",1.1479437019748901e-41
+RS7165,RN19,relative error of the numerical check,"{""check"": ""both parts of the Complex Extremity 0"", ""distribution"": ""uniform"", ""hypothesis"": ""H25""}",1.1479437019748901e-41
+RS7166,RN19,relative error of the numerical check,"{""check"": ""Asymmetry 0"", ""distribution"": ""normal"", ""hypothesis"": ""H26""}",0.0
+RS7167,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against its closed form"", ""distribution"": ""normal"", ""hypothesis"": ""H26""}",0.0
+RS7168,RN19,relative error of the numerical check,"{""check"": ""Extremity 2H^p - 1 against the numerical one"", ""distribution"": ""normal"", ""hypothesis"": ""H26""}",0.0
+RS7169,RN19,relative error of the numerical check,"{""check"": ""real part of the Complex Extremity against the Extremity"", ""distribution"": ""normal"", ""hypothesis"": ""H26""}",0.0
+RS7170,RN19,relative error of the numerical check,"{""check"": ""imaginary part of the Complex Extremity against the Extremity"", ""distribution"": ""normal"", ""hypothesis"": ""H26""}",0.0
+RS7171,RN19,Extremity,"{""distribution"": ""normal"", ""hypothesis"": ""H26""}",-0.29131458199842614
+RS7172,RN19,relative error of the numerical check,"{""check"": ""Extremity about -0.291"", ""hypothesis"": ""H26""}",0.0
+RS7173,RN19,relative error of the numerical check,"{""check"": ""Asymmetry 0"", ""distribution"": ""Laplace"", ""hypothesis"": ""H27""}",0.0
+RS7174,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against its closed form"", ""distribution"": ""Laplace"", ""hypothesis"": ""H27""}",1.5403987159537888e-41
+RS7175,RN19,relative error of the numerical check,"{""check"": ""Extremity 2H^p - 1 against the numerical one"", ""distribution"": ""Laplace"", ""hypothesis"": ""H27""}",4.591774807899561e-41
+RS7176,RN19,relative error of the numerical check,"{""check"": ""real part of the Complex Extremity against the Extremity"", ""distribution"": ""Laplace"", ""hypothesis"": ""H27""}",4.591774807899561e-41
+RS7177,RN19,relative error of the numerical check,"{""check"": ""imaginary part of the Complex Extremity against the Extremity"", ""distribution"": ""Laplace"", ""hypothesis"": ""H27""}",4.591774807899561e-41
+RS7178,RN19,Extremity,"{""distribution"": ""Laplace"", ""hypothesis"": ""H27""}",-0.5789765009974367
+RS7179,RN19,relative error of the numerical check,"{""check"": ""Extremity about -0.579"", ""hypothesis"": ""H27""}",0.0
+RS7180,RN19,relative error of the numerical check,"{""check"": ""Asymmetry 0"", ""distribution"": ""generalised normal s=0.5"", ""hypothesis"": ""H28""}",0.0
+RS7181,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against its closed form"", ""distribution"": ""generalised normal s=0.5"", ""hypothesis"": ""H28""}",0.0
+RS7182,RN19,relative error of the numerical check,"{""check"": ""Extremity 2H^p - 1 against the numerical one"", ""distribution"": ""generalised normal s=0.5"", ""hypothesis"": ""H28""}",0.0
+RS7183,RN19,relative error of the numerical check,"{""check"": ""real part of the Complex Extremity against the Extremity"", ""distribution"": ""generalised normal s=0.5"", ""hypothesis"": ""H28""}",0.0
+RS7184,RN19,relative error of the numerical check,"{""check"": ""imaginary part of the Complex Extremity against the Extremity"", ""distribution"": ""generalised normal s=0.5"", ""hypothesis"": ""H28""}",0.0
+RS7185,RN19,Extremity,"{""distribution"": ""generalised normal s=0.5"", ""hypothesis"": ""H28""}",-0.8613768604876072
+RS7186,RN19,relative error of the numerical check,"{""check"": ""Asymmetry 0"", ""distribution"": ""generalised normal s=1.5"", ""hypothesis"": ""H28""}",0.0
+RS7187,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against its closed form"", ""distribution"": ""generalised normal s=1.5"", ""hypothesis"": ""H28""}",0.0
+RS7188,RN19,relative error of the numerical check,"{""check"": ""Extremity 2H^p - 1 against the numerical one"", ""distribution"": ""generalised normal s=1.5"", ""hypothesis"": ""H28""}",0.0
+RS7189,RN19,relative error of the numerical check,"{""check"": ""real part of the Complex Extremity against the Extremity"", ""distribution"": ""generalised normal s=1.5"", ""hypothesis"": ""H28""}",0.0
+RS7190,RN19,relative error of the numerical check,"{""check"": ""imaginary part of the Complex Extremity against the Extremity"", ""distribution"": ""generalised normal s=1.5"", ""hypothesis"": ""H28""}",0.0
+RS7191,RN19,Extremity,"{""distribution"": ""generalised normal s=1.5"", ""hypothesis"": ""H28""}",-0.40046622138882854
+RS7192,RN19,relative error of the numerical check,"{""check"": ""Asymmetry 0"", ""distribution"": ""generalised normal s=3.0"", ""hypothesis"": ""H28""}",0.0
+RS7193,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against its closed form"", ""distribution"": ""generalised normal s=3.0"", ""hypothesis"": ""H28""}",1.35618118639088e-41
+RS7194,RN19,relative error of the numerical check,"{""check"": ""Extremity 2H^p - 1 against the numerical one"", ""distribution"": ""generalised normal s=3.0"", ""hypothesis"": ""H28""}",5.739718509874451e-41
+RS7195,RN19,relative error of the numerical check,"{""check"": ""real part of the Complex Extremity against the Extremity"", ""distribution"": ""generalised normal s=3.0"", ""hypothesis"": ""H28""}",5.739718509874451e-41
+RS7196,RN19,relative error of the numerical check,"{""check"": ""imaginary part of the Complex Extremity against the Extremity"", ""distribution"": ""generalised normal s=3.0"", ""hypothesis"": ""H28""}",5.739718509874451e-41
+RS7197,RN19,Extremity,"{""distribution"": ""generalised normal s=3.0"", ""hypothesis"": ""H28""}",-0.1731782269044475
+RS7198,RN19,relative error of the numerical check,"{""check"": ""s = 1 gives the Laplace Hypotailedness"", ""hypothesis"": ""H28""}",0.0
+RS7199,RN19,relative error of the numerical check,"{""check"": ""s = 2 gives the normal Hypotailedness"", ""hypothesis"": ""H28""}",0.0
+RS7200,RN19,relative error of the numerical check,"{""check"": ""Extremity near 0 for large s"", ""hypothesis"": ""H28"", ""s"": 1000000.0}",3.2685591984251486e-12
+RS7201,RN19,relative error of the numerical check,"{""check"": ""Extremity near 0 for large s"", ""hypothesis"": ""H28"", ""s"": 1000000000.0}",3.2685679476605225e-18
+RS7202,RN19,relative error of the numerical check,"{""check"": ""Asymmetry 0"", ""distribution"": ""t(3)"", ""hypothesis"": ""H29""}",0.0
+RS7203,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against its closed form"", ""distribution"": ""t(3)"", ""hypothesis"": ""H29""}",1.623437552173668e-41
+RS7204,RN19,relative error of the numerical check,"{""check"": ""Extremity 2H^p - 1 against the numerical one"", ""distribution"": ""t(3)"", ""hypothesis"": ""H29""}",3.4438311059246704e-41
+RS7205,RN19,relative error of the numerical check,"{""check"": ""real part of the Complex Extremity against the Extremity"", ""distribution"": ""t(3)"", ""hypothesis"": ""H29""}",3.4438311059246704e-41
+RS7206,RN19,relative error of the numerical check,"{""check"": ""imaginary part of the Complex Extremity against the Extremity"", ""distribution"": ""t(3)"", ""hypothesis"": ""H29""}",3.4438311059246704e-41
+RS7207,RN19,Extremity,"{""distribution"": ""t(3)"", ""hypothesis"": ""H29""}",-0.6812276047476102
+RS7208,RN19,relative error of the numerical check,"{""check"": ""Asymmetry 0"", ""distribution"": ""t(10)"", ""hypothesis"": ""H29""}",0.0
+RS7209,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against its closed form"", ""distribution"": ""t(10)"", ""hypothesis"": ""H29""}",0.0
+RS7210,RN19,relative error of the numerical check,"{""check"": ""Extremity 2H^p - 1 against the numerical one"", ""distribution"": ""t(10)"", ""hypothesis"": ""H29""}",0.0
+RS7211,RN19,relative error of the numerical check,"{""check"": ""real part of the Complex Extremity against the Extremity"", ""distribution"": ""t(10)"", ""hypothesis"": ""H29""}",0.0
+RS7212,RN19,relative error of the numerical check,"{""check"": ""imaginary part of the Complex Extremity against the Extremity"", ""distribution"": ""t(10)"", ""hypothesis"": ""H29""}",0.0
+RS7213,RN19,Extremity,"{""distribution"": ""t(10)"", ""hypothesis"": ""H29""}",-0.3723250714558125
+RS7214,RN19,relative error of the numerical check,"{""check"": ""Asymmetry 0"", ""distribution"": ""t(5)"", ""hypothesis"": ""H29""}",0.0
+RS7215,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against its closed form"", ""distribution"": ""t(5)"", ""hypothesis"": ""H29""}",0.0
+RS7216,RN19,relative error of the numerical check,"{""check"": ""Extremity 2H^p - 1 against the numerical one"", ""distribution"": ""t(5)"", ""hypothesis"": ""H29""}",0.0
+RS7217,RN19,relative error of the numerical check,"{""check"": ""real part of the Complex Extremity against the Extremity"", ""distribution"": ""t(5)"", ""hypothesis"": ""H29""}",0.0
+RS7218,RN19,relative error of the numerical check,"{""check"": ""imaginary part of the Complex Extremity against the Extremity"", ""distribution"": ""t(5)"", ""hypothesis"": ""H29""}",0.0
+RS7219,RN19,Extremity,"{""distribution"": ""t(5)"", ""hypothesis"": ""H29""}",-0.4800545799805087
+RS7220,RN19,relative error of the numerical check,"{""check"": ""Extremity near -1 as nu -> 2"", ""hypothesis"": ""H29""}",0.0
+RS7221,RN19,relative error of the numerical check,"{""check"": ""Extremity near the normal value as nu grows"", ""hypothesis"": ""H29""}",7.040970501934252e-16
+RS7222,RN19,relative error of the numerical check,"{""check"": ""(1+i) sqrt(gamma/2) against the earlier form"", ""hypothesis"": ""H30""}",1.8745842155200286e-41
+RS7223,RN19,relative error of the numerical check,"{""check"": ""real part about the location against sqrt(gamma/2)"", ""hypothesis"": ""H30""}",0.0
+RS7224,RN19,relative error of the numerical check,"{""check"": ""Asymmetry against the closed form"", ""distribution"": ""gamma(0.5)"", ""hypothesis"": ""H31""}",5.704665096108948e-23
+RS7225,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against the closed form"", ""distribution"": ""gamma(0.5)"", ""hypothesis"": ""H31""}",5.052067665028348e-23
+RS7226,RN19,relative error of the numerical check,"{""check"": ""H+ against the closed form"", ""distribution"": ""gamma(0.5)"", ""hypothesis"": ""H31""}",0.0
+RS7227,RN19,relative error of the numerical check,"{""check"": ""H- against the closed form"", ""distribution"": ""gamma(0.5)"", ""hypothesis"": ""H31""}",1.9705044695238293e-23
+RS7228,RN19,relative error of the numerical check,"{""check"": ""H+ and H- do not depend on the rate"", ""distribution"": ""gamma(0.5)"", ""hypothesis"": ""H31""}",7.590901407441386e-28
+RS7229,RN19,relative error of the numerical check,"{""check"": ""Asymmetry against the closed form"", ""distribution"": ""gamma(1.0)"", ""hypothesis"": ""H31""}",0.0
+RS7230,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against the closed form"", ""distribution"": ""gamma(1.0)"", ""hypothesis"": ""H31""}",0.0
+RS7231,RN19,relative error of the numerical check,"{""check"": ""H+ against the closed form"", ""distribution"": ""gamma(1.0)"", ""hypothesis"": ""H31""}",1.5403987159537888e-41
+RS7232,RN19,relative error of the numerical check,"{""check"": ""H- against the closed form"", ""distribution"": ""gamma(1.0)"", ""hypothesis"": ""H31""}",2.526291094668921e-41
+RS7233,RN19,relative error of the numerical check,"{""check"": ""H+ and H- do not depend on the rate"", ""distribution"": ""gamma(1.0)"", ""hypothesis"": ""H31""}",4.621196147861367e-41
+RS7234,RN19,relative error of the numerical check,"{""check"": ""exponential Asymmetry rounds to the stated value"", ""hypothesis"": ""H31""}",0.0
+RS7235,RN19,Asymmetry,"{""distribution"": ""exponential"", ""hypothesis"": ""H31""}",-0.2174546348702223
+RS7236,RN19,relative error of the numerical check,"{""check"": ""exponential Extremity rounds to the stated value"", ""hypothesis"": ""H31""}",0.0
+RS7237,RN19,Extremity,"{""distribution"": ""exponential"", ""hypothesis"": ""H31""}",-0.4343045726707279
+RS7238,RN19,relative error of the numerical check,"{""check"": ""exponential Complex Extremity, real part rounds to the stated value"", ""hypothesis"": ""H31""}",0.0
+RS7239,RN19,"Complex Extremity, real part","{""distribution"": ""exponential"", ""hypothesis"": ""H31""}",-0.5789765009974367
+RS7240,RN19,relative error of the numerical check,"{""check"": ""exponential Complex Extremity, imaginary part rounds to the stated value"", ""hypothesis"": ""H31""}",0.0
+RS7241,RN19,"Complex Extremity, imaginary part","{""distribution"": ""exponential"", ""hypothesis"": ""H31""}",0.20491343969984901
+RS7242,RN19,relative error of the numerical check,"{""check"": ""exponential H+ equals the Laplace Hypotailedness"", ""hypothesis"": ""H31""}",1.5403987159537888e-41
+RS7243,RN19,relative error of the numerical check,"{""check"": ""Asymmetry against the closed form"", ""distribution"": ""gamma(2.0)"", ""hypothesis"": ""H31""}",2.0089014784560578e-41
+RS7244,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against the closed form"", ""distribution"": ""gamma(2.0)"", ""hypothesis"": ""H31""}",1.4261642958002777e-41
+RS7245,RN19,relative error of the numerical check,"{""check"": ""H+ against the closed form"", ""distribution"": ""gamma(2.0)"", ""hypothesis"": ""H31""}",1.5001978741271686e-41
+RS7246,RN19,relative error of the numerical check,"{""check"": ""H- against the closed form"", ""distribution"": ""gamma(2.0)"", ""hypothesis"": ""H31""}",1.2959898955841366e-41
+RS7247,RN19,relative error of the numerical check,"{""check"": ""H+ and H- do not depend on the rate"", ""distribution"": ""gamma(2.0)"", ""hypothesis"": ""H31""}",2.591979791168273e-41
+RS7248,RN19,relative error of the numerical check,"{""check"": ""Asymmetry against the closed form"", ""distribution"": ""gamma(5.0)"", ""hypothesis"": ""H31""}",1.578422590215474e-41
+RS7249,RN19,relative error of the numerical check,"{""check"": ""Hypotailedness against the closed form"", ""distribution"": ""gamma(5.0)"", ""hypothesis"": ""H31""}",2.8160347360974617e-41
+RS7250,RN19,relative error of the numerical check,"{""check"": ""H+ against the closed form"", ""distribution"": ""gamma(5.0)"", ""hypothesis"": ""H31""}",2.925810962727271e-41
+RS7251,RN19,relative error of the numerical check,"{""check"": ""H- against the closed form"", ""distribution"": ""gamma(5.0)"", ""hypothesis"": ""H31""}",5.321766639374567e-41
+RS7252,RN19,relative error of the numerical check,"{""check"": ""H+ and H- do not depend on the rate"", ""distribution"": ""gamma(5.0)"", ""hypothesis"": ""H31""}",2.6608833196872834e-41
+RS7253,RN19,largest relative error of the numerical checks,"{""hypothesis"": ""H25""}",1.1479437019748901e-41
+RS7254,RN19,largest relative error of the numerical checks,"{""hypothesis"": ""H26""}",0.0
+RS7255,RN19,largest relative error of the numerical checks,"{""hypothesis"": ""H27""}",4.591774807899561e-41
+RS7256,RN19,largest relative error of the numerical checks,"{""hypothesis"": ""H28""}",3.2685591984251486e-12
+RS7257,RN19,largest relative error of the numerical checks,"{""hypothesis"": ""H29""}",7.040970501934252e-16
+RS7258,RN19,largest relative error of the numerical checks,"{""hypothesis"": ""H30""}",1.8745842155200286e-41
+RS7259,RN19,largest relative error of the numerical checks,"{""hypothesis"": ""H31""}",5.704665096108948e-23
+RS7260,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""Asymmetry""}",-0.12151271517499572
+RS7261,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""Hypotailedness""}",-0.18355728720285608
+RS7262,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""Extremity""}",-0.18729842765219135
+RS7263,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""Complex Extremity, real part""}",-0.6860999060820023
+RS7264,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""Complex Extremity, imaginary part""}",0.6313304219447614
+RS7265,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""moment skewness""}",0.41610211246620843
+RS7266,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""L-skewness""}",0.39086338611766563
+RS7267,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""TL-skewness""}",0.25130272704637685
+RS7268,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""quartile skewness""}",-0.07618936311870475
+RS7269,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""medcouple""}",0.13345799582695295
+RS7270,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""mean-based skewness 2F(mean) - 1""}",-0.25509518055007996
+RS7271,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""excess kurtosis""}",-0.12083802595606569
+RS7272,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""L-kurtosis""}",-0.1415190550443682
+RS7273,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""TL-kurtosis""}",-0.14168744533232727
+RS7274,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""octile kurtosis""}",-0.3353863856987082
+RS7275,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 1, ""measure"": ""Geary ratio""}",-0.005176137561527947
+RS7276,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""Asymmetry""}",-0.6341904542706357
+RS7277,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""Hypotailedness""}",-0.23627788894341095
+RS7278,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""Extremity""}",-0.24014975833571905
+RS7279,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""Complex Extremity, real part""}",0.10749023284944088
+RS7280,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""Complex Extremity, imaginary part""}",-0.6361331026380014
+RS7281,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""moment skewness""}",0.9149791179948934
+RS7282,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""L-skewness""}",0.8294691816766834
+RS7283,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""TL-skewness""}",0.4697701929032687
+RS7284,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""quartile skewness""}",-0.34728510330175527
+RS7285,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""medcouple""}",-0.1346246015103429
+RS7286,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.8688024265111425
+RS7287,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""excess kurtosis""}",-0.327353340275608
+RS7288,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""L-kurtosis""}",-0.3627932133885925
+RS7289,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""TL-kurtosis""}",-0.2466309116227301
+RS7290,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""octile kurtosis""}",-0.24241222954827604
+RS7291,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 2, ""measure"": ""Geary ratio""}",0.052540527988865805
+RS7292,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""Asymmetry""}",-0.9868371421779445
+RS7293,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""Hypotailedness""}",-0.03427464494619845
+RS7294,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""Extremity""}",-0.035363871579068736
+RS7295,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""Complex Extremity, real part""}",0.014312436451111321
+RS7296,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""Complex Extremity, imaginary part""}",-0.292076370308449
+RS7297,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""moment skewness""}",1.6971034452542815
+RS7298,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""L-skewness""}",1.4105915804245297
+RS7299,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""TL-skewness""}",0.6055670662405124
+RS7300,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""quartile skewness""}",-0.6886826615618732
+RS7301,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""medcouple""}",-0.3187492462967693
+RS7302,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""mean-based skewness 2F(mean) - 1""}",1.09533461475701
+RS7303,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""excess kurtosis""}",-0.9175471690961161
+RS7304,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""L-kurtosis""}",-0.8043830601106695
+RS7305,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""TL-kurtosis""}",-0.21873427400115306
+RS7306,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""octile kurtosis""}",-0.006559933309742622
+RS7307,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""k"": 3, ""measure"": ""Geary ratio""}",0.296766254533834
+RS7308,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""Asymmetry""}",0.1226531832819982
+RS7309,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""Hypotailedness""}",0.044688111565767324
+RS7310,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""Extremity""}",0.04742365169532452
+RS7311,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""Complex Extremity, real part""}",-0.2823700661712492
+RS7312,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""Complex Extremity, imaginary part""}",0.41330917759627844
+RS7313,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""moment skewness""}",-0.002875253287902769
+RS7314,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""L-skewness""}",0.020415106307073046
+RS7315,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""TL-skewness""}",-0.0852640971725602
+RS7316,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""quartile skewness""}",-0.37524339566278825
+RS7317,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""medcouple""}",-0.39159218273223917
+RS7318,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""mean-based skewness 2F(mean) - 1""}",-0.17251509757735572
+RS7319,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""excess kurtosis""}",-0.28553484086760983
+RS7320,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""L-kurtosis""}",-0.37507895436621047
+RS7321,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""TL-kurtosis""}",-0.1879563823591462
+RS7322,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""octile kurtosis""}",0.07762840292075472
+RS7323,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 1, ""measure"": ""Geary ratio""}",0.1401386135936204
+RS7324,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""Asymmetry""}",0.2376273280251368
+RS7325,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""Hypotailedness""}",-0.04745943138448689
+RS7326,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""Extremity""}",-0.050194027374396516
+RS7327,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""Complex Extremity, real part""}",-0.6651930278986099
+RS7328,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""Complex Extremity, imaginary part""}",0.7679449876550632
+RS7329,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""moment skewness""}",-0.032712649508881565
+RS7330,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""L-skewness""}",0.019477336409836826
+RS7331,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""TL-skewness""}",-0.1950978100609389
+RS7332,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""quartile skewness""}",-0.6023793491049805
+RS7333,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""medcouple""}",-0.5943935875407015
+RS7334,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""mean-based skewness 2F(mean) - 1""}",-0.35253085157111747
+RS7335,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""excess kurtosis""}",-0.5191222672895641
+RS7336,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""L-kurtosis""}",-0.7284349961818536
+RS7337,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""TL-kurtosis""}",-0.30439610793182315
+RS7338,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""octile kurtosis""}",0.08169728472579427
+RS7339,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 2, ""measure"": ""Geary ratio""}",0.20691053546438185
+RS7340,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""Asymmetry""}",0.1181005719557792
+RS7341,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""Hypotailedness""}",0.1990551627992149
+RS7342,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""Extremity""}",0.21244429906681
+RS7343,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""Complex Extremity, real part""}",-0.2514754022666904
+RS7344,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""Complex Extremity, imaginary part""}",0.6551870883438159
+RS7345,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""moment skewness""}",0.05518694442735318
+RS7346,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""L-skewness""}",0.09755931345738031
+RS7347,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""TL-skewness""}",-0.08322302902816782
+RS7348,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""quartile skewness""}",-0.3699038295053239
+RS7349,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""medcouple""}",-0.3877538177342886
+RS7350,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""mean-based skewness 2F(mean) - 1""}",-0.18018243524746042
+RS7351,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""excess kurtosis""}",-0.5953148078084447
+RS7352,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""L-kurtosis""}",-0.8419570187389517
+RS7353,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""TL-kurtosis""}",-0.42137382736933293
+RS7354,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""octile kurtosis""}",0.031670658796111785
+RS7355,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""k"": 3, ""measure"": ""Geary ratio""}",0.34523215412315766
+RS7356,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""Asymmetry""}",0.08648078032299492
+RS7357,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""Hypotailedness""}",0.2113061653280952
+RS7358,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""Extremity""}",0.2242215020164635
+RS7359,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""Complex Extremity, real part""}",0.7334180779543823
+RS7360,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""Complex Extremity, imaginary part""}",-0.6536657041816435
+RS7361,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""moment skewness""}",-0.40461046520698785
+RS7362,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""L-skewness""}",-0.465468470966849
+RS7363,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""TL-skewness""}",-0.3151995338264408
+RS7364,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""quartile skewness""}",-0.056352721219049835
+RS7365,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""medcouple""}",-0.1713821455180734
+RS7366,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.2612018604573158
+RS7367,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""excess kurtosis""}",-0.17257790899973607
+RS7368,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""L-kurtosis""}",-0.2618220637590813
+RS7369,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""TL-kurtosis""}",-0.2693103353887878
+RS7370,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""octile kurtosis""}",-0.1871508634816773
+RS7371,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 1, ""measure"": ""Geary ratio""}",0.26138025469476245
+RS7372,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""Asymmetry""}",0.18776823654506172
+RS7373,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""Hypotailedness""}",0.277531412496643
+RS7374,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""Extremity""}",0.2960763678346903
+RS7375,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""Complex Extremity, real part""}",1.6489842901016911
+RS7376,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""Complex Extremity, imaginary part""}",-1.4215612464137466
+RS7377,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""moment skewness""}",-1.0166805341482725
+RS7378,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""L-skewness""}",-1.0113455603844195
+RS7379,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""TL-skewness""}",-0.5755015042673608
+RS7380,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""quartile skewness""}",-0.06369389693610786
+RS7381,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""medcouple""}",-0.12217048128717181
+RS7382,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.5337603235432101
+RS7383,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""excess kurtosis""}",-0.5538909114179612
+RS7384,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""L-kurtosis""}",-0.6504214180361407
+RS7385,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""TL-kurtosis""}",-0.46830572580910945
+RS7386,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""octile kurtosis""}",0.11440933206121787
+RS7387,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 2, ""measure"": ""Geary ratio""}",0.5354030174753873
+RS7388,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""Asymmetry""}",0.6431287218501189
+RS7389,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""Hypotailedness""}",0.21121079752107644
+RS7390,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""Extremity""}",0.22411857634433635
+RS7391,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""Complex Extremity, real part""}",1.1079000414954594
+RS7392,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""Complex Extremity, imaginary part""}",-1.5476780574521194
+RS7393,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""moment skewness""}",-2.144262373297385
+RS7394,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""L-skewness""}",-1.7092639306139057
+RS7395,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""TL-skewness""}",-0.7162289714254432
+RS7396,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""quartile skewness""}",-0.20204850156577514
+RS7397,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""medcouple""}",-0.1918261830769698
+RS7398,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""mean-based skewness 2F(mean) - 1""}",-0.08466543063099145
+RS7399,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""excess kurtosis""}",-1.6025436971128777
+RS7400,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""L-kurtosis""}",-1.2913797520356332
+RS7401,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""TL-kurtosis""}",-0.46955869018900803
+RS7402,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""octile kurtosis""}",0.3994640836433583
+RS7403,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""k"": 3, ""measure"": ""Geary ratio""}",0.9511032548570261
+RS7404,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""Asymmetry""}",-0.15732433866361417
+RS7405,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""Hypotailedness""}",0.038092413326716465
+RS7406,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""Extremity""}",0.04158336100958869
+RS7407,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""Complex Extremity, real part""}",0.29866273973385965
+RS7408,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""Complex Extremity, imaginary part""}",-0.08545794409283843
+RS7409,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""moment skewness""}",0.1152894901957916
+RS7410,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""L-skewness""}",0.0984103900146744
+RS7411,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""TL-skewness""}",0.09691985573885117
+RS7412,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""quartile skewness""}",0.026918234596251908
+RS7413,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""medcouple""}",0.02211080794178979
+RS7414,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.17857132963179548
+RS7415,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""excess kurtosis""}",0.13276584438807434
+RS7416,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""L-kurtosis""}",0.10204227177523037
+RS7417,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""TL-kurtosis""}",0.045132566404880906
+RS7418,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""octile kurtosis""}",0.042640201450125925
+RS7419,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 1, ""measure"": ""Geary ratio""}",0.0032444547546815043
+RS7420,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""Asymmetry""}",-0.3203038535745408
+RS7421,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""Hypotailedness""}",0.09963515627540065
+RS7422,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""Extremity""}",0.10906361231353477
+RS7423,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""Complex Extremity, real part""}",0.6847033996602496
+RS7424,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""Complex Extremity, imaginary part""}",-0.19156535409165337
+RS7425,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""moment skewness""}",0.18239498568358073
+RS7426,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""L-skewness""}",0.16199206164745764
+RS7427,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""TL-skewness""}",0.20617894486513377
+RS7428,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""quartile skewness""}",-0.02031527114399437
+RS7429,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""medcouple""}",-0.10584835645181058
+RS7430,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.36490663011714924
+RS7431,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""excess kurtosis""}",0.17366696519911937
+RS7432,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""L-kurtosis""}",0.12554805664485144
+RS7433,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""TL-kurtosis""}",0.115002148200178
+RS7434,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""octile kurtosis""}",-0.04346588424055627
+RS7435,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 2, ""measure"": ""Geary ratio""}",0.050180597436552676
+RS7436,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""Asymmetry""}",-0.48831149027968
+RS7437,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""Hypotailedness""}",0.20949435687627962
+RS7438,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""Extremity""}",0.23043964435746375
+RS7439,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""Complex Extremity, real part""}",1.2110226036577807
+RS7440,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""Complex Extremity, imaginary part""}",-0.3259224495571839
+RS7441,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""moment skewness""}",0.1565278608397708
+RS7442,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""L-skewness""}",0.17562891590764154
+RS7443,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""TL-skewness""}",0.3437058923504946
+RS7444,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""quartile skewness""}",-0.06672388883271503
+RS7445,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""medcouple""}",-0.10584835645181058
+RS7446,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.5595234995129618
+RS7447,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""excess kurtosis""}",-0.0021381557793881964
+RS7448,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""L-kurtosis""}",0.02424088589965715
+RS7449,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""TL-kurtosis""}",0.2535447843356046
+RS7450,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""octile kurtosis""}",0.3529160530384034
+RS7451,RN20,standardised change on removing the most extreme values,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""k"": 3, ""measure"": ""Geary ratio""}",0.17662327146753837
+RS7452,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""Asymmetry""}",-0.4186990615693524
+RS7453,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""Hypotailedness""}",0.7932796000119777
+RS7454,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""Extremity""}",0.8143375632640266
+RS7455,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""Complex Extremity, real part""}",0.1013483556448721
+RS7456,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""Complex Extremity, imaginary part""}",0.8457832676695412
+RS7457,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""moment skewness""}",1.0387022905495609
+RS7458,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""L-skewness""}",0.4756572368144927
+RS7459,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""TL-skewness""}",0.07765656400980653
+RS7460,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""quartile skewness""}",0.009170854113829582
+RS7461,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""medcouple""}",-0.015857499266284002
+RS7462,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.3931635960131584
+RS7463,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""excess kurtosis""}",-1.1540166565177
+RS7464,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""L-kurtosis""}",-0.531221476754051
+RS7465,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""TL-kurtosis""}",-0.06121510522978207
+RS7466,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""octile kurtosis""}",-0.032120096390195654
+RS7467,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 1, ""measure"": ""Geary ratio""}",0.887140391819734
+RS7468,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""Asymmetry""}",-0.6509252622101818
+RS7469,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""Hypotailedness""}",1.0889849976815484
+RS7470,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""Extremity""}",1.1275951160647688
+RS7471,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""Complex Extremity, real part""}",0.21846932540330613
+RS7472,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""Complex Extremity, imaginary part""}",1.150302705016011
+RS7473,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""moment skewness""}",1.3045175497646828
+RS7474,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""L-skewness""}",0.7421920911113058
+RS7475,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""TL-skewness""}",0.15275091051595682
+RS7476,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""quartile skewness""}",0.045490804081892246
+RS7477,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""medcouple""}",-0.019793066535399285
+RS7478,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.6658471493585131
+RS7479,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""excess kurtosis""}",-1.3174601153918684
+RS7480,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""L-kurtosis""}",-0.8065760474626997
+RS7481,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""TL-kurtosis""}",-0.11862994031932841
+RS7482,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""octile kurtosis""}",0.016775692128005996
+RS7483,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 2, ""measure"": ""Geary ratio""}",1.182895378014807
+RS7484,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""Asymmetry""}",-0.828940546957208
+RS7485,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""Hypotailedness""}",1.2979146942802855
+RS7486,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""Extremity""}",1.3521643735447033
+RS7487,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""Complex Extremity, real part""}",0.24561133796925833
+RS7488,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""Complex Extremity, imaginary part""}",1.4054747594974526
+RS7489,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""moment skewness""}",1.4693350506301
+RS7490,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""L-skewness""}",0.9561395584403269
+RS7491,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""TL-skewness""}",0.22590297267634127
+RS7492,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""quartile skewness""}",0.11046286660694131
+RS7493,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""medcouple""}",0.03426605230185649
+RS7494,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.8178559185877714
+RS7495,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""excess kurtosis""}",-1.3959995684229825
+RS7496,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""L-kurtosis""}",-1.0180895131630463
+RS7497,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""TL-kurtosis""}",-0.17321328759378485
+RS7498,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""octile kurtosis""}",0.0892830403386164
+RS7499,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""k"": 3, ""measure"": ""Geary ratio""}",1.3780854125903268
+RS7500,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""Asymmetry""}",-0.3863559473631599
+RS7501,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""Hypotailedness""}",0.8010802998374102
+RS7502,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""Extremity""}",0.8218183011043511
+RS7503,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""Complex Extremity, real part""}",-0.07378616710542484
+RS7504,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""Complex Extremity, imaginary part""}",0.9382389723228785
+RS7505,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""moment skewness""}",1.043216672147686
+RS7506,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""L-skewness""}",0.4481300503355347
+RS7507,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""TL-skewness""}",0.07482217440136474
+RS7508,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""quartile skewness""}",0.12043903790745789
+RS7509,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""medcouple""}",0.04915288628966509
+RS7510,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.22202741023548786
+RS7511,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""excess kurtosis""}",-1.139888004265222
+RS7512,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""L-kurtosis""}",-0.5332665647528917
+RS7513,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""TL-kurtosis""}",-0.06645658586363673
+RS7514,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""octile kurtosis""}",0.10259366265881324
+RS7515,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 1, ""measure"": ""Geary ratio""}",0.8964482629184614
+RS7516,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""Asymmetry""}",-0.19315092247159732
+RS7517,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""Hypotailedness""}",1.0225530596257444
+RS7518,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""Extremity""}",1.0552359195526309
+RS7519,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""Complex Extremity, real part""}",0.4505469501361844
+RS7520,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""Complex Extremity, imaginary part""}",0.9256358534917329
+RS7521,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""moment skewness""}",0.81376985858297
+RS7522,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""L-skewness""}",0.2046530650355353
+RS7523,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""TL-skewness""}",0.011301702976568696
+RS7524,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""quartile skewness""}",0.09055425294172967
+RS7525,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""medcouple""}",6.626039717957533e-05
+RS7526,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.06303108440883996
+RS7527,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""excess kurtosis""}",-1.2451733367087519
+RS7528,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""L-kurtosis""}",-0.7846873097170788
+RS7529,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""TL-kurtosis""}",-0.1152916822272921
+RS7530,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""octile kurtosis""}",0.12226267837620966
+RS7531,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 2, ""measure"": ""Geary ratio""}",1.1295965482227357
+RS7532,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""Asymmetry""}",-0.37687425020856286
+RS7533,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""Hypotailedness""}",1.2408058384970837
+RS7534,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""Extremity""}",1.2879365413374055
+RS7535,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""Complex Extremity, real part""}",0.4564634456837334
+RS7536,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""Complex Extremity, imaginary part""}",1.1818461192352891
+RS7537,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""moment skewness""}",0.9966176702405416
+RS7538,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""L-skewness""}",0.4184163147675875
+RS7539,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""TL-skewness""}",0.08423499271288476
+RS7540,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""quartile skewness""}",0.10939846817076126
+RS7541,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""medcouple""}",0.04918729285312937
+RS7542,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.2217536619163672
+RS7543,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""excess kurtosis""}",-1.3441800425462347
+RS7544,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""L-kurtosis""}",-1.0129987405362715
+RS7545,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""TL-kurtosis""}",-0.17897182343606272
+RS7546,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""octile kurtosis""}",0.11910742473664301
+RS7547,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""k"": 3, ""measure"": ""Geary ratio""}",1.3534103835897262
+RS7548,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""Asymmetry""}",-0.29397648910977225
+RS7549,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""Hypotailedness""}",0.5842650078274486
+RS7550,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""Extremity""}",0.5919730758934274
+RS7551,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""Complex Extremity, real part""}",0.055088459509092955
+RS7552,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""Complex Extremity, imaginary part""}",0.5977394696996454
+RS7553,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""moment skewness""}",0.862775697841416
+RS7554,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""L-skewness""}",0.37981962740778663
+RS7555,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""TL-skewness""}",0.07023778918829127
+RS7556,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""quartile skewness""}",0.023206384911929657
+RS7557,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""medcouple""}",0.0298040301612301
+RS7558,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.17046527909946932
+RS7559,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""excess kurtosis""}",-1.0348991098739553
+RS7560,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""L-kurtosis""}",-0.4096302591861488
+RS7561,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""TL-kurtosis""}",-0.05219080773475534
+RS7562,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""octile kurtosis""}",-0.008192756558745589
+RS7563,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 1, ""measure"": ""Geary ratio""}",0.7037115547864718
+RS7564,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""Asymmetry""}",-0.08021720894789744
+RS7565,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""Hypotailedness""}",0.8407900829452511
+RS7566,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""Extremity""}",0.8564859996953403
+RS7567,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""Complex Extremity, real part""}",0.40586419399892903
+RS7568,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""Complex Extremity, imaginary part""}",0.6016199910420007
+RS7569,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""moment skewness""}",0.41663407722966717
+RS7570,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""L-skewness""}",0.09711926728343354
+RS7571,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""TL-skewness""}",0.011115323322396078
+RS7572,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""quartile skewness""}",0.015880649878101664
+RS7573,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""medcouple""}",0.0014273286221201957
+RS7574,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.0023171393205640794
+RS7575,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""excess kurtosis""}",-1.4306322257553892
+RS7576,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""L-kurtosis""}",-0.7019691025283462
+RS7577,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""TL-kurtosis""}",-0.08713917807771257
+RS7578,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""octile kurtosis""}",-0.06321712144017907
+RS7579,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 2, ""measure"": ""Geary ratio""}",1.0749986247540384
+RS7580,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""Asymmetry""}",-0.22081185437809725
+RS7581,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""Hypotailedness""}",1.0075127560832196
+RS7582,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""Extremity""}",1.0299226182686327
+RS7583,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""Complex Extremity, real part""}",0.5430727228945638
+RS7584,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""Complex Extremity, imaginary part""}",0.6955942693133612
+RS7585,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""moment skewness""}",0.5714494395096819
+RS7586,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""L-skewness""}",0.2714549287025041
+RS7587,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""TL-skewness""}",0.08005798285890833
+RS7588,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""quartile skewness""}",0.0279760662078946
+RS7589,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""medcouple""}",0.03169857499504713
+RS7590,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.17296735791222353
+RS7591,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""excess kurtosis""}",-1.5169143676632815
+RS7592,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""L-kurtosis""}",-0.8654265734880676
+RS7593,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""TL-kurtosis""}",-0.13773798780156332
+RS7594,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""octile kurtosis""}",-0.10527199479469931
+RS7595,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""k"": 3, ""measure"": ""Geary ratio""}",1.2455650805285796
+RS7596,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""Asymmetry""}",0.27992671096161514
+RS7597,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""Hypotailedness""}",0.489412198704687
+RS7598,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""Extremity""}",0.4946408395365956
+RS7599,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""Complex Extremity, real part""}",0.8039975366376256
+RS7600,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""Complex Extremity, imaginary part""}",-0.1705474012094526
+RS7601,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""moment skewness""}",-0.7936093640386651
+RS7602,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""L-skewness""}",-0.37068393747221895
+RS7603,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""TL-skewness""}",-0.06136466984578171
+RS7604,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""quartile skewness""}",-0.022190066208683547
+RS7605,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""medcouple""}",-0.050030591601602524
+RS7606,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""mean-based skewness 2F(mean) - 1""}",-0.03150220491114245
+RS7607,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""excess kurtosis""}",-0.9592548979398328
+RS7608,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""L-kurtosis""}",-0.38763090426496116
+RS7609,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""TL-kurtosis""}",-0.04536684786065688
+RS7610,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""octile kurtosis""}",0.029899968130396574
+RS7611,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 1, ""measure"": ""Geary ratio""}",0.6184895471769376
+RS7612,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""Asymmetry""}",0.4900584536683167
+RS7613,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""Hypotailedness""}",0.7616996687890037
+RS7614,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""Extremity""}",0.7740556288235133
+RS7615,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""Complex Extremity, real part""}",1.2582065268696667
+RS7616,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""Complex Extremity, imaginary part""}",-0.24924447891959772
+RS7617,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""moment skewness""}",-1.2072346148987783
+RS7618,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""L-skewness""}",-0.6468088008363216
+RS7619,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""TL-skewness""}",-0.12029207388371507
+RS7620,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""quartile skewness""}",-0.07063660039621769
+RS7621,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""medcouple""}",-0.1004746168563876
+RS7622,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""mean-based skewness 2F(mean) - 1""}",-0.12814293239776745
+RS7623,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""excess kurtosis""}",-1.3255665260023646
+RS7624,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""L-kurtosis""}",-0.6656654144481399
+RS7625,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""TL-kurtosis""}",-0.08706728043812632
+RS7626,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""octile kurtosis""}",0.0799830575976365
+RS7627,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 2, ""measure"": ""Geary ratio""}",0.9694337418029826
+RS7628,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""Asymmetry""}",0.2868779467329171
+RS7629,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""Hypotailedness""}",1.0924294874326985
+RS7630,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""Extremity""}",1.117544330578168
+RS7631,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""Complex Extremity, real part""}",1.2406122755100846
+RS7632,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""Complex Extremity, imaginary part""}",0.20378870931548385
+RS7633,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""moment skewness""}",-0.8430805572071831
+RS7634,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""L-skewness""}",-0.38799738581069537
+RS7635,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""TL-skewness""}",-0.05547518114794856
+RS7636,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""quartile skewness""}",-0.046854860963505704
+RS7637,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""medcouple""}",-0.05002091768298398
+RS7638,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""mean-based skewness 2F(mean) - 1""}",-0.02946878133718806
+RS7639,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""excess kurtosis""}",-1.6634581329787246
+RS7640,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""L-kurtosis""}",-0.9290052279529538
+RS7641,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""TL-kurtosis""}",-0.13826266387529207
+RS7642,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""octile kurtosis""}",0.04331925514235187
+RS7643,RN20,standardised change on removing the most extreme values,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""k"": 3, ""measure"": ""Geary ratio""}",1.3207672712487855
+RS7644,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""Asymmetry""}",0.053761442467199265
+RS7645,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""Hypotailedness""}",0.028759560477610514
+RS7646,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""Extremity""}",0.13264235761806134
+RS7647,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""Complex Extremity, real part""}",0.1782894210379738
+RS7648,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""Complex Extremity, imaginary part""}",0.2010286086044186
+RS7649,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""moment skewness""}",0.2338800719325831
+RS7650,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""L-skewness""}",0.056259454829037533
+RS7651,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""TL-skewness""}",0.06519357452562369
+RS7652,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""quartile skewness""}",0.20608374164347149
+RS7653,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""medcouple""}",0.16899505906342488
+RS7654,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.09383231059540473
+RS7655,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""excess kurtosis""}",0.40236249564198284
+RS7656,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""L-kurtosis""}",0.04361433593180012
+RS7657,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""TL-kurtosis""}",0.0465279952480907
+RS7658,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""octile kurtosis""}",0.318925207144801
+RS7659,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Area"", ""measure"": ""Geary ratio""}",0.02891497973241679
+RS7660,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""Asymmetry""}",0.07632782672624483
+RS7661,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""Hypotailedness""}",0.016257644011272908
+RS7662,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""Extremity""}",0.12989454927612293
+RS7663,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""Complex Extremity, real part""}",0.16880692592607505
+RS7664,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""Complex Extremity, imaginary part""}",0.17032898045725112
+RS7665,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""moment skewness""}",0.24552438304231675
+RS7666,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""L-skewness""}",0.08830825838254032
+RS7667,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""TL-skewness""}",0.10562919888241204
+RS7668,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""quartile skewness""}",0.500018851494808
+RS7669,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""medcouple""}",0.4578459971255686
+RS7670,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.12333178975909898
+RS7671,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""excess kurtosis""}",0.13633141856445974
+RS7672,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""L-kurtosis""}",0.031170992670441995
+RS7673,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""TL-kurtosis""}",0.03508524508607968
+RS7674,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""octile kurtosis""}",0.17421909614986084
+RS7675,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Perimeter"", ""measure"": ""Geary ratio""}",0.017571820025077255
+RS7676,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""Asymmetry""}",0.05597238276827795
+RS7677,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""Hypotailedness""}",0.030908087782428734
+RS7678,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""Extremity""}",0.1349340373347936
+RS7679,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""Complex Extremity, real part""}",0.20181362487291762
+RS7680,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""Complex Extremity, imaginary part""}",0.21438520927573762
+RS7681,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""moment skewness""}",0.3006246915531268
+RS7682,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""L-skewness""}",0.0627539455772488
+RS7683,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""TL-skewness""}",0.06573714591692328
+RS7684,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""quartile skewness""}",0.18067919388807002
+RS7685,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""medcouple""}",0.1529421807485704
+RS7686,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.09842663376571688
+RS7687,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""excess kurtosis""}",0.9856440224364854
+RS7688,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""L-kurtosis""}",0.05099056762366525
+RS7689,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""TL-kurtosis""}",0.05198736386967998
+RS7690,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""octile kurtosis""}",0.35121360289020576
+RS7691,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Shape"", ""measure"": ""Geary ratio""}",0.035142250646886405
+RS7692,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""Asymmetry""}",0.08399339944274456
+RS7693,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""Hypotailedness""}",0.019369758898224836
+RS7694,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""Extremity""}",0.1431683865716924
+RS7695,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""Complex Extremity, real part""}",0.20383536191166401
+RS7696,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""Complex Extremity, imaginary part""}",0.10137227591746051
+RS7697,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""moment skewness""}",0.27637263180943095
+RS7698,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""L-skewness""}",0.09496949767342686
+RS7699,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""TL-skewness""}",0.11284807992289378
+RS7700,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""quartile skewness""}",0.3459749007824787
+RS7701,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""medcouple""}",0.32179409666746583
+RS7702,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.1390071692171634
+RS7703,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""excess kurtosis""}",0.455083939580302
+RS7704,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""L-kurtosis""}",0.06396015012990618
+RS7705,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""TL-kurtosis""}",0.0790979306306035
+RS7706,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""octile kurtosis""}",0.7139747638226687
+RS7707,RN21,bootstrap standard error,"{""data"": ""petroleum rock samples"", ""data set"": ""Permeability"", ""measure"": ""Geary ratio""}",0.025139211092371837
+RS7708,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""Asymmetry""}",0.013922430168869428
+RS7709,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""Hypotailedness""}",0.010275206665285735
+RS7710,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""Extremity""}",0.032643410104168165
+RS7711,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""Complex Extremity, real part""}",0.034246709174438776
+RS7712,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""Complex Extremity, imaginary part""}",0.05021365968339527
+RS7713,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""moment skewness""}",0.40915916202568053
+RS7714,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""L-skewness""}",0.016495441624938288
+RS7715,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""TL-skewness""}",0.010581267424948105
+RS7716,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""quartile skewness""}",0.03268369934770469
+RS7717,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""medcouple""}",0.031284209877719175
+RS7718,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.01781596202238958
+RS7719,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""excess kurtosis""}",3.2090454989870127
+RS7720,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""L-kurtosis""}",0.010780304401204607
+RS7721,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""TL-kurtosis""}",0.0068678590098069855
+RS7722,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""octile kurtosis""}",0.04939092842843709
+RS7723,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""DAX"", ""measure"": ""Geary ratio""}",0.014413292685921428
+RS7724,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""Asymmetry""}",0.0132851075334594
+RS7725,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""Hypotailedness""}",0.009457962680239414
+RS7726,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""Extremity""}",0.03120046492995739
+RS7727,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""Complex Extremity, real part""}",0.03551876438656433
+RS7728,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""Complex Extremity, imaginary part""}",0.04608701934555884
+RS7729,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""moment skewness""}",0.36587685991168506
+RS7730,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""L-skewness""}",0.01644787125683696
+RS7731,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""TL-skewness""}",0.01079011128103492
+RS7732,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""quartile skewness""}",0.03613058881653878
+RS7733,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""medcouple""}",0.03160330406470848
+RS7734,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.01694902966938032
+RS7735,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""excess kurtosis""}",2.8897750978050496
+RS7736,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""L-kurtosis""}",0.0103063684795267
+RS7737,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""TL-kurtosis""}",0.006634691305813988
+RS7738,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""octile kurtosis""}",0.04998791375684165
+RS7739,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""SMI"", ""measure"": ""Geary ratio""}",0.0133303416752803
+RS7740,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""Asymmetry""}",0.012211084389805383
+RS7741,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""Hypotailedness""}",0.00760638062119168
+RS7742,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""Extremity""}",0.02744075162902097
+RS7743,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""Complex Extremity, real part""}",0.04602442275048026
+RS7744,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""Complex Extremity, imaginary part""}",0.043870989375775556
+RS7745,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""moment skewness""}",0.19251295084274364
+RS7746,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""L-skewness""}",0.013678270316050678
+RS7747,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""TL-skewness""}",0.009498921899735212
+RS7748,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""quartile skewness""}",0.03281440619232292
+RS7749,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""medcouple""}",0.03514589592021099
+RS7750,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.022252384820679295
+RS7751,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""excess kurtosis""}",0.9716903881461414
+RS7752,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""L-kurtosis""}",0.009365348130618656
+RS7753,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""TL-kurtosis""}",0.006648082926464967
+RS7754,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""octile kurtosis""}",0.048611734074328894
+RS7755,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""CAC"", ""measure"": ""Geary ratio""}",0.00911231976000663
+RS7756,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""Asymmetry""}",0.0111593615231646
+RS7757,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""Hypotailedness""}",0.007323342965656559
+RS7758,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""Extremity""}",0.027324248698019356
+RS7759,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""Complex Extremity, real part""}",0.04699764868981053
+RS7760,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""Complex Extremity, imaginary part""}",0.037748960489784635
+RS7761,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""moment skewness""}",0.20036728563844594
+RS7762,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""L-skewness""}",0.013876654824568596
+RS7763,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""TL-skewness""}",0.009429081269978792
+RS7764,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""quartile skewness""}",0.03194037824769284
+RS7765,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""medcouple""}",0.03263488777871168
+RS7766,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.016542702271155153
+RS7767,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""excess kurtosis""}",0.9493186018168958
+RS7768,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""L-kurtosis""}",0.009807801926819373
+RS7769,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""TL-kurtosis""}",0.006266567838598962
+RS7770,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""octile kurtosis""}",0.044448810357093554
+RS7771,RN21,bootstrap standard error,"{""data"": ""European stock index returns"", ""data set"": ""FTSE"", ""measure"": ""Geary ratio""}",0.009482596734387339
+RS7772,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""Asymmetry""}",1.6045150308232605
+RS7773,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""Hypotailedness""}",2.7677068822932087
+RS7774,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""Extremity""}",3.1908873312132493
+RS7775,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""Complex Extremity, real part""}",2.2183808326687227
+RS7776,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""Complex Extremity, imaginary part""}",2.7377023510745446
+RS7777,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""moment skewness""}",2.5065841825909834
+RS7778,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""L-skewness""}",2.2112494817350252
+RS7779,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""TL-skewness""}",1.6174519563790344
+RS7780,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""quartile skewness""}",1.335296428738933
+RS7781,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""medcouple""}",1.342534573218052
+RS7782,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",1.3378440938294764
+RS7783,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""excess kurtosis""}",1.9731772727080354
+RS7784,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""L-kurtosis""}",2.520673292118107
+RS7785,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""TL-kurtosis""}",1.785040210187117
+RS7786,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""octile kurtosis""}",0.8570389413967963
+RS7787,RN21,discrimination ratio,"{""data"": ""petroleum rock samples"", ""measure"": ""Geary ratio""}",2.9077199869741577
+RS7788,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""Asymmetry""}",1.1862814473766647
+RS7789,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""Hypotailedness""}",1.5082132247057785
+RS7790,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""Extremity""}",1.5338605889991093
+RS7791,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""Complex Extremity, real part""}",1.0089366257507464
+RS7792,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""Complex Extremity, imaginary part""}",1.250594720229679
+RS7793,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""moment skewness""}",1.1213701181331686
+RS7794,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""L-skewness""}",1.0909662565754679
+RS7795,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""TL-skewness""}",1.1445672708194063
+RS7796,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""quartile skewness""}",0.4178795701235633
+RS7797,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""medcouple""}",0.8307391483018521
+RS7798,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",1.293456321877006
+RS7799,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""excess kurtosis""}",0.8980784487290385
+RS7800,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""L-kurtosis""}",2.0807213013448513
+RS7801,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""TL-kurtosis""}",1.767819632477549
+RS7802,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""octile kurtosis""}",0.9305401853614824
+RS7803,RN21,discrimination ratio,"{""data"": ""European stock index returns"", ""measure"": ""Geary ratio""}",1.5297455327125633
+RS7804,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""Asymmetry""}",3.3559031363519587
+RS7805,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""Asymmetry""}",0.06922423607228705
+RS7806,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""Hypotailedness""}",2.693562393580726
+RS7807,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""Hypotailedness""}",0.0296772608279809
+RS7808,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""Extremity""}",1.953202057141616
+RS7809,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""Extremity""}",0.034147020475371444
+RS7810,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""Complex Extremity, real part""}",1.3274283367981692
+RS7811,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""Complex Extremity, real part""}",0.06175239221331799
+RS7812,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""Complex Extremity, imaginary part""}",2.6447248209909366
+RS7813,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""Complex Extremity, imaginary part""}",0.06854731799317126
+RS7814,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""moment skewness""}",8.507316575923548
+RS7815,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""moment skewness""}",0.01149568864974788
+RS7816,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""L-skewness""}",3.0127045087341644
+RS7817,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""L-skewness""}",0.050295882557839434
+RS7818,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""TL-skewness""}",0.3347366959116518
+RS7819,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""TL-skewness""}",0.0651678409585503
+RS7820,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""quartile skewness""}",0.9230316102284066
+RS7821,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""quartile skewness""}",0.06586571589811022
+RS7822,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""medcouple""}",1.5203220455961906
+RS7823,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""medcouple""}",0.08444548830913227
+RS7824,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",3.351506099608159
+RS7825,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.0
+RS7826,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""excess kurtosis""}",4.884332839743983
+RS7827,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""excess kurtosis""}",0.002665232639685697
+RS7828,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""L-kurtosis""}",1.8008198974233367
+RS7829,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""L-kurtosis""}",0.03868086014260962
+RS7830,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""TL-kurtosis""}",0.24087275587304177
+RS7831,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""TL-kurtosis""}",0.06283850944802925
+RS7832,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""octile kurtosis""}",0.7038122163684547
+RS7833,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""octile kurtosis""}",0.06792080160687458
+RS7834,RN22,spike ratio,"{""index"": ""DAX"", ""measure"": ""Geary ratio""}",3.0955819961172084
+RS7835,RN22,roughness,"{""index"": ""DAX"", ""measure"": ""Geary ratio""}",0.023172617832856957
+RS7836,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""Asymmetry""}",1.7081734564851112
+RS7837,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""Asymmetry""}",0.06605490485026282
+RS7838,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""Hypotailedness""}",3.648123117886567
+RS7839,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""Hypotailedness""}",0.042311400476241365
+RS7840,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""Extremity""}",3.3134495287720602
+RS7841,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""Extremity""}",0.04417707691519769
+RS7842,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""Complex Extremity, real part""}",1.9953094304756733
+RS7843,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""Complex Extremity, real part""}",0.06682984278444805
+RS7844,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""Complex Extremity, imaginary part""}",3.721749951910528
+RS7845,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""Complex Extremity, imaginary part""}",0.06954897634866306
+RS7846,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""moment skewness""}",5.2692976990700355
+RS7847,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""moment skewness""}",0.010495814040800957
+RS7848,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""L-skewness""}",2.3416980797562172
+RS7849,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""L-skewness""}",0.04705608832107614
+RS7850,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""TL-skewness""}",0.38231291172909826
+RS7851,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""TL-skewness""}",0.064443771023245
+RS7852,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""quartile skewness""}",0.5351382499731195
+RS7853,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""quartile skewness""}",0.055895592913293796
+RS7854,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""medcouple""}",0.7461654032926922
+RS7855,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""medcouple""}",0.06384569102786865
+RS7856,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",1.937093243400512
+RS7857,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.0
+RS7858,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""excess kurtosis""}",5.326382863971477
+RS7859,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""excess kurtosis""}",0.004215762695449583
+RS7860,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""L-kurtosis""}",2.252331004702255
+RS7861,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""L-kurtosis""}",0.05285458850822538
+RS7862,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""TL-kurtosis""}",0.3551478123558702
+RS7863,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""TL-kurtosis""}",0.08594221090593528
+RS7864,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""octile kurtosis""}",0.9260661507977626
+RS7865,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""octile kurtosis""}",0.07213958420079714
+RS7866,RN22,spike ratio,"{""index"": ""SMI"", ""measure"": ""Geary ratio""}",3.6740617535396543
+RS7867,RN22,roughness,"{""index"": ""SMI"", ""measure"": ""Geary ratio""}",0.030889384144417054
+RS7868,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""Asymmetry""}",2.6809556750003134
+RS7869,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""Asymmetry""}",0.09151082473333762
+RS7870,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""Hypotailedness""}",1.4277423865460281
+RS7871,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""Hypotailedness""}",0.041435763407263244
+RS7872,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""Extremity""}",1.1835020772834854
+RS7873,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""Extremity""}",0.04423303022726018
+RS7874,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""Complex Extremity, real part""}",2.3827051475528807
+RS7875,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""Complex Extremity, real part""}",0.0733847948066854
+RS7876,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""Complex Extremity, imaginary part""}",2.0404678683063664
+RS7877,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""Complex Extremity, imaginary part""}",0.05678369475159926
+RS7878,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""moment skewness""}",5.0331444478546326
+RS7879,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""moment skewness""}",0.02330105641190762
+RS7880,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""L-skewness""}",1.4954063499028358
+RS7881,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""L-skewness""}",0.049031361754877455
+RS7882,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""TL-skewness""}",0.5252944324036405
+RS7883,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""TL-skewness""}",0.10043862216558204
+RS7884,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""quartile skewness""}",0.5321761978447282
+RS7885,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""quartile skewness""}",0.04830802868962525
+RS7886,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""medcouple""}",0.9057847560077192
+RS7887,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""medcouple""}",0.05443882534942208
+RS7888,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",2.783804986614964
+RS7889,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.0
+RS7890,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""excess kurtosis""}",4.483606493912558
+RS7891,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""excess kurtosis""}",0.008161667427138648
+RS7892,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""L-kurtosis""}",0.8684643320741395
+RS7893,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""L-kurtosis""}",0.033724964021834135
+RS7894,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""TL-kurtosis""}",0.2890076034222153
+RS7895,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""TL-kurtosis""}",0.06363909525820655
+RS7896,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""octile kurtosis""}",0.9341390504298005
+RS7897,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""octile kurtosis""}",0.10931068121548022
+RS7898,RN22,spike ratio,"{""index"": ""CAC"", ""measure"": ""Geary ratio""}",1.7659070248821673
+RS7899,RN22,roughness,"{""index"": ""CAC"", ""measure"": ""Geary ratio""}",0.029783722306543175
+RS7900,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""Asymmetry""}",0.5705327852491056
+RS7901,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""Asymmetry""}",0.04459046324125237
+RS7902,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""Hypotailedness""}",1.8037553763890712
+RS7903,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""Hypotailedness""}",0.04860476359307305
+RS7904,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""Extremity""}",1.7416694297897546
+RS7905,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""Extremity""}",0.04901471074672671
+RS7906,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""Complex Extremity, real part""}",1.86608476968378
+RS7907,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""Complex Extremity, real part""}",0.0565013606924607
+RS7908,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""Complex Extremity, imaginary part""}",2.642225438213567
+RS7909,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""Complex Extremity, imaginary part""}",0.08533802961316804
+RS7910,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""moment skewness""}",2.0852691980323352
+RS7911,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""moment skewness""}",0.013937782551786411
+RS7912,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""L-skewness""}",0.7280638269825903
+RS7913,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""L-skewness""}",0.028621988484435507
+RS7914,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""TL-skewness""}",0.2234309643452628
+RS7915,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""TL-skewness""}",0.04697061359408327
+RS7916,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""quartile skewness""}",0.7058014404624888
+RS7917,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""quartile skewness""}",0.06216752088645008
+RS7918,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""medcouple""}",1.0553912711364588
+RS7919,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""medcouple""}",0.08053939869961109
+RS7920,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",1.8845511794405265
+RS7921,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""mean-based skewness 2F(mean) - 1""}",0.0
+RS7922,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""excess kurtosis""}",2.270583313561963
+RS7923,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""excess kurtosis""}",0.007627375370190755
+RS7924,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""L-kurtosis""}",0.9493353757298608
+RS7925,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""L-kurtosis""}",0.03944420578964993
+RS7926,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""TL-kurtosis""}",0.25138604112342794
+RS7927,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""TL-kurtosis""}",0.05860119818956594
+RS7928,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""octile kurtosis""}",0.9163032249993578
+RS7929,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""octile kurtosis""}",0.06609855167035199
+RS7930,RN22,spike ratio,"{""index"": ""FTSE"", ""measure"": ""Geary ratio""}",1.672472925201228
+RS7931,RN22,roughness,"{""index"": ""FTSE"", ""measure"": ""Geary ratio""}",0.03415103234427233

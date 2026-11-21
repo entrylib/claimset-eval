@@ -12,14 +12,16 @@
    "C21",
    "C22",
    "C23",
-   "C24"
+   "C24",
+   "C28",
+   "C29"
   ],
   "autonomy": "human_supervised",
   "contribution_record": "partial",
   "origin": "native",
   "exploration": {
    "lab_record": "A28",
-   "questions": 5,
+   "questions": 6,
    "hypotheses": {
     "total": 21,
     "supported": 21,
@@ -31,15 +33,15 @@
     "from_exploration": 3
    },
    "tests": {
-    "total": 24,
-    "supported": 24,
+    "total": 31,
+    "supported": 31,
     "not_supported": 0,
     "inconclusive": 0
    },
    "runs": {
-    "total": 19,
-    "confirmatory": 10,
-    "exploratory": 9,
+    "total": 24,
+    "confirmatory": 14,
+    "exploratory": 10,
     "failed": 0
    },
    "not_claimed": [
@@ -60,6 +62,69 @@
      "into": "C7",
      "why": "The statement was reworded after this verdict and decided again under PL10, whose verdict is the claim's. This verdict: Rule of PL1 met: the proof is in properties.md in RN6; the independent checker (AC3, Claude Fable) confirmed it in full (AC3.CK7); the largest relative error of the run's numerical checks is 1.1e-41 (at most 1e-8 allowed).",
      "statement": "Hypotailedness lies in $(0, 1]$, and Extremity lies in $(-1, 1]$ and is $0$ at the uniform"
+    },
+    {
+     "lab_event": "H10",
+     "lab_plan": "PL2",
+     "outcome": "supported",
+     "because": "reworded",
+     "into": "C8",
+     "why": "The statement was reworded after this verdict and decided again under PL11, whose verdict is the claim's. This verdict: Rule of PL2 met: the proof is in distributions.md in RN7; the independent checker (AC3, Claude Fable) confirmed it in full (AC3.CK10); the largest relative error of the run's numerical checks is 8.0e-41 (at most 1e-8 allowed).",
+     "statement": "The uniform distribution's half central moment, Asymmetry, Hypotailedness and Extremity, without its Complex Extremity"
+    },
+    {
+     "lab_event": "H11",
+     "lab_plan": "PL2",
+     "outcome": "supported",
+     "because": "reworded",
+     "into": "C13",
+     "why": "The statement was reworded after this verdict and decided again under PL11, whose verdict is the claim's. This verdict: Rule of PL2 met: the proof is in distributions.md in RN7; the independent checker (AC3, Claude Fable) confirmed it in full (AC3.CK11); the largest relative error of the run's numerical checks is 0.0e+00 (at most 1e-8 allowed).",
+     "statement": "The normal distribution's half central moment, Asymmetry and Hypotailedness, without its Extremity"
+    },
+    {
+     "lab_event": "H12",
+     "lab_plan": "PL2",
+     "outcome": "supported",
+     "because": "reworded",
+     "into": "C14",
+     "why": "The statement was reworded after this verdict and decided again under PL11, whose verdict is the claim's. This verdict: Rule of PL2 met: the proof is in distributions.md in RN7; the independent checker (AC3, Claude Fable) confirmed it in full (AC3.CK12); the largest relative error of the run's numerical checks is 1.5e-41 (at most 1e-8 allowed).",
+     "statement": "The Laplace distribution's half central moment and Hypotailedness"
+    },
+    {
+     "lab_event": "H13",
+     "lab_plan": "PL2",
+     "outcome": "supported",
+     "because": "reworded",
+     "into": "C15",
+     "why": "The statement was reworded after this verdict and decided again under PL11, whose verdict is the claim's. This verdict: Rule of PL2 met: the proof is in distributions.md in RN7; the independent checker (AC3, Claude Fable) confirmed it in full (AC3.CK13); the largest relative error of the run's numerical checks is 1.0e-39 (at most 1e-8 allowed).",
+     "statement": "The generalised normal distribution's half central moment and Hypotailedness"
+    },
+    {
+     "lab_event": "H14",
+     "lab_plan": "PL2",
+     "outcome": "supported",
+     "because": "reworded",
+     "into": "C16",
+     "why": "The statement was reworded after this verdict and decided again under PL11, whose verdict is the claim's. This verdict: Rule of PL2 met: the proof is in distributions.md in RN7; the independent checker (AC3, Claude Fable) confirmed it in full (AC3.CK14); the largest relative error of the run's numerical checks is 2.1e-41 (at most 1e-8 allowed).",
+     "statement": "Student's $t$: the half central moment, and Hypotailedness for $\\nu > 2$"
+    },
+    {
+     "lab_event": "H15",
+     "lab_plan": "PL2",
+     "outcome": "supported",
+     "because": "reworded",
+     "into": "C17",
+     "why": "The statement was reworded after this verdict and decided again under PL11, whose verdict is the claim's. This verdict: Rule of PL2 met: the proof is in distributions.md in RN7; the independent checker (AC3, Claude Fable) confirmed it in full (AC3.CK15); the largest relative error of the run's numerical checks is 1.1e-41 (at most 1e-8 allowed).",
+     "statement": "The Cauchy distribution's half central moment about its location"
+    },
+    {
+     "lab_event": "H16",
+     "lab_plan": "PL2",
+     "outcome": "supported",
+     "because": "reworded",
+     "into": "C18",
+     "why": "The statement was reworded after this verdict and decided again under PL11, whose verdict is the claim's. This verdict: Rule of PL2 met: the proof is in distributions.md in RN7; the independent checker (AC3, Claude Fable) confirmed it in full (AC3.CK16); the largest relative error of the run's numerical checks is 1.0e-22 (at most 1e-8 allowed).",
+     "statement": "The gamma distribution's half central moment, and that its Asymmetry does not depend on the rate"
     },
     {
      "lab_event": "H20",
@@ -97,7 +162,7 @@
    "funding": [],
    "competing_interests": "None declared."
   },
-  "summary": "Moment measures of skewness and kurtosis are driven by the tails: one extreme value can dominate them. We propose shape coefficients built on the half central moment, the expected square root of the deviation from the mean. Negative deviations have imaginary roots, so its real part collects the deviations above the mean and its imaginary part those below. The Asymmetry coefficient, from the angle of this moment, lies strictly between $-1$ and $1$; it is determined by the probability on each side of the mean and by how evenly the deviations spread on each side, and it places the mean as an $L_{1.5}$-quantile. Hypotailedness, the absolute half moment scaled by the square root of the standard deviation, and the Extremity coefficient derived from it measure, as kurtosis does, how far the squared standardised deviations spread from one, but give values near the mean more weight and values in the tails less. We derive the influence functions, showing that they grow linearly for Asymmetry and quadratically for Hypotailedness. We also derive the sharp lower bound of the sample Hypotailedness, the asymptotic normality of the sample coefficients, and closed forms for seven standard distributions. In simulations we show that the sample Asymmetry is nearly unbiased, while Hypotailedness is biased upwards in small samples. Finally, we demonstrate the measures on petroleum rock samples and on daily returns of four European stock indices.",
+  "summary": "Moment measures of skewness and kurtosis are driven by the tails: one extreme value can dominate them. We propose shape coefficients built on the half central moment, the expected square root of the deviation from the mean. Negative deviations have imaginary roots, so its real part collects the deviations above the mean and its imaginary part those below. The Asymmetry coefficient, from the angle of this moment, lies strictly between $-1$ and $1$; it is determined by the probability on each side of the mean and by how evenly the deviations spread on each side, and it places the mean as an $L_{1.5}$-quantile. Hypotailedness, the absolute half moment scaled by the square root of the standard deviation, and the Extremity coefficient derived from it measure, as kurtosis does, how far the squared standardised deviations spread from one, but give values near the mean more weight and values in the tails less. We derive the influence functions, showing that they grow linearly for Asymmetry and quadratically for Hypotailedness. We also derive the sharp lower bound of the sample Hypotailedness, the asymptotic normality of the sample coefficients, and closed forms for seven standard distributions. In simulations we show that the sample Asymmetry is nearly unbiased, while Hypotailedness is biased upwards in small samples. Finally, on rock samples and four stock index return series, the coefficients change far less than moment skewness and kurtosis when the most extreme values are removed, and Extremity separates the rock variables best among tail-weight measures.",
   "sections": [
    {
     "title": "The half central moment",
@@ -157,6 +222,16 @@
     "claims": [
      "C24"
     ]
+   },
+   {
+    "title": "Robustness and precision on real data",
+    "claims": [
+     "C25",
+     "C26",
+     "C27",
+     "C28",
+     "C29"
+    ]
    }
   ]
  },
@@ -197,7 +272,7 @@
    ],
    "run_period": {
     "start": "2026-11-19",
-    "end": "2026-11-20"
+    "end": "2026-11-21"
    },
    "tools": [
     "code_execution",
@@ -295,7 +370,7 @@
    "kind": "variable",
    "definition": "The half central moment (HCM) of a variable $y$ with finite mean $\\mu_1$: $$\\mu_{0.5} = \\mathrm{E}\\left[(y - \\mu_1)^{0.5}\\right]$$, the square root taken as the principal root, so that $$\\mu_{0.5} = \\mathrm{E}\\left[(y-\\mu_1)_+^{0.5}\\right] + i\\,\\mathrm{E}\\left[(\\mu_1-y)_+^{0.5}\\right]$$: the real part $\\mathcal{R}$ comes from the values above the mean and the imaginary part $\\mathcal{I}$ from those below it. Sample estimate: $$m_{0.5} = \\frac{1}{n}\\sum_{j=1}^{n} (y_j - m_1)^{0.5}$$, with $m_1$ the sample mean.",
    "assumptions": [
-    "C25"
+    "C30"
    ],
    "symbol": "$\\mu_{0.5}$"
   },
@@ -305,7 +380,7 @@
    "kind": "variable",
    "definition": "The half absolute moment (HAM): $$\\nu_{0.5} = \\mathcal{R}(\\mu_{0.5}) + \\mathcal{I}(\\mu_{0.5}) = \\mathrm{E}|y - \\mu_1|^{0.5}$$; sample estimate $$v_{0.5} = \\frac{1}{n}\\sum_{j=1}^{n} |y_j - m_1|^{0.5}$$.",
    "assumptions": [
-    "C25"
+    "C30"
    ],
    "symbol": "$\\nu_{0.5}$"
   },
@@ -315,7 +390,7 @@
    "kind": "variable",
    "definition": "$$\\mathrm{Asymmetry} = 1 - \\frac{4\\phi}{\\pi} = \\frac{4}{\\pi}\\arctan\\left(\\frac{\\mathcal{R}(\\mu_{0.5}) - \\mathcal{I}(\\mu_{0.5})}{\\nu_{0.5}}\\right),$$ where $\\phi = \\mathrm{Arg}(\\mu_{0.5}) \\in \\left[0, \\frac{\\pi}{2}\\right]$; positive when the part above the mean is the larger. The sample coefficient uses $m_{0.5}$ and $v_{0.5}$.",
    "assumptions": [
-    "C25"
+    "C30"
    ]
   },
   {
@@ -324,7 +399,7 @@
    "kind": "variable",
    "definition": "$\\mathrm{Hypotailedness} = \\frac{\\nu_{0.5}}{\\sigma^{0.5}}$ for a variable with finite positive variance $\\sigma^2$; the sample coefficient divides $v_{0.5}$ by $\\left(\\frac{1}{n}\\sum_{j}(y_j - m_1)^2\\right)^{0.25}$.",
    "assumptions": [
-    "C26"
+    "C31"
    ]
   },
   {
@@ -333,7 +408,7 @@
    "kind": "variable",
    "definition": "$\\mathrm{Extremity} = 2\\,\\mathrm{Hypotailedness}^{p} - 1$ with $p = \\frac{\\log 0.5}{\\log(2 \\times 3^{-0.75})} \\approx 5.30$, so that the uniform distribution has Extremity 0.",
    "assumptions": [
-    "C26"
+    "C31"
    ]
   },
   {
@@ -342,7 +417,7 @@
    "kind": "variable",
    "definition": "$\\mathrm{CH} = \\frac{\\mu_{0.5}}{\\sigma^{0.5}}$, the half central moment divided by the square root of the standard deviation (the manuscript of 19 November 2026).",
    "assumptions": [
-    "C26"
+    "C31"
    ],
    "symbol": "$\\mathrm{CH}$"
   },
@@ -352,7 +427,7 @@
    "kind": "variable",
    "definition": "For a variable with finite variance and deviation $D = y - \\mu_1$: $$H_+ = \\frac{\\mathrm{E}\\left[D^{0.5} \\mid D > 0\\right]}{\\left(\\mathrm{E}\\left[D^2 \\mid D > 0\\right]\\right)^{0.25}}$$ above the mean and $$H_- = \\frac{\\mathrm{E}\\left[|D|^{0.5} \\mid D < 0\\right]}{\\left(\\mathrm{E}\\left[D^2 \\mid D < 0\\right]\\right)^{0.25}}$$ below it; in a sample, the same ratios over the values above and below the sample mean.",
    "assumptions": [
-    "C26"
+    "C31"
    ],
    "symbol": "$H_\\pm$"
   },
@@ -362,7 +437,7 @@
    "kind": "variable",
    "definition": "The bounded Complex Extremity proposed in this study: $\\mathrm{CE} = \\left(2H_+^{p} - 1\\right) + i\\left(2H_-^{p} - 1\\right)$, with $H_\\pm$ the one-sided Hypotailedness and $p = \\frac{\\log 0.5}{\\log(2 \\times 3^{-0.75})}$; the real part describes the values above the mean.",
    "assumptions": [
-    "C26"
+    "C31"
    ],
    "symbol": "$\\mathrm{CE}$"
   },
@@ -486,6 +561,30 @@
    "term": "expanding window",
    "kind": "design",
    "definition": "Every measure computed on the first $t$ returns of a series, for every $t$ from 30 to the full length."
+  },
+  {
+   "id": "D27",
+   "term": "standardised change on removing the most extreme values",
+   "kind": "variable",
+   "definition": "For one measure and data set: the value without the k observations farthest from the mean minus the value on all observations, divided by the bootstrap standard error of the value on all observations."
+  },
+  {
+   "id": "D28",
+   "term": "discrimination ratio",
+   "kind": "variable",
+   "definition": "For one measure and group of four data sets (the rock variables, or the index return series): the standard deviation of the measure over the four data sets divided by the root mean square of their bootstrap standard errors; how far apart the measure places the data sets relative to its own sampling noise."
+  },
+  {
+   "id": "D29",
+   "term": "spike ratio",
+   "kind": "variable",
+   "definition": "For one measure and index: the largest change of the measure between consecutive rolling windows of 260 returns (step one return), divided by the standard deviation of the measure over all windows."
+  },
+  {
+   "id": "D30",
+   "term": "roughness",
+   "kind": "variable",
+   "definition": "For one measure and index: the median change of the measure between consecutive rolling windows of 260 returns, divided by the standard deviation of the measure over all windows."
   }
  ],
  "claims": [
@@ -507,7 +606,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E25"
+     "evidence": "E28"
     },
     {
      "kind": "simulation",
@@ -554,7 +653,7 @@
    ],
    "name": "Symmetry gives equal real and imaginary parts",
    "assumptions": [
-    "C25"
+    "C30"
    ]
   },
   {
@@ -573,7 +672,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E26"
+     "evidence": "E29"
     },
     {
      "kind": "simulation",
@@ -620,7 +719,7 @@
    ],
    "name": "Equal parts do not imply symmetry",
    "assumptions": [
-    "C25"
+    "C30"
    ]
   },
   {
@@ -639,7 +738,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E27"
+     "evidence": "E30"
     },
     {
      "kind": "simulation",
@@ -686,7 +785,7 @@
    ],
    "name": "Location, scale and sign of the half central moment",
    "assumptions": [
-    "C25"
+    "C30"
    ]
   },
   {
@@ -705,7 +804,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E28"
+     "evidence": "E31"
     },
     {
      "kind": "simulation",
@@ -758,7 +857,7 @@
     }
    ],
    "assumptions": [
-    "C25"
+    "C30"
    ]
   },
   {
@@ -777,7 +876,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E29"
+     "evidence": "E32"
     },
     {
      "kind": "simulation",
@@ -832,7 +931,7 @@
     }
    ],
    "assumptions": [
-    "C25"
+    "C30"
    ],
    "depends_on": [
     "C4"
@@ -854,7 +953,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E30"
+     "evidence": "E33"
     },
     {
      "kind": "simulation",
@@ -913,7 +1012,7 @@
     }
    ],
    "assumptions": [
-    "C25"
+    "C30"
    ],
    "depends_on": [
     "C4"
@@ -935,7 +1034,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E31"
+     "evidence": "E34"
     },
     {
      "kind": "simulation",
@@ -989,20 +1088,18 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ]
   },
   {
    "id": "C8",
-   "statement": "For the uniform distribution on $(b, c)$, the [[D1:half central moment]] is $(1+i)\\frac{1}{3}\\left(\\frac{c-b}{2}\\right)^{0.5}$, the [[D3:Asymmetry coefficient]] is 0, [[D4:Hypotailedness]] is $2 \\times 3^{-0.75}$ and the [[D5:Extremity coefficient]] is 0.",
+   "statement": "For the uniform distribution on $(b, c)$, the [[D1:half central moment]] is $(1+i)\\frac{1}{3}\\left(\\frac{c-b}{2}\\right)^{0.5}$, the [[D3:Asymmetry coefficient]] is $0$, [[D4:Hypotailedness]] is $2 \\times 3^{-0.75}$, the [[D5:Extremity coefficient]] is $0$, and both parts of the [[D8:Complex Extremity]] are $0$.",
    "about": {
     "subject": "D1",
     "relation": "has a closed form for",
     "object": null,
     "comparator": null,
-    "conditions": [
-     "the uniform distribution"
-    ]
+    "conditions": []
    },
    "type": "formal",
    "role": "supporting",
@@ -1010,7 +1107,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E35"
+     "evidence": "E38"
     },
     {
      "kind": "simulation",
@@ -1022,11 +1119,11 @@
    ],
    "provenance": "author_stated",
    "hypothesis": {
-    "lab_event": "H10",
+    "lab_event": "H25",
     "outcome": "supported"
    },
    "planning": "confirmatory",
-   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at": "2026-11-21T16:40:00Z",
    "planned_at_anchor": "git_remote",
    "test": {
     "framework": "formal",
@@ -1034,24 +1131,21 @@
      "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
      "tolerance": 1e-08
     },
-    "supported": "A complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "A counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
     "verdict": "judged",
     "runs": 1,
-    "lab_plan": "PL2",
-    "flags": [
-     "code_changed_after_plan"
-    ]
+    "lab_plan": "PL11"
    },
-   "verification": "agent_checked",
    "checks": [
     {
      "by": "P3",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived: D is uniform on (-a, a) with a = (c - b)/2, nu = (2/3) a^0.5, each part nu/2, variance a^2/3, H = (2/3) 3^0.25 = 2 x 3^-0.75, Asymmetry 0 by symmetry and Extremity 0 by the definition of p. Reproduced by quadrature in AC3.RN1 on (-1, 4): relative errors 0 at 30 digits."
+     "notes": "Re-derived: D uniform on (-a,a), a=(c-b)/2, gives E|D|^0.5=(2/3)a^0.5, parts equal (H1), so the moment is (1+i)(1/3)a^0.5; sigma^2=a^2/3 gives H=(2/3)3^0.25=2*3^-0.75=h_U; A=0 by identity (A); E=2h_U^p-1=0 since h_U^p=0.5. H9's conditions hold (density, finite positive variance, both sides have probability 1/2); conditional law on each side is uniform on (0,a), so H_+=H_-=h_U and both CE parts are 0. Quadrature of the density for b=1, c=4 reproduces R=I=0.40824829, H=H_+=H_-=0.87738268, A=E=0. No gap found; b<c is implicit in the wording."
     }
    ],
+   "verification": "agent_checked",
    "name": "The uniform distribution, the reference point of Extremity",
    "depends_on": [
     "C1",
@@ -1074,7 +1168,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E45"
+     "evidence": "E48"
     },
     {
      "kind": "simulation",
@@ -1116,7 +1210,7 @@
    "name": "Extremity lies in (-1, 1] and is 0 at the uniform distribution",
    "summary": "Extremity rescales Hypotailedness to lie between $-1$ and $1$, with $0$ for the uniform distribution and negative values when the deviations are less even than the uniform's.",
    "assumptions": [
-    "C26"
+    "C31"
    ],
    "depends_on": [
     "C7",
@@ -1139,7 +1233,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E43"
+     "evidence": "E46"
     },
     {
      "kind": "simulation",
@@ -1193,7 +1287,7 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ],
    "depends_on": [
     "C7",
@@ -1218,7 +1312,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E32"
+     "evidence": "E35"
     },
     {
      "kind": "simulation",
@@ -1289,7 +1383,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E33"
+     "evidence": "E36"
     },
     {
      "kind": "simulation",
@@ -1344,7 +1438,7 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ],
    "depends_on": [
     "C7",
@@ -1354,15 +1448,13 @@
   },
   {
    "id": "C13",
-   "statement": "For the normal distribution with standard deviation $\\sigma$, the [[D1:half central moment]] is $(1+i)\\,\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{-0.75}\\,\\sigma^{0.5}$, the [[D3:Asymmetry coefficient]] is 0, [[D4:Hypotailedness]] is $\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{0.25} \\approx 0.822$ and the [[D5:Extremity coefficient]] is $2\\left(\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{0.25}\\right)^{p} - 1 \\approx -0.291$.",
+   "statement": "For the normal distribution with standard deviation $\\sigma$, the [[D1:half central moment]] is $(1+i)\\,\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{-0.75}\\,\\sigma^{0.5}$, the [[D3:Asymmetry coefficient]] is $0$, [[D4:Hypotailedness]] is $H_N = \\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{0.25} \\approx 0.822$, the [[D5:Extremity coefficient]] is $2H_N^{p} - 1 \\approx -0.291$, and both parts of the [[D8:Complex Extremity]] equal the Extremity.",
    "about": {
     "subject": "D1",
     "relation": "has a closed form for",
     "object": null,
     "comparator": null,
-    "conditions": [
-     "the normal distribution"
-    ]
+    "conditions": []
    },
    "type": "formal",
    "role": "supporting",
@@ -1370,7 +1462,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E36"
+     "evidence": "E39"
     },
     {
      "kind": "simulation",
@@ -1382,11 +1474,11 @@
    ],
    "provenance": "author_stated",
    "hypothesis": {
-    "lab_event": "H11",
+    "lab_event": "H26",
     "outcome": "supported"
    },
    "planning": "confirmatory",
-   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at": "2026-11-21T16:40:00Z",
    "planned_at_anchor": "git_remote",
    "test": {
     "framework": "formal",
@@ -1394,41 +1486,37 @@
      "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
      "tolerance": 1e-08
     },
-    "supported": "A complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "A counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
     "verdict": "judged",
     "runs": 1,
-    "lab_plan": "PL2",
-    "flags": [
-     "code_changed_after_plan"
-    ]
+    "lab_plan": "PL11"
    },
-   "verification": "agent_checked",
    "checks": [
     {
      "by": "P3",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived: with z = 2^0.5 w, R = 2^0.75 (2 pi)^-0.5 x (1/2) Gamma(0.75) = Gamma(0.75) pi^-0.5 2^-0.75 for the standard normal, scaled by sigma^0.5 (H3); H = 2R/sigma^0.5 = Gamma(0.75) pi^-0.5 2^0.25; Asymmetry 0 by symmetry. Reproduced by quadrature in AC3.RN1 at sigma = 1.7 (relative error 0 at 30 digits), and it agrees with the generalised normal form of H13 at s = 2."
+     "notes": "Re-derived R=Gamma(0.75) pi^-0.5 2^-0.75 sigma^0.5 by z=sqrt(2)w and Lemma G (s=2,k=0.5); H=2R/sigma^0.5=Gamma(0.75) pi^-0.5 2^0.25=0.82217896. Lemma C checked: symmetry about the mean gives R=I (H1) hence A=0 by (A); a density gives P(D=0)=0, non-constancy gives p_+,p_->0 (Lemma 0), so H9's symmetric case applies and H_+=H_-=H; both CE parts are 2H^p-1=E. Its conditions (density, finite positive variance, symmetry about the mean) hold for the normal law. E=2H_N^p-1=-0.29131458 with p=5.2988028, rounding to -0.291. Quadrature of the density (mean 0.3, sigma 1.7) reproduces the half moment 0.5359951 per part, H, H_+, H_- and E. No gap found."
     }
    ],
+   "verification": "agent_checked",
    "name": "Closed form for the normal distribution",
    "depends_on": [
     "C1",
-    "C3"
+    "C3",
+    "C12"
    ]
   },
   {
    "id": "C14",
-   "statement": "For the Laplace distribution with scale $b$, the [[D1:half central moment]] is $(1+i)\\frac{\\sqrt{\\pi}}{4}\\,b^{0.5}$ and [[D4:Hypotailedness]] is $\\frac{\\sqrt{\\pi}}{2}\\,2^{-0.25}$.",
+   "statement": "For the Laplace distribution with scale $b$, the [[D1:half central moment]] is $(1+i)\\frac{\\sqrt{\\pi}}{4}\\,b^{0.5}$, the [[D3:Asymmetry coefficient]] is $0$, [[D4:Hypotailedness]] is $H_L = \\frac{\\sqrt{\\pi}}{2}\\,2^{-0.25} \\approx 0.745$, the [[D5:Extremity coefficient]] is $2H_L^{p} - 1 \\approx -0.579$, and both parts of the [[D8:Complex Extremity]] equal the Extremity.",
    "about": {
     "subject": "D1",
     "relation": "has a closed form for",
     "object": null,
     "comparator": null,
-    "conditions": [
-     "the Laplace distribution"
-    ]
+    "conditions": []
    },
    "type": "formal",
    "role": "secondary",
@@ -1436,7 +1524,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E37"
+     "evidence": "E40"
     },
     {
      "kind": "simulation",
@@ -1448,11 +1536,11 @@
    ],
    "provenance": "author_stated",
    "hypothesis": {
-    "lab_event": "H12",
+    "lab_event": "H27",
     "outcome": "supported"
    },
    "planning": "confirmatory",
-   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at": "2026-11-21T16:40:00Z",
    "planned_at_anchor": "git_remote",
    "test": {
     "framework": "formal",
@@ -1460,37 +1548,35 @@
      "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
      "tolerance": 1e-08
     },
-    "supported": "A complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "A counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
     "verdict": "judged",
     "runs": 1,
-    "lab_plan": "PL2",
-    "flags": [
-     "code_changed_after_plan"
-    ]
+    "lab_plan": "PL11"
    },
-   "verification": "agent_checked",
    "checks": [
     {
      "by": "P3",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived: nu = (1/b) b^1.5 Gamma(1.5) = (pi^0.5/2) b^0.5, each part half of it, variance 2 b^2, so H = (pi^0.5/2) 2^-0.25. Reproduced by quadrature in AC3.RN1 at b = 0.6 (relative error below 1e-30), and it agrees with H13 at s = 1."
+     "notes": "Re-derived E|D|^0.5=(1/b) b^1.5 Gamma(1.5)=(sqrt(pi)/2) b^0.5, so the moment is (1+i)(sqrt(pi)/4) b^0.5; variance 2b^2 gives H_L=(sqrt(pi)/2) 2^-0.25=0.74522504. Lemma C checked step by step (H1 gives R=I and A=0 by (A); density gives P(D=0)=0 and Lemma 0 gives both sides positive probability, so H9 gives H_+=H_-=H) and its conditions hold for the Laplace law. E=2H_L^p-1=-0.5789765, rounding to -0.579. Quadrature of the density with b=0.8 reproduces each part 0.39633273, H=H_+=H_-=0.74522504, A=0 and E=CE parts=-0.5789765. No gap found."
     }
    ],
-   "name": "Closed form for the Laplace distribution"
+   "verification": "agent_checked",
+   "name": "Closed form for the Laplace distribution",
+   "depends_on": [
+    "C12"
+   ]
   },
   {
    "id": "C15",
-   "statement": "For the generalised normal distribution with shape $s > 0$ and scale $\\alpha$ (density proportional to $\\exp\\left(-\\left|\\frac{y}{\\alpha}\\right|^s\\right)$), the [[D1:half central moment]] is $(1+i)\\frac{\\alpha^{0.5}}{2}\\,\\frac{\\Gamma\\left(\\frac{1.5}{s}\\right)}{\\Gamma\\left(\\frac{1}{s}\\right)}$ and [[D4:Hypotailedness]] is $\\Gamma\\left(\\frac{1.5}{s}\\right)\\,\\Gamma\\left(\\frac{1}{s}\\right)^{-0.75}\\,\\Gamma\\left(\\frac{3}{s}\\right)^{-0.25}$.",
+   "statement": "For the generalised normal distribution with shape $s > 0$ and scale $\\alpha$ (density proportional to $\\exp\\left(-\\left|\\frac{y}{\\alpha}\\right|^s\\right)$), the [[D1:half central moment]] is $(1+i)\\frac{\\alpha^{0.5}}{2}\\,\\frac{\\Gamma\\left(\\frac{1.5}{s}\\right)}{\\Gamma\\left(\\frac{1}{s}\\right)}$, the [[D3:Asymmetry coefficient]] is $0$, [[D4:Hypotailedness]] is $H(s) = \\Gamma\\left(\\frac{1.5}{s}\\right)\\Gamma\\left(\\frac{1}{s}\\right)^{-0.75}\\Gamma\\left(\\frac{3}{s}\\right)^{-0.25}$, the [[D5:Extremity coefficient]] is $2H(s)^{p} - 1$, and both parts of the [[D8:Complex Extremity]] equal the Extremity; $s = 1$ and $s = 2$ give the Laplace and normal distributions, and as $s \\to \\infty$ Hypotailedness tends to $2 \\times 3^{-0.75}$ and the Extremity to $0$, their values for the uniform distribution.",
    "about": {
     "subject": "D1",
     "relation": "has a closed form for",
     "object": null,
     "comparator": null,
-    "conditions": [
-     "the generalised normal distribution"
-    ]
+    "conditions": []
    },
    "type": "formal",
    "role": "secondary",
@@ -1498,7 +1584,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E38"
+     "evidence": "E41"
     },
     {
      "kind": "simulation",
@@ -1510,11 +1596,11 @@
    ],
    "provenance": "author_stated",
    "hypothesis": {
-    "lab_event": "H13",
+    "lab_event": "H28",
     "outcome": "supported"
    },
    "planning": "confirmatory",
-   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at": "2026-11-21T16:40:00Z",
    "planned_at_anchor": "git_remote",
    "test": {
     "framework": "formal",
@@ -1522,37 +1608,35 @@
      "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
      "tolerance": 1e-08
     },
-    "supported": "A complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "A counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
     "verdict": "judged",
     "runs": 1,
-    "lab_plan": "PL2",
-    "flags": [
-     "code_changed_after_plan"
-    ]
+    "lab_plan": "PL11"
    },
-   "verification": "agent_checked",
    "checks": [
     {
      "by": "P3",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived: Lemma G (u = z^s) gives the normalising constant s/(2 alpha Gamma(1/s)) and E|y|^k = alpha^k Gamma((k+1)/s)/Gamma(1/s) for every s > 0; k = 0.5 and k = 2 give the recorded half central moment and Hypotailedness. Reproduced by quadrature in AC3.RN1 for s = 0.5, 1, 2, 3.5, 8 at alpha = 1.3: relative errors below 1e-30."
+     "notes": "Re-derived E|y|^k=alpha^k Gamma((k+1)/s)/Gamma(1/s) from Lemma G; k=0.5 and k=2 give the stated moment and H(s). Lemma C applies for every s>0 (density, symmetric about mean 0, finite positive variance), giving A=0 and both CE parts equal to E=2H(s)^p-1. s=1 is Laplace with b=alpha and s=2 normal with sigma=alpha/sqrt(2); H(1)=H_L and H(2)=H_N to 1e-16. Limit: with x=1/s and Gamma(x)=Gamma(1+x)/x the powers of x cancel (-1+0.75+0.25=0) and the constant is 3^0.25/1.5=2*3^-0.75=h_U; E tends to 0 by continuity. Numerically H(s)-h_U is about -0.54/s^2 for s=10..1e6. Quadrature of the density at s=0.6, 1, 2, 3.5 (alpha=1.3) reproduces the moment, H, H_+=H_-=H and E. No gap found."
     }
    ],
-   "name": "Closed form for the generalised normal distribution"
+   "verification": "agent_checked",
+   "name": "Closed form for the generalised normal distribution",
+   "depends_on": [
+    "C12"
+   ]
   },
   {
    "id": "C16",
-   "statement": "For Student's t distribution with $\\nu$ degrees of freedom, the [[D1:half central moment]] about 0 (the mean when $\\nu > 1$) is finite for every $\\nu > 0.5$ and equals $$(1+i)\\frac{\\Gamma(0.75)\\,\\Gamma\\left(\\frac{\\nu-0.5}{2}\\right)\\nu^{0.25}}{2\\sqrt{\\pi}\\,\\Gamma\\left(\\frac{\\nu}{2}\\right)}$$; for $\\nu > 2$, [[D4:Hypotailedness]] is $$\\frac{\\Gamma(0.75)\\,\\Gamma\\left(\\frac{\\nu-0.5}{2}\\right)(\\nu-2)^{0.25}}{\\sqrt{\\pi}\\,\\Gamma\\left(\\frac{\\nu}{2}\\right)}$$.",
+   "statement": "For Student's $t$ distribution with $\\nu$ degrees of freedom, the [[D1:half central moment]] about 0 (the mean when $\\nu > 1$) is finite for every $\\nu > 0.5$ and equals $$$(1+i)\\frac{\\Gamma(0.75)\\,\\Gamma\\left(\\frac{\\nu-0.5}{2}\\right)\\nu^{0.25}}{2\\sqrt{\\pi}\\,\\Gamma\\left(\\frac{\\nu}{2}\\right)},$$$ and for $\\nu > 1$ the [[D3:Asymmetry coefficient]] is $0$. For $\\nu > 2$, [[D4:Hypotailedness]] is $$H(\\nu) = \\frac{\\Gamma(0.75)\\,\\Gamma\\left(\\frac{\\nu-0.5}{2}\\right)(\\nu-2)^{0.25}}{\\sqrt{\\pi}\\,\\Gamma\\left(\\frac{\\nu}{2}\\right)},$$ the [[D5:Extremity coefficient]] is $2H(\\nu)^{p} - 1$, and both parts of the [[D8:Complex Extremity]] equal the Extremity, which tends to $-1$ as $\\nu$ decreases to 2 and to $2\\left(\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{0.25}\\right)^{p} - 1 \\approx -0.291$, its value for the normal distribution, as $\\nu \\to \\infty$.",
    "about": {
     "subject": "D1",
     "relation": "has a closed form for",
     "object": null,
     "comparator": null,
-    "conditions": [
-     "Student's t distribution"
-    ]
+    "conditions": []
    },
    "type": "formal",
    "role": "secondary",
@@ -1560,7 +1644,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E39"
+     "evidence": "E42"
     },
     {
      "kind": "simulation",
@@ -1572,11 +1656,11 @@
    ],
    "provenance": "author_stated",
    "hypothesis": {
-    "lab_event": "H14",
+    "lab_event": "H29",
     "outcome": "supported"
    },
    "planning": "confirmatory",
-   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at": "2026-11-21T16:40:00Z",
    "planned_at_anchor": "git_remote",
    "test": {
     "framework": "formal",
@@ -1584,24 +1668,21 @@
      "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
      "tolerance": 1e-08
     },
-    "supported": "A complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "A counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
     "verdict": "judged",
     "runs": 1,
-    "lab_plan": "PL2",
-    "flags": [
-     "code_changed_after_plan"
-    ]
+    "lab_plan": "PL11"
    },
-   "verification": "agent_checked",
    "checks": [
     {
      "by": "P3",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived: with T = Z/(V/nu)^0.5, E|Z|^k = 2^(k/2) Gamma((k+1)/2)/pi^0.5 and E[V^(-k/2)] = 2^(-k/2) Gamma((nu-k)/2)/Gamma(nu/2), finite iff k < nu, so the half moment is finite iff nu > 0.5 and has the recorded form; for nu > 2 the variance nu/(nu-2) gives the recorded Hypotailedness. In AC3.RN1 quadrature agrees to 1e-18 or better for nu = 1, 1.5, 2.5, 5, 30; at nu = 0.6 it agrees to 2e-4, the accuracy of my quadrature of the slowly decaying tail, not a discrepancy in the formula."
+     "notes": "Re-derived E|T|^k from T=Z/sqrt(V/nu): E|Z|^k and E[V^(-k/2)] (finite iff k<nu) give the stated formula; k=0.5 is finite iff nu>0.5, and Lemma S gives equal parts. For nu>1 the mean 0 exists and the law is symmetric about it, so A=0 (H1, (A)). For nu>2 variance nu/(nu-2) gives the stated H(nu), and Lemma C's conditions hold, so both CE parts equal E. Limits: at nu->2+ the gamma factors tend to Gamma(0.75) and 1 while (nu-2)^0.25->0, so H->0, E->-1; at infinity Gamma(z-0.25)/Gamma(z)~z^-0.25 gives H->Gamma(0.75) pi^-0.5 2^0.25=H_N, E->-0.29131. Quadrature agrees at nu=1, 1.5, 2.5, 5, 30 to 10 digits (nu=0.6 to 3 digits only, quadrature limited by the heavy tail); E(2+1e-6)=-1.0000, E(1e6)-E_N=-7e-7. No gap found."
     }
    ],
+   "verification": "agent_checked",
    "name": "Student's t has a finite half central moment for more than 0.5 degrees of freedom",
    "relations": [
     {
@@ -1609,19 +1690,20 @@
      "reference": "B25",
      "note": "Absolute moments of Student's t distribution in closed form."
     }
+   ],
+   "depends_on": [
+    "C12"
    ]
   },
   {
    "id": "C17",
-   "statement": "For the Cauchy distribution with location 0 and scale $\\gamma$, which has no mean, the analogue of the [[D1:half central moment]] taken about the location 0 is $(1+i)\\sqrt{\\frac{\\gamma}{2}}$.",
+   "statement": "For the Cauchy distribution with location 0 and scale $\\gamma$, which has no mean, the analogue of the [[D1:half central moment]] taken about the location 0 is $(1+i)\\sqrt{\\frac{\\gamma}{2}}$, so the analogue of the [[D3:Asymmetry coefficient]] is $0$; [[D4:Hypotailedness]], the [[D5:Extremity coefficient]] and the [[D8:Complex Extremity]] are not defined, as the variance is infinite.",
    "about": {
     "subject": "D1",
     "relation": "has a closed form about its location for",
     "object": null,
     "comparator": null,
-    "conditions": [
-     "the Cauchy distribution"
-    ]
+    "conditions": []
    },
    "type": "formal",
    "role": "secondary",
@@ -1629,7 +1711,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E40"
+     "evidence": "E43"
     },
     {
      "kind": "simulation",
@@ -1641,11 +1723,11 @@
    ],
    "provenance": "author_stated",
    "hypothesis": {
-    "lab_event": "H15",
+    "lab_event": "H30",
     "outcome": "supported"
    },
    "planning": "confirmatory",
-   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at": "2026-11-21T16:40:00Z",
    "planned_at_anchor": "git_remote",
    "test": {
     "framework": "formal",
@@ -1653,24 +1735,21 @@
      "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
      "tolerance": 1e-08
     },
-    "supported": "A complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "A counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
     "verdict": "judged",
     "runs": 1,
-    "lab_plan": "PL2",
-    "flags": [
-     "code_changed_after_plan"
-    ]
+    "lab_plan": "PL11"
    },
-   "verification": "agent_checked",
    "checks": [
     {
      "by": "P3",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived: E|y|^k = (2 gamma^k/pi) x integral of u^k/(1+u^2) over (0, inf) = (2 gamma^k/pi) x (1/2) B((k+1)/2, (1-k)/2) = gamma^k sec(k pi/2) for |k| < 1; k = 0.5 and symmetry about 0 (Lemma S, which needs only D and -D equal in law, not a mean) give the recorded form. Reproduced by quadrature in AC3.RN1 at gamma = 2.3: relative error 1e-18."
+     "notes": "Re-derived E|y|^k=gamma^k sec(k pi/2) for |k|<1: u=d/gamma, then u^2=t/(1-t) gives (1/2)B((k+1)/2,(1-k)/2)=pi/(2 cos(k pi/2)) by the reflection formula. Lemma S about the centre 0 applies (H1's proof needs only D and -D equal in law, not a mean), so the parts are equal. With sec(pi/4)=sqrt(2), the stated moment (1+i)(sqrt(gamma)/2)sec(pi/4) equals (1+i)sqrt(gamma/2). Equal positive parts give angle pi/4 and the Asymmetry analogue 1-4 phi/pi=0. H, E and CE divide by a power of the (one-sided) second moment, which is infinite for the Cauchy law, so they are not defined; the wording correctly says analogue, as there is no mean. Quadrature of the density with gamma=2.3 gives each part 1.072380529=sqrt(gamma/2). No gap found."
     }
    ],
+   "verification": "agent_checked",
    "name": "Closed form for the Cauchy distribution about its location",
    "relations": [
     {
@@ -1682,15 +1761,13 @@
   },
   {
    "id": "C18",
-   "statement": "For the gamma distribution with shape $a$ and rate $\\lambda$ (mean $\\frac{a}{\\lambda}$), the parts of the [[D1:half central moment]] are $$\\mathcal{R}(\\mu_{0.5}) = \\frac{\\Gamma(1.5)\\,a^{a+0.5}e^{-a}}{\\Gamma(a)\\,\\lambda^{0.5}}\\,U(1.5,\\, a+1.5,\\, a)$$ and $$\\mathcal{I}(\\mu_{0.5}) = \\frac{B(a, 1.5)\\,a^{a+0.5}}{\\Gamma(a)\\,\\lambda^{0.5}}\\,{}_1F_1(a;\\, a+1.5;\\, -a)$$, with $U$ the confluent hypergeometric function of the second kind and ${}_1F_1$ Kummer's function; for $a = 1$ (the exponential distribution) they are $\\frac{\\sqrt{\\pi}}{2e\\sqrt{\\lambda}}$ and $\\frac{2e - \\sqrt{\\pi}\\,\\mathrm{erfi}(1)}{2e\\sqrt{\\lambda}}$, and the [[D3:Asymmetry coefficient]] does not depend on $\\lambda$.",
+   "statement": "For the gamma distribution with shape $a$ and rate $\\lambda$ (mean $\\frac{a}{\\lambda}$), the parts of the [[D1:half central moment]] are $$$\\mathcal{R}(\\mu_{0.5}) = \\frac{\\Gamma(1.5)\\,a^{a+0.5}e^{-a}}{\\Gamma(a)\\,\\lambda^{0.5}}\\,U(1.5,\\, a+1.5,\\, a), \\qquad \\mathcal{I}(\\mu_{0.5}) = \\frac{B(a, 1.5)\\,a^{a+0.5}}{\\Gamma(a)\\,\\lambda^{0.5}}\\,{}_1F_1(a;\\, a+1.5;\\, -a),$$$ with $U$ the confluent hypergeometric function of the second kind and ${}_1F_1$ Kummer's function. The [[D3:Asymmetry coefficient]] is $\\frac{4}{\\pi}\\arctan\\frac{\\mathcal{R}(\\mu_{0.5}) - \\mathcal{I}(\\mu_{0.5})}{\\mathcal{R}(\\mu_{0.5}) + \\mathcal{I}(\\mu_{0.5})}$, [[D4:Hypotailedness]] is $H = \\frac{\\lambda^{0.5}}{a^{0.25}}\\left(\\mathcal{R}(\\mu_{0.5}) + \\mathcal{I}(\\mu_{0.5})\\right)$, the [[D5:Extremity coefficient]] is $2H^{p} - 1$, and the [[D7:one-sided Hypotailedness]] is $$H_+ = \\frac{\\lambda^{0.5}\\,\\mathcal{R}(\\mu_{0.5})\\,q_0^{-0.75}}{\\left(a(a+1)q_2 - 2a^2 q_1 + a^2 q_0\\right)^{0.25}}, \\qquad H_- = \\frac{\\lambda^{0.5}\\,\\mathcal{I}(\\mu_{0.5})\\,r_0^{-0.75}}{\\left(a(a+1)r_2 - 2a^2 r_1 + a^2 r_0\\right)^{0.25}},$$ with $q_k = Q(a + k, a)$ and $r_k = P(a + k, a)$ the regularised upper and lower incomplete gamma functions, so the [[D8:Complex Extremity]] is $(2H_+^{p} - 1) + i\\,(2H_-^{p} - 1)$; none of these depends on $\\lambda$. For $a = 1$ (the exponential distribution) the parts are $\\frac{\\sqrt{\\pi}}{2e\\sqrt{\\lambda}}$ and $\\frac{2e - \\sqrt{\\pi}\\,\\mathrm{erfi}(1)}{2e\\sqrt{\\lambda}}$, the Asymmetry is $\\approx -0.217$, the Extremity $\\approx -0.434$ and the Complex Extremity $\\approx -0.579 + 0.205i$, whose real part equals the Extremity of the Laplace distribution.",
    "about": {
     "subject": "D1",
     "relation": "has a closed form for",
     "object": null,
     "comparator": null,
-    "conditions": [
-     "the gamma distribution"
-    ]
+    "conditions": []
    },
    "type": "formal",
    "role": "supporting",
@@ -1698,7 +1775,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E41"
+     "evidence": "E44"
     },
     {
      "kind": "simulation",
@@ -1710,11 +1787,11 @@
    ],
    "provenance": "author_stated",
    "hypothesis": {
-    "lab_event": "H16",
+    "lab_event": "H31",
     "outcome": "supported"
    },
    "planning": "confirmatory",
-   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at": "2026-11-21T16:40:00Z",
    "planned_at_anchor": "git_remote",
    "test": {
     "framework": "formal",
@@ -1722,24 +1799,21 @@
      "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
      "tolerance": 1e-08
     },
-    "supported": "A complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "A counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
     "verdict": "judged",
     "runs": 1,
-    "lab_plan": "PL2",
-    "flags": [
-     "code_changed_after_plan"
-    ]
+    "lab_plan": "PL11"
    },
-   "verification": "agent_checked",
    "checks": [
     {
      "by": "P3",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived: y = c(1+t) and y = cs with c = a/lambda turn the two parts into the integral forms of U(1.5, a+1.5, a) and 1F1(a; a+1.5; -a) with the recorded prefactors; for a = 1, U(1.5, 2.5, 1) = 1 and the substitution x = (1 - lambda y)^0.5 with the antiderivative of x^2 exp(x^2) give the recorded exponential parts; both parts are lambda^-0.5 times a function of a, so the Asymmetry is free of lambda. Reproduced in AC3.RN1 for (a, lambda) = (0.4, 1), (1, 1), (1, 3), (2.5, 0.7), (7, 2): relative errors below 1e-13, and R/I = 0.705803 at both rates for a = 1."
+     "notes": "Re-derived both parts: y=c(1+t) gives the Tricomi integral with (1.5, a+1.5, a), y=cs the Kummer integral with (a; a+1.5; -a), and lambda^a c^(a+0.5)=a^(a+0.5) lambda^-0.5. A is identity (A); sigma^0.5=a^0.25 lambda^-0.5 gives H. Truncated moments: E[y^k 1(y>c)] is the k-th moment times Q(a+k,a), so M_+=lambda^-2(a(a+1)q_2-2a^2 q_1+a^2 q_0), likewise M_- with P; H_+=R p_+^-0.75 M_+^-0.25 is exactly the stated form, as is H_-. R, I scale as lambda^-0.5 and M as lambda^-2, so nothing depends on lambda. a=1: U(1.5,2.5,1)=1 gives R=sqrt(pi)/(2e sqrt(lambda)); the erfi antiderivative gives I; memorylessness gives H_+=Gamma(1.5)/2^0.25=H_L. Quadrature of the density at (a,lambda)=(0.3,1),(0.3,7),(1,1),(1,0.2),(2.5,3),(40,2) matches all closed forms to 8 digits and shows lambda-independence; a=1: A=-0.21745463, E=-0.43430457, CE=-0.5789765+0.20491344i. No gap found; a>0, lambda>0 implicit."
     }
    ],
+   "verification": "agent_checked",
    "name": "Closed form for the gamma distribution",
    "depends_on": [
     "C4"
@@ -1761,7 +1835,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E44"
+     "evidence": "E47"
     },
     {
      "kind": "simulation",
@@ -1825,7 +1899,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E34"
+     "evidence": "E37"
     },
     {
      "kind": "simulation",
@@ -1885,7 +1959,7 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ],
    "depends_on": [
     "C4",
@@ -2865,7 +2939,7 @@
       "E23.T2.r96"
      ],
      "artefacts": [
-      "A38"
+      "A42"
      ]
     }
    ],
@@ -2949,7 +3023,7 @@
    "support": [
     {
      "kind": "formal_proof",
-     "evidence": "E42"
+     "evidence": "E45"
     },
     {
      "kind": "simulation",
@@ -3019,7 +3093,7 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ],
    "depends_on": [
     "C20"
@@ -3353,7 +3427,7 @@
       "E24.T3.r210"
      ],
      "artefacts": [
-      "A40"
+      "A44"
      ]
     }
    ],
@@ -3438,224 +3512,16 @@
      "evidence": "E22",
      "results": [
       "E22.T1.r1",
-      "E22.T1.r2",
       "E22.T1.r3",
-      "E22.T1.r4",
-      "E22.T1.r5",
       "E22.T1.r6",
-      "E22.T1.r7",
-      "E22.T1.r8",
-      "E22.T1.r9",
-      "E22.T1.r10",
-      "E22.T1.r11",
-      "E22.T1.r12",
-      "E22.T1.r13",
-      "E22.T1.r14",
-      "E22.T1.r15",
-      "E22.T1.r16",
-      "E22.T1.r17",
-      "E22.T1.r18",
-      "E22.T1.r19",
-      "E22.T1.r20",
-      "E22.T1.r21",
-      "E22.T1.r22",
-      "E22.T1.r23",
-      "E22.T1.r24",
-      "E22.T1.r25",
-      "E22.T1.r26",
-      "E22.T1.r27",
-      "E22.T1.r28",
-      "E22.T1.r29",
-      "E22.T1.r30",
-      "E22.T1.r31",
-      "E22.T1.r32",
-      "E22.T1.r33",
-      "E22.T1.r34",
-      "E22.T1.r35",
-      "E22.T1.r36",
-      "E22.T1.r37",
-      "E22.T1.r38",
-      "E22.T1.r39",
-      "E22.T1.r40",
-      "E22.T1.r41",
-      "E22.T1.r42",
-      "E22.T1.r43",
-      "E22.T1.r44",
-      "E22.T1.r45",
-      "E22.T1.r46",
-      "E22.T1.r47",
-      "E22.T1.r48",
-      "E22.T1.r49",
-      "E22.T1.r50",
-      "E22.T1.r51",
-      "E22.T1.r52",
-      "E22.T1.r53",
-      "E22.T1.r54",
-      "E22.T1.r55",
-      "E22.T1.r56",
-      "E22.T1.r57",
-      "E22.T1.r58",
-      "E22.T1.r59",
-      "E22.T1.r60",
-      "E22.T1.r61",
-      "E22.T1.r62",
-      "E22.T1.r63",
-      "E22.T1.r64",
-      "E22.T1.r65",
-      "E22.T1.r66",
-      "E22.T1.r67",
-      "E22.T1.r68",
-      "E22.T1.r69",
-      "E22.T1.r70",
-      "E22.T1.r71",
-      "E22.T1.r72",
-      "E22.T1.r73",
-      "E22.T1.r74",
-      "E22.T1.r75",
-      "E22.T1.r76",
       "E22.T2.r1",
-      "E22.T2.r2",
       "E22.T2.r3",
-      "E22.T2.r4",
-      "E22.T2.r5",
-      "E22.T2.r6",
-      "E22.T2.r7",
-      "E22.T2.r8",
-      "E22.T2.r9",
-      "E22.T2.r10",
-      "E22.T2.r11",
       "E22.T2.r12",
-      "E22.T2.r13",
-      "E22.T2.r14",
-      "E22.T2.r15",
-      "E22.T2.r16",
-      "E22.T2.r17",
-      "E22.T2.r18",
-      "E22.T2.r19",
-      "E22.T2.r20",
-      "E22.T2.r21",
-      "E22.T2.r22",
-      "E22.T2.r23",
-      "E22.T2.r24",
-      "E22.T2.r25",
-      "E22.T2.r26",
-      "E22.T2.r27",
-      "E22.T2.r28",
-      "E22.T2.r29",
-      "E22.T2.r30",
-      "E22.T2.r31",
-      "E22.T2.r32",
-      "E22.T2.r33",
-      "E22.T2.r34",
-      "E22.T2.r35",
-      "E22.T2.r36",
-      "E22.T2.r37",
-      "E22.T2.r38",
-      "E22.T2.r39",
-      "E22.T2.r40",
-      "E22.T2.r41",
-      "E22.T2.r42",
-      "E22.T2.r43",
-      "E22.T2.r44",
-      "E22.T2.r45",
-      "E22.T2.r46",
-      "E22.T2.r47",
-      "E22.T2.r48",
-      "E22.T2.r49",
-      "E22.T2.r50",
-      "E22.T2.r51",
-      "E22.T2.r52",
-      "E22.T2.r53",
-      "E22.T2.r54",
-      "E22.T2.r55",
-      "E22.T2.r56",
-      "E22.T2.r57",
-      "E22.T2.r58",
-      "E22.T2.r59",
-      "E22.T2.r60",
-      "E22.T2.r61",
-      "E22.T2.r62",
-      "E22.T2.r63",
-      "E22.T2.r64",
-      "E22.T2.r65",
-      "E22.T2.r66",
-      "E22.T2.r67",
-      "E22.T2.r68",
-      "E22.T2.r69",
-      "E22.T2.r70",
-      "E22.T2.r71",
-      "E22.T2.r72",
-      "E22.T2.r73",
-      "E22.T2.r74",
-      "E22.T2.r75",
-      "E22.T2.r76",
-      "E22.T3.r1",
-      "E22.T3.r2",
       "E22.T3.r3",
-      "E22.T3.r4",
-      "E22.T3.r5",
-      "E22.T3.r6",
-      "E22.T3.r7",
-      "E22.T3.r8",
-      "E22.T3.r9",
-      "E22.T3.r10",
-      "E22.T3.r11",
-      "E22.T3.r12",
-      "E22.T3.r13",
-      "E22.T3.r14",
-      "E22.T3.r15",
-      "E22.T3.r16",
-      "E22.T3.r17",
-      "E22.T3.r18",
-      "E22.T3.r19",
-      "E22.T3.r20",
-      "E22.T3.r21",
-      "E22.T3.r22",
-      "E22.T3.r23",
-      "E22.T3.r24",
-      "E22.T3.r25",
-      "E22.T3.r26",
-      "E22.T3.r27",
-      "E22.T3.r28",
-      "E22.T3.r29",
-      "E22.T3.r30",
-      "E22.T3.r31",
-      "E22.T3.r32",
-      "E22.T3.r33",
-      "E22.T3.r34",
-      "E22.T3.r35",
-      "E22.T3.r36",
-      "E22.T3.r37",
-      "E22.T3.r38",
-      "E22.T3.r39",
-      "E22.T3.r40",
-      "E22.T3.r41",
-      "E22.T3.r42",
-      "E22.T3.r43",
-      "E22.T3.r44",
-      "E22.T3.r45",
-      "E22.T3.r46",
-      "E22.T3.r47",
-      "E22.T3.r48",
-      "E22.T3.r49",
-      "E22.T3.r50",
-      "E22.T3.r51",
-      "E22.T3.r52",
-      "E22.T3.r53",
-      "E22.T3.r54",
-      "E22.T3.r55",
-      "E22.T3.r56",
-      "E22.T3.r57",
-      "E22.T3.r58",
-      "E22.T3.r59",
-      "E22.T3.r60",
-      "E22.T3.r61",
-      "E22.T3.r62",
-      "E22.T3.r63",
-      "E22.T3.r64"
+      "E22.T3.r12"
      ],
      "artefacts": [
-      "A39"
+      "A43"
      ]
     }
    ],
@@ -3727,6 +3593,427 @@
   },
   {
    "id": "C25",
+   "statement": "Removing the three values farthest from the mean changes the [[D3:Asymmetry coefficient]] by a median of 0.57 of its bootstrap standard errors (absolute [[D27:standardised change on removing the most extreme values]]) over the four variables of the [[D24:petroleum rock samples]] and 0.33 over the four series of [[D25:European stock index returns]], against 0.93 and 0.92 for [[D9:moment skewness]] and 0.79 and 0.40 for [[D11:L-skewness]]; on the index returns the change of the Asymmetry coefficient does not grow as one, two and three values are removed (0.34, 0.34, 0.33), while that of moment skewness stays between 0.92 and 1.01; [[D15:quartile skewness]] and the [[D16:medcouple]] change least (at most 0.29).",
+   "type": "descriptive",
+   "role": "supporting",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E25",
+     "results": [
+      "E25.T2.r1",
+      "E25.T2.r6",
+      "E25.T2.r7",
+      "E25.T2.r9",
+      "E25.T2.r10"
+     ],
+     "artefacts": [
+      "A46",
+      "A48"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "planning": "planned_estimate",
+   "planned_at": "2026-11-21T18:56:43Z",
+   "planned_at_anchor": "git_remote",
+   "estimate": {
+    "estimands": {
+     "change": {
+      "variable": "D27",
+      "table": true
+     }
+    },
+    "runs": 1,
+    "lab_plan": "PL12"
+   },
+   "name": "Change of the skewness measures when the most extreme values are removed",
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B15",
+     "note": "Brys, Hubert and Struyf (2004) show that one outlier can move the classical skewness far and propose the medcouple; here the half-moment coefficients and the moment, L-moment, quantile and medcouple measures are compared on real data for their change when the most extreme values are removed, how far they separate data sets relative to their own noise, and their stability over time."
+    }
+   ],
+   "about": {
+    "subject": "D3",
+    "relation": "on real data, compared with",
+    "object": null,
+    "comparator": "D9",
+    "conditions": [
+     "D24",
+     "D25"
+    ]
+   },
+   "scope": {
+    "data_type": "48 rock samples; daily index returns 1991-1998",
+    "conditions": [
+     "the 1, 2 or 3 values farthest from the mean removed",
+     "medians over each group's four data sets"
+    ]
+   },
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Direct computation on public data with fixed bootstrap seeds, reproducible from the recorded code; two groups of four data sets only (L13, L14)."
+    }
+   ],
+   "limitations": [
+    "L13",
+    "L14"
+   ]
+  },
+  {
+   "id": "C26",
+   "statement": "Removing the three values farthest from the mean changes the [[D5:Extremity coefficient]] by a median of 0.22 of its bootstrap standard errors (absolute [[D27:standardised change on removing the most extreme values]]) over the four variables of the [[D24:petroleum rock samples]] and 1.20 over the four series of [[D25:European stock index returns]], against 0.76 and 1.46 for [[D10:excess kurtosis]]; on the index returns [[D12:L-kurtosis]] (0.97), [[D14:TL-kurtosis]] (0.16) and [[D18:octile kurtosis]] (0.10) change less than the Extremity coefficient.",
+   "type": "descriptive",
+   "role": "supporting",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E25",
+     "results": [
+      "E25.T2.r3",
+      "E25.T2.r12",
+      "E25.T2.r13",
+      "E25.T2.r14",
+      "E25.T2.r15"
+     ],
+     "artefacts": [
+      "A46",
+      "A48"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "planning": "planned_estimate",
+   "planned_at": "2026-11-21T18:56:43Z",
+   "planned_at_anchor": "git_remote",
+   "estimate": {
+    "estimands": {
+     "change": {
+      "variable": "D27",
+      "table": true
+     }
+    },
+    "runs": 1,
+    "lab_plan": "PL12"
+   },
+   "name": "Change of the tail-weight measures when the most extreme values are removed",
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B15",
+     "note": "Brys, Hubert and Struyf (2004) show that one outlier can move the classical skewness far and propose the medcouple; here the half-moment coefficients and the moment, L-moment, quantile and medcouple measures are compared on real data for their change when the most extreme values are removed, how far they separate data sets relative to their own noise, and their stability over time."
+    }
+   ],
+   "about": {
+    "subject": "D5",
+    "relation": "on real data, compared with",
+    "object": null,
+    "comparator": "D10",
+    "conditions": [
+     "D24",
+     "D25"
+    ]
+   },
+   "scope": {
+    "data_type": "48 rock samples; daily index returns 1991-1998",
+    "conditions": [
+     "the 3 values farthest from the mean removed",
+     "medians over each group's four data sets"
+    ]
+   },
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Direct computation on public data with fixed bootstrap seeds, reproducible from the recorded code; two groups of four data sets only (L13, L14)."
+    }
+   ],
+   "limitations": [
+    "L13",
+    "L14"
+   ]
+  },
+  {
+   "id": "C27",
+   "statement": "By the [[D28:discrimination ratio]], the [[D5:Extremity coefficient]] separates the four variables of the [[D24:petroleum rock samples]] further than any of the tail-weight [[D21:comparison measures]] (3.19, against 2.91 for the [[D19:Geary ratio]], 2.52 for [[D12:L-kurtosis]] and 1.97 for [[D10:excess kurtosis]]), whereas on the four series of [[D25:European stock index returns]] L-kurtosis (2.08) and [[D14:TL-kurtosis]] (1.77) separate them further than the Extremity coefficient (1.53), and excess kurtosis least (0.90); the [[D3:Asymmetry coefficient]] separates the rock variables less than [[D9:moment skewness]] and [[D11:L-skewness]] (1.60 against 2.51 and 2.21) and the index return series more than both (1.19 against 1.12 and 1.09), second only to [[D17:mean-based skewness]] (1.29).",
+   "type": "descriptive",
+   "role": "supporting",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E26",
+     "results": [
+      "E26.T2.r1",
+      "E26.T2.r6",
+      "E26.T2.r7",
+      "E26.T2.r11",
+      "E26.T2.r3",
+      "E26.T2.r12",
+      "E26.T2.r13",
+      "E26.T2.r14",
+      "E26.T2.r15",
+      "E26.T2.r16"
+     ],
+     "artefacts": [
+      "A46",
+      "A48"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "planning": "planned_estimate",
+   "planned_at": "2026-11-21T18:56:43Z",
+   "planned_at_anchor": "git_remote",
+   "estimate": {
+    "estimands": {
+     "se": {
+      "variable": "bootstrap standard error",
+      "table": true
+     },
+     "ratio": {
+      "variable": "D28",
+      "table": true
+     }
+    },
+    "runs": 1,
+    "lab_plan": "PL13"
+   },
+   "name": "How far each measure separates the data sets of a group, relative to its own noise",
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B15",
+     "note": "Brys, Hubert and Struyf (2004) show that one outlier can move the classical skewness far and propose the medcouple; here the half-moment coefficients and the moment, L-moment, quantile and medcouple measures are compared on real data for their change when the most extreme values are removed, how far they separate data sets relative to their own noise, and their stability over time."
+    }
+   ],
+   "about": {
+    "subject": "D5",
+    "relation": "on real data, compared with",
+    "object": null,
+    "comparator": "D21",
+    "conditions": [
+     "D24",
+     "D25"
+    ]
+   },
+   "scope": {
+    "data_type": "48 rock samples; daily index returns 1991-1998",
+    "conditions": [
+     "bootstrap standard errors from 2000 resamples",
+     "each group of four data sets separately"
+    ]
+   },
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Direct computation on public data with fixed bootstrap seeds, reproducible from the recorded code; two groups of four data sets only (L13, L14)."
+    }
+   ],
+   "limitations": [
+    "L13",
+    "L14"
+   ]
+  },
+  {
+   "id": "C28",
+   "statement": "Taking together the median absolute [[D27:standardised change on removing the most extreme values]] for three values and the [[D28:discrimination ratio]], a measure does better than another on both counts when it changes less and separates the data sets further: on the [[D24:petroleum rock samples]] none of the tail-weight [[D21:comparison measures]] does better than the [[D5:Extremity coefficient]] on both, and the Extremity coefficient does better than [[D10:excess kurtosis]], [[D12:L-kurtosis]], [[D14:TL-kurtosis]] and the [[D19:Geary ratio]]; on the [[D25:European stock index returns]] the [[D3:Asymmetry coefficient]] does better than [[D9:moment skewness]] and [[D11:L-skewness]] on both, and the Extremity coefficient better than excess kurtosis and the Geary ratio; the Asymmetry coefficient is bettered on both counts by [[D13:TL-skewness]] on the rock samples and by [[D17:mean-based skewness]] on the index returns, and the Extremity coefficient by L-kurtosis and TL-kurtosis on the index returns.",
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E25",
+     "results": [
+      "E25.T2.r1",
+      "E25.T2.r6",
+      "E25.T2.r7",
+      "E25.T2.r8",
+      "E25.T2.r9",
+      "E25.T2.r10",
+      "E25.T2.r11",
+      "E25.T2.r3",
+      "E25.T2.r12",
+      "E25.T2.r13",
+      "E25.T2.r14",
+      "E25.T2.r15",
+      "E25.T2.r16"
+     ],
+     "artefacts": [
+      "A46"
+     ]
+    },
+    {
+     "kind": "empirical_quant",
+     "evidence": "E26",
+     "results": [
+      "E26.T2.r1",
+      "E26.T2.r6",
+      "E26.T2.r7",
+      "E26.T2.r8",
+      "E26.T2.r9",
+      "E26.T2.r10",
+      "E26.T2.r11",
+      "E26.T2.r3",
+      "E26.T2.r12",
+      "E26.T2.r13",
+      "E26.T2.r14",
+      "E26.T2.r15",
+      "E26.T2.r16"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "planning": "planned_estimate",
+   "planned_at": "2026-11-21T18:56:43Z",
+   "planned_at_anchor": "git_remote",
+   "estimate": {
+    "estimands": {
+     "se": {
+      "variable": "bootstrap standard error",
+      "table": true
+     },
+     "ratio": {
+      "variable": "D28",
+      "table": true
+     }
+    },
+    "runs": 1,
+    "lab_plan": "PL13"
+   },
+   "name": "Robustness against precision: which measures do better on both counts",
+   "depends_on": [
+    "C25",
+    "C26",
+    "C27"
+   ],
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B15",
+     "note": "Brys, Hubert and Struyf (2004) show that one outlier can move the classical skewness far and propose the medcouple; here the half-moment coefficients and the moment, L-moment, quantile and medcouple measures are compared on real data for their change when the most extreme values are removed, how far they separate data sets relative to their own noise, and their stability over time."
+    }
+   ],
+   "about": {
+    "subject": "D5",
+    "relation": "on real data, compared with",
+    "object": null,
+    "comparator": "D21",
+    "conditions": [
+     "D24",
+     "D25"
+    ]
+   },
+   "scope": {
+    "data_type": "48 rock samples; daily index returns 1991-1998",
+    "conditions": [
+     "the 3 values farthest from the mean removed",
+     "bootstrap standard errors from 2000 resamples",
+     "medians over each group's four data sets"
+    ]
+   },
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Direct computation on public data with fixed bootstrap seeds, reproducible from the recorded code; two groups of four data sets only (L13, L14)."
+    }
+   ],
+   "limitations": [
+    "L13",
+    "L14"
+   ]
+  },
+  {
+   "id": "C29",
+   "statement": "On rolling windows of 260 daily [[D25:European stock index returns]] moved one return at a time, the largest change between consecutive windows, in standard deviations of the measure over all windows ([[D29:spike ratio]]), has a median over the four indices of 5.15 for [[D9:moment skewness]] and 4.68 for [[D10:excess kurtosis]], against 2.19 for the [[D3:Asymmetry coefficient]] and 1.85 for the [[D5:Extremity coefficient]], close to [[D11:L-skewness]] (1.92) and [[D12:L-kurtosis]] (1.38); [[D13:TL-skewness]] (0.36) and [[D14:TL-kurtosis]] (0.27) change least.",
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E27",
+     "results": [
+      "E27.T2.r6",
+      "E27.T2.r12",
+      "E27.T2.r1",
+      "E27.T2.r3",
+      "E27.T2.r7",
+      "E27.T2.r13",
+      "E27.T2.r8",
+      "E27.T2.r14"
+     ],
+     "artefacts": [
+      "A47",
+      "A48"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "planning": "planned_estimate",
+   "planned_at": "2026-11-21T18:56:43Z",
+   "planned_at_anchor": "git_remote",
+   "estimate": {
+    "estimands": {
+     "spike": {
+      "variable": "D29",
+      "table": true
+     },
+     "rough": {
+      "variable": "D30",
+      "table": true
+     }
+    },
+    "runs": 1,
+    "lab_plan": "PL14"
+   },
+   "name": "Stability of each measure on rolling windows of the index returns",
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B15",
+     "note": "Brys, Hubert and Struyf (2004) show that one outlier can move the classical skewness far and propose the medcouple; here the half-moment coefficients and the moment, L-moment, quantile and medcouple measures are compared on real data for their change when the most extreme values are removed, how far they separate data sets relative to their own noise, and their stability over time."
+    }
+   ],
+   "about": {
+    "subject": "D3",
+    "relation": "on real data, compared with",
+    "object": null,
+    "comparator": "D9",
+    "conditions": [
+     "D25"
+    ]
+   },
+   "scope": {
+    "data_type": "daily index returns 1991-1998",
+    "conditions": [
+     "rolling windows of 260 returns, step one return",
+     "medians over the four indices"
+    ]
+   },
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Direct computation on public data with fixed bootstrap seeds, reproducible from the recorded code; two groups of four data sets only (L13, L14)."
+    }
+   ],
+   "limitations": [
+    "L13",
+    "L14"
+   ]
+  },
+  {
+   "id": "C30",
    "statement": "The variable $y$ has a finite mean $\\mu_1$.",
    "type": "formal",
    "role": "supporting",
@@ -3740,7 +4027,7 @@
    "provenance": "author_stated"
   },
   {
-   "id": "C26",
+   "id": "C31",
    "statement": "The variable $y$ has a finite, positive variance $\\sigma^2$.",
    "type": "formal",
    "role": "supporting",
@@ -4109,207 +4396,12 @@
   {
    "id": "E10",
    "profile": "simulation",
-   "description": "Numerical checks of the proofs at 40-digit precision (closed forms, run RN7): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
+   "description": "Numerical checks of the proofs at 40-digit precision (the extended closed forms H25 to H31 in distributions.md, run RN19): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
    "availability": {
     "level": "public"
    },
    "lab_runs": [
-    "RN7"
-   ],
-   "results": [
-    {
-     "id": "R1",
-     "variable": "largest relative error of the numerical checks",
-     "value": 8.036e-41,
-     "conditions": {
-      "hypothesis": "H10"
-     }
-    }
-   ],
-   "artefacts": [
-    "A29"
-   ],
-   "setup": {
-    "studied": [
-     "D1"
-    ],
-    "lens": [
-     "D1"
-    ]
-   },
-   "execution": {
-    "code_version": "307e2e5bc8390ae4ffa4c95de5669f04106a9217",
-    "software": {
-     "python": "3.13.17",
-     "platform": "Linux-6.18.44-fc-v653-x86_64-with-glibc2.39"
-    }
-   }
-  },
-  {
-   "id": "E11",
-   "profile": "simulation",
-   "description": "Numerical checks of the proofs at 40-digit precision (closed forms, run RN7): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
-   "availability": {
-    "level": "public"
-   },
-   "lab_runs": [
-    "RN7"
-   ],
-   "results": [
-    {
-     "id": "R1",
-     "variable": "largest relative error of the numerical checks",
-     "value": 0.0,
-     "conditions": {
-      "hypothesis": "H11"
-     }
-    }
-   ],
-   "artefacts": [
-    "A29"
-   ],
-   "setup": {
-    "studied": [
-     "D1"
-    ],
-    "lens": [
-     "D1"
-    ]
-   },
-   "execution": {
-    "code_version": "307e2e5bc8390ae4ffa4c95de5669f04106a9217",
-    "software": {
-     "python": "3.13.17",
-     "platform": "Linux-6.18.44-fc-v653-x86_64-with-glibc2.39"
-    }
-   }
-  },
-  {
-   "id": "E12",
-   "profile": "simulation",
-   "description": "Numerical checks of the proofs at 40-digit precision (closed forms, run RN7): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
-   "availability": {
-    "level": "public"
-   },
-   "lab_runs": [
-    "RN7"
-   ],
-   "results": [
-    {
-     "id": "R1",
-     "variable": "largest relative error of the numerical checks",
-     "value": 1.54e-41,
-     "conditions": {
-      "hypothesis": "H12"
-     }
-    }
-   ],
-   "artefacts": [
-    "A29"
-   ],
-   "setup": {
-    "studied": [
-     "D1"
-    ],
-    "lens": [
-     "D1"
-    ]
-   },
-   "execution": {
-    "code_version": "307e2e5bc8390ae4ffa4c95de5669f04106a9217",
-    "software": {
-     "python": "3.13.17",
-     "platform": "Linux-6.18.44-fc-v653-x86_64-with-glibc2.39"
-    }
-   }
-  },
-  {
-   "id": "E13",
-   "profile": "simulation",
-   "description": "Numerical checks of the proofs at 40-digit precision (closed forms, run RN7): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
-   "availability": {
-    "level": "public"
-   },
-   "lab_runs": [
-    "RN7"
-   ],
-   "results": [
-    {
-     "id": "R1",
-     "variable": "largest relative error of the numerical checks",
-     "value": 1.031e-39,
-     "conditions": {
-      "hypothesis": "H13"
-     }
-    }
-   ],
-   "artefacts": [
-    "A29"
-   ],
-   "setup": {
-    "studied": [
-     "D1"
-    ],
-    "lens": [
-     "D1"
-    ]
-   },
-   "execution": {
-    "code_version": "307e2e5bc8390ae4ffa4c95de5669f04106a9217",
-    "software": {
-     "python": "3.13.17",
-     "platform": "Linux-6.18.44-fc-v653-x86_64-with-glibc2.39"
-    }
-   }
-  },
-  {
-   "id": "E14",
-   "profile": "simulation",
-   "description": "Numerical checks of the proofs at 40-digit precision (closed forms, run RN7): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
-   "availability": {
-    "level": "public"
-   },
-   "lab_runs": [
-    "RN7"
-   ],
-   "results": [
-    {
-     "id": "R1",
-     "variable": "largest relative error of the numerical checks",
-     "value": 2.075e-41,
-     "conditions": {
-      "hypothesis": "H14"
-     }
-    }
-   ],
-   "artefacts": [
-    "A29"
-   ],
-   "setup": {
-    "studied": [
-     "D1"
-    ],
-    "lens": [
-     "D1"
-    ]
-   },
-   "execution": {
-    "code_version": "307e2e5bc8390ae4ffa4c95de5669f04106a9217",
-    "software": {
-     "python": "3.13.17",
-     "platform": "Linux-6.18.44-fc-v653-x86_64-with-glibc2.39"
-    }
-   }
-  },
-  {
-   "id": "E15",
-   "profile": "simulation",
-   "description": "Numerical checks of the proofs at 40-digit precision (closed forms, run RN7): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
-   "availability": {
-    "level": "public"
-   },
-   "lab_runs": [
-    "RN7"
+    "RN19"
    ],
    "results": [
     {
@@ -4317,7 +4409,7 @@
      "variable": "largest relative error of the numerical checks",
      "value": 1.148e-41,
      "conditions": {
-      "hypothesis": "H15"
+      "hypothesis": "H25"
      }
     }
    ],
@@ -4333,30 +4425,225 @@
     ]
    },
    "execution": {
-    "code_version": "307e2e5bc8390ae4ffa4c95de5669f04106a9217",
+    "code_version": "ec02b5e2e1a68696ee45f32feb26405db184fb28",
     "software": {
      "python": "3.13.17",
-     "platform": "Linux-6.18.44-fc-v653-x86_64-with-glibc2.39"
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
+    }
+   }
+  },
+  {
+   "id": "E11",
+   "profile": "simulation",
+   "description": "Numerical checks of the proofs at 40-digit precision (the extended closed forms H25 to H31 in distributions.md, run RN19): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN19"
+   ],
+   "results": [
+    {
+     "id": "R1",
+     "variable": "largest relative error of the numerical checks",
+     "value": 0.0,
+     "conditions": {
+      "hypothesis": "H26"
+     }
+    }
+   ],
+   "artefacts": [
+    "A29"
+   ],
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "lens": [
+     "D1"
+    ]
+   },
+   "execution": {
+    "code_version": "ec02b5e2e1a68696ee45f32feb26405db184fb28",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
+    }
+   }
+  },
+  {
+   "id": "E12",
+   "profile": "simulation",
+   "description": "Numerical checks of the proofs at 40-digit precision (the extended closed forms H25 to H31 in distributions.md, run RN19): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN19"
+   ],
+   "results": [
+    {
+     "id": "R1",
+     "variable": "largest relative error of the numerical checks",
+     "value": 4.592e-41,
+     "conditions": {
+      "hypothesis": "H27"
+     }
+    }
+   ],
+   "artefacts": [
+    "A29"
+   ],
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "lens": [
+     "D1"
+    ]
+   },
+   "execution": {
+    "code_version": "ec02b5e2e1a68696ee45f32feb26405db184fb28",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
+    }
+   }
+  },
+  {
+   "id": "E13",
+   "profile": "simulation",
+   "description": "Numerical checks of the proofs at 40-digit precision (the extended closed forms H25 to H31 in distributions.md, run RN19): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN19"
+   ],
+   "results": [
+    {
+     "id": "R1",
+     "variable": "largest relative error of the numerical checks",
+     "value": 3.269e-12,
+     "conditions": {
+      "hypothesis": "H28"
+     }
+    }
+   ],
+   "artefacts": [
+    "A29"
+   ],
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "lens": [
+     "D1"
+    ]
+   },
+   "execution": {
+    "code_version": "ec02b5e2e1a68696ee45f32feb26405db184fb28",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
+    }
+   }
+  },
+  {
+   "id": "E14",
+   "profile": "simulation",
+   "description": "Numerical checks of the proofs at 40-digit precision (the extended closed forms H25 to H31 in distributions.md, run RN19): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN19"
+   ],
+   "results": [
+    {
+     "id": "R1",
+     "variable": "largest relative error of the numerical checks",
+     "value": 7.041e-16,
+     "conditions": {
+      "hypothesis": "H29"
+     }
+    }
+   ],
+   "artefacts": [
+    "A29"
+   ],
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "lens": [
+     "D1"
+    ]
+   },
+   "execution": {
+    "code_version": "ec02b5e2e1a68696ee45f32feb26405db184fb28",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
+    }
+   }
+  },
+  {
+   "id": "E15",
+   "profile": "simulation",
+   "description": "Numerical checks of the proofs at 40-digit precision (the extended closed forms H25 to H31 in distributions.md, run RN19): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN19"
+   ],
+   "results": [
+    {
+     "id": "R1",
+     "variable": "largest relative error of the numerical checks",
+     "value": 1.875e-41,
+     "conditions": {
+      "hypothesis": "H30"
+     }
+    }
+   ],
+   "artefacts": [
+    "A29"
+   ],
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "lens": [
+     "D1"
+    ]
+   },
+   "execution": {
+    "code_version": "ec02b5e2e1a68696ee45f32feb26405db184fb28",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
     }
    }
   },
   {
    "id": "E16",
    "profile": "simulation",
-   "description": "Numerical checks of the proofs at 40-digit precision (closed forms, run RN7): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
+   "description": "Numerical checks of the proofs at 40-digit precision (the extended closed forms H25 to H31 in distributions.md, run RN19): each statement evaluated by numerical integration on the distributions the plan lists, and sample statements on random and extremal samples; the result is the largest relative error.",
    "availability": {
     "level": "public"
    },
    "lab_runs": [
-    "RN7"
+    "RN19"
    ],
    "results": [
     {
      "id": "R1",
      "variable": "largest relative error of the numerical checks",
-     "value": 1.004e-22,
+     "value": 5.705e-23,
      "conditions": {
-      "hypothesis": "H16"
+      "hypothesis": "H31"
      }
     }
    ],
@@ -4372,10 +4659,10 @@
     ]
    },
    "execution": {
-    "code_version": "307e2e5bc8390ae4ffa4c95de5669f04106a9217",
+    "code_version": "ec02b5e2e1a68696ee45f32feb26405db184fb28",
     "software": {
      "python": "3.13.17",
-     "platform": "Linux-6.18.44-fc-v653-x86_64-with-glibc2.39"
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
     }
    }
   },
@@ -4695,56 +4982,813 @@
    "tables": [
     {
      "id": "T1",
-     "description": "measure value by variable, measure; data: petroleum rock samples (lab runs RN10)",
+     "description": "Every measure on each of the four variables of the petroleum rock samples",
      "conditions": {
       "data": "petroleum rock samples"
      },
      "row_labels": [
-      "variable",
       "measure"
      ],
      "columns": [
-      "measure value"
+      {
+       "variable": "measure value",
+       "conditions": {
+        "variable": "Area"
+       }
+      },
+      {
+       "variable": "measure value",
+       "conditions": {
+        "variable": "Perimeter"
+       }
+      },
+      {
+       "variable": "measure value",
+       "conditions": {
+        "variable": "Shape"
+       }
+      },
+      {
+       "variable": "measure value",
+       "conditions": {
+        "variable": "Permeability"
+       }
+      }
      ],
-     "artefact": "A27",
-     "rows_file": "A31",
-     "n_rows": 76
+     "artefact": "A31",
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Asymmetry"
+       ],
+       "values": [
+        0.07119,
+        -0.00665,
+        -0.1697,
+        -0.1265
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Hypotailedness"
+       ],
+       "values": [
+        0.8306,
+        0.9491,
+        0.8216,
+        0.9382
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Extremity"
+       ],
+       "values": [
+        -0.2522,
+        0.5162,
+        -0.2939,
+        0.4262
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Complex Extremity, real part"
+       ],
+       "values": [
+        -0.2841,
+        0.4471,
+        -0.437,
+        0.2347
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Complex Extremity, imaginary part"
+       ],
+       "values": [
+        -0.1718,
+        0.5888,
+        0.1341,
+        0.9262
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "moment skewness"
+       ],
+       "values": [
+        -0.3039,
+        0.02501,
+        1.169,
+        0.7157
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "L-skewness"
+       ],
+       "values": [
+        -0.06309,
+        0.01283,
+        0.2463,
+        0.2836
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "TL-skewness"
+       ],
+       "values": [
+        -0.05345,
+        0.02951,
+        0.1924,
+        0.2641
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "quartile skewness"
+       ],
+       "values": [
+        -0.2242,
+        0.129,
+        0.271,
+        0.8458
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "medcouple"
+       ],
+       "values": [
+        -0.1481,
+        0.127,
+        0.2348,
+        0.8156
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "mean-based skewness 2F(mean) - 1"
+       ],
+       "values": [
+        -0.125,
+        0.0,
+        0.2083,
+        0.1667
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "excess kurtosis"
+       ],
+       "values": [
+        -0.2625,
+        -1.564,
+        1.11,
+        -0.9625
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "L-kurtosis"
+       ],
+       "values": [
+        0.1341,
+        -0.08189,
+        0.1712,
+        -0.03021
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "TL-kurtosis"
+       ],
+       "values": [
+        0.08066,
+        -0.1128,
+        0.09135,
+        -0.04469
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "octile kurtosis"
+       ],
+       "values": [
+        1.197,
+        0.4552,
+        1.174,
+        0.646
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "Geary ratio"
+       ],
+       "values": [
+        0.8035,
+        0.9391,
+        0.7797,
+        0.9167
+       ]
+      },
+      {
+       "id": "r17",
+       "label": [
+        "half central moment, real part"
+       ],
+       "values": [
+        22.6,
+        17.77,
+        0.1022,
+        8.791
+       ]
+      },
+      {
+       "id": "r18",
+       "label": [
+        "half central moment, imaginary part"
+       ],
+       "values": [
+        20.2,
+        17.95,
+        0.1339,
+        10.74
+       ]
+      },
+      {
+       "id": "r19",
+       "label": [
+        "half absolute moment"
+       ],
+       "values": [
+        42.8,
+        35.72,
+        0.2362,
+        19.53
+       ]
+      }
+     ]
     },
     {
      "id": "T2",
-     "description": "measure value by index, measure; data: European stock index returns (lab runs RN10)",
+     "description": "Every measure on the daily log returns of each of the four European stock indices",
      "conditions": {
       "data": "European stock index returns"
      },
      "row_labels": [
-      "index",
       "measure"
      ],
      "columns": [
-      "measure value"
+      {
+       "variable": "measure value",
+       "conditions": {
+        "index": "DAX"
+       }
+      },
+      {
+       "variable": "measure value",
+       "conditions": {
+        "index": "SMI"
+       }
+      },
+      {
+       "variable": "measure value",
+       "conditions": {
+        "index": "CAC"
+       }
+      },
+      {
+       "variable": "measure value",
+       "conditions": {
+        "index": "FTSE"
+       }
+      }
      ],
-     "artefact": "A27",
-     "rows_file": "A32",
-     "n_rows": 76
+     "artefact": "A32",
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Asymmetry"
+       ],
+       "values": [
+        0.004437,
+        0.02146,
+        -0.01148,
+        -0.008706
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Hypotailedness"
+       ],
+       "values": [
+        0.7561,
+        0.763,
+        0.7784,
+        0.7845
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Extremity"
+       ],
+       "values": [
+        -0.5453,
+        -0.523,
+        -0.4696,
+        -0.4471
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Complex Extremity, real part"
+       ],
+       "values": [
+        -0.4648,
+        -0.4254,
+        -0.3665,
+        -0.4002
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Complex Extremity, imaginary part"
+       ],
+       "values": [
+        -0.6113,
+        -0.5999,
+        -0.5517,
+        -0.4885
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "moment skewness"
+       ],
+       "values": [
+        -0.5541,
+        -0.6322,
+        -0.1774,
+        0.1096
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "L-skewness"
+       ],
+       "values": [
+        -0.01926,
+        -0.03904,
+        -0.006699,
+        -0.001946
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "TL-skewness"
+       ],
+       "values": [
+        -0.001395,
+        -0.01862,
+        0.00878,
+        0.0009607
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "quartile skewness"
+       ],
+       "values": [
+        0.06564,
+        0.0505,
+        0.07851,
+        0.0809
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "medcouple"
+       ],
+       "values": [
+        0.07021,
+        0.03454,
+        0.04436,
+        0.09494
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "mean-based skewness 2F(mean) - 1"
+       ],
+       "values": [
+        0.01452,
+        -0.008069,
+        0.04788,
+        0.03174
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "excess kurtosis"
+       ],
+       "values": [
+        6.28,
+        5.736,
+        2.385,
+        2.64
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "L-kurtosis"
+       ],
+       "values": [
+        0.2131,
+        0.2085,
+        0.1772,
+        0.1724
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "TL-kurtosis"
+       ],
+       "values": [
+        0.1124,
+        0.1042,
+        0.09349,
+        0.08588
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "octile kurtosis"
+       ],
+       "values": [
+        1.433,
+        1.417,
+        1.384,
+        1.331
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "Geary ratio"
+       ],
+       "values": [
+        0.7153,
+        0.7209,
+        0.7475,
+        0.7507
+       ]
+      },
+      {
+       "id": "r17",
+       "label": [
+        "half central moment, real part"
+       ],
+       "values": [
+        0.0385,
+        0.0373,
+        0.0405,
+        0.03475
+       ]
+      },
+      {
+       "id": "r18",
+       "label": [
+        "half central moment, imaginary part"
+       ],
+       "values": [
+        0.03823,
+        0.03607,
+        0.04124,
+        0.03523
+       ]
+      },
+      {
+       "id": "r19",
+       "label": [
+        "half absolute moment"
+       ],
+       "values": [
+        0.07673,
+        0.07337,
+        0.08175,
+        0.06998
+       ]
+      }
+     ]
     },
     {
      "id": "T3",
-     "description": "measure over the expanding window, window length at the extreme by measure, summary; data: European stock index returns, index: DAX (lab runs RN10)",
+     "description": "Each measure on the DAX returns over the expanding window: its first and last values, its smallest and largest, and the window lengths at which these extremes occur",
      "conditions": {
       "data": "European stock index returns",
       "index": "DAX"
      },
      "row_labels": [
-      "measure",
-      "summary"
+      "measure"
      ],
      "columns": [
-      "measure over the expanding window",
-      "window length at the extreme"
+      {
+       "variable": "measure over the expanding window",
+       "conditions": {
+        "summary": "first"
+       }
+      },
+      {
+       "variable": "measure over the expanding window",
+       "conditions": {
+        "summary": "last"
+       }
+      },
+      {
+       "variable": "measure over the expanding window",
+       "conditions": {
+        "summary": "smallest"
+       }
+      },
+      {
+       "variable": "measure over the expanding window",
+       "conditions": {
+        "summary": "largest"
+       }
+      },
+      {
+       "variable": "window length at the extreme",
+       "conditions": {
+        "summary": "smallest"
+       }
+      },
+      {
+       "variable": "window length at the extreme",
+       "conditions": {
+        "summary": "largest"
+       }
+      }
      ],
-     "artefact": "A27",
-     "rows_file": "A33",
-     "n_rows": 64
+     "artefact": "A33",
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Asymmetry"
+       ],
+       "values": [
+        -0.03324,
+        0.004437,
+        -0.05809,
+        0.3125,
+        32,
+        35
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Hypotailedness"
+       ],
+       "values": [
+        0.846,
+        0.7561,
+        0.536,
+        0.846,
+        37,
+        30
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Extremity"
+       ],
+       "values": [
+        -0.1754,
+        -0.5453,
+        -0.9266,
+        -0.1754,
+        37,
+        30
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Complex Extremity, real part"
+       ],
+       "values": [
+        -0.4137,
+        -0.4648,
+        -0.8319,
+        -0.2457,
+        76,
+        35
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Complex Extremity, imaginary part"
+       ],
+       "values": [
+        0.1979,
+        -0.6113,
+        -0.9714,
+        0.331,
+        35,
+        31
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "moment skewness"
+       ],
+       "values": [
+        0.5532,
+        -0.5541,
+        -4.701,
+        0.6782,
+        35,
+        32
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "L-skewness"
+       ],
+       "values": [
+        0.1414,
+        -0.01926,
+        -0.3512,
+        0.1676,
+        35,
+        31
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "TL-skewness"
+       ],
+       "values": [
+        0.07777,
+        -0.001395,
+        -0.01093,
+        0.1312,
+        1504,
+        38
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "quartile skewness"
+       ],
+       "values": [
+        -0.3927,
+        0.06564,
+        -0.4919,
+        0.08844,
+        60,
+        811
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "medcouple"
+       ],
+       "values": [
+        -0.1578,
+        0.07021,
+        -0.1578,
+        0.1318,
+        30,
+        43
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "mean-based skewness 2F(mean) - 1"
+       ],
+       "values": [
+        0.0,
+        0.01452,
+        -0.2778,
+        0.07563,
+        36,
+        238
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "excess kurtosis"
+       ],
+       "values": [
+        -0.4098,
+        6.28,
+        -0.4098,
+        50.2,
+        30,
+        266
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "L-kurtosis"
+       ],
+       "values": [
+        0.08808,
+        0.2131,
+        0.08808,
+        0.5326,
+        30,
+        37
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "TL-kurtosis"
+       ],
+       "values": [
+        0.01686,
+        0.1124,
+        0.01686,
+        0.1304,
+        30,
+        395
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "octile kurtosis"
+       ],
+       "values": [
+        1.056,
+        1.433,
+        1.056,
+        1.724,
+        30,
+        329
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "Geary ratio"
+       ],
+       "values": [
+        0.8207,
+        0.7153,
+        0.4361,
+        0.8207,
+        35,
+        30
+       ]
+      }
+     ]
     }
    ],
    "artefacts": [
@@ -4752,7 +5796,7 @@
     "A31",
     "A32",
     "A33",
-    "A41"
+    "A45"
    ],
    "setup": {
     "studied": [
@@ -5090,6 +6134,2263 @@
   },
   {
    "id": "E25",
+   "profile": "quant",
+   "design": "other",
+   "description": "Lab runs RN20 under plan PL12. Design: Sensitivity to the few most extreme values. On each of the eight data sets (Area, Perimeter, Shape, Permeability: 48 values each; the daily log returns of DAX, SMI, CAC, FTSE: 1859 each), every measure is computed on all values and again without the k values farthest from the mean (largest absolute deviation), k = 1, 2 and 3; the change is divided by the measure's bootstrap standard error on all values, so that it reads in units of its own sampling noise. Run: benefits.py sensitivity. Analysis: The standardised changes, by measure, data set and k, reported in full; read against each other (a measure that moves less is less driven by the few most extreme values).",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN20"
+   ],
+   "tables": [
+    {
+     "id": "T1",
+     "description": "The standardised change of every measure on removing the k values farthest from the mean (k = 1, 2, 3), on each variable of the petroleum rock samples and each series of index returns",
+     "row_labels": [
+      "measure",
+      "k"
+     ],
+     "columns": [
+      {
+       "variable": "D27",
+       "conditions": {
+        "data set": "Area"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data set": "Perimeter"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data set": "Shape"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data set": "Permeability"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data set": "DAX"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data set": "SMI"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data set": "CAC"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data set": "FTSE"
+       }
+      }
+     ],
+     "artefact": "A38",
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Asymmetry",
+        1
+       ],
+       "values": [
+        -0.1215,
+        0.1227,
+        0.08648,
+        -0.1573,
+        -0.4187,
+        -0.3864,
+        -0.294,
+        0.2799
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Asymmetry",
+        2
+       ],
+       "values": [
+        -0.6342,
+        0.2376,
+        0.1878,
+        -0.3203,
+        -0.6509,
+        -0.1932,
+        -0.08022,
+        0.4901
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Asymmetry",
+        3
+       ],
+       "values": [
+        -0.9868,
+        0.1181,
+        0.6431,
+        -0.4883,
+        -0.8289,
+        -0.3769,
+        -0.2208,
+        0.2869
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Hypotailedness",
+        1
+       ],
+       "values": [
+        -0.1836,
+        0.04469,
+        0.2113,
+        0.03809,
+        0.7933,
+        0.8011,
+        0.5843,
+        0.4894
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Hypotailedness",
+        2
+       ],
+       "values": [
+        -0.2363,
+        -0.04746,
+        0.2775,
+        0.09964,
+        1.089,
+        1.023,
+        0.8408,
+        0.7617
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "Hypotailedness",
+        3
+       ],
+       "values": [
+        -0.03427,
+        0.1991,
+        0.2112,
+        0.2095,
+        1.298,
+        1.241,
+        1.008,
+        1.092
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "Extremity",
+        1
+       ],
+       "values": [
+        -0.1873,
+        0.04742,
+        0.2242,
+        0.04158,
+        0.8143,
+        0.8218,
+        0.592,
+        0.4946
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "Extremity",
+        2
+       ],
+       "values": [
+        -0.2401,
+        -0.05019,
+        0.2961,
+        0.1091,
+        1.128,
+        1.055,
+        0.8565,
+        0.7741
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "Extremity",
+        3
+       ],
+       "values": [
+        -0.03536,
+        0.2124,
+        0.2241,
+        0.2304,
+        1.352,
+        1.288,
+        1.03,
+        1.118
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "Complex Extremity, real part",
+        1
+       ],
+       "values": [
+        -0.6861,
+        -0.2824,
+        0.7334,
+        0.2987,
+        0.1013,
+        -0.07379,
+        0.05509,
+        0.804
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "Complex Extremity, real part",
+        2
+       ],
+       "values": [
+        0.1075,
+        -0.6652,
+        1.649,
+        0.6847,
+        0.2185,
+        0.4505,
+        0.4059,
+        1.258
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "Complex Extremity, real part",
+        3
+       ],
+       "values": [
+        0.01431,
+        -0.2515,
+        1.108,
+        1.211,
+        0.2456,
+        0.4565,
+        0.5431,
+        1.241
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "Complex Extremity, imaginary part",
+        1
+       ],
+       "values": [
+        0.6313,
+        0.4133,
+        -0.6537,
+        -0.08546,
+        0.8458,
+        0.9382,
+        0.5977,
+        -0.1705
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "Complex Extremity, imaginary part",
+        2
+       ],
+       "values": [
+        -0.6361,
+        0.7679,
+        -1.422,
+        -0.1916,
+        1.15,
+        0.9256,
+        0.6016,
+        -0.2492
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "Complex Extremity, imaginary part",
+        3
+       ],
+       "values": [
+        -0.2921,
+        0.6552,
+        -1.548,
+        -0.3259,
+        1.405,
+        1.182,
+        0.6956,
+        0.2038
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "moment skewness",
+        1
+       ],
+       "values": [
+        0.4161,
+        -0.002875,
+        -0.4046,
+        0.1153,
+        1.039,
+        1.043,
+        0.8628,
+        -0.7936
+       ]
+      },
+      {
+       "id": "r17",
+       "label": [
+        "moment skewness",
+        2
+       ],
+       "values": [
+        0.915,
+        -0.03271,
+        -1.017,
+        0.1824,
+        1.305,
+        0.8138,
+        0.4166,
+        -1.207
+       ]
+      },
+      {
+       "id": "r18",
+       "label": [
+        "moment skewness",
+        3
+       ],
+       "values": [
+        1.697,
+        0.05519,
+        -2.144,
+        0.1565,
+        1.469,
+        0.9966,
+        0.5714,
+        -0.8431
+       ]
+      },
+      {
+       "id": "r19",
+       "label": [
+        "L-skewness",
+        1
+       ],
+       "values": [
+        0.3909,
+        0.02042,
+        -0.4655,
+        0.09841,
+        0.4757,
+        0.4481,
+        0.3798,
+        -0.3707
+       ]
+      },
+      {
+       "id": "r20",
+       "label": [
+        "L-skewness",
+        2
+       ],
+       "values": [
+        0.8295,
+        0.01948,
+        -1.011,
+        0.162,
+        0.7422,
+        0.2047,
+        0.09712,
+        -0.6468
+       ]
+      },
+      {
+       "id": "r21",
+       "label": [
+        "L-skewness",
+        3
+       ],
+       "values": [
+        1.411,
+        0.09756,
+        -1.709,
+        0.1756,
+        0.9561,
+        0.4184,
+        0.2715,
+        -0.388
+       ]
+      },
+      {
+       "id": "r22",
+       "label": [
+        "TL-skewness",
+        1
+       ],
+       "values": [
+        0.2513,
+        -0.08526,
+        -0.3152,
+        0.09692,
+        0.07766,
+        0.07482,
+        0.07024,
+        -0.06136
+       ]
+      },
+      {
+       "id": "r23",
+       "label": [
+        "TL-skewness",
+        2
+       ],
+       "values": [
+        0.4698,
+        -0.1951,
+        -0.5755,
+        0.2062,
+        0.1528,
+        0.0113,
+        0.01112,
+        -0.1203
+       ]
+      },
+      {
+       "id": "r24",
+       "label": [
+        "TL-skewness",
+        3
+       ],
+       "values": [
+        0.6056,
+        -0.08322,
+        -0.7162,
+        0.3437,
+        0.2259,
+        0.08423,
+        0.08006,
+        -0.05548
+       ]
+      },
+      {
+       "id": "r25",
+       "label": [
+        "quartile skewness",
+        1
+       ],
+       "values": [
+        -0.07619,
+        -0.3752,
+        -0.05635,
+        0.02692,
+        0.009171,
+        0.1204,
+        0.02321,
+        -0.02219
+       ]
+      },
+      {
+       "id": "r26",
+       "label": [
+        "quartile skewness",
+        2
+       ],
+       "values": [
+        -0.3473,
+        -0.6024,
+        -0.06369,
+        -0.02032,
+        0.04549,
+        0.09055,
+        0.01588,
+        -0.07064
+       ]
+      },
+      {
+       "id": "r27",
+       "label": [
+        "quartile skewness",
+        3
+       ],
+       "values": [
+        -0.6887,
+        -0.3699,
+        -0.202,
+        -0.06672,
+        0.1105,
+        0.1094,
+        0.02798,
+        -0.04685
+       ]
+      },
+      {
+       "id": "r28",
+       "label": [
+        "medcouple",
+        1
+       ],
+       "values": [
+        0.1335,
+        -0.3916,
+        -0.1714,
+        0.02211,
+        -0.01586,
+        0.04915,
+        0.0298,
+        -0.05003
+       ]
+      },
+      {
+       "id": "r29",
+       "label": [
+        "medcouple",
+        2
+       ],
+       "values": [
+        -0.1346,
+        -0.5944,
+        -0.1222,
+        -0.1058,
+        -0.01979,
+        6.626e-05,
+        0.001427,
+        -0.1005
+       ]
+      },
+      {
+       "id": "r30",
+       "label": [
+        "medcouple",
+        3
+       ],
+       "values": [
+        -0.3187,
+        -0.3878,
+        -0.1918,
+        -0.1058,
+        0.03427,
+        0.04919,
+        0.0317,
+        -0.05002
+       ]
+      },
+      {
+       "id": "r31",
+       "label": [
+        "mean-based skewness 2F(mean) - 1",
+        1
+       ],
+       "values": [
+        -0.2551,
+        -0.1725,
+        0.2612,
+        0.1786,
+        0.3932,
+        0.222,
+        0.1705,
+        -0.0315
+       ]
+      },
+      {
+       "id": "r32",
+       "label": [
+        "mean-based skewness 2F(mean) - 1",
+        2
+       ],
+       "values": [
+        0.8688,
+        -0.3525,
+        0.5338,
+        0.3649,
+        0.6658,
+        0.06303,
+        0.002317,
+        -0.1281
+       ]
+      },
+      {
+       "id": "r33",
+       "label": [
+        "mean-based skewness 2F(mean) - 1",
+        3
+       ],
+       "values": [
+        1.095,
+        -0.1802,
+        -0.08467,
+        0.5595,
+        0.8179,
+        0.2218,
+        0.173,
+        -0.02947
+       ]
+      },
+      {
+       "id": "r34",
+       "label": [
+        "excess kurtosis",
+        1
+       ],
+       "values": [
+        -0.1208,
+        -0.2855,
+        -0.1726,
+        0.1328,
+        -1.154,
+        -1.14,
+        -1.035,
+        -0.9593
+       ]
+      },
+      {
+       "id": "r35",
+       "label": [
+        "excess kurtosis",
+        2
+       ],
+       "values": [
+        -0.3274,
+        -0.5191,
+        -0.5539,
+        0.1737,
+        -1.317,
+        -1.245,
+        -1.431,
+        -1.326
+       ]
+      },
+      {
+       "id": "r36",
+       "label": [
+        "excess kurtosis",
+        3
+       ],
+       "values": [
+        -0.9175,
+        -0.5953,
+        -1.603,
+        -0.002138,
+        -1.396,
+        -1.344,
+        -1.517,
+        -1.663
+       ]
+      },
+      {
+       "id": "r37",
+       "label": [
+        "L-kurtosis",
+        1
+       ],
+       "values": [
+        -0.1415,
+        -0.3751,
+        -0.2618,
+        0.102,
+        -0.5312,
+        -0.5333,
+        -0.4096,
+        -0.3876
+       ]
+      },
+      {
+       "id": "r38",
+       "label": [
+        "L-kurtosis",
+        2
+       ],
+       "values": [
+        -0.3628,
+        -0.7284,
+        -0.6504,
+        0.1255,
+        -0.8066,
+        -0.7847,
+        -0.702,
+        -0.6657
+       ]
+      },
+      {
+       "id": "r39",
+       "label": [
+        "L-kurtosis",
+        3
+       ],
+       "values": [
+        -0.8044,
+        -0.842,
+        -1.291,
+        0.02424,
+        -1.018,
+        -1.013,
+        -0.8654,
+        -0.929
+       ]
+      },
+      {
+       "id": "r40",
+       "label": [
+        "TL-kurtosis",
+        1
+       ],
+       "values": [
+        -0.1417,
+        -0.188,
+        -0.2693,
+        0.04513,
+        -0.06122,
+        -0.06646,
+        -0.05219,
+        -0.04537
+       ]
+      },
+      {
+       "id": "r41",
+       "label": [
+        "TL-kurtosis",
+        2
+       ],
+       "values": [
+        -0.2466,
+        -0.3044,
+        -0.4683,
+        0.115,
+        -0.1186,
+        -0.1153,
+        -0.08714,
+        -0.08707
+       ]
+      },
+      {
+       "id": "r42",
+       "label": [
+        "TL-kurtosis",
+        3
+       ],
+       "values": [
+        -0.2187,
+        -0.4214,
+        -0.4696,
+        0.2535,
+        -0.1732,
+        -0.179,
+        -0.1377,
+        -0.1383
+       ]
+      },
+      {
+       "id": "r43",
+       "label": [
+        "octile kurtosis",
+        1
+       ],
+       "values": [
+        -0.3354,
+        0.07763,
+        -0.1872,
+        0.04264,
+        -0.03212,
+        0.1026,
+        -0.008193,
+        0.0299
+       ]
+      },
+      {
+       "id": "r44",
+       "label": [
+        "octile kurtosis",
+        2
+       ],
+       "values": [
+        -0.2424,
+        0.0817,
+        0.1144,
+        -0.04347,
+        0.01678,
+        0.1223,
+        -0.06322,
+        0.07998
+       ]
+      },
+      {
+       "id": "r45",
+       "label": [
+        "octile kurtosis",
+        3
+       ],
+       "values": [
+        -0.00656,
+        0.03167,
+        0.3995,
+        0.3529,
+        0.08928,
+        0.1191,
+        -0.1053,
+        0.04332
+       ]
+      },
+      {
+       "id": "r46",
+       "label": [
+        "Geary ratio",
+        1
+       ],
+       "values": [
+        -0.005176,
+        0.1401,
+        0.2614,
+        0.003244,
+        0.8871,
+        0.8964,
+        0.7037,
+        0.6185
+       ]
+      },
+      {
+       "id": "r47",
+       "label": [
+        "Geary ratio",
+        2
+       ],
+       "values": [
+        0.05254,
+        0.2069,
+        0.5354,
+        0.05018,
+        1.183,
+        1.13,
+        1.075,
+        0.9694
+       ]
+      },
+      {
+       "id": "r48",
+       "label": [
+        "Geary ratio",
+        3
+       ],
+       "values": [
+        0.2968,
+        0.3452,
+        0.9511,
+        0.1766,
+        1.378,
+        1.353,
+        1.246,
+        1.321
+       ]
+      }
+     ]
+    },
+    {
+     "id": "T2",
+     "artefact": "A38",
+     "row_labels": [
+      "measure"
+     ],
+     "description": "Summary of T1: for each measure, the median over each group's four data sets of the absolute standardised change on removing the k values farthest from the mean, computed from T1; the medians for k = 3 are the values the figures plot (run RN23)",
+     "columns": [
+      {
+       "variable": "D27",
+       "conditions": {
+        "data": "petroleum rock samples",
+        "k": 1,
+        "summary": "median of absolute values"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data": "petroleum rock samples",
+        "k": 2,
+        "summary": "median of absolute values"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data": "petroleum rock samples",
+        "k": 3,
+        "summary": "median of absolute values"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data": "European stock index returns",
+        "k": 1,
+        "summary": "median of absolute values"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data": "European stock index returns",
+        "k": 2,
+        "summary": "median of absolute values"
+       }
+      },
+      {
+       "variable": "D27",
+       "conditions": {
+        "data": "European stock index returns",
+        "k": 3,
+        "summary": "median of absolute values"
+       }
+      }
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Asymmetry"
+       ],
+       "values": [
+        0.1221,
+        0.279,
+        0.5657,
+        0.3402,
+        0.3416,
+        0.3319
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Hypotailedness"
+       ],
+       "values": [
+        0.1141,
+        0.168,
+        0.2043,
+        0.6888,
+        0.9317,
+        1.167
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Extremity"
+       ],
+       "values": [
+        0.1174,
+        0.1746,
+        0.2183,
+        0.7032,
+        0.9559,
+        1.203
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Complex Extremity, real part"
+       ],
+       "values": [
+        0.4924,
+        0.6749,
+        0.6797,
+        0.08757,
+        0.4282,
+        0.4998
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Complex Extremity, imaginary part"
+       ],
+       "values": [
+        0.5223,
+        0.702,
+        0.4906,
+        0.7218,
+        0.7636,
+        0.9387
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "moment skewness"
+       ],
+       "values": [
+        0.2599,
+        0.5487,
+        0.9268,
+        0.9507,
+        1.011,
+        0.9198
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "L-skewness"
+       ],
+       "values": [
+        0.2446,
+        0.4957,
+        0.7931,
+        0.414,
+        0.4257,
+        0.4032
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "TL-skewness"
+       ],
+       "values": [
+        0.1741,
+        0.338,
+        0.4746,
+        0.07253,
+        0.0658,
+        0.08215
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "quartile skewness"
+       ],
+       "values": [
+        0.06627,
+        0.2055,
+        0.286,
+        0.0227,
+        0.05806,
+        0.07813
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "medcouple"
+       ],
+       "values": [
+        0.1524,
+        0.1284,
+        0.2553,
+        0.03948,
+        0.01061,
+        0.04173
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "mean-based skewness 2F(mean) - 1"
+       ],
+       "values": [
+        0.2168,
+        0.4493,
+        0.3699,
+        0.1962,
+        0.09559,
+        0.1974
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "excess kurtosis"
+       ],
+       "values": [
+        0.1527,
+        0.4232,
+        0.7564,
+        1.087,
+        1.322,
+        1.456
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "L-kurtosis"
+       ],
+       "values": [
+        0.2017,
+        0.5066,
+        0.8232,
+        0.4704,
+        0.7433,
+        0.971
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "TL-kurtosis"
+       ],
+       "values": [
+        0.1648,
+        0.2755,
+        0.3375,
+        0.0567,
+        0.1012,
+        0.1557
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "octile kurtosis"
+       ],
+       "values": [
+        0.1324,
+        0.09805,
+        0.1923,
+        0.03101,
+        0.0716,
+        0.09728
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "Geary ratio"
+       ],
+       "values": [
+        0.07266,
+        0.1297,
+        0.321,
+        0.7954,
+        1.102,
+        1.337
+       ]
+      }
+     ]
+    }
+   ],
+   "artefacts": [
+    "A27",
+    "A38",
+    "A49"
+   ],
+   "setup": {
+    "studied": [
+     "D20",
+     "D21"
+    ],
+    "cases": [
+     "D24",
+     "D25"
+    ],
+    "lens": [
+     "D27"
+    ]
+   },
+   "execution": {
+    "code_version": "f16c727072d35d1810edcdf50601afb340332524",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
+    }
+   }
+  },
+  {
+   "id": "E26",
+   "profile": "quant",
+   "design": "other",
+   "description": "Lab runs RN21 under plan PL13. Design: Precision. On each of the eight data sets, the bootstrap standard error of every measure; then, for each measure and each group of four data sets (the rock variables; the index return series), the discrimination ratio: the standard deviation of the measure over the four data sets divided by the root mean square of their bootstrap standard errors. Run: benefits.py precision. Analysis: The bootstrap standard errors by measure and data set, and the discrimination ratios by measure and group, reported in full; a measure with a higher ratio tells the data sets of a group apart further beyond its own noise.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN21"
+   ],
+   "tables": [
+    {
+     "id": "T1",
+     "description": "The bootstrap standard error of every measure on each variable of the petroleum rock samples and each series of index returns",
+     "row_labels": [
+      "measure"
+     ],
+     "columns": [
+      {
+       "variable": "bootstrap standard error",
+       "conditions": {
+        "data set": "Area"
+       }
+      },
+      {
+       "variable": "bootstrap standard error",
+       "conditions": {
+        "data set": "Perimeter"
+       }
+      },
+      {
+       "variable": "bootstrap standard error",
+       "conditions": {
+        "data set": "Shape"
+       }
+      },
+      {
+       "variable": "bootstrap standard error",
+       "conditions": {
+        "data set": "Permeability"
+       }
+      },
+      {
+       "variable": "bootstrap standard error",
+       "conditions": {
+        "data set": "DAX"
+       }
+      },
+      {
+       "variable": "bootstrap standard error",
+       "conditions": {
+        "data set": "SMI"
+       }
+      },
+      {
+       "variable": "bootstrap standard error",
+       "conditions": {
+        "data set": "CAC"
+       }
+      },
+      {
+       "variable": "bootstrap standard error",
+       "conditions": {
+        "data set": "FTSE"
+       }
+      }
+     ],
+     "artefact": "A39",
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Asymmetry"
+       ],
+       "values": [
+        0.05376,
+        0.07633,
+        0.05597,
+        0.08399,
+        0.01392,
+        0.01329,
+        0.01221,
+        0.01116
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Hypotailedness"
+       ],
+       "values": [
+        0.02876,
+        0.01626,
+        0.03091,
+        0.01937,
+        0.01028,
+        0.009458,
+        0.007606,
+        0.007323
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Extremity"
+       ],
+       "values": [
+        0.1326,
+        0.1299,
+        0.1349,
+        0.1432,
+        0.03264,
+        0.0312,
+        0.02744,
+        0.02732
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Complex Extremity, real part"
+       ],
+       "values": [
+        0.1783,
+        0.1688,
+        0.2018,
+        0.2038,
+        0.03425,
+        0.03552,
+        0.04602,
+        0.047
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Complex Extremity, imaginary part"
+       ],
+       "values": [
+        0.201,
+        0.1703,
+        0.2144,
+        0.1014,
+        0.05021,
+        0.04609,
+        0.04387,
+        0.03775
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "moment skewness"
+       ],
+       "values": [
+        0.2339,
+        0.2455,
+        0.3006,
+        0.2764,
+        0.4092,
+        0.3659,
+        0.1925,
+        0.2004
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "L-skewness"
+       ],
+       "values": [
+        0.05626,
+        0.08831,
+        0.06275,
+        0.09497,
+        0.0165,
+        0.01645,
+        0.01368,
+        0.01388
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "TL-skewness"
+       ],
+       "values": [
+        0.06519,
+        0.1056,
+        0.06574,
+        0.1128,
+        0.01058,
+        0.01079,
+        0.009499,
+        0.009429
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "quartile skewness"
+       ],
+       "values": [
+        0.2061,
+        0.5,
+        0.1807,
+        0.346,
+        0.03268,
+        0.03613,
+        0.03281,
+        0.03194
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "medcouple"
+       ],
+       "values": [
+        0.169,
+        0.4578,
+        0.1529,
+        0.3218,
+        0.03128,
+        0.0316,
+        0.03515,
+        0.03263
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "mean-based skewness 2F(mean) - 1"
+       ],
+       "values": [
+        0.09383,
+        0.1233,
+        0.09843,
+        0.139,
+        0.01782,
+        0.01695,
+        0.02225,
+        0.01654
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "excess kurtosis"
+       ],
+       "values": [
+        0.4024,
+        0.1363,
+        0.9856,
+        0.4551,
+        3.209,
+        2.89,
+        0.9717,
+        0.9493
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "L-kurtosis"
+       ],
+       "values": [
+        0.04361,
+        0.03117,
+        0.05099,
+        0.06396,
+        0.01078,
+        0.01031,
+        0.009365,
+        0.009808
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "TL-kurtosis"
+       ],
+       "values": [
+        0.04653,
+        0.03509,
+        0.05199,
+        0.0791,
+        0.006868,
+        0.006635,
+        0.006648,
+        0.006267
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "octile kurtosis"
+       ],
+       "values": [
+        0.3189,
+        0.1742,
+        0.3512,
+        0.714,
+        0.04939,
+        0.04999,
+        0.04861,
+        0.04445
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "Geary ratio"
+       ],
+       "values": [
+        0.02891,
+        0.01757,
+        0.03514,
+        0.02514,
+        0.01441,
+        0.01333,
+        0.009112,
+        0.009483
+       ]
+      }
+     ]
+    },
+    {
+     "id": "T2",
+     "description": "The discrimination ratio of every measure on each group of four data sets",
+     "row_labels": [
+      "measure"
+     ],
+     "columns": [
+      {
+       "variable": "D28",
+       "conditions": {
+        "data": "petroleum rock samples"
+       }
+      },
+      {
+       "variable": "D28",
+       "conditions": {
+        "data": "European stock index returns"
+       }
+      }
+     ],
+     "artefact": "A40",
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Asymmetry"
+       ],
+       "values": [
+        1.605,
+        1.186
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Hypotailedness"
+       ],
+       "values": [
+        2.768,
+        1.508
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Extremity"
+       ],
+       "values": [
+        3.191,
+        1.534
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Complex Extremity, real part"
+       ],
+       "values": [
+        2.218,
+        1.009
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Complex Extremity, imaginary part"
+       ],
+       "values": [
+        2.738,
+        1.251
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "moment skewness"
+       ],
+       "values": [
+        2.507,
+        1.121
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "L-skewness"
+       ],
+       "values": [
+        2.211,
+        1.091
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "TL-skewness"
+       ],
+       "values": [
+        1.617,
+        1.145
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "quartile skewness"
+       ],
+       "values": [
+        1.335,
+        0.4179
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "medcouple"
+       ],
+       "values": [
+        1.343,
+        0.8307
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "mean-based skewness 2F(mean) - 1"
+       ],
+       "values": [
+        1.338,
+        1.293
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "excess kurtosis"
+       ],
+       "values": [
+        1.973,
+        0.8981
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "L-kurtosis"
+       ],
+       "values": [
+        2.521,
+        2.081
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "TL-kurtosis"
+       ],
+       "values": [
+        1.785,
+        1.768
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "octile kurtosis"
+       ],
+       "values": [
+        0.857,
+        0.9305
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "Geary ratio"
+       ],
+       "values": [
+        2.908,
+        1.53
+       ]
+      }
+     ]
+    }
+   ],
+   "artefacts": [
+    "A27",
+    "A39",
+    "A40",
+    "A49"
+   ],
+   "setup": {
+    "studied": [
+     "D20",
+     "D21"
+    ],
+    "cases": [
+     "D24",
+     "D25"
+    ],
+    "lens": [
+     "D28"
+    ]
+   },
+   "execution": {
+    "code_version": "f16c727072d35d1810edcdf50601afb340332524",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
+    }
+   }
+  },
+  {
+   "id": "E27",
+   "profile": "quant",
+   "design": "other",
+   "description": "Lab runs RN22 under plan PL14. Design: Stability over time. On the daily log returns of each index, every measure is computed on each window of 260 consecutive returns (about a trading year), moving one return at a time (1600 windows). For each measure and index: the spike ratio, the largest change between consecutive windows divided by the measure's standard deviation over all windows, and the roughness, the median change divided by the same standard deviation. Run: benefits.py stability. Analysis: The spike ratios and roughness by measure and index, reported in full; a high spike ratio means one day can move the measure by a large share of its whole range over the period.",
+   "availability": {
+    "level": "public"
+   },
+   "lab_runs": [
+    "RN22"
+   ],
+   "tables": [
+    {
+     "id": "T1",
+     "description": "The spike ratio and the roughness of every measure on the rolling windows of each index's returns",
+     "row_labels": [
+      "measure"
+     ],
+     "columns": [
+      {
+       "variable": "D29",
+       "conditions": {
+        "index": "DAX"
+       }
+      },
+      {
+       "variable": "D29",
+       "conditions": {
+        "index": "SMI"
+       }
+      },
+      {
+       "variable": "D29",
+       "conditions": {
+        "index": "CAC"
+       }
+      },
+      {
+       "variable": "D29",
+       "conditions": {
+        "index": "FTSE"
+       }
+      },
+      {
+       "variable": "D30",
+       "conditions": {
+        "index": "DAX"
+       }
+      },
+      {
+       "variable": "D30",
+       "conditions": {
+        "index": "SMI"
+       }
+      },
+      {
+       "variable": "D30",
+       "conditions": {
+        "index": "CAC"
+       }
+      },
+      {
+       "variable": "D30",
+       "conditions": {
+        "index": "FTSE"
+       }
+      }
+     ],
+     "artefact": "A41",
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Asymmetry"
+       ],
+       "values": [
+        3.356,
+        1.708,
+        2.681,
+        0.5705,
+        0.06922,
+        0.06605,
+        0.09151,
+        0.04459
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Hypotailedness"
+       ],
+       "values": [
+        2.694,
+        3.648,
+        1.428,
+        1.804,
+        0.02968,
+        0.04231,
+        0.04144,
+        0.0486
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Extremity"
+       ],
+       "values": [
+        1.953,
+        3.313,
+        1.184,
+        1.742,
+        0.03415,
+        0.04418,
+        0.04423,
+        0.04901
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Complex Extremity, real part"
+       ],
+       "values": [
+        1.327,
+        1.995,
+        2.383,
+        1.866,
+        0.06175,
+        0.06683,
+        0.07338,
+        0.0565
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Complex Extremity, imaginary part"
+       ],
+       "values": [
+        2.645,
+        3.722,
+        2.04,
+        2.642,
+        0.06855,
+        0.06955,
+        0.05678,
+        0.08534
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "moment skewness"
+       ],
+       "values": [
+        8.507,
+        5.269,
+        5.033,
+        2.085,
+        0.0115,
+        0.0105,
+        0.0233,
+        0.01394
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "L-skewness"
+       ],
+       "values": [
+        3.013,
+        2.342,
+        1.495,
+        0.7281,
+        0.0503,
+        0.04706,
+        0.04903,
+        0.02862
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "TL-skewness"
+       ],
+       "values": [
+        0.3347,
+        0.3823,
+        0.5253,
+        0.2234,
+        0.06517,
+        0.06444,
+        0.1004,
+        0.04697
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "quartile skewness"
+       ],
+       "values": [
+        0.923,
+        0.5351,
+        0.5322,
+        0.7058,
+        0.06587,
+        0.0559,
+        0.04831,
+        0.06217
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "medcouple"
+       ],
+       "values": [
+        1.52,
+        0.7462,
+        0.9058,
+        1.055,
+        0.08445,
+        0.06385,
+        0.05444,
+        0.08054
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "mean-based skewness 2F(mean) - 1"
+       ],
+       "values": [
+        3.352,
+        1.937,
+        2.784,
+        1.885,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "excess kurtosis"
+       ],
+       "values": [
+        4.884,
+        5.326,
+        4.484,
+        2.271,
+        0.002665,
+        0.004216,
+        0.008162,
+        0.007627
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "L-kurtosis"
+       ],
+       "values": [
+        1.801,
+        2.252,
+        0.8685,
+        0.9493,
+        0.03868,
+        0.05285,
+        0.03372,
+        0.03944
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "TL-kurtosis"
+       ],
+       "values": [
+        0.2409,
+        0.3551,
+        0.289,
+        0.2514,
+        0.06284,
+        0.08594,
+        0.06364,
+        0.0586
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "octile kurtosis"
+       ],
+       "values": [
+        0.7038,
+        0.9261,
+        0.9341,
+        0.9163,
+        0.06792,
+        0.07214,
+        0.1093,
+        0.0661
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "Geary ratio"
+       ],
+       "values": [
+        3.096,
+        3.674,
+        1.766,
+        1.672,
+        0.02317,
+        0.03089,
+        0.02978,
+        0.03415
+       ]
+      }
+     ]
+    },
+    {
+     "id": "T2",
+     "artefact": "A49",
+     "row_labels": [
+      "measure"
+     ],
+     "description": "Summary of T1: for each measure, the median of the spike ratio over the four indices (run RN23, from T1)",
+     "columns": [
+      {
+       "variable": "D29",
+       "conditions": {
+        "summary": "median over the four indices"
+       }
+      }
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "Asymmetry"
+       ],
+       "values": [
+        2.195
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "Hypotailedness"
+       ],
+       "values": [
+        2.249
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "Extremity"
+       ],
+       "values": [
+        1.847
+       ]
+      },
+      {
+       "id": "r4",
+       "label": [
+        "Complex Extremity, real part"
+       ],
+       "values": [
+        1.931
+       ]
+      },
+      {
+       "id": "r5",
+       "label": [
+        "Complex Extremity, imaginary part"
+       ],
+       "values": [
+        2.643
+       ]
+      },
+      {
+       "id": "r6",
+       "label": [
+        "moment skewness"
+       ],
+       "values": [
+        5.151
+       ]
+      },
+      {
+       "id": "r7",
+       "label": [
+        "L-skewness"
+       ],
+       "values": [
+        1.919
+       ]
+      },
+      {
+       "id": "r8",
+       "label": [
+        "TL-skewness"
+       ],
+       "values": [
+        0.3585
+       ]
+      },
+      {
+       "id": "r9",
+       "label": [
+        "quartile skewness"
+       ],
+       "values": [
+        0.6205
+       ]
+      },
+      {
+       "id": "r10",
+       "label": [
+        "medcouple"
+       ],
+       "values": [
+        0.9806
+       ]
+      },
+      {
+       "id": "r11",
+       "label": [
+        "mean-based skewness 2F(mean) - 1"
+       ],
+       "values": [
+        2.36
+       ]
+      },
+      {
+       "id": "r12",
+       "label": [
+        "excess kurtosis"
+       ],
+       "values": [
+        4.684
+       ]
+      },
+      {
+       "id": "r13",
+       "label": [
+        "L-kurtosis"
+       ],
+       "values": [
+        1.375
+       ]
+      },
+      {
+       "id": "r14",
+       "label": [
+        "TL-kurtosis"
+       ],
+       "values": [
+        0.2702
+       ]
+      },
+      {
+       "id": "r15",
+       "label": [
+        "octile kurtosis"
+       ],
+       "values": [
+        0.9212
+       ]
+      },
+      {
+       "id": "r16",
+       "label": [
+        "Geary ratio"
+       ],
+       "values": [
+        2.431
+       ]
+      }
+     ]
+    }
+   ],
+   "artefacts": [
+    "A27",
+    "A41",
+    "A49"
+   ],
+   "setup": {
+    "studied": [
+     "D20",
+     "D21"
+    ],
+    "cases": [
+     "D25"
+    ],
+    "lens": [
+     "D29",
+     "D30"
+    ]
+   },
+   "execution": {
+    "code_version": "f16c727072d35d1810edcdf50601afb340332524",
+    "software": {
+     "python": "3.13.17",
+     "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
+    }
+   }
+  },
+  {
+   "id": "E28",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Proof that symmetry about the mean gives equal parts (properties.md, H1).",
@@ -5118,7 +8419,7 @@
    ]
   },
   {
-   "id": "E26",
+   "id": "E29",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Construction of asymmetric laws with equal parts: three uniform pieces centred at $-1$, $b$ and $\\frac{1}{b}$ (properties.md, H2).",
@@ -5163,7 +8464,7 @@
    ]
   },
   {
-   "id": "E27",
+   "id": "E30",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Location, scale and sign of the half central moment (properties.md, H3).",
@@ -5201,7 +8502,7 @@
    ]
   },
   {
-   "id": "E28",
+   "id": "E31",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Range and sign of the Asymmetry coefficient (properties.md, H4 and Lemma 0).",
@@ -5216,7 +8517,7 @@
      "id": "S1",
      "statement": "\\mathrm{E}[D_+] = \\mathrm{E}[D_-] > 0 \\Rightarrow P(D > 0), P(D < 0) > 0 \\Rightarrow \\mathcal{R}, \\mathcal{I} > 0",
      "by": [
-      "C25"
+      "C30"
      ],
      "rule": "the mean balances the deviations (y not constant)"
     },
@@ -5240,11 +8541,11 @@
     }
    ],
    "assumptions": [
-    "C25"
+    "C30"
    ]
   },
   {
-   "id": "E29",
+   "id": "E32",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Decomposition of the ratio of the parts (properties.md, H5).",
@@ -5259,7 +8560,7 @@
      "id": "S1",
      "statement": "\\delta = \\mathrm{E}[D_+] = \\mathrm{E}[D_-],\\ \\mathrm{E}[D \\mid D > 0] = \\frac{\\delta}{p_+}",
      "by": [
-      "C25"
+      "C30"
      ],
      "rule": "the mean balances the deviations"
     },
@@ -5283,11 +8584,11 @@
     }
    ],
    "assumptions": [
-    "C25"
+    "C30"
    ]
   },
   {
-   "id": "E30",
+   "id": "E33",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "The mean as an L_{1.5}-quantile (properties.md, H6).",
@@ -5335,11 +8636,11 @@
     }
    ],
    "assumptions": [
-    "C25"
+    "C30"
    ]
   },
   {
-   "id": "E31",
+   "id": "E34",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Range of Hypotailedness (properties.md, H23, the first half of H7).",
@@ -5354,7 +8655,7 @@
      "id": "S1",
      "statement": "\\nu_{0.5} = \\mathrm{E}[(D^2)^{0.25}] \\le (\\mathrm{E}D^2)^{0.25} = \\sigma^{0.5},\\ \\text{equality iff } |D| \\text{ constant a.s.}",
      "by": [
-      "C26",
+      "C31",
       "D2"
      ],
      "rule": "Jensen's inequality for $t^{0.25}$ (strict concavity)"
@@ -5370,11 +8671,11 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ]
   },
   {
-   "id": "E32",
+   "id": "E35",
    "profile": "formal",
    "foundation": "Real arithmetic",
    "description": "Proof of the sharp lower bound of the sample Hypotailedness (properties.md, H8).",
@@ -5413,7 +8714,7 @@
    ]
   },
   {
-   "id": "E33",
+   "id": "E36",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "One-sided Hypotailedness and the bounded Complex Extremity (properties.md, H9).",
@@ -5428,7 +8729,7 @@
      "id": "S1",
      "statement": "H_+ = \\frac{\\mathrm{E}[D^{0.5} \\mid D > 0]}{(\\mathrm{E}[D^2 \\mid D > 0])^{0.25}} \\in (0, 1],\\ \\text{equality iff } D \\text{ constant given } D > 0",
      "by": [
-      "C26",
+      "C31",
       "D7"
      ],
      "rule": "Jensen's inequality for $t^{0.25}$ on one side"
@@ -5462,11 +8763,11 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ]
   },
   {
-   "id": "E34",
+   "id": "E37",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Influence functions of the Asymmetry coefficient, Hypotailedness and Extremity (properties.md, H17).",
@@ -5514,14 +8815,14 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ]
   },
   {
-   "id": "E35",
+   "id": "E38",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
-   "description": "Closed form for the uniform distribution (distributions.md, H10).",
+   "description": "Closed form, with Asymmetry, Extremity and Complex Extremity, for the uniform distribution (distributions.md, H10).",
    "availability": {
     "level": "public"
    },
@@ -5548,14 +8849,24 @@
       "C4"
      ],
      "rule": "definitions"
+    },
+    {
+     "id": "S3",
+     "statement": "H_\\pm = 2 \\times 3^{-0.75} \\Rightarrow \\mathcal{R}(\\mathrm{CE}) = \\mathcal{I}(\\mathrm{CE}) = 0",
+     "by": [
+      "S2",
+      "D7",
+      "D8"
+     ],
+     "rule": "the one-sided Hypotailedness of the uniform deviations"
     }
    ]
   },
   {
-   "id": "E36",
+   "id": "E39",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
-   "description": "Closed form for the normal distribution (distributions.md, H11).",
+   "description": "Closed form, with Asymmetry, Extremity and Complex Extremity, for the normal distribution (distributions.md, H11).",
    "availability": {
     "level": "public"
    },
@@ -5581,14 +8892,26 @@
       "D4"
      ],
      "rule": "symmetry, location and scale"
+    },
+    {
+     "id": "S3",
+     "statement": "\\mathrm{Asymmetry} = 0,\\ \\mathrm{Extremity} = 2H_N^p - 1 \\approx -0.291,\\ \\mathrm{CE} = \\mathrm{Extremity}\\,(1 + i)",
+     "by": [
+      "S2",
+      "D3",
+      "D5",
+      "D8",
+      "C12"
+     ],
+     "rule": "Lemma C: a symmetric law with a density"
     }
    ]
   },
   {
-   "id": "E37",
+   "id": "E40",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
-   "description": "Closed form for the Laplace distribution (distributions.md, H12).",
+   "description": "Closed form, with Asymmetry, Extremity and Complex Extremity, for the Laplace distribution (distributions.md, H12).",
    "availability": {
     "level": "public"
    },
@@ -5614,14 +8937,26 @@
       "D4"
      ],
      "rule": "definition"
+    },
+    {
+     "id": "S3",
+     "statement": "\\mathrm{Asymmetry} = 0,\\ \\mathrm{Extremity} = 2H_L^p - 1 \\approx -0.579,\\ \\mathrm{CE} = \\mathrm{Extremity}\\,(1 + i)",
+     "by": [
+      "S2",
+      "D3",
+      "D5",
+      "D8",
+      "C12"
+     ],
+     "rule": "Lemma C: a symmetric law with a density"
     }
    ]
   },
   {
-   "id": "E38",
+   "id": "E41",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
-   "description": "Closed form for the generalised normal distribution (distributions.md, H13).",
+   "description": "Closed form, with Asymmetry, Extremity and Complex Extremity, for the generalised normal distribution (distributions.md, H13).",
    "availability": {
     "level": "public"
    },
@@ -5645,14 +8980,25 @@
       "C1"
      ],
      "rule": "symmetry and definitions"
+    },
+    {
+     "id": "S3",
+     "statement": "\\mathrm{Extremity} = 2H(s)^p - 1,\\ \\mathrm{CE} = \\mathrm{Extremity}\\,(1 + i);\\ H(s) \\to \\frac{3^{0.25}}{1.5} = 2 \\times 3^{-0.75}\\ (s \\to \\infty)",
+     "by": [
+      "S2",
+      "D5",
+      "D8",
+      "C12"
+     ],
+     "rule": "Lemma C; $\\Gamma(x) = \\frac{\\Gamma(1 + x)}{x}$ as $x \\to 0^+$"
     }
    ]
   },
   {
-   "id": "E39",
+   "id": "E42",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
-   "description": "Closed form for Student's t distribution (distributions.md, H14).",
+   "description": "Closed form, with Asymmetry, Extremity and Complex Extremity, for Student's t distribution (distributions.md, H14).",
    "availability": {
     "level": "public"
    },
@@ -5686,14 +9032,25 @@
       "D4"
      ],
      "rule": "definition"
+    },
+    {
+     "id": "S4",
+     "statement": "\\nu > 2:\\ \\mathrm{Extremity} = 2H(\\nu)^p - 1 \\to -1\\ (\\nu \\to 2^+),\\ \\to 2H_N^p - 1\\ (\\nu \\to \\infty);\\ \\mathrm{CE} = \\mathrm{Extremity}\\,(1 + i)",
+     "by": [
+      "S3",
+      "D5",
+      "D8",
+      "C12"
+     ],
+     "rule": "Lemma C; $\\frac{\\Gamma(z + a)}{\\Gamma(z + b)} \\sim z^{a - b}$"
     }
    ]
   },
   {
-   "id": "E40",
+   "id": "E43",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
-   "description": "Closed form for the Cauchy distribution about its location (distributions.md, H15).",
+   "description": "Closed form, with Asymmetry, Extremity and Complex Extremity, for the Cauchy distribution about its location (distributions.md, H15).",
    "availability": {
     "level": "public"
    },
@@ -5718,14 +9075,25 @@
       "C1"
      ],
      "rule": "symmetry about the location"
+    },
+    {
+     "id": "S3",
+     "statement": "\\sec\\frac{\\pi}{4} = \\sqrt{2} \\Rightarrow (1+i)\\sqrt{\\frac{\\gamma}{2}};\\ \\text{no finite variance} \\Rightarrow \\text{Hypotailedness, Extremity, CE undefined}",
+     "by": [
+      "S2",
+      "D4",
+      "D5",
+      "D8"
+     ],
+     "rule": "definitions"
     }
    ]
   },
   {
-   "id": "E41",
+   "id": "E44",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
-   "description": "Closed form for the gamma distribution (distributions.md, H16).",
+   "description": "Closed form, with Asymmetry, Extremity and Complex Extremity, for the gamma distribution (distributions.md, H16).",
    "availability": {
     "level": "public"
    },
@@ -5767,11 +9135,22 @@
       "D3"
      ],
      "rule": "the ratio of the parts"
+    },
+    {
+     "id": "S5",
+     "statement": "H_+ = \\frac{\\lambda^{0.5}\\mathcal{R}\\,q_0^{-0.75}}{(a(a+1)q_2 - 2a^2q_1 + a^2q_0)^{0.25}},\\ H_- = \\frac{\\lambda^{0.5}\\mathcal{I}\\,r_0^{-0.75}}{(a(a+1)r_2 - 2a^2r_1 + a^2r_0)^{0.25}}",
+     "by": [
+      "S1",
+      "S2",
+      "D7",
+      "D8"
+     ],
+     "rule": "moments of the gamma law cut at its mean, by incomplete gamma functions"
     }
    ]
   },
   {
-   "id": "E42",
+   "id": "E45",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Proof of asymptotic normality (asymptotics.md, H18).",
@@ -5821,11 +9200,11 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ]
   },
   {
-   "id": "E43",
+   "id": "E46",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "What Hypotailedness and Extremity measure (properties.md, H20).",
@@ -5840,7 +9219,7 @@
      "id": "S1",
      "statement": "V = \\frac{D^2}{\\sigma^2}:\\ \\mathrm{E}[V] = 1,\\ \\mathrm{Hypotailedness} = \\frac{\\mathrm{E}|D|^{0.5}}{\\sigma^{0.5}} = \\mathrm{E}[V^{0.25}]",
      "by": [
-      "C26",
+      "C31",
       "D4"
      ],
      "rule": "definitions; $|D|^{0.5} = (D^2)^{0.25}$"
@@ -5894,11 +9273,11 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ]
   },
   {
-   "id": "E44",
+   "id": "E47",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Extremity and kurtosis of the exponential, Student t5 and Laplace distributions (properties.md, H22).",
@@ -5950,7 +9329,7 @@
    ]
   },
   {
-   "id": "E45",
+   "id": "E48",
    "profile": "formal",
    "foundation": "Kolmogorov probability axioms; Lebesgue integration; complex numbers with the principal square root",
    "description": "Range and zero of Extremity (properties.md, H24, the second half of H7).",
@@ -5989,7 +9368,7 @@
     }
    ],
    "assumptions": [
-    "C26"
+    "C31"
    ]
   }
  ],
@@ -6028,7 +9407,26 @@
    "category": "other",
    "statement": "The real-data results describe two data sets, 48 rock samples and the 1991-1998 returns of four indices; whether the coefficients are easier to interpret than skewness and kurtosis is not tested.",
    "affects": [
-    "C24"
+    "C24",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none"
+  },
+  {
+   "id": "L14",
+   "category": "other",
+   "statement": "The comparison of robustness and precision uses two groups of four data sets and summarises each group by medians; the discrimination ratio depends on which data sets are grouped together.",
+   "affects": [
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29"
    ],
    "impact": "reduces_transferability",
    "mitigation": "none"
@@ -6061,11 +9459,11 @@
    "id": "A27",
    "kind": "data",
    "uri": "files/half-moments.results.csv",
-   "version": "sha256:1c9b9c3dbb73bdbc6724baa52bf960deed3753aa21386fbb244e8d7f1f2b6c23",
+   "version": "sha256:ef3c0203a916e0e3b22df6bc1ab87878ff8633c9e469f6aa103ba9f58d9f2135",
    "availability": {
     "level": "public"
    },
-   "description": "Every result of the lab record (7330 results of 18 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.",
+   "description": "Every result of the lab record (8097 results of 22 runs) at full precision: the lab result's ID, its run, the quantity as the run's script named it, its conditions and its value (both as JSON). The evidence's tables give the values to four significant digits.",
    "columns": [
     {
      "name": "lab_result",
@@ -6093,8 +9491,8 @@
   {
    "id": "A28",
    "kind": "lab_record",
-   "uri": "https://github.com/entrylib/claimset-eval/blob/452d9cbd19f5107fe108fdbfc16cd4ab90300909/lab/lab.jsonl",
-   "version": "sha256:89e6f64ab53e266ac6fe2ccf1e7805d2fe656251d156ea5fa3788fa78bd773a3",
+   "uri": "https://github.com/entrylib/claimset-eval/blob/2a8b6ddc93e58afadd2874065de9105290268e3b/lab/lab.jsonl",
+   "version": "sha256:b2e3d1c9775d86334392a1522e7c5a5c210f01a797f2243205881474925842a8",
    "availability": {
     "level": "public"
    },
@@ -6103,19 +9501,19 @@
   {
    "id": "A29",
    "kind": "code",
-   "uri": "https://github.com/entrylib/claimset-eval/tree/dfe0622b580f9dfec78a9754631f67034ae77f5b/claimset-code/half-moments",
-   "version": "dfe0622b580f9dfec78a9754631f67034ae77f5b",
+   "uri": "https://github.com/entrylib/claimset-eval/tree/b22ccb386625da5b714ab3380860a977a5eb7322/claimset-code/half-moments",
+   "version": "b22ccb386625da5b714ab3380860a977a5eb7322",
    "licence": "MIT",
    "availability": {
     "level": "public"
    },
-   "description": "The study's code: the numerical checks of the proofs (proofs.py), the sample measures (measures.py), the robustness simulation (robustness.py), the real-data analysis (realdata.py) and the sampling study (sampling.py), with the proof documents in proofs/."
+   "description": "The study's code: the numerical checks of the proofs (proofs.py), the sample measures (measures.py), the robustness simulation (robustness.py), the real-data analysis (realdata.py), the sampling study (sampling.py), the real-data comparison of robustness and precision (benefits.py) and the figures (figures.py, benefits_figures.py), with the proof documents in proofs/."
   },
   {
    "id": "A30",
    "kind": "proof",
-   "uri": "https://github.com/entrylib/claimset-eval/tree/dfe0622b580f9dfec78a9754631f67034ae77f5b/claimset-code/half-moments/proofs",
-   "version": "dfe0622b580f9dfec78a9754631f67034ae77f5b",
+   "uri": "https://github.com/entrylib/claimset-eval/tree/b22ccb386625da5b714ab3380860a977a5eb7322/claimset-code/half-moments/proofs",
+   "version": "b22ccb386625da5b714ab3380860a977a5eb7322",
    "licence": "CC-BY-4.0",
    "availability": {
     "level": "public"
@@ -6359,6 +9757,122 @@
   },
   {
    "id": "A38",
+   "kind": "data",
+   "uri": "files/half-moments.E25.T1.csv",
+   "version": "sha256:d29c7aa1ad5512d208121b32ec61babeb921c84fef34b5e032a1c48f51a56233",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The 384 rows of table E25.T1: standardised change on removing the most extreme values by measure, data, data set, k (lab runs RN20)",
+   "columns": [
+    {
+     "name": "measure",
+     "dimension": "measure"
+    },
+    {
+     "name": "data",
+     "dimension": "data"
+    },
+    {
+     "name": "data set",
+     "dimension": "data set"
+    },
+    {
+     "name": "k",
+     "dimension": "k"
+    },
+    {
+     "name": "D27",
+     "variable": "D27"
+    }
+   ],
+   "licence": "CC-BY-4.0"
+  },
+  {
+   "id": "A39",
+   "kind": "data",
+   "uri": "files/half-moments.E26.T1.csv",
+   "version": "sha256:6729fc2f58f763484e57e28501518598d46aa736a5d51084024c9fa047cd7b4a",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The 128 rows of table E26.T1: bootstrap standard error by measure, data, data set (lab runs RN21)",
+   "columns": [
+    {
+     "name": "measure",
+     "dimension": "measure"
+    },
+    {
+     "name": "data",
+     "dimension": "data"
+    },
+    {
+     "name": "data set",
+     "dimension": "data set"
+    },
+    {
+     "name": "bootstrap standard error",
+     "variable": "bootstrap standard error"
+    }
+   ],
+   "licence": "CC-BY-4.0"
+  },
+  {
+   "id": "A40",
+   "kind": "data",
+   "uri": "files/half-moments.E26.T2.csv",
+   "version": "sha256:0df2afa7013a53375a33813e02950bae0535a44f47ee95c6320b01f8f306f769",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The 32 rows of table E26.T2: discrimination ratio by measure, data (lab runs RN21)",
+   "columns": [
+    {
+     "name": "measure",
+     "dimension": "measure"
+    },
+    {
+     "name": "data",
+     "dimension": "data"
+    },
+    {
+     "name": "D28",
+     "variable": "D28"
+    }
+   ],
+   "licence": "CC-BY-4.0"
+  },
+  {
+   "id": "A41",
+   "kind": "data",
+   "uri": "files/half-moments.E27.T1.csv",
+   "version": "sha256:d062b9c00e0142df9143f410232b060bccdd74775376ac399576d3e31dac4ee5",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The 64 rows of table E27.T1: spike ratio, roughness by measure, index (lab runs RN22)",
+   "columns": [
+    {
+     "name": "measure",
+     "dimension": "measure"
+    },
+    {
+     "name": "index",
+     "dimension": "index"
+    },
+    {
+     "name": "D29",
+     "variable": "D29"
+    },
+    {
+     "name": "D30",
+     "variable": "D30"
+    }
+   ],
+   "licence": "CC-BY-4.0"
+  },
+  {
+   "id": "A42",
    "kind": "figure",
    "function": "data_plot",
    "uri": "files/fig-robustness.png",
@@ -6374,7 +9888,7 @@
    ]
   },
   {
-   "id": "A39",
+   "id": "A43",
    "kind": "figure",
    "function": "data_plot",
    "uri": "files/fig-dax-window.png",
@@ -6386,11 +9900,11 @@
    "description": "Excess kurtosis (top) and the Extremity coefficient (bottom) of the DAX daily log returns, 1991-1998, each computed on the first t returns for every t from 30 to 1859. Excess kurtosis peaks at 50.2 at 266 returns and ends at 6.3; Extremity stays between -0.927 and -0.175, reaching both extremes within the first 37 returns, and changes slowly afterwards.",
    "shows": [
     "E22.T3",
-    "A41"
+    "A45"
    ]
   },
   {
-   "id": "A40",
+   "id": "A44",
    "kind": "figure",
    "function": "data_plot",
    "uri": "files/fig-sampling.png",
@@ -6406,7 +9920,7 @@
    ]
   },
   {
-   "id": "A41",
+   "id": "A45",
    "kind": "data",
    "uri": "files/dax-window-paths.csv",
    "version": "sha256:ae3a140fe8da7e88f5f98305bb237ef2da44d84b834b3c76a0bce6a472577b98",
@@ -6483,6 +9997,91 @@
     {
      "name": "Geary ratio",
      "variable": "measure over the expanding window"
+    }
+   ]
+  },
+  {
+   "id": "A46",
+   "kind": "figure",
+   "function": "data_plot",
+   "uri": "files/fig-shift-vs-discrimination.png",
+   "version": "sha256:2e33b0ef8abeaf705a5e9f5b19bbf01343ac939043626225848427b4fb1fb141",
+   "availability": {
+    "level": "public"
+   },
+   "licence": "CC-BY-4.0",
+   "description": "Robustness against precision. For each measure, the discrimination ratio (vertical) against the absolute standardised change on removing the 3 values farthest from the mean (horizontal; median over the group's four data sets), for the skewness measures (top) and the tail-weight measures (bottom), on the petroleum rock samples (left) and the index returns (right); the upper left is better. On the rock samples the Extremity coefficient is the highest and among the farthest left of the tail-weight measures; on the index returns L-kurtosis and TL-kurtosis lie above and to its left.",
+   "shows": [
+    "E25.T1",
+    "E26.T2",
+    "A49"
+   ]
+  },
+  {
+   "id": "A47",
+   "kind": "figure",
+   "function": "data_plot",
+   "uri": "files/fig-spike-vs-discrimination.png",
+   "version": "sha256:5b07d42968855900b628860b25467b7ce3dfb030c74161e387abefc450af0e0a",
+   "availability": {
+    "level": "public"
+   },
+   "licence": "CC-BY-4.0",
+   "description": "Stability against precision on the index returns. For each measure, the discrimination ratio (vertical) against the spike ratio on rolling windows of 260 returns (horizontal; median over the four indices), for the skewness measures (left) and the tail-weight measures (right); the upper left is better. Moment skewness and excess kurtosis lie far to the right.",
+   "shows": [
+    "E27.T1",
+    "E26.T2",
+    "A49"
+   ]
+  },
+  {
+   "id": "A48",
+   "kind": "figure",
+   "function": "data_plot",
+   "uri": "files/fig-benefits-by-metric.png",
+   "version": "sha256:cd8bafcd36489dc9f24a437cbc01ffa297abb20bff0977a1810896eb742af622",
+   "availability": {
+    "level": "public"
+   },
+   "licence": "CC-BY-4.0",
+   "description": "Each metric in its own panel, the skewness measures (top) and the tail-weight measures (bottom): the absolute standardised change on removing 3 values (median over each group's four data sets), the discrimination ratio, and the spike ratio on the index returns (median over the four indices); filled circles for the petroleum rock samples, open squares for the index returns.",
+   "shows": [
+    "E25.T1",
+    "E26.T2",
+    "E27.T1",
+    "A49"
+   ]
+  },
+  {
+   "id": "A49",
+   "kind": "data",
+   "uri": "files/benefits-summary.csv",
+   "version": "sha256:521a1319518d120153fa1001185ef966afed1dce85e8042bad9e493452cb84b1",
+   "availability": {
+    "level": "public"
+   },
+   "licence": "CC-BY-4.0",
+   "description": "The values the three figures plot: for each measure and group of data sets, the median absolute standardised change on removing 3 values, the discrimination ratio and the median spike ratio (output of run RN23, from runs RN20, RN21 and RN22).",
+   "columns": [
+    {
+     "name": "measure",
+     "dimension": "measure"
+    },
+    {
+     "name": "data",
+     "dimension": "group of data sets"
+    },
+    {
+     "name": "median shift on removing 3 values (standard errors)",
+     "variable": "D27"
+    },
+    {
+     "name": "discrimination ratio",
+     "variable": "D28"
+    },
+    {
+     "name": "median spike ratio",
+     "variable": "D29"
     }
    ]
   }

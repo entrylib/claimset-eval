@@ -1,0 +1,129 @@
+measure,data,data set,bootstrap standard error
+Asymmetry,petroleum rock samples,Area,0.053761442467199265
+Hypotailedness,petroleum rock samples,Area,0.028759560477610514
+Extremity,petroleum rock samples,Area,0.13264235761806134
+"Complex Extremity, real part",petroleum rock samples,Area,0.1782894210379738
+"Complex Extremity, imaginary part",petroleum rock samples,Area,0.2010286086044186
+moment skewness,petroleum rock samples,Area,0.2338800719325831
+L-skewness,petroleum rock samples,Area,0.056259454829037533
+TL-skewness,petroleum rock samples,Area,0.06519357452562369
+quartile skewness,petroleum rock samples,Area,0.20608374164347149
+medcouple,petroleum rock samples,Area,0.16899505906342488
+mean-based skewness 2F(mean) - 1,petroleum rock samples,Area,0.09383231059540473
+excess kurtosis,petroleum rock samples,Area,0.40236249564198284
+L-kurtosis,petroleum rock samples,Area,0.04361433593180012
+TL-kurtosis,petroleum rock samples,Area,0.0465279952480907
+octile kurtosis,petroleum rock samples,Area,0.318925207144801
+Geary ratio,petroleum rock samples,Area,0.02891497973241679
+Asymmetry,petroleum rock samples,Perimeter,0.07632782672624483
+Hypotailedness,petroleum rock samples,Perimeter,0.016257644011272908
+Extremity,petroleum rock samples,Perimeter,0.12989454927612293
+"Complex Extremity, real part",petroleum rock samples,Perimeter,0.16880692592607505
+"Complex Extremity, imaginary part",petroleum rock samples,Perimeter,0.17032898045725112
+moment skewness,petroleum rock samples,Perimeter,0.24552438304231675
+L-skewness,petroleum rock samples,Perimeter,0.08830825838254032
+TL-skewness,petroleum rock samples,Perimeter,0.10562919888241204
+quartile skewness,petroleum rock samples,Perimeter,0.500018851494808
+medcouple,petroleum rock samples,Perimeter,0.4578459971255686
+mean-based skewness 2F(mean) - 1,petroleum rock samples,Perimeter,0.12333178975909898
+excess kurtosis,petroleum rock samples,Perimeter,0.13633141856445974
+L-kurtosis,petroleum rock samples,Perimeter,0.031170992670441995
+TL-kurtosis,petroleum rock samples,Perimeter,0.03508524508607968
+octile kurtosis,petroleum rock samples,Perimeter,0.17421909614986084
+Geary ratio,petroleum rock samples,Perimeter,0.017571820025077255
+Asymmetry,petroleum rock samples,Shape,0.05597238276827795
+Hypotailedness,petroleum rock samples,Shape,0.030908087782428734
+Extremity,petroleum rock samples,Shape,0.1349340373347936
+"Complex Extremity, real part",petroleum rock samples,Shape,0.20181362487291762
+"Complex Extremity, imaginary part",petroleum rock samples,Shape,0.21438520927573762
+moment skewness,petroleum rock samples,Shape,0.3006246915531268
+L-skewness,petroleum rock samples,Shape,0.0627539455772488
+TL-skewness,petroleum rock samples,Shape,0.06573714591692328
+quartile skewness,petroleum rock samples,Shape,0.18067919388807002
+medcouple,petroleum rock samples,Shape,0.1529421807485704
+mean-based skewness 2F(mean) - 1,petroleum rock samples,Shape,0.09842663376571688
+excess kurtosis,petroleum rock samples,Shape,0.9856440224364854
+L-kurtosis,petroleum rock samples,Shape,0.05099056762366525
+TL-kurtosis,petroleum rock samples,Shape,0.05198736386967998
+octile kurtosis,petroleum rock samples,Shape,0.35121360289020576
+Geary ratio,petroleum rock samples,Shape,0.035142250646886405
+Asymmetry,petroleum rock samples,Permeability,0.08399339944274456
+Hypotailedness,petroleum rock samples,Permeability,0.019369758898224836
+Extremity,petroleum rock samples,Permeability,0.1431683865716924
+"Complex Extremity, real part",petroleum rock samples,Permeability,0.20383536191166401
+"Complex Extremity, imaginary part",petroleum rock samples,Permeability,0.10137227591746051
+moment skewness,petroleum rock samples,Permeability,0.27637263180943095
+L-skewness,petroleum rock samples,Permeability,0.09496949767342686
+TL-skewness,petroleum rock samples,Permeability,0.11284807992289378
+quartile skewness,petroleum rock samples,Permeability,0.3459749007824787
+medcouple,petroleum rock samples,Permeability,0.32179409666746583
+mean-based skewness 2F(mean) - 1,petroleum rock samples,Permeability,0.1390071692171634
+excess kurtosis,petroleum rock samples,Permeability,0.455083939580302
+L-kurtosis,petroleum rock samples,Permeability,0.06396015012990618
+TL-kurtosis,petroleum rock samples,Permeability,0.0790979306306035
+octile kurtosis,petroleum rock samples,Permeability,0.7139747638226687
+Geary ratio,petroleum rock samples,Permeability,0.025139211092371837
+Asymmetry,European stock index returns,DAX,0.013922430168869428
+Hypotailedness,European stock index returns,DAX,0.010275206665285735
+Extremity,European stock index returns,DAX,0.032643410104168165
+"Complex Extremity, real part",European stock index returns,DAX,0.034246709174438776
+"Complex Extremity, imaginary part",European stock index returns,DAX,0.05021365968339527
+moment skewness,European stock index returns,DAX,0.40915916202568053
+L-skewness,European stock index returns,DAX,0.016495441624938288
+TL-skewness,European stock index returns,DAX,0.010581267424948105
+quartile skewness,European stock index returns,DAX,0.03268369934770469
+medcouple,European stock index returns,DAX,0.031284209877719175
+mean-based skewness 2F(mean) - 1,European stock index returns,DAX,0.01781596202238958
+excess kurtosis,European stock index returns,DAX,3.2090454989870127
+L-kurtosis,European stock index returns,DAX,0.010780304401204607
+TL-kurtosis,European stock index returns,DAX,0.0068678590098069855
+octile kurtosis,European stock index returns,DAX,0.04939092842843709
+Geary ratio,European stock index returns,DAX,0.014413292685921428
+Asymmetry,European stock index returns,SMI,0.0132851075334594
+Hypotailedness,European stock index returns,SMI,0.009457962680239414
+Extremity,European stock index returns,SMI,0.03120046492995739
+"Complex Extremity, real part",European stock index returns,SMI,0.03551876438656433
+"Complex Extremity, imaginary part",European stock index returns,SMI,0.04608701934555884
+moment skewness,European stock index returns,SMI,0.36587685991168506
+L-skewness,European stock index returns,SMI,0.01644787125683696
+TL-skewness,European stock index returns,SMI,0.01079011128103492
+quartile skewness,European stock index returns,SMI,0.03613058881653878
+medcouple,European stock index returns,SMI,0.03160330406470848
+mean-based skewness 2F(mean) - 1,European stock index returns,SMI,0.01694902966938032
+excess kurtosis,European stock index returns,SMI,2.8897750978050496
+L-kurtosis,European stock index returns,SMI,0.0103063684795267
+TL-kurtosis,European stock index returns,SMI,0.006634691305813988
+octile kurtosis,European stock index returns,SMI,0.04998791375684165
+Geary ratio,European stock index returns,SMI,0.0133303416752803
+Asymmetry,European stock index returns,CAC,0.012211084389805383
+Hypotailedness,European stock index returns,CAC,0.00760638062119168
+Extremity,European stock index returns,CAC,0.02744075162902097
+"Complex Extremity, real part",European stock index returns,CAC,0.04602442275048026
+"Complex Extremity, imaginary part",European stock index returns,CAC,0.043870989375775556
+moment skewness,European stock index returns,CAC,0.19251295084274364
+L-skewness,European stock index returns,CAC,0.013678270316050678
+TL-skewness,European stock index returns,CAC,0.009498921899735212
+quartile skewness,European stock index returns,CAC,0.03281440619232292
+medcouple,European stock index returns,CAC,0.03514589592021099
+mean-based skewness 2F(mean) - 1,European stock index returns,CAC,0.022252384820679295
+excess kurtosis,European stock index returns,CAC,0.9716903881461414
+L-kurtosis,European stock index returns,CAC,0.009365348130618656
+TL-kurtosis,European stock index returns,CAC,0.006648082926464967
+octile kurtosis,European stock index returns,CAC,0.048611734074328894
+Geary ratio,European stock index returns,CAC,0.00911231976000663
+Asymmetry,European stock index returns,FTSE,0.0111593615231646
+Hypotailedness,European stock index returns,FTSE,0.007323342965656559
+Extremity,European stock index returns,FTSE,0.027324248698019356
+"Complex Extremity, real part",European stock index returns,FTSE,0.04699764868981053
+"Complex Extremity, imaginary part",European stock index returns,FTSE,0.037748960489784635
+moment skewness,European stock index returns,FTSE,0.20036728563844594
+L-skewness,European stock index returns,FTSE,0.013876654824568596
+TL-skewness,European stock index returns,FTSE,0.009429081269978792
+quartile skewness,European stock index returns,FTSE,0.03194037824769284
+medcouple,European stock index returns,FTSE,0.03263488777871168
+mean-based skewness 2F(mean) - 1,European stock index returns,FTSE,0.016542702271155153
+excess kurtosis,European stock index returns,FTSE,0.9493186018168958
+L-kurtosis,European stock index returns,FTSE,0.009807801926819373
+TL-kurtosis,European stock index returns,FTSE,0.006266567838598962
+octile kurtosis,European stock index returns,FTSE,0.044448810357093554
+Geary ratio,European stock index returns,FTSE,0.009482596734387339
