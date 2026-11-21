@@ -1,0 +1,27 @@
+measure,data,median shift on removing 3 values (standard errors),discrimination ratio,median spike ratio
+Asymmetry,petroleum rock samples,0.56572,1.60452,
+Asymmetry,European stock index returns,0.331876,1.18628,2.19456
+moment skewness,petroleum rock samples,0.926816,2.50658,
+moment skewness,European stock index returns,0.919849,1.12137,5.15122
+L-skewness,petroleum rock samples,0.79311,2.21125,
+L-skewness,European stock index returns,0.403207,1.09097,1.91855
+TL-skewness,petroleum rock samples,0.474636,1.61745,
+TL-skewness,European stock index returns,0.0821465,1.14457,0.358525
+quartile skewness,petroleum rock samples,0.285976,1.3353,
+quartile skewness,European stock index returns,0.0781267,0.41788,0.62047
+medcouple,petroleum rock samples,0.255288,1.34253,
+medcouple,European stock index returns,0.0417267,0.830739,0.980588
+mean-based skewness 2F(mean) - 1,petroleum rock samples,0.369853,1.33784,
+mean-based skewness 2F(mean) - 1,European stock index returns,0.197361,1.29346,2.36045
+Extremity,petroleum rock samples,0.218281,3.19089,
+Extremity,European stock index returns,1.20274,1.53386,1.84744
+excess kurtosis,petroleum rock samples,0.756431,1.97318,
+excess kurtosis,European stock index returns,1.45646,0.898078,4.68397
+L-kurtosis,petroleum rock samples,0.82317,2.52067,
+L-kurtosis,European stock index returns,0.971002,2.08072,1.37508
+TL-kurtosis,petroleum rock samples,0.337459,1.78504,
+TL-kurtosis,European stock index returns,0.155738,1.76782,0.270197
+octile kurtosis,petroleum rock samples,0.192293,0.857039,
+octile kurtosis,European stock index returns,0.0972775,0.93054,0.921185
+Geary ratio,petroleum rock samples,0.320999,2.90772,
+Geary ratio,European stock index returns,1.33709,1.52975,2.43074
