@@ -4,7 +4,7 @@ Data: the petroleum rock samples (data/rock.csv: Area, Perimeter, Shape, Permeab
 log returns of the European stock indices (data/EuStockMarkets.csv: DAX, SMI, CAC, FTSE; 1859 returns each).
 Measures: every measure of measures.ALL (the half-moment coefficients and the eleven comparison measures).
 
-    python3 benefits.py sensitivity   PL12: removing the k most extreme values (k = 1, 2, 5)
+    python3 benefits.py sensitivity   PL12: removing the k most extreme values (k = 1, 2, 3)
     python3 benefits.py precision     PL13: bootstrap standard errors, and how far apart each measure places the
                                       data sets of a group relative to its own noise
     python3 benefits.py stability     PL14: rolling windows of 260 returns (step 1) on each index
@@ -34,7 +34,7 @@ from measures import ALL
 HERE = Path(__file__).resolve().parent
 ROCK = {"area": "Area", "peri": "Perimeter", "shape": "Shape", "perm": "Permeability"}
 INDICES = ("DAX", "SMI", "CAC", "FTSE")
-B, SEED, KS, WINDOW = 2000, 20261124, (1, 2, 5), 260
+B, SEED, KS, WINDOW = 2000, 20261124, (1, 2, 3), 260
 
 
 def read(path):
