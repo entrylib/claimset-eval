@@ -4,15 +4,15 @@
   "title": "Half Central Moment for Data Analysis",
   "contributions": [
    "C5",
-   "C24",
    "C6",
-   "C9",
-   "C17",
-   "C18",
-   "C8",
+   "C10",
+   "C11",
+   "C12",
    "C20",
    "C21",
-   "C19"
+   "C22",
+   "C23",
+   "C24"
   ],
   "autonomy": "human_supervised",
   "contribution_record": "partial",
@@ -66,7 +66,7 @@
      "lab_plan": "PL8",
      "outcome": "supported",
      "because": "reworded",
-     "into": "C24",
+     "into": "C10",
      "why": "The statement was reworded after this verdict and decided again under PL9, whose verdict is the claim's. This verdict: Rule of PL8 met: the proof is in properties.md in RN15; the independent checker (AC5, Claude Fable) confirmed it in full (AC5.CK1); the largest relative error of the run's numerical checks is 2.1e-40 (at most 1e-8 allowed).",
      "statement": "Hypotailedness and Extremity measure the spread of the squared standardised deviation, as kurtosis does; stated without the scaling behind the factor 8"
     }
@@ -91,7 +91,7 @@
    "D3",
    "D5",
    "C5",
-   "C24"
+   "C10"
   ],
   "declarations": {
    "funding": [],
@@ -100,52 +100,62 @@
   "summary": "Moment measures of skewness and kurtosis are driven by the tails: one extreme value can dominate them. We propose shape coefficients built on the half central moment, the expected square root of the deviation from the mean. Negative deviations have imaginary roots, so its real part collects the deviations above the mean and its imaginary part those below. The Asymmetry coefficient, from the angle of this moment, lies strictly between $-1$ and $1$; it is determined by the probability on each side of the mean and by how evenly the deviations spread on each side, and it places the mean as an $L_{1.5}$-quantile. Hypotailedness, the absolute half moment scaled by the square root of the standard deviation, and the Extremity coefficient derived from it measure, as kurtosis does, how far the squared standardised deviations spread from one, but give values near the mean more weight and values in the tails less. We derive the influence functions, showing that they grow linearly for Asymmetry and quadratically for Hypotailedness. We also derive the sharp lower bound of the sample Hypotailedness, the asymptotic normality of the sample coefficients, and closed forms for seven standard distributions. In simulations we show that the sample Asymmetry is nearly unbiased, while Hypotailedness is biased upwards in small samples. Finally, we demonstrate the measures on petroleum rock samples and on daily returns of four European stock indices.",
   "sections": [
    {
-    "title": "Properties of the half central moment",
+    "title": "The half central moment",
     "claims": [
      "C1",
      "C2",
-     "C3",
+     "C3"
+    ]
+   },
+   {
+    "title": "Asymmetry",
+    "claims": [
      "C4",
      "C5",
-     "C6",
+     "C6"
+    ]
+   },
+   {
+    "title": "Hypotailedness and Extremity",
+    "claims": [
      "C7",
-     "C26",
-     "C24",
-     "C25",
      "C8",
-     "C9"
-    ]
-   },
-   {
-    "title": "Influence functions and robustness",
-    "claims": [
-     "C17",
-     "C20"
-    ]
-   },
-   {
-    "title": "Asymptotic and finite-sample behaviour",
-    "claims": [
-     "C18",
-     "C21"
+     "C9",
+     "C10",
+     "C11",
+     "C12"
     ]
    },
    {
     "title": "Closed forms for standard distributions",
     "claims": [
-     "C10",
-     "C11",
-     "C12",
      "C13",
      "C14",
      "C15",
-     "C16"
+     "C16",
+     "C17",
+     "C18",
+     "C19"
+    ]
+   },
+   {
+    "title": "Influence functions and robustness",
+    "claims": [
+     "C20",
+     "C21"
+    ]
+   },
+   {
+    "title": "Asymptotic and finite-sample behaviour",
+    "claims": [
+     "C22",
+     "C23"
     ]
    },
    {
     "title": "Real data",
     "claims": [
-     "C19"
+     "C24"
     ]
    }
   ]
@@ -285,7 +295,7 @@
    "kind": "variable",
    "definition": "The half central moment (HCM) of a variable $y$ with finite mean $\\mu_1$: $$\\mu_{0.5} = \\mathrm{E}\\left[(y - \\mu_1)^{0.5}\\right]$$, the square root taken as the principal root, so that $$\\mu_{0.5} = \\mathrm{E}\\left[(y-\\mu_1)_+^{0.5}\\right] + i\\,\\mathrm{E}\\left[(\\mu_1-y)_+^{0.5}\\right]$$: the real part $\\mathcal{R}$ comes from the values above the mean and the imaginary part $\\mathcal{I}$ from those below it. Sample estimate: $$m_{0.5} = \\frac{1}{n}\\sum_{j=1}^{n} (y_j - m_1)^{0.5}$$, with $m_1$ the sample mean.",
    "assumptions": [
-    "C22"
+    "C25"
    ],
    "symbol": "$\\mu_{0.5}$"
   },
@@ -295,7 +305,7 @@
    "kind": "variable",
    "definition": "The half absolute moment (HAM): $$\\nu_{0.5} = \\mathcal{R}(\\mu_{0.5}) + \\mathcal{I}(\\mu_{0.5}) = \\mathrm{E}|y - \\mu_1|^{0.5}$$; sample estimate $$v_{0.5} = \\frac{1}{n}\\sum_{j=1}^{n} |y_j - m_1|^{0.5}$$.",
    "assumptions": [
-    "C22"
+    "C25"
    ],
    "symbol": "$\\nu_{0.5}$"
   },
@@ -305,7 +315,7 @@
    "kind": "variable",
    "definition": "$$\\mathrm{Asymmetry} = 1 - \\frac{4\\phi}{\\pi} = \\frac{4}{\\pi}\\arctan\\left(\\frac{\\mathcal{R}(\\mu_{0.5}) - \\mathcal{I}(\\mu_{0.5})}{\\nu_{0.5}}\\right),$$ where $\\phi = \\mathrm{Arg}(\\mu_{0.5}) \\in \\left[0, \\frac{\\pi}{2}\\right]$; positive when the part above the mean is the larger. The sample coefficient uses $m_{0.5}$ and $v_{0.5}$.",
    "assumptions": [
-    "C22"
+    "C25"
    ]
   },
   {
@@ -314,7 +324,7 @@
    "kind": "variable",
    "definition": "$\\mathrm{Hypotailedness} = \\frac{\\nu_{0.5}}{\\sigma^{0.5}}$ for a variable with finite positive variance $\\sigma^2$; the sample coefficient divides $v_{0.5}$ by $\\left(\\frac{1}{n}\\sum_{j}(y_j - m_1)^2\\right)^{0.25}$.",
    "assumptions": [
-    "C23"
+    "C26"
    ]
   },
   {
@@ -323,7 +333,7 @@
    "kind": "variable",
    "definition": "$\\mathrm{Extremity} = 2\\,\\mathrm{Hypotailedness}^{p} - 1$ with $p = \\frac{\\log 0.5}{\\log(2 \\times 3^{-0.75})} \\approx 5.30$, so that the uniform distribution has Extremity 0.",
    "assumptions": [
-    "C23"
+    "C26"
    ]
   },
   {
@@ -332,7 +342,7 @@
    "kind": "variable",
    "definition": "$\\mathrm{CH} = \\frac{\\mu_{0.5}}{\\sigma^{0.5}}$, the half central moment divided by the square root of the standard deviation (the manuscript of 19 November 2026).",
    "assumptions": [
-    "C23"
+    "C26"
    ],
    "symbol": "$\\mathrm{CH}$"
   },
@@ -342,7 +352,7 @@
    "kind": "variable",
    "definition": "For a variable with finite variance and deviation $D = y - \\mu_1$: $$H_+ = \\frac{\\mathrm{E}\\left[D^{0.5} \\mid D > 0\\right]}{\\left(\\mathrm{E}\\left[D^2 \\mid D > 0\\right]\\right)^{0.25}}$$ above the mean and $$H_- = \\frac{\\mathrm{E}\\left[|D|^{0.5} \\mid D < 0\\right]}{\\left(\\mathrm{E}\\left[D^2 \\mid D < 0\\right]\\right)^{0.25}}$$ below it; in a sample, the same ratios over the values above and below the sample mean.",
    "assumptions": [
-    "C23"
+    "C26"
    ],
    "symbol": "$H_\\pm$"
   },
@@ -352,7 +362,7 @@
    "kind": "variable",
    "definition": "The bounded Complex Extremity proposed in this study: $\\mathrm{CE} = \\left(2H_+^{p} - 1\\right) + i\\left(2H_-^{p} - 1\\right)$, with $H_\\pm$ the one-sided Hypotailedness and $p = \\frac{\\log 0.5}{\\log(2 \\times 3^{-0.75})}$; the real part describes the values above the mean.",
    "assumptions": [
-    "C23"
+    "C26"
    ],
    "symbol": "$\\mathrm{CE}$"
   },
@@ -544,7 +554,7 @@
    ],
    "name": "Symmetry gives equal real and imaginary parts",
    "assumptions": [
-    "C22"
+    "C25"
    ]
   },
   {
@@ -610,7 +620,7 @@
    ],
    "name": "Equal parts do not imply symmetry",
    "assumptions": [
-    "C22"
+    "C25"
    ]
   },
   {
@@ -676,7 +686,7 @@
    ],
    "name": "Location, scale and sign of the half central moment",
    "assumptions": [
-    "C22"
+    "C25"
    ]
   },
   {
@@ -748,7 +758,7 @@
     }
    ],
    "assumptions": [
-    "C22"
+    "C25"
    ]
   },
   {
@@ -822,7 +832,7 @@
     }
    ],
    "assumptions": [
-    "C22"
+    "C25"
    ],
    "depends_on": [
     "C4"
@@ -903,7 +913,7 @@
     }
    ],
    "assumptions": [
-    "C22"
+    "C25"
    ],
    "depends_on": [
     "C4"
@@ -979,11 +989,219 @@
     }
    ],
    "assumptions": [
-    "C23"
+    "C26"
    ]
   },
   {
    "id": "C8",
+   "statement": "For the uniform distribution on $(b, c)$, the [[D1:half central moment]] is $(1+i)\\frac{1}{3}\\left(\\frac{c-b}{2}\\right)^{0.5}$, the [[D3:Asymmetry coefficient]] is 0, [[D4:Hypotailedness]] is $2 \\times 3^{-0.75}$ and the [[D5:Extremity coefficient]] is 0.",
+   "about": {
+    "subject": "D1",
+    "relation": "has a closed form for",
+    "object": null,
+    "comparator": null,
+    "conditions": [
+     "the uniform distribution"
+    ]
+   },
+   "type": "formal",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E35"
+    },
+    {
+     "kind": "simulation",
+     "evidence": "E10",
+     "results": [
+      "E10.R1"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "hypothesis": {
+    "lab_event": "H10",
+    "outcome": "supported"
+   },
+   "planning": "confirmatory",
+   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at_anchor": "git_remote",
+   "test": {
+    "framework": "formal",
+    "parameters": {
+     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
+     "tolerance": 1e-08
+    },
+    "supported": "A complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "A counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "verdict": "judged",
+    "runs": 1,
+    "lab_plan": "PL2",
+    "flags": [
+     "code_changed_after_plan"
+    ]
+   },
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P3",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Re-derived: D is uniform on (-a, a) with a = (c - b)/2, nu = (2/3) a^0.5, each part nu/2, variance a^2/3, H = (2/3) 3^0.25 = 2 x 3^-0.75, Asymmetry 0 by symmetry and Extremity 0 by the definition of p. Reproduced by quadrature in AC3.RN1 on (-1, 4): relative errors 0 at 30 digits."
+    }
+   ],
+   "name": "The uniform distribution, the reference point of Extremity",
+   "depends_on": [
+    "C1",
+    "C4"
+   ]
+  },
+  {
+   "id": "C9",
+   "statement": "For a variable with a finite positive variance, the [[D5:Extremity coefficient]] lies in $(-1, 1]$, equals $0$ for the uniform distribution, and is negative exactly when [[D4:Hypotailedness]] is below its value for the uniform distribution, $2 \\times 3^{-0.75}$.",
+   "about": {
+    "subject": "D5",
+    "relation": "lies in (-1, 1] and is 0 for the uniform distribution",
+    "object": null,
+    "comparator": null,
+    "conditions": []
+   },
+   "type": "formal",
+   "role": "supporting",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E45"
+    },
+    {
+     "kind": "simulation",
+     "evidence": "E21",
+     "results": [
+      "E21.R1"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "hypothesis": {
+    "lab_event": "H24",
+    "outcome": "supported"
+   },
+   "planning": "confirmatory",
+   "planned_at": "2026-11-20T11:19:45Z",
+   "planned_at_anchor": "git_remote",
+   "test": {
+    "framework": "formal",
+    "parameters": {
+     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
+     "tolerance": 1e-08
+    },
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "verdict": "judged",
+    "runs": 1,
+    "lab_plan": "PL10"
+   },
+   "checks": [
+    {
+     "by": "P3",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Checked every step of the H24 proof in properties.md against the recorded statement. (1) h_U = 2*3^-0.75 = 0.87738 lies in (0,1), so log h_U < 0 and p = log 0.5 / log h_U = 5.29880 > 0; correct. (2) For p > 0, u -> 2u^p - 1 is continuous and strictly increasing on [0,1], sending 0 to -1 and 1 to 1; correct. (3) h_U^p = exp(log 0.5) = 0.5, so h_U maps to 0; verified to 30 digits. (4) By H23 (which I checked separately and confirmed) H is in (0,1]; strict monotonicity gives E > -1 and E <= 1, and E < 0 iff H < h_U; correct. (5) H10 re-derived: for the uniform law on (b,c), a = (c-b)/2, nu = (2/3)a^0.5, sigma^2 = a^2/3, H = (2/3)*3^0.25 = 2*3^-0.75 = h_U, so E = 0; confirmed by quadrature for three intervals (differences below 1e-24). Nothing wrong. One remark on wording, not an error: 'the uniform distribution' means the continuous uniform law on an interval, as in H10; a discrete uniform law has a different H."
+    }
+   ],
+   "verification": "agent_checked",
+   "name": "Extremity lies in (-1, 1] and is 0 at the uniform distribution",
+   "summary": "Extremity rescales Hypotailedness to lie between $-1$ and $1$, with $0$ for the uniform distribution and negative values when the deviations are less even than the uniform's.",
+   "assumptions": [
+    "C26"
+   ],
+   "depends_on": [
+    "C7",
+    "C8"
+   ]
+  },
+  {
+   "id": "C10",
+   "statement": "For a variable with a finite positive variance $\\sigma^2$, let $V = \\frac{(y - \\mu_1)^2}{\\sigma^2}$, the squared standardised deviation, whose mean is 1, and $g(v) = \\frac{3 + v}{4} - v^{0.25}$. Then one minus the [[D4:Hypotailedness]] equals $\\mathrm{E}[g(V)]$, the [[D5:Extremity coefficient]] equals $2(1 - \\mathrm{E}[g(V)])^p - 1$ and so decreases as $\\mathrm{E}[g(V)]$ grows, and, with a finite fourth moment, the [[D10:excess kurtosis]] plus 2 equals $\\mathrm{E}[(V - 1)^2]$. The function $g$ is strictly convex and zero only at $v = 1$, is $\\frac{3}{32}(v - 1)^2 + O(|v - 1|^3)$ near 1, is $\\frac{3}{4}$ at $v = 0$, and is $\\frac{v}{4} + O(v^{0.25})$ for large $v$. So Hypotailedness, Extremity and kurtosis all measure how far $V$ spreads from 1; with $g$ scaled by $\\frac{32}{3}$, so that it agrees with the kurtosis loss $(v - 1)^2$ to second order at $v = 1$, Hypotailedness gives a value at the mean 8 times the weight kurtosis gives it, and a value far out a weight linear rather than quadratic in $V$.",
+   "about": {
+    "subject": "D5",
+    "relation": "measures the spread of the squared standardised deviation about 1, as kurtosis does, with more weight at the mean and less in the tails",
+    "object": null,
+    "comparator": null,
+    "conditions": []
+   },
+   "type": "formal",
+   "role": "principal",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E43"
+    },
+    {
+     "kind": "simulation",
+     "evidence": "E19",
+     "results": [
+      "E19.R1"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "hypothesis": {
+    "lab_event": "H21",
+    "outcome": "supported"
+   },
+   "planning": "confirmatory",
+   "planned_at": "2026-11-20T09:50:33Z",
+   "planned_at_anchor": "git_remote",
+   "test": {
+    "framework": "formal",
+    "parameters": {
+     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
+     "tolerance": 1e-08
+    },
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "verdict": "judged",
+    "runs": 1,
+    "lab_plan": "PL9"
+   },
+   "checks": [
+    {
+     "by": "P3",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Checked every step of proofs/properties.md section H20 against the recorded wording of H20, by hand and numerically. (1) E[V] = E[D^2]/sigma^2 = 1; |D|^0.5 = (D^2)^(1/4), so H = E[V^(1/4)] (TM4 definition). Integrability: E V = 1 and 0 <= V^(1/4) <= 1 + V, so each term of g(V) is integrable and linearity gives E[g(V)] = (3+1)/4 - H = 1 - H. Holds. (2) Extremity = 2H^p - 1 = 2(1 - E[g(V)])^p - 1 by TM5; p = log 0.5/log(2*3^-0.75) = 5.2988 > 0 and 1 - E[g(V)] = H lies in (0,1] (H7, which I re-derived: Jensen with r = 1/4), so u -> 2u^p - 1 is strictly increasing there and Extremity is strictly decreasing in E[g(V)] over its whole range [0,1). Holds. (3) With E[D^4] finite, E[V^2] = E[D^4]/sigma^4 = kappa, so E[(V-1)^2] = kappa - 2 + 1 = kappa - 1 = excess kurtosis (TM10) + 2. Holds. (4) g'(v) = (1 - v^(-3/4))/4, g''(v) = (3/16) v^(-7/4) > 0 on (0,inf), confirmed by differentiation. The proof passes from this to strict convexity on the closed [0,inf) by continuity at 0 in one clause; that step is correct (g' strictly increasing on (0,inf) plus the mean value theorem on [0,c] and [c,b] gives strict chord inequality for chords starting at 0, although g'(0+) = -inf), but the text does not spell it out. (5) g(1) = 0, g'(1) = 0, strict convexity gives g(v) > 0 for every v != 1 in [0,inf), including v = 0. Holds. (6) Taylor at 1: g''(1)/2 = 3/32; g'''(v) = -(21/64) v^(-11/4) is bounded near 1, so the remainder is O(|v-1|^3); the cubic coefficient is -7/128. Holds. (7) g(0) = 3/4 = 24/32 = 8 * (3/32)(0-1)^2. Holds. (8) g(v) - v/4 = 3/4 - v^(1/4) = O(v^(1/4)) as v -> inf. Holds. Numeric checks (scratch script outside the repository): for normal, uniform, exponential, t(5) and beta(0.5,2), 1 - H and E[g(V)] agree to 1e-12 and excess kurtosis + 2 equals E[(V-1)^2]; uniform gives Extremity 0; g on a grid over [0,1e4] has its only zero at 1; (g(1+h) - (3/32)h^2)/h^3 tends to -0.0547 = -7/128; (g(v) - v/4)/v^(1/4) tends to -1; 1e6 random chords, 30 percent starting at v = 0, show no convexity violation. Nothing wrong found; no step missing that affects the result. Closing interpretive sentence: a fair reading, not an overstatement, under two qualifications that the statement leaves implicit. First, 'measure how far V spreads from 1' is supported in this exact sense: 1 - Hypotailedness and excess kurtosis + 2 are each the mean of a non-negative loss of V that is zero only at V = 1, so each is 0 exactly when V = 1 almost surely, and Extremity is a strictly decreasing function of the first; Hypotailedness and Extremity themselves fall as the spread grows. It does not say, and the proof does not show, that the two losses order distributions the same way (they do not: exponential and t(5) have the same kurtosis 9 but E[g(V)] 0.2121 and 0.2245). Second, '8 times more' and 'linearly rather than quadratically' are comparisons with the kurtosis loss (v-1)^2 scaled by 3/32 so that the two losses agree to second order at v = 1; the factor 8 depends on that choice of scaling, which the statement indicates only through the expression 8 times (3/32)(0-1)^2. With that scaling the comparison is exact: g(0) = 3/4 against 3/32, and g(v) ~ v/4 against (3/32)v^2. The further remarks in the proof file's Reading paragraph (what a low Extremity says, the link to H17) are not part of the recorded statement and were not checked as part of it."
+    }
+   ],
+   "verification": "agent_checked",
+   "name": "What Hypotailedness and Extremity measure: the spread of squared standardised deviations",
+   "summary": "Hypotailedness and Extremity measure, as kurtosis does, how far the squared standardised deviations spread from their average of 1: how far the probability lies from one standard deviation either side of the mean. Compared with kurtosis they weigh values near the mean more and values in the tails less.",
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B33",
+     "note": "Moors (1986) reads kurtosis as the variance of the squared standardised deviation, the spread of the probability about the mean plus and minus one standard deviation; Hypotailedness measures the same spread with a loss that weighs the centre more and the tails less."
+    },
+    {
+     "type": "extends",
+     "reference": "B3",
+     "note": "Geary's (1947) ratio $a(0.5)$, the sample Hypotailedness, is the mean fourth root of the squared standardised deviation."
+    }
+   ],
+   "assumptions": [
+    "C26"
+   ],
+   "depends_on": [
+    "C7",
+    "C9"
+   ]
+  },
+  {
+   "id": "C11",
    "statement": "For a sample of $n \\geq 2$ values that are not all equal, the sample [[D4:Hypotailedness]] is at least $2^{0.75} n^{-0.75}$, with equality exactly when two values lie at equal distances on either side of the sample mean and all other values equal it.",
    "about": {
     "subject": "D4",
@@ -1056,7 +1274,7 @@
    ]
   },
   {
-   "id": "C9",
+   "id": "C12",
    "statement": "For a variable with a finite positive variance, no probability at its mean and positive probability on both sides of it, each [[D7:one-sided Hypotailedness]] lies in $(0, 1]$ and equals 1 exactly when the deviations on its side are constant; both equal $2 \\times 3^{-0.75}$ for the uniform distribution and both equal [[D4:Hypotailedness]] for a distribution symmetric about its mean. Hence each part of the [[D8:Complex Extremity]] lies in $(-1, 1]$ and is 0 for the uniform distribution.",
    "about": {
     "subject": "D8",
@@ -1126,82 +1344,16 @@
     }
    ],
    "assumptions": [
-    "C23"
+    "C26"
    ],
    "depends_on": [
     "C7",
-    "C10",
-    "C26"
+    "C8",
+    "C9"
    ]
   },
   {
-   "id": "C10",
-   "statement": "For the uniform distribution on $(b, c)$, the [[D1:half central moment]] is $(1+i)\\frac{1}{3}\\left(\\frac{c-b}{2}\\right)^{0.5}$, the [[D3:Asymmetry coefficient]] is 0, [[D4:Hypotailedness]] is $2 \\times 3^{-0.75}$ and the [[D5:Extremity coefficient]] is 0.",
-   "about": {
-    "subject": "D1",
-    "relation": "has a closed form for",
-    "object": null,
-    "comparator": null,
-    "conditions": [
-     "the uniform distribution"
-    ]
-   },
-   "type": "formal",
-   "role": "supporting",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "formal_proof",
-     "evidence": "E35"
-    },
-    {
-     "kind": "simulation",
-     "evidence": "E10",
-     "results": [
-      "E10.R1"
-     ]
-    }
-   ],
-   "provenance": "author_stated",
-   "hypothesis": {
-    "lab_event": "H10",
-    "outcome": "supported"
-   },
-   "planning": "confirmatory",
-   "planned_at": "2026-11-19T17:20:44Z",
-   "planned_at_anchor": "git_remote",
-   "test": {
-    "framework": "formal",
-    "parameters": {
-     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
-     "tolerance": 1e-08
-    },
-    "supported": "A complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "A counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
-    "verdict": "judged",
-    "runs": 1,
-    "lab_plan": "PL2",
-    "flags": [
-     "code_changed_after_plan"
-    ]
-   },
-   "verification": "agent_checked",
-   "checks": [
-    {
-     "by": "P3",
-     "outcome": "confirmed",
-     "extent": "full",
-     "notes": "Re-derived: D is uniform on (-a, a) with a = (c - b)/2, nu = (2/3) a^0.5, each part nu/2, variance a^2/3, H = (2/3) 3^0.25 = 2 x 3^-0.75, Asymmetry 0 by symmetry and Extremity 0 by the definition of p. Reproduced by quadrature in AC3.RN1 on (-1, 4): relative errors 0 at 30 digits."
-    }
-   ],
-   "name": "Closed form for the uniform distribution",
-   "depends_on": [
-    "C1",
-    "C4"
-   ]
-  },
-  {
-   "id": "C11",
+   "id": "C13",
    "statement": "For the normal distribution with standard deviation $\\sigma$, the [[D1:half central moment]] is $(1+i)\\,\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{-0.75}\\,\\sigma^{0.5}$, the [[D3:Asymmetry coefficient]] is 0 and [[D4:Hypotailedness]] is $\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{0.25}$.",
    "about": {
     "subject": "D1",
@@ -1267,7 +1419,7 @@
    ]
   },
   {
-   "id": "C12",
+   "id": "C14",
    "statement": "For the Laplace distribution with scale $b$, the [[D1:half central moment]] is $(1+i)\\frac{\\sqrt{\\pi}}{4}\\,b^{0.5}$ and [[D4:Hypotailedness]] is $\\frac{\\sqrt{\\pi}}{2}\\,2^{-0.25}$.",
    "about": {
     "subject": "D1",
@@ -1329,7 +1481,7 @@
    "name": "Closed form for the Laplace distribution"
   },
   {
-   "id": "C13",
+   "id": "C15",
    "statement": "For the generalised normal distribution with shape $s > 0$ and scale $\\alpha$ (density proportional to $\\exp\\left(-\\left|\\frac{y}{\\alpha}\\right|^s\\right)$), the [[D1:half central moment]] is $(1+i)\\frac{\\alpha^{0.5}}{2}\\,\\frac{\\Gamma\\left(\\frac{1.5}{s}\\right)}{\\Gamma\\left(\\frac{1}{s}\\right)}$ and [[D4:Hypotailedness]] is $\\Gamma\\left(\\frac{1.5}{s}\\right)\\,\\Gamma\\left(\\frac{1}{s}\\right)^{-0.75}\\,\\Gamma\\left(\\frac{3}{s}\\right)^{-0.25}$.",
    "about": {
     "subject": "D1",
@@ -1391,7 +1543,7 @@
    "name": "Closed form for the generalised normal distribution"
   },
   {
-   "id": "C14",
+   "id": "C16",
    "statement": "For Student's t distribution with $\\nu$ degrees of freedom, the [[D1:half central moment]] about 0 (the mean when $\\nu > 1$) is finite for every $\\nu > 0.5$ and equals $$(1+i)\\frac{\\Gamma(0.75)\\,\\Gamma\\left(\\frac{\\nu-0.5}{2}\\right)\\nu^{0.25}}{2\\sqrt{\\pi}\\,\\Gamma\\left(\\frac{\\nu}{2}\\right)}$$; for $\\nu > 2$, [[D4:Hypotailedness]] is $$\\frac{\\Gamma(0.75)\\,\\Gamma\\left(\\frac{\\nu-0.5}{2}\\right)(\\nu-2)^{0.25}}{\\sqrt{\\pi}\\,\\Gamma\\left(\\frac{\\nu}{2}\\right)}$$.",
    "about": {
     "subject": "D1",
@@ -1460,7 +1612,7 @@
    ]
   },
   {
-   "id": "C15",
+   "id": "C17",
    "statement": "For the Cauchy distribution with location 0 and scale $\\gamma$, which has no mean, the [[D1:half central moment]] taken about its location 0 is $(1+i)\\frac{\\sqrt{\\gamma}}{2}\\sec\\left(\\frac{\\pi}{4}\\right)$.",
    "about": {
     "subject": "D1",
@@ -1529,7 +1681,7 @@
    ]
   },
   {
-   "id": "C16",
+   "id": "C18",
    "statement": "For the gamma distribution with shape $a$ and rate $\\lambda$ (mean $\\frac{a}{\\lambda}$), the parts of the [[D1:half central moment]] are $$\\mathcal{R}(\\mu_{0.5}) = \\frac{\\Gamma(1.5)\\,a^{a+0.5}e^{-a}}{\\Gamma(a)\\,\\lambda^{0.5}}\\,U(1.5,\\, a+1.5,\\, a)$$ and $$\\mathcal{I}(\\mu_{0.5}) = \\frac{B(a, 1.5)\\,a^{a+0.5}}{\\Gamma(a)\\,\\lambda^{0.5}}\\,{}_1F_1(a;\\, a+1.5;\\, -a)$$, with $U$ the confluent hypergeometric function of the second kind and ${}_1F_1$ Kummer's function; for $a = 1$ (the exponential distribution) they are $\\frac{\\sqrt{\\pi}}{2e\\sqrt{\\lambda}}$ and $\\frac{2e - \\sqrt{\\pi}\\,\\mathrm{erfi}(1)}{2e\\sqrt{\\lambda}}$, and the [[D3:Asymmetry coefficient]] does not depend on $\\lambda$.",
    "about": {
     "subject": "D1",
@@ -1594,7 +1746,71 @@
    ]
   },
   {
-   "id": "C17",
+   "id": "C19",
+   "statement": "The [[D5:Extremity coefficient]] and [[D10:excess kurtosis]] do not order distributions alike: the exponential and Student $t_5$ distributions have the same excess kurtosis, 6, but Extremity $-0.434$ and $-0.480$; the Laplace distribution has a smaller excess kurtosis, 3, but a smaller Extremity, $-0.579$, than either.",
+   "about": {
+    "subject": "D5",
+    "relation": "orders distributions differently from excess kurtosis",
+    "object": null,
+    "comparator": "D10",
+    "conditions": []
+   },
+   "type": "formal",
+   "role": "secondary",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E44"
+    },
+    {
+     "kind": "simulation",
+     "evidence": "E20",
+     "results": [
+      "E20.R1"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "hypothesis": {
+    "lab_event": "H22",
+    "outcome": "supported"
+   },
+   "planning": "confirmatory",
+   "planned_at": "2026-11-20T09:50:33Z",
+   "planned_at_anchor": "git_remote",
+   "test": {
+    "framework": "formal",
+    "parameters": {
+     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
+     "tolerance": 1e-08
+    },
+    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
+    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
+    "verdict": "judged",
+    "runs": 1,
+    "lab_plan": "PL9"
+   },
+   "checks": [
+    {
+     "by": "P3",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Corrects the wording of AC6.CK2; same checks, same result. Closed forms match distributions.md: H16 exponential case R=sqrt(pi)/(2e), I=(2e-sqrt(pi)erfi(1))/(2e) at lambda=1 (sigma=1), sum =1-sqrt(pi)(erfi(1)-1)/(2e); H14 at nu=5 gives Gamma(0.75)Gamma(2.25)3^0.25/(sqrt(pi)Gamma(2.5)) since (nu-0.5)/2=2.25, nu-2=3, nu/2=2.5; H12 gives sqrt(pi)/2*2^-0.25. I re-derived these (Laplace: Gamma(1.5)b^0.5 over (2b^2)^0.25; t: E|T|^0.5 by the normal/chi-square ratio; exponential: antiderivative of x^2 e^(x^2) checked by differentiation) and verified each against direct quadrature of E|y-mean|^0.5/sigma^0.5 in mpmath to 30 digits: H=0.7879451592 (R=0.3260246661, I=0.4619204931), 0.7755040493, 0.7452250447. Excess kurtosis: exponential central mu4=9, sigma^2=1, so 6; t5 sigma^2=5/3, mu4=3*25/(3*1)=25, kurtosis 9, excess 6/(nu-4)=6; Laplace mu4=24b^4, sigma^4=4b^4, excess 3; all confirmed by quadrature. p=log0.5/log(2*3^-0.75)=5.2988028. E=2H^p-1 = -0.4343046, -0.4800546, -0.5789765, rounding to -0.434, -0.480, -0.579 as stated; no value is near a rounding boundary. Orderings: p>0 so E increases with H, and 0.7879>0.7755>0.7452. Kurtosis ties the exponential and t5 while Extremity separates them, which alone shows the two do not order distributions alike. The Laplace has both a lower excess kurtosis (3<6) and a lower Extremity than the other two, exactly as stated; this is a reversal on the reading of H20, that low Extremity and high kurtosis both mean a more spread V, which the H22 Reading paragraph takes and the proof does not need. Statement as worded follows. Nothing wrong or missing."
+    }
+   ],
+   "verification": "agent_checked",
+   "name": "Extremity and kurtosis order distributions differently",
+   "summary": "Extremity and kurtosis can rank distributions in opposite orders. The Laplace distribution, with its sharp peak at the mean, has lower kurtosis than the exponential or Student's t with 5 degrees of freedom but lower Extremity than both.",
+   "depends_on": [
+    "C10",
+    "C14",
+    "C16",
+    "C18"
+   ]
+  },
+  {
+   "id": "C20",
    "statement": "At a distribution with a finite fourth moment and a density bounded near its mean, the influence function of the [[D3:Asymmetry coefficient]] is unbounded and grows linearly in the outlying value $x$ as $|x| \\to \\infty$, decreasing for large positive $x$; the influence functions of [[D4:Hypotailedness]] and of the [[D5:Extremity coefficient]] grow quadratically, through the variance, and decrease in both directions.",
    "about": {
     "subject": "D3",
@@ -1669,7 +1885,7 @@
     }
    ],
    "assumptions": [
-    "C23"
+    "C26"
    ],
    "depends_on": [
     "C4",
@@ -1677,398 +1893,7 @@
    ]
   },
   {
-   "id": "C18",
-   "statement": "For a variable with a finite fourth moment and a density bounded and continuous near its mean, the sample [[D3:Asymmetry coefficient]], [[D4:Hypotailedness]] and [[D5:Extremity coefficient]] are asymptotically normal: $\\sqrt{n}(\\hat T_n - T) \\to N\\left(0, \\mathrm{E}\\left[\\mathrm{IF}_T(y)^2\\right]\\right)$, where $\\mathrm{IF}_T$ is the influence function of the coefficient, which includes the effect of estimating the mean.",
-   "about": {
-    "subject": "D3",
-    "relation": "is asymptotically normal with variance given by its influence function",
-    "object": null,
-    "comparator": null,
-    "conditions": []
-   },
-   "type": "formal",
-   "role": "principal",
-   "novelty": "extension",
-   "support": [
-    {
-     "kind": "formal_proof",
-     "evidence": "E42"
-    },
-    {
-     "kind": "simulation",
-     "evidence": "E18",
-     "results": [
-      "E18.T1.r1",
-      "E18.T1.r2",
-      "E18.T1.r3",
-      "E18.T1.r4",
-      "E18.T1.r5",
-      "E18.T1.r6",
-      "E18.T1.r7",
-      "E18.T1.r8",
-      "E18.T1.r9"
-     ]
-    },
-    {
-     "kind": "cited",
-     "reference": "B31",
-     "locator": "Theorem 19.5 and Lemma 19.24"
-    },
-    {
-     "kind": "cited",
-     "reference": "B13",
-     "locator": "Theorem 2.13 (case of a parameter whose estimate changes the limit)"
-    }
-   ],
-   "provenance": "author_stated",
-   "hypothesis": {
-    "lab_event": "H18",
-    "outcome": "supported"
-   },
-   "planning": "confirmatory",
-   "planned_at": "2026-11-19T17:20:44Z",
-   "planned_at_anchor": "git_remote",
-   "test": {
-    "framework": "formal",
-    "parameters": {
-     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
-     "simulation": "20000 samples of n = 20000 per distribution, seed 20261121"
-    },
-    "supported": "A complete proof is in the deciding run's document; the independent checker (an agent on Claude Fable, its own actor and log) confirms it in full with no unresolved dispute; and for every coefficient and distribution the ratio of the simulated to the asymptotic standard deviation is within 3 Monte Carlo standard errors of 1.",
-    "not_supported": "A counterexample to the statement is found, by the proof attempt or the checker, or for some coefficient and distribution the ratio of the simulated to the asymptotic standard deviation differs from 1 by more than 6 Monte Carlo standard errors.",
-    "verdict": "judged",
-    "runs": 1,
-    "lab_plan": "PL5",
-    "flags": [
-     "code_changed_after_plan"
-    ]
-   },
-   "verification": "agent_checked",
-   "checks": [
-    {
-     "by": "P3",
-     "outcome": "confirmed",
-     "extent": "full",
-     "notes": "Checked each step: 1(a) the class (y - t)_+^0.5 is monotone in t with E[(f_s - f_t)^2] <= |s - t|, so brackets number O(1/eps^2), the bracketing integral is finite, the class is Donsker and G_n(mean estimate) - G_n(mean) -> 0 (van der Vaart Theorem 19.5 and Lemma 19.24; the sample mean lies in the index set with probability tending to 1); 1(b) the drift uses differentiability of m at the mean (H17) and the central limit theorem, and is the non-vanishing estimated-parameter term of Randles (1982); steps 2 to 4 (variance, joint limit with square-integrable influence functions, delta method at R, I, sigma^2 > 0) are correct and the gradient combination is IF_T of H17. Two remarks, neither a gap: continuity of the density is assumed but never used (boundedness near the mean suffices), and the limit can be degenerate (variance 0 for Hypotailedness and Extremity when |y - mean| is constant, e.g. two equal atoms, which the density condition allows). In AC3.RN1, at gamma shapes 1 and 2.5 (n = 4000, 4000 replications) the ratio of simulated to asymptotic standard deviation is between 0.990 and 1.011 for the three coefficients, within the Monte Carlo standard error 0.011."
-    }
-   ],
-   "name": "The sample coefficients are asymptotically normal",
-   "summary": "For large samples the sample Asymmetry, Hypotailedness and Extremity are approximately normal, with variances given by their influence functions, which account for the estimated mean.",
-   "relations": [
-    {
-     "type": "extends",
-     "reference": "B8",
-     "note": "Asymptotic normality of empirical skewness measures, with the effect of estimating the mean."
-    }
-   ],
-   "assumptions": [
-    "C23"
-   ],
-   "depends_on": [
-    "C17"
-   ]
-  },
-  {
-   "id": "C19",
-   "statement": "Computed with the [[D20:half-moment coefficients]] and the [[D21:comparison measures]], on the [[D24:petroleum rock samples]] the [[D3:Asymmetry coefficient]] has the opposite sign to [[D9:moment skewness]] for each of the four variables, and the [[D5:Extremity coefficient]] is positive for Perimeter and Permeability and negative for Area and Shape; on the daily log returns of the four [[D25:European stock index returns]], Asymmetry lies within 0.021 of 0, Extremity lies between $-0.545$ and $-0.447$, below its value $-0.291$ for the normal distribution, and [[D10:excess kurtosis]] lies between 2.385 and 6.280; on the DAX returns over the [[D26:expanding window]], excess kurtosis reaches 50.2 at 266 returns, while Extremity stays between $-0.927$ and $-0.175$, both extremes within the first 37 returns.",
-   "type": "descriptive",
-   "role": "principal",
-   "novelty": "extension",
-   "support": [
-    {
-     "kind": "empirical_quant",
-     "evidence": "E22",
-     "results": [
-      "E22.T1.r1",
-      "E22.T1.r2",
-      "E22.T1.r3",
-      "E22.T1.r4",
-      "E22.T1.r5",
-      "E22.T1.r6",
-      "E22.T1.r7",
-      "E22.T1.r8",
-      "E22.T1.r9",
-      "E22.T1.r10",
-      "E22.T1.r11",
-      "E22.T1.r12",
-      "E22.T1.r13",
-      "E22.T1.r14",
-      "E22.T1.r15",
-      "E22.T1.r16",
-      "E22.T1.r17",
-      "E22.T1.r18",
-      "E22.T1.r19",
-      "E22.T1.r20",
-      "E22.T1.r21",
-      "E22.T1.r22",
-      "E22.T1.r23",
-      "E22.T1.r24",
-      "E22.T1.r25",
-      "E22.T1.r26",
-      "E22.T1.r27",
-      "E22.T1.r28",
-      "E22.T1.r29",
-      "E22.T1.r30",
-      "E22.T1.r31",
-      "E22.T1.r32",
-      "E22.T1.r33",
-      "E22.T1.r34",
-      "E22.T1.r35",
-      "E22.T1.r36",
-      "E22.T1.r37",
-      "E22.T1.r38",
-      "E22.T1.r39",
-      "E22.T1.r40",
-      "E22.T1.r41",
-      "E22.T1.r42",
-      "E22.T1.r43",
-      "E22.T1.r44",
-      "E22.T1.r45",
-      "E22.T1.r46",
-      "E22.T1.r47",
-      "E22.T1.r48",
-      "E22.T1.r49",
-      "E22.T1.r50",
-      "E22.T1.r51",
-      "E22.T1.r52",
-      "E22.T1.r53",
-      "E22.T1.r54",
-      "E22.T1.r55",
-      "E22.T1.r56",
-      "E22.T1.r57",
-      "E22.T1.r58",
-      "E22.T1.r59",
-      "E22.T1.r60",
-      "E22.T1.r61",
-      "E22.T1.r62",
-      "E22.T1.r63",
-      "E22.T1.r64",
-      "E22.T1.r65",
-      "E22.T1.r66",
-      "E22.T1.r67",
-      "E22.T1.r68",
-      "E22.T1.r69",
-      "E22.T1.r70",
-      "E22.T1.r71",
-      "E22.T1.r72",
-      "E22.T1.r73",
-      "E22.T1.r74",
-      "E22.T1.r75",
-      "E22.T1.r76",
-      "E22.T2.r1",
-      "E22.T2.r2",
-      "E22.T2.r3",
-      "E22.T2.r4",
-      "E22.T2.r5",
-      "E22.T2.r6",
-      "E22.T2.r7",
-      "E22.T2.r8",
-      "E22.T2.r9",
-      "E22.T2.r10",
-      "E22.T2.r11",
-      "E22.T2.r12",
-      "E22.T2.r13",
-      "E22.T2.r14",
-      "E22.T2.r15",
-      "E22.T2.r16",
-      "E22.T2.r17",
-      "E22.T2.r18",
-      "E22.T2.r19",
-      "E22.T2.r20",
-      "E22.T2.r21",
-      "E22.T2.r22",
-      "E22.T2.r23",
-      "E22.T2.r24",
-      "E22.T2.r25",
-      "E22.T2.r26",
-      "E22.T2.r27",
-      "E22.T2.r28",
-      "E22.T2.r29",
-      "E22.T2.r30",
-      "E22.T2.r31",
-      "E22.T2.r32",
-      "E22.T2.r33",
-      "E22.T2.r34",
-      "E22.T2.r35",
-      "E22.T2.r36",
-      "E22.T2.r37",
-      "E22.T2.r38",
-      "E22.T2.r39",
-      "E22.T2.r40",
-      "E22.T2.r41",
-      "E22.T2.r42",
-      "E22.T2.r43",
-      "E22.T2.r44",
-      "E22.T2.r45",
-      "E22.T2.r46",
-      "E22.T2.r47",
-      "E22.T2.r48",
-      "E22.T2.r49",
-      "E22.T2.r50",
-      "E22.T2.r51",
-      "E22.T2.r52",
-      "E22.T2.r53",
-      "E22.T2.r54",
-      "E22.T2.r55",
-      "E22.T2.r56",
-      "E22.T2.r57",
-      "E22.T2.r58",
-      "E22.T2.r59",
-      "E22.T2.r60",
-      "E22.T2.r61",
-      "E22.T2.r62",
-      "E22.T2.r63",
-      "E22.T2.r64",
-      "E22.T2.r65",
-      "E22.T2.r66",
-      "E22.T2.r67",
-      "E22.T2.r68",
-      "E22.T2.r69",
-      "E22.T2.r70",
-      "E22.T2.r71",
-      "E22.T2.r72",
-      "E22.T2.r73",
-      "E22.T2.r74",
-      "E22.T2.r75",
-      "E22.T2.r76",
-      "E22.T3.r1",
-      "E22.T3.r2",
-      "E22.T3.r3",
-      "E22.T3.r4",
-      "E22.T3.r5",
-      "E22.T3.r6",
-      "E22.T3.r7",
-      "E22.T3.r8",
-      "E22.T3.r9",
-      "E22.T3.r10",
-      "E22.T3.r11",
-      "E22.T3.r12",
-      "E22.T3.r13",
-      "E22.T3.r14",
-      "E22.T3.r15",
-      "E22.T3.r16",
-      "E22.T3.r17",
-      "E22.T3.r18",
-      "E22.T3.r19",
-      "E22.T3.r20",
-      "E22.T3.r21",
-      "E22.T3.r22",
-      "E22.T3.r23",
-      "E22.T3.r24",
-      "E22.T3.r25",
-      "E22.T3.r26",
-      "E22.T3.r27",
-      "E22.T3.r28",
-      "E22.T3.r29",
-      "E22.T3.r30",
-      "E22.T3.r31",
-      "E22.T3.r32",
-      "E22.T3.r33",
-      "E22.T3.r34",
-      "E22.T3.r35",
-      "E22.T3.r36",
-      "E22.T3.r37",
-      "E22.T3.r38",
-      "E22.T3.r39",
-      "E22.T3.r40",
-      "E22.T3.r41",
-      "E22.T3.r42",
-      "E22.T3.r43",
-      "E22.T3.r44",
-      "E22.T3.r45",
-      "E22.T3.r46",
-      "E22.T3.r47",
-      "E22.T3.r48",
-      "E22.T3.r49",
-      "E22.T3.r50",
-      "E22.T3.r51",
-      "E22.T3.r52",
-      "E22.T3.r53",
-      "E22.T3.r54",
-      "E22.T3.r55",
-      "E22.T3.r56",
-      "E22.T3.r57",
-      "E22.T3.r58",
-      "E22.T3.r59",
-      "E22.T3.r60",
-      "E22.T3.r61",
-      "E22.T3.r62",
-      "E22.T3.r63",
-      "E22.T3.r64"
-     ],
-     "artefacts": [
-      "A39"
-     ]
-    }
-   ],
-   "provenance": "author_stated",
-   "planning": "planned_estimate",
-   "planned_at": "2026-11-19T17:20:44Z",
-   "planned_at_anchor": "git_remote",
-   "estimate": {
-    "estimands": {
-     "rock": {
-      "variable": "measure value",
-      "conditions": {
-       "data": "petroleum rock samples"
-      },
-      "table": true
-     },
-     "indices": {
-      "variable": "measure value",
-      "conditions": {
-       "data": "European stock index returns"
-      },
-      "table": true
-     },
-     "window": {
-      "variable": "measure over the expanding window",
-      "table": true
-     }
-    },
-    "runs": 1,
-    "lab_plan": "PL4",
-    "flags": [
-     "code_changed_after_plan"
-    ]
-   },
-   "name": "The coefficients on the rock samples and on European stock returns",
-   "about": {
-    "subject": "D20",
-    "relation": "on real data, compared with",
-    "object": null,
-    "comparator": "D21",
-    "conditions": [
-     "D24",
-     "D25"
-    ]
-   },
-   "scope": {
-    "data_type": "48 rock samples; daily index returns 1991-1998",
-    "conditions": [
-     "each variable or index taken separately"
-    ]
-   },
-   "assessments": [
-    {
-     "by": "author",
-     "strength": "high",
-     "rationale": "Direct computation on public data sets, reproducible from the recorded code; the readings are descriptive (L13)."
-    }
-   ],
-   "relations": [
-    {
-     "type": "extends",
-     "reference": "B15",
-     "note": "Brys, Hubert and Struyf (2004) show on 30 systolic blood pressures that one outlier moves the classical skewness from 0.20 to 1.36, and propose the medcouple; here the half-moment coefficients are set beside moment, L-moment, quantile and medcouple measures on two data sets."
-    }
-   ],
-   "limitations": [
-    "L13"
-   ]
-  },
-  {
-   "id": "C20",
+   "id": "C21",
    "statement": "Under [[D22:single-outlier contamination]] with $n = 1000$, as $k$ grows from 10 to 100 the [[D23:standardised shift]] of the [[D20:half-moment coefficients]], and in particular of the [[D3:Asymmetry coefficient]] grows with exponent 1.12 to 1.16, close to [[D11:L-skewness]] among the [[D21:comparison measures]] (1.00 to 1.04), whereas [[D9:moment skewness]] grows with exponent 1.51 to 1.63 and [[D10:excess kurtosis]] with 2.02 to 2.07; [[D4:Hypotailedness]] grows with exponent 1.34 to 1.38 and the [[D5:Extremity coefficient]] with 0.96 to 1.01, both levelling off towards their bounds; [[D13:TL-skewness]], [[D14:TL-kurtosis]], [[D15:quartile skewness]], [[D18:octile kurtosis]] and the [[D16:medcouple]] do not grow; with $n = 100$ every measure that grows does so more slowly, as finite-sample bounds take hold.",
    "type": "descriptive",
    "role": "principal",
@@ -3090,7 +2915,7 @@
     }
    ],
    "depends_on": [
-    "C17"
+    "C20"
    ],
    "relations": [
     {
@@ -3109,7 +2934,99 @@
    ]
   },
   {
-   "id": "C21",
+   "id": "C22",
+   "statement": "For a variable with a finite fourth moment and a density bounded and continuous near its mean, the sample [[D3:Asymmetry coefficient]], [[D4:Hypotailedness]] and [[D5:Extremity coefficient]] are asymptotically normal: $\\sqrt{n}(\\hat T_n - T) \\to N\\left(0, \\mathrm{E}\\left[\\mathrm{IF}_T(y)^2\\right]\\right)$, where $\\mathrm{IF}_T$ is the influence function of the coefficient, which includes the effect of estimating the mean.",
+   "about": {
+    "subject": "D3",
+    "relation": "is asymptotically normal with variance given by its influence function",
+    "object": null,
+    "comparator": null,
+    "conditions": []
+   },
+   "type": "formal",
+   "role": "principal",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "formal_proof",
+     "evidence": "E42"
+    },
+    {
+     "kind": "simulation",
+     "evidence": "E18",
+     "results": [
+      "E18.T1.r1",
+      "E18.T1.r2",
+      "E18.T1.r3",
+      "E18.T1.r4",
+      "E18.T1.r5",
+      "E18.T1.r6",
+      "E18.T1.r7",
+      "E18.T1.r8",
+      "E18.T1.r9"
+     ]
+    },
+    {
+     "kind": "cited",
+     "reference": "B31",
+     "locator": "Theorem 19.5 and Lemma 19.24"
+    },
+    {
+     "kind": "cited",
+     "reference": "B13",
+     "locator": "Theorem 2.13 (case of a parameter whose estimate changes the limit)"
+    }
+   ],
+   "provenance": "author_stated",
+   "hypothesis": {
+    "lab_event": "H18",
+    "outcome": "supported"
+   },
+   "planning": "confirmatory",
+   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at_anchor": "git_remote",
+   "test": {
+    "framework": "formal",
+    "parameters": {
+     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
+     "simulation": "20000 samples of n = 20000 per distribution, seed 20261121"
+    },
+    "supported": "A complete proof is in the deciding run's document; the independent checker (an agent on Claude Fable, its own actor and log) confirms it in full with no unresolved dispute; and for every coefficient and distribution the ratio of the simulated to the asymptotic standard deviation is within 3 Monte Carlo standard errors of 1.",
+    "not_supported": "A counterexample to the statement is found, by the proof attempt or the checker, or for some coefficient and distribution the ratio of the simulated to the asymptotic standard deviation differs from 1 by more than 6 Monte Carlo standard errors.",
+    "verdict": "judged",
+    "runs": 1,
+    "lab_plan": "PL5",
+    "flags": [
+     "code_changed_after_plan"
+    ]
+   },
+   "verification": "agent_checked",
+   "checks": [
+    {
+     "by": "P3",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Checked each step: 1(a) the class (y - t)_+^0.5 is monotone in t with E[(f_s - f_t)^2] <= |s - t|, so brackets number O(1/eps^2), the bracketing integral is finite, the class is Donsker and G_n(mean estimate) - G_n(mean) -> 0 (van der Vaart Theorem 19.5 and Lemma 19.24; the sample mean lies in the index set with probability tending to 1); 1(b) the drift uses differentiability of m at the mean (H17) and the central limit theorem, and is the non-vanishing estimated-parameter term of Randles (1982); steps 2 to 4 (variance, joint limit with square-integrable influence functions, delta method at R, I, sigma^2 > 0) are correct and the gradient combination is IF_T of H17. Two remarks, neither a gap: continuity of the density is assumed but never used (boundedness near the mean suffices), and the limit can be degenerate (variance 0 for Hypotailedness and Extremity when |y - mean| is constant, e.g. two equal atoms, which the density condition allows). In AC3.RN1, at gamma shapes 1 and 2.5 (n = 4000, 4000 replications) the ratio of simulated to asymptotic standard deviation is between 0.990 and 1.011 for the three coefficients, within the Monte Carlo standard error 0.011."
+    }
+   ],
+   "name": "The sample coefficients are asymptotically normal",
+   "summary": "For large samples the sample Asymmetry, Hypotailedness and Extremity are approximately normal, with variances given by their influence functions, which account for the estimated mean.",
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B8",
+     "note": "Asymptotic normality of empirical skewness measures, with the effect of estimating the mean."
+    }
+   ],
+   "assumptions": [
+    "C26"
+   ],
+   "depends_on": [
+    "C20"
+   ]
+  },
+  {
+   "id": "C23",
    "statement": "For samples of 20 to 2000 from the normal, Student t(5) and exponential distributions, among the [[D20:half-moment coefficients]] the sample [[D3:Asymmetry coefficient]] has a bias of at most 0.019 and jackknife 95% intervals covering 94.3% to 96.4% at every size; the sample [[D4:Hypotailedness]] and [[D5:Extremity coefficient]] are biased upwards in small samples, the Extremity by up to 0.140 at $n = 20$, and for the t(5) and exponential samples their jackknife and bootstrap intervals cover 88.5% to 93.9%; for the parts of the [[D8:Complex Extremity]] the jackknife intervals over-cover (96.8% to 99.9%) and the bootstrap intervals cover 90.2% to 99.9%.",
    "type": "descriptive",
    "role": "principal",
@@ -3501,16 +3418,315 @@
     }
    ],
    "depends_on": [
-    "C11",
-    "C16",
-    "C18"
+    "C13",
+    "C18",
+    "C22"
    ],
    "limitations": [
     "L12"
    ]
   },
   {
-   "id": "C22",
+   "id": "C24",
+   "statement": "Computed with the [[D20:half-moment coefficients]] and the [[D21:comparison measures]], on the [[D24:petroleum rock samples]] the [[D3:Asymmetry coefficient]] has the opposite sign to [[D9:moment skewness]] for each of the four variables, and the [[D5:Extremity coefficient]] is positive for Perimeter and Permeability and negative for Area and Shape; on the daily log returns of the four [[D25:European stock index returns]], Asymmetry lies within 0.021 of 0, Extremity lies between $-0.545$ and $-0.447$, below its value $-0.291$ for the normal distribution, and [[D10:excess kurtosis]] lies between 2.385 and 6.280; on the DAX returns over the [[D26:expanding window]], excess kurtosis reaches 50.2 at 266 returns, while Extremity stays between $-0.927$ and $-0.175$, both extremes within the first 37 returns.",
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "extension",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E22",
+     "results": [
+      "E22.T1.r1",
+      "E22.T1.r2",
+      "E22.T1.r3",
+      "E22.T1.r4",
+      "E22.T1.r5",
+      "E22.T1.r6",
+      "E22.T1.r7",
+      "E22.T1.r8",
+      "E22.T1.r9",
+      "E22.T1.r10",
+      "E22.T1.r11",
+      "E22.T1.r12",
+      "E22.T1.r13",
+      "E22.T1.r14",
+      "E22.T1.r15",
+      "E22.T1.r16",
+      "E22.T1.r17",
+      "E22.T1.r18",
+      "E22.T1.r19",
+      "E22.T1.r20",
+      "E22.T1.r21",
+      "E22.T1.r22",
+      "E22.T1.r23",
+      "E22.T1.r24",
+      "E22.T1.r25",
+      "E22.T1.r26",
+      "E22.T1.r27",
+      "E22.T1.r28",
+      "E22.T1.r29",
+      "E22.T1.r30",
+      "E22.T1.r31",
+      "E22.T1.r32",
+      "E22.T1.r33",
+      "E22.T1.r34",
+      "E22.T1.r35",
+      "E22.T1.r36",
+      "E22.T1.r37",
+      "E22.T1.r38",
+      "E22.T1.r39",
+      "E22.T1.r40",
+      "E22.T1.r41",
+      "E22.T1.r42",
+      "E22.T1.r43",
+      "E22.T1.r44",
+      "E22.T1.r45",
+      "E22.T1.r46",
+      "E22.T1.r47",
+      "E22.T1.r48",
+      "E22.T1.r49",
+      "E22.T1.r50",
+      "E22.T1.r51",
+      "E22.T1.r52",
+      "E22.T1.r53",
+      "E22.T1.r54",
+      "E22.T1.r55",
+      "E22.T1.r56",
+      "E22.T1.r57",
+      "E22.T1.r58",
+      "E22.T1.r59",
+      "E22.T1.r60",
+      "E22.T1.r61",
+      "E22.T1.r62",
+      "E22.T1.r63",
+      "E22.T1.r64",
+      "E22.T1.r65",
+      "E22.T1.r66",
+      "E22.T1.r67",
+      "E22.T1.r68",
+      "E22.T1.r69",
+      "E22.T1.r70",
+      "E22.T1.r71",
+      "E22.T1.r72",
+      "E22.T1.r73",
+      "E22.T1.r74",
+      "E22.T1.r75",
+      "E22.T1.r76",
+      "E22.T2.r1",
+      "E22.T2.r2",
+      "E22.T2.r3",
+      "E22.T2.r4",
+      "E22.T2.r5",
+      "E22.T2.r6",
+      "E22.T2.r7",
+      "E22.T2.r8",
+      "E22.T2.r9",
+      "E22.T2.r10",
+      "E22.T2.r11",
+      "E22.T2.r12",
+      "E22.T2.r13",
+      "E22.T2.r14",
+      "E22.T2.r15",
+      "E22.T2.r16",
+      "E22.T2.r17",
+      "E22.T2.r18",
+      "E22.T2.r19",
+      "E22.T2.r20",
+      "E22.T2.r21",
+      "E22.T2.r22",
+      "E22.T2.r23",
+      "E22.T2.r24",
+      "E22.T2.r25",
+      "E22.T2.r26",
+      "E22.T2.r27",
+      "E22.T2.r28",
+      "E22.T2.r29",
+      "E22.T2.r30",
+      "E22.T2.r31",
+      "E22.T2.r32",
+      "E22.T2.r33",
+      "E22.T2.r34",
+      "E22.T2.r35",
+      "E22.T2.r36",
+      "E22.T2.r37",
+      "E22.T2.r38",
+      "E22.T2.r39",
+      "E22.T2.r40",
+      "E22.T2.r41",
+      "E22.T2.r42",
+      "E22.T2.r43",
+      "E22.T2.r44",
+      "E22.T2.r45",
+      "E22.T2.r46",
+      "E22.T2.r47",
+      "E22.T2.r48",
+      "E22.T2.r49",
+      "E22.T2.r50",
+      "E22.T2.r51",
+      "E22.T2.r52",
+      "E22.T2.r53",
+      "E22.T2.r54",
+      "E22.T2.r55",
+      "E22.T2.r56",
+      "E22.T2.r57",
+      "E22.T2.r58",
+      "E22.T2.r59",
+      "E22.T2.r60",
+      "E22.T2.r61",
+      "E22.T2.r62",
+      "E22.T2.r63",
+      "E22.T2.r64",
+      "E22.T2.r65",
+      "E22.T2.r66",
+      "E22.T2.r67",
+      "E22.T2.r68",
+      "E22.T2.r69",
+      "E22.T2.r70",
+      "E22.T2.r71",
+      "E22.T2.r72",
+      "E22.T2.r73",
+      "E22.T2.r74",
+      "E22.T2.r75",
+      "E22.T2.r76",
+      "E22.T3.r1",
+      "E22.T3.r2",
+      "E22.T3.r3",
+      "E22.T3.r4",
+      "E22.T3.r5",
+      "E22.T3.r6",
+      "E22.T3.r7",
+      "E22.T3.r8",
+      "E22.T3.r9",
+      "E22.T3.r10",
+      "E22.T3.r11",
+      "E22.T3.r12",
+      "E22.T3.r13",
+      "E22.T3.r14",
+      "E22.T3.r15",
+      "E22.T3.r16",
+      "E22.T3.r17",
+      "E22.T3.r18",
+      "E22.T3.r19",
+      "E22.T3.r20",
+      "E22.T3.r21",
+      "E22.T3.r22",
+      "E22.T3.r23",
+      "E22.T3.r24",
+      "E22.T3.r25",
+      "E22.T3.r26",
+      "E22.T3.r27",
+      "E22.T3.r28",
+      "E22.T3.r29",
+      "E22.T3.r30",
+      "E22.T3.r31",
+      "E22.T3.r32",
+      "E22.T3.r33",
+      "E22.T3.r34",
+      "E22.T3.r35",
+      "E22.T3.r36",
+      "E22.T3.r37",
+      "E22.T3.r38",
+      "E22.T3.r39",
+      "E22.T3.r40",
+      "E22.T3.r41",
+      "E22.T3.r42",
+      "E22.T3.r43",
+      "E22.T3.r44",
+      "E22.T3.r45",
+      "E22.T3.r46",
+      "E22.T3.r47",
+      "E22.T3.r48",
+      "E22.T3.r49",
+      "E22.T3.r50",
+      "E22.T3.r51",
+      "E22.T3.r52",
+      "E22.T3.r53",
+      "E22.T3.r54",
+      "E22.T3.r55",
+      "E22.T3.r56",
+      "E22.T3.r57",
+      "E22.T3.r58",
+      "E22.T3.r59",
+      "E22.T3.r60",
+      "E22.T3.r61",
+      "E22.T3.r62",
+      "E22.T3.r63",
+      "E22.T3.r64"
+     ],
+     "artefacts": [
+      "A39"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "planning": "planned_estimate",
+   "planned_at": "2026-11-19T17:20:44Z",
+   "planned_at_anchor": "git_remote",
+   "estimate": {
+    "estimands": {
+     "rock": {
+      "variable": "measure value",
+      "conditions": {
+       "data": "petroleum rock samples"
+      },
+      "table": true
+     },
+     "indices": {
+      "variable": "measure value",
+      "conditions": {
+       "data": "European stock index returns"
+      },
+      "table": true
+     },
+     "window": {
+      "variable": "measure over the expanding window",
+      "table": true
+     }
+    },
+    "runs": 1,
+    "lab_plan": "PL4",
+    "flags": [
+     "code_changed_after_plan"
+    ]
+   },
+   "name": "The coefficients on the rock samples and on European stock returns",
+   "about": {
+    "subject": "D20",
+    "relation": "on real data, compared with",
+    "object": null,
+    "comparator": "D21",
+    "conditions": [
+     "D24",
+     "D25"
+    ]
+   },
+   "scope": {
+    "data_type": "48 rock samples; daily index returns 1991-1998",
+    "conditions": [
+     "each variable or index taken separately"
+    ]
+   },
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "high",
+     "rationale": "Direct computation on public data sets, reproducible from the recorded code; the readings are descriptive (L13)."
+    }
+   ],
+   "relations": [
+    {
+     "type": "extends",
+     "reference": "B15",
+     "note": "Brys, Hubert and Struyf (2004) show on 30 systolic blood pressures that one outlier moves the classical skewness from 0.20 to 1.36, and propose the medcouple; here the half-moment coefficients are set beside moment, L-moment, quantile and medcouple measures on two data sets."
+    }
+   ],
+   "limitations": [
+    "L13"
+   ]
+  },
+  {
+   "id": "C25",
    "statement": "The variable $y$ has a finite mean $\\mu_1$.",
    "type": "formal",
    "role": "supporting",
@@ -3524,7 +3740,7 @@
    "provenance": "author_stated"
   },
   {
-   "id": "C23",
+   "id": "C26",
    "statement": "The variable $y$ has a finite, positive variance $\\sigma^2$.",
    "type": "formal",
    "role": "supporting",
@@ -3536,212 +3752,6 @@
    "assumption_category": "theorem_condition",
    "check": "untestable",
    "provenance": "author_stated"
-  },
-  {
-   "id": "C24",
-   "statement": "For a variable with a finite positive variance $\\sigma^2$, let $V = \\frac{(y - \\mu_1)^2}{\\sigma^2}$, the squared standardised deviation, whose mean is 1, and $g(v) = \\frac{3 + v}{4} - v^{0.25}$. Then one minus the [[D4:Hypotailedness]] equals $\\mathrm{E}[g(V)]$, the [[D5:Extremity coefficient]] equals $2(1 - \\mathrm{E}[g(V)])^p - 1$ and so decreases as $\\mathrm{E}[g(V)]$ grows, and, with a finite fourth moment, the [[D10:excess kurtosis]] plus 2 equals $\\mathrm{E}[(V - 1)^2]$. The function $g$ is strictly convex and zero only at $v = 1$, is $\\frac{3}{32}(v - 1)^2 + O(|v - 1|^3)$ near 1, is $\\frac{3}{4}$ at $v = 0$, and is $\\frac{v}{4} + O(v^{0.25})$ for large $v$. So Hypotailedness, Extremity and kurtosis all measure how far $V$ spreads from 1; with $g$ scaled by $\\frac{32}{3}$, so that it agrees with the kurtosis loss $(v - 1)^2$ to second order at $v = 1$, Hypotailedness gives a value at the mean 8 times the weight kurtosis gives it, and a value far out a weight linear rather than quadratic in $V$.",
-   "about": {
-    "subject": "D5",
-    "relation": "measures the spread of the squared standardised deviation about 1, as kurtosis does, with more weight at the mean and less in the tails",
-    "object": null,
-    "comparator": null,
-    "conditions": []
-   },
-   "type": "formal",
-   "role": "principal",
-   "novelty": "extension",
-   "support": [
-    {
-     "kind": "formal_proof",
-     "evidence": "E43"
-    },
-    {
-     "kind": "simulation",
-     "evidence": "E19",
-     "results": [
-      "E19.R1"
-     ]
-    }
-   ],
-   "provenance": "author_stated",
-   "hypothesis": {
-    "lab_event": "H21",
-    "outcome": "supported"
-   },
-   "planning": "confirmatory",
-   "planned_at": "2026-11-20T09:50:33Z",
-   "planned_at_anchor": "git_remote",
-   "test": {
-    "framework": "formal",
-    "parameters": {
-     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
-     "tolerance": 1e-08
-    },
-    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
-    "verdict": "judged",
-    "runs": 1,
-    "lab_plan": "PL9"
-   },
-   "checks": [
-    {
-     "by": "P3",
-     "outcome": "confirmed",
-     "extent": "full",
-     "notes": "Checked every step of proofs/properties.md section H20 against the recorded wording of H20, by hand and numerically. (1) E[V] = E[D^2]/sigma^2 = 1; |D|^0.5 = (D^2)^(1/4), so H = E[V^(1/4)] (TM4 definition). Integrability: E V = 1 and 0 <= V^(1/4) <= 1 + V, so each term of g(V) is integrable and linearity gives E[g(V)] = (3+1)/4 - H = 1 - H. Holds. (2) Extremity = 2H^p - 1 = 2(1 - E[g(V)])^p - 1 by TM5; p = log 0.5/log(2*3^-0.75) = 5.2988 > 0 and 1 - E[g(V)] = H lies in (0,1] (H7, which I re-derived: Jensen with r = 1/4), so u -> 2u^p - 1 is strictly increasing there and Extremity is strictly decreasing in E[g(V)] over its whole range [0,1). Holds. (3) With E[D^4] finite, E[V^2] = E[D^4]/sigma^4 = kappa, so E[(V-1)^2] = kappa - 2 + 1 = kappa - 1 = excess kurtosis (TM10) + 2. Holds. (4) g'(v) = (1 - v^(-3/4))/4, g''(v) = (3/16) v^(-7/4) > 0 on (0,inf), confirmed by differentiation. The proof passes from this to strict convexity on the closed [0,inf) by continuity at 0 in one clause; that step is correct (g' strictly increasing on (0,inf) plus the mean value theorem on [0,c] and [c,b] gives strict chord inequality for chords starting at 0, although g'(0+) = -inf), but the text does not spell it out. (5) g(1) = 0, g'(1) = 0, strict convexity gives g(v) > 0 for every v != 1 in [0,inf), including v = 0. Holds. (6) Taylor at 1: g''(1)/2 = 3/32; g'''(v) = -(21/64) v^(-11/4) is bounded near 1, so the remainder is O(|v-1|^3); the cubic coefficient is -7/128. Holds. (7) g(0) = 3/4 = 24/32 = 8 * (3/32)(0-1)^2. Holds. (8) g(v) - v/4 = 3/4 - v^(1/4) = O(v^(1/4)) as v -> inf. Holds. Numeric checks (scratch script outside the repository): for normal, uniform, exponential, t(5) and beta(0.5,2), 1 - H and E[g(V)] agree to 1e-12 and excess kurtosis + 2 equals E[(V-1)^2]; uniform gives Extremity 0; g on a grid over [0,1e4] has its only zero at 1; (g(1+h) - (3/32)h^2)/h^3 tends to -0.0547 = -7/128; (g(v) - v/4)/v^(1/4) tends to -1; 1e6 random chords, 30 percent starting at v = 0, show no convexity violation. Nothing wrong found; no step missing that affects the result. Closing interpretive sentence: a fair reading, not an overstatement, under two qualifications that the statement leaves implicit. First, 'measure how far V spreads from 1' is supported in this exact sense: 1 - Hypotailedness and excess kurtosis + 2 are each the mean of a non-negative loss of V that is zero only at V = 1, so each is 0 exactly when V = 1 almost surely, and Extremity is a strictly decreasing function of the first; Hypotailedness and Extremity themselves fall as the spread grows. It does not say, and the proof does not show, that the two losses order distributions the same way (they do not: exponential and t(5) have the same kurtosis 9 but E[g(V)] 0.2121 and 0.2245). Second, '8 times more' and 'linearly rather than quadratically' are comparisons with the kurtosis loss (v-1)^2 scaled by 3/32 so that the two losses agree to second order at v = 1; the factor 8 depends on that choice of scaling, which the statement indicates only through the expression 8 times (3/32)(0-1)^2. With that scaling the comparison is exact: g(0) = 3/4 against 3/32, and g(v) ~ v/4 against (3/32)v^2. The further remarks in the proof file's Reading paragraph (what a low Extremity says, the link to H17) are not part of the recorded statement and were not checked as part of it."
-    }
-   ],
-   "verification": "agent_checked",
-   "name": "What Hypotailedness and Extremity measure: the spread of squared standardised deviations",
-   "summary": "Hypotailedness and Extremity measure, as kurtosis does, how far the squared standardised deviations spread from their average of 1: how far the probability lies from one standard deviation either side of the mean. Compared with kurtosis they weigh values near the mean more and values in the tails less.",
-   "relations": [
-    {
-     "type": "extends",
-     "reference": "B33",
-     "note": "Moors (1986) reads kurtosis as the variance of the squared standardised deviation, the spread of the probability about the mean plus and minus one standard deviation; Hypotailedness measures the same spread with a loss that weighs the centre more and the tails less."
-    },
-    {
-     "type": "extends",
-     "reference": "B3",
-     "note": "Geary's (1947) ratio $a(0.5)$, the sample Hypotailedness, is the mean fourth root of the squared standardised deviation."
-    }
-   ],
-   "assumptions": [
-    "C23"
-   ],
-   "depends_on": [
-    "C7",
-    "C26"
-   ]
-  },
-  {
-   "id": "C25",
-   "statement": "The [[D5:Extremity coefficient]] and [[D10:excess kurtosis]] do not order distributions alike: the exponential and Student $t_5$ distributions have the same excess kurtosis, 6, but Extremity $-0.434$ and $-0.480$; the Laplace distribution has a smaller excess kurtosis, 3, but a smaller Extremity, $-0.579$, than either.",
-   "about": {
-    "subject": "D5",
-    "relation": "orders distributions differently from excess kurtosis",
-    "object": null,
-    "comparator": "D10",
-    "conditions": []
-   },
-   "type": "formal",
-   "role": "secondary",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "formal_proof",
-     "evidence": "E44"
-    },
-    {
-     "kind": "simulation",
-     "evidence": "E20",
-     "results": [
-      "E20.R1"
-     ]
-    }
-   ],
-   "provenance": "author_stated",
-   "hypothesis": {
-    "lab_event": "H22",
-    "outcome": "supported"
-   },
-   "planning": "confirmatory",
-   "planned_at": "2026-11-20T09:50:33Z",
-   "planned_at_anchor": "git_remote",
-   "test": {
-    "framework": "formal",
-    "parameters": {
-     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
-     "tolerance": 1e-08
-    },
-    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
-    "verdict": "judged",
-    "runs": 1,
-    "lab_plan": "PL9"
-   },
-   "checks": [
-    {
-     "by": "P3",
-     "outcome": "confirmed",
-     "extent": "full",
-     "notes": "Corrects the wording of AC6.CK2; same checks, same result. Closed forms match distributions.md: H16 exponential case R=sqrt(pi)/(2e), I=(2e-sqrt(pi)erfi(1))/(2e) at lambda=1 (sigma=1), sum =1-sqrt(pi)(erfi(1)-1)/(2e); H14 at nu=5 gives Gamma(0.75)Gamma(2.25)3^0.25/(sqrt(pi)Gamma(2.5)) since (nu-0.5)/2=2.25, nu-2=3, nu/2=2.5; H12 gives sqrt(pi)/2*2^-0.25. I re-derived these (Laplace: Gamma(1.5)b^0.5 over (2b^2)^0.25; t: E|T|^0.5 by the normal/chi-square ratio; exponential: antiderivative of x^2 e^(x^2) checked by differentiation) and verified each against direct quadrature of E|y-mean|^0.5/sigma^0.5 in mpmath to 30 digits: H=0.7879451592 (R=0.3260246661, I=0.4619204931), 0.7755040493, 0.7452250447. Excess kurtosis: exponential central mu4=9, sigma^2=1, so 6; t5 sigma^2=5/3, mu4=3*25/(3*1)=25, kurtosis 9, excess 6/(nu-4)=6; Laplace mu4=24b^4, sigma^4=4b^4, excess 3; all confirmed by quadrature. p=log0.5/log(2*3^-0.75)=5.2988028. E=2H^p-1 = -0.4343046, -0.4800546, -0.5789765, rounding to -0.434, -0.480, -0.579 as stated; no value is near a rounding boundary. Orderings: p>0 so E increases with H, and 0.7879>0.7755>0.7452. Kurtosis ties the exponential and t5 while Extremity separates them, which alone shows the two do not order distributions alike. The Laplace has both a lower excess kurtosis (3<6) and a lower Extremity than the other two, exactly as stated; this is a reversal on the reading of H20, that low Extremity and high kurtosis both mean a more spread V, which the H22 Reading paragraph takes and the proof does not need. Statement as worded follows. Nothing wrong or missing."
-    }
-   ],
-   "verification": "agent_checked",
-   "name": "Extremity and kurtosis order distributions differently",
-   "summary": "Extremity and kurtosis can rank distributions in opposite orders. The Laplace distribution, with its sharp peak at the mean, has lower kurtosis than the exponential or Student's t with 5 degrees of freedom but lower Extremity than both.",
-   "depends_on": [
-    "C12",
-    "C14",
-    "C16",
-    "C24"
-   ]
-  },
-  {
-   "id": "C26",
-   "statement": "For a variable with a finite positive variance, the [[D5:Extremity coefficient]] lies in $(-1, 1]$, equals $0$ for the uniform distribution, and is negative exactly when [[D4:Hypotailedness]] is below its value for the uniform distribution, $2 \\times 3^{-0.75}$.",
-   "about": {
-    "subject": "D5",
-    "relation": "lies in (-1, 1] and is 0 for the uniform distribution",
-    "object": null,
-    "comparator": null,
-    "conditions": []
-   },
-   "type": "formal",
-   "role": "supporting",
-   "novelty": "no_prior_found",
-   "support": [
-    {
-     "kind": "formal_proof",
-     "evidence": "E45"
-    },
-    {
-     "kind": "simulation",
-     "evidence": "E21",
-     "results": [
-      "E21.R1"
-     ]
-    }
-   ],
-   "provenance": "author_stated",
-   "hypothesis": {
-    "lab_event": "H24",
-    "outcome": "supported"
-   },
-   "planning": "confirmatory",
-   "planned_at": "2026-11-20T11:19:45Z",
-   "planned_at_anchor": "git_remote",
-   "test": {
-    "framework": "formal",
-    "parameters": {
-     "checker": "an agent on Claude Fable (claude-fable-5-2), its own actor and log",
-     "tolerance": 1e-08
-    },
-    "supported": "For each hypothesis: a complete proof of the statement is in the deciding run's proof document; the independent checker (an agent on Claude Fable, registered as its own actor and working in its own log) confirms the proof in full with no unresolved dispute; and every numerical check of the statement in the run agrees within a relative error of 1e-8.",
-    "not_supported": "For each hypothesis: a counterexample to the statement is found, by the proof attempt, by the checker or by the numerical checks of the run.",
-    "verdict": "judged",
-    "runs": 1,
-    "lab_plan": "PL10"
-   },
-   "checks": [
-    {
-     "by": "P3",
-     "outcome": "confirmed",
-     "extent": "full",
-     "notes": "Checked every step of the H24 proof in properties.md against the recorded statement. (1) h_U = 2*3^-0.75 = 0.87738 lies in (0,1), so log h_U < 0 and p = log 0.5 / log h_U = 5.29880 > 0; correct. (2) For p > 0, u -> 2u^p - 1 is continuous and strictly increasing on [0,1], sending 0 to -1 and 1 to 1; correct. (3) h_U^p = exp(log 0.5) = 0.5, so h_U maps to 0; verified to 30 digits. (4) By H23 (which I checked separately and confirmed) H is in (0,1]; strict monotonicity gives E > -1 and E <= 1, and E < 0 iff H < h_U; correct. (5) H10 re-derived: for the uniform law on (b,c), a = (c-b)/2, nu = (2/3)a^0.5, sigma^2 = a^2/3, H = (2/3)*3^0.25 = 2*3^-0.75 = h_U, so E = 0; confirmed by quadrature for three intervals (differences below 1e-24). Nothing wrong. One remark on wording, not an error: 'the uniform distribution' means the continuous uniform law on an interval, as in H10; a discrete uniform law has a different H."
-    }
-   ],
-   "verification": "agent_checked",
-   "name": "Extremity lies in (-1, 1] and is 0 at the uniform distribution",
-   "summary": "Extremity rescales Hypotailedness to lie between $-1$ and $1$, with $0$ for the uniform distribution and negative values when the deviations are less even than the uniform's.",
-   "assumptions": [
-    "C23"
-   ],
-   "depends_on": [
-    "C7",
-    "C10"
-   ]
   }
  ],
  "evidence": [
@@ -5206,7 +5216,7 @@
      "id": "S1",
      "statement": "\\mathrm{E}[D_+] = \\mathrm{E}[D_-] > 0 \\Rightarrow P(D > 0), P(D < 0) > 0 \\Rightarrow \\mathcal{R}, \\mathcal{I} > 0",
      "by": [
-      "C22"
+      "C25"
      ],
      "rule": "the mean balances the deviations (y not constant)"
     },
@@ -5230,7 +5240,7 @@
     }
    ],
    "assumptions": [
-    "C22"
+    "C25"
    ]
   },
   {
@@ -5249,7 +5259,7 @@
      "id": "S1",
      "statement": "\\delta = \\mathrm{E}[D_+] = \\mathrm{E}[D_-],\\ \\mathrm{E}[D \\mid D > 0] = \\frac{\\delta}{p_+}",
      "by": [
-      "C22"
+      "C25"
      ],
      "rule": "the mean balances the deviations"
     },
@@ -5273,7 +5283,7 @@
     }
    ],
    "assumptions": [
-    "C22"
+    "C25"
    ]
   },
   {
@@ -5325,7 +5335,7 @@
     }
    ],
    "assumptions": [
-    "C22"
+    "C25"
    ]
   },
   {
@@ -5344,7 +5354,7 @@
      "id": "S1",
      "statement": "\\nu_{0.5} = \\mathrm{E}[(D^2)^{0.25}] \\le (\\mathrm{E}D^2)^{0.25} = \\sigma^{0.5},\\ \\text{equality iff } |D| \\text{ constant a.s.}",
      "by": [
-      "C23",
+      "C26",
       "D2"
      ],
      "rule": "Jensen's inequality for $t^{0.25}$ (strict concavity)"
@@ -5360,7 +5370,7 @@
     }
    ],
    "assumptions": [
-    "C23"
+    "C26"
    ]
   },
   {
@@ -5418,7 +5428,7 @@
      "id": "S1",
      "statement": "H_+ = \\frac{\\mathrm{E}[D^{0.5} \\mid D > 0]}{(\\mathrm{E}[D^2 \\mid D > 0])^{0.25}} \\in (0, 1],\\ \\text{equality iff } D \\text{ constant given } D > 0",
      "by": [
-      "C23",
+      "C26",
       "D7"
      ],
      "rule": "Jensen's inequality for $t^{0.25}$ on one side"
@@ -5452,7 +5462,7 @@
     }
    ],
    "assumptions": [
-    "C23"
+    "C26"
    ]
   },
   {
@@ -5504,7 +5514,7 @@
     }
    ],
    "assumptions": [
-    "C23"
+    "C26"
    ]
   },
   {
@@ -5785,7 +5795,7 @@
      "statement": "\\sqrt{n}(\\hat{\\mathcal{R}} - \\mathcal{R}) = n^{-0.5}\\sum_j \\mathrm{IF}_{\\mathcal{R}}(y_j) + o_P(1),\\ \\text{likewise } \\hat{\\mathcal{I}},\\ \\hat\\sigma^2",
      "by": [
       "S1",
-      "C17",
+      "C20",
       "B13"
      ],
      "rule": "asymptotic equicontinuity (Lemma 19.24); drift of the estimated mean (Randles 1982)"
@@ -5811,7 +5821,7 @@
     }
    ],
    "assumptions": [
-    "C23"
+    "C26"
    ]
   },
   {
@@ -5830,7 +5840,7 @@
      "id": "S1",
      "statement": "V = \\frac{D^2}{\\sigma^2}:\\ \\mathrm{E}[V] = 1,\\ \\mathrm{Hypotailedness} = \\frac{\\mathrm{E}|D|^{0.5}}{\\sigma^{0.5}} = \\mathrm{E}[V^{0.25}]",
      "by": [
-      "C23",
+      "C26",
       "D4"
      ],
      "rule": "definitions; $|D|^{0.5} = (D^2)^{0.25}$"
@@ -5884,7 +5894,7 @@
     }
    ],
    "assumptions": [
-    "C23"
+    "C26"
    ]
   },
   {
@@ -5973,13 +5983,13 @@
      "statement": "\\text{uniform: } \\mathrm{Hypotailedness} = 2 \\times 3^{-0.75} \\Rightarrow \\mathrm{Extremity} = 0",
      "by": [
       "S1",
-      "C10"
+      "C8"
      ],
      "rule": "closed form for the uniform distribution"
     }
    ],
    "assumptions": [
-    "C23"
+    "C26"
    ]
   }
  ],
@@ -5995,9 +6005,9 @@
     "C3",
     "C5",
     "C6",
-    "C8",
-    "C9",
-    "C17"
+    "C11",
+    "C12",
+    "C20"
    ],
    "impact": "reduces_precision",
    "mitigation": "none"
@@ -6007,8 +6017,8 @@
    "category": "sampling",
    "statement": "The robustness and sampling studies use three base distributions (normal, Student t(5), exponential) and one kind of contamination, a single value moved along the line mean + k standard deviations.",
    "affects": [
-    "C20",
-    "C21"
+    "C21",
+    "C23"
    ],
    "impact": "reduces_transferability",
    "mitigation": "none"
@@ -6018,7 +6028,7 @@
    "category": "other",
    "statement": "The real-data results describe two data sets, 48 rock samples and the 1991-1998 returns of four indices; whether the coefficients are easier to interpret than skewness and kurtosis is not tested.",
    "affects": [
-    "C19"
+    "C24"
    ],
    "impact": "reduces_transferability",
    "mitigation": "none"
@@ -6083,12 +6093,12 @@
   {
    "id": "A28",
    "kind": "lab_record",
-   "uri": "https://github.com/entrylib/claimset-eval/blob/6cb57b3c13089ee0b1ac005512ddc107bc871230/lab/lab.jsonl",
+   "uri": "https://github.com/entrylib/claimset-eval/blob/452d9cbd19f5107fe108fdbfc16cd4ab90300909/lab/lab.jsonl",
    "version": "sha256:89e6f64ab53e266ac6fe2ccf1e7805d2fe656251d156ea5fa3788fa78bd773a3",
    "availability": {
     "level": "public"
    },
-   "description": "Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.22, begun 2026-11-19; exported with claimset 0.44.8)."
+   "description": "Lab record of the study: questions, hypotheses, plans, runs, results and decisions, as an append-only, hash-chained event log (Claimset lab record specification v0.22, begun 2026-11-19; exported with claimset 0.44.9)."
   },
   {
    "id": "A29",
