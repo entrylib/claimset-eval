@@ -625,7 +625,7 @@
   },
   {
    "id": "C3",
-   "statement": "Under a change of location the [[D1:half central moment]] is unchanged; multiplying the variable by $c > 0$ multiplies it by $c^{0.5}$, and multiplying by $c < 0$ multiplies it by $|c|^{0.5}$ and exchanges its real and imaginary parts.",
+   "statement": "Under a change of location the [[D1:half central moment]] is unchanged; multiplying the variable by $c > 0$ multiplies the half central moment by $c^{0.5}$, and multiplying it by $c < 0$ multiplies the half central moment by $|c|^{0.5}$ and exchanges the half central moment's real and imaginary parts.",
    "about": {
     "subject": "D1",
     "relation": "is invariant to location and scales by the square root of a positive factor",
@@ -691,7 +691,7 @@
   },
   {
    "id": "C4",
-   "statement": "For a variable with a finite mean that is not constant, the [[D3:Asymmetry coefficient]] lies in the open interval $(-1, 1)$; it is $0$ when the real and imaginary parts of the [[D1:half central moment]] are equal and negative exactly when the imaginary part, from the values below the mean, is the larger.",
+   "statement": "For a variable with a finite mean that is not constant, the [[D3:Asymmetry coefficient]] lies in the open interval $(-1, 1)$; it is $0$ exactly when the real and imaginary parts of the [[D1:half central moment]] are equal and negative exactly when the imaginary part, from the values below the mean, is the larger.",
    "about": {
     "subject": "D3",
     "relation": "lies in (-1, 1), with its sign given by the larger part",
@@ -763,7 +763,7 @@
   },
   {
    "id": "C5",
-   "statement": "For a variable with a finite mean $\\mu_1$ and positive probability on both sides of it, let $p_\\pm = P(\\pm(y - \\mu_1) > 0)$ and $$h_\\pm = \\frac{\\mathrm{E}\\left[|D|^{0.5} \\mid \\pm D > 0\\right]}{\\left(\\mathrm{E}\\left[|D| \\mid \\pm D > 0\\right]\\right)^{0.5}}$$ with $D = y - \\mu_1$. Then $h_+, h_- \\in (0, 1]$, each equal to 1 exactly when the deviations on its side are constant, and the parts of the [[D1:half central moment]] satisfy $$\\frac{\\mathcal{R}(\\mu_{0.5})}{\\mathcal{I}(\\mu_{0.5})} = \\left(\\frac{p_+}{p_-}\\right)^{0.5}\\frac{h_+}{h_-},$$, so that the [[D3:Asymmetry coefficient]] is determined by the probability on each side of the mean and by how evenly the deviations are spread on each side.",
+   "statement": "For a variable $y$ with a finite mean $\\mu_1$ and positive probability on both sides of it, let $D = y - \\mu_1$, $p_+ = P(D > 0)$, $p_- = P(D < 0)$, and $$h_+ = \\frac{\\mathrm{E}\\left[D^{0.5} \\mid D > 0\\right]}{\\left(\\mathrm{E}\\left[D \\mid D > 0\\right]\\right)^{0.5}}, \\qquad h_- = \\frac{\\mathrm{E}\\left[(-D)^{0.5} \\mid D < 0\\right]}{\\left(\\mathrm{E}\\left[-D \\mid D < 0\\right]\\right)^{0.5}}.$$ Then $h_+, h_- \\in (0, 1]$, each equal to 1 exactly when the deviations on its side are constant, and the parts of the [[D1:half central moment]] satisfy $$\\frac{\\mathcal{R}(\\mu_{0.5})}{\\mathcal{I}(\\mu_{0.5})} = \\sqrt{\\frac{p_+}{p_-}}\\;\\frac{h_+}{h_-},$$ so the [[D3:Asymmetry coefficient]] is determined by the probability on each side of the mean and by how evenly the deviations are spread on each side.",
    "about": {
     "subject": "D3",
     "relation": "is determined by the probability on each side of the mean and the spread of deviations within each side",
@@ -840,7 +840,7 @@
   },
   {
    "id": "C6",
-   "statement": "For a variable with a finite mean $\\mu_1$, a finite moment of order $1.5$ and positive probability on both sides of $\\mu_1$, the mean is the $L_{1.5}$-quantile at level $\\tau^* = \\frac{\\mathcal{I}(\\mu_{0.5})}{\\nu_{0.5}}$, and the [[D3:Asymmetry coefficient]] equals $\\frac{4}{\\pi}\\arctan(1 - 2\\tau^*)$.",
+   "statement": "For a variable with a finite mean $\\mu_1$, $\\mathrm{E}|y|^{1.5} < \\infty$ and positive probability on both sides of $\\mu_1$, the mean is the $L_{1.5}$-quantile at level $\\tau^* = \\frac{\\mathcal{I}(\\mu_{0.5})}{\\nu_{0.5}}$, and the [[D3:Asymmetry coefficient]] equals $\\frac{4}{\\pi}\\arctan(1 - 2\\tau^*)$.",
    "about": {
     "subject": "D3",
     "relation": "is a monotone function of the L_{1.5}-quantile level of the mean",
@@ -1125,7 +1125,7 @@
   },
   {
    "id": "C10",
-   "statement": "For a variable with a finite positive variance $\\sigma^2$, let $V = \\frac{(y - \\mu_1)^2}{\\sigma^2}$, the squared standardised deviation, whose mean is 1, and $g(v) = \\frac{3 + v}{4} - v^{0.25}$. Then one minus the [[D4:Hypotailedness]] equals $\\mathrm{E}[g(V)]$, the [[D5:Extremity coefficient]] equals $2(1 - \\mathrm{E}[g(V)])^p - 1$ and so decreases as $\\mathrm{E}[g(V)]$ grows, and, with a finite fourth moment, the [[D10:excess kurtosis]] plus 2 equals $\\mathrm{E}[(V - 1)^2]$. The function $g$ is strictly convex and zero only at $v = 1$, is $\\frac{3}{32}(v - 1)^2 + O(|v - 1|^3)$ near 1, is $\\frac{3}{4}$ at $v = 0$, and is $\\frac{v}{4} + O(v^{0.25})$ for large $v$. So Hypotailedness, Extremity and kurtosis all measure how far $V$ spreads from 1; with $g$ scaled by $\\frac{32}{3}$, so that it agrees with the kurtosis loss $(v - 1)^2$ to second order at $v = 1$, Hypotailedness gives a value at the mean 8 times the weight kurtosis gives it, and a value far out a weight linear rather than quadratic in $V$.",
+   "statement": "For a variable with a finite positive variance $\\sigma^2$, let $V = \\frac{(y - \\mu_1)^2}{\\sigma^2}$, the squared standardised deviation, whose mean is 1, and $g(v) = \\frac{3 + v}{4} - v^{0.25}$. Then one minus the [[D4:Hypotailedness]] equals $\\mathrm{E}[g(V)]$, the [[D5:Extremity coefficient]] equals $2(1 - \\mathrm{E}[g(V)])^p - 1$ and so decreases as $\\mathrm{E}[g(V)]$ grows, and, with a finite fourth moment, the [[D10:excess kurtosis]] plus 2 equals $\\mathrm{E}[(V - 1)^2]$. The function $g$ is strictly convex and zero only at $v = 1$, is $\\frac{3}{32}(v - 1)^2 + O(|v - 1|^3)$ near 1, is $\\frac{3}{4}$ at $v = 0$, and is $\\frac{v}{4} + O(v^{0.25})$ for large $v$. So Hypotailedness, Extremity and kurtosis all measure how far $V$ spreads from 1: Hypotailedness through the loss $g$, kurtosis through the loss $(v - 1)^2$. Scaled by $\\frac{32}{3}$, so that it agrees with $(v - 1)^2$ to second order at $v = 1$, the loss $g$ gives a value at the mean 8 times the weight the kurtosis loss gives it, and a value far out a weight linear rather than quadratic in $V$.",
    "about": {
     "subject": "D5",
     "relation": "measures the spread of the squared standardised deviation about 1, as kurtosis does, with more weight at the mean and less in the tails",
@@ -1354,7 +1354,7 @@
   },
   {
    "id": "C13",
-   "statement": "For the normal distribution with standard deviation $\\sigma$, the [[D1:half central moment]] is $(1+i)\\,\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{-0.75}\\,\\sigma^{0.5}$, the [[D3:Asymmetry coefficient]] is 0 and [[D4:Hypotailedness]] is $\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{0.25}$.",
+   "statement": "For the normal distribution with standard deviation $\\sigma$, the [[D1:half central moment]] is $(1+i)\\,\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{-0.75}\\,\\sigma^{0.5}$, the [[D3:Asymmetry coefficient]] is 0, [[D4:Hypotailedness]] is $\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{0.25} \\approx 0.822$ and the [[D5:Extremity coefficient]] is $2\\left(\\Gamma(0.75)\\,\\pi^{-0.5}\\,2^{0.25}\\right)^{p} - 1 \\approx -0.291$.",
    "about": {
     "subject": "D1",
     "relation": "has a closed form for",
@@ -1613,7 +1613,7 @@
   },
   {
    "id": "C17",
-   "statement": "For the Cauchy distribution with location 0 and scale $\\gamma$, which has no mean, the [[D1:half central moment]] taken about its location 0 is $(1+i)\\frac{\\sqrt{\\gamma}}{2}\\sec\\left(\\frac{\\pi}{4}\\right)$.",
+   "statement": "For the Cauchy distribution with location 0 and scale $\\gamma$, which has no mean, the analogue of the [[D1:half central moment]] taken about the location 0 is $(1+i)\\sqrt{\\frac{\\gamma}{2}}$.",
    "about": {
     "subject": "D1",
     "relation": "has a closed form about its location for",
@@ -1747,7 +1747,7 @@
   },
   {
    "id": "C19",
-   "statement": "The [[D5:Extremity coefficient]] and [[D10:excess kurtosis]] do not order distributions alike: the exponential and Student $t_5$ distributions have the same excess kurtosis, 6, but Extremity $-0.434$ and $-0.480$; the Laplace distribution has a smaller excess kurtosis, 3, but a smaller Extremity, $-0.579$, than either.",
+   "statement": "The [[D5:Extremity coefficient]] and [[D10:excess kurtosis]] do not order distributions alike: the exponential distribution and Student's $t_5$ distribution have the same excess kurtosis, 6, but Extremity $-0.434$ and $-0.480$; the Laplace distribution has a smaller excess kurtosis, 3, but a smaller Extremity, $-0.579$, than either.",
    "about": {
     "subject": "D5",
     "relation": "orders distributions differently from excess kurtosis",
@@ -1811,7 +1811,7 @@
   },
   {
    "id": "C20",
-   "statement": "At a distribution with a finite fourth moment and a density bounded near its mean, the influence function of the [[D3:Asymmetry coefficient]] is unbounded and grows linearly in the outlying value $x$ as $|x| \\to \\infty$, decreasing for large positive $x$; the influence functions of [[D4:Hypotailedness]] and of the [[D5:Extremity coefficient]] grow quadratically, through the variance, and decrease in both directions.",
+   "statement": "At a distribution with a finite fourth moment and a density bounded near its mean, the influence function of the [[D3:Asymmetry coefficient]] at an outlying value $x$ is unbounded and linear in $x$ for large $|x|$: it tends to $-\\infty$ as $x \\to +\\infty$ and to $+\\infty$ as $x \\to -\\infty$; the influence functions of [[D4:Hypotailedness]] and of the [[D5:Extremity coefficient]] tend to $-\\infty$ quadratically in $x$ as $|x| \\to \\infty$, through the variance.",
    "about": {
     "subject": "D3",
     "relation": "has an influence function growing linearly in the outlying value",
@@ -1894,7 +1894,7 @@
   },
   {
    "id": "C21",
-   "statement": "Under [[D22:single-outlier contamination]] with $n = 1000$, as $k$ grows from 10 to 100 the [[D23:standardised shift]] of the [[D20:half-moment coefficients]], and in particular of the [[D3:Asymmetry coefficient]] grows with exponent 1.12 to 1.16, close to [[D11:L-skewness]] among the [[D21:comparison measures]] (1.00 to 1.04), whereas [[D9:moment skewness]] grows with exponent 1.51 to 1.63 and [[D10:excess kurtosis]] with 2.02 to 2.07; [[D4:Hypotailedness]] grows with exponent 1.34 to 1.38 and the [[D5:Extremity coefficient]] with 0.96 to 1.01, both levelling off towards their bounds; [[D13:TL-skewness]], [[D14:TL-kurtosis]], [[D15:quartile skewness]], [[D18:octile kurtosis]] and the [[D16:medcouple]] do not grow; with $n = 100$ every measure that grows does so more slowly, as finite-sample bounds take hold.",
+   "statement": "Under [[D22:single-outlier contamination]] with $n = 1000$, the growth exponent of the [[D23:standardised shift]] (the least-squares slope of $\\log|\\text{shift}|$ on $\\log k$ for $k = 10, 20, 50, 100$) is, among the [[D20:half-moment coefficients]], 1.12 to 1.16 for the [[D3:Asymmetry coefficient]], close to [[D11:L-skewness]] among the [[D21:comparison measures]] (1.00 to 1.04), whereas it is 1.51 to 1.63 for [[D9:moment skewness]] and 2.02 to 2.07 for [[D10:excess kurtosis]]; it is 1.34 to 1.38 for [[D4:Hypotailedness]] and 0.96 to 1.01 for the [[D5:Extremity coefficient]], both levelling off towards their bounds; [[D13:TL-skewness]], [[D14:TL-kurtosis]], [[D15:quartile skewness]], [[D18:octile kurtosis]] and the [[D16:medcouple]] do not grow; with $n = 100$ every measure that grows does so more slowly, as finite-sample bounds take hold.",
    "type": "descriptive",
    "role": "principal",
    "novelty": "extension",
@@ -2935,7 +2935,7 @@
   },
   {
    "id": "C22",
-   "statement": "For a variable with a finite fourth moment and a density bounded and continuous near its mean, the sample [[D3:Asymmetry coefficient]], [[D4:Hypotailedness]] and [[D5:Extremity coefficient]] are asymptotically normal: $\\sqrt{n}(\\hat T_n - T) \\to N\\left(0, \\mathrm{E}\\left[\\mathrm{IF}_T(y)^2\\right]\\right)$, where $\\mathrm{IF}_T$ is the influence function of the coefficient, which includes the effect of estimating the mean.",
+   "statement": "For a variable with a finite fourth moment and a density bounded and continuous near its mean, the sample [[D3:Asymmetry coefficient]], [[D4:Hypotailedness]] and [[D5:Extremity coefficient]] are asymptotically normal: for each coefficient, with $\\hat T_n$ its value on a sample of $n$ and $T$ its value for the distribution, $\\sqrt{n}(\\hat T_n - T) \\to N\\left(0, \\mathrm{E}\\left[\\mathrm{IF}_T(y)^2\\right]\\right)$, where $\\mathrm{IF}_T$ is the influence function of the coefficient, which includes the effect of estimating the mean.",
    "about": {
     "subject": "D3",
     "relation": "is asymptotically normal with variance given by its influence function",
@@ -3027,7 +3027,7 @@
   },
   {
    "id": "C23",
-   "statement": "For samples of 20 to 2000 from the normal, Student t(5) and exponential distributions, among the [[D20:half-moment coefficients]] the sample [[D3:Asymmetry coefficient]] has a bias of at most 0.019 and jackknife 95% intervals covering 94.3% to 96.4% at every size; the sample [[D4:Hypotailedness]] and [[D5:Extremity coefficient]] are biased upwards in small samples, the Extremity by up to 0.140 at $n = 20$, and for the t(5) and exponential samples their jackknife and bootstrap intervals cover 88.5% to 93.9%; for the parts of the [[D8:Complex Extremity]] the jackknife intervals over-cover (96.8% to 99.9%) and the bootstrap intervals cover 90.2% to 99.9%.",
+   "statement": "For samples of 20 to 2000 from the normal, Student's $t_5$ and exponential distributions, among the [[D20:half-moment coefficients]] the sample [[D3:Asymmetry coefficient]] has a bias of at most 0.019 and jackknife 95% intervals covering 94.3% to 96.4% at every size; the sample [[D4:Hypotailedness]] and [[D5:Extremity coefficient]] are biased upwards in small samples, the Extremity by up to 0.140 at $n = 20$, and for the $t_5$ and exponential samples their jackknife and bootstrap intervals cover 88.5% to 93.9% across sample sizes; for the parts of the [[D8:Complex Extremity]] the jackknife intervals over-cover (96.8% to 99.9%) and the bootstrap intervals cover 90.2% to 99.9%.",
    "type": "descriptive",
    "role": "principal",
    "novelty": "extension",
