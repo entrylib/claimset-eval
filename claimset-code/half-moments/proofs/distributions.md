@@ -1,6 +1,6 @@
-# Closed forms for standard distributions (hypotheses H10–H16)
+# Closed forms for standard distributions (hypotheses H10–H16, and their extended wordings)
 
-Study `half-moments`, plan PL2. Notation as in `properties.md`: $R$ and $I$ are the parts of the half central moment
+Study `half-moments`, plans PL2 and PL11 (the extended wordings, at the end). Notation as in `properties.md`: $R$ and $I$ are the parts of the half central moment
 above and below the mean, $\nu = R + I$, $H = \nu/\sigma^{0.5}$, $h_U = 2 \times 3^{-0.75}$.
 
 **Lemma S (symmetric laws).** If $y$ is symmetric about its centre $m$ (its mean when the mean exists), then the half
@@ -79,3 +79,63 @@ $I = \frac{2}{e\sqrt{\lambda}}\left(\frac{e}{2} - \frac{\sqrt{\pi}}{4}\mathrm{er
 ## Distributions without a closed form
 
 For the lognormal, beta, Weibull and skew-normal distributions the integrals $\mathrm{E}[(y - \mu_1)_\pm^{0.5}]$ have no closed form in standard functions that we derive here; they are computed by numerical integration when needed.
+
+## Asymmetry, Extremity and Complex Extremity of the standard distributions (plan PL11)
+
+The closed forms H10–H16 are extended, each in a new wording that keeps everything the earlier one stated, by the
+Asymmetry coefficient, the Extremity coefficient and the Complex Extremity. Notation as in `properties.md`:
+$h_U = 2 \times 3^{-0.75}$, $p = \frac{\log 0.5}{\log h_U} \approx 5.2988$, $E = 2H^p - 1$, the one-sided Hypotailedness
+$H_\pm$ and $\mathrm{CE} = (2H_+^p - 1) + i(2H_-^p - 1)$.
+
+**Lemma C (symmetric laws).** If $y$ has a finite positive variance, a density, and a distribution symmetric about its
+mean, then $A = 0$ and both parts of $\mathrm{CE}$ equal $E$. *Proof:* $R = I$ (H1), so $A = \frac{4}{\pi}\arctan 0 = 0$
+by identity (A) of H4. A density puts no probability at the mean and, the variable not being constant, positive
+probability on both sides (Lemma 0); then $H_+ = H_- = H$ (H9, for a law symmetric about its mean), so each part of
+$\mathrm{CE}$ is $2H^p - 1 = E$. ∎
+
+**Uniform (rewording of H10).** By H10, $A = 0$, $H = h_U$ and $E = 0$; by H9, $H_+ = H_- = h_U$, so both parts of
+$\mathrm{CE}$ are $2h_U^p - 1 = 0$. ∎
+
+**Normal (rewording of H11).** Lemma C with $H_N = \Gamma(0.75)\,\pi^{-0.5}\,2^{0.25} = 0.82218\ldots$ (H11):
+$E = 2H_N^p - 1 = -0.29131\ldots$, and both parts of $\mathrm{CE}$ equal $E$. ∎
+
+**Laplace (rewording of H12).** Lemma C with $H_L = \frac{\sqrt{\pi}}{2}\,2^{-0.25} = 0.74523\ldots$ (H12):
+$A = 0$, $E = 2H_L^p - 1 = -0.57898\ldots$, both parts of $\mathrm{CE}$ equal $E$. ∎
+
+**Generalised normal (rewording of H13).** Lemma C with $H(s)$ of H13 gives $A = 0$, $E = 2H(s)^p - 1$ and both parts of
+$\mathrm{CE}$ equal to $E$. At $s = 1$ the law is the Laplace with $b = \alpha$, at $s = 2$ the normal with
+$\sigma = \alpha/\sqrt{2}$ (H13 then gives $H_L$ and $H_N$). *Limit.* $\Gamma(x) = \Gamma(1 + x)/x$ and
+$\Gamma(1 + x) \to 1$ as $x \to 0^+$, so with $x = \frac{1}{s}$,
+$$H(s) = \frac{\Gamma(1 + 1.5x)}{1.5x}\left(\frac{\Gamma(1 + x)}{x}\right)^{-0.75}\left(\frac{\Gamma(1 + 3x)}{3x}\right)^{-0.25}
+\to \frac{3^{0.25}}{1.5} = 2 \times 3^{-0.75} = h_U \quad (s \to \infty),$$
+the powers of $x$ cancelling ($-1 + 0.75 + 0.25 = 0$). By continuity of $u \mapsto 2u^p - 1$, $E \to 2h_U^p - 1 = 0$. ∎
+
+**Student's t (rewording of H14).** For $\nu > 1$ the mean 0 exists and the law is symmetric about it, so $A = 0$ (H1,
+H4). For $\nu > 2$ the variance is finite and positive and Lemma C gives $E = 2H(\nu)^p - 1$, both parts of
+$\mathrm{CE}$ equal to it, with $H(\nu)$ of H14. *As $\nu \to 2^+$:* $\Gamma\left(\frac{\nu-0.5}{2}\right) \to \Gamma(0.75)$
+and $\Gamma\left(\frac{\nu}{2}\right) \to 1$ are finite and positive while $(\nu - 2)^{0.25} \to 0$, so $H(\nu) \to 0$ and
+$E \to -1$. *As $\nu \to \infty$:* $\Gamma(z + a)/\Gamma(z + b) \sim z^{a - b}$ with $z = \frac{\nu}{2}$, $a = -0.25$,
+$b = 0$ gives $\Gamma\left(\frac{\nu-0.5}{2}\right)/\Gamma\left(\frac{\nu}{2}\right) \sim \left(\frac{\nu}{2}\right)^{-0.25}$,
+so $H(\nu) \sim \Gamma(0.75)\,\pi^{-0.5}\,(\nu-2)^{0.25}\left(\frac{\nu}{2}\right)^{-0.25} \to \Gamma(0.75)\,\pi^{-0.5}\,2^{0.25} = H_N$
+and $E \to 2H_N^p - 1$, its normal value. ∎
+
+**Cauchy (rewording of H15).** $\sec\frac{\pi}{4} = \sqrt{2}$, so the analogue of H15 is
+$(1+i)\frac{\sqrt{\gamma}}{2}\sqrt{2} = (1+i)\sqrt{\frac{\gamma}{2}}$; its parts are equal (Lemma S), so its angle is
+$\frac{\pi}{4}$ and the analogue of Asymmetry, $1 - \frac{4\phi}{\pi}$, is 0. Hypotailedness, Extremity and Complex
+Extremity are defined for a finite positive variance only, and the Cauchy law has none. ∎
+
+**Gamma (rewording of H16).** *Asymmetry*: identity (A) of H4 with $\mathcal{R}$ and $\mathcal{I}$ of H16.
+*Hypotailedness*: $\sigma^2 = a/\lambda^2$, so $\sigma^{0.5} = a^{0.25}\lambda^{-0.5}$ and
+$H = \frac{\mathcal{R} + \mathcal{I}}{\sigma^{0.5}} = \frac{\lambda^{0.5}}{a^{0.25}}(\mathcal{R} + \mathcal{I})$; $E = 2H^p - 1$.
+*One-sided Hypotailedness.* With $c = a/\lambda$ and the gamma law of $y$: $P(y > c) = Q(a, a)$,
+$\mathrm{E}[y\,\mathbf{1}(y > c)] = \frac{a}{\lambda}Q(a + 1, a)$, $\mathrm{E}[y^2\,\mathbf{1}(y > c)] = \frac{a(a+1)}{\lambda^2}Q(a + 2, a)$
+(each moment of the gamma law is a gamma law of a higher shape, cut at $\lambda c = a$), so
+$$M_+ = \mathrm{E}[(y - c)^2\,\mathbf{1}(y > c)] = \lambda^{-2}\left(a(a+1)q_2 - 2a^2 q_1 + a^2 q_0\right),\quad q_k = Q(a + k, a),$$
+and likewise $M_-$ with the lower functions $r_k = P(a + k, a)$, and $p_+ = q_0$, $p_- = r_0$. By definition
+$H_+ = \frac{\mathcal{R}/p_+}{(M_+/p_+)^{0.25}} = \mathcal{R}\,p_+^{-0.75}M_+^{-0.25}$, which is the stated form; $H_-$ likewise with
+$\mathcal{I}$. *Independence of $\lambda$*: $\mathcal{R}, \mathcal{I} \propto \lambda^{-0.5}$ (H16) and $M_\pm \propto \lambda^{-2}$, so
+$A$, $H$, $H_\pm$, $E$ and $\mathrm{CE}$ depend on $a$ alone. *Exponential* ($a = 1$, $\lambda = 1$): with H16's parts,
+$A = \frac{4}{\pi}\arctan\frac{\mathcal{R} - \mathcal{I}}{\mathcal{R} + \mathcal{I}} = -0.21746\ldots$, $H = \mathcal{R} + \mathcal{I} = 0.78795\ldots$,
+$E = -0.43430\ldots$. By memorylessness, $D$ given $D > 0$ is exponential with rate 1, so
+$H_+ = \frac{\mathrm{E}Z^{0.5}}{(\mathrm{E}Z^2)^{0.25}} = \frac{\Gamma(1.5)}{2^{0.25}} = \frac{\sqrt{\pi}}{2}2^{-0.25} = H_L$ and the real part of
+$\mathrm{CE}$ is $2H_L^p - 1$, the Laplace Extremity, $-0.57898\ldots$; the imaginary part is $2H_-^p - 1 = 0.20491\ldots$ ∎

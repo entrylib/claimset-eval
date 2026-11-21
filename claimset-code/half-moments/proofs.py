@@ -467,9 +467,99 @@ def properties():
                 coefficient="Asymmetry" if coef == "A" else "Hypotailedness", side="above" if side > 0 else "below")
 
 
+def _closed_extended(label="PL11"):
+    """PL11: Asymmetry, Extremity and Complex Extremity of the closed-form distributions (distributions.md, end)."""
+    def one_sided_h(L):
+        mp_, pp = L.one_sided(L.mean, mp.mpf(0.5), +1)
+        m2p, _ = L.one_sided(L.mean, 2, +1)
+        mm_, pm = L.one_sided(L.mean, mp.mpf(0.5), -1)
+        m2m, _ = L.one_sided(L.mean, 2, -1)
+        return (mp_ / pp) / (m2p / pp) ** mp.mpf(0.25), (mm_ / pm) / (m2m / pm) ** mp.mpf(0.25)
+
+    def symmetric(h, name, L, H):
+        A = asym(L.R, L.I)
+        Hn = hypo(L.R, L.I, L.var)
+        hp, hm = one_sided_h(L)
+        E = extr(H)
+        cond = {"distribution": name}
+        check(h, "Asymmetry 0", A, **cond)
+        check(h, "Hypotailedness against its closed form", rel(Hn, H), **cond)
+        check(h, "Extremity 2H^p - 1 against the numerical one", scaled(extr(Hn), E), **cond)
+        check(h, "real part of the Complex Extremity against the Extremity", scaled(extr(hp), E), **cond)
+        check(h, "imaginary part of the Complex Extremity against the Extremity", scaled(extr(hm), E), **cond)
+        put("Extremity", E, hypothesis=h, **cond)
+        return E
+
+    HN = mp.gamma(0.75) / mp.sqrt(mp.pi) * mp.mpf(2) ** mp.mpf(0.25)
+    HL = mp.sqrt(mp.pi) / 2 * mp.mpf(2) ** mp.mpf(-0.25)
+    # uniform
+    U = law("uniform")
+    hp, hm = one_sided_h(U)
+    check("H10", "both parts of the Complex Extremity 0", max(abs(extr(hp)), abs(extr(hm))), distribution="uniform")
+    # normal and Laplace
+    EN = symmetric("H11", "normal", law("normal"), HN)
+    check("H11", "Extremity about -0.291", 0 if abs(EN + mp.mpf("0.291")) <= mp.mpf("0.0005") else 1)
+    EL = symmetric("H12", "Laplace", law("Laplace"), HL)
+    check("H12", "Extremity about -0.579", 0 if abs(EL + mp.mpf("0.579")) <= mp.mpf("0.0005") else 1)
+    # generalised normal
+    Hgn = lambda s: mp.gamma(mp.mpf(1.5) / s) * mp.gamma(1 / s) ** mp.mpf(-0.75) * mp.gamma(3 / s) ** mp.mpf(-0.25)
+    for s in (mp.mpf("0.5"), mp.mpf("1.5"), mp.mpf(3)):
+        pdf = lambda y, s=s: s / (2 * mp.gamma(1 / s)) * mp.exp(-abs(y) ** s)
+        symmetric("H13", f"generalised normal s={float(s)}", Law(f"gn{s}", pdf, -mp.inf, mp.inf), Hgn(s))
+    check("H13", "s = 1 gives the Laplace Hypotailedness", rel(Hgn(mp.mpf(1)), HL))
+    check("H13", "s = 2 gives the normal Hypotailedness", rel(Hgn(mp.mpf(2)), HN))
+    for s in (mp.mpf(10) ** 6, mp.mpf(10) ** 9):
+        check("H13", "Extremity near 0 for large s", abs(extr(Hgn(s))), s=float(s))
+    # Student's t
+    Ht = lambda n: mp.gamma(0.75) * mp.gamma((n - mp.mpf(0.5)) / 2) * (n - 2) ** mp.mpf(0.25) / (mp.sqrt(mp.pi) * mp.gamma(n / 2))
+    for n in (mp.mpf(3), mp.mpf(10)):
+        pdf = lambda y, n=n: mp.gamma((n + 1) / 2) / (mp.sqrt(n * mp.pi) * mp.gamma(n / 2)) * (1 + y * y / n) ** (-(n + 1) / 2)
+        symmetric("H14", f"t({int(n)})", Law(f"t{n}", pdf, -mp.inf, mp.inf), Ht(n))
+    symmetric("H14", "t(5)", law("t(5)"), Ht(mp.mpf(5)))
+    check("H14", "Extremity near -1 as nu -> 2", abs(extr(Ht(2 + mp.mpf(10) ** -40)) + 1))
+    check("H14", "Extremity near the normal value as nu grows", scaled(extr(Ht(mp.mpf(10) ** 15)), EN))
+    # Cauchy
+    g = mp.mpf(3)
+    check("H15", "(1+i) sqrt(gamma/2) against the earlier form", rel(mp.sqrt(g / 2), mp.sqrt(g) / 2 * mp.sec(mp.pi / 4)))
+    Rc = integral(lambda y: mp.sqrt(y) * g / (mp.pi * (g * g + y * y)), 0, mp.inf, heavy=True)
+    check("H15", "real part about the location against sqrt(gamma/2)", rel(Rc, mp.sqrt(g / 2)))
+    # gamma
+    for a in (mp.mpf("0.5"), mp.mpf(1), mp.mpf(2), mp.mpf(5)):
+        R = mp.gamma(1.5) * a ** (a + mp.mpf(0.5)) * mp.e ** -a / mp.gamma(a) * mp.hyperu(1.5, a + 1.5, a)
+        I = mp.beta(a, 1.5) * a ** (a + mp.mpf(0.5)) / mp.gamma(a) * mp.hyp1f1(a, a + 1.5, -a)
+        q = [mp.gammainc(a + k, a, mp.inf, regularized=True) for k in range(3)]
+        r = [mp.gammainc(a + k, 0, a, regularized=True) for k in range(3)]
+        Hp = R * q[0] ** mp.mpf(-0.75) / (a * (a + 1) * q[2] - 2 * a * a * q[1] + a * a * q[0]) ** mp.mpf(0.25)
+        Hm = I * r[0] ** mp.mpf(-0.75) / (a * (a + 1) * r[2] - 2 * a * a * r[1] + a * a * r[0]) ** mp.mpf(0.25)
+        H = (R + I) / a ** mp.mpf(0.25)
+        L = Law(f"gamma{a}", lambda y, a=a: y ** (a - 1) * mp.exp(-y) / mp.gamma(a), mp.mpf(0), mp.inf)
+        hp, hm = one_sided_h(L)
+        cond = {"distribution": f"gamma({float(a)})"}
+        check("H16", "Asymmetry against the closed form", scaled(asym(L.R, L.I), asym(R, I)), **cond)
+        check("H16", "Hypotailedness against the closed form", rel(hypo(L.R, L.I, L.var), H), **cond)
+        check("H16", "H+ against the closed form", rel(hp, Hp), **cond)
+        check("H16", "H- against the closed form", rel(hm, Hm), **cond)
+        for lam in (mp.mpf(3),):
+            L3 = Law(f"gamma{a}x{lam}", lambda y, a=a, lam=lam: lam ** a * y ** (a - 1) * mp.exp(-lam * y) / mp.gamma(a), mp.mpf(0), mp.inf)
+            h3p, h3m = one_sided_h(L3)
+            check("H16", "H+ and H- do not depend on the rate", max(rel(h3p, hp), rel(h3m, hm)), **cond)
+        if a == 1:
+            for what, val, stated in (("Asymmetry", asym(R, I), "-0.217"), ("Extremity", extr(H), "-0.434"),
+                                      ("Complex Extremity, real part", extr(Hp), "-0.579"),
+                                      ("Complex Extremity, imaginary part", extr(Hm), "0.205")):
+                check("H16", f"exponential {what} rounds to the stated value",
+                      0 if abs(val - mp.mpf(stated)) <= mp.mpf("0.0005") else 1)
+                put(what, val, hypothesis="H16", distribution="exponential")
+            check("H16", "exponential H+ equals the Laplace Hypotailedness", rel(Hp, HL))
+
+
+
 # ---------- PL2: closed forms ----------
 
 def distributions():
+    if os.environ.get("HM_ONLY") == "PL11":
+        _closed_extended()
+        return
     def num_parts(pdf, lo, hi, centre, pts=(), heavy=False):
         R = integral(lambda y: mp.sqrt(y - centre) * pdf(y), centre, hi, pts, heavy)
         I = integral(lambda y: mp.sqrt(centre - y) * pdf(y), lo, centre, pts, heavy)
