@@ -1,0 +1,77 @@
+index,measure,measure value
+DAX,Asymmetry,0.004436817859152658
+DAX,Hypotailedness,0.756129945039511
+DAX,Extremity,-0.5452879514682758
+DAX,"Complex Extremity, real part",-0.4648381062949617
+DAX,"Complex Extremity, imaginary part",-0.6112964681413415
+DAX,moment skewness,-0.5540533145238529
+DAX,L-skewness,-0.019264836088659615
+DAX,TL-skewness,-0.0013953784620388094
+DAX,quartile skewness,0.06563842557520197
+DAX,medcouple,0.0702093547892241
+DAX,mean-based skewness 2F(mean) - 1,0.01452393760086057
+DAX,excess kurtosis,6.279689018320088
+DAX,L-kurtosis,0.21312426000956275
+DAX,TL-kurtosis,0.11239447879531837
+DAX,octile kurtosis,1.4330710953763435
+DAX,Geary ratio,0.7153300361375837
+DAX,"half central moment, real part",0.03849949375853222
+DAX,"half central moment, imaginary part",0.03823210847149428
+DAX,half absolute moment,0.07673160223002651
+SMI,Asymmetry,0.021459427308666217
+SMI,Hypotailedness,0.762994995214866
+SMI,Extremity,-0.5229810904035976
+SMI,"Complex Extremity, real part",-0.4254151561819295
+SMI,"Complex Extremity, imaginary part",-0.5998856654058597
+SMI,moment skewness,-0.6321953526934156
+SMI,L-skewness,-0.03903875892645957
+SMI,TL-skewness,-0.018624364020078023
+SMI,quartile skewness,0.05050291198458269
+SMI,medcouple,0.03453500982614202
+SMI,mean-based skewness 2F(mean) - 1,-0.008068854222700428
+SMI,excess kurtosis,5.736045857371968
+SMI,L-kurtosis,0.20851854318683644
+SMI,TL-kurtosis,0.1042376763078579
+SMI,octile kurtosis,1.416509517654802
+SMI,Geary ratio,0.7209245871717175
+SMI,"half central moment, real part",0.03730476869336751
+SMI,"half central moment, imaginary part",0.0360680124393034
+SMI,half absolute moment,0.07337278113267091
+CAC,Asymmetry,-0.01148175759845539
+CAC,Hypotailedness,0.7784291169233966
+CAC,Extremity,-0.46957826415880066
+CAC,"Complex Extremity, real part",-0.36650397932761025
+CAC,"Complex Extremity, imaginary part",-0.5516962259409232
+CAC,moment skewness,-0.17739799549441454
+CAC,L-skewness,-0.0066986741967793115
+CAC,TL-skewness,0.008779761676255845
+CAC,quartile skewness,0.0785148059097427
+CAC,medcouple,0.044362013434276745
+CAC,mean-based skewness 2F(mean) - 1,0.04787520172135551
+CAC,excess kurtosis,2.3854167227857763
+CAC,L-kurtosis,0.17717170541573604
+CAC,TL-kurtosis,0.0934943739399005
+CAC,octile kurtosis,1.3843212613183875
+CAC,Geary ratio,0.7474612894686712
+CAC,"half central moment, real part",0.04050432570300844
+CAC,"half central moment, imaginary part",0.041241509298002355
+CAC,half absolute moment,0.08174583500101079
+FTSE,Asymmetry,-0.008706291663395484
+FTSE,Hypotailedness,0.7845443085258772
+FTSE,Extremity,-0.4471226673645363
+FTSE,"Complex Extremity, real part",-0.4001564353373872
+FTSE,"Complex Extremity, imaginary part",-0.488452170791451
+FTSE,moment skewness,0.10957729534885799
+FTSE,L-skewness,-0.0019464723233160518
+FTSE,TL-skewness,0.0009607404465212033
+FTSE,quartile skewness,0.08089878304160804
+FTSE,medcouple,0.09494274541054387
+FTSE,mean-based skewness 2F(mean) - 1,0.031737493275954876
+FTSE,excess kurtosis,2.639759737757653
+FTSE,L-kurtosis,0.17242816038158046
+FTSE,TL-kurtosis,0.08587706983040638
+FTSE,octile kurtosis,1.3313355238341646
+FTSE,Geary ratio,0.7507301379867888
+FTSE,"half central moment, real part",0.034749110341133795
+FTSE,"half central moment, imaginary part",0.03522761201234037
+FTSE,half absolute moment,0.06997672235347416

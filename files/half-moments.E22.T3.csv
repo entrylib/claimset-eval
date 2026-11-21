@@ -1,0 +1,65 @@
+measure,summary,measure over the expanding window,window length at the extreme
+Asymmetry,first,-0.03324236175357185,
+Asymmetry,last,0.004436817859152658,
+Asymmetry,smallest,-0.05809011229004246,32
+Asymmetry,largest,0.312494186916008,35
+Hypotailedness,first,0.846020962307906,
+Hypotailedness,last,0.756129945039511,
+Hypotailedness,smallest,0.5360091411717237,37
+Hypotailedness,largest,0.846020962307906,30
+Extremity,first,-0.17541222334455842,
+Extremity,last,-0.5452879514682758,
+Extremity,smallest,-0.9265542154064936,37
+Extremity,largest,-0.17541222334455842,30
+"Complex Extremity, real part",first,-0.41369872063097923,
+"Complex Extremity, real part",last,-0.4648381062949617,
+"Complex Extremity, real part",smallest,-0.8318501783978153,76
+"Complex Extremity, real part",largest,-0.24574889517766096,35
+"Complex Extremity, imaginary part",first,0.19787424165841627,
+"Complex Extremity, imaginary part",last,-0.6112964681413415,
+"Complex Extremity, imaginary part",smallest,-0.9714093821130678,35
+"Complex Extremity, imaginary part",largest,0.330964077497234,31
+moment skewness,first,0.5532179025611137,
+moment skewness,last,-0.5540533145238529,
+moment skewness,smallest,-4.7008248478275805,35
+moment skewness,largest,0.6782359752140031,32
+L-skewness,first,0.14138029910987027,
+L-skewness,last,-0.019264836088659615,
+L-skewness,smallest,-0.3512497277311855,35
+L-skewness,largest,0.1675898671187758,31
+TL-skewness,first,0.07777328492023917,
+TL-skewness,last,-0.0013953784620388094,
+TL-skewness,smallest,-0.01092672376967938,1504
+TL-skewness,largest,0.13123048651302213,38
+quartile skewness,first,-0.3927197838442264,
+quartile skewness,last,0.06563842557520197,
+quartile skewness,smallest,-0.4919100765507522,60
+quartile skewness,largest,0.08844092092292172,811
+medcouple,first,-0.1577980948407235,
+medcouple,last,0.0702093547892241,
+medcouple,smallest,-0.1577980948407235,30
+medcouple,largest,0.13177415335450846,43
+mean-based skewness 2F(mean) - 1,first,0.0,
+mean-based skewness 2F(mean) - 1,last,0.01452393760086057,
+mean-based skewness 2F(mean) - 1,smallest,-0.2777777777777778,36
+mean-based skewness 2F(mean) - 1,largest,0.07563025210084029,238
+excess kurtosis,first,-0.40979332361386156,
+excess kurtosis,last,6.279689018320088,
+excess kurtosis,smallest,-0.40979332361386156,30
+excess kurtosis,largest,50.20292433659882,266
+L-kurtosis,first,0.08807603124401862,
+L-kurtosis,last,0.21312426000956275,
+L-kurtosis,smallest,0.08807603124401862,30
+L-kurtosis,largest,0.5325666854933507,37
+TL-kurtosis,first,0.01686202799542498,
+TL-kurtosis,last,0.11239447879531837,
+TL-kurtosis,smallest,0.01686202799542498,30
+TL-kurtosis,largest,0.13036786005281983,395
+octile kurtosis,first,1.0562800400673749,
+octile kurtosis,last,1.4330710953763435,
+octile kurtosis,smallest,1.0562800400673749,30
+octile kurtosis,largest,1.7239533176818695,329
+Geary ratio,first,0.8206779823182005,
+Geary ratio,last,0.7153300361375837,
+Geary ratio,smallest,0.43609129028979166,35
+Geary ratio,largest,0.8206779823182005,30

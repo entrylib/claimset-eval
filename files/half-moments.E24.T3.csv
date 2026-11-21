@@ -1,0 +1,211 @@
+interval,coefficient,distribution,n,coverage of the 95% interval,Monte Carlo standard error of the coverage
+"normal approximation, jackknife standard error",Asymmetry,"normal(0,1)",20,0.9643,0.001855
+"percentile bootstrap, 999 resamples",Asymmetry,"normal(0,1)",20,0.9885,0.002384
+"normal approximation, jackknife standard error",Hypotailedness,"normal(0,1)",20,0.9461,0.002258
+"percentile bootstrap, 999 resamples",Hypotailedness,"normal(0,1)",20,0.997,0.001223
+"normal approximation, jackknife standard error",Extremity,"normal(0,1)",20,0.9596,0.001969
+"percentile bootstrap, 999 resamples",Extremity,"normal(0,1)",20,0.997,0.001223
+"normal approximation, jackknife standard error","Complex Extremity, real part","normal(0,1)",20,0.9795,0.001417
+"percentile bootstrap, 999 resamples","Complex Extremity, real part","normal(0,1)",20,0.9965,0.001321
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part","normal(0,1)",20,0.9799,0.001403
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part","normal(0,1)",20,0.9965,0.001321
+"normal approximation, jackknife standard error",Asymmetry,"normal(0,1)",50,0.9633,0.00188
+"percentile bootstrap, 999 resamples",Asymmetry,"normal(0,1)",50,0.9695,0.003845
+"normal approximation, jackknife standard error",Hypotailedness,"normal(0,1)",50,0.9555,0.002062
+"percentile bootstrap, 999 resamples",Hypotailedness,"normal(0,1)",50,0.9755,0.003457
+"normal approximation, jackknife standard error",Extremity,"normal(0,1)",50,0.9619,0.001914
+"percentile bootstrap, 999 resamples",Extremity,"normal(0,1)",50,0.9755,0.003457
+"normal approximation, jackknife standard error","Complex Extremity, real part","normal(0,1)",50,0.9953,0.000684
+"percentile bootstrap, 999 resamples","Complex Extremity, real part","normal(0,1)",50,0.991,0.002112
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part","normal(0,1)",50,0.9927,0.0008513
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part","normal(0,1)",50,0.99,0.002225
+"normal approximation, jackknife standard error",Asymmetry,"normal(0,1)",100,0.9603,0.001953
+"percentile bootstrap, 999 resamples",Asymmetry,"normal(0,1)",100,0.9655,0.004081
+"normal approximation, jackknife standard error",Hypotailedness,"normal(0,1)",100,0.954,0.002095
+"percentile bootstrap, 999 resamples",Hypotailedness,"normal(0,1)",100,0.9575,0.004511
+"normal approximation, jackknife standard error",Extremity,"normal(0,1)",100,0.9589,0.001985
+"percentile bootstrap, 999 resamples",Extremity,"normal(0,1)",100,0.9575,0.004511
+"normal approximation, jackknife standard error","Complex Extremity, real part","normal(0,1)",100,0.9963,0.0006071
+"percentile bootstrap, 999 resamples","Complex Extremity, real part","normal(0,1)",100,0.9785,0.003243
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part","normal(0,1)",100,0.9966,0.0005821
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part","normal(0,1)",100,0.979,0.003206
+"normal approximation, jackknife standard error",Asymmetry,"normal(0,1)",200,0.9602,0.001955
+"percentile bootstrap, 999 resamples",Asymmetry,"normal(0,1)",200,0.9595,0.004408
+"normal approximation, jackknife standard error",Hypotailedness,"normal(0,1)",200,0.9554,0.002064
+"percentile bootstrap, 999 resamples",Hypotailedness,"normal(0,1)",200,0.9615,0.004302
+"normal approximation, jackknife standard error",Extremity,"normal(0,1)",200,0.9575,0.002017
+"percentile bootstrap, 999 resamples",Extremity,"normal(0,1)",200,0.9615,0.004302
+"normal approximation, jackknife standard error","Complex Extremity, real part","normal(0,1)",200,0.9979,0.0004578
+"percentile bootstrap, 999 resamples","Complex Extremity, real part","normal(0,1)",200,0.98,0.00313
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part","normal(0,1)",200,0.9984,0.0003997
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part","normal(0,1)",200,0.9765,0.003387
+"normal approximation, jackknife standard error",Asymmetry,"normal(0,1)",500,0.957,0.002029
+"percentile bootstrap, 999 resamples",Asymmetry,"normal(0,1)",500,0.9575,0.004511
+"normal approximation, jackknife standard error",Hypotailedness,"normal(0,1)",500,0.953,0.002116
+"percentile bootstrap, 999 resamples",Hypotailedness,"normal(0,1)",500,0.9495,0.004896
+"normal approximation, jackknife standard error",Extremity,"normal(0,1)",500,0.9563,0.002044
+"percentile bootstrap, 999 resamples",Extremity,"normal(0,1)",500,0.9495,0.004896
+"normal approximation, jackknife standard error","Complex Extremity, real part","normal(0,1)",500,0.9987,0.0003603
+"percentile bootstrap, 999 resamples","Complex Extremity, real part","normal(0,1)",500,0.972,0.003689
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part","normal(0,1)",500,0.9992,0.0002827
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part","normal(0,1)",500,0.9705,0.003784
+"normal approximation, jackknife standard error",Asymmetry,"normal(0,1)",1000,0.9477,0.002226
+"percentile bootstrap, 999 resamples",Asymmetry,"normal(0,1)",1000,0.938,0.005392
+"normal approximation, jackknife standard error",Hypotailedness,"normal(0,1)",1000,0.9513,0.002152
+"percentile bootstrap, 999 resamples",Hypotailedness,"normal(0,1)",1000,0.947,0.00501
+"normal approximation, jackknife standard error",Extremity,"normal(0,1)",1000,0.9516,0.002146
+"percentile bootstrap, 999 resamples",Extremity,"normal(0,1)",1000,0.947,0.00501
+"normal approximation, jackknife standard error","Complex Extremity, real part","normal(0,1)",1000,0.9988,0.0003462
+"percentile bootstrap, 999 resamples","Complex Extremity, real part","normal(0,1)",1000,0.9595,0.004408
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part","normal(0,1)",1000,0.999,0.0003161
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part","normal(0,1)",1000,0.964,0.004166
+"normal approximation, jackknife standard error",Asymmetry,"normal(0,1)",2000,0.9503,0.002173
+"percentile bootstrap, 999 resamples",Asymmetry,"normal(0,1)",2000,0.95,0.004873
+"normal approximation, jackknife standard error",Hypotailedness,"normal(0,1)",2000,0.9535,0.002106
+"percentile bootstrap, 999 resamples",Hypotailedness,"normal(0,1)",2000,0.9545,0.00466
+"normal approximation, jackknife standard error",Extremity,"normal(0,1)",2000,0.9537,0.002101
+"percentile bootstrap, 999 resamples",Extremity,"normal(0,1)",2000,0.9545,0.00466
+"normal approximation, jackknife standard error","Complex Extremity, real part","normal(0,1)",2000,0.9992,0.0002827
+"percentile bootstrap, 999 resamples","Complex Extremity, real part","normal(0,1)",2000,0.974,0.003558
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part","normal(0,1)",2000,0.9987,0.0003603
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part","normal(0,1)",2000,0.964,0.004166
+"normal approximation, jackknife standard error",Asymmetry,t(5),20,0.958,0.002006
+"percentile bootstrap, 999 resamples",Asymmetry,t(5),20,0.98,0.00313
+"normal approximation, jackknife standard error",Hypotailedness,t(5),20,0.892,0.003104
+"percentile bootstrap, 999 resamples",Hypotailedness,t(5),20,0.9385,0.005372
+"normal approximation, jackknife standard error",Extremity,t(5),20,0.9387,0.002399
+"percentile bootstrap, 999 resamples",Extremity,t(5),20,0.9385,0.005372
+"normal approximation, jackknife standard error","Complex Extremity, real part",t(5),20,0.9817,0.00134
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",t(5),20,0.9545,0.00466
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",t(5),20,0.9794,0.00142
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",t(5),20,0.9555,0.004611
+"normal approximation, jackknife standard error",Asymmetry,t(5),50,0.9531,0.002114
+"percentile bootstrap, 999 resamples",Asymmetry,t(5),50,0.9585,0.00446
+"normal approximation, jackknife standard error",Hypotailedness,t(5),50,0.9044,0.00294
+"percentile bootstrap, 999 resamples",Hypotailedness,t(5),50,0.8965,0.006811
+"normal approximation, jackknife standard error",Extremity,t(5),50,0.9372,0.002426
+"percentile bootstrap, 999 resamples",Extremity,t(5),50,0.8965,0.006811
+"normal approximation, jackknife standard error","Complex Extremity, real part",t(5),50,0.9906,0.000965
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",t(5),50,0.9235,0.005943
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",t(5),50,0.991,0.0009444
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",t(5),50,0.9205,0.006049
+"normal approximation, jackknife standard error",Asymmetry,t(5),100,0.9497,0.002186
+"percentile bootstrap, 999 resamples",Asymmetry,t(5),100,0.942,0.005227
+"normal approximation, jackknife standard error",Hypotailedness,t(5),100,0.9036,0.002951
+"percentile bootstrap, 999 resamples",Hypotailedness,t(5),100,0.893,0.006912
+"normal approximation, jackknife standard error",Extremity,t(5),100,0.9273,0.002596
+"percentile bootstrap, 999 resamples",Extremity,t(5),100,0.893,0.006912
+"normal approximation, jackknife standard error","Complex Extremity, real part",t(5),100,0.9936,0.0007974
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",t(5),100,0.91,0.006399
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",t(5),100,0.9919,0.0008963
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",t(5),100,0.9105,0.006383
+"normal approximation, jackknife standard error",Asymmetry,t(5),200,0.9515,0.002148
+"percentile bootstrap, 999 resamples",Asymmetry,t(5),200,0.952,0.00478
+"normal approximation, jackknife standard error",Hypotailedness,t(5),200,0.9036,0.002951
+"percentile bootstrap, 999 resamples",Hypotailedness,t(5),200,0.8935,0.006898
+"normal approximation, jackknife standard error",Extremity,t(5),200,0.9184,0.002738
+"percentile bootstrap, 999 resamples",Extremity,t(5),200,0.8935,0.006898
+"normal approximation, jackknife standard error","Complex Extremity, real part",t(5),200,0.9924,0.0008685
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",t(5),200,0.9075,0.006479
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",t(5),200,0.9922,0.0008797
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",t(5),200,0.902,0.006648
+"normal approximation, jackknife standard error",Asymmetry,t(5),500,0.9512,0.002154
+"percentile bootstrap, 999 resamples",Asymmetry,t(5),500,0.952,0.00478
+"normal approximation, jackknife standard error",Hypotailedness,t(5),500,0.9162,0.002771
+"percentile bootstrap, 999 resamples",Hypotailedness,t(5),500,0.9155,0.006219
+"normal approximation, jackknife standard error",Extremity,t(5),500,0.9254,0.002627
+"percentile bootstrap, 999 resamples",Extremity,t(5),500,0.9155,0.006219
+"normal approximation, jackknife standard error","Complex Extremity, real part",t(5),500,0.9908,0.0009547
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",t(5),500,0.91,0.006399
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",t(5),500,0.9922,0.0008797
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",t(5),500,0.9225,0.005979
+"normal approximation, jackknife standard error",Asymmetry,t(5),1000,0.9497,0.002186
+"percentile bootstrap, 999 resamples",Asymmetry,t(5),1000,0.9525,0.004756
+"normal approximation, jackknife standard error",Hypotailedness,t(5),1000,0.9193,0.002724
+"percentile bootstrap, 999 resamples",Hypotailedness,t(5),1000,0.9125,0.006318
+"normal approximation, jackknife standard error",Extremity,t(5),1000,0.9267,0.002606
+"percentile bootstrap, 999 resamples",Extremity,t(5),1000,0.9125,0.006318
+"normal approximation, jackknife standard error","Complex Extremity, real part",t(5),1000,0.9918,0.0009018
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",t(5),1000,0.9065,0.00651
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",t(5),1000,0.992,0.0008908
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",t(5),1000,0.9275,0.005798
+"normal approximation, jackknife standard error",Asymmetry,t(5),2000,0.9526,0.002125
+"percentile bootstrap, 999 resamples",Asymmetry,t(5),2000,0.9485,0.004942
+"normal approximation, jackknife standard error",Hypotailedness,t(5),2000,0.9246,0.00264
+"percentile bootstrap, 999 resamples",Hypotailedness,t(5),2000,0.918,0.006135
+"normal approximation, jackknife standard error",Extremity,t(5),2000,0.9287,0.002573
+"percentile bootstrap, 999 resamples",Extremity,t(5),2000,0.918,0.006135
+"normal approximation, jackknife standard error","Complex Extremity, real part",t(5),2000,0.9922,0.0008797
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",t(5),2000,0.9105,0.006383
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",t(5),2000,0.99,0.000995
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",t(5),2000,0.9145,0.006253
+"normal approximation, jackknife standard error",Asymmetry,exponential(1),20,0.943,0.002318
+"percentile bootstrap, 999 resamples",Asymmetry,exponential(1),20,0.9515,0.004804
+"normal approximation, jackknife standard error",Hypotailedness,exponential(1),20,0.8852,0.003188
+"percentile bootstrap, 999 resamples",Hypotailedness,exponential(1),20,0.932,0.005629
+"normal approximation, jackknife standard error",Extremity,exponential(1),20,0.9306,0.002541
+"percentile bootstrap, 999 resamples",Extremity,exponential(1),20,0.932,0.005629
+"normal approximation, jackknife standard error","Complex Extremity, real part",exponential(1),20,0.9679,0.001763
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",exponential(1),20,0.952,0.00478
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",exponential(1),20,0.9709,0.001681
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",exponential(1),20,0.999,0.0007068
+"normal approximation, jackknife standard error",Asymmetry,exponential(1),50,0.9449,0.002282
+"percentile bootstrap, 999 resamples",Asymmetry,exponential(1),50,0.9505,0.00485
+"normal approximation, jackknife standard error",Hypotailedness,exponential(1),50,0.8894,0.003136
+"percentile bootstrap, 999 resamples",Hypotailedness,exponential(1),50,0.9,0.006708
+"normal approximation, jackknife standard error",Extremity,exponential(1),50,0.9174,0.002753
+"percentile bootstrap, 999 resamples",Extremity,exponential(1),50,0.9,0.006708
+"normal approximation, jackknife standard error","Complex Extremity, real part",exponential(1),50,0.9824,0.001315
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",exponential(1),50,0.9375,0.005413
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",exponential(1),50,0.9901,0.00099
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",exponential(1),50,0.9985,0.0008654
+"normal approximation, jackknife standard error",Asymmetry,exponential(1),100,0.9504,0.002171
+"percentile bootstrap, 999 resamples",Asymmetry,exponential(1),100,0.95,0.004873
+"normal approximation, jackknife standard error",Hypotailedness,exponential(1),100,0.9036,0.002951
+"percentile bootstrap, 999 resamples",Hypotailedness,exponential(1),100,0.89,0.006996
+"normal approximation, jackknife standard error",Extremity,exponential(1),100,0.9272,0.002598
+"percentile bootstrap, 999 resamples",Extremity,exponential(1),100,0.89,0.006996
+"normal approximation, jackknife standard error","Complex Extremity, real part",exponential(1),100,0.9856,0.001191
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",exponential(1),100,0.9315,0.005648
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",exponential(1),100,0.9967,0.0005735
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",exponential(1),100,0.9955,0.001497
+"normal approximation, jackknife standard error",Asymmetry,exponential(1),200,0.9512,0.002154
+"percentile bootstrap, 999 resamples",Asymmetry,exponential(1),200,0.9505,0.00485
+"normal approximation, jackknife standard error",Hypotailedness,exponential(1),200,0.911,0.002847
+"percentile bootstrap, 999 resamples",Hypotailedness,exponential(1),200,0.9075,0.006479
+"normal approximation, jackknife standard error",Extremity,exponential(1),200,0.9243,0.002645
+"percentile bootstrap, 999 resamples",Extremity,exponential(1),200,0.9075,0.006479
+"normal approximation, jackknife standard error","Complex Extremity, real part",exponential(1),200,0.9868,0.001141
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",exponential(1),200,0.9305,0.005686
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",exponential(1),200,0.9988,0.0003462
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",exponential(1),200,0.9975,0.001117
+"normal approximation, jackknife standard error",Asymmetry,exponential(1),500,0.9511,0.002157
+"percentile bootstrap, 999 resamples",Asymmetry,exponential(1),500,0.937,0.005433
+"normal approximation, jackknife standard error",Hypotailedness,exponential(1),500,0.9305,0.002543
+"percentile bootstrap, 999 resamples",Hypotailedness,exponential(1),500,0.916,0.006203
+"normal approximation, jackknife standard error",Extremity,exponential(1),500,0.9371,0.002428
+"percentile bootstrap, 999 resamples",Extremity,exponential(1),500,0.916,0.006203
+"normal approximation, jackknife standard error","Complex Extremity, real part",exponential(1),500,0.9894,0.001024
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",exponential(1),500,0.9395,0.005331
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",exponential(1),500,0.9993,0.0002645
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",exponential(1),500,0.9835,0.002848
+"normal approximation, jackknife standard error",Asymmetry,exponential(1),1000,0.9473,0.002234
+"percentile bootstrap, 999 resamples",Asymmetry,exponential(1),1000,0.9525,0.004756
+"normal approximation, jackknife standard error",Hypotailedness,exponential(1),1000,0.9331,0.002498
+"percentile bootstrap, 999 resamples",Hypotailedness,exponential(1),1000,0.933,0.005591
+"normal approximation, jackknife standard error",Extremity,exponential(1),1000,0.9353,0.00246
+"percentile bootstrap, 999 resamples",Extremity,exponential(1),1000,0.933,0.005591
+"normal approximation, jackknife standard error","Complex Extremity, real part",exponential(1),1000,0.9897,0.00101
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",exponential(1),1000,0.9435,0.005163
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",exponential(1),1000,0.9994,0.0002449
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",exponential(1),1000,0.98,0.00313
+"normal approximation, jackknife standard error",Asymmetry,exponential(1),2000,0.9515,0.002148
+"percentile bootstrap, 999 resamples",Asymmetry,exponential(1),2000,0.9455,0.005076
+"normal approximation, jackknife standard error",Hypotailedness,exponential(1),2000,0.9379,0.002413
+"percentile bootstrap, 999 resamples",Hypotailedness,exponential(1),2000,0.9345,0.005532
+"normal approximation, jackknife standard error",Extremity,exponential(1),2000,0.9386,0.002401
+"percentile bootstrap, 999 resamples",Extremity,exponential(1),2000,0.9345,0.005532
+"normal approximation, jackknife standard error","Complex Extremity, real part",exponential(1),2000,0.9907,0.0009599
+"percentile bootstrap, 999 resamples","Complex Extremity, real part",exponential(1),2000,0.951,0.004827
+"normal approximation, jackknife standard error","Complex Extremity, imaginary part",exponential(1),2000,0.9993,0.0002645
+"percentile bootstrap, 999 resamples","Complex Extremity, imaginary part",exponential(1),2000,0.9705,0.003784

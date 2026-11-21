@@ -1,0 +1,97 @@
+measure,distribution,n,growth exponent of the standardised shift
+Asymmetry,"normal(0,1)",100,0.9504899940408209
+Hypotailedness,"normal(0,1)",100,0.6276151106390809
+Extremity,"normal(0,1)",100,0.25478040501429133
+"Complex Extremity, real part","normal(0,1)",100,0.12995378438907954
+"Complex Extremity, imaginary part","normal(0,1)",100,1.173632717996203
+moment skewness,"normal(0,1)",100,0.43016510897338
+L-skewness,"normal(0,1)",100,0.6943761852969778
+TL-skewness,"normal(0,1)",100,-3.8519745062818216e-16
+quartile skewness,"normal(0,1)",100,-3.380332797837542e-16
+medcouple,"normal(0,1)",100,-1.6349471986822496e-16
+mean-based skewness 2F(mean) - 1,"normal(0,1)",100,0.9831017419642659
+excess kurtosis,"normal(0,1)",100,0.5807476443582426
+L-kurtosis,"normal(0,1)",100,0.7131651235498133
+TL-kurtosis,"normal(0,1)",100,-4.159705056629311e-16
+octile kurtosis,"normal(0,1)",100,-4.0547224534821834e-16
+Geary ratio,"normal(0,1)",100,0.5316445488337286
+Asymmetry,"normal(0,1)",1000,1.1377945095516016
+Hypotailedness,"normal(0,1)",1000,1.3354704346660948
+Extremity,"normal(0,1)",1000,0.9563355865217904
+"Complex Extremity, real part","normal(0,1)",1000,0.6896082927654927
+"Complex Extremity, imaginary part","normal(0,1)",1000,0.9890113896482309
+moment skewness,"normal(0,1)",1000,1.5098145809441939
+L-skewness,"normal(0,1)",1000,1.008853143094654
+TL-skewness,"normal(0,1)",1000,-3.9653753890069282e-16
+quartile skewness,"normal(0,1)",1000,-1.0000735605266562e-15
+medcouple,"normal(0,1)",1000,-5.390228464817096e-16
+mean-based skewness 2F(mean) - 1,"normal(0,1)",1000,1.0530546333754085
+excess kurtosis,"normal(0,1)",1000,2.0211107862333475
+L-kurtosis,"normal(0,1)",1000,1.0275813493812413
+TL-kurtosis,"normal(0,1)",1000,-4.1205646996742905e-16
+octile kurtosis,"normal(0,1)",1000,-4.689541133973862e-16
+Geary ratio,"normal(0,1)",1000,1.2734820330718444
+Asymmetry,t(5),100,0.8882976350084648
+Hypotailedness,t(5),100,0.6095650787774027
+Extremity,t(5),100,0.25031237932871203
+"Complex Extremity, real part",t(5),100,0.12405571053184826
+"Complex Extremity, imaginary part",t(5),100,1.1563713935537638
+moment skewness,t(5),100,0.4240321904630519
+L-skewness,t(5),100,0.6786494375323808
+TL-skewness,t(5),100,0.0003190627151945142
+quartile skewness,t(5),100,-4.048525507789681e-16
+medcouple,t(5),100,0.00012736684241823124
+mean-based skewness 2F(mean) - 1,t(5),100,0.933105164158577
+excess kurtosis,t(5),100,0.5904088450724823
+L-kurtosis,t(5),100,0.7082604134293522
+TL-kurtosis,t(5),100,0.000607015978980094
+octile kurtosis,t(5),100,-3.1318896684015183e-16
+Geary ratio,t(5),100,0.5263472262646988
+Asymmetry,t(5),1000,1.120415632750031
+Hypotailedness,t(5),1000,1.3370033491983828
+Extremity,t(5),1000,0.9568306410881338
+"Complex Extremity, real part",t(5),1000,0.6839084827617696
+"Complex Extremity, imaginary part",t(5),1000,1.0289382170813004
+moment skewness,t(5),1000,1.506242610392013
+L-skewness,t(5),1000,1.0019959674859065
+TL-skewness,t(5),1000,0.0004221582574143517
+quartile skewness,t(5),1000,-4.66642785460096e-16
+medcouple,t(5),1000,5.043025017648039e-05
+mean-based skewness 2F(mean) - 1,t(5),1000,1.0387448673921773
+excess kurtosis,t(5),1000,2.0518784401101016
+L-kurtosis,t(5),1000,1.0323034600916596
+TL-kurtosis,t(5),1000,0.0007827254014831077
+octile kurtosis,t(5),1000,-3.833430559527163e-16
+Geary ratio,t(5),1000,1.2805910197828354
+Asymmetry,exponential(1),100,0.8866015926032836
+Hypotailedness,exponential(1),100,0.6533006699051753
+Extremity,exponential(1),100,0.29505890201438717
+"Complex Extremity, real part",exponential(1),100,0.22403026571761972
+"Complex Extremity, imaginary part",exponential(1),100,1.0302252421584563
+moment skewness,exponential(1),100,0.4980337196507226
+L-skewness,exponential(1),100,0.7022732474731371
+TL-skewness,exponential(1),100,9.212886044909019e-05
+quartile skewness,exponential(1),100,-2.265704910193462e-16
+medcouple,exponential(1),100,-3.009439978104015e-16
+mean-based skewness 2F(mean) - 1,exponential(1),100,0.8902717535320283
+excess kurtosis,exponential(1),100,0.6031142044876026
+L-kurtosis,exponential(1),100,0.7290353258217661
+TL-kurtosis,exponential(1),100,0.0001398279427666879
+octile kurtosis,exponential(1),100,-3.0633474138513633e-16
+Geary ratio,exponential(1),100,0.5628090674741734
+Asymmetry,exponential(1),1000,1.1581219308930197
+Hypotailedness,exponential(1),1000,1.378629341273546
+Extremity,exponential(1),1000,1.0070902074475843
+"Complex Extremity, real part",exponential(1),1000,0.8800573777271362
+"Complex Extremity, imaginary part",exponential(1),1000,0.9540968910679332
+moment skewness,exponential(1),1000,1.6277386396636384
+L-skewness,exponential(1),1000,1.0405379542407498
+TL-skewness,exponential(1),1000,7.438841140617315e-05
+quartile skewness,exponential(1),1000,-4.140571319073007e-16
+medcouple,exponential(1),1000,-9.848284379188415e-16
+mean-based skewness 2F(mean) - 1,exponential(1),1000,1.0574010345077316
+excess kurtosis,exponential(1),1000,2.0667707495378282
+L-kurtosis,exponential(1),1000,1.0671859723733195
+TL-kurtosis,exponential(1),1000,0.00011212675342593654
+octile kurtosis,exponential(1),1000,-5.771875797664196e-16
+Geary ratio,exponential(1),1000,1.3162987120910963
