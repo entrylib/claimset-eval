@@ -75,9 +75,9 @@
       "kind": "comparison",
       "question": "Which version or versions of the smooth package for R does each of the five papers report using?",
       "answer": "Complex exponential smoothing: 3.1.2. Vector exponential smoothing: 3.1.1 (cited for adam()). Staying positive: 3.2.0. Monitoring: 4.0.2 (cited for es()). Multi-step estimators: 2.5.3 for the simulations and 3.2.1 for the temperature example.",
-      "notes": "One version per paper, two for the multi-step estimators paper; versions given only in the reference lists count (VES: Svetunkov 2021b, 3.1.1, in both the published version and the accepted manuscript; monitoring: Svetunkov 2024, 4.0.2). in_claimset false: the claimsets give only CES 3.1.2 (D17) and Staying positive 3.2.0 (E7, A1); all five stay required by design, since the question measures what the claimsets leave out.",
+      "notes": "One version per paper, two for the multi-step estimators paper; versions given only in the reference lists count (VES: Svetunkov 2021b, 3.1.1, in both the published version and the accepted manuscript; monitoring: Svetunkov 2024, 4.0.2). in_claimset true from the claimset corrections of 2026-11-23, which record every package the papers name with its version (software artefacts with CRAN DOIs): CES 3.1.2, VES 3.1.1, Staying positive 3.2.0, monitoring 4.0.2, multi-step estimators 2.5.3 and 3.2.1.",
       "marking": "Required: 'Complex exponential smoothing': 3.1.2; 'A new taxonomy for vector exponential smoothing': 3.1.1; 'Staying positive': 3.2.0; 'Online detection of forecast model inadequacies using forecast errors': 4.0.2; 'Multi-step estimators and shrinkage effect in time series models': 2.5.3 for the simulations and 3.2.1 for the temperature example. Also correct: saying that a version is given only with the citation of the package. Wrong: another version for any work.",
-      "in_claimset": false
+      "in_claimset": true
     },
     {
       "id": "C3",
