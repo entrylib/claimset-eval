@@ -1,0 +1,24 @@
+0.0133   rejection rate under no effect, one-sided | 25 | binary | 0.7 | 300 | linear mixed, REML | Satterthwaite t | 0.01
+0.0067   rejection rate under no effect, one-sided | 25 | binary | 0.7 | 300 | linear mixed, REML | Kenward-Roger t | 0.01
+0.0200   rejection rate under no effect, one-sided | 25 | binary | 0.7 | 300 | logistic mixed, provider and model slopes | Wald t, 3 df | 0.01
+0.0100   rejection rate under no effect, one-sided | 25 | binary | 0.7 | 300 | linear mixed, REML | Satterthwaite t | 0.0033
+0.0000   rejection rate under no effect, one-sided | 25 | binary | 0.7 | 300 | linear mixed, REML | Kenward-Roger t | 0.0033
+0.0200   rejection rate under no effect, one-sided | 25 | binary | 0.7 | 300 | logistic mixed, provider and model slopes | Wald t, 3 df | 0.0033
+9.8935   median degrees of freedom | 25 | binary | 0.7 | 300 | linear mixed, REML | Satterthwaite t
+6.9338   median degrees of freedom | 25 | binary | 0.7 | 300 | linear mixed, REML | Kenward-Roger t
+0.8433   share of singular fits | 25 | binary | 0.7 | 300 | linear mixed, REML
+0.1567   share of singular fits | 25 | binary | 0.7 | 300 | logistic mixed, provider and model slopes
+0.0000   share of failed fits | 25 | binary | 0.7 | 300 | linear mixed, REML
+0.0000   share of failed fits | 25 | binary | 0.7 | 300 | logistic mixed, provider and model slopes
+0.0267   rejection rate under no effect, one-sided | 75 | score | 0.7 | 300 | linear mixed, REML | Satterthwaite t | 0.01
+0.0267   rejection rate under no effect, one-sided | 75 | score | 0.7 | 300 | linear mixed, REML | Kenward-Roger t | 0.01
+0.0033   rejection rate under no effect, one-sided | 75 | score | 0.7 | 300 | logistic mixed, provider and model slopes | Wald t, 3 df | 0.01
+0.0067   rejection rate under no effect, one-sided | 75 | score | 0.7 | 300 | linear mixed, REML | Satterthwaite t | 0.0033
+0.0067   rejection rate under no effect, one-sided | 75 | score | 0.7 | 300 | linear mixed, REML | Kenward-Roger t | 0.0033
+0.0000   rejection rate under no effect, one-sided | 75 | score | 0.7 | 300 | logistic mixed, provider and model slopes | Wald t, 3 df | 0.0033
+8.4312   median degrees of freedom | 75 | score | 0.7 | 300 | linear mixed, REML | Satterthwaite t
+8.3743   median degrees of freedom | 75 | score | 0.7 | 300 | linear mixed, REML | Kenward-Roger t
+0.5033   share of singular fits | 75 | score | 0.7 | 300 | linear mixed, REML
+0.3933   share of singular fits | 75 | score | 0.7 | 300 | logistic mixed, provider and model slopes
+0.0000   share of failed fits | 75 | score | 0.7 | 300 | linear mixed, REML
+0.0000   share of failed fits | 75 | score | 0.7 | 300 | logistic mixed, provider and model slopes
