@@ -1,0 +1,30 @@
+  0.0230  rejection rate under no effect, one-sided | flag | 25 | 0 | 1000 | Wald z | 0.0167
+  0.0180  rejection rate under no effect, one-sided | flag | 25 | 0 | 1000 | t | 0.0167
+ -0.0098  mean raw difference, claimset minus PDF | flag | 25 | 0 | 1000
+  0.0090  share of singular fits | flag | 25 | 0 | 1000
+  0.0000  share of failed fits | flag | 25 | 0 | 1000
+  0.3767  power, one-sided | flag | 25 | -0.5 | 300 | Wald z | 0.0167
+  0.3167  power, one-sided | flag | 25 | -0.5 | 300 | t | 0.0167
+ -0.0936  mean raw difference, claimset minus PDF | flag | 25 | -0.5 | 300
+  0.0100  share of singular fits | flag | 25 | -0.5 | 300
+  0.0000  share of failed fits | flag | 25 | -0.5 | 300
+  0.8767  power, one-sided | flag | 25 | -1 | 300 | Wald z | 0.0167
+  0.8633  power, one-sided | flag | 25 | -1 | 300 | t | 0.0167
+ -0.1799  mean raw difference, claimset minus PDF | flag | 25 | -1 | 300
+  0.0067  share of singular fits | flag | 25 | -1 | 300
+  0.0000  share of failed fits | flag | 25 | -1 | 300
+  0.0210  rejection rate under no effect, one-sided | score | 75 | 0 | 1000 | Wald z | 0.0167
+  0.0170  rejection rate under no effect, one-sided | score | 75 | 0 | 1000 | t | 0.0167
+ -0.0100  mean raw difference, claimset minus PDF | score | 75 | 0 | 1000
+  0.0010  share of singular fits | score | 75 | 0 | 1000
+  0.0000  share of failed fits | score | 75 | 0 | 1000
+  0.5533  power, one-sided | score | 75 | 0.3 | 300 | Wald z | 0.0167
+  0.5400  power, one-sided | score | 75 | 0.3 | 300 | t | 0.0167
+  0.0364  mean raw difference, claimset minus PDF | score | 75 | 0.3 | 300
+  0.0000  share of singular fits | score | 75 | 0.3 | 300
+  0.0000  share of failed fits | score | 75 | 0.3 | 300
+  0.9267  power, one-sided | score | 75 | 0.5 | 300 | Wald z | 0.0167
+  0.9200  power, one-sided | score | 75 | 0.5 | 300 | t | 0.0167
+  0.0665  mean raw difference, claimset minus PDF | score | 75 | 0.5 | 300
+  0.0000  share of singular fits | score | 75 | 0.5 | 300
+  0.0000  share of failed fits | score | 75 | 0.5 | 300
