@@ -1,0 +1,42 @@
+0.0467                                        25 | binary | 0.7 | 300 | glmer | Wald z | 0.01
+0.0367                                        25 | binary | 0.7 | 300 | glmer | Wald z | 0.0033
+0.0267                                        25 | binary | 0.7 | 300 | glmer | Wald t, 6 df | 0.01
+0.0200                                        25 | binary | 0.7 | 300 | glmer | Wald t, 6 df | 0.0033
+0.0200                                        25 | binary | 0.7 | 300 | glmer | Wald t, 3 df | 0.01
+0.0200                                        25 | binary | 0.7 | 300 | glmer | Wald t, 3 df | 0.0033
+0.0733                                        25 | binary | 0.7 | 300 | glmer
+0.0333                                        25 | binary | 0.7 | 300 | bglmer | Wald z | 0.01
+0.0233                                        25 | binary | 0.7 | 300 | bglmer | Wald z | 0.0033
+0.0167                                        25 | binary | 0.7 | 300 | bglmer | Wald t, 6 df | 0.01
+0.0167                                        25 | binary | 0.7 | 300 | bglmer | Wald t, 6 df | 0.0033
+0.0167                                        25 | binary | 0.7 | 300 | bglmer | Wald t, 3 df | 0.01
+0.0167                                        25 | binary | 0.7 | 300 | bglmer | Wald t, 3 df | 0.0033
+0.0000                                        25 | binary | 0.7 | 300 | bglmer
+0.0133                                        25 | binary | 0.7 | 300 | bglmer_prov | Wald z | 0.01
+0.0133                                        25 | binary | 0.7 | 300 | bglmer_prov | Wald z | 0.0033
+0.0133                                        25 | binary | 0.7 | 300 | bglmer_prov | Wald t, 6 df | 0.01
+0.0133                                        25 | binary | 0.7 | 300 | bglmer_prov | Wald t, 6 df | 0.0033
+0.0133                                        25 | binary | 0.7 | 300 | bglmer_prov | Wald t, 3 df | 0.01
+0.0133                                        25 | binary | 0.7 | 300 | bglmer_prov | Wald t, 3 df | 0.0033
+0.0000                                        25 | binary | 0.7 | 300 | bglmer_prov
+0.0700                                        75 | score as 2 points | 0.7 | 300 | glmer | Wald z | 0.01
+0.0467                                        75 | score as 2 points | 0.7 | 300 | glmer | Wald z | 0.0033
+0.0267                                        75 | score as 2 points | 0.7 | 300 | glmer | Wald t, 6 df | 0.01
+0.0067                                        75 | score as 2 points | 0.7 | 300 | glmer | Wald t, 6 df | 0.0033
+0.0067                                        75 | score as 2 points | 0.7 | 300 | glmer | Wald t, 3 df | 0.01
+0.0000                                        75 | score as 2 points | 0.7 | 300 | glmer | Wald t, 3 df | 0.0033
+0.2133                                        75 | score as 2 points | 0.7 | 300 | glmer
+0.0567                                        75 | score as 2 points | 0.7 | 300 | bglmer | Wald z | 0.01
+0.0367                                        75 | score as 2 points | 0.7 | 300 | bglmer | Wald z | 0.0033
+0.0200                                        75 | score as 2 points | 0.7 | 300 | bglmer | Wald t, 6 df | 0.01
+0.0167                                        75 | score as 2 points | 0.7 | 300 | bglmer | Wald t, 6 df | 0.0033
+0.0133                                        75 | score as 2 points | 0.7 | 300 | bglmer | Wald t, 3 df | 0.01
+0.0100                                        75 | score as 2 points | 0.7 | 300 | bglmer | Wald t, 3 df | 0.0033
+0.0000                                        75 | score as 2 points | 0.7 | 300 | bglmer
+0.0267                                        75 | score as 2 points | 0.7 | 300 | bglmer_prov | Wald z | 0.01
+0.0200                                        75 | score as 2 points | 0.7 | 300 | bglmer_prov | Wald z | 0.0033
+0.0167                                        75 | score as 2 points | 0.7 | 300 | bglmer_prov | Wald t, 6 df | 0.01
+0.0133                                        75 | score as 2 points | 0.7 | 300 | bglmer_prov | Wald t, 6 df | 0.0033
+0.0133                                        75 | score as 2 points | 0.7 | 300 | bglmer_prov | Wald t, 3 df | 0.01
+0.0133                                        75 | score as 2 points | 0.7 | 300 | bglmer_prov | Wald t, 3 df | 0.0033
+0.0000                                        75 | score as 2 points | 0.7 | 300 | bglmer_prov
