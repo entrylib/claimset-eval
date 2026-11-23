@@ -1,0 +1,6 @@
+0.1360  rejection rate under no effect, one-sided | population | alm, normal, scale ~ condition + model | Wald z | 0.0167 | 1000
+0.1230  rejection rate under no effect, one-sided | population | alm, normal, scale ~ condition + model | Wald z | 0.01 | 1000
+0.0000  share of failed fits | population | 1000
+0.0020  rejection rate under no effect, one-sided | sample | alm, normal, scale ~ condition + model | Wald z | 0.0167 | 1000
+0.0010  rejection rate under no effect, one-sided | sample | alm, normal, scale ~ condition + model | Wald z | 0.01 | 1000
+0.0000  share of failed fits | sample | 1000

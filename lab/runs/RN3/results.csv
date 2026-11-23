@@ -1,0 +1,7 @@
+variable,value,unit,interval,uncertainty,conditions
+"rejection rate under no effect, one-sided",0.136,,,,"{""model"":""alm, normal, scale ~ condition + model"",""nominal alpha"":0.0167,""null"":""population"",""replications"":1000,""test"":""Wald z""}"
+"rejection rate under no effect, one-sided",0.123,,,,"{""model"":""alm, normal, scale ~ condition + model"",""nominal alpha"":0.01,""null"":""population"",""replications"":1000,""test"":""Wald z""}"
+share of failed fits,0,,,,"{""null"":""population"",""replications"":1000}"
+"rejection rate under no effect, one-sided",0.002,,,,"{""model"":""alm, normal, scale ~ condition + model"",""nominal alpha"":0.0167,""null"":""sample"",""replications"":1000,""test"":""Wald z""}"
+"rejection rate under no effect, one-sided",0.001,,,,"{""model"":""alm, normal, scale ~ condition + model"",""nominal alpha"":0.01,""null"":""sample"",""replications"":1000,""test"":""Wald z""}"
+share of failed fits,0,,,,"{""null"":""sample"",""replications"":1000}"
