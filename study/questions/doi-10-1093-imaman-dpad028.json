@@ -9,8 +9,9 @@
       "id": "Q1",
       "type": "lookup",
       "question": "In simulation experiment 1, which variable had the largest effect on the bias of the point forecasts, which had the smallest, and in what order did the others fall?",
-      "answer": "All five variables increase the bias (the percentage difference between the conditional expectation and the point forecast) (all regression coefficients positive, 99.9% intervals excluding zero; Table 1). The damping parameter φ has the largest effect (6.167), followed by β (3.739), the forecast horizon (3.656) and the scale σ (2.755); α has the smallest (1.578). All variables were scaled to lie between 0 and 1.",
+      "answer": "All five variables increase the bias (the percentage difference between the conditional expectation and the point forecast) (all regression coefficients positive, 99.9% intervals excluding zero). The damping parameter φ has the largest effect (6.167), followed by β (3.739), the forecast horizon (3.656) and the scale σ (2.755); α has the smallest (1.578). All variables were scaled to lie between 0 and 1.",
       "notes": "Must give φ as the largest and α as the smallest, in the order of Table 1. The Conclusion [p19.2] (and the claimset's summary) names the error variance after β. The reference order is that of Table 1 and [p8.4] (β, horizon, σ). An answer that puts σ before the horizon, following [p19.2], is partly right.",
+      "marking": "Required: φ (the damping parameter) has the largest effect and α the smallest; the others in the order β, then the forecast horizon, then the scale σ. An answer that puts σ before the horizon earns partial credit (the authors' own summary names the error variance right after β). Not required: the coefficient values, the confidence level, the scaling of the variables. Wrong: any other variable named as largest or smallest.",
       "claims": [
         "C3"
       ],
@@ -22,6 +23,7 @@
       "question": "How was simulation experiment 1 set up?",
       "answer": "Series of 100 observations were generated from ETS(M,Md,N) with an Inverse Gaussian error distribution (sim.es() from smooth 3.2.0), and the same model with the known parameters was applied to produce point forecasts and conditional expectations. The grid was σ ∈ {0.01, 0.05, 0.1, 0.5, 1}, α, β ∈ {0.1, 0.2, 0.5}, φ ∈ {0.5, 0.9, 0.95, 1} and h ∈ {10, 50, 100}, with 10,000 iterations. The percentage difference between the conditional expectation and the point forecast was aggregated over the horizon and regressed on the scaled variables (a Box-Cox transformed odds regression with alm() from greybox).",
       "notes": "Must give the model, the Inverse Gaussian distribution, known parameters and the varied factors.",
+      "marking": "Required: ETS(M,Md,N) as the generating and applied model, the Inverse Gaussian error distribution, the known (true) parameters used for forecasting, and the varied factors (σ, α, β, φ and the horizon h). Not required: the exact grid values, the series length, the number of iterations, the software and the regression used to summarise the results; giving them correctly is also correct.",
       "claims": [
         "C3"
       ],
@@ -33,6 +35,7 @@
       "question": "Which model and error distribution did automatic selection choose for the electric vehicle charging data, with what AICc, and how did it compare with an additive model?",
       "answer": "ETS(M,Md,M) with the Gamma distribution, selected by AICc among pure multiplicative models and distributions with auto.adam(), with AICc 6,398.570. An ETS(A,Ad,A) model with the Normal distribution had AICc 6,418.296, so the pure multiplicative model was preferred.",
       "notes": "A right answer need not give the estimated parameters (α = 0.1683, β = 0, γ = 0.0013, φ = 0.9925, σ = 0.276).",
+      "marking": "Required: ETS(M,Md,M) with the Gamma distribution, its AICc of 6,398.570, and that the additive ETS(A,Ad,A) model with the Normal distribution had a higher AICc (6,418.296), so the pure multiplicative model was preferred. Not required: the estimated parameters (α = 0.1683, β = 0, γ = 0.0013, φ = 0.9925, σ = 0.276); how the selection was done. Wrong: a different model, distribution or AICc value.",
       "claims": [
         "C11"
       ],
@@ -42,8 +45,9 @@
       "id": "Q4",
       "type": "lookup",
       "question": "In simulation experiment 2, which approach had the lowest mean scaled pinball score for each data generating process?",
-      "answer": "Akram's approach (ETS(A,Ad,A) on the logarithms of the data) on every one of the five data generating processes: 5.110 on Normal, 5.052 on Inverse Gaussian, 5.074 on Gamma, 9.180 on Log-Normal and 5.089 on Akram's data (Table 4).",
+      "answer": "Akram's approach (ETS(A,Ad,A) on the logarithms of the data) on every one of the five data generating processes: 5.110 on Normal, 5.052 on Inverse Gaussian, 5.074 on Gamma, 9.180 on Log-Normal and 5.089 on Akram's data.",
       "notes": "Must name Akram's approach for all five.",
+      "marking": "Required: Akram's approach (ETS(A,Ad,A) on the logarithms of the data) for all five data generating processes. Not required: the score values. Wrong: any other approach named as lowest for any process.",
       "claims": [
         "C10"
       ],
@@ -55,6 +59,7 @@
       "question": "What restrictions does the paper place on the parameters of the Inverse Gaussian, Log-Normal and Gamma distributions of the error term 1 + ϵt in ETS(M,*,*) models, and why?",
       "answer": "The expectation of 1 + ϵt must equal 1: for the Inverse Gaussian μ = 1, for the Log-Normal μ = −σ²/2, and for the Gamma the shape ξ = 1/σ². This guarantees that the one-step-ahead point forecast equals the expectation of the model, which the construction of the model needs (fitted values are the one-step-ahead forecasts that start the recursion).",
       "notes": "Must give the unit-mean condition and at least the restriction for each distribution. The reason is not required: the claimset does not state it.",
+      "marking": "Required: the expectation of 1 + ϵt must equal 1, and the restriction for each distribution: Inverse Gaussian μ = 1; Log-Normal μ = −σ²/2; Gamma shape ξ = 1/σ². Not required: the reason (that it makes the one-step-ahead point forecast equal the expectation of the model, which the construction of the model needs). Wrong: a wrong restriction for any of the three distributions.",
       "claims": [
         "C4",
         "C12"
@@ -66,6 +71,7 @@
       "type": "lookup",
       "question": "In which cases does the conventional point forecast of a pure multiplicative ETS model coincide with its conditional geometric and arithmetic expectations?",
       "answer": "Only in three cases: for h = 1 in all models; for h ≤ m in non-trended models with multiplicative seasonality; and for the ETS(M,N,N) model.",
+      "marking": "Required: all three cases: h = 1 in all models; h ≤ m in non-trended models with multiplicative seasonality; the ETS(M,N,N) model. Wrong: a missing case, or a case not in this list presented as one of them.",
       "claims": [
         "C2"
       ],
@@ -75,8 +81,9 @@
       "id": "Q7",
       "type": "scope",
       "question": "Does the paper show that Akram's approach gives better quantile forecasts than the ETS models with positive distributions in the tails of the predictive distribution?",
-      "answer": "No. Akram's approach has the lowest mean scaled pinball score overall, but its advantage is in the middle quantiles (between 0.2 and 0.8); below 0.2 and above 0.8 all approaches perform very similarly [p14.9, p16.1]. The authors conclude that Akram's approach has no obvious practical benefit over the ETS models with positive distributions, which are competitive [p16.1].",
+      "answer": "No. Akram's approach has the lowest mean scaled pinball score overall, but its advantage is in the middle quantiles (between 0.2 and 0.8); below 0.2 and above 0.8 all approaches perform very similarly. The authors conclude that Akram's approach has no obvious practical benefit over the ETS models with positive distributions, which are competitive.",
       "notes": "Must say that in the tails the approaches perform very similarly. Overreach if the answer says Akram's approach is better in the tails, or that the positive distributions forecast better than Akram's approach. Not required: that the tails matter more in practice [p14.9, p15.6], that Akram's overall advantage is probably due to estimation difficulties of the pure multiplicative models [p14.5], and that Akram's approach is detached from the ETS framework [p16.1].",
+      "marking": "Required: No; in the tails (below 0.2 and above 0.8) the approaches perform very similarly, and Akram's advantage is in the middle quantiles (0.2 to 0.8). Also correct: that Akram's approach has the lowest mean scaled pinball score overall, and that the authors see no obvious practical benefit of it, calling the ETS models with positive distributions competitive. Not required: that the tails matter more in practice; that Akram's overall advantage is probably due to estimation difficulties of the pure multiplicative models; that Akram's approach is detached from the ETS framework. Wrong (overreach): saying Akram's approach is better in the tails, or that the positive distributions forecast better than Akram's approach.",
       "claims": [
         "C10"
       ],
@@ -86,8 +93,9 @@
       "id": "Q8",
       "type": "scope",
       "question": "In simulation experiment 2, does the ETS model with the distribution that generated the data have the lowest mean scaled pinball score on that data?",
-      "answer": "Not necessarily. For example, on Inverse Gaussian data the Inverse Gaussian model (5.221) is beaten by the Gamma (5.192) and Normal (5.204) models, and on Gamma data the Gamma model (5.231) is beaten by the Normal model (5.193). The paper says the differences between the models are typically small and not statistically significant at the 5% level, except for Akram's approach.",
+      "answer": "Not necessarily. For example, on Inverse Gaussian data the Inverse Gaussian model (5.221) is beaten by the Gamma (5.192) and Normal (5.204) models, and on Gamma data the Gamma model (5.231) is beaten by the Normal model (5.193). The authors state the differences between the models are typically small and not statistically significant at the 5% level, except for Akram's approach.",
       "notes": "Overreach if the answer says the correct distribution always gives the best score. An answer that lists other models beating the matching one (on Inverse Gaussian data also the Log-Normal model, 5.215; on Gamma data also the Inverse Gaussian and Log-Normal models, 5.224) is right.",
+      "marking": "Required: No (not necessarily), with the point that the matching distribution does not always give the lowest score. Also correct: examples such as, on Inverse Gaussian data, the Inverse Gaussian model (5.221) beaten by the Gamma (5.192), Normal (5.204) and Log-Normal (5.215) models; on Gamma data, the Gamma model (5.231) beaten by the Normal (5.193), Inverse Gaussian (5.224) and Log-Normal (5.224) models; that the differences are typically small and not significant at the 5% level, except for Akram's approach. Not required: specific values. Wrong (overreach): saying the correct distribution always gives the best score.",
       "claims": [
         "C17",
         "C9",
@@ -99,8 +107,9 @@
       "id": "Q9",
       "type": "scope",
       "question": "In simulation experiment 2, does the ETS(M,Md,M) model with the distribution selected by AICc for each series have a lower mean scaled pinball score than all four ETS(M,Md,M) models with a fixed distribution, on every data generating process?",
-      "answer": "No. It is lowest on the Inverse Gaussian (5.175), Log-Normal (9.332) and Akram (5.178) data, but the Normal model is lower on the Normal data (5.255 against 5.258) and on the Gamma data (5.193 against 5.208). The paper describes the AICc selection as performing well in the majority of cases [p19.3].",
+      "answer": "No. It is lowest on the Inverse Gaussian (5.175), Log-Normal (9.332) and Akram (5.178) data, but the Normal model is lower on the Normal data (5.255 against 5.258) and on the Gamma data (5.193 against 5.208). The authors describe the AICc selection as performing well in the majority of cases.",
       "notes": "Overreach if the answer says the AICc selection is always best. The last sentence of the reference is not required.",
+      "marking": "Required: No; it is lowest on the Inverse Gaussian (5.175), Log-Normal (9.332) and Akram (5.178) data, but the Normal model is lower on the Normal data (5.255 against 5.258) and on the Gamma data (5.193 against 5.208). Not required: that the authors describe the AICc selection as performing well in the majority of cases. Wrong (overreach): saying the AICc selection is always best.",
       "claims": [
         "C9"
       ],
@@ -110,8 +119,9 @@
       "id": "Q10",
       "type": "scope",
       "question": "Does the paper derive the restriction of the smoothing parameters to [0, 1] for every pure multiplicative ETS model?",
-      "answer": "No. It derives α ≤ 1 for ETS(M,N,N) from the requirement that 1 + αϵt stay positive (assuming α is non-negative) and concludes α ∈ [0, 1] [p12.5–12.7]. For more complicated pure multiplicative models it states that the smoothing parameters should have similar restrictions for the same reasons, without deriving them [p12.8].",
+      "answer": "No. It derives α ≤ 1 for ETS(M,N,N) from the requirement that 1 + αϵt stay positive (assuming α is non-negative) and concludes α ∈ [0, 1]. For more complicated pure multiplicative models it states that the smoothing parameters should have similar restrictions for the same reasons, without deriving them.",
       "notes": "Overreach if the answer says the restriction is proved for all pure multiplicative models.",
+      "marking": "Required: No; the restriction is derived only for ETS(M,N,N) (α ≤ 1 from the requirement that 1 + αϵt stay positive, with α assumed non-negative, giving α ∈ [0, 1]); for the other pure multiplicative models the authors state that similar restrictions should hold, without deriving them. Wrong (overreach): saying the restriction is proved for all pure multiplicative models.",
       "claims": [
         "C14",
         "C13"
@@ -124,6 +134,7 @@
       "question": "Does the electric vehicle charging example show that the selected model forecasts the holdout more accurately than a model with the Normal distribution?",
       "answer": "No accuracy measure is reported for the holdout. The example shows that the selected ETS(M,Md,M) model with the Gamma distribution has a lower AICc than an additive ETS(A,Ad,A) model, and that on the first 49 observations the Normal model gives a 95% prediction interval that covers negative values while the Gamma model gives a reasonable one that does not cover negative values.",
       "notes": "Overreach if the answer claims an accuracy advantage.",
+      "marking": "Required: No; no accuracy measure for the holdout is reported. Also correct: what the example does show: the selected ETS(M,Md,M) model with the Gamma distribution has a lower AICc than an additive ETS(A,Ad,A) model, and on the first 49 observations the Normal model's 95% prediction interval covers negative values while the Gamma model's is reasonable and does not. Wrong (overreach): claiming an accuracy advantage on the holdout.",
       "claims": [
         "C11"
       ],
@@ -133,8 +144,9 @@
       "id": "Q12",
       "type": "evidence",
       "question": "What evidence does the paper give that the conventional point forecast formula of pure multiplicative ETS models should not be used as the conditional expectation, and what limitations of this evidence does the paper itself state?",
-      "answer": "A derivation shows that the point forecast is at most the conditional geometric expectation, which is at most the arithmetic expectation (by Jensen's inequality). An example with ETS(M,M,N) on M3 series N2703 shows the difference growing exponentially with the horizon, and simulation experiment 1 shows it increasing with all five factors studied. Limits stated by the paper: the regression in simulation experiment 1 only shows the direction and relative size of the effects; its specific coefficient values are difficult to interpret.",
+      "answer": "A derivation shows that the point forecast is at most the conditional geometric expectation, which is at most the arithmetic expectation (by Jensen's inequality). An example with ETS(M,M,N) on M3 series N2703 shows the difference growing exponentially with the horizon, and simulation experiment 1 shows it increasing with all five factors studied. Limits stated by the authors: the regression in simulation experiment 1 only shows the direction and relative size of the effects; its specific coefficient values are difficult to interpret.",
       "notes": "Must give the derivation and at least one of the two examples (the M3 series or simulation experiment 1). A right answer need not name the M3 series. Not required: the stated limit on the regression [p7.4, p8.4]. Limits: the claimset's limitation objects are the authors' statements too, so a limit given from the claimset is not wrong. Correct: limits stated in the paper or the claimset, or 'none stated' where the paper states none. Wrong: a limit attributed to the paper that neither document states.",
+      "marking": "Required: the derivation (the point forecast is at most the conditional geometric expectation, which is at most the arithmetic expectation, by Jensen's inequality) and at least one of the two examples: ETS(M,M,N) on one M3 series, where the difference grows exponentially with the horizon; or simulation experiment 1, where it increases with all five factors studied. Not required: naming the M3 series; giving limitations. Acceptable limitations: the regression in simulation experiment 1 shows only the direction and relative size of the effects, and its coefficient values are difficult to interpret; simulation experiment 1 uses only ETS(M,Md,N) with Inverse Gaussian errors and known true parameters; conditional expectations of pure multiplicative models other than ETS(M,N,N) have no closed form and must be obtained by simulation. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
       "claims": [
         "C1",
         "C2",
@@ -149,6 +161,7 @@
       "question": "Why does the paper say that the Log-Normal distribution should be used with care in ETS(M,*,*) models?",
       "answer": "Because of the restriction μ = −σ²/2, the maximum likelihood estimate of the scale comes from an equation with two roots: the derivative of the log-likelihood has two roots, so the likelihood is not convex, which may violate the identification and compactness assumptions and make the estimates inconsistent. The closed-form estimate also exists only when the mean of log²(1 + ϵt) is at most 1; otherwise the scale must be found by numerical optimisation.",
       "notes": "Must mention the non-convex likelihood. The claimset (C7) treats the printed root formula as superseded by a corrected one. An answer that names the non-convex likelihood and says the printed scale formula is replaced, without the two roots or the ≤ 1 condition, is right.",
+      "marking": "Required: the likelihood is not convex (because of the restriction μ = −σ²/2), which may make the estimates inconsistent. Also correct, as equal alternatives for the scale estimate: either that its formula has two roots and exists in closed form only when the mean of log²(1 + ϵt) is at most 1 (otherwise numerical optimisation is needed), or that the scale is given by a corrected formula rather than the quadratic root formula. Not required: the two roots, the ≤ 1 condition, the identification and compactness assumptions. Wrong: omitting the non-convex likelihood.",
       "claims": [
         "C7"
       ],
@@ -160,6 +173,7 @@
       "question": "Why do the authors consider the Inverse Gaussian distribution the most convenient of the positive distributions, and what supports that?",
       "answer": "Its unit-mean restriction is simply μ = 1, its scale has a closed-form maximum likelihood estimate, and the convolution of i.i.d. Inverse Gaussian variables is well defined. The Log-Normal has a non-convex likelihood and a problematic scale estimate, and the Gamma has no closed-form maximum likelihood estimate of the scale. Folks and Chhikara (1978) found that data can be described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, so the choice can rest on convenience. The support is an argument, not an empirical result: in the simulation the models perform very similarly.",
       "notes": "The paper gives no explicit list; it says only 'We argue that the Inverse Gaussian is more convenient than its competitors' [p11.2], after the discussion of Section 4.1. Accept any of the listed properties drawn from that discussion. The final sentence is not required.",
+      "marking": "Required: at least one convenience property: its unit-mean restriction is simply μ = 1; its scale has a closed-form maximum likelihood estimate; the convolution of i.i.d. Inverse Gaussian variables is well defined; or, by contrast, the Log-Normal has a non-convex likelihood and a problematic scale estimate and the Gamma has no closed-form maximum likelihood estimate of the scale. Also correct: that Folks and Chhikara (1978) found data described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, so the choice can rest on convenience. Not required: that the support is an argument, not an empirical result.",
       "claims": [
         "C15"
       ],
@@ -169,8 +183,9 @@
       "id": "Q15",
       "type": "evidence",
       "question": "What evidence supports the claim that the ETS models with all the distributions considered are well calibrated, and what limitations of this evidence does the paper itself state?",
-      "answer": "In simulation experiment 2 the quantile bias and quantile precision are small and close to zero for every model on every data generating process (Table 5; bias between −0.013 and 0.011) [p14.7]. The paper adds that the quantile coverage plots fluctuate randomly around the nominal levels, a new run giving different shapes [p15.6]. Limits: the paper states none.",
+      "answer": "In simulation experiment 2 the quantile bias and quantile precision are small and close to zero for every model on every data generating process (bias between −0.013 and 0.011). The authors add that the quantile coverage fluctuates randomly around the nominal levels, a new run giving different shapes. Limits: the authors state none in the text.",
       "notes": "Must give the small quantile bias and precision of Table 5. Not required: the coverage plots [p15.6]. Limits: the claimset's limitation objects are the authors' statements too, so a limit given from the claimset is not wrong. Correct: limits stated in the paper or the claimset, or 'none stated' where the paper states none. Wrong: a limit attributed to the paper that neither document states.",
+      "marking": "Required: in simulation experiment 2 the quantile bias and quantile precision are small and close to zero for every model on every data generating process. Not required: the bias range (−0.013 to 0.011); that the quantile coverage fluctuates randomly around the nominal levels, a new run giving different shapes; giving limitations. Acceptable limitations: a single fixed parameter vector with an error standard deviation of 0.1, at which the multiplicative errors are small enough that Normal and logarithmic approximations behave regularly. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
       "claims": [
         "C9"
       ],
@@ -181,6 +196,7 @@
       "type": "absent",
       "question": "Which statistical test did the paper use to find that the differences in mean scaled pinball score are not significant at the 5% level?",
       "notes": "Absent: the paper does not name the test [p14.5]; the claimset says 'the test is not named in the paper' (C17).",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that the differences are not significant at the 5% level, does not answer it: no test is named.",
       "in_claimset": false
     },
     {
@@ -188,12 +204,14 @@
       "type": "absent",
       "question": "Which company provided the electric vehicle charging data?",
       "notes": "Absent: the paper says only 'a company that tracks the amount of electricity used by such vehicles' [p16.3] and that the data are under a non-disclosure agreement [p19.7]; an answer that the company is not named is right.",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that the data come from a company tracking electricity used by electric vehicles and are under a non-disclosure agreement, does not answer it; saying the company is not named is correct.",
       "in_claimset": false
     },
     {
       "id": "Q18",
       "type": "absent",
       "question": "How much longer did computing the conditional expectation by simulation take than computing the conventional point forecast?",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that the conditional expectation should be obtained by simulation, does not answer it.",
       "in_claimset": false
     },
     {
@@ -201,12 +219,14 @@
       "type": "absent",
       "question": "How accurate were pure multiplicative ETS models with the Gamma distribution on intermittent demand data in this paper's experiments?",
       "notes": "The paper has no such experiment. Citing [p18.4] (Svetunkov & Boylan, 2023, where the approach works well) as other work is right; presenting 'works well' as this paper's result is wrong.",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that other work (Svetunkov and Boylan, 2023) used pure multiplicative ETS on intermittent data and found it worked well, does not answer it; citing it as other work is correct, presenting it as a result of this work is wrong.",
       "in_claimset": false
     },
     {
       "id": "Q20",
       "type": "absent",
       "question": "What smoothing parameters did the model in the paper's M3 competition example estimate?",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that the difference between the point forecast and the conditional expectation grows exponentially with the horizon in that example, does not answer it.",
       "in_claimset": false
     }
   ],

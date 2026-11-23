@@ -228,6 +228,17 @@ class ReadingStudyTest(unittest.TestCase):
         self.assertIn("bundle - paper", rep["paired"])
         self.assertTrue(os.path.exists(os.path.join(self.out, "report.md")))
 
+    def test_graders_see_the_marking_guide_not_the_notes(self):
+        q = {"type": "lookup", "question": "What is SEP's Brier score?", "answer": "0.112",
+             "notes": "Only in the claimset (C2), not in the paper [p3.1].", "marking": "Required: 0.112."}
+        text = rs.judge_text(q, "It is 0.112 (C2).")
+        self.assertIn("Marking guide: Required: 0.112.", text)
+        self.assertNotIn("claimset", text)
+        self.assertNotIn("C2", text)
+        self.assertIn("SHEET", dir(rs))
+        self.assertIn("marking", rs.SHEET)
+        self.assertNotIn("notes", rs.SHEET)
+
     def test_dry_run_makes_no_calls(self):
         self.assertEqual(rs.cmd_run(args(out=self.out, dry_run=True, provider="anthropic"), self.root), 0)
         self.assertFalse(os.path.exists(self.out))

@@ -9,8 +9,9 @@
       "id": "Q1",
       "type": "lookup",
       "question": "How were the forecasting models trained and the detection thresholds set in the simulation study, and how many times was each scenario repeated?",
-      "answer": "Each forecasting model is trained once on the first 300 observations and then produces one-step-ahead forecasts sequentially, without re-training. ARMA models are fitted with the forecast R package (Arima, auto.arima) and ETS models with es() from the smooth R package. Changes are signalled using the theoretical thresholds (Theorem 1 of the Supporting Information and Corollaries 1 and 2) with γ = 0 and a false alarm rate of 0.05. For the Raw CUSUM the standard deviation in the threshold is a Bartlett long-run variance estimate (sandwich package); for the forecast errors, assumed i.i.d., the ordinary standard deviation is used. Each scenario is repeated 1,000 times, with normally distributed innovations unless stated otherwise.",
+      "answer": "Each forecasting model is trained once on the first 300 observations and then produces one-step-ahead forecasts sequentially, without re-training. ARMA models are fitted with the forecast R package (Arima, auto.arima) and ETS models with es() from the smooth R package. Changes are signalled using the theoretical thresholds of the authors' limit theorems with γ = 0 and a false alarm rate of 0.05. For the Raw CUSUM the standard deviation in the threshold is a Bartlett long-run variance estimate (sandwich package); for the forecast errors, assumed i.i.d., the ordinary standard deviation is used. Each scenario is repeated 1,000 times, with normally distributed innovations unless stated otherwise.",
       "notes": "Must give the training size of 300, the theoretical thresholds with a 0.05 false alarm rate, and the 1,000 repetitions.",
+      "marking": "Required: a training sample of 300 observations; the theoretical thresholds with a false alarm rate of 0.05; 1,000 repetitions of each scenario. Also correct: the models are trained once and not re-trained, then produce one-step-ahead forecasts sequentially; ARMA models fitted with the forecast R package (Arima, auto.arima) and ETS models with es() from the smooth R package; γ = 0; for the Raw CUSUM a Bartlett long-run variance estimate (sandwich package), for the forecast errors, assumed i.i.d., the ordinary standard deviation; normally distributed innovations unless stated otherwise. Not required: any of the details listed under Also correct.",
       "claims": [
         "C5"
       ],
@@ -22,6 +23,7 @@
       "question": "When did the framework detect a change in the Royal Mail forecast errors, with which detectors, and what data were used for training?",
       "answer": "Both the mean detector D_μ(m,k) and the squared-error detector D_ξ(m,k) signalled a changepoint on 2 December 2020. The forecast errors of one delivery office from 1 July to 31 December 2020 were used: July to October as the Phase I (training) sample, with monitoring from 1 November. The change corresponds to a rise in the mean and variance of the forecast errors, taken as the start of the Christmas peak season.",
       "notes": "Must give 2 December 2020 and both detectors.",
+      "marking": "Required: 2 December 2020; both detectors, the mean detector D_μ(m,k) and the squared-error detector D_ξ(m,k). Also correct: forecast errors of one delivery office from 1 July to 31 December 2020; July to October as the training (Phase I) sample; monitoring from 1 November; the change is a rise in the mean and variance of the forecast errors, taken as the start of the Christmas peak season. Not required: the training data and the interpretation of the change.",
       "claims": [
         "C6"
       ],
@@ -33,6 +35,7 @@
       "question": "How was the framework applied to the gallstone-related pathology (GRP) admissions data, how quickly did it detect the change, and how does its delay compare with that of a model-based sequential approach?",
       "answer": "A SARMA(1,0,0)(1,0,0)12 model was fitted to the monthly proportion of GRP A&E admissions up to 2013 and used to produce one-step-ahead forecasts up to 2020. Data from 2013 to 2016 formed the Phase I sample (m = 36), with monitoring from 2016. The mean detector signalled four data points after the changepoint found in the retrospective analysis of Taib et al. (2021), and the squared-error detector two time points after the change. A model-based sequential approach would have a minimum detection delay of 24 months because of the yearly seasonality.",
       "notes": "Must give the two delays (4 and 2) and the 24-month minimum of the model-based approach.",
+      "marking": "Required: the mean detector signals 4 observations after the change and the squared-error detector 2; a model-based sequential approach has a minimum detection delay of 24 months because of the yearly seasonality. Also correct: a SARMA(1,0,0)(1,0,0)12 model fitted to the monthly proportion of GRP A&E admissions up to 2013, giving one-step-ahead forecasts up to 2020; 2013 to 2016 as the training (Phase I) sample, m = 36; monitoring from 2016; the delay of 4 counted from the changepoint found retrospectively by Taib et al. (2021). Not required: the details of the model and the training sample.",
       "claims": [
         "C7",
         "C13",
@@ -49,7 +52,8 @@
         "C15"
       ],
       "in_claimset": true,
-      "notes": "Must give 19 time points. The time 419 and the ARMA parameters (λ = 0, φ = −0.8, θ = 0.2, stated in the paper only) are not required."
+      "notes": "Must give 19 time points. The time 419 and the ARMA parameters (λ = 0, φ = −0.8, θ = 0.2, stated in the paper only) are not required.",
+      "marking": "Required: 19 time points after the change. Also correct: the change in mean at time point 400; m = 300; the signal at time 419. Not required: the change point, m, the time 419, and the ARMA parameters (λ = 0, φ = −0.8, θ = 0.2)."
     },
     {
       "id": "Q5",
@@ -60,7 +64,8 @@
         "C17"
       ],
       "in_claimset": true,
-      "notes": "Must give ETS(A,A,N) and 7 time points; the ±2 standard error interval is not required."
+      "notes": "Must give ETS(A,A,N) and 7 time points; the ±2 standard error interval is not required.",
+      "marking": "Required: an ETS(A,A,N) model; the detector signals 7 time points after the change. Also correct: data with a trend and a variance change at time point 400; the squared-error detector D_ξ(m,k) with m = 300. Not required: prediction intervals of ±2 standard errors, and the other details."
     },
     {
       "id": "Q6",
@@ -68,6 +73,7 @@
       "question": "According to the paper, what change size Δ_μ,m appears in the forecast errors of a perfectly specified AR(1) forecasting model after a change of size δ_μ,m in the mean of the raw data?",
       "answer": "Δ_μ,m = δ_μ,m(1 − φ), where φ is the autoregressive parameter.",
       "notes": "The claimset gives the general ARMA formula (C15), from which the AR(1) case follows. Also accept: δ_μ,m at the first post-change point, then δ_μ,m(1 − φ) from the next point on. The claimset corrects a misprint in the general formula (z^l missing in 1/θ(z)); it does not affect the AR(1) case.",
+      "marking": "Required: Δ_μ,m = δ_μ,m(1 − φ), with φ the autoregressive parameter. Also correct: δ_μ,m at the first post-change point, then δ_μ,m(1 − φ) from the next point on; deriving the AR(1) case from the general ARMA formula Δ_μ,m = δ_μ,m(1 − Σφ_j)Σψ_l(θ), with the expansion of 1/θ(z) written either as Σψ_l(θ) z^l or as Σψ_l(θ). Not required: the general ARMA formula.",
       "claims": [
         "C15"
       ],
@@ -79,6 +85,7 @@
       "question": "Can the framework detect mean changes when the forecasting model is the ETS(A,N,N) local level model?",
       "answer": "Generally not. Proposition 3 shows that the expected forecast errors of ETS(A,N,N) return to zero after a mean change whenever α > 0, faster for larger α, so Assumption 2 is not satisfied unless α = 0; a mean change manifests in the forecast errors only if α is small. The framework can still detect variance changes with ETS models, through the squared forecast errors.",
       "notes": "Overreach if the answer says the framework detects mean changes with ETS models in general. If the answer quotes Proposition 3, accept either the printed expression or the claimset's corrected δ_μ,m(1 − α)^{s−1}; both return to zero for α > 0.",
+      "marking": "Required: no, not in general: after a mean change the expected forecast errors of ETS(A,N,N) return to zero when α > 0, so a mean change does not persist in them. Also correct: the return to zero is faster for larger α; the incomplete-adjustment assumption (Assumption 2) holds only if α = 0; a mean change shows in the forecast errors only if α is small; variance changes can still be detected with ETS models through the squared forecast errors. If the expected forecast error is quoted, both forms are correct: δ_μ,m(1 − α)^{s−1}, or δ_μ,m for s = 1 and (λ + δ_μ,m)(1 − Σ_{i=0}^{s−2} α(1−α)^i) − λ(α(1−α)^{s−1} − (1−α)^s) for s ≥ 2. Not required: the formula and the variance-change point. Wrong: saying the framework detects mean changes with ETS models in general.",
       "claims": [
         "C4",
         "C17"
@@ -89,8 +96,9 @@
       "id": "Q8",
       "type": "scope",
       "question": "Are the assumptions under which the detectors' thresholds are valid satisfied in all the simulated scenarios?",
-      "answer": "No. The paper states that Assumptions 1 and 2, which the theoretical validity of the stopping rule requires, are not necessarily satisfied in all the simulated scenarios, and that the performance is still satisfactory.",
+      "answer": "No. The authors state that Assumptions 1 and 2, which the theoretical validity of the stopping rule requires, are not necessarily satisfied in all the simulated scenarios, and that the performance is still satisfactory.",
       "notes": "Overreach if the answer says the assumptions hold, or the thresholds are theoretically valid, in every simulation. Accept mention of the claimset's disputed limit distributions (C3, C23; L6, L7); not required.",
+      "marking": "Required: no. Also correct: the authors state that Assumptions 1 and 2, which the theoretical validity of the stopping rule requires, are not necessarily satisfied in all the simulated scenarios, and that performance is still satisfactory; adding that the validity of the detectors' limit distributions is disputed. Not required: the disputed limit distributions. Wrong: saying the assumptions hold, or that the thresholds are theoretically valid, in every simulation.",
       "claims": [
         "C5"
       ],
@@ -100,8 +108,9 @@
       "id": "Q9",
       "type": "scope",
       "question": "Does the paper show that monitoring forecast errors detects changes faster than the Raw CUSUM for any kind of data and change?",
-      "answer": "No. It shows this in simulations of specific scenarios: a mean change and a trend change in seasonal data with ARMA errors, and a change in the autoregressive parameter of AR(1) errors in quarterly seasonal data (with simpler structures in the Supporting Information). All simulated data have an ARMA error structure, normal innovations unless otherwise specified, and a training sample of 300 in the main-text simulations. The applications have no Raw CUSUM comparison.",
+      "answer": "No. It shows this in simulations of specific scenarios: a mean change and a trend change in seasonal data with ARMA errors, and a change in the autoregressive parameter of AR(1) errors in quarterly seasonal data (with simpler structures in supplementary simulations). All simulated data have an ARMA error structure, normal innovations unless otherwise specified, and a training sample of 300 in the principal simulations. The applications have no Raw CUSUM comparison.",
       "notes": "Overreach if the answer generalises beyond the simulated scenarios. Accept a training size of 300, or 300 and 200 (Supporting Information).",
+      "marking": "Required: no; the result is shown only for the simulated scenarios. Also correct: the scenarios are a mean change and a trend change in seasonal data with ARMA errors, and a change in the autoregressive parameter of AR(1) errors in quarterly seasonal data, with simpler structures in supplementary simulations; all simulated data have an ARMA error structure and normal innovations unless otherwise specified; a training sample of 300, or 300 and 200; the applications have no Raw CUSUM comparison. Not required: the list of scenarios and conditions. Wrong: generalising beyond the simulated scenarios.",
       "claims": [
         "C5",
         "C8",
@@ -114,8 +123,9 @@
       "id": "Q10",
       "type": "scope",
       "question": "Do the paper's results apply to forecast errors more than one step ahead?",
-      "answer": "No results are given for them. The paper focuses on one-step-ahead forecast errors; it says the framework is general for h steps ahead and names combining information from several forecast horizons as an interesting extension.",
+      "answer": "No results are given for them. The authors focus on one-step-ahead forecast errors; they say the framework is general for h steps ahead and names combining information from several forecast horizons as an interesting extension.",
       "notes": "Overreach if the answer says the results were shown for h > 1. That the framework is general for h steps ahead is stated in the paper only; it is not required. Accept citing the paper's 'without loss of generality' and 'general for h-steps ahead' statements, provided the answer says no results for h > 1 are shown.",
+      "marking": "Required: no results are shown for forecast errors more than one step ahead; the work focuses on one-step-ahead errors. Also correct: the authors say the framework is general for h steps ahead, and name combining information from several forecast horizons as an extension not yet done; citing the authors' 'without loss of generality' statement, provided the answer says no results for h > 1 are shown. Not required: that the framework is general for h steps ahead. Wrong: saying results were shown for h > 1.",
       "claims": [
         "C1"
       ],
@@ -127,6 +137,7 @@
       "question": "Does the paper show the false detection probability staying at or below the false alarm rate set for the thresholds in every simulated scenario?",
       "answer": "No. It reports the false detection probability as low across all scenarios of the mean and trend changes, and as below 0.075 for all methods in the autoregressive parameter scenarios, a bound above the false alarm rate of 0.05.",
       "notes": "Overreach if the answer says the false detection probability stayed at or below 0.05 everywhere. Accept values read from the paper's figures. Accept citing the Supporting Information's below 0.05 for variance changes; not required.",
+      "marking": "Required: no, the authors do not show that. Also correct: the false detection probability is reported as low across the mean and trend change scenarios and as below 0.075 for all methods in the autoregressive parameter scenarios, a bound above 0.05; values read from the authors' plotted results; that it is below 0.05 for variance changes in simpler scenarios. Not required: the 0.075 bound and the variance-change result. Wrong: saying the false detection probability stayed at or below 0.05 everywhere.",
       "claims": [
         "C11",
         "C12"
@@ -137,8 +148,9 @@
       "id": "Q12",
       "type": "evidence",
       "question": "What in the paper's simulations supports the claim that monitoring forecast errors greatly reduces the detection delay while keeping a low false positive rate, and what limitations of this evidence does the paper itself state?",
-      "answer": "In the simulations, ARMA Forecast Errors has a high detection probability and a lower average detection delay than the Raw CUSUM for mean and trend changes in seasonal data, forecast errors do better than the Raw CUSUM in all autoregressive parameter scenarios, and the false detection probability is low (below 0.075 in the autoregressive scenarios). Limitations the paper states: Assumptions 1 and 2, which the theoretical validity of the stopping rule requires, are not necessarily satisfied in all scenarios; and the forecasting model chosen by auto.arima may be misspecified.",
+      "answer": "In the simulations, ARMA Forecast Errors has a high detection probability and a lower average detection delay than the Raw CUSUM for mean and trend changes in seasonal data, forecast errors do better than the Raw CUSUM in all autoregressive parameter scenarios, and the false detection probability is low (below 0.075 in the autoregressive scenarios). Limitations the authors state: Assumptions 1 and 2, which the theoretical validity of the stopping rule requires, are not necessarily satisfied in all scenarios; and the forecasting model chosen by auto.arima may be misspecified.",
       "notes": "Must give at least one simulation result and one limitation. Support: [p8.7], [p8.13]. Limitations: assumptions [p7.9]; misspecification [p8.2]. Limits: the claimset's limitation objects are the authors' statements too, so a limit given from the claimset is not wrong. Correct: limits stated in the paper or the claimset, or 'none stated' where the paper states none. Wrong: a limit attributed to the paper that neither document states.",
+      "marking": "Required: at least one simulation result that supports the claim: ARMA Forecast Errors has a high detection probability and a lower average detection delay than the Raw CUSUM for mean and trend changes in seasonal data; forecast errors do better than the Raw CUSUM in all autoregressive parameter scenarios; the false detection probability is low (below 0.075 in the autoregressive scenarios). Not required: limitations. Limitations the authors state: (1) Assumptions 1 and 2, which the theoretical validity of the thresholds requires, are not necessarily satisfied in all the simulated scenarios; (2) the forecasting model chosen by auto.arima may be misspecified; (3) all simulated data have an ARMA error structure with normally distributed innovations and a training sample of 300 (200 in the simpler supplementary simulations). Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
       "claims": [
         "C5",
         "C8",
@@ -154,6 +166,7 @@
       "type": "evidence",
       "question": "According to the paper, what explains the Raw CUSUM's results in the scenarios with a change in the autoregressive parameter?",
       "answer": "The Raw CUSUM does not take the seasonality into account, so the variance is overestimated in the Phase I (training) period, and a larger variance estimate makes changes much harder to detect.",
+      "marking": "Required: the Raw CUSUM does not take the seasonality into account, so it overestimates the variance in the training (Phase I) period, and a larger variance estimate makes changes much harder to detect.",
       "claims": [
         "C26",
         "C10"
@@ -166,6 +179,7 @@
       "question": "What supports the claim that mean and variance changes in the raw data show up as a mean change in the centred squared forecast errors, and under what conditions?",
       "answer": "Proposition 1, proved from the definition of the forecast errors: under Assumption 1 the change size is Var_G′[Y_t] − Var_F[Y_t] when the mean does not change, plus Δ²_μ,m when it does and Assumption 2 holds. Proposition 2 and Corollary 1 then give the limiting distributions of the detector, provided the change size satisfies Assumptions C–E (large enough). For ARMA models the result agrees with Aue et al. (2015), where a variance change of size δ gives a change of δ in the squared errors.",
       "notes": "Must mention the forecasting-model assumptions. Accept either the printed or the claimset's corrected notation of the proof (G′ for G, sign of δ). A claimset-based answer may add that the limit distribution under a variance change is disputed (L6, L7) and that the change equals the variance change only under L8's conditions; not required.",
+      "marking": "Required: mentions the assumptions on the forecasting model (a constant forecast bias before the change; for a mean change, that the model does not fully adjust to it). Also correct: Proposition 1, derived from the definition of the forecast errors: the change size is Var_G′[Y_t] − Var_F[Y_t] when the mean does not change, plus Δ²_μ,m when it does; Proposition 2 and Corollary 1 give the detector's limiting distributions when the change size is large enough (Assumptions C–E); for ARMA models a variance change of size δ gives a change of δ in the squared errors, in agreement with Aue et al. (2015); the derivation written with G′ or with G after the change, and with +δ_μ,m or −δ_μ,m in its intermediate step; adding that the limit distribution under a variance change is disputed, or that the change equals the variance change only if the forecast bias stays constant and the conditional variances are constant. Not required: the items listed under Also correct.",
       "claims": [
         "C2",
         "C3",
@@ -182,31 +196,36 @@
         "C6"
       ],
       "in_claimset": true,
-      "notes": "Must give that only the forecast errors were known [p8.14], [p9.7]. The start inferred from the rise in mean and variance: [p9.12]. Accept, not required: the Royal Mail data are not available [p12.4]. Limits: the claimset's limitation objects are the authors' statements too, so a limit given from the claimset is not wrong. Correct: limits stated in the paper or the claimset, or 'none stated' where the paper states none. Wrong: a limit attributed to the paper that neither document states."
+      "notes": "Must give that only the forecast errors were known [p8.14], [p9.7]. The start inferred from the rise in mean and variance: [p9.12]. Accept, not required: the Royal Mail data are not available [p12.4]. Limits: the claimset's limitation objects are the authors' statements too, so a limit given from the claimset is not wrong. Correct: limits stated in the paper or the claimset, or 'none stated' where the paper states none. Wrong: a limit attributed to the paper that neither document states.",
+      "marking": "Required: at least one limitation from the list below. Limitations the authors state: (1) only the forecast errors were available: the underlying parcel volumes and the forecasts are unknown to the authors; (2) the start of the peak season is inferred from the rise in the mean and variance of the forecast errors; (3) the data are not available. Wrong: saying the authors state no limitations; presenting as the authors' a limitation not in this list (also overreach)."
     },
     {
       "id": "Q16",
       "type": "absent",
       "question": "What was the average detection delay of a model-based sequential changepoint method in the paper's simulations?",
       "in_claimset": false,
-      "notes": "The 24-month minimum is from the GRP application, not a simulation; it does not answer."
+      "notes": "The 24-month minimum is from the GRP application, not a simulation; it does not answer.",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, the minimum detection delay of 24 months for a model-based approach on the monthly admissions data, is not a simulation result and does not answer it."
     },
     {
       "id": "Q17",
       "type": "absent",
       "question": "Which forecasting model does Royal Mail use to produce the forecasts whose errors were monitored?",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
       "in_claimset": false
     },
     {
       "id": "Q18",
       "type": "absent",
       "question": "How many hospitals contributed to the GRP admissions data?",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
       "in_claimset": false
     },
     {
       "id": "Q19",
       "type": "absent",
       "question": "How much did the framework's detection of the change in the Royal Mail forecast errors reduce staffing costs at the delivery office?",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
       "in_claimset": false
     },
     {
@@ -214,7 +233,8 @@
       "type": "absent",
       "question": "Which value of the tuning parameter γ gave the shortest detection delays in the simulations?",
       "in_claimset": false,
-      "notes": "An answer that only γ = 0 was used counts as a correct statement of absence."
+      "notes": "An answer that only γ = 0 was used counts as a correct statement of absence.",
+      "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. Also correct: saying that only γ = 0 was used."
     }
   ],
   "drafted": "Questions and reference answers drafted from the paper text by an AI assistant, for the author to audit and amend; claims and in_claimset set afterwards from the gold claimset."

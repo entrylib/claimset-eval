@@ -70,7 +70,8 @@ ANSWER_SCHEMA = {
 }
 
 JUDGE_SYSTEM = """You grade an answer to a question about a research paper against a reference answer written \
-by the paper's author. You do not see the paper; the reference answer is authoritative.
+by the paper's author, and its marking guide, which says what is required, what else is correct, what is not \
+required and what is wrong. You do not see the paper; the reference answer and the marking guide are authoritative.
 
 Grades:
 - correct: agrees with the reference on everything the question asks. Extra detail that does not contradict \
@@ -176,7 +177,7 @@ def load_questions(paths, root=ROOT):
             if kind is not None and (t != "cross" or kind not in KINDS):
                 problems.append(f"{uid}: kind, on cross questions only, must be one of {', '.join(KINDS)}")
             out.append({"uid": uid, "file": stem, "papers": papers, "id": qid, "type": t,
-                        "question": q.get("question", ""), "answer": answer or "", "notes": q.get("notes", ""),
+                        "question": q.get("question", ""), "answer": answer or "", "notes": q.get("notes", ""), "marking": q.get("marking", ""),
                         "claims": claims, "in_claimset": q.get("in_claimset"), "kind": q.get("kind")})
     return out, problems
 
@@ -506,6 +507,14 @@ def final_grade(g):
     return h.get("grade") or g["grade"], h.get("overreach", g["overreach"])
 
 
+def judge_text(q, answer):
+    """What a grader sees: the question, the reference answer, the marking guide and the blinded answer, never the
+    authors' notes, which name the documents and so would tell the grader the condition."""
+    return (f"Question ({q['type']}): {q['question']}\n\n"
+            f"Reference answer: {q['answer']}\n" + (f"Marking guide: {q['marking']}\n" if q["marking"] else "")
+            + f"\nAnswer to grade: {blind(answer)}")
+
+
 def cmd_grade(args, root=ROOT):
     questions, problems = load_questions(question_files(args.questions, root), root)
     if problems:
@@ -528,9 +537,7 @@ def cmd_grade(args, root=ROOT):
         if r.get("not_stated"):
             g.update({"grade": "not_stated", "overreach": False, "reason": "the answer says the document does not give it"})
         else:
-            blocks = [{"type": "text", "text": f"Question ({q['type']}): {q['question']}\n\n"
-                       f"Reference answer: {q['answer']}\n" + (f"Author's note: {q['notes']}\n" if q["notes"] else "")
-                       + f"\nAnswer to grade: {blind(r['answer'])}"}]
+            blocks = [{"type": "text", "text": judge_text(q, r["answer"])}]
             try:
                 out = PROVIDERS[args.provider](args.judge, JUDGE_SYSTEM, blocks, JUDGE_SCHEMA, args.effort)
                 j = json.loads(out["text"])
@@ -544,7 +551,7 @@ def cmd_grade(args, root=ROOT):
     return 1 if errors else 0
 
 
-SHEET = ["row", "question", "reference", "notes", "answer", "judge_grade", "judge_overreach", "judge_reason",
+SHEET = ["row", "question", "reference", "marking", "answer", "judge_grade", "judge_overreach", "judge_reason",
          "human_grade", "human_overreach"]
 
 
@@ -557,7 +564,7 @@ def write_sheet(path, answers, grades, qs):
             continue
         q = qs[r["uid"]]
         rows.append({"row": sha(r["key"])[:12], "question": q["question"], "reference": q["answer"],
-                     "notes": q["notes"], "answer": blind(r["answer"]), "judge_grade": g["grade"],
+                     "marking": q["marking"], "answer": blind(r["answer"]), "judge_grade": g["grade"],
                      "judge_overreach": g["overreach"], "judge_reason": g.get("reason", ""),
                      "human_grade": "", "human_overreach": ""})
     random.Random(0).shuffle(rows)
@@ -784,6 +791,9 @@ def cmd_check(args, root=ROOT):
         if f in kinds:
             line += " (" + ", ".join(f"{k} {n}" for k, n in sorted(kinds[f].items())) + ")"
         print(line)
+    unmarked = [q["uid"] for q in questions if not q["marking"].strip()]
+    if unmarked:
+        print(f"  {len(unmarked)} questions without a marking guide: {', '.join(unmarked)}")
     names = sorted({n for q in questions for n in q["papers"]})
     for name in names:
         if not (os.path.exists(claimset_path(name, root)) and os.path.exists(view_path(name, root))):
