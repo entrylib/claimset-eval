@@ -1,7 +1,7 @@
 # Type I error of candidate tests of the averaged claimset effect, by simulation under no average effect.
 # Design of the plan: 8 models (4 providers x fast/reasoning), questions crossed with models, 2 conditions.
 # Data-generating process as in the design review: the claimset effect varies by provider (SD 0.4),
-# by model within provider (SD 0.3) and by question (SD 0.7, or 0.3), with mean 0.
+# by model within provider (SD 0.3) and by question (SD 0.7), with mean 0.
 # Outcome: binary (the flag models), and a score of 0, 1/2, 1 analysed as 2 binomial points.
 suppressMessages({library(lme4); library(blme); library(parallel); library(jsonlite)})
 args <- commandArgs(TRUE); reps <- if (length(args)) as.integer(args[1]) else 400
@@ -31,7 +31,7 @@ one <- function(s, nq, size, sdq) {
 }
 
 res <- list()
-for (sc in list(list(nq = 25, size = 1, sdq = 0.7), list(nq = 75, size = 2, sdq = 0.7), list(nq = 75, size = 2, sdq = 0.3))) {
+for (sc in list(list(nq = 25, size = 1, sdq = 0.7), list(nq = 75, size = 2, sdq = 0.7))) {
   r <- simplify2array(mclapply(1:reps, one, nq = sc$nq, size = sc$size, sdq = sc$sdq, mc.cores = 4))
   cond <- list(questions = sc$nq, outcome = if (sc$size == 1) "binary" else "score as 2 points", `question slope SD` = sc$sdq, replications = reps)
   for (k in dimnames(r)[[2]]) {
