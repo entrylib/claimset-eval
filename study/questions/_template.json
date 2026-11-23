@@ -9,6 +9,7 @@
       "question": "What does the paper report about ...?",
       "answer": "The reference answer, in the paper's terms, with the numbers and conditions the question asks for.",
       "notes": "Optional: what a right answer must include, or what makes an answer only partial.",
+      "marking": "Required: ... Also correct: ... Not required: ... Wrong: ... (what graders see; no word that tells the paper from the claimset)",
       "claims": ["C4"],
       "in_claimset": true
     },

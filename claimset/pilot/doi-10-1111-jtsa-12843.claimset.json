@@ -8,12 +8,39 @@
    "corrections": [
     {
      "kind": "misprint",
+     "field": "C4.statement",
+     "where": "Proposition 3, Section 3.2",
+     "printed": "E[e_{k*+s}] = (λ + δ_{μ,m})(1 − Σ_{i=0}^{s−2} α(1−α)^i) − λ(α(1−α)^{s−1} − (1−α)^s) for s = 2, 3, …",
+     "recorded": "E[e_{m+k*+s}] = δ_{μ,m}(1−α)^{s−1} for s = 1, 2, …, with forecasts unbiased before the change",
+     "reason": "The printed expression contradicts the proposition's own case s = 1: it gives δ + 2λ(1−α) there instead of δ, and for s ≥ 2 it equals (1−α)^{s−1}(δ + 2λ(1−α)). Repeated substitution into the update ŷ_t(1) = ŷ_{t−1}(1) + αe_{t−1}, as the proof describes, gives δ(1−α)^{s−1}: at α = 0.3, λ = 10, δ = 2 the errors are 2, 1.4, 0.98 for s = 1, 2, 3, against 2, 11.2, 7.84 from the printed formula. The two agree only when λ = 0. The conclusion that the expected error returns to zero is unaffected. The second check traces it to one sign: with (α(1−α)^{s−1} + (1−α)^s) in the last bracket the expression reduces to δ(1−α)^{s−1}. The index is m + k* + s, the changepoint of model (2) being at m + k*.",
+     "found_by": "P5"
+    },
+    {
+     "kind": "misprint",
      "field": "D3.definition",
-     "where": "Section 2.2, the definition of $Q_\\xi(m,k)$",
-     "printed": "$Q_\\xi(m,k) = \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m})$",
-     "recorded": "$Q_\\xi(m,k) = \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m})^2$",
-     "reason": "The detector compares the centred squared forecast errors after the training period with their mean in it, as Page's CUSUM detector compares the same series in both sums; without the square the second sum is of the centred errors themselves, which is zero by the definition of the bias estimate.",
-     "found_by": "P4"
+     "where": "Section 2.2, the definition of Q_ξ(m,k)",
+     "printed": "Q_ξ(m,k) = Σ_{t=m+1}^{m+k} (e_t − b̂_{μ,m})² − (k/m) Σ_{t=1}^{m} (e_t − b̂_{μ,m})",
+     "recorded": "Q_ξ(m,k) = Σ_{t=m+1}^{m+k} (e_t − b̂_{μ,m})² − (k/m) Σ_{t=1}^{m} (e_t − b̂_{μ,m})²",
+     "reason": "Q_ξ compares the centred squared errors of the monitoring period with those of the training period; the second sum without the square is not that comparison, and the paper's own text describes the detector as Page's CUSUM on the centred squared errors.",
+     "found_by": "P6"
+    },
+    {
+     "kind": "misprint",
+     "field": "C15.statement",
+     "where": "Section 3.1, after Aue et al. (2015)",
+     "printed": "1/θ(z) = Σ_{l=0}^∞ ψ_l(θ)",
+     "recorded": "1/θ(z) = Σ_{l=0}^∞ ψ_l(θ) z^l",
+     "reason": "ψ_l are the coefficients of the power series of 1/θ(z); without z^l the right-hand side is a number, not the series.",
+     "found_by": "P6"
+    },
+    {
+     "kind": "misprint",
+     "field": "E2",
+     "where": "Proof of Proposition 1, Section 2.2",
+     "printed": "E_G and Var_G in the post-change terms of both cases; Y_t − E_{G′}[Y_t] − δ_{μ,m} in the first case; an unbalanced bracket in the second",
+     "recorded": "E_{G′} and Var_{G′} after the change; + δ_{μ,m}; (Y_t − E_G[Y_t] + b_μ + Δ_{μ,m} − b_μ)²",
+     "reason": "Definition 1 names the post-change distribution G′; the sign of δ follows from E_{G′}[Y_t] = E_F[Y_t] + δ_{μ,m}; the bracket as printed does not close. None changes the result.",
+     "found_by": "P6"
     }
    ]
   },
@@ -144,6 +171,63 @@
    "credit_roles": [
     "writing_original_draft"
    ]
+  },
+  {
+   "id": "P5",
+   "type": "agent",
+   "name": "Claude Code",
+   "label": "proof checking",
+   "positions": [
+    "contributor"
+   ],
+   "models": [
+    {
+     "model": "M2",
+     "role": "sole"
+    }
+   ],
+   "credit_roles": [
+    "validation"
+   ],
+   "ai_tasks": [
+    {
+     "task": "review",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "file_access"
+   ],
+   "record_source": "self_reported"
+  },
+  {
+   "id": "P6",
+   "type": "agent",
+   "name": "Claude Code",
+   "label": "second proof check",
+   "positions": [
+    "contributor"
+   ],
+   "models": [
+    {
+     "model": "M3",
+     "role": "sole"
+    }
+   ],
+   "credit_roles": [
+    "validation"
+   ],
+   "ai_tasks": [
+    {
+     "task": "review",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "file_access",
+    "code_execution"
+   ],
+   "record_source": "self_reported"
   }
  ],
  "models": [
@@ -155,6 +239,22 @@
    "identifier": "claude-fable-5-2",
    "weights": "api_only",
    "accessed": "2026-11-16"
+  },
+  {
+   "id": "M2",
+   "provider": "Anthropic",
+   "name": "Claude Sonnet",
+   "version": "5.5",
+   "weights": "api_only",
+   "accessed": "2026-11-20"
+  },
+  {
+   "id": "M3",
+   "provider": "Anthropic",
+   "name": "Claude Fable",
+   "version": "5.2",
+   "weights": "api_only",
+   "accessed": "2026-11-20"
   }
  ],
  "references": [
@@ -260,7 +360,7 @@
    "id": "D3",
    "term": "squared-error detector $D_\\xi(m,k)$",
    "kind": "method",
-   "definition": "[[D24:Page's CUSUM detector]] applied to the centred squared forecast errors of the [[D1:forecast error monitoring framework]]: $$\\begin{aligned} Q_\\xi(m,k) &= \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m})^2 \\\\ D_\\xi(m,k) &= \\max_{0 \\le i \\le k} \\left| Q_\\xi(m,k) - Q_\\xi(m,i) \\right| \\end{aligned}$$ with stopping time $$\\tau_{\\xi,m} = \\min\\{k \\ge 1 : D_\\xi(m,k) \\ge \\hat{\\sigma}_{\\xi,m} c_{\\xi,\\alpha} g(m,k,\\gamma)\\},$$ where $\\hat{b}_{\\mu,m}$ is the mean of the forecast errors in the $m$ Phase I samples and $\\hat{\\sigma}_{\\xi,m}$ the standard deviation of the centred squared forecast errors in that sample. $g(m,k,\\gamma)$ is that of [[D24:Page's CUSUM detector]] and $c_{\\xi,\\alpha}$ comes from the limit distribution of the detector under the null hypothesis.",
+   "definition": "[[D24:Page's CUSUM detector]] applied to the centred squared forecast errors of the [[D1:forecast error monitoring framework]]: $$\\begin{aligned} Q_\\xi(m,k) &= \\sum_{t=m+1}^{m+k} (e_t - \\hat{b}_{\\mu,m})^2 - \\frac{k}{m} \\sum_{t=1}^{m} (e_t - \\hat{b}_{\\mu,m})^2 \\\\ D_\\xi(m,k) &= \\max_{0 \\le i \\le k} \\left| Q_\\xi(m,k) - Q_\\xi(m,i) \\right| \\end{aligned}$$ with stopping time $$\\tau_{\\xi,m} = \\min\\{k \\ge 1 : D_\\xi(m,k) \\ge \\hat{\\sigma}_{\\xi,m} c_{\\xi,\\alpha} g(m,k,\\gamma)\\},$$ where $\\hat{b}_{\\mu,m}$ is the mean of the forecast errors in the $m$ Phase I samples and $\\hat{\\sigma}_{\\xi,m}$ the standard deviation of the centred squared forecast errors in that sample. $g(m,k,\\gamma)$ is that of [[D24:Page's CUSUM detector]] and $c_{\\xi,\\alpha}$ comes from the limit distribution of the detector under the null hypothesis. The paper prints the second sum of $Q_\\xi(m,k)$ without the square, a typographical error that the guarantor, an author of the paper, has confirmed.",
    "part_of": [
     "D1"
    ],
@@ -510,11 +610,31 @@
     "s2.7-s2.10",
     "s3.1"
    ]
+  },
+  {
+   "id": "D25",
+   "term": "supplementary mean change scenarios",
+   "kind": "data",
+   "definition": "Simulated series of length 1000 from (1) an AR(2) process with $\\phi = (0.5, -0.3)$ and (2) an ARMA(1,1) process with $\\phi = 0.6$ and $\\theta = 0.3$, both with $\\lambda = 0$ and $\\sigma^2 = 1$ (arima.sim, 50 burn-in points removed), with a mean change of size $\\delta_\\mu$ at $k^* = 100$ after monitoring begins; the forecasting models are trained on $n_{\\text{train}} = 200$ observations, the detectors use $m = 200$, and 500 time points remain to detect the change. The ARMA forecasting model has the known order with parameters estimated in the training period; the Raw CUSUM does not use the first 200 points.",
+   "source_spans": [
+    "s5.2-s5.5"
+   ]
+  },
+  {
+   "id": "D26",
+   "term": "supplementary variance change scenarios",
+   "kind": "data",
+   "definition": "Simulated series as in the [[D25:supplementary mean change scenarios]] ($n = 1000$, $n_{\\text{train}} = 200$, $m = 200$, $k^* = 100$) from (1) an AR(1) process with $\\phi = 0.9$ and (2) an ARMA(2,1) process with $\\phi = (0.5, -0.3)$ and $\\theta = 0.6$, both with $\\lambda = 0$ and $\\sigma^2 = 1$, whose variance changes to $\\delta_\\xi$ at the changepoint. The ARMA forecasting model has the known order with estimated parameters; the ETS forecasting model is ETS(A,N,N) with an estimated smoothing parameter. The Supporting Information's Figure 2 labels the second scenario ARMA(1,2).",
+   "source_spans": [
+    "s5.7-s5.10",
+    "s8.1"
+   ]
   }
  ],
  "claims": [
   {
    "id": "C1",
+   "name": "Mean changes appear in the forecast errors",
    "statement": "Under [[D8:the mean change model]], the one-step-ahead forecast errors of a forecasting model that satisfies the two forecasting-model assumptions have a change in mean of size $\\Delta_{\\mu,m} \\ne 0$ at the changepoint: $e_t = b_\\mu + \\epsilon_{\\mu,t}$ for $t \\le m + k^*$ and $e_t = b_\\mu + \\epsilon_{\\mu,t} + \\Delta_{\\mu,m}$ afterwards.",
    "type": "formal",
    "role": "principal",
@@ -554,17 +674,32 @@
      "note": "Aue et al. (2015) monitor the residuals of ARMA models only; the claim covers the forecast errors of any forecasting model that satisfies the two assumptions."
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p4.2",
     "p4.3",
     "p4.9",
     "p11.8"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Decomposed e_t into Y_t − E[Y_t|ỹ_t] plus the forecast's bias: Assumption 1 gives b_μ before the change and Assumption 2 gives b_μ + Δ_{μ,m} after, so the stated forms follow, with ε_{μ,t} of conditional mean zero. Δ ≠ 0 is assumed (C19), not derived."
+    },
+    {
+     "by": "P6",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "With ε_{μ,t} = Y_t − E[Y_t|ỹ_t] under F before the change and G after, Assumption 1 gives e_t = b_μ + ε_{μ,t} and Assumption 2 gives e_t = b_μ + Δ_{μ,m} + ε_{μ,t}; the claim restates the two assumptions. Assumption 2 asks for the full shift from the first post-change observation, which the paper's AR(1) example meets only from the second."
+    }
+   ]
   },
   {
    "id": "C2",
+   "name": "Variance and mean changes appear in the squared forecast errors",
    "statement": "Under [[D9:the mean and variance change model]] and the constant-bias assumption, the change in the mean of the centred squared forecast errors is $$\\Delta_{\\xi,m} = \\mathrm{Var}_{G'}[Y_t|\\tilde{y}_t] - \\mathrm{Var}_F[Y_t|\\tilde{y}_t]$$ when $\\delta_{\\mu,m} = 0$, and $$\\Delta_{\\xi,m} = \\mathrm{Var}_{G'}[Y_t|\\tilde{y}_t] - \\mathrm{Var}_F[Y_t|\\tilde{y}_t] + \\Delta_{\\mu,m}^2$$ when $\\delta_{\\mu,m} \\ne 0$ and the incomplete-adjustment assumption holds.",
    "type": "formal",
    "role": "principal",
@@ -600,17 +735,35 @@
      "note": "Aue et al. (2015) monitor the residuals of ARMA models only; the claim covers the forecast errors of any forecasting model that satisfies the two assumptions."
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p4.17",
     "p4.19",
     "p4.20",
     "p4.21"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Re-derived both cases of Proposition 1: with δ_μ = 0 the bias term vanishes and Δ_ξ = Var_G′ − Var_F (only Assumption 1 is used); with δ_μ ≠ 0 and Assumption 2 the bias term adds Δ_μ². The paper's proof writes E_G for E_G′ in the second case, a slip the claimset does not copy."
+    },
+    {
+     "by": "P6",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Second case: the cross term has zero mean, so the post-change mean of (e_t − b_μ)² is Var_{G′} + Δ_μ². First case: the result needs the forecast bias to stay b_μ after the change and constant conditional variances, which Assumption 1 as printed (t ≤ m + k*) does not give; for ETS(A,N,N) with α = 0.5 on i.i.d. data and variance 1 → 3 the shift is 2.664 = 2δ_ξ/(2 − α), not δ_ξ = 2 (limitation L8)."
+    }
+   ],
+   "limitations": [
+    "L8"
+   ]
   },
   {
    "id": "C3",
+   "name": "Limit distributions of the squared-error detector",
    "statement": "For the [[D3:squared-error detector]] under [[D9:the mean and variance change model]], the limit distribution of Theorem 1 of the paper's Supporting Information holds under the null hypothesis of no change, and the limit distribution of its Theorem 2 holds for the stopping time $\\tau_{\\xi,m}$ under the alternative when the change size $\\Delta_{\\xi,m}$ is large enough in the sense of that document's Assumptions C to E.",
    "type": "formal",
    "role": "principal",
@@ -654,7 +807,7 @@
      "note": "Aue et al. (2015) monitor the residuals of ARMA models only; the claim covers the forecast errors of any forecasting model that satisfies the two assumptions."
     }
    ],
-   "verification": "unchecked",
+   "verification": "disputed",
    "source_spans": [
     "p5.6",
     "p5.7",
@@ -664,11 +817,30 @@
     "s3.3-s3.5",
     "s4.5-s4.7"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "Null part confirmed: Q_ξ is Page's statistic on the centred squared errors, the constant b_ξ cancels, and estimating b_μ adds a term that vanishes under the null, so Theorem 1 applies with H0: Δ_ξ = 0, given the invariance principle for ε_ξ (moments above order 4) and uncorrelated ε_ξ. Alternative part not established: Theorem 2 assumes one invariance constant σ over the whole series, but a variance change alters the long-run variance of the centred squared errors (for Gaussian errors from 2σ⁴ to 2(σ²+δ)²), so its limit does not follow for variance changes as stated. Proposition 2's second part speaks of D_ξ converging to a limit that Theorem 2 gives for τ."
+    },
+    {
+     "by": "P6",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "Null part confirmed: replacing b_μ by b̂_{μ,m} is harmless. Alternative part: Theorem 2 needs the same σ before and after the change, but a variance change, or a mean change, alters the variance of the centred squared errors. Simulation (m = 10⁶, γ = 0, 1,500 replications) gave a standard deviation of the standardised stopping time of 2.04 for variance 1 → 2 and 4.02 for 1 → 4, against 1.00 for a mean change, where it should be 1."
+    }
+   ],
+   "limitations": [
+    "L6",
+    "L7"
+   ]
   },
   {
    "id": "C4",
-   "statement": "For an [[D10:ETS(A,N,N) forecasting model]] under [[D8:the mean change model]] with pre-change expectation $\\lambda$, the expected forecast error $s$ steps after the changepoint is $\\mathbb{E}[e_{k^*+s}] = \\delta_{\\mu,m}$ for $s = 1$ and $$\\mathbb{E}[e_{k^*+s}] = (\\lambda + \\delta_{\\mu,m})\\left(1 - \\sum_{i=0}^{s-2} \\alpha(1-\\alpha)^i\\right) - \\lambda\\left(\\alpha(1-\\alpha)^{s-1} - (1-\\alpha)^s\\right)$$ for $s = 2, 3, \\ldots$, an expectation that returns to zero as $s$ grows when $\\alpha > 0$ and does not satisfy the incomplete-adjustment assumption unless $\\alpha = 0$.",
+   "name": "ETS(A,N,N) forecast errors return to zero after a mean change",
+   "statement": "For an [[D10:ETS(A,N,N) forecasting model]] under [[D8:the mean change model]], with forecasts unbiased before the changepoint and a conditional mean of the data equal to $\\lambda$ before it and $\\lambda + \\delta_{\\mu,m}$ after it, the expected forecast error $s$ steps after the changepoint is $\\mathbb{E}[e_{m+k^*+s}] = \\delta_{\\mu,m}(1-\\alpha)^{s-1}$ for $s = 1, 2, \\ldots$, an expectation that returns to zero as $s$ grows when $0 < \\alpha < 1$, so the model does not satisfy the incomplete-adjustment assumption.",
    "type": "formal",
    "role": "principal",
    "about": {
@@ -702,7 +874,7 @@
      "note": "The closest result found: Aue et al. (2015) give the change size in ARMA residuals; the claim gives it for an exponential smoothing forecasting model, where it vanishes."
     }
    ],
-   "verification": "unchecked",
+   "verification": "agent_checked",
    "source_spans": [
     "p6.15",
     "p6.16",
@@ -712,10 +884,25 @@
     "p7.5",
     "p7.6"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "Derived E[e_{k*+s}] by recursion from the ETS(A,N,N) update with unbiased pre-change forecasts: δ(1−α)^{s−1}; checked numerically at α = 0.3, λ = 10, δ = 2 and α = 0.8, λ = 5, δ = −1. The printed formula of the paper's Proposition 3 is wrong for λ ≠ 0 (recorded as a misprint); this check is of the corrected statement. The expectation tends to 0 for 0 < α < 1."
+    },
+    {
+     "by": "P6",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "From ŷ_t(1) = ŷ_{t−1}(1) + αe_{t−1} with unbiased pre-change forecasts, E[e] = δ(1−α)^{s−1} for every s ≥ 1, matched by Monte Carlo (0.983 against 0.98 at α = 0.3, λ = 10, δ = 2, s = 3); the printed Proposition 3 gives δ(1−α)^{s−1} + 2λ(1−α)^s, right only for λ = 0. Checked as corrected, with index m + k* + s."
+    }
+   ]
   },
   {
    "id": "C5",
+   "name": "Monitoring forecast errors detects changes sooner than the Raw CUSUM",
    "statement": "On [[D16:the seasonal mean change scenario]], [[D17:the seasonal trend change scenario]] and [[D18:the autoregressive parameter change scenarios]], monitoring forecast errors with the [[D1:forecast error monitoring framework]] detected the changes with a shorter [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]], at a low [[D14:false detection probability (FDP)]].",
    "type": "descriptive",
    "role": "principal",
@@ -794,6 +981,7 @@
   },
   {
    "id": "C6",
+   "name": "Both detectors signal the Royal Mail peak on 2 December 2020",
    "statement": "On [[D19:the Royal Mail forecast errors]], the [[D2:mean detector]] and the [[D3:squared-error detector]] of the [[D1:forecast error monitoring framework]] both signalled a changepoint on 2 December 2020.",
    "type": "descriptive",
    "role": "principal",
@@ -858,7 +1046,8 @@
   },
   {
    "id": "C7",
-   "statement": "On [[D20:the GRP admissions series]], both detectors of the [[D1:forecast error monitoring framework]] have a shorter [[D22:detection delay]] than [[D21:model-based sequential changepoint detection]], whose minimum possible detection delay on data with yearly seasonality is 24 months.",
+   "name": "Shorter delay than model-based detection on GRP admissions",
+   "statement": "On [[D20:the GRP admissions series]], the two detectors of the [[D1:forecast error monitoring framework]] signal 4 and 2 observations after the change, a shorter [[D22:detection delay]] than that of [[D21:model-based sequential changepoint detection]], whose minimum possible detection delay on data with yearly seasonality is 24 months.",
    "type": "descriptive",
    "role": "principal",
    "about": {
@@ -875,12 +1064,26 @@
    "scope": {
     "setting": "A&E admissions in participating hospitals",
     "geography": "England",
-    "data_type": "monthly proportions with yearly seasonality"
+    "data_type": "monthly proportions with yearly seasonality",
+    "conditions": [
+     "a model-based detector needs at least 24 months of post-change data to fit a model with yearly seasonality"
+    ]
    },
    "support": [
     {
      "kind": "argument",
      "warrant": "W2"
+    },
+    {
+     "kind": "empirical_quant",
+     "evidence": "E10",
+     "artefacts": [
+      "A6"
+     ],
+     "results": [
+      "E10.R1",
+      "E10.R2"
+     ]
     }
    ],
    "depends_on": [
@@ -916,6 +1119,7 @@
   },
   {
    "id": "C8",
+   "name": "ARMA forecast errors detect seasonal mean changes sooner",
    "statement": "On [[D16:the seasonal mean change scenario]], [[D5:ARMA Forecast Errors]] has a high [[D13:detection probability (DP)]] and a lower [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]] across all change sizes.",
    "type": "descriptive",
    "role": "supporting",
@@ -975,6 +1179,7 @@
   },
   {
    "id": "C9",
+   "name": "ARMA forecast errors detect seasonal trend changes sooner",
    "statement": "On [[D17:the seasonal trend change scenario]], [[D5:ARMA Forecast Errors]] and [[D4:Raw CUSUM]] both have an extremely high [[D13:detection probability (DP)]], and [[D5:ARMA Forecast Errors]] has the lower [[D12:average detection delay (ADD)]] across all change sizes.",
    "type": "descriptive",
    "role": "supporting",
@@ -1034,6 +1239,7 @@
   },
   {
    "id": "C10",
+   "name": "Forecast errors beat the Raw CUSUM on autoregressive changes",
    "statement": "On [[D18:the autoregressive parameter change scenarios]], [[D5:ARMA Forecast Errors]] and [[D6:ETS Forecast Errors]] each give a better [[D13:detection probability (DP)]] and [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]] in all scenarios.",
    "type": "descriptive",
    "role": "supporting",
@@ -1090,6 +1296,7 @@
   },
   {
    "id": "C11",
+   "name": "False detection probability below 0.075 for autoregressive changes",
    "statement": "On [[D18:the autoregressive parameter change scenarios]], the [[D14:false detection probability (FDP)]] is below 0.075 for each of the [[D7:compared detectors]].",
    "type": "descriptive",
    "role": "supporting",
@@ -1139,6 +1346,7 @@
   },
   {
    "id": "C12",
+   "name": "Low false detection probability for mean and trend changes",
    "statement": "On [[D16:the seasonal mean change scenario]] and [[D17:the seasonal trend change scenario]], the [[D14:false detection probability (FDP)]] of the [[D7:compared detectors]] is low across all change sizes.",
    "type": "descriptive",
    "role": "supporting",
@@ -1183,6 +1391,7 @@
   },
   {
    "id": "C13",
+   "name": "Mean detector signals 4 points after the GRP change",
    "statement": "On [[D20:the GRP admissions series]], the [[D22:detection delay]] of the [[D2:mean detector]] was 4 data points, counted from the changepoint that the retrospective analysis of Taib et al. (2021) identified.",
    "type": "descriptive",
    "role": "supporting",
@@ -1234,6 +1443,7 @@
   },
   {
    "id": "C14",
+   "name": "Squared-error detector signals 2 points after the GRP change",
    "statement": "On [[D20:the GRP admissions series]], the [[D22:detection delay]] of the [[D3:squared-error detector]] was 2 time points.",
    "type": "descriptive",
    "role": "supporting",
@@ -1285,6 +1495,7 @@
   },
   {
    "id": "C23",
+   "name": "Limit distributions of the mean detector",
    "type": "formal",
    "role": "supporting",
    "novelty": "extension",
@@ -1330,7 +1541,7 @@
      "note": "Aue et al. (2015) give the limit distributions for the residuals of ARMA models; the claim gives them for the forecast errors of any forecasting model that satisfies the two assumptions."
     }
    ],
-   "verification": "unchecked",
+   "verification": "disputed",
    "source_spans": [
     "p4.9",
     "s4.10",
@@ -1338,11 +1549,29 @@
     "s4.13",
     "s4.14-s4.15"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "disputed",
+     "extent": "full",
+     "notes": "The substitution into Theorems 1 and 2 is right (b_μ cancels; D = D_μ, σ̂ = σ̂_μ, τ = τ_μ). The null limit needs H0: Δ_μ = 0 rather than no change in the raw data, which may change while the errors do not (as with ETS), and needs only C18 and C20; C19 (Δ ≠ 0) contradicts the null. The alternative limit needs the error distribution to be unchanged after the change apart from its mean, which the mean change model (any F and G differing in mean) does not ensure. Estimating the model once, and using out-of-sample errors, is not addressed."
+    },
+    {
+     "by": "P6",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "With e_t = b_μ + ε_{μ,t} + Δ_{μ,m}·1{t > m + k*}, D_μ is Page's detector on model (A1) with λ = b_μ, and Theorems 1 and 2 apply with the stated substitutions once ε_{μ,t} satisfies Assumptions A and B with the same σ before and after (C20) and Δ_{μ,m} satisfies C to E (C21); simulation agreed (standard deviation 1.00 and 1.03). The same σ holds for a pure location shift, not if G also changes the spread."
+    }
+   ],
+   "limitations": [
+    "L7"
+   ]
   },
   {
    "id": "C15",
-   "statement": "An [[D11:ARMA forecasting model]] satisfies the two forecasting-model assumptions for a change of size $\\delta_{\\mu,m}$ in its mean parameter $\\lambda$, the change in its forecast errors being $\\Delta_{\\mu,m} = \\delta_{\\mu,m}\\left(1 - \\sum_{j=1}^{p}\\phi_j\\right)\\sum_{l=0}^{\\infty}\\psi_l(\\theta)$ with $1/\\theta(z) = \\sum_{l=0}^{\\infty}\\psi_l(\\theta)$.",
+   "name": "ARMA models satisfy the forecasting-model assumptions",
+   "statement": "An [[D11:ARMA forecasting model]] satisfies the two forecasting-model assumptions for a change of size $\\delta_{\\mu,m}$ in its mean parameter $\\lambda$, the change in its forecast errors being $\\Delta_{\\mu,m} = \\delta_{\\mu,m}\\left(1 - \\sum_{j=1}^{p}\\phi_j\\right)\\sum_{l=0}^{\\infty}\\psi_l(\\theta)$ with $1/\\theta(z) = \\sum_{l=0}^{\\infty}\\psi_l(\\theta) z^l$.",
    "type": "formal",
    "role": "secondary",
    "about": {
@@ -1387,7 +1616,8 @@
   },
   {
    "id": "C16",
-   "statement": "For a change of size $\\delta_{\\xi,m}$ in the variance of the data, the change in the squared forecast errors of an [[D11:ARMA forecasting model]] is $\\Delta_{\\xi,m} = \\delta_{\\xi,m}$, in agreement with the variance-change formula of the paper's Proposition 1.",
+   "name": "A variance change passes unchanged into ARMA squared errors",
+   "statement": "For a change of size $\\delta_{\\xi,m}$ in the innovation variance of the data, with no change in its mean, the change in the squared forecast errors of an [[D11:ARMA forecasting model]] is $\\Delta_{\\xi,m} = \\delta_{\\xi,m}$, in agreement with the variance-change formula of the paper's Proposition 1.",
    "type": "formal",
    "role": "secondary",
    "about": {
@@ -1423,11 +1653,27 @@
     "p6.10",
     "p6.11"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "full",
+     "notes": "For a perfectly estimated causal and invertible ARMA model the forecast errors equal the innovations (after start-up), so a change of δ in the innovation variance changes E[e_t²] by δ, agreeing with Proposition 1 (δ_μ = 0) and with the result attributed to Aue et al. (2015). The statement now says innovation variance and no mean change: the marginal variance of Y_t changes by δΣψ_l². The Supporting Information's Section C.2 calls δ_ξ the new variance, not the difference."
+    },
+    {
+     "by": "P6",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Under C22 the forecast error is the innovation, so a change δ_ξ in the innovation variance gives Δ_ξ = δ_ξ, agreeing with Proposition 1; the marginal variance of Y_t changes by δ_ξΣψ_j² instead. The attribution to Aue et al. (2015) was not checked against that paper."
+    }
+   ],
+   "verification": "agent_checked"
   },
   {
    "id": "C17",
-   "statement": "A variance change in the raw data produces a mean change in the squared forecast errors of an ETS forecasting model that the [[D3:squared-error detector]] can detect.",
+   "name": "ETS squared forecast errors reveal variance changes",
+   "statement": "For an ETS forecasting model with a constant bias before the change, a change in the conditional variance of the raw data, with no change in its mean, shifts the mean of the squared forecast errors by the size of the variance change, and the paper shows the [[D3:squared-error detector]] detecting it for an ETS model through one example and a simulation.",
    "type": "formal",
    "role": "secondary",
    "about": {
@@ -1480,7 +1726,25 @@
     "p7.8",
     "p11.9"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Proposition 1 with δ_μ = 0 needs only Assumption 1 and gives Δ_ξ = δ_ξ, so a pure variance change shifts the mean of the squared ETS errors; C4 is not needed for this. The detectability part rests on C3 (whose alternative limit is not established for variance changes) and on Assumptions C to E; the paper shows it for ETS only by the ETS(A,A,N) example and simulation, as the statement now says. Assumption 1 may fail for a misspecified ETS model."
+    },
+    {
+     "by": "P6",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "A variance change shifts the mean of ETS squared errors persistently (ETS(A,N,N), variance 1 → 3: shift 2.00 when the model is the true one, 2.10 to 2.66 otherwise), so the detector has drift. The warrant's 'Proposition 1 applies to an ETS model' holds exactly only when the ETS model is the true model; otherwise the shift is another positive multiple of δ_ξ. The limit after a variance change inherits C3's problem. Not checked: forms other than ETS(A,N,N)."
+    }
+   ],
+   "limitations": [
+    "L6",
+    "L8"
+   ]
   },
   {
    "id": "C18",
@@ -1525,7 +1789,7 @@
   },
   {
    "id": "C20",
-   "statement": "The zero-mean variables $\\epsilon_t$ of the monitored series, here $\\epsilon_{\\mu,t}$ and $\\epsilon_{\\xi,t}$ left in the forecast errors after the bias is removed, satisfy the weak invariance principle of Assumptions A and B of the paper's Supporting Information: $\\left|\\sum_{t=1}^{m} \\epsilon_t\\right| = O_P(\\sqrt{m})$, and there are Wiener processes $\\{W_m(i) : i \\ge 0, m \\ge 1\\}$ and a constant $\\sigma > 0$ with $$\\sup_{1/m \\le i < \\infty} \\frac{1}{(mi)^{1/\\nu}} \\left| \\sum_{t=m+1}^{m+mi} \\epsilon_t - \\sigma W_m(mi) \\right| = O_P(1) \\quad \\text{for some } \\nu > 2$$.",
+   "statement": "The zero-mean variables $\\epsilon_t$ of the monitored series, here $\\epsilon_{\\mu,t}$ and $\\epsilon_{\\xi,t}$ left in the forecast errors after the bias is removed, satisfy the weak invariance principle of Assumptions A and B of the paper's Supporting Information: $\\left|\\sum_{t=1}^{m} \\epsilon_t\\right| = O_P(\\sqrt{m})$, and there are Wiener processes $\\{W_m(i) : i \\ge 0, m \\ge 1\\}$ and a constant $\\sigma > 0$ with $$\\sup_{1/m \\le i < \\infty} \\frac{1}{(mi)^{1/\\nu}} \\left| \\sum_{t=m+1}^{m+mi} \\epsilon_t - \\sigma W_m(mi) \\right| = O_P(1) \\quad \\text{for some } \\nu > 2$$, and are independent and identically distributed, so that the ordinary standard deviation of the Phase I errors estimates $\\sigma$.",
    "type": "formal",
    "role": "supporting",
    "support": [
@@ -1536,9 +1800,9 @@
    "assumption_category": "statistical",
    "check": "unchecked",
    "source_spans": [
+    "p4.18",
     "p4.4",
     "p4.9",
-    "p4.18",
     "s1.8",
     "s2.1",
     "s2.2"
@@ -1590,6 +1854,7 @@
   },
   {
    "id": "C24",
+   "name": "Null limit distribution of Page's CUSUM detector",
    "type": "formal",
    "role": "supporting",
    "novelty": "synthesis",
@@ -1623,10 +1888,25 @@
     "s3.2",
     "s3.3-s3.5"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Checked the restatement against Theorem 1 of the Supporting Information (Fremdt 2015) in the PDF: the limit, the weight g, γ ∈ [0, 1/2) and the Brownian motion match. The theorem itself was not re-proved."
+    },
+    {
+     "by": "P6",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Restatement of Theorem 1 of the Supporting Information checked against the PDF: limit, supremum ranges, factor 1/i^γ, (1 − i)/(1 − j) and g(m,k,γ) with γ ∈ [0, 1/2) match. Fremdt (2015) itself was not consulted."
+    }
+   ]
   },
   {
    "id": "C25",
+   "name": "Limit distribution of the stopping time under a mean change",
    "type": "formal",
    "role": "supporting",
    "novelty": "synthesis",
@@ -1666,7 +1946,217 @@
     "s4.5-s4.7",
     "s4.8"
    ],
+   "provenance": "author_stated",
+   "checks": [
+    {
+     "by": "P5",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Checked the restatement against Theorem 2 of the Supporting Information (Fremdt 2014) in the PDF: a_m(c), b_m(c), Ψ, Δ̃_m, the three scenarios and Assumptions C to E match. The theorem itself was not re-proved; c_α is the critical constant of Theorem 1."
+    },
+    {
+     "by": "P6",
+     "outcome": "confirmed",
+     "extent": "partial",
+     "notes": "Restatement of Theorem 2 checked against page 4 of the Supporting Information: a_m(c), b_m(c), Δ̃_m, the three scenarios, d and Ψ match; a simulation agrees for γ = 0 in scenario I. Fremdt (2014) itself was not consulted."
+    }
+   ]
+  },
+  {
+   "id": "C26",
+   "name": "Raw CUSUM overestimates the training variance of seasonal data",
+   "statement": "On [[D18:the autoregressive parameter change scenarios]], the Phase I (training) variance estimate of [[D4:Raw CUSUM]] includes the seasonal variation that it does not model, and is too large.",
+   "type": "interpretive",
+   "role": "secondary",
+   "about": {
+    "subject": "D4",
+    "relation": "overestimates the training-period variance of",
+    "object": "D18",
+    "comparator": null,
+    "conditions": []
+   },
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "support": [
+    {
+     "kind": "argument",
+     "warrant": "W3"
+    }
+   ],
+   "relations": [
+    {
+     "type": "explains",
+     "target": "C10",
+     "id_type": "local",
+     "note": "Why the Raw CUSUM detects the autoregressive parameter changes worse than monitoring forecast errors."
+    }
+   ],
+   "source_spans": [
+    "p8.13"
+   ],
    "provenance": "author_stated"
+  },
+  {
+   "id": "C27",
+   "name": "ARMA forecast errors detect mean changes sooner without seasonality",
+   "statement": "On [[D25:the supplementary mean change scenarios]], [[D5:ARMA Forecast Errors]] has a much lower [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]] across all change sizes, a [[D13:detection probability (DP)]] at least as high, and a comparable [[D14:false detection probability (FDP)]].",
+   "type": "descriptive",
+   "role": "secondary",
+   "about": {
+    "subject": "D5",
+    "relation": "detects with a shorter delay than",
+    "object": [
+     "D12",
+     "D13",
+     "D14"
+    ],
+    "comparator": "D4",
+    "conditions": [
+     "D25"
+    ]
+   },
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "data_type": "simulated AR(2) and ARMA(1,1) data without seasonality",
+    "conditions": [
+     "mean change sizes 0.5 to 2.5"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E12",
+     "artefacts": [
+      "A11"
+     ]
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Values shown in a figure of the Supporting Information and not tabulated."
+    }
+   ],
+   "source_spans": [
+    "s5.6"
+   ],
+   "provenance": "author_stated",
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C5",
+     "id_type": "local",
+     "note": "The same comparison on simpler data without seasonality, in the Supporting Information."
+    }
+   ]
+  },
+  {
+   "id": "C28",
+   "name": "Forecast errors detect variance changes sooner, with one exception",
+   "statement": "On [[D26:the supplementary variance change scenarios]], [[D5:ARMA Forecast Errors]] and [[D6:ETS Forecast Errors]] nearly always have a smaller [[D12:average detection delay (ADD)]] than [[D4:Raw CUSUM]], the exception being the AR(1) scenario at change size 1.5, where [[D4:Raw CUSUM]], at a small [[D13:detection probability (DP)]], has the lower ADD with error bars overlapping those of ARMA Forecast Errors.",
+   "type": "descriptive",
+   "role": "secondary",
+   "about": {
+    "subject": "forecast-error detectors (D5, D6)",
+    "relation": "detect variance changes with a shorter delay than",
+    "object": "D12",
+    "comparator": "D4",
+    "conditions": [
+     "D26"
+    ]
+   },
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "data_type": "simulated AR(1) and ARMA(2,1) data without seasonality",
+    "conditions": [
+     "variance change sizes 1.5 to 3.5"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E13",
+     "artefacts": [
+      "A12"
+     ]
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "assessments": [
+    {
+     "by": "author",
+     "strength": "moderate",
+     "rationale": "Values shown in a figure of the Supporting Information and not tabulated."
+    }
+   ],
+   "source_spans": [
+    "s5.11"
+   ],
+   "provenance": "author_stated",
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C5",
+     "id_type": "local",
+     "note": "The same comparison on simpler data without seasonality, in the Supporting Information."
+    }
+   ]
+  },
+  {
+   "id": "C29",
+   "name": "False detection probabilities below 0.05 for variance changes",
+   "statement": "On [[D26:the supplementary variance change scenarios]], the [[D14:false detection probability (FDP)]] of each of the [[D7:compared detectors]] is below 0.05, with [[D4:Raw CUSUM]] much higher than the others in the AR(1) scenario and [[D6:ETS Forecast Errors]] the highest in the ARMA(2,1) scenario.",
+   "type": "descriptive",
+   "role": "secondary",
+   "about": {
+    "subject": "D7",
+    "relation": "has a false detection probability below 0.05 on",
+    "object": "D14",
+    "comparator": null,
+    "conditions": [
+     "D26"
+    ]
+   },
+   "novelty": "no_prior_found",
+   "planning": "exploratory",
+   "scope": {
+    "data_type": "simulated AR(1) and ARMA(2,1) data without seasonality",
+    "conditions": [
+     "false alarm rate set at 0.05"
+    ]
+   },
+   "support": [
+    {
+     "kind": "simulation",
+     "evidence": "E13",
+     "artefacts": [
+      "A12"
+     ]
+    }
+   ],
+   "limitations": [
+    "L3"
+   ],
+   "source_spans": [
+    "s7.1"
+   ],
+   "provenance": "author_stated",
+   "relations": [
+    {
+     "type": "supports",
+     "target": "C5",
+     "id_type": "local",
+     "note": "The same comparison on simpler data without seasonality, in the Supporting Information."
+    }
+   ]
   }
  ],
  "evidence": [
@@ -2125,6 +2615,28 @@
      "conditions": {
       "detector": "D3"
      }
+    },
+    {
+     "id": "R3",
+     "variable": "date of the signal",
+     "value": {
+      "text": "2017-07-01",
+      "locator": "Figure 6"
+     },
+     "conditions": {
+      "detector": "D2"
+     }
+    },
+    {
+     "id": "R4",
+     "variable": "date of the signal",
+     "value": {
+      "text": "2017-05-01",
+      "locator": "Figure 6"
+     },
+     "conditions": {
+      "detector": "D3"
+     }
     }
    ],
    "source_spans": [
@@ -2187,6 +2699,76 @@
     "level": "public",
     "comment": "in the paper's Supporting Information"
    }
+  },
+  {
+   "id": "E12",
+   "profile": "simulation",
+   "description": "Simulation of mean changes in AR(2) and ARMA(1,1) data without seasonality (Supporting Information, Section C.1 and Figure 1): detection probability, false detection probability and average detection delay of ARMA Forecast Errors and Raw CUSUM. The values are shown in a figure only.",
+   "setup": {
+    "studied": [
+     "D5",
+     "D4"
+    ],
+    "cases": [
+     "D25"
+    ],
+    "procedure": [
+     "D1"
+    ],
+    "lens": [
+     "D12",
+     "D13",
+     "D14"
+    ]
+   },
+   "model": "ARMA forecasting models of the known order, parameters estimated in the training period",
+   "artefacts": [
+    "A11",
+    "A7"
+   ],
+   "source_spans": [
+    "s5.2-s5.6"
+   ],
+   "availability": {
+    "level": "not_stated"
+   },
+   "runs": 1000
+  },
+  {
+   "id": "E13",
+   "profile": "simulation",
+   "description": "Simulation of variance changes in AR(1) and ARMA(2,1) data without seasonality (Supporting Information, Section C.2 and Figure 2): detection probability, false detection probability and average detection delay of ARMA Forecast Errors, ETS Forecast Errors and Raw CUSUM. The values are shown in a figure only.",
+   "setup": {
+    "studied": [
+     "D5",
+     "D6",
+     "D4"
+    ],
+    "cases": [
+     "D26"
+    ],
+    "procedure": [
+     "D1"
+    ],
+    "lens": [
+     "D12",
+     "D13",
+     "D14"
+    ]
+   },
+   "model": "ARMA forecasting models of the known order with estimated parameters; ETS(A,N,N) with an estimated smoothing parameter",
+   "artefacts": [
+    "A12",
+    "A7"
+   ],
+   "source_spans": [
+    "s5.7-s5.11",
+    "s7.1"
+   ],
+   "availability": {
+    "level": "not_stated"
+   },
+   "runs": 1000
   }
  ],
  "warrants": [
@@ -2208,6 +2790,14 @@
     "C14"
    ],
    "text": "A model-based sequential detector must fit the post-change model, here a SARMA(1,0,0)(1,0,0) model with a 12-month season, which the paper states needs at least two years of data after the change; the detectors on the forecast errors signalled four and two observations after it."
+  },
+  {
+   "id": "W3",
+   "reasoning": "abductive",
+   "premises": [
+    "C10"
+   ],
+   "text": "The Raw CUSUM monitors the raw data, whose quarterly seasonal pattern (quarter means -2, 5, 7 and -10) it does not model, so its estimate of the variance in the Phase I (training) period includes the seasonal variation and is too large. The threshold grows with that estimate, so a change must be larger to be detected. The forecasting models capture the seasonality, and their forecast errors do not carry it. The paper gives this as the reason for the results of the autoregressive parameter change scenarios; it does not report the variance estimates."
   }
  ],
  "limitations": [
@@ -2247,12 +2837,15 @@
   {
    "id": "L3",
    "category": "sampling",
-   "statement": "All simulated data have an ARMA error structure with normally distributed innovations and a training sample of 300 observations.",
+   "statement": "All simulated data have an ARMA error structure with normally distributed innovations and a training sample of 300 observations (200 in the simulations of the Supporting Information).",
    "affects": [
     "C5",
     "C8",
     "C9",
-    "C10"
+    "C10",
+    "C27",
+    "C28",
+    "C29"
    ],
    "impact": "reduces_transferability",
    "mitigation": "none",
@@ -2290,6 +2883,49 @@
    "source_spans": [
     "p11.6"
    ]
+  },
+  {
+   "id": "L6",
+   "category": "other",
+   "statement": "The limit distribution under a variance change (Proposition 2) is taken from Theorem 2 of the Supporting Information, which assumes one invariance constant σ for the whole series; a variance change alters the long-run variance of the centred squared forecast errors, so the theorem does not apply as stated and the paper does not address this. Found by the independent proof check.",
+   "affects": [
+    "C3",
+    "C17"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none",
+   "source_spans": [
+    "p5.9",
+    "p5.10",
+    "s3.6-s3.9"
+   ]
+  },
+  {
+   "id": "L7",
+   "category": "other",
+   "statement": "The limit distributions of the detectors need the monitored errors to keep their distribution, apart from the change in mean, after the changepoint, and the null hypothesis is that the errors do not change (Δ = 0), not that the raw data do not; the paper states neither. Found by the independent proof check.",
+   "affects": [
+    "C3",
+    "C23"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none",
+   "source_spans": [
+    "p4.9",
+    "p5.6",
+    "p5.7"
+   ]
+  },
+  {
+   "id": "L8",
+   "category": "model_specification",
+   "statement": "When only the variance changes, the change in the squared forecast errors equals the change in variance only if the forecast bias stays b_μ after the change and the conditional variances are constant; for a forecasting model that is not the true one the shift is another multiple: ETS(A,N,N) with α = 0.5 on independent data gives 2δ_ξ/(2 − α). Found by the second proof check.",
+   "affects": [
+    "C2",
+    "C17"
+   ],
+   "impact": "reduces_precision",
+   "mitigation": "none"
   }
  ],
  "artefacts": [
@@ -2451,6 +3087,36 @@
     "level": "public"
    },
    "description": "The sandwich R package, used for the Bartlett long run variance estimator of Raw CUSUM. The paper's reference gives no version; 3.1-0 is the last version released in 2023, when the paper was written."
+  },
+  {
+   "id": "A11",
+   "kind": "figure",
+   "function": "data_plot",
+   "reference": "B7",
+   "locator": "Supporting Information, Figure 1",
+   "description": "Detection probability, false detection probability and average detection delay of ARMA Forecast Errors and Raw CUSUM for mean changes of varying sizes in the AR(2) and ARMA(1,1) scenarios.",
+   "availability": {
+    "level": "public"
+   },
+   "source_spans": [
+    "s6.1",
+    "s6.3"
+   ]
+  },
+  {
+   "id": "A12",
+   "kind": "figure",
+   "function": "data_plot",
+   "reference": "B7",
+   "locator": "Supporting Information, Figure 2",
+   "description": "Detection probability, false detection probability and average detection delay of ARMA Forecast Errors, ETS Forecast Errors and Raw CUSUM for variance changes of varying sizes in the AR(1) and ARMA(2,1) scenarios.",
+   "availability": {
+    "level": "public"
+   },
+   "source_spans": [
+    "s8.1",
+    "s8.3"
+   ]
   }
  ],
  "open_questions": [

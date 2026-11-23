@@ -1,0 +1,143 @@
+{
+  "papers": [
+    "doi-10-1002-nav-22074",
+    "doi-10-1016-j-ejor-2022-04-040",
+    "doi-10-1093-imaman-dpad028",
+    "doi-10-1111-jtsa-12843",
+    "doi-10-1007-s00180-023-01377-x"
+  ],
+  "author": "Ivan Svetunkov",
+  "written": "2026-11-21",
+  "questions": [
+    {
+      "id": "I1",
+      "type": "cross",
+      "kind": "identification",
+      "question": "Which one of the five papers evaluates its method on the M4 competition data, and how many M4 series does it exclude, and why?",
+      "answer": "Complex exponential smoothing. It excludes 10 M4 series because influential outliers and structural breaks in them made the ETS benchmark break down.",
+      "notes": "One paper; the number 10 and the reason. Both are in the paper (nav [p10.8], Table 3) and the claimset (D32, L5).",
+      "marking": "Required: 'Complex exponential smoothing'; 10 series excluded; because influential outliers and structural breaks in them made the ETS benchmark break down. Also correct: listing the excluded series by number. Not required: the numbers of the excluded series; the results on the M4 data. Wrong: another work; another number of excluded series; another reason.",
+      "in_claimset": true
+    },
+    {
+      "id": "I2",
+      "type": "cross",
+      "kind": "identification",
+      "question": "Which one of the five papers evaluates its method on the M5 competition data, and how does it prepare those data?",
+      "answer": "A new taxonomy for vector exponential smoothing. It aggregates the M5 series to monthly frequency and to department-store level, to avoid intermittence, giving 70 series of 63 observations (one group of a single series is then dropped).",
+      "notes": "One paper; monthly aggregation to department-store level. The 70 series of 63 observations and the dropped group of one series are in both documents (ejor [p12.9], [p12.11]; claimset D32). The purpose, to avoid intermittence, is only in the paper [p12.9] (claimset D32 does not give it): not required.",
+      "marking": "Required: 'A new taxonomy for vector exponential smoothing'; the M5 series are aggregated to monthly frequency and to department-store level. Not required: the purpose (avoiding intermittence); the 70 series of 63 observations; the grouping into seasonal and non-seasonal groups; the removal of a group of one series. Wrong: another work; another frequency or level of aggregation.",
+      "in_claimset": true
+    },
+    {
+      "id": "I3",
+      "type": "cross",
+      "kind": "identification",
+      "question": "Which of the data sets analysed in these papers cannot be obtained publicly, and what does each paper say about access to them?",
+      "answer": "In Staying positive, the daily electric vehicle charging data, which cannot be shared publicly because of a non-disclosure agreement. The authors of Online detection of forecast model inadequacies also state that the Royal Mail forecast errors are not available and that the A&E gallstone admissions data are available from the corresponding author on reasonable request. The other data analysed (the M1, M3, M4, tourism and M5 competition data, the HadCRUT temperatures, Air Passengers) are public.",
+      "notes": "Three data sets in two papers in the paper texts (imaman [p19.7]; jtsa [p12.4]). The Staying positive claimset states the restriction of the EV data (L5, A2). The monitoring claimset states the availability of neither of its data sets (D19 says only that the underlying parcel data and forecasts are not known to the authors; the JSON's availability levels are not in the reading view), so the Royal Mail and A&E elements are in one document only: not required. That the other data are public is not stated by every paper (CES's statement says data sharing is not applicable): a judgement, not required.",
+      "marking": "Required: the daily electric vehicle charging data of 'Staying positive', which cannot be shared publicly because of a non-disclosure agreement. Also correct: the Royal Mail forecast errors of 'Online detection of forecast model inadequacies using forecast errors', which are not available, and its A&E gallstone (GRP) admissions data, available from the corresponding author on reasonable request; that the simulation code of 'Staying positive' is shared on reasonable request. Not required: the Royal Mail and A&E data; that the other data sets are public. Wrong: naming as not publicly obtainable the M1, M3, M4, tourism or M5 competition data, the HadCRUT temperatures or Air Passengers.",
+      "in_claimset": true
+    },
+    {
+      "id": "I4",
+      "type": "cross",
+      "kind": "identification",
+      "question": "Does any of the five papers compare its method in its experiments with a machine learning method, such as a neural network or gradient boosting?",
+      "answer": "No. No paper includes a machine learning method in its experiments. Complex exponential smoothing mentions machine learning in its introduction (the M5 competition), and the authors of Online detection of forecast model inadequacies say that their framework works with any forecasting approach, machine learning and neural networks included.",
+      "notes": "Right if it says no paper does, without inventing a comparison. The mention in Complex exponential smoothing is only in the paper (nav [p2.2]); the monitoring framework's openness to machine learning is in both (jtsa [p2.4], [p3.1]; claimset D1). Neither mention is required.",
+      "marking": "Required: says that none of the five works compares its method with a machine learning method in its experiments (any wording). Not required: that 'Complex exponential smoothing' mentions machine learning in its introduction (the M5 competition); that the framework of 'Online detection of forecast model inadequacies using forecast errors' accepts forecasts from any approach, machine learning and neural networks included. Wrong: presenting a comparison with a machine learning method as the authors'. A nearby statement such as the framework accepting machine learning forecasts does not answer the question; giving it as such a comparison is wrong.",
+      "in_claimset": false
+    },
+    {
+      "id": "I5",
+      "type": "cross",
+      "kind": "identification",
+      "question": "Does any of the five papers evaluate a method on intermittent demand data?",
+      "answer": "No. The vector exponential smoothing paper aggregates the M5 data to monthly department-store series to avoid intermittence, and Staying positive only refers to other work (Svetunkov & Boylan, 2023, on iETS) for intermittent data.",
+      "notes": "Right if it says no paper does, without inventing an evaluation. The purpose of the M5 aggregation (to avoid intermittence) is only in the paper (ejor [p12.9]); Staying positive's pointer to Svetunkov & Boylan (2023) is in the paper (imaman [p18.4]), the name iETS only in its reference list; its claimset mentions intermittent data only in a link to another claimset. Neither is required.",
+      "marking": "Required: says that none of the five works evaluates a method on intermittent demand data (any wording). Not required: that the M5 data were aggregated to monthly department-store series to avoid intermittence; that 'Staying positive' refers to other work (iETS) for intermittent data. Wrong: presenting an evaluation on intermittent demand data as the authors'. A nearby statement such as the use of M5 retail sales (aggregated to monthly department-store series) or a reference to other work on intermittent demand does not answer the question; giving it as such an evaluation is wrong.",
+      "in_claimset": false
+    },
+    {
+      "id": "C1",
+      "type": "cross",
+      "kind": "comparison",
+      "question": "How many simulation replications does each of the five papers use? Give one number (or two, for a paper with two experiments) per paper, or say that it has no simulation.",
+      "answer": "Complex exponential smoothing: no simulation. Vector exponential smoothing: 1000 iterations. Staying positive: 10,000 iterations in the first experiment and 10,000 series in the second. Monitoring: each scenario repeated 1000 times. Multi-step estimators: 500 series (of 5000 observations) for each data generating process.",
+      "notes": "The papers call replications iterations, series or repetitions. All counts are in both documents (VES: paper Table 2, claimset E2 runs 1000 and D22; SP: [p6.10], [p13.6], claimset D14, D15, E2, E5; monitoring: [p8.1], claimset E5, E6 (runs 1000); multi-step: [p19.4], claimset D21). Staying positive's second experiment: the paper says '10,000 time series from ETS(M,Md,M) model with the distributions ...', which can be read as in all or per process; the claimset says per process. Both readings accepted.",
+      "marking": "Required: 'Complex exponential smoothing': no simulation; 'A new taxonomy for vector exponential smoothing': 1,000; 'Staying positive': 10,000 in the first experiment and 10,000 in the second; 'Online detection of forecast model inadequacies using forecast errors': 1,000 for each scenario; 'Multi-step estimators and shrinkage effect in time series models': 500 for each data generating process. Also correct: the counts called iterations, replications, repetitions or series; the second experiment of 'Staying positive' read as 10,000 series in all or 10,000 for each data generating process. Not required: the lengths of the simulated series (such as 5,000 observations). Wrong: another count for any work; a simulation attributed to 'Complex exponential smoothing'.",
+      "in_claimset": true
+    },
+    {
+      "id": "C2",
+      "type": "cross",
+      "kind": "comparison",
+      "question": "Which version or versions of the smooth package for R does each of the five papers report using?",
+      "answer": "Complex exponential smoothing: 3.1.2. Vector exponential smoothing: 3.1.1 (cited for adam()). Staying positive: 3.2.0. Monitoring: 4.0.2 (cited for es()). Multi-step estimators: 2.5.3 for the simulations and 3.2.1 for the temperature example.",
+      "notes": "One version per paper, two for the multi-step estimators paper; versions given only in the reference lists count (VES: Svetunkov 2021b, 3.1.1, in both the published version and the accepted manuscript; monitoring: Svetunkov 2024, 4.0.2). in_claimset true from the claimset corrections of 2026-11-23, which record every package the papers name with its version (software artefacts with CRAN DOIs): CES 3.1.2, VES 3.1.1, Staying positive 3.2.0, monitoring 4.0.2, multi-step estimators 2.5.3 and 3.2.1.",
+      "marking": "Required: 'Complex exponential smoothing': 3.1.2; 'A new taxonomy for vector exponential smoothing': 3.1.1; 'Staying positive': 3.2.0; 'Online detection of forecast model inadequacies using forecast errors': 4.0.2; 'Multi-step estimators and shrinkage effect in time series models': 2.5.3 for the simulations and 3.2.1 for the temperature example. Also correct: saying that a version is given only with the citation of the package. Wrong: another version for any work.",
+      "in_claimset": true
+    },
+    {
+      "id": "C3",
+      "type": "cross",
+      "kind": "comparison",
+      "question": "For each of the five papers, name the measure or measures it uses to evaluate prediction intervals or quantile forecasts, or say that it evaluates none.",
+      "answer": "Complex exponential smoothing: the mean scaled interval score (MSIS) of 95% intervals. Vector exponential smoothing: the coverage of 95% intervals and relative pinball values for their upper and lower bounds. Staying positive: the scaled pinball score, quantile bias and quantile precision (from quantile coverage) over 99 quantile levels. Monitoring: none (it evaluates detection). Multi-step estimators: none (it evaluates point forecasts with RMSE, MAE and ME).",
+      "notes": "Five entries, two of them 'none'. All measures are in both documents (CES: [p9.13], claimset D16; VES: [p8.8]-[p8.9], claimset D40-D42; SP: [p14.4]-[p14.6], claimset D11, D17, D18; multi-step: [p26.6], claimset D16-D18).",
+      "marking": "Required: 'Complex exponential smoothing': the mean scaled interval score (MSIS) of prediction intervals; 'A new taxonomy for vector exponential smoothing': the coverage of prediction intervals and the relative pinball values of their upper and lower bounds; 'Staying positive': the scaled pinball score, with quantile bias and quantile precision; 'Online detection of forecast model inadequacies using forecast errors': none; 'Multi-step estimators and shrinkage effect in time series models': none. Also correct: quantile coverage in place of quantile bias and precision; the 95% level; the 99 quantile levels from 0.01 to 0.99; that 'Online detection of forecast model inadequacies using forecast errors' evaluates detection and 'Multi-step estimators and shrinkage effect in time series models' point forecasts (RMSE, MAE and ME). Not required: the 95% level; the quantile levels; what the last two works evaluate instead. Wrong: an interval or quantile measure attributed to the last two works.",
+      "in_claimset": true
+    },
+    {
+      "id": "R1",
+      "type": "cross",
+      "kind": "relation",
+      "question": "'A new taxonomy for vector exponential smoothing' and 'Staying positive' both evaluate a univariate additive ETS model fitted to the logarithms of the data, its forecasts then exponentiated. What does each find about that model in its experiments, and do the two take the same position on modelling the data in logarithms?",
+      "answer": "In the vector exponential smoothing paper, this model (ETS LN) is slightly more accurate than the other two univariate ETS models on the M5 data with long histories (geometric mean rMAE 0.917, against 0.933 and 0.955). In Staying positive, Akram's log model (ETS(A,Ad,A) on logs) has the lowest mean scaled pinball score on all five simulated processes, its advantage lying in the middle quantiles, with similar results in the tails. The positions differ: the vector exponential smoothing paper builds its own pure multiplicative models on logarithms (VETS(M,N,M;LN)), while Staying positive prefers ETS(M,*,*) with positive error distributions, because the log model has no practical advantage in the tails and sidesteps the ETS taxonomy (it rules out mixed models).",
+      "notes": "Must give one finding per paper and say that the positions differ. 'Differ' is a comparison neither paper makes; it rests on stated positions: VES builds its pure multiplicative models on logs (ejor [p3.12], [p12.15]; claimset D3, C22) and Staying positive argues for ETS(M,*,*) with positive distributions over the log model (imaman [p2.2], [p16.1]; claimset C4, C10). ETS LN: 'slightly more accurate than the other two' is only in the paper text (ejor [p13.3]); the claimset has the values (E3.T1), and on medians ETS (0.957) is below ETS LN (0.959), so only the geometric mean supports it. 'No practical benefit' and 'mixed models' are only in the paper (imaman [p2.2], [p16.1]): not required. Reworded on 2026-11-23: 'ETS models fitted to the logarithms' also covered VES's own vector models, which are defined on logs.",
+      "marking": "Required: for 'A new taxonomy for vector exponential smoothing', that the log model (ETS LN) is somewhat more accurate than the other univariate ETS models (by geometric mean rMAE, on the long histories of the M5 data); for 'Staying positive', that Akram's log model has the lowest mean scaled pinball score on all the simulated processes; and that the positions differ: the first builds its own pure multiplicative models on logarithms, the second prefers ETS(M,*,*) with positive error distributions to the log model. Also correct: that the advantage of Akram's model lies in the middle quantiles, with similar results in the tails; that the log model sidesteps the ETS taxonomy or rules out mixed models; that it has no practical advantage. Not required: the values (0.917 and the others); the reasons 'Staying positive' gives. Wrong: saying the two take the same position; saying ETS LN was the most accurate of all the models compared; saying Akram's model did better in the tails.",
+      "in_claimset": true
+    },
+    {
+      "id": "R2",
+      "type": "cross",
+      "kind": "relation",
+      "question": "What do 'A new taxonomy for vector exponential smoothing' and 'Staying positive' each say the point forecasts of pure multiplicative models correspond to, and are the two statements consistent?",
+      "answer": "The vector exponential smoothing paper: for its models on logs the point forecasts are geometric means (equal to medians), and it argues that producing geometric means is natural for pure multiplicative models. Staying positive: the conventional point forecast of a pure multiplicative ETS model is in general at most the conditional geometric mean, which is at most the arithmetic mean, with equality only in three cases (h = 1; h ≤ m without trend and with multiplicative seasonality; ETS(M,N,N)), so the conditional expectation should be obtained by simulation. They are consistent: both separate geometric from arithmetic means; they concern different formulations (a model on logs, and the original ETS(M,*,*)).",
+      "notes": "Both statements are in both documents (VES: ejor [p3.12]-[p3.16], claimset C24, W6; Staying positive: imaman [p4.7]-[p5.8], claimset C1, C2, L1). 'Consistent' is a comparison neither paper makes; VES itself notes that point forecasts of the original pure multiplicative ETS do not correspond to conditional expectations (W6), which supports it.",
+      "marking": "Required: for 'A new taxonomy for vector exponential smoothing', the point forecasts of its pure multiplicative models (in logarithms) are geometric means (equal to medians), which it argues is natural for such models; for 'Staying positive', the conventional point forecast of a pure multiplicative ETS model is in general at most the conditional geometric mean, which is at most the arithmetic mean (the conditional expectation); and that the two are consistent. Also correct: the three cases in which they coincide (h = 1; h ≤ m for models without trend and with multiplicative seasonality; ETS(M,N,N)); that conditional expectations are to be obtained by simulation; that 'A new taxonomy for vector exponential smoothing' also notes that point forecasts of pure multiplicative ETS do not correspond to conditional expectations; that the two concern different formulations (a model in logarithms and the original ETS(M,*,*)). Not required: the three cases; simulation. Wrong: saying the statements contradict each other; saying either takes the point forecast to be the arithmetic mean.",
+      "in_claimset": true
+    },
+    {
+      "id": "R3",
+      "type": "cross",
+      "kind": "relation",
+      "question": "'Online detection of forecast model inadequacies using forecast errors' and 'Multi-step estimators and shrinkage effect in time series models' both describe how ETS(A,N,N) behaves for different values of its smoothing parameter α. What does each find, and do they agree on what a smaller α does?",
+      "answer": "The monitoring paper: after a change in the mean the expected forecast errors of ETS(A,N,N) return to zero, faster for a larger α, so a mean change shows in its errors only if α is small; a smaller α puts more weight on past values and makes the model less sensitive to recent data. Multi-step estimators: multi-step loss functions shrink α towards zero, more strongly for longer horizons, giving a model with slower level changes that is less reactive to new information, and a global (deterministic) level as the horizon grows. They agree: a smaller α makes the model react more slowly.",
+      "notes": "Monitoring: jtsa [p6.14], [p7.5]-[p7.6]; the claimset gives the faster return to zero for a larger α (C4, E4.2), but not 'more weight on past values' or 'shows only if α is small' (paper only: not required). The claimset corrects the expected-error formula of Proposition 3 (printed form vs δ(1−α)^(s−1)); the conclusion is unaffected, the answer needs no formula, and both forms are accepted. Multi-step: s00180 [p11.9]; the claimset says only that α shrinks towards zero and the model becomes deterministic as h grows (C9); 'slower level changes, less reactive' is paper only: not required. 'They agree' is a comparison neither paper makes, but follows directly.",
+      "marking": "Required: for 'Online detection of forecast model inadequacies using forecast errors', after a change in mean the expected forecast errors of ETS(A,N,N) return to zero, faster for a larger α (a smaller α adapts more slowly); for 'Multi-step estimators and shrinkage effect in time series models', multi-step loss functions shrink α towards zero, the model tending to a deterministic (global) level as the horizon grows; and that they agree that a smaller α makes the model react more slowly to new data. Also correct: that a mean change shows in the forecast errors only if α is small; that a smaller α puts more weight on past values and makes the model less sensitive to recent data; that a smaller α gives slower level changes, less reactive to new information; that shrinkage grows with the horizon; either form of the expected forecast error s steps after the change, δ(1−α)^(s−1), or (λ + δ)(1 − Σ_{i=0}^{s−2} α(1−α)^i) − λ(α(1−α)^(s−1) − (1−α)^s) for s ≥ 2. Not required: these details; any formula. Wrong: saying they disagree; saying a smaller α makes the model adapt faster.",
+      "in_claimset": true
+    },
+    {
+      "id": "R4",
+      "type": "cross",
+      "kind": "relation",
+      "question": "'Complex exponential smoothing' and 'Multi-step estimators and shrinkage effect in time series models' both connect state space models with ARMA or ARIMA models. What does each paper use this connection to show?",
+      "answer": "Complex exponential smoothing: that CES has an underlying ARMA(2,2) model whose AR and MA coefficients are tied together through the complex smoothing parameter, so that its parameter space differs from that of the general ARMA(2,2) and is not restricted to stationary models; the stability condition of CES is derived from the invertibility of that ARMA. Multi-step estimators: writing ARIMA models in state space form, how multi-step loss functions shrink ARIMA parameters (AR parameters towards zero, MA parameters towards minus the AR polynomials), with the example of ARIMA(1,1,1), which the authors say degenerates into an ARIMA(1,0,0) model as the horizon grows.",
+      "notes": "An answer that also reports the dispute of the ARIMA(1,1,1) limit is not wrong (multi-step claimset C8 is disputed; L7: the limit is a deterministic level, φ = 0, θ = −1). 'AR towards zero, MA towards minus the AR polynomials' is only in the paper (s00180 [p9.4]): not required. The paper is itself inconsistent on φ1 for ARIMA(1,1,1) ([p9.9] towards zero, [p10.2] towards −1; claimset C8 towards −1): the limits are not required. CES: nav [p5.16]-[p5.20], [p11.25], Appendix D; claimset C5-C7, E4. Reworded on 2026-11-23: the multi-step paper writes ARIMA in state space form; it does not use the ARMA representation of a state space model, as the earlier wording said.",
+      "marking": "Required: for 'Complex exponential smoothing', that CES has an underlying ARMA(2,2) model whose AR and MA coefficients are connected through the complex smoothing parameter; for 'Multi-step estimators and shrinkage effect in time series models', that multi-step loss functions shrink the parameters of ARIMA models, with ARIMA(1,1,1) as the example. Also correct: that the parameter space of that ARMA(2,2) differs from the general one and is not restricted to stationary models; that the stability of CES follows from the invertibility of that ARMA; that AR parameters shrink towards zero and MA parameters towards minus the AR polynomials; that ARIMA(1,1,1) degenerates into an ARIMA(1,0,0) model, or that this limit is disputed (the limit being a deterministic level). Not required: the coefficient formulas; the limits of the ARIMA(1,1,1) parameters. Wrong: swapping what the two works show.",
+      "in_claimset": true
+    },
+    {
+      "id": "R5",
+      "type": "cross",
+      "kind": "relation",
+      "question": "'Complex exponential smoothing' (Nemenyi tests) and 'A new taxonomy for vector exponential smoothing' (a multiple comparisons with the best test on rMAE) both test whether their method's accuracy differs significantly from other methods. Do the two papers reach the same conclusion about their method against the univariate ETS benchmark?",
+      "answer": "Yes. In both, the proposed method ranks or performs best, but neither establishes that it is significantly more accurate than ETS. CES has the best mean rank of the univariate models on RMSSE and MASE, but its differences from them are not significant in all cases, and the authors do not say which are. In the vector exponential smoothing paper, the differences in the MCB test are not statistically significant: VETS F has the lowest mean rank on long histories but does not differ significantly from VETS D, ETS LN, ETS (ADAM) and ETS.",
+      "notes": "Must say that neither establishes a significant advantage over ETS. CES: the text says only that the differences are 'not in all cases statistically significant' (nav [p9.20]), as does the claimset; the PDF's Figure 6 shows CES joined to ETS (no significant difference) on RMSSE and MASE, so 'not significantly different from ETS' is also correct. VES: VETS F's lowest mean rank is only in the paper (ejor [p13.5]); the claimset says the differences are not shown to be significant (L8, W11): not required. Reworded on 2026-11-23: the question named the M5 data (giving away I2) and the M1, M3 and tourism data.",
+      "marking": "Required: yes, the same conclusion: neither establishes that its method is significantly more accurate than univariate ETS; for 'Complex exponential smoothing', CES has the best mean rank of the univariate models on RMSSE and MASE but the differences are not significant in all cases; for 'A new taxonomy for vector exponential smoothing', the differences in the MCB test are not statistically significant. Also correct: that CES does not differ significantly from ETS; that the authors of 'Complex exponential smoothing' do not say which differences are significant; that VETS F has the lowest mean rank on long histories without differing significantly from VETS D, ETS LN, ETS (ADAM) and ETS. Not required: which model ranks best in the MCB test. Wrong: saying either work shows its method significantly more accurate than ETS; saying the conclusions differ.",
+      "in_claimset": true
+    }
+  ]
+}

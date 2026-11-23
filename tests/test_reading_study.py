@@ -92,6 +92,47 @@ class ReadingStudyTest(unittest.TestCase):
         for needle in ("duplicate id Q1", "Q5: type", "Q6: no reference answer", "claim C9", "Q8: 'cross'"):
             self.assertIn(needle, text)
 
+    def add_cross(self, questions):
+        for name in ("invented2",):
+            shutil.copy(os.path.join(FIXTURES, "invented.txt"), rs.paper_path(name, self.root))
+            with open(rs.claimset_path(name, self.root), "w") as f:
+                json.dump(CLAIMSET, f)
+            with open(rs.view_path(name, self.root), "w") as f:
+                f.write(VIEW)
+        path = os.path.join(self.root, "study", "questions", "cross.json")
+        with open(path, "w") as f:
+            json.dump({"papers": ["invented", "invented2"], "questions": questions}, f)
+        return path
+
+    def test_cross_questions_take_a_kind(self):
+        path = self.add_cross([
+            {"id": "X1", "type": "cross", "kind": "identification", "question": "Which paper?", "answer": "The first."},
+            {"id": "X2", "type": "cross", "kind": "relation", "question": "Do they agree?", "answer": "Yes."},
+            {"id": "X3", "type": "cross", "question": "No kind given.", "answer": "Fine."},
+            {"id": "X4", "type": "cross", "kind": "guess", "question": "x", "answer": "y"}])
+        qs, problems = rs.load_questions([path], self.root)
+        self.assertEqual([q["kind"] for q in qs], ["identification", "relation", None, "guess"])
+        self.assertEqual(len(problems), 1)
+        self.assertIn("X4: kind", problems[0])
+        bad = json.loads(json.dumps(QUESTIONS))
+        bad["questions"][0]["kind"] = "relation"                        # not on a single-paper question
+        qpath = os.path.join(self.root, "study", "questions", "invented.json")
+        with open(qpath, "w") as f:
+            json.dump(bad, f)
+        self.assertIn("Q1: kind", "\n".join(rs.load_questions([qpath], self.root)[1]))
+
+    def test_report_scores_cross_questions_by_kind(self):
+        self.add_cross([
+            {"id": "X1", "type": "cross", "kind": "identification", "question": "Which paper?", "answer": "The first."},
+            {"id": "X2", "type": "cross", "kind": "relation", "question": "Do they agree?", "answer": "Yes."}])
+        rs.cmd_run(args(out=self.out, conditions=["paper"]), self.root)
+        rs.cmd_grade(args(out=self.out), self.root)
+        self.assertEqual(rs.cmd_report(args(out=self.out), self.root), 0)
+        rep = json.load(open(os.path.join(self.out, "report.json")))
+        self.assertEqual(set(rep["by_kind"]), {"m1 / paper / cross: identification", "m1 / paper / cross: relation"})
+        self.assertEqual(rep["by_kind"]["m1 / paper / cross: relation"]["answers"], 2)          # two repetitions
+        self.assertIn("Score of cross questions by kind", open(os.path.join(self.out, "report.md")).read())
+
     def test_template_is_skipped(self):
         with open(os.path.join(self.root, "study", "questions", "_template.json"), "w") as f:
             f.write("{}")
@@ -186,6 +227,17 @@ class ReadingStudyTest(unittest.TestCase):
         self.assertIn("claimset - paper", rep["paired"])
         self.assertIn("bundle - paper", rep["paired"])
         self.assertTrue(os.path.exists(os.path.join(self.out, "report.md")))
+
+    def test_graders_see_the_marking_guide_not_the_notes(self):
+        q = {"type": "lookup", "question": "What is SEP's Brier score?", "answer": "0.112",
+             "notes": "Only in the claimset (C2), not in the paper [p3.1].", "marking": "Required: 0.112."}
+        text = rs.judge_text(q, "It is 0.112 (C2).")
+        self.assertIn("Marking guide: Required: 0.112.", text)
+        self.assertNotIn("claimset", text)
+        self.assertNotIn("C2", text)
+        self.assertIn("SHEET", dir(rs))
+        self.assertIn("marking", rs.SHEET)
+        self.assertNotIn("notes", rs.SHEET)
 
     def test_dry_run_makes_no_calls(self):
         self.assertEqual(rs.cmd_run(args(out=self.out, dry_run=True, provider="anthropic"), self.root), 0)

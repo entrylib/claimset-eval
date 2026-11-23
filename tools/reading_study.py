@@ -37,6 +37,9 @@ from datetime import datetime, timezone
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 TYPES = ("lookup", "scope", "evidence", "absent", "cross")
+# What a cross question asks of the papers (optional `kind`): which paper holds something; the same quantity across
+# papers, reported differently; whether papers agree, conflict or connect.
+KINDS = ("identification", "comparison", "relation")
 CONDITIONS = ("paper", "claimset", "bundle")
 GRADES = ("correct", "partial", "incorrect", "not_stated")
 API_URL = "https://api.anthropic.com/v1/messages"
@@ -67,7 +70,8 @@ ANSWER_SCHEMA = {
 }
 
 JUDGE_SYSTEM = """You grade an answer to a question about a research paper against a reference answer written \
-by the paper's author. You do not see the paper; the reference answer is authoritative.
+by the paper's author, and its marking guide, which says what is required, what else is correct, what is not \
+required and what is wrong. You do not see the paper; the reference answer and the marking guide are authoritative.
 
 Grades:
 - correct: agrees with the reference on everything the question asks. Extra detail that does not contradict \
@@ -169,9 +173,12 @@ def load_questions(paths, root=ROOT):
                     problems.append(f"{uid}: claim {c} is not in the claimset")
             if q.get("in_claimset") not in (True, False, None):
                 problems.append(f"{uid}: in_claimset must be true, false or absent")
+            kind = q.get("kind")
+            if kind is not None and (t != "cross" or kind not in KINDS):
+                problems.append(f"{uid}: kind, on cross questions only, must be one of {', '.join(KINDS)}")
             out.append({"uid": uid, "file": stem, "papers": papers, "id": qid, "type": t,
-                        "question": q.get("question", ""), "answer": answer or "", "notes": q.get("notes", ""),
-                        "claims": claims, "in_claimset": q.get("in_claimset")})
+                        "question": q.get("question", ""), "answer": answer or "", "notes": q.get("notes", ""), "marking": q.get("marking", ""),
+                        "claims": claims, "in_claimset": q.get("in_claimset"), "kind": q.get("kind")})
     return out, problems
 
 
@@ -500,6 +507,14 @@ def final_grade(g):
     return h.get("grade") or g["grade"], h.get("overreach", g["overreach"])
 
 
+def judge_text(q, answer):
+    """What a grader sees: the question, the reference answer, the marking guide and the blinded answer, never the
+    authors' notes, which name the documents and so would tell the grader the condition."""
+    return (f"Question ({q['type']}): {q['question']}\n\n"
+            f"Reference answer: {q['answer']}\n" + (f"Marking guide: {q['marking']}\n" if q["marking"] else "")
+            + f"\nAnswer to grade: {blind(answer)}")
+
+
 def cmd_grade(args, root=ROOT):
     questions, problems = load_questions(question_files(args.questions, root), root)
     if problems:
@@ -522,9 +537,7 @@ def cmd_grade(args, root=ROOT):
         if r.get("not_stated"):
             g.update({"grade": "not_stated", "overreach": False, "reason": "the answer says the document does not give it"})
         else:
-            blocks = [{"type": "text", "text": f"Question ({q['type']}): {q['question']}\n\n"
-                       f"Reference answer: {q['answer']}\n" + (f"Author's note: {q['notes']}\n" if q["notes"] else "")
-                       + f"\nAnswer to grade: {blind(r['answer'])}"}]
+            blocks = [{"type": "text", "text": judge_text(q, r["answer"])}]
             try:
                 out = PROVIDERS[args.provider](args.judge, JUDGE_SYSTEM, blocks, JUDGE_SCHEMA, args.effort)
                 j = json.loads(out["text"])
@@ -538,7 +551,7 @@ def cmd_grade(args, root=ROOT):
     return 1 if errors else 0
 
 
-SHEET = ["row", "question", "reference", "notes", "answer", "judge_grade", "judge_overreach", "judge_reason",
+SHEET = ["row", "question", "reference", "marking", "answer", "judge_grade", "judge_overreach", "judge_reason",
          "human_grade", "human_overreach"]
 
 
@@ -551,7 +564,7 @@ def write_sheet(path, answers, grades, qs):
             continue
         q = qs[r["uid"]]
         rows.append({"row": sha(r["key"])[:12], "question": q["question"], "reference": q["answer"],
-                     "notes": q["notes"], "answer": blind(r["answer"]), "judge_grade": g["grade"],
+                     "marking": q["marking"], "answer": blind(r["answer"]), "judge_grade": g["grade"],
                      "judge_overreach": g["overreach"], "judge_reason": g.get("reason", ""),
                      "human_grade": "", "human_overreach": ""})
     random.Random(0).shuffle(rows)
@@ -691,7 +704,7 @@ def cmd_report(args, root=ROOT):
         rows.append({"a": a, "g": g, "q": q, "uid": a["uid"], "model": a["model"], "condition": a["condition"],
                      "grade": grade, "overreach": over, "score": score(q, grade)})
     rep = {"graded_answers": len(rows), "failed_calls": errors, "by_model_and_condition": {}, "by_type": {},
-           "by_in_claimset": {}, "paired": {}}
+           "by_kind": {}, "by_in_claimset": {}, "paired": {}}
     for model in sorted({r["model"] for r in rows}):
         for cond in CONDITIONS:
             sel = [r for r in rows if r["model"] == model and r["condition"] == cond]
@@ -701,6 +714,11 @@ def cmd_report(args, root=ROOT):
                     st = [r for r in sel if r["q"]["type"] == t]
                     if st:
                         rep["by_type"][f"{model} / {cond} / {t}"] = {"answers": len(st), "score": mean([r["score"] for r in st])}
+                for kind in KINDS:
+                    st = [r for r in sel if r["q"]["type"] == "cross" and r["q"].get("kind") == kind]
+                    if st:
+                        rep["by_kind"][f"{model} / {cond} / cross: {kind}"] = {
+                            "answers": len(st), "score": mean([r["score"] for r in st])}
                 for flag in (True, False):
                     st = [r for r in sel if r["q"]["in_claimset"] is flag and r["q"]["type"] != "absent"]
                     if st:
@@ -746,6 +764,10 @@ def markdown(rep):
         lines += [f"| {k} | {v['answers']} | {v['score']} |" for k, v in rep["by_in_claimset"].items()]
     lines += ["", "## Score by question type", "", "| model / condition / type | answers | score |", "|---|---|---|"]
     lines += [f"| {k} | {v['answers']} | {v['score']} |" for k, v in rep["by_type"].items()]
+    if rep.get("by_kind"):
+        lines += ["", "## Score of cross questions by kind", "", "| model / condition / kind | answers | score |",
+                  "|---|---|---|"]
+        lines += [f"| {k} | {v['answers']} | {v['score']} |" for k, v in rep["by_kind"].items()]
     return "\n".join(lines) + "\n"
 
 
@@ -759,8 +781,19 @@ def cmd_check(args, root=ROOT):
     for q in questions:
         by.setdefault(q["file"], {}).setdefault(q["type"], 0)
         by[q["file"]][q["type"]] += 1
+    kinds = {}
+    for q in questions:
+        if q["type"] == "cross":
+            kinds.setdefault(q["file"], {}).setdefault(q.get("kind") or "no kind", 0)
+            kinds[q["file"]][q.get("kind") or "no kind"] += 1
     for f, counts in by.items():
-        print(f"  {f}: " + ", ".join(f"{t} {counts[t]}" for t in TYPES if t in counts))
+        line = f"  {f}: " + ", ".join(f"{t} {counts[t]}" for t in TYPES if t in counts)
+        if f in kinds:
+            line += " (" + ", ".join(f"{k} {n}" for k, n in sorted(kinds[f].items())) + ")"
+        print(line)
+    unmarked = [q["uid"] for q in questions if not q["marking"].strip()]
+    if unmarked:
+        print(f"  {len(unmarked)} questions without a marking guide: {', '.join(unmarked)}")
     names = sorted({n for q in questions for n in q["papers"]})
     for name in names:
         if not (os.path.exists(claimset_path(name, root)) and os.path.exists(view_path(name, root))):

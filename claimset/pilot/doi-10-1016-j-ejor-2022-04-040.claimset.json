@@ -10,7 +10,8 @@
     "seasonal time series",
     "cross-sectional information",
     "retail forecasting"
-   ]
+   ],
+   "subfield": "openalex:subfields/1803"
   },
   "contributions": [
    "C1",
@@ -26,7 +27,41 @@
   "study": "pilot",
   "published_as": {
    "id_type": "doi",
-   "id": "10.1016/j.ejor.2022.04.040"
+   "id": "10.1016/j.ejor.2022.04.040",
+   "corrections": [
+    {
+     "kind": "misprint",
+     "field": "D4.definition",
+     "where": "Table 1 of the published paper",
+     "printed": "W_3 = \\Phi (individual seasonal)",
+     "recorded": "W_3 = I_n",
+     "reason": "The seasonal state enters the measurement undamped: the common seasonal case of the same table has W_3 = 1_n and the individual level W_1 = I_n; the damping matrix belongs to the trend."
+    },
+    {
+     "kind": "misprint",
+     "field": "D4.definition",
+     "where": "Table 1 of the published paper",
+     "printed": "A = \\alpha 1_n' (common level smoothing parameter)",
+     "recorded": "A = \\alpha I_n",
+     "reason": "A is the n by n block G_1 of an individual level; the paper's own example in Section 4.1 has G_1 = \\alpha I_2, and \\Phi = \\phi I_n in the same table."
+    },
+    {
+     "kind": "misprint",
+     "field": "D4.definition",
+     "where": "Table 1 of the published paper",
+     "printed": "B = \\beta 1_n' (common trend smoothing parameter)",
+     "recorded": "B = \\beta I_n",
+     "reason": "B is the n by n block G_2 of an individual trend; the paper's own example in Section 4.1 has G_2 = \\beta I_2."
+    },
+    {
+     "kind": "misprint",
+     "field": "D4.definition",
+     "where": "Table 1 of the published paper",
+     "printed": "\\Gamma = \\gamma 1_n' (common seasonal smoothing parameter)",
+     "recorded": "\\Gamma = \\gamma I_n",
+     "reason": "\\Gamma is the n by n block G_3 of an individual seasonal component, as A and B are for level and trend."
+    }
+   ]
   },
   "autonomy": "human_assisted",
   "summary": "Retailers often forecast many related products at once, and short sales histories make seasonal patterns hard to estimate product by product. This paper sets out a taxonomy for vector exponential smoothing, a model that forecasts a group of series together, which says for each group which Parameters, Initial values and Components (PIC) the series share and which each keeps for itself. It shows how every model of the taxonomy is built from blocks of matrices. In simulations of short quarterly series, wrongly forcing series to share seasonal components cost much accuracy, while sharing only the initial seasonal values was the most robust choice, and sharing smoothing parameters helped. On monthly department-level sales from the M5 competition, a vector model with shared seasonality was more accurate than the univariate models it was compared with, on both long and short histories.",
@@ -126,7 +161,7 @@
   {
    "id": "D1",
    "term": "VETS",
-   "definition": "Vector exponential smoothing: a state space model for a group of n time series $y_t = (y_{1,t}, \\ldots, y_{n,t})'$, with measurement matrix $W$, transition matrix $F$, persistence matrix $G$ of smoothing parameters, state vector $v_t$ with component lags $l$ and error vector $\\epsilon_t$, in one of two forms, [[D2:pure additive VETS]] or [[D3:pure multiplicative VETS]].",
+   "definition": "Vector exponential smoothing: a state space model for a group of n time series $y_t = (y_{1,t}, \\ldots, y_{n,t})'$, where $y_{i,t}$ is the value of series $i$ at time $t$, with measurement matrix $W$, transition matrix $F$, persistence matrix $G$ of smoothing parameters, state vector $v_t$ with component lags $l$ and error vector $\\epsilon_t$, in one of two forms, [[D2:pure additive VETS]] or [[D3:pure multiplicative VETS]].",
    "kind": "method",
    "assumptions": [
     "C57"
@@ -135,7 +170,7 @@
   {
    "id": "D2",
    "term": "pure additive VETS",
-   "definition": "[[D1:VETS]] on the original data, written VETS(A,N,N), VETS(A,N,A) and so on: $y_t = W v_{t-l} + \\epsilon_t$, $v_t = F v_{t-l} + G \\epsilon_t$, with $\\epsilon_t \\sim N(0_n, \\Sigma)$.",
+   "definition": "[[D1:VETS]] on the original data, written VETS(A,N,N), VETS(A,N,A) and so on: $y_t = W v_{t-l} + \\epsilon_t$, $v_t = F v_{t-l} + G \\epsilon_t$, with $\\epsilon_t \\sim N(0_n, \\Sigma)$, where $v_{t-l}$ takes each component of the state vector at its own lag (1 for the level, the seasonal period for the seasonal component), and $N(0_n, \\Sigma)$ is the multivariate normal distribution with mean $0_n$, the vector of $n$ zeroes, and covariance matrix $\\Sigma$.",
    "kind": "method",
    "broader": [
     "D1"
@@ -159,7 +194,7 @@
   {
    "id": "D4",
    "term": "PIC taxonomy",
-   "definition": "A classification of [[D1:VETS]] models by which of their Parameters, Initial values and Components are common to all series of the group rather than individual, written VETS(...)PIC(P,I,C): P lists the common smoothing parameters (L level, T trend, S seasonal) and D for a common damping parameter, I the common initial values (L, T, S), C the common components (L, T, S); N means none is common. PIC(N,N,N) has everything individual. A model of the taxonomy is built from block matrices for level (1), trend (2) and seasonal (3) components: $W = (W_1 \\; W_2 \\; W_3)$, $$F = \\begin{pmatrix} F_{1,1} & F_{1,2} & F_{1,3} \\\\ F_{2,1} & F_{2,2} & F_{2,3} \\\\ F_{3,1} & F_{3,2} & F_{3,3} \\end{pmatrix}$$, $G = \\begin{pmatrix} G_1 \\\\ G_2 \\\\ G_3 \\end{pmatrix}$, with the values: individual level $F_{1,1} = I_n$, $W_1 = I_n$, $G_1 = A$; individual trend $F_{2,2} = \\Phi$, $W_2 = \\Phi$, $G_2 = B$; individual seasonal $F_{3,3} = I_n$, $W_3 = I_n$, $G_3 = \\Gamma$; common level $F_{1,1} = 1$, $W_1 = 1_n$, $G_1 = \\alpha_n'$; common trend $F_{2,2} = \\phi$, $W_2 = \\phi 1_n$, $G_2 = \\beta_n'$; common seasonal $F_{3,3} = 1$, $W_3 = 1_n$, $G_3 = \\gamma_n'$; level and trend both individual $F_{1,2} = \\Phi$, $F_{2,1} = O_n$; individual level with common trend $F_{1,2} = \\phi 1_n$, $F_{2,1} = 0_n'$; both common $F_{1,2} = \\phi$, $F_{2,1} = 0$; every block between level and seasonal or between trend and seasonal is zero: $O_n$ when both are individual, $0_n'$ or $0_n$ when one is common, $0$ when both are. Individual smoothing and damping parameters give $A = \\mathrm{diag}(\\alpha_1, \\ldots, \\alpha_n)$, $B = \\mathrm{diag}(\\beta_1, \\ldots, \\beta_n)$, $\\Gamma = \\mathrm{diag}(\\gamma_1, \\ldots, \\gamma_n)$, $\\Phi = \\mathrm{diag}(\\phi_1, \\ldots, \\phi_n)$ (not stated in the paper); common ones give $A = \\alpha I_n$, $B = \\beta I_n$, $\\Gamma = \\gamma I_n$, $\\Phi = \\phi I_n$ and $\\alpha_n = \\alpha 1_n$, $\\beta_n = \\beta 1_n$, $\\gamma_n = \\gamma 1_n$, $\\phi_n = \\phi 1_n$. A common component is one state shared by all series ($l_{1,t} = \\cdots = l_{n,t} = l_t$, and so for trend and seasonal); common initial values only set the starting states equal and leave the matrices unchanged. A common level with individual trends is not feasible.",
+   "definition": "A classification of [[D1:VETS]] models by which of their Parameters, Initial values and Components are common to all series of the group rather than individual, written VETS(...)PIC(P,I,C): P lists the common smoothing parameters (L level, T trend, S seasonal) and D for a common damping parameter, I the common initial values (L, T, S), C the common components (L, T, S); N means none is common. PIC(N,N,N) has everything individual. A model of the taxonomy is built from block matrices for level (1), trend (2) and seasonal (3) components: $W = (W_1 \\; W_2 \\; W_3)$, $$F = \\begin{pmatrix} F_{1,1} & F_{1,2} & F_{1,3} \\\\ F_{2,1} & F_{2,2} & F_{2,3} \\\\ F_{3,1} & F_{3,2} & F_{3,3} \\end{pmatrix}$$, $G = \\begin{pmatrix} G_1 \\\\ G_2 \\\\ G_3 \\end{pmatrix}$, with the values: individual level $F_{1,1} = I_n$, $W_1 = I_n$, $G_1 = A$; individual trend $F_{2,2} = \\Phi$, $W_2 = \\Phi$, $G_2 = B$; individual seasonal $F_{3,3} = I_n$, $W_3 = I_n$, $G_3 = \\Gamma$; common level $F_{1,1} = 1$, $W_1 = 1_n$, $G_1 = \\alpha_n'$; common trend $F_{2,2} = \\phi$, $W_2 = \\phi 1_n$, $G_2 = \\beta_n'$; common seasonal $F_{3,3} = 1$, $W_3 = 1_n$, $G_3 = \\gamma_n'$; level and trend both individual $F_{1,2} = \\Phi$, $F_{2,1} = O_n$; individual level with common trend $F_{1,2} = \\phi 1_n$, $F_{2,1} = 0_n'$; both common $F_{1,2} = \\phi$, $F_{2,1} = 0$; every block between level and seasonal or between trend and seasonal is zero: $O_n$ when both are individual, $0_n'$ or $0_n$ when one is common, $0$ when both are; here $I_n$ is the $n \\times n$ identity matrix, $O_n$ the $n \\times n$ matrix of zeroes and $1_n$ the vector of $n$ ones, $\\alpha$, $\\beta$ and $\\gamma$ are the smoothing parameters of the level, trend and seasonal components and $\\phi$ the damping parameter, and $\\alpha_i$, $\\beta_i$, $\\gamma_i$, $\\phi_i$ those of series $i$. Individual smoothing and damping parameters give $A = \\mathrm{diag}(\\alpha_1, \\ldots, \\alpha_n)$, $B = \\mathrm{diag}(\\beta_1, \\ldots, \\beta_n)$, $\\Gamma = \\mathrm{diag}(\\gamma_1, \\ldots, \\gamma_n)$, $\\Phi = \\mathrm{diag}(\\phi_1, \\ldots, \\phi_n)$ (not stated in the paper); common ones give $A = \\alpha I_n$, $B = \\beta I_n$, $\\Gamma = \\gamma I_n$, $\\Phi = \\phi I_n$ and $\\alpha_n = \\alpha 1_n$, $\\beta_n = \\beta 1_n$, $\\gamma_n = \\gamma 1_n$, $\\phi_n = \\phi 1_n$. A common component is one state shared by all series (for the level $l_{i,t}$ of series $i$ at time $t$, $l_{1,t} = \\cdots = l_{n,t} = l_t$, and so for trend and seasonal); common initial values only set the starting states equal and leave the matrices unchanged. A common level with individual trends is not feasible.",
    "kind": "concept"
   },
   {
@@ -1499,7 +1534,7 @@
   },
   {
    "id": "C26",
-   "statement": "The group-seasonal model of Ouwehand et al. (2007) is a collection of univariate ETS(M,A,M) models with PIC(N,S,S) restrictions, with seasonal smoothing parameters $\\gamma_i = \\gamma w_i$.",
+   "statement": "The group-seasonal model of Ouwehand et al. (2007) is a collection of univariate ETS(M,A,M) models with PIC(N,S,S) restrictions, with seasonal smoothing parameters $\\gamma_i = \\gamma w_i$, where $w_i$ is the individual weight that Ouwehand et al. estimate for series $i$.",
    "type": "formal",
    "role": "secondary",
    "novelty": "no_prior_found",
@@ -1531,7 +1566,7 @@
   },
   {
    "id": "C27",
-   "statement": "A [[D1:VETS]] model with likelihood estimation and a full covariance matrix of the errors, for n series of seasonal period m, has $$k = n(n+1)/2 + \\sum_{a} \\eta^P_a + \\sum_{a \\in \\{L,T\\}} \\eta^I_a + (m-1)\\eta^I_S$$ estimated parameters.",
+   "statement": "A [[D1:VETS]] model with likelihood estimation and a full covariance matrix of the errors, for n series of seasonal period m, has $$k = n(n+1)/2 + \\sum_{a \\in \\{L,T,S,D\\}} \\eta^P_a + \\sum_{a \\in \\{L,T\\}} \\eta^I_a + (m-1)\\eta^I_S$$ estimated parameters, where $\\eta^P_a$ (for the smoothing parameters of level L, trend T and seasonal S and the damping parameter D) and $\\eta^I_a$ (for the initial values) are 0 when the element is not in the model, 1 when it is estimated in common and n when it is estimated individually.",
    "type": "methodological",
    "role": "secondary",
    "novelty": "no_prior_found",
@@ -5692,9 +5727,9 @@
   {
    "id": "A2",
    "kind": "software",
-   "description": "legion package for R (vets, auto.vets, sim.ves)",
+   "description": "legion package for R, version 0.1.0 (forecasting using multivariate models): sim.ves() generated the simulated VETS data, vets() fitted the nine PIC variants in the simulation, and auto.vets() selected the PIC restrictions of VETS F and VETS D (loss = \"diagonal\") on the M5 data.",
    "version": "0.1.0",
-   "uri": "https://cran.r-project.org/src/contrib/Archive/legion/legion_0.1.0.tar.gz",
+   "uri": "https://CRAN.R-project.org/package=legion",
    "reference": "B18",
    "availability": {
     "level": "public"
@@ -5704,9 +5739,9 @@
   {
    "id": "A3",
    "kind": "software",
-   "description": "smooth package for R (adam)",
+   "description": "smooth package for R, version 3.1.1 (forecasting using state space models): adam() with bounds = \"admissible\" classified the M5 series as trended or not and seasonal or not, and produced the ETS LN and ETS (ADAM) benchmarks.",
    "version": "3.1.1",
-   "uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_3.1.1.tar.gz",
+   "uri": "https://CRAN.R-project.org/package=smooth",
    "reference": "B16",
    "availability": {
     "level": "public"
@@ -5716,18 +5751,19 @@
   {
    "id": "A4",
    "kind": "software",
-   "description": "forecast package for R (ets)",
-   "reference": "B14",
+   "description": "forecast package for R: ets() produced the ETS(M,N,N) and ETS(M,N,M) benchmark denoted \"ETS\" on the M5 data.",
+   "reference": "B23",
    "availability": {
     "level": "public"
-   }
+   },
+   "uri": "https://CRAN.R-project.org/package=forecast"
   },
   {
    "id": "A5",
    "kind": "software",
-   "description": "greybox package for R (rmcb)",
+   "description": "greybox package for R (version 0.6.9): rmcb() ran the MCB test on the rMAE of the models on the M5 data.",
    "version": "0.6.9",
-   "uri": "https://cran.r-project.org/src/contrib/Archive/greybox/greybox_0.6.9.tar.gz",
+   "uri": "https://CRAN.R-project.org/package=greybox",
    "reference": "B11",
    "availability": {
     "level": "public"
@@ -5737,7 +5773,7 @@
   {
    "id": "A6",
    "kind": "software",
-   "description": "R, the environment in which the experiments were run",
+   "description": "R, the language and environment for statistical computing (R Core Team, 2020), in which the simulated data were generated and the R packages of the experiments were run.",
    "uri": "https://www.R-project.org/",
    "reference": "B21",
    "availability": {
@@ -5793,9 +5829,8 @@
   },
   {
    "id": "B11",
-   "id_type": "url",
-   "target": "https://www.github.com/config-i1/greybox",
-   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/greybox/greybox_0.6.9.tar.gz"
+   "id_type": "doi",
+   "target": "10.32614/CRAN.package.greybox"
   },
   {
    "id": "B12",
@@ -5819,9 +5854,8 @@
   },
   {
    "id": "B16",
-   "id_type": "url",
-   "target": "https://www.github.com/config-i1/smooth",
-   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_3.1.1.tar.gz"
+   "id_type": "doi",
+   "target": "10.32614/CRAN.package.smooth"
   },
   {
    "id": "B17",
@@ -5830,9 +5864,8 @@
   },
   {
    "id": "B18",
-   "id_type": "url",
-   "target": "https://www.github.com/config-i1/legion",
-   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/legion/legion_0.1.0.tar.gz"
+   "id_type": "doi",
+   "target": "10.32614/CRAN.package.legion"
   },
   {
    "id": "B19",
@@ -5846,13 +5879,19 @@
   },
   {
    "id": "B21",
-   "id_type": "reference",
-   "target": "Team, R. C. (2020). R: A language and environment for statistical computing. R Foundation for Statistical ComputingVienna, Austria. https://www.R-project.org/."
+   "id_type": "url",
+   "target": "https://www.R-project.org/",
+   "archive_uri": "https://web.archive.org/web/2026/https://www.R-project.org/"
   },
   {
    "id": "B22",
    "target": "10.1016/j.ejor.2022.04.040",
    "id_type": "doi"
+  },
+  {
+   "id": "B23",
+   "id_type": "doi",
+   "target": "10.32614/CRAN.package.forecast"
   }
  ]
 }
