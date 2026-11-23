@@ -10,7 +10,8 @@
     "seasonal time series",
     "cross-sectional information",
     "retail forecasting"
-   ]
+   ],
+   "subfield": "openalex:subfields/1803"
   },
   "contributions": [
    "C1",
@@ -26,7 +27,41 @@
   "study": "pilot",
   "published_as": {
    "id_type": "doi",
-   "id": "10.1016/j.ejor.2022.04.040"
+   "id": "10.1016/j.ejor.2022.04.040",
+   "corrections": [
+    {
+     "kind": "misprint",
+     "field": "D4.definition",
+     "where": "Table 1 of the published paper",
+     "printed": "W_3 = \\Phi (individual seasonal)",
+     "recorded": "W_3 = I_n",
+     "reason": "The seasonal state enters the measurement undamped: the common seasonal case of the same table has W_3 = 1_n and the individual level W_1 = I_n; the damping matrix belongs to the trend."
+    },
+    {
+     "kind": "misprint",
+     "field": "D4.definition",
+     "where": "Table 1 of the published paper",
+     "printed": "A = \\alpha 1_n' (common level smoothing parameter)",
+     "recorded": "A = \\alpha I_n",
+     "reason": "A is the n by n block G_1 of an individual level; the paper's own example in Section 4.1 has G_1 = \\alpha I_2, and \\Phi = \\phi I_n in the same table."
+    },
+    {
+     "kind": "misprint",
+     "field": "D4.definition",
+     "where": "Table 1 of the published paper",
+     "printed": "B = \\beta 1_n' (common trend smoothing parameter)",
+     "recorded": "B = \\beta I_n",
+     "reason": "B is the n by n block G_2 of an individual trend; the paper's own example in Section 4.1 has G_2 = \\beta I_2."
+    },
+    {
+     "kind": "misprint",
+     "field": "D4.definition",
+     "where": "Table 1 of the published paper",
+     "printed": "\\Gamma = \\gamma 1_n' (common seasonal smoothing parameter)",
+     "recorded": "\\Gamma = \\gamma I_n",
+     "reason": "\\Gamma is the n by n block G_3 of an individual seasonal component, as A and B are for level and trend."
+    }
+   ]
   },
   "autonomy": "human_assisted",
   "summary": "Retailers often forecast many related products at once, and short sales histories make seasonal patterns hard to estimate product by product. This paper sets out a taxonomy for vector exponential smoothing, a model that forecasts a group of series together, which says for each group which Parameters, Initial values and Components (PIC) the series share and which each keeps for itself. It shows how every model of the taxonomy is built from blocks of matrices. In simulations of short quarterly series, wrongly forcing series to share seasonal components cost much accuracy, while sharing only the initial seasonal values was the most robust choice, and sharing smoothing parameters helped. On monthly department-level sales from the M5 competition, a vector model with shared seasonality was more accurate than the univariate models it was compared with, on both long and short histories.",
@@ -5692,9 +5727,9 @@
   {
    "id": "A2",
    "kind": "software",
-   "description": "legion package for R (vets, auto.vets, sim.ves)",
+   "description": "legion package for R, version 0.1.0 (forecasting using multivariate models): sim.ves() generated the simulated VETS data, vets() fitted the nine PIC variants in the simulation, and auto.vets() selected the PIC restrictions of VETS F and VETS D (loss = \"diagonal\") on the M5 data.",
    "version": "0.1.0",
-   "uri": "https://cran.r-project.org/src/contrib/Archive/legion/legion_0.1.0.tar.gz",
+   "uri": "https://CRAN.R-project.org/package=legion",
    "reference": "B18",
    "availability": {
     "level": "public"
@@ -5704,9 +5739,9 @@
   {
    "id": "A3",
    "kind": "software",
-   "description": "smooth package for R (adam)",
+   "description": "smooth package for R, version 3.1.1 (forecasting using state space models): adam() with bounds = \"admissible\" classified the M5 series as trended or not and seasonal or not, and produced the ETS LN and ETS (ADAM) benchmarks.",
    "version": "3.1.1",
-   "uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_3.1.1.tar.gz",
+   "uri": "https://CRAN.R-project.org/package=smooth",
    "reference": "B16",
    "availability": {
     "level": "public"
@@ -5716,18 +5751,19 @@
   {
    "id": "A4",
    "kind": "software",
-   "description": "forecast package for R (ets)",
-   "reference": "B14",
+   "description": "forecast package for R: ets() produced the ETS(M,N,N) and ETS(M,N,M) benchmark denoted \"ETS\" on the M5 data.",
+   "reference": "B23",
    "availability": {
     "level": "public"
-   }
+   },
+   "uri": "https://CRAN.R-project.org/package=forecast"
   },
   {
    "id": "A5",
    "kind": "software",
-   "description": "greybox package for R (rmcb)",
+   "description": "greybox package for R (version 0.6.9): rmcb() ran the MCB test on the rMAE of the models on the M5 data.",
    "version": "0.6.9",
-   "uri": "https://cran.r-project.org/src/contrib/Archive/greybox/greybox_0.6.9.tar.gz",
+   "uri": "https://CRAN.R-project.org/package=greybox",
    "reference": "B11",
    "availability": {
     "level": "public"
@@ -5737,7 +5773,7 @@
   {
    "id": "A6",
    "kind": "software",
-   "description": "R, the environment in which the experiments were run",
+   "description": "R, the language and environment for statistical computing (R Core Team, 2020), in which the simulated data were generated and the R packages of the experiments were run.",
    "uri": "https://www.R-project.org/",
    "reference": "B21",
    "availability": {
@@ -5793,9 +5829,8 @@
   },
   {
    "id": "B11",
-   "id_type": "url",
-   "target": "https://www.github.com/config-i1/greybox",
-   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/greybox/greybox_0.6.9.tar.gz"
+   "id_type": "doi",
+   "target": "10.32614/CRAN.package.greybox"
   },
   {
    "id": "B12",
@@ -5819,9 +5854,8 @@
   },
   {
    "id": "B16",
-   "id_type": "url",
-   "target": "https://www.github.com/config-i1/smooth",
-   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/smooth/smooth_3.1.1.tar.gz"
+   "id_type": "doi",
+   "target": "10.32614/CRAN.package.smooth"
   },
   {
    "id": "B17",
@@ -5830,9 +5864,8 @@
   },
   {
    "id": "B18",
-   "id_type": "url",
-   "target": "https://www.github.com/config-i1/legion",
-   "archive_uri": "https://cran.r-project.org/src/contrib/Archive/legion/legion_0.1.0.tar.gz"
+   "id_type": "doi",
+   "target": "10.32614/CRAN.package.legion"
   },
   {
    "id": "B19",
@@ -5846,13 +5879,19 @@
   },
   {
    "id": "B21",
-   "id_type": "reference",
-   "target": "Team, R. C. (2020). R: A language and environment for statistical computing. R Foundation for Statistical ComputingVienna, Austria. https://www.R-project.org/."
+   "id_type": "url",
+   "target": "https://www.R-project.org/",
+   "archive_uri": "https://web.archive.org/web/2026/https://www.R-project.org/"
   },
   {
    "id": "B22",
    "target": "10.1016/j.ejor.2022.04.040",
    "id_type": "doi"
+  },
+  {
+   "id": "B23",
+   "id_type": "doi",
+   "target": "10.32614/CRAN.package.forecast"
   }
  ]
 }
