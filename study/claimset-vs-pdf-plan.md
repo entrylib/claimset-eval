@@ -39,7 +39,7 @@ The comparison is **pragmatic**: each condition is the file as the app handles i
 - **Cross questions:** 13 across the papers (5 identification, 3 comparison, 5 relation); the claimsets hold the answer to 10. Exploratory (§6).
 
 **Conditions:**
-- **PDF:** the paper's published PDF, attached to the chat (cross chats: all five). For Grundy et al., the supplement is not attached; the questions do not need it.
+- **PDF:** the paper's published PDF, attached to the chat (cross chats: all five). For Grundy et al., the supplement is not attached; the questions do not need it. For VES, the authors' accepted manuscript: its tables are text, while in the published PDF they are images; every element the questions need is the same in both.
 - **Claimset:** the paper's claimset reading view (`claimset render` of its current EntryLib version), attached as a .txt file (cross chats: all five).
 
 **Hypotheses.** Two co-primary hypotheses answer RQ1; one secondary hypothesis looks inside the answers.
@@ -208,7 +208,7 @@ Neither the judges nor the moderators learn which condition or model an answer c
 
 1. **Coding.** The import run splits the chats into answers and gives each a random code. The key (code → model, condition, chat) goes to a file that only the final analysis run reads.
 2. **Masking**, the same in both conditions: claimset identifiers (C12, E3, L2, …) and paragraph markers, and locators (page, section, table, figure, appendix numbers) are replaced by "[location]"; phrases naming the document's form ("the claimset", "the reading view", "the PDF", "the .txt file") by "the paper". Masking is tried on the practice chats first and its rules fixed before grading.
-3. **Two judges**, Claude Fable and Mistral (most capable model, through its API), each grade every answer against the reference answer: a grade, the flags (invented, overreach) and a reason. Answers are graded one question at a time, all its answers in random order, models and conditions mixed. Instructions are fixed and their hash recorded.
+3. **Two judges**, Claude Fable and Mistral (most capable model, through its API), each grade every answer against the reference answer and its **marking guide** (what is required, what else is correct, what is not required, what is wrong), written so that it does not tell the documents apart; graders never see the authors' notes on the questions: a grade, the flags (invented, overreach) and a reason. Answers are graded one question at a time, all its answers in random order, models and conditions mixed. Instructions are fixed and their hash recorded.
 4. **Two moderators**, the supervisor and a second person, each review every answer on the blinded sheet, with both judges' grades, and approve or replace the grade, with a reason. Where the moderators disagree, they agree a grade together, still blind. The agreed grade is analysed; the judges' and moderators' grades are kept, and their agreement is reported (weighted κ).
 5. **Locking.** The final grades are recorded (hashed) before the key is opened; only then does the analysis join grades to models and conditions.
 6. **Blinding check**, after grades are locked: each judge and each moderator guesses the condition of a random 10% of answers (PDF, claimset, cannot tell). If Bang's blinding index for correct guesses exceeds 0.2 for any assessor, the results are also reported with the judges' grades alone, and the report says that blinding was partial.
