@@ -2,7 +2,7 @@
 
 **Study:** `claimset-vs-pdf` (lab record on branch `claimset/claimset-vs-pdf`, entrylib/claimset-eval)
 **Actors:** AC1 research agent (records, randomises, pastes, processes); AC2 Ivan Svetunkov (supervisor; sets up chats, copies them, moderates grades); a second moderator, to be registered before grading.
-**Status:** draft plan, for agreement. Recorded supervisor decisions DC1–DC9 (Claude models excluded; no no-document and no paper-as-text condition; grading; the level; the decision model; local models moved to a separate study, DC9, which replaces DC4 and DC8) and the simulations RN1–RN4 that chose the model.
+**Status:** recorded on 2026-11-24 (lab events seq 17–34: Q1, TM1–TM12, H1–H3, PL1), approved by the supervisor (AP1), anchored on the study branch. Recorded supervisor decisions DC1–DC9 (Claude models excluded; no no-document and no paper-as-text condition; grading; the level; the decision model; no local model in this study, DC9, which replaces DC4 and DC8) and the simulations RN1–RN4 that chose the model.
 
 ---
 
@@ -265,7 +265,7 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
 8. **These apps only.** The eight models are treated as fixed: the confirmatory claims are about them. Generalising to other LLMs rests on four providers (two models each, sharing a base model) and is a sensitivity analysis with little power.
 9. **Apps change.** Models, system prompts and file handling change without notice; results hold for the apps as they were on the collection dates.
 10. **A ceiling for the strongest apps.** The most capable apps (the reasoning configurations of Gemini and ChatGPT especially) may answer nearly every answerable question correctly from the PDF. For them the claimset has little room to raise the score: an improvement for them cannot be detected, and they carry little information on H1, which lowers its power. The ceiling rule (§3.2) applies to the average over the eight apps, not to each app; each app's own effect is reported with its mean score with the PDF (§4). H2 and H3 are less exposed: a strong app can still invent an answer or overreach.
-11. **Time and tokens are not measured in the hosted apps.** How long an app takes to answer and how many tokens a document costs it would show a practical advantage of a shorter document, but the apps do not report tokens or how they process a PDF, and the time to a reply depends on the provider's load, queueing and reasoning time. A separate study of local models, run on one machine, is planned to measure them (DC9).
+11. **Time and tokens are not measured in the hosted apps.** How long an app takes to answer and how many tokens a document costs it would show a practical advantage of a shorter document, but the apps do not report tokens or how they process a PDF, and the time to a reply depends on the provider's load, queueing and reasoning time.
 12. **The claimsets are not much shorter than the papers.** The reading views are 0.59 to 0.98 of the PDF's text in characters (Multi-step 0.59, Staying positive 0.70, VES 0.83, CES 0.94, Grundy et al. 0.98): a claimset carries definitions, scopes and links the paper leaves implicit.
 
 ## 12. How the analysis was chosen
