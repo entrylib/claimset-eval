@@ -2,11 +2,20 @@
  "schema_version": "0.44",
  "paper": {
   "id": "entrylib:2026.000006",
-  "correction_reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes.",
   "title": "Staying Positive: Challenges and Solutions in Using Pure Multiplicative ETS Models",
   "published_as": {
    "id_type": "doi",
-   "id": "10.1093/imaman/dpad028"
+   "id": "10.1093/imaman/dpad028",
+   "corrections": [
+    {
+     "kind": "misprint",
+     "field": "D24.tables",
+     "where": "Table 2, row Kurtosis",
+     "printed": "$\\mathcal{N}$: $3$; $\\mathcal{IG}$: $15\\varsigma^2$; $\\log\\mathcal{N}$: $((\\varsigma^2 + 3)(\\varsigma^2 + 1) + 3)(\\varsigma^2 + 1)^2$; $\\Gamma$: $6\\varsigma^2$",
+     "recorded": "$\\mathcal{N}$: $3$; $\\mathcal{IG}$: $3 + 15\\varsigma^2$; $\\log\\mathcal{N}$: $\\left((\\varsigma^2 + 3)(\\varsigma^2 + 1) + 3\\right)(\\varsigma^2 + 1)^2 - 3$; $\\Gamma$: $3 + 6\\varsigma^2$",
+     "reason": "The row mixes kurtosis and excess kurtosis: the Normal entry, 3, is the kurtosis; the Inverse Gaussian and Gamma entries are excess kurtosis (15 and 6 times the squared coefficient of variation); and the Log-Normal entry, $e^{4\\sigma^2} + 2e^{3\\sigma^2} + 3e^{2\\sigma^2}$ with $e^{\\sigma^2} = \\varsigma^2 + 1$, is the kurtosis plus 3. Recorded as kurtosis throughout; a simulation of 2,000,000 draws with $\\sigma^2 = 0.1$ gives 4.84 for the Log-Normal (printed 7.86) and 3.59 for the Gamma ($3 + 6\\varsigma^2 = 3.6$)."
+    }
+   ]
   },
   "summary": "Pure multiplicative exponential smoothing (ETS) models are widely used for strictly positive time series, yet standard implementations assume normally distributed errors that can produce negative forecasts and unrealistic prediction intervals on low-volume data. This work shows that conventional point forecasts from pure multiplicative ETS models generally underestimate conditional expectations, with the bias increasing as the damping parameter, trend smoothing parameter, error variance, or forecast horizon grows. To preserve positivity, we formulate pure multiplicative ETS models with Log-Normal, Gamma, and Inverse Gaussian error distributions, deriving their concentrated log-likelihoods, scale estimators, and conditional moments. Simulation experiments and an electric vehicle charging case study demonstrate that information criteria reliably select among these distributions, and that positive distributions prevent negative prediction intervals without requiring transformation to logarithmic ETS models.",
   "licence": "CC-BY-4.0",
@@ -57,22 +66,22 @@
     ]
    },
    {
-    "title": "Simulation experiment 1: bias of point forecasts",
-    "claims": [
-     "C3"
-    ]
-   },
-   {
     "title": "Distributional assumptions in ETS framework",
     "claims": [
      "C5",
      "C4",
      "C6",
-     "C18",
      "C7",
+     "C18",
      "C15",
-     "C8",
-     "C14"
+     "C14",
+     "C8"
+    ]
+   },
+   {
+    "title": "Simulation experiment 1: bias of point forecasts",
+    "claims": [
+     "C3"
     ]
    },
    {
@@ -90,235 +99,820 @@
     ]
    }
   ],
-  "version": 5,
-  "date": "2026-11-20",
+  "based_on": "entrylib:2026.000006@v5",
+  "correction_reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own.",
+  "version": 6,
+  "date": "2026-11-24",
   "status": "corrected",
-  "previous_version": "entrylib:2026.000006@v4",
+  "previous_version": "entrylib:2026.000006@v5",
   "status_notice": {
-   "date": "2026-11-20",
+   "date": "2026-11-24",
    "reason_code": "correction",
-   "statement": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes.",
+   "statement": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own.",
    "issued_by": "Ivan Svetunkov (ORCID 0000-0001-7826-0281)"
   },
   "changes": [
    {
     "op": "add",
-    "path": "/claims/0/name",
-    "value": "The multiplicative error is i.i.d. with mean one",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/artefacts/4",
+    "value": {
+     "id": "A4",
+     "kind": "software",
+     "uri": "https://www.R-project.org/",
+     "reference": "B10",
+     "availability": {
+      "level": "public"
+     },
+     "description": "R: A Language and Environment for Statistical Computing ([[B10:R Core Team, 2020]]), the environment in which all simulations, model fits and the EV charging application were run."
+    },
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "add",
-    "path": "/claims/0/summary",
-    "value": "We assume that the multiplicative error term is independent and identically distributed, with expectation one.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/artefacts/5",
+    "value": {
+     "id": "A5",
+     "kind": "software",
+     "uri": "https://CRAN.R-project.org/package=smooth",
+     "version": "3.2.0",
+     "reference": "B11",
+     "availability": {
+      "level": "public"
+     },
+     "description": "The smooth R package, version 3.2.0 (Svetunkov, 2023a, Forecasting Using State Space Models): `sim.es()` generated the simulated series, `adam()` and `auto.adam()` fitted the ETS models and produced the forecasts."
+    },
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "add",
-    "path": "/claims/1/name",
-    "value": "The smoothing parameters of the other models are taken to lie between 0 and 1",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/1/summary",
-    "value": "We assume that the smoothing parameters of pure multiplicative ETS models other than the level-only model lie between 0 and 1, by analogy with that model; the paper derives the restriction only for the level-only model.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/artefacts/6",
+    "value": {
+     "id": "A6",
+     "kind": "software",
+     "uri": "https://CRAN.R-project.org/package=greybox",
+     "version": "1.0.3",
+     "reference": "B12",
+     "availability": {
+      "level": "public"
+     },
+     "description": "The greybox R package, version 1.0.3 (Svetunkov, 2021, Toolbox for Model Building and Forecasting): `alm()` with `distribution=\"dbcnorm\"` fitted the Box-Cox regression of the odds of the percentage difference in Simulation Experiment 1."
+    },
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/2/name",
-    "value": "The conventional point forecast lies below the conditional expectations",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/2/summary",
-    "value": "For pure multiplicative ETS models, the usual multi-step point forecast is in general neither the conditional mean nor the conditional geometric mean. It is at or below the geometric mean, which is at or below the mean.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/3/name",
-    "value": "When the point forecast equals the conditional expectations",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/3/summary",
-    "value": "The point forecast equals both conditional expectations in three cases only: one step ahead; within the first seasonal cycle for seasonal models without trend; and for the level-only model, ETS(M,N,N).",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/claims/3/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Verified Eqs. (2.6)-(2.11) for $h = 1$, $h \\le m$ without trend, and ETS(M,N,N) product expectation."
+     }
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
     "path": "/claims/4/name",
-    "value": "The gap grows with damping, trend smoothing, horizon and scale",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/4/summary",
-    "value": "In simulation of the damped multiplicative trend model with Inverse Gaussian errors, the gap between the conditional expectation and the point forecast grows with five parameters. The damping parameter has the largest effect and the level smoothing parameter the smallest.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "value": "The gap grows with every parameter, most with damping",
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/5/name",
-    "value": "Positive error distributions apply directly to the multiplicative error",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/5/summary",
-    "value": "Log-Normal, Gamma and Inverse Gaussian distributions can be used directly for the multiplicative error of conventional ETS models, provided the error has mean one. The model need not be rewritten in logarithms.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/6/name",
-    "value": "Closed-form concentrated likelihoods for four error distributions",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/6/summary",
-    "value": "With the error restricted to mean one, the concentrated log-likelihood of pure multiplicative ETS has a closed form for Normal, Inverse Gaussian, Log-Normal and Gamma errors.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/claims/7/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Re-derived the first-order conditions with respect to $\\sigma^2$ from the Table 3 log-likelihoods for the Normal and Inverse Gaussian distributions."
+     }
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/7/name",
-    "value": "Closed-form scale estimators for Normal and Inverse Gaussian errors",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/7/summary",
-    "value": "With the error restricted to mean one, the maximum likelihood estimator of the scale has a closed form for Normal and for Inverse Gaussian errors.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/8/name",
-    "value": "The Log-Normal scale estimator is the corrected formula",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/8/summary",
-    "value": "With Log-Normal errors of mean one, the concentrated log-likelihood is not convex. Its maximum likelihood scale is the corrected formula of an earlier EntryLib claim, not the root formula printed in the 2023 article.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/claims/9/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Verified product expectation and variance in Eq. (4.5) and positivity bound $\\alpha \\in [0, 1]$ in Eq. (4.7)."
+     }
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/9/name",
-    "value": "Only ETS(M,N,N) has a closed-form conditional mean and variance",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
     "path": "/claims/9/summary",
-    "value": "Among pure multiplicative ETS models, only the level-only model has a closed-form mean and variance h steps ahead, for all four error distributions. The level stays positive when α lies between 0 and 1.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "value": "Among pure multiplicative ETS models, only the level-only model has a closed-form mean and variance h steps ahead, for all four error distributions. The level stays positive when $\\alpha$ lies between 0 and 1.",
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/10/name",
-    "value": "Choosing the error distribution by AICc does about as well as knowing it",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/10/summary",
-    "value": "In simulation, choosing among the four error distributions by AICc gives quantile forecasts comparable to those from the true distribution, by scaled pinball score, quantile bias and quantile precision.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/11/name",
-    "value": "The log-ETS model has the lowest pinball score in the simulation",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/11/summary",
-    "value": "On all five simulated processes, Akram's log-ETS model has a lower mean scaled pinball score over 48 steps than the pure multiplicative models. The gain is in the central quantiles; the tails are similar.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/claims/14/checks",
+    "value": [
+     {
+      "by": "P4",
+      "outcome": "confirmed",
+      "extent": "full",
+      "notes": "Re-derived the first-order condition with respect to $\\sigma^2$ from the Table 3 log-likelihood for the Gamma distribution (checked as part of C6 in version 2)."
+     }
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/12/name",
-    "value": "On EV charging data, the Gamma multiplicative model fits better and stays positive",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/12/summary",
-    "value": "On the daily EV charging data, the multiplicative model with Gamma errors has a lower AICc (6398.57) than the additive Normal model (6418.296). On the first 49 low-volume observations its 95% prediction intervals are strictly positive, unlike the Normal model's.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "replace",
-    "path": "/claims/13/name",
-    "value": "The level-only model needs a smoothing parameter of at most one",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/13/summary",
-    "value": "In the level-only multiplicative model, the level stays positive for every positive error only when the smoothing parameter is at most one.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/claims/16/relations",
+    "value": [
+     {
+      "type": "contradicts",
+      "target": "978-3-540-71918-2",
+      "id_type": "isbn",
+      "locator": "p. 23",
+      "note": "[[B3:Hyndman et al. (2008)]] say the difference between the point forecast and the expectation will in general be negligible."
+     },
+     {
+      "type": "supports",
+      "target": "C1",
+      "id_type": "local",
+      "note": "An example of the gap between the conventional point forecast and the conditional expectation."
+     }
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/14/name",
-    "value": "No closed-form scale estimator for Gamma errors",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/14/summary",
-    "value": "With Gamma errors of mean one, the maximum likelihood estimator of the scale has no closed form; the method of moments gives the mean of the squared errors.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/definitions",
+    "value": [
+     {
+      "id": "D1",
+      "term": "ETS(M,*,*)",
+      "kind": "method",
+      "definition": "Pure multiplicative exponential smoothing state space model family written in logarithmic state space form as $$\\begin{aligned} \\log y_t &= w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t) \\\\ \\log v_t &= F \\log v_{t-l} + \\log(1_k + g \\epsilon_t) \\end{aligned}$$ with conventional multi-step point forecast $$\\hat{y}_{t+h} = \\exp\\left((w_1' F_1^{h-1} + w_m' F_m^{\\lceil h/m \\rceil - 1}) \\log v_t\\right).$$ Here $y_t$ is the actual value on observation $t$; $v_t$ is the state vector, holding the model's components (such as the level, trend and seasonal component); $w$ is the measurement vector; $F$ is the transition matrix; $g$ is the persistence vector, holding the smoothing parameters; $\\epsilon_t$ is the error term; $l$ is the lag vector, holding the lag of each component (1 for the level and trend, $m$ for the seasonal component), so that $v_{t-l}$ is the vector of components each taken at its own lag; $1_k$ is the vector of ones of size $k$, the number of components; logarithms and exponents are taken element-wise. In the point forecast, $h$ is the forecast horizon from observation $t$, the subscript $1$ marks the parts of $w$ and $F$ for the non-seasonal components and the subscript $m$ the parts for the seasonal component, $m$ is the seasonal lag, and $\\lceil \\cdot \\rceil$ is the ceiling function.",
+      "source": "B7"
+     },
+     {
+      "id": "D2",
+      "term": "ETS(M,N,N)",
+      "kind": "method",
+      "broader": [
+       "D1"
+      ],
+      "definition": "Pure multiplicative exponential smoothing model with no trend and no seasonality, defined by $$\\begin{aligned} y_t &= l_{t-1}(1 + \\epsilon_t) \\\\ l_t &= l_{t-1}(1 + \\alpha \\epsilon_t) \\end{aligned}$$ where $l_t$ is the level, $\\alpha \\in [0,1]$ is the smoothing parameter, and $1+\\epsilon_t$ is the positive multiplicative error term.",
+      "source": "B3"
+     },
+     {
+      "id": "D3",
+      "term": "ETS(M,Md,M)",
+      "kind": "method",
+      "broader": [
+       "D1"
+      ],
+      "definition": "Pure multiplicative exponential smoothing model with damped multiplicative trend and multiplicative seasonality, defined by $$\\begin{aligned} y_t &= l_{t-1} b_{t-1}^{\\phi} s_{t-m} (1 + \\epsilon_t) \\\\ l_t &= l_{t-1} b_{t-1}^{\\phi} (1 + \\alpha \\epsilon_t) \\\\ b_t &= b_{t-1}^{\\phi} (1 + \\beta \\epsilon_t) \\\\ s_t &= s_{t-m} (1 + \\gamma \\epsilon_t) \\end{aligned}$$ where $b_t$ is the trend, $s_t$ is the seasonal component, $\\phi$ is the dampening parameter, and $\\beta$ and $\\gamma$ are the smoothing parameters of the trend and the seasonal component.",
+      "source": "B3"
+     },
+     {
+      "id": "D23",
+      "term": "ETS(M,M,N)",
+      "kind": "method",
+      "definition": "The ETS model with multiplicative error, multiplicative trend and no seasonality."
+     },
+     {
+      "id": "D22",
+      "term": "M3 series N2703",
+      "kind": "data",
+      "definition": "Series N2703 of the M3 forecasting competition, a series with a negative trend.",
+      "source": "B9"
+     },
+     {
+      "id": "D7",
+      "term": "Normal error distribution",
+      "symbol": "$\\mathcal{N}$",
+      "kind": "concept",
+      "definition": "Classical Gaussian distribution on $(-\\infty, \\infty)$ applied to $1+\\epsilon_t$ with mean $\\mu = 1$ and variance $\\sigma^2$.",
+      "source": "B3"
+     },
+     {
+      "id": "D6",
+      "term": "Inverse Gaussian error distribution",
+      "symbol": "$\\mathcal{IG}$",
+      "kind": "concept",
+      "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = 1$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = \\sigma^2$, where $E$ and $V$ denote expectation and variance."
+     },
+     {
+      "id": "D4",
+      "term": "Log-Normal error distribution",
+      "symbol": "$\\log\\mathcal{N}$",
+      "kind": "concept",
+      "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = -\\frac{\\sigma^2}{2}$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = e^{\\sigma^2} - 1$, where $\\mu$ and $\\sigma^2$ are the mean and variance of $\\log(1+\\epsilon_t)$."
+     },
+     {
+      "id": "D5",
+      "term": "Gamma error distribution",
+      "symbol": "$\\Gamma$",
+      "kind": "concept",
+      "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with shape $\\xi = \\sigma^{-2}$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = \\sigma^2$."
+     },
+     {
+      "id": "D24",
+      "term": "candidate error distributions",
+      "kind": "concept",
+      "members": [
+       "D7",
+       "D6",
+       "D4",
+       "D5"
+      ],
+      "definition": "The four distributions the paper considers for the multiplicative error term $1+\\epsilon_t$ of [[D1:ETS(M,*,*)]]: the [[D7:Normal error distribution]], the [[D6:Inverse Gaussian error distribution]], the [[D4:Log-Normal error distribution]] and the [[D5:Gamma error distribution]], each with its parameters restricted so that $E(1+\\epsilon_t) = 1$. The truncated Normal distribution is set aside because its statistics are too complicated to summarise. The table compares their main statistics.",
+      "tables": [
+       {
+        "description": "Main statistics of the four distributions, as functions of their parameters, and the restriction each needs in an ETS model so that the error term has mean one. $\\mu$ is the location, $\\sigma^2$ the scale, $\\xi$ the shape, and $\\varsigma$ the standard deviation of the error term $1+\\epsilon_t$.",
+        "columns": [
+         "Statistic",
+         "$\\mathcal{N}(\\mu, \\sigma^2)$",
+         "$\\mathcal{IG}(\\mu, \\sigma^2)$",
+         "$\\log\\mathcal{N}(\\mu, \\sigma^2)$",
+         "$\\Gamma(\\xi, \\sigma^2)$"
+        ],
+        "rows": [
+         [
+          "Support",
+          "$(-\\infty, \\infty)$",
+          "$(0, \\infty)$",
+          "$(0, \\infty)$",
+          "$(0, \\infty)$"
+         ],
+         [
+          "Mean, $E(1+\\epsilon_t)$",
+          "$\\mu$",
+          "$\\mu$",
+          "$e^{\\mu + \\frac{\\sigma^2}{2}}$",
+          "$\\xi \\sigma^2$"
+         ],
+         [
+          "Parameter restriction in ETS",
+          "$\\mu = 1$",
+          "$\\mu = 1$",
+          "$\\mu = -\\frac{\\sigma^2}{2}$",
+          "$\\xi = \\frac{1}{\\sigma^2}$"
+         ],
+         [
+          "Variance, $V(1+\\epsilon_t) = \\varsigma^2$",
+          "$\\sigma^2$",
+          "$\\sigma^2$",
+          "$e^{\\sigma^2} - 1$",
+          "$\\sigma^2$"
+         ],
+         [
+          "Skewness",
+          "$0$",
+          "$3\\varsigma$",
+          "$\\varsigma^3 + 3\\varsigma$",
+          "$2\\varsigma$"
+         ],
+         [
+          "Kurtosis",
+          "$3$",
+          "$3 + 15\\varsigma^2$",
+          "$\\left((\\varsigma^2 + 3)(\\varsigma^2 + 1) + 3\\right)(\\varsigma^2 + 1)^2 - 3$",
+          "$3 + 6\\varsigma^2$"
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "id": "D12",
+      "term": "ETS(A,Ad,A)",
+      "kind": "method",
+      "definition": "Pure additive exponential smoothing model with additive error, damped additive trend, and additive seasonality under Normal errors.",
+      "source": "B3"
+     },
+     {
+      "id": "D10",
+      "term": "Akram's log-ETS model",
+      "kind": "method",
+      "definition": "Additive error ETS model $ETS(A,Ad,A)$ with Normal errors applied to the natural logarithms of strictly positive time series and exponentiated back to the original scale.",
+      "source": "B4"
+     },
+     {
+      "id": "D9",
+      "term": "AICc",
+      "kind": "variable",
+      "unit": "1",
+      "definition": "Corrected Akaike Information Criterion used to select among ETS component structures and error distributions.",
+      "source": "B6"
+     },
+     {
+      "id": "D13",
+      "term": "ETS(M,Md,N)",
+      "kind": "method",
+      "broader": [
+       "D1"
+      ],
+      "definition": "Pure multiplicative exponential smoothing model with damped multiplicative trend and no seasonality.",
+      "source": "B3"
+     },
+     {
+      "id": "D8",
+      "term": "percentage difference (PD)",
+      "symbol": "$PD$",
+      "kind": "variable",
+      "unit": "1",
+      "definition": "Relative deviation of the conventional point forecast $\\hat{y}_{t+h}$ from the conditional expectation $\\mu_{y,t+h}$, defined as $$PD = \\frac{\\mu_{y,t+h} - \\hat{y}_{t+h}}{\\mu_{y,t+h}}$$ lying in $[0, 1)$."
+     },
+     {
+      "id": "D14",
+      "term": "Simulation experiment 1 synthetic series",
+      "kind": "data",
+      "definition": "10,000 iterations of 100-observation time series simulated from $ETS(M,Md,N)$ with Inverse Gaussian errors across parameter grids $\\sigma \\in \\{0.01, 0.05, 0.1, 0.5, 1\\}$, $\\alpha, \\beta \\in \\{0.1, 0.2, 0.5\\}$, $\\phi \\in \\{0.5, 0.9, 0.95, 1\\}$, and horizons $h \\in \\{10, 50, 100\\}$."
+     },
+     {
+      "id": "D19",
+      "term": "Box-Cox odds regression procedure",
+      "kind": "design",
+      "definition": "Transformation of percentage difference $PD$ into odds $\\frac{PD}{1-PD}$ followed by Box-Cox transformation ($\\lambda = 0.146$) and linear regression on scaled parameters $\\sigma$, horizon, $\\alpha$, $\\beta$, and $\\phi$ using `greybox::alm` (`distribution='dbcnorm'`), where $\\lambda$ is the Box-Cox parameter, chosen by maximum likelihood, and each regressor, the horizon included, is rescaled to lie between 0 and 1."
+     },
+     {
+      "id": "D15",
+      "term": "Simulation experiment 2 synthetic series",
+      "kind": "data",
+      "definition": "10,000 simulated time series of length 500 generated for each of five data-generating processes ($ETS(M,Md,M)$ with Normal, Inverse Gaussian, Gamma, Log-Normal errors, and Akram's exponentiated $ETS(A,Ad,A)$) with $\\sigma=0.1$, $\\alpha=0.1$, $\\beta=0.05$, $\\gamma=0.2$, $\\phi=0.95$, $l_0=100$, $b_0=1$, and holdout horizon $48$, where $l_0$ and $b_0$ are the initial level and trend; the initial seasonal indices were generated at random and normalised."
+     },
+     {
+      "id": "D20",
+      "term": "48-step quantile forecast simulation procedure",
+      "kind": "design",
+      "definition": "Estimation of $ETS(M,Md,M)$ with each candidate distribution, AICc-based automatic selection (`smooth::auto.adam`), and Akram's log-ETS model on 500 observations, evaluating 99 quantile levels ($\\tau = 0.01, \\dots, 0.99$) over a 48-step holdout."
+     },
+     {
+      "id": "D11",
+      "term": "scaled pinball score (SPS)",
+      "symbol": "$SPS$",
+      "kind": "variable",
+      "unit": "1",
+      "definition": "Quantile forecast accuracy measure scaled by the in-sample mean $\\bar{y}$, defined for probability level $\\tau$ over horizon $h$ as $$SPS = \\frac{1}{\\bar{y}} \\left( (1-\\tau) \\sum_{y_{t+j} < \\hat{q}_{\\tau,t+j}} (\\hat{q}_{\\tau,t+j} - y_{t+j}) + \\tau \\sum_{y_{t+j} \\ge \\hat{q}_{\\tau,t+j}} (y_{t+j} - \\hat{q}_{\\tau,t+j}) \\right).$$ Here $\\hat{q}_{\\tau,t+j}$ is the quantile forecast at level $\\tau$ for observation $t+j$, $t$ is the last observation of the sample, and both sums run over the steps $j = 1, \\dots, h$."
+     },
+     {
+      "id": "D17",
+      "term": "quantile bias",
+      "kind": "variable",
+      "unit": "1",
+      "definition": "Mean across quantile levels $\\tau \\in \\{0.01, 0.02, \\dots, 0.99\\}$ of empirical quantile coverage minus nominal target level $\\tau$, where the empirical coverage at level $\\tau$ is the share of actual values below the quantile forecast at that level."
+     },
+     {
+      "id": "D18",
+      "term": "quantile precision",
+      "kind": "variable",
+      "unit": "1",
+      "definition": "Mean across quantile levels $\\tau \\in \\{0.01, 0.02, \\dots, 0.99\\}$ of the absolute difference between empirical quantile coverage and nominal target level $\\tau$."
+     },
+     {
+      "id": "D16",
+      "term": "Daily EV charging dataset",
+      "kind": "data",
+      "definition": "511 daily aggregated observations of electricity used by electric vehicles in a geographical area starting from low volume with 7-day multiplicative seasonality, holding out the last 14 observations."
+     },
+     {
+      "id": "D21",
+      "term": "two-dimensional AICc selection procedure",
+      "kind": "design",
+      "definition": "Simultaneous selection of pure multiplicative ETS component structure and error distribution by minimising $AICc$ via `smooth::auto.adam` with a 14-day holdout evaluation."
+     }
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/15/name",
-    "value": "The Inverse Gaussian is the most convenient positive distribution",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/15/summary",
-    "value": "Of the three positive error distributions, the Inverse Gaussian is the easiest to use: its mean-one restriction is simple and its scale has a closed-form estimate. The argument is one of convenience, not tested.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/evidence/0/steps",
+    "value": [
+     {
+      "id": "E1.1",
+      "statement": "Reformulate pure multiplicative ETS in logarithmic state space form: $$\\begin{aligned} \\log y_t &= w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t) \\\\ \\log v_t &= F \\log v_{t-l} + \\log(1_k + g \\epsilon_t) \\end{aligned}$$",
+      "by": [
+       "D1",
+       "C12"
+      ],
+      "rule": "logarithmic_transformation"
+     },
+     {
+      "id": "E1.2",
+      "statement": "Expand $h$-steps-ahead recursion into non-seasonal and seasonal components and take conditional expectation $E(\\log y_{t+h}|t)$.",
+      "by": [
+       "E1.1",
+       "C12"
+      ],
+      "rule": "recursive_substitution"
+     },
+     {
+      "id": "E1.3",
+      "statement": "Apply Jensen's inequality and non-negativity of $g$ to show point forecast $\\hat{y}_{t+h} \\le \\tilde{y}_{t+h} \\le \\mu_{y,t+h}$, with equality only at $h=1$, $h \\le m$ without trend, or for $ETS(M,N,N)$.",
+      "by": [
+       "E1.2",
+       "C13"
+      ],
+      "rule": "jensens_inequality"
+     }
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/16/name",
-    "value": "On one M3 series the gap grows exponentially with the horizon",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
-   },
-   {
-    "op": "add",
-    "path": "/claims/16/summary",
-    "value": "On one M3 series, the gap between the usual point forecast and the simulated conditional mean of a multiplicative trend model is negligible at short horizons and grows exponentially up to 18 steps ahead.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/evidence/1/artefacts",
+    "value": [
+     "A3",
+     "A4",
+     "A5",
+     "A6"
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "replace",
-    "path": "/claims/17/name",
-    "value": "The error distributions do not differ significantly in pinball score",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/evidence/4/artefacts",
+    "value": [
+     "A3",
+     "A4",
+     "A5"
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "replace",
+    "path": "/evidence/4/tables",
+    "value": [
+     {
+      "id": "T1",
+      "description": "Mean scaled pinball scores ($SPS$) across $10,000$ simulated series for applied models (rows) against data-generating processes (columns) over forecast horizon $48$.",
+      "artefact": "A3",
+      "row_labels": [
+       "applied_model"
+      ],
+      "columns": [
+       {
+        "variable": "D11",
+        "conditions": {
+         "DGP": "Normal"
+        }
+       },
+       {
+        "variable": "D11",
+        "conditions": {
+         "DGP": "Inverse Gaussian"
+        }
+       },
+       {
+        "variable": "D11",
+        "conditions": {
+         "DGP": "Gamma"
+        }
+       },
+       {
+        "variable": "D11",
+        "conditions": {
+         "DGP": "Log-Normal"
+        }
+       },
+       {
+        "variable": "D11",
+        "conditions": {
+         "DGP": "Akram"
+        }
+       }
+      ],
+      "units": [
+       "1",
+       "1",
+       "1",
+       "1",
+       "1"
+      ],
+      "rows": [
+       {
+        "id": "r1",
+        "label": [
+         "Normal"
+        ],
+        "values": [
+         5.255,
+         5.204,
+         5.193,
+         9.417,
+         5.192
+        ]
+       },
+       {
+        "id": "r2",
+        "label": [
+         "Inverse Gaussian"
+        ],
+        "values": [
+         5.3,
+         5.221,
+         5.224,
+         9.464,
+         5.229
+        ]
+       },
+       {
+        "id": "r3",
+        "label": [
+         "Gamma"
+        ],
+        "values": [
+         5.287,
+         5.192,
+         5.231,
+         9.388,
+         5.214
+        ]
+       },
+       {
+        "id": "r4",
+        "label": [
+         "Log-Normal"
+        ],
+        "values": [
+         5.295,
+         5.215,
+         5.224,
+         9.423,
+         5.22
+        ]
+       },
+       {
+        "id": "r5",
+        "label": [
+         "Akram"
+        ],
+        "values": [
+         5.11,
+         5.052,
+         5.074,
+         9.18,
+         5.089
+        ]
+       },
+       {
+        "id": "r6",
+        "label": [
+         "Auto (AICc)"
+        ],
+        "values": [
+         5.258,
+         5.175,
+         5.208,
+         9.332,
+         5.178
+        ]
+       }
+      ]
+     },
+     {
+      "id": "T2",
+      "description": "Quantile bias and quantile precision across 99 quantile levels ($0.01$ to $0.99$) for applied models against data-generating processes.",
+      "artefact": "A3",
+      "row_labels": [
+       "applied_model"
+      ],
+      "columns": [
+       {
+        "variable": "D17",
+        "conditions": {
+         "DGP": "Normal"
+        }
+       },
+       {
+        "variable": "D17",
+        "conditions": {
+         "DGP": "Inverse Gaussian"
+        }
+       },
+       {
+        "variable": "D17",
+        "conditions": {
+         "DGP": "Gamma"
+        }
+       },
+       {
+        "variable": "D17",
+        "conditions": {
+         "DGP": "Log-Normal"
+        }
+       },
+       {
+        "variable": "D17",
+        "conditions": {
+         "DGP": "Akram"
+        }
+       },
+       {
+        "variable": "D18",
+        "conditions": {
+         "DGP": "Normal"
+        }
+       },
+       {
+        "variable": "D18",
+        "conditions": {
+         "DGP": "Inverse Gaussian"
+        }
+       },
+       {
+        "variable": "D18",
+        "conditions": {
+         "DGP": "Gamma"
+        }
+       },
+       {
+        "variable": "D18",
+        "conditions": {
+         "DGP": "Log-Normal"
+        }
+       },
+       {
+        "variable": "D18",
+        "conditions": {
+         "DGP": "Akram"
+        }
+       }
+      ],
+      "units": [
+       "1",
+       "1",
+       "1",
+       "1",
+       "1",
+       "1",
+       "1",
+       "1",
+       "1",
+       "1"
+      ],
+      "rows": [
+       {
+        "id": "r1",
+        "label": [
+         "Normal"
+        ],
+        "values": [
+         -0.002,
+         0.011,
+         0.003,
+         0.007,
+         -0.01,
+         0.007,
+         0.011,
+         0.005,
+         0.009,
+         0.01
+        ]
+       },
+       {
+        "id": "r2",
+        "label": [
+         "Inverse Gaussian"
+        ],
+        "values": [
+         -0.004,
+         0.009,
+         0.001,
+         0.001,
+         -0.013,
+         0.009,
+         0.009,
+         0.006,
+         0.009,
+         0.015
+        ]
+       },
+       {
+        "id": "r3",
+        "label": [
+         "Gamma"
+        ],
+        "values": [
+         -0.004,
+         0.008,
+         0.001,
+         0.003,
+         -0.012,
+         0.011,
+         0.009,
+         0.005,
+         0.008,
+         0.014
+        ]
+       },
+       {
+        "id": "r4",
+        "label": [
+         "Log-Normal"
+        ],
+        "values": [
+         -0.005,
+         0.008,
+         0.0,
+         0.001,
+         -0.013,
+         0.008,
+         0.008,
+         0.004,
+         0.004,
+         0.014
+        ]
+       },
+       {
+        "id": "r5",
+        "label": [
+         "Akram"
+        ],
+        "values": [
+         0.0,
+         0.01,
+         0.004,
+         0.006,
+         -0.007,
+         0.004,
+         0.01,
+         0.005,
+         0.008,
+         0.007
+        ]
+       },
+       {
+        "id": "r6",
+        "label": [
+         "Auto (AICc)"
+        ],
+        "values": [
+         -0.003,
+         0.008,
+         0.0,
+         0.002,
+         -0.012,
+         0.008,
+         0.009,
+         0.004,
+         0.007,
+         0.013
+        ]
+       }
+      ]
+     }
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "add",
-    "path": "/claims/17/summary",
-    "value": "In the second simulation, the pinball scores of models with different error distributions differ little and not significantly at the 5% level, except for Akram's log-ETS model.",
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "path": "/evidence/5/artefacts",
+    "value": [
+     "A4",
+     "A5"
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    },
    {
     "op": "add",
+    "path": "/evidence/6/artefacts",
+    "value": [
+     "A4",
+     "A5"
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "replace",
+    "path": "/evidence/6/description",
+    "value": "ETS(M,M,N) fitted to [[D22:M3 series N2703]] with `adam()` from the smooth package 3.2.0, producing forecasts 1 to 18 steps ahead; the conventional point forecast compared with the conditional expectation obtained by simulation (Section 2, Fig. 1).",
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "add",
+    "path": "/paper/based_on",
+    "value": "entrylib:2026.000006@v5",
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "add",
+    "path": "/paper/published_as/corrections",
+    "value": [
+     {
+      "kind": "misprint",
+      "field": "D24.tables",
+      "where": "Table 2, row Kurtosis",
+      "printed": "$\\mathcal{N}$: $3$; $\\mathcal{IG}$: $15\\varsigma^2$; $\\log\\mathcal{N}$: $((\\varsigma^2 + 3)(\\varsigma^2 + 1) + 3)(\\varsigma^2 + 1)^2$; $\\Gamma$: $6\\varsigma^2$",
+      "recorded": "$\\mathcal{N}$: $3$; $\\mathcal{IG}$: $3 + 15\\varsigma^2$; $\\log\\mathcal{N}$: $\\left((\\varsigma^2 + 3)(\\varsigma^2 + 1) + 3\\right)(\\varsigma^2 + 1)^2 - 3$; $\\Gamma$: $3 + 6\\varsigma^2$",
+      "reason": "The row mixes kurtosis and excess kurtosis: the Normal entry, 3, is the kurtosis; the Inverse Gaussian and Gamma entries are excess kurtosis (15 and 6 times the squared coefficient of variation); and the Log-Normal entry, $e^{4\\sigma^2} + 2e^{3\\sigma^2} + 3e^{2\\sigma^2}$ with $e^{\\sigma^2} = \\varsigma^2 + 1$, is the kurtosis plus 3. Recorded as kurtosis throughout; a simulation of 2,000,000 draws with $\\sigma^2 = 0.1$ gives 4.84 for the Log-Normal (printed 7.86) and 3.59 for the Gamma ($3 + 6\\varsigma^2 = 3.6$)."
+     }
+    ],
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "replace",
     "path": "/paper/sections",
     "value": [
      {
@@ -330,22 +924,22 @@
       ]
      },
      {
-      "title": "Simulation experiment 1: bias of point forecasts",
-      "claims": [
-       "C3"
-      ]
-     },
-     {
       "title": "Distributional assumptions in ETS framework",
       "claims": [
        "C5",
        "C4",
        "C6",
-       "C18",
        "C7",
+       "C18",
        "C15",
-       "C8",
-       "C14"
+       "C14",
+       "C8"
+      ]
+     },
+     {
+      "title": "Simulation experiment 1: bias of point forecasts",
+      "claims": [
+       "C3"
       ]
      },
      {
@@ -363,7 +957,50 @@
       ]
      }
     ],
-    "reason": "Restores the reading aids of version 3, approved by the guarantor, which version 4 left out because it was prepared from version 2: the plain-language summary of every claim, the article's sections with each claim under its section, and version 3's claim names. The claims version 4 added (C14 to C18) get a summary and their section, and C6 and C13, which version 4 narrowed, get a summary and name that say what they now state. No statement, evidence or ID changes."
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "replace",
+    "path": "/references/4/target",
+    "value": "10.1080/03610927808827599",
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "add",
+    "path": "/references/8",
+    "value": {
+     "id": "B10",
+     "target": "https://www.R-project.org/",
+     "id_type": "url",
+     "archive_uri": "https://web.archive.org/web/2026/https://www.R-project.org/"
+    },
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "add",
+    "path": "/references/9",
+    "value": {
+     "id": "B11",
+     "target": "10.32614/CRAN.package.smooth",
+     "id_type": "doi"
+    },
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "add",
+    "path": "/references/10",
+    "value": {
+     "id": "B12",
+     "target": "10.32614/CRAN.package.greybox",
+     "id_type": "doi"
+    },
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
+   },
+   {
+    "op": "replace",
+    "path": "/warrants/0/text",
+    "value": "The Inverse Gaussian meets the unit-mean condition with its location set to 1, its scale has a closed-form maximum likelihood estimate, and the convolution of i.i.d. Inverse Gaussian variables is well defined. The Log-Normal has a non-convex likelihood and a scale estimate that exists only in some cases, and the Gamma has no closed-form maximum likelihood estimate of its scale. Since [[B8:Folks & Chhikara (1978)]] found that data can be described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, the choice between them can rest on convenience. The argument is not tested: in the simulations the models with the three distributions perform very similarly.",
+    "reason": "Corrects transcription errors in two results tables of E5, which now match the printed Tables 4 and 5: in Table 4 the Log-Normal row's values on Normal and Inverse Gaussian data (5.295 and 5.215, not 5.215 and 5.295); in Table 5 the quantile bias of the Normal and Akram rows and the quantile precision of the Log-Normal and Auto rows, whose Inverse Gaussian and Gamma values were swapped. Explains every symbol of the definitions once, where it first appears (D1, D3, D4, D11, D15, D17, D19), as the paper defines it: for example the lag vector $l$ in $v_{t-l}$. Records the software the paper names, each with its CRAN DOI (R with its project page) and the version the paper gives, and links it to the evidence that used it: R, the smooth package (version 3.2.0) and the greybox package (version 1.0.3). No claim's meaning or evidence value changes. This version adds a name and a plain-language summary to every claim, orders the sections theory first (the properties of the models and their distributional assumptions before the two simulation experiments and the real-life demonstration), lists the definitions in the order a reader needs them with the symbols the paper writes, and gives the paper's Table 2, comparing the four error distributions, as a table of a new definition (D24). Records a misprint of Table 2, whose kurtosis row mixed kurtosis and excess kurtosis (D24). Writes all mathematics in LaTeX between dollar signs, including the corrections to the published paper and the proof-check notes, which held formulas as plain text. Writes the functions of the packages the paper used (such as `es()`) as code, in backticks. Cites the works it names in its texts with citation markers, which link to the references, and corrects the DOI of B6 (Sugiura 1978), which resolved to nothing. Sets the state space model of proof step E1.S1 as one displayed system, the transition equation on a line of its own."
    }
   ]
  },
@@ -492,7 +1129,7 @@
   },
   {
    "id": "B6",
-   "target": "10.1080/03610927808837599",
+   "target": "10.1080/03610927808827599",
    "id_type": "doi"
   },
   {
@@ -509,6 +1146,22 @@
    "id": "B9",
    "target": "10.1016/S0169-2070(00)00057-1",
    "id_type": "doi"
+  },
+  {
+   "id": "B10",
+   "target": "https://www.R-project.org/",
+   "id_type": "url",
+   "archive_uri": "https://web.archive.org/web/2026/https://www.R-project.org/"
+  },
+  {
+   "id": "B11",
+   "target": "10.32614/CRAN.package.smooth",
+   "id_type": "doi"
+  },
+  {
+   "id": "B12",
+   "target": "10.32614/CRAN.package.greybox",
+   "id_type": "doi"
   }
  ],
  "definitions": [
@@ -516,7 +1169,7 @@
    "id": "D1",
    "term": "ETS(M,*,*)",
    "kind": "method",
-   "definition": "Pure multiplicative exponential smoothing state space model family written in logarithmic state space form as $$\\begin{aligned} \\log y_t &= w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t) \\\\ \\log v_t &= F \\log v_{t-l} + \\log(1_k + g \\epsilon_t) \\end{aligned}$$ with conventional multi-step point forecast $$\\hat{y}_{t+h} = \\exp\\left((w_1' F_1^{h-1} + w_m' F_m^{\\lceil h/m \\rceil - 1}) \\log v_t\\right).$$",
+   "definition": "Pure multiplicative exponential smoothing state space model family written in logarithmic state space form as $$\\begin{aligned} \\log y_t &= w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t) \\\\ \\log v_t &= F \\log v_{t-l} + \\log(1_k + g \\epsilon_t) \\end{aligned}$$ with conventional multi-step point forecast $$\\hat{y}_{t+h} = \\exp\\left((w_1' F_1^{h-1} + w_m' F_m^{\\lceil h/m \\rceil - 1}) \\log v_t\\right).$$ Here $y_t$ is the actual value on observation $t$; $v_t$ is the state vector, holding the model's components (such as the level, trend and seasonal component); $w$ is the measurement vector; $F$ is the transition matrix; $g$ is the persistence vector, holding the smoothing parameters; $\\epsilon_t$ is the error term; $l$ is the lag vector, holding the lag of each component (1 for the level and trend, $m$ for the seasonal component), so that $v_{t-l}$ is the vector of components each taken at its own lag; $1_k$ is the vector of ones of size $k$, the number of components; logarithms and exponents are taken element-wise. In the point forecast, $h$ is the forecast horizon from observation $t$, the subscript $1$ marks the parts of $w$ and $F$ for the non-seasonal components and the subscript $m$ the parts for the seasonal component, $m$ is the seasonal lag, and $\\lceil \\cdot \\rceil$ is the ceiling function.",
    "source": "B7"
   },
   {
@@ -536,48 +1189,125 @@
    "broader": [
     "D1"
    ],
-   "definition": "Pure multiplicative exponential smoothing model with damped multiplicative trend and multiplicative seasonality, defined by $$\\begin{aligned} y_t &= l_{t-1} b_{t-1}^{\\phi} s_{t-m} (1 + \\epsilon_t) \\\\ l_t &= l_{t-1} b_{t-1}^{\\phi} (1 + \\alpha \\epsilon_t) \\\\ b_t &= b_{t-1}^{\\phi} (1 + \\beta \\epsilon_t) \\\\ s_t &= s_{t-m} (1 + \\gamma \\epsilon_t) \\end{aligned}$$ where $\\phi$ is the dampening parameter, $\\alpha, \\beta, \\gamma$ are smoothing parameters, and $m$ is the seasonal lag.",
+   "definition": "Pure multiplicative exponential smoothing model with damped multiplicative trend and multiplicative seasonality, defined by $$\\begin{aligned} y_t &= l_{t-1} b_{t-1}^{\\phi} s_{t-m} (1 + \\epsilon_t) \\\\ l_t &= l_{t-1} b_{t-1}^{\\phi} (1 + \\alpha \\epsilon_t) \\\\ b_t &= b_{t-1}^{\\phi} (1 + \\beta \\epsilon_t) \\\\ s_t &= s_{t-m} (1 + \\gamma \\epsilon_t) \\end{aligned}$$ where $b_t$ is the trend, $s_t$ is the seasonal component, $\\phi$ is the dampening parameter, and $\\beta$ and $\\gamma$ are the smoothing parameters of the trend and the seasonal component.",
    "source": "B3"
   },
   {
-   "id": "D4",
-   "term": "Log-Normal error distribution",
-   "kind": "concept",
-   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = -\\frac{\\sigma^2}{2}$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = e^{\\sigma^2} - 1$."
+   "id": "D23",
+   "term": "ETS(M,M,N)",
+   "kind": "method",
+   "definition": "The ETS model with multiplicative error, multiplicative trend and no seasonality."
   },
   {
-   "id": "D5",
-   "term": "Gamma error distribution",
-   "kind": "concept",
-   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with shape $\\xi = \\sigma^{-2}$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = \\sigma^2$."
-  },
-  {
-   "id": "D6",
-   "term": "Inverse Gaussian error distribution",
-   "kind": "concept",
-   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = 1$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = \\sigma^2$."
+   "id": "D22",
+   "term": "M3 series N2703",
+   "kind": "data",
+   "definition": "Series N2703 of the M3 forecasting competition, a series with a negative trend.",
+   "source": "B9"
   },
   {
    "id": "D7",
    "term": "Normal error distribution",
+   "symbol": "$\\mathcal{N}$",
    "kind": "concept",
    "definition": "Classical Gaussian distribution on $(-\\infty, \\infty)$ applied to $1+\\epsilon_t$ with mean $\\mu = 1$ and variance $\\sigma^2$.",
    "source": "B3"
   },
   {
-   "id": "D8",
-   "term": "percentage difference (PD)",
-   "kind": "variable",
-   "unit": "1",
-   "definition": "Relative deviation of the conventional point forecast $\\hat{y}_{t+h}$ from the conditional expectation $\\mu_{y,t+h}$, defined as $$PD = \\frac{\\mu_{y,t+h} - \\hat{y}_{t+h}}{\\mu_{y,t+h}}$$ lying in $[0, 1)$."
+   "id": "D6",
+   "term": "Inverse Gaussian error distribution",
+   "symbol": "$\\mathcal{IG}$",
+   "kind": "concept",
+   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = 1$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = \\sigma^2$, where $E$ and $V$ denote expectation and variance."
   },
   {
-   "id": "D9",
-   "term": "AICc",
-   "kind": "variable",
-   "unit": "1",
-   "definition": "Corrected Akaike Information Criterion used to select among ETS component structures and error distributions.",
-   "source": "B6"
+   "id": "D4",
+   "term": "Log-Normal error distribution",
+   "symbol": "$\\log\\mathcal{N}$",
+   "kind": "concept",
+   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with location $\\mu = -\\frac{\\sigma^2}{2}$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = e^{\\sigma^2} - 1$, where $\\mu$ and $\\sigma^2$ are the mean and variance of $\\log(1+\\epsilon_t)$."
+  },
+  {
+   "id": "D5",
+   "term": "Gamma error distribution",
+   "symbol": "$\\Gamma$",
+   "kind": "concept",
+   "definition": "Probability distribution on $(0, \\infty)$ applied to $1+\\epsilon_t$ with shape $\\xi = \\sigma^{-2}$ and scale $\\sigma^2$ so that $E(1+\\epsilon_t) = 1$ and $V(1+\\epsilon_t) = \\sigma^2$."
+  },
+  {
+   "id": "D24",
+   "term": "candidate error distributions",
+   "kind": "concept",
+   "members": [
+    "D7",
+    "D6",
+    "D4",
+    "D5"
+   ],
+   "definition": "The four distributions the paper considers for the multiplicative error term $1+\\epsilon_t$ of [[D1:ETS(M,*,*)]]: the [[D7:Normal error distribution]], the [[D6:Inverse Gaussian error distribution]], the [[D4:Log-Normal error distribution]] and the [[D5:Gamma error distribution]], each with its parameters restricted so that $E(1+\\epsilon_t) = 1$. The truncated Normal distribution is set aside because its statistics are too complicated to summarise. The table compares their main statistics.",
+   "tables": [
+    {
+     "description": "Main statistics of the four distributions, as functions of their parameters, and the restriction each needs in an ETS model so that the error term has mean one. $\\mu$ is the location, $\\sigma^2$ the scale, $\\xi$ the shape, and $\\varsigma$ the standard deviation of the error term $1+\\epsilon_t$.",
+     "columns": [
+      "Statistic",
+      "$\\mathcal{N}(\\mu, \\sigma^2)$",
+      "$\\mathcal{IG}(\\mu, \\sigma^2)$",
+      "$\\log\\mathcal{N}(\\mu, \\sigma^2)$",
+      "$\\Gamma(\\xi, \\sigma^2)$"
+     ],
+     "rows": [
+      [
+       "Support",
+       "$(-\\infty, \\infty)$",
+       "$(0, \\infty)$",
+       "$(0, \\infty)$",
+       "$(0, \\infty)$"
+      ],
+      [
+       "Mean, $E(1+\\epsilon_t)$",
+       "$\\mu$",
+       "$\\mu$",
+       "$e^{\\mu + \\frac{\\sigma^2}{2}}$",
+       "$\\xi \\sigma^2$"
+      ],
+      [
+       "Parameter restriction in ETS",
+       "$\\mu = 1$",
+       "$\\mu = 1$",
+       "$\\mu = -\\frac{\\sigma^2}{2}$",
+       "$\\xi = \\frac{1}{\\sigma^2}$"
+      ],
+      [
+       "Variance, $V(1+\\epsilon_t) = \\varsigma^2$",
+       "$\\sigma^2$",
+       "$\\sigma^2$",
+       "$e^{\\sigma^2} - 1$",
+       "$\\sigma^2$"
+      ],
+      [
+       "Skewness",
+       "$0$",
+       "$3\\varsigma$",
+       "$\\varsigma^3 + 3\\varsigma$",
+       "$2\\varsigma$"
+      ],
+      [
+       "Kurtosis",
+       "$3$",
+       "$3 + 15\\varsigma^2$",
+       "$\\left((\\varsigma^2 + 3)(\\varsigma^2 + 1) + 3\\right)(\\varsigma^2 + 1)^2 - 3$",
+       "$3 + 6\\varsigma^2$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "D12",
+   "term": "ETS(A,Ad,A)",
+   "kind": "method",
+   "definition": "Pure additive exponential smoothing model with additive error, damped additive trend, and additive seasonality under Normal errors.",
+   "source": "B3"
   },
   {
    "id": "D10",
@@ -587,18 +1317,12 @@
    "source": "B4"
   },
   {
-   "id": "D11",
-   "term": "scaled pinball score (SPS)",
+   "id": "D9",
+   "term": "AICc",
    "kind": "variable",
    "unit": "1",
-   "definition": "Quantile forecast accuracy measure scaled by the in-sample mean $\\bar{y}$, defined for probability level $\\tau$ over horizon $h$ as $$SPS = \\frac{1}{\\bar{y}} \\left( (1-\\tau) \\sum_{y_{t+j} < \\hat{q}_{\\tau,t+j}} (\\hat{q}_{\\tau,t+j} - y_{t+j}) + \\tau \\sum_{y_{t+j} \\ge \\hat{q}_{\\tau,t+j}} (y_{t+j} - \\hat{q}_{\\tau,t+j}) \\right).$$"
-  },
-  {
-   "id": "D12",
-   "term": "ETS(A,Ad,A)",
-   "kind": "method",
-   "definition": "Pure additive exponential smoothing model with additive error, damped additive trend, and additive seasonality under Normal errors.",
-   "source": "B3"
+   "definition": "Corrected Akaike Information Criterion used to select among ETS component structures and error distributions.",
+   "source": "B6"
   },
   {
    "id": "D13",
@@ -611,29 +1335,51 @@
    "source": "B3"
   },
   {
+   "id": "D8",
+   "term": "percentage difference (PD)",
+   "symbol": "$PD$",
+   "kind": "variable",
+   "unit": "1",
+   "definition": "Relative deviation of the conventional point forecast $\\hat{y}_{t+h}$ from the conditional expectation $\\mu_{y,t+h}$, defined as $$PD = \\frac{\\mu_{y,t+h} - \\hat{y}_{t+h}}{\\mu_{y,t+h}}$$ lying in $[0, 1)$."
+  },
+  {
    "id": "D14",
    "term": "Simulation experiment 1 synthetic series",
    "kind": "data",
    "definition": "10,000 iterations of 100-observation time series simulated from $ETS(M,Md,N)$ with Inverse Gaussian errors across parameter grids $\\sigma \\in \\{0.01, 0.05, 0.1, 0.5, 1\\}$, $\\alpha, \\beta \\in \\{0.1, 0.2, 0.5\\}$, $\\phi \\in \\{0.5, 0.9, 0.95, 1\\}$, and horizons $h \\in \\{10, 50, 100\\}$."
   },
   {
+   "id": "D19",
+   "term": "Box-Cox odds regression procedure",
+   "kind": "design",
+   "definition": "Transformation of percentage difference $PD$ into odds $\\frac{PD}{1-PD}$ followed by Box-Cox transformation ($\\lambda = 0.146$) and linear regression on scaled parameters $\\sigma$, horizon, $\\alpha$, $\\beta$, and $\\phi$ using `greybox::alm` (`distribution='dbcnorm'`), where $\\lambda$ is the Box-Cox parameter, chosen by maximum likelihood, and each regressor, the horizon included, is rescaled to lie between 0 and 1."
+  },
+  {
    "id": "D15",
    "term": "Simulation experiment 2 synthetic series",
    "kind": "data",
-   "definition": "10,000 simulated time series of length 500 generated for each of five data-generating processes ($ETS(M,Md,M)$ with Normal, Inverse Gaussian, Gamma, Log-Normal errors, and Akram's exponentiated $ETS(A,Ad,A)$) with $\\sigma=0.1$, $\\alpha=0.1$, $\\beta=0.05$, $\\gamma=0.2$, $\\phi=0.95$, $l_0=100$, $b_0=1$, and holdout horizon $48$."
+   "definition": "10,000 simulated time series of length 500 generated for each of five data-generating processes ($ETS(M,Md,M)$ with Normal, Inverse Gaussian, Gamma, Log-Normal errors, and Akram's exponentiated $ETS(A,Ad,A)$) with $\\sigma=0.1$, $\\alpha=0.1$, $\\beta=0.05$, $\\gamma=0.2$, $\\phi=0.95$, $l_0=100$, $b_0=1$, and holdout horizon $48$, where $l_0$ and $b_0$ are the initial level and trend; the initial seasonal indices were generated at random and normalised."
   },
   {
-   "id": "D16",
-   "term": "Daily EV charging dataset",
-   "kind": "data",
-   "definition": "511 daily aggregated observations of electricity used by electric vehicles in a geographical area starting from low volume with 7-day multiplicative seasonality, holding out the last 14 observations."
+   "id": "D20",
+   "term": "48-step quantile forecast simulation procedure",
+   "kind": "design",
+   "definition": "Estimation of $ETS(M,Md,M)$ with each candidate distribution, AICc-based automatic selection (`smooth::auto.adam`), and Akram's log-ETS model on 500 observations, evaluating 99 quantile levels ($\\tau = 0.01, \\dots, 0.99$) over a 48-step holdout."
+  },
+  {
+   "id": "D11",
+   "term": "scaled pinball score (SPS)",
+   "symbol": "$SPS$",
+   "kind": "variable",
+   "unit": "1",
+   "definition": "Quantile forecast accuracy measure scaled by the in-sample mean $\\bar{y}$, defined for probability level $\\tau$ over horizon $h$ as $$SPS = \\frac{1}{\\bar{y}} \\left( (1-\\tau) \\sum_{y_{t+j} < \\hat{q}_{\\tau,t+j}} (\\hat{q}_{\\tau,t+j} - y_{t+j}) + \\tau \\sum_{y_{t+j} \\ge \\hat{q}_{\\tau,t+j}} (y_{t+j} - \\hat{q}_{\\tau,t+j}) \\right).$$ Here $\\hat{q}_{\\tau,t+j}$ is the quantile forecast at level $\\tau$ for observation $t+j$, $t$ is the last observation of the sample, and both sums run over the steps $j = 1, \\dots, h$."
   },
   {
    "id": "D17",
    "term": "quantile bias",
    "kind": "variable",
    "unit": "1",
-   "definition": "Mean across quantile levels $\\tau \\in \\{0.01, 0.02, \\dots, 0.99\\}$ of empirical quantile coverage minus nominal target level $\\tau$."
+   "definition": "Mean across quantile levels $\\tau \\in \\{0.01, 0.02, \\dots, 0.99\\}$ of empirical quantile coverage minus nominal target level $\\tau$, where the empirical coverage at level $\\tau$ is the share of actual values below the quantile forecast at that level."
   },
   {
    "id": "D18",
@@ -643,35 +1389,16 @@
    "definition": "Mean across quantile levels $\\tau \\in \\{0.01, 0.02, \\dots, 0.99\\}$ of the absolute difference between empirical quantile coverage and nominal target level $\\tau$."
   },
   {
-   "id": "D19",
-   "term": "Box-Cox odds regression procedure",
-   "kind": "design",
-   "definition": "Transformation of percentage difference $PD$ into odds $\\frac{PD}{1-PD}$ followed by Box-Cox transformation ($\\lambda = 0.146$) and linear regression on scaled parameters $\\sigma$, horizon, $\\alpha$, $\\beta$, and $\\phi$ using `greybox::alm` (`distribution='dbcnorm'`)."
-  },
-  {
-   "id": "D20",
-   "term": "48-step quantile forecast simulation procedure",
-   "kind": "design",
-   "definition": "Estimation of $ETS(M,Md,M)$ with each candidate distribution, AICc-based automatic selection (`smooth::auto.adam`), and Akram's log-ETS model on 500 observations, evaluating 99 quantile levels ($\\tau = 0.01, \\dots, 0.99$) over a 48-step holdout."
+   "id": "D16",
+   "term": "Daily EV charging dataset",
+   "kind": "data",
+   "definition": "511 daily aggregated observations of electricity used by electric vehicles in a geographical area starting from low volume with 7-day multiplicative seasonality, holding out the last 14 observations."
   },
   {
    "id": "D21",
    "term": "two-dimensional AICc selection procedure",
    "kind": "design",
    "definition": "Simultaneous selection of pure multiplicative ETS component structure and error distribution by minimising $AICc$ via `smooth::auto.adam` with a 14-day holdout evaluation."
-  },
-  {
-   "id": "D22",
-   "term": "M3 series N2703",
-   "kind": "data",
-   "definition": "Series N2703 of the M3 forecasting competition, a series with a negative trend.",
-   "source": "B9"
-  },
-  {
-   "id": "D23",
-   "term": "ETS(M,M,N)",
-   "kind": "method",
-   "definition": "The ETS model with multiplicative error, multiplicative trend and no seasonality."
   }
  ],
  "claims": [
@@ -823,7 +1550,7 @@
      "by": "P4",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Verified Eqs. (2.6)-(2.11) for h=1, h<=m without trend, and ETS(M,N,N) product expectation."
+     "notes": "Verified Eqs. (2.6)-(2.11) for $h = 1$, $h \\le m$ without trend, and ETS(M,N,N) product expectation."
     }
    ],
    "provenance": "author_stated",
@@ -832,7 +1559,7 @@
   },
   {
    "id": "C3",
-   "name": "The gap grows with damping, trend smoothing, horizon and scale",
+   "name": "The gap grows with every parameter, most with damping",
    "summary": "In simulation of the damped multiplicative trend model with Inverse Gaussian errors, the gap between the conditional expectation and the point forecast grows with five parameters. The damping parameter has the largest effect and the level smoothing parameter the smallest.",
    "statement": "For [[D13:ETS(M,Md,N)]] simulated on [[D14:Simulation experiment 1 synthetic series]] with an [[D6:Inverse Gaussian error distribution]], the [[D8:percentage difference (PD)]] between the conditional expectation and the point forecast increases with the damping parameter $\\phi$, the trend smoothing parameter $\\beta$, the forecast horizon $h$, the scale parameter $\\sigma$, and the level smoothing parameter $\\alpha$, with $\\phi$ having the largest effect and $\\alpha$ having the smallest effect among the scaled predictors.",
    "about": {
@@ -1086,7 +1813,7 @@
      "by": "P4",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived the first-order conditions with respect to sigma^2 from the Table 3 log-likelihoods for the Normal and Inverse Gaussian distributions."
+     "notes": "Re-derived the first-order conditions with respect to $\\sigma^2$ from the Table 3 log-likelihoods for the Normal and Inverse Gaussian distributions."
     }
    ],
    "provenance": "author_stated",
@@ -1166,7 +1893,7 @@
   {
    "id": "C8",
    "name": "Only ETS(M,N,N) has a closed-form conditional mean and variance",
-   "summary": "Among pure multiplicative ETS models, only the level-only model has a closed-form mean and variance h steps ahead, for all four error distributions. The level stays positive when α lies between 0 and 1.",
+   "summary": "Among pure multiplicative ETS models, only the level-only model has a closed-form mean and variance h steps ahead, for all four error distributions. The level stays positive when $\\alpha$ lies between 0 and 1.",
    "statement": "Among pure multiplicative [[D1:ETS(M,*,*)]] models, [[D2:ETS(M,N,N)]] is the only model with closed-form conditional $h$-steps-ahead mean $E(l_{t+h}|t)=l_t$ and variance $V(l_{t+h}|t)=l_t^2((1+\\alpha^2\\sigma^2)^h-1)$ across [[D7:Normal error distribution]], [[D6:Inverse Gaussian error distribution]], [[D4:Log-Normal error distribution]], and [[D5:Gamma error distribution]], requiring $\\alpha \\in [0,1]$ to ensure positivity of the level.",
    "about": {
     "subject": "D2",
@@ -1211,7 +1938,7 @@
      "by": "P4",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Verified product expectation and variance in Eq. (4.5) and positivity bound alpha in [0, 1] in Eq. (4.7)."
+     "notes": "Verified product expectation and variance in Eq. (4.5) and positivity bound $\\alpha \\in [0, 1]$ in Eq. (4.7)."
     }
    ],
    "provenance": "author_stated",
@@ -1506,7 +2233,7 @@
      "by": "P4",
      "outcome": "confirmed",
      "extent": "full",
-     "notes": "Re-derived the first-order condition with respect to sigma^2 from the Table 3 log-likelihood for the Gamma distribution (checked as part of C6 in version 2)."
+     "notes": "Re-derived the first-order condition with respect to $\\sigma^2$ from the Table 3 log-likelihood for the Gamma distribution (checked as part of C6 in version 2)."
     }
    ],
    "provenance": "author_stated",
@@ -1572,7 +2299,7 @@
      "target": "978-3-540-71918-2",
      "id_type": "isbn",
      "locator": "p. 23",
-     "note": "Hyndman et al. (2008) say the difference between the point forecast and the expectation will in general be negligible."
+     "note": "[[B3:Hyndman et al. (2008)]] say the difference between the point forecast and the expectation will in general be negligible."
     },
     {
      "type": "supports",
@@ -1654,7 +2381,7 @@
    "steps": [
     {
      "id": "E1.1",
-     "statement": "Reformulate pure multiplicative ETS in logarithmic state space form: $\\log y_t = w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t)$ and $\\log v_t = F \\log v_{t-l} + \\log(1_k + g \\epsilon_t)$.",
+     "statement": "Reformulate pure multiplicative ETS in logarithmic state space form: $$\\begin{aligned} \\log y_t &= w' \\log(v_{t-l}) + \\log(1 + \\epsilon_t) \\\\ \\log v_t &= F \\log v_{t-l} + \\log(1_k + g \\epsilon_t) \\end{aligned}$$",
      "by": [
       "D1",
       "C12"
@@ -1802,7 +2529,10 @@
     }
    ],
    "artefacts": [
-    "A3"
+    "A3",
+    "A4",
+    "A5",
+    "A6"
    ],
    "availability": {
     "level": "unavailable",
@@ -2006,8 +2736,8 @@
         "Log-Normal"
        ],
        "values": [
-        5.215,
         5.295,
+        5.215,
         5.224,
         9.423,
         5.22
@@ -2130,8 +2860,8 @@
        ],
        "values": [
         -0.002,
-        0.003,
         0.011,
+        0.003,
         0.007,
         -0.01,
         0.007,
@@ -2189,8 +2919,8 @@
         0.001,
         -0.013,
         0.008,
-        0.004,
         0.008,
+        0.004,
         0.004,
         0.014
        ]
@@ -2202,8 +2932,8 @@
        ],
        "values": [
         0.0,
-        0.004,
         0.01,
+        0.004,
         0.006,
         -0.007,
         0.004,
@@ -2225,8 +2955,8 @@
         0.002,
         -0.012,
         0.008,
-        0.004,
         0.009,
+        0.004,
         0.007,
         0.013
        ]
@@ -2235,7 +2965,9 @@
     }
    ],
    "artefacts": [
-    "A3"
+    "A3",
+    "A4",
+    "A5"
    ],
    "availability": {
     "level": "unavailable",
@@ -2295,12 +3027,16 @@
    "availability": {
     "level": "unavailable",
     "reason": "legal"
-   }
+   },
+   "artefacts": [
+    "A4",
+    "A5"
+   ]
   },
   {
    "id": "E7",
    "profile": "quant",
-   "description": "ETS(M,M,N) fitted to [[D22:M3 series N2703]] with adam() from the smooth package 3.2.0, producing forecasts 1 to 18 steps ahead; the conventional point forecast compared with the conditional expectation obtained by simulation (Section 2, Fig. 1).",
+   "description": "ETS(M,M,N) fitted to [[D22:M3 series N2703]] with `adam()` from the smooth package 3.2.0, producing forecasts 1 to 18 steps ahead; the conventional point forecast compared with the conditional expectation obtained by simulation (Section 2, Fig. 1).",
    "setup": {
     "studied": [
      "D23"
@@ -2331,7 +3067,11 @@
    "preregistered": false,
    "availability": {
     "level": "public"
-   }
+   },
+   "artefacts": [
+    "A4",
+    "A5"
+   ]
   }
  ],
  "warrants": [
@@ -2344,7 +3084,7 @@
     "C7",
     "C18"
    ],
-   "text": "The Inverse Gaussian meets the unit-mean condition with its location set to 1, its scale has a closed-form maximum likelihood estimate, and the convolution of i.i.d. Inverse Gaussian variables is well defined. The Log-Normal has a non-convex likelihood and a scale estimate that exists only in some cases, and the Gamma has no closed-form maximum likelihood estimate of its scale. Since Folks & Chhikara (1978) found that data can be described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, the choice between them can rest on convenience. The argument is not tested: in the simulations the models with the three distributions perform very similarly."
+   "text": "The Inverse Gaussian meets the unit-mean condition with its location set to 1, its scale has a closed-form maximum likelihood estimate, and the convolution of i.i.d. Inverse Gaussian variables is well defined. The Log-Normal has a non-convex likelihood and a scale estimate that exists only in some cases, and the Gamma has no closed-form maximum likelihood estimate of its scale. Since [[B8:Folks & Chhikara (1978)]] found that data can be described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, the choice between them can rest on convenience. The argument is not tested: in the simulations the models with the three distributions perform very similarly."
   }
  ],
  "limitations": [
@@ -2455,6 +3195,38 @@
     "level": "public"
    },
    "description": "Full simulation results tables (Table 1 from Section 3 and Tables 4-5 from Section 5) exported as CSV."
+  },
+  {
+   "id": "A4",
+   "kind": "software",
+   "uri": "https://www.R-project.org/",
+   "reference": "B10",
+   "availability": {
+    "level": "public"
+   },
+   "description": "R: A Language and Environment for Statistical Computing ([[B10:R Core Team, 2020]]), the environment in which all simulations, model fits and the EV charging application were run."
+  },
+  {
+   "id": "A5",
+   "kind": "software",
+   "uri": "https://CRAN.R-project.org/package=smooth",
+   "version": "3.2.0",
+   "reference": "B11",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The smooth R package, version 3.2.0 (Svetunkov, 2023a, Forecasting Using State Space Models): `sim.es()` generated the simulated series, `adam()` and `auto.adam()` fitted the ETS models and produced the forecasts."
+  },
+  {
+   "id": "A6",
+   "kind": "software",
+   "uri": "https://CRAN.R-project.org/package=greybox",
+   "version": "1.0.3",
+   "reference": "B12",
+   "availability": {
+    "level": "public"
+   },
+   "description": "The greybox R package, version 1.0.3 (Svetunkov, 2021, Toolbox for Model Building and Forecasting): `alm()` with `distribution=\"dbcnorm\"` fitted the Box-Cox regression of the odds of the percentage difference in Simulation Experiment 1."
   }
  ],
  "open_questions": [
