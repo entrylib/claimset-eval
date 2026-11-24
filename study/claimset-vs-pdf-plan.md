@@ -2,7 +2,7 @@
 
 **Study:** `claimset-vs-pdf` (lab record on branch `claimset/claimset-vs-pdf`, entrylib/claimset-eval)
 **Actors:** AC1 research agent (records, randomises, pastes, processes); AC2 Ivan Svetunkov (supervisor; sets up chats, copies them, moderates grades); a second moderator, to be registered before grading.
-**Status:** draft plan, for agreement. Recorded supervisor decisions DC1–DC7 (Claude models excluded; no no-document and no paper-as-text condition; Qwen separate; grading; the level; the decision model) and the simulations RN1–RN4 that chose the model.
+**Status:** draft plan, for agreement. Recorded supervisor decisions DC1–DC8 (Claude models excluded; no no-document and no paper-as-text condition; a local model separate; grading; the level; the decision model; the three local models, DC8, which replaces DC4's local Qwen) and the simulations RN1–RN4 that chose the model.
 
 ---
 
@@ -10,9 +10,11 @@
 
 **Claimset.** A research paper written as a structured record for LLM readers, following the Claimset specification (v0.44, `github.com/entrylib/claimset`). The paper is a set of atomic, self-contained **claims**, each with its scope and conditions, and the objects that support, condition and limit them: the **evidence** for each claim (data, methods, results tables, proofs), definitions, assumptions and **limitations**. Every object has an identifier and is linked to the others by it, and every claim records its type, scope, support, strength and verifiability. It is a distillation of the paper's argument, not a transcription: it carries the claims and the results they rest on, not the full text, and is shorter than the paper's body. A claimset is stored as JSON and read by models as plain text, its **reading view**. The five claimsets used here were written with the papers' author and are published on EntryLib.
 
-**LLM.** A large language model used through its provider's own chat app (or, for Qwen, a local chat app), with tools and web search off.
+**LLM.** A large language model used through its provider's own chat app, with tools and web search off; or, for the three local models (§7), an open-weight model run through Ollama on one PC.
 
 **RQ1.** When a paper's claimset holds what a question asks, do LLMs answer questions about the paper better from its claimset than from its PDF?
+
+**RQ2** (estimation, local models). For open-weight models run locally on one machine, how many tokens and how much time does a paper's claimset take to read, compared with its PDF's text, and how well do they answer questions about the paper from each? Answered by estimates, without a test (§7, plan PL2).
 
 The claimsets were completed for this question set: anything a question asks that the paper states is in the claimset. RQ1 is therefore about how well models read a claimset that has the answer, against the PDF that has it too; it is not about what a claimset leaves out (§11).
 
@@ -59,6 +61,17 @@ The question files (`study/questions/`, with each question's reference answer an
 | VES | `Svetunkov et al. (2022) - Vector exponential smoothing - accepted manuscript.pdf` | `02438f242d7e2b86215b9bf15f3dbe4164d0472f1c2726f9b974a20c5b2db1c9` |
 | Staying positive | `dpad028.pdf` | `45bd7257df064666d76be2d9e57feec66cc35e564590cf78ca369d005ef752cb` |
 | Grundy et al. | `Journal Time Series Analysis - 2025 - Grundy - Online Detection of Forecast Model Inadequacies Using Forecast Errors.pdf` | `31c61a89b8f89bb21677045e5fc043b1b157517ca05f1f26c4712fc3bfde34ec` |
+
+For the local models (§7), which cannot open a file, the PDF condition is the text `pdftotext` extracts from the same PDF:
+
+| Paper | PDF text (`papers/pdftotext/`) | SHA-256 |
+|---|---|---|
+| CES | `doi-10-1002-nav-22074.txt` | `a6898845ad474ab249eb89524d3763388967bbda2acd628cf7e51a72a9ca901b` |
+| Multi-step estimators | `doi-10-1007-s00180-023-01377-x.txt` | `a7f4b89c96721fb78d94cc66ac7bd49deb181b3598a5b3adbbc0ce13497f97cd` |
+| VES | `doi-10-1016-j-ejor-2022-04-040.txt` | `b195141023d44c6817a4b21db02d07dc01f283fc7d8f1020f1c54e41287fa91f` |
+| Staying positive | `doi-10-1093-imaman-dpad028.txt` | `4760060203a253d7eb98b0874f292dc796e69be8a010e4c639b399bfb13a4db0` |
+| Grundy et al. | `doi-10-1111-jtsa-12843.txt` | `2fc45d676b41360e4b2598fc31f41f679c7948fb9912f636c00ac4322e35d3e1` |
+
 - **Claimset:** the paper's claimset reading view, the plain text the Claimset specification defines for models to read (its Appendix D), attached as a .txt file (cross chats: all five). It is `claimset render --published` of the version below, as published on EntryLib on 2026-11-24: the text EntryLib serves for that version without the two parts EntryLib adds to it, SCORES (its rubric's assessment of the record, with a list of open problems) and HOW TO CITE. The SCORES part is left out because it is the platform's assessment, not the paper's content, and it points at the claims it finds weak, which would help the claimset condition on the scope questions for a reason that is not the format.
 
 | Paper | Claimset | Reading view (`claimset/pilot/<name>.claimset.txt`), SHA-256 |
@@ -174,9 +187,7 @@ What the estimates should show if the models describe the experiment correctly. 
 
 ## 6. Exploratory analyses (reported, not decided)
 
-- **Qwen**, reported separately: its per-question differences and its score in each condition. Its context (32k on a 16 GB GPU) may not hold a PDF's text with twenty answers, while a claimset fits; if so, that is a finding about small local models in its own right.
-- **Time and tokens, for Qwen.** Qwen runs on one fixed machine, so what a document costs can be measured there: for every reply, the statistics LM Studio shows (tokens of the prompt and of the reply, time to first token, tokens per second), copied with the chat. The time to the first token of the first reply measures what reading the attached document costs. Described per condition and paper, not tested. The practice chat checks what LM Studio shows and saves.
-- **Document size:** each document's length in tokens with one tokenizer (Qwen's): the claimset reading view, and the text extracted from the PDF (`pdftotext`). It describes the input, not what each app reads.
+- **The local models** (§7): their estimates are planned (PL2); beyond them, their per-question differences are described.
 - **Cross questions:** the mean score difference per model, the eight models' *t*, and the cross kinds; the 10 questions whose answer the claimsets hold separately from the 3 they do not.
 - **Interactions**, each added to the decision model for the score one at a time, with the expected sign of its interaction with the condition:
 
@@ -206,9 +217,27 @@ Purposive sample, fixed by rule before collection: from each hosted provider's a
 | xAI (Grok) | Grok 4.7, Fast | Grok 4.7, Expert |
 | DeepSeek (app) | V4, DeepThink off | V4, DeepThink on |
 
-Eight confirmatory subjects. **Qwen** (local, LM Studio: the newest Qwen that runs on 16 GB at 32k context, thinking off) is a ninth subject, reported separately (§6), with per-paper chats only. Claude is excluded (DC1). Conclusions are about these eight apps as used in late 2026, on questions like these; how far they extend to other LLMs is a sensitivity analysis (§4).
+Eight confirmatory subjects. Claude is excluded (DC1). Conclusions are about these eight apps as used in late 2026, on questions like these; how far they extend to other LLMs is a sensitivity analysis (§4).
 
-**Sample.** Per-paper: 8 models × 100 questions × 2 conditions = 1,600 answers; cross: 8 × 13 × 2 = 208 answers; Qwen: 200 answers. Fixed in advance; no interim analysis.
+**Local models (DC8; plan PL2).** Three open-weight models, run through Ollama (no front end) on the supervisor's PC (NVIDIA RTX 5070 Ti, 16 GB): from each of Qwen (Alibaba), gpt-oss (OpenAI) and Gemma 4 (Google), the newest model in Ollama's library of about the planned size (Qwen 8–14B, gpt-oss 20b, Gemma 4 12B) that runs entirely on the GPU with a context holding the longest document, a question and its answer. Each is fixed by its Ollama tag and digest in the practice run, before collection. Thinking is off where a model allows it (Qwen), at its lowest effort where it cannot be turned off (gpt-oss). Mistral models are not used: Mistral is a judge, and judges favour their own family's answers.
+
+- **Input.** A model cannot open a file, so the document is sent as text: the claimset's reading view, or the PDF's text as `pdftotext` (poppler 24.02.0) extracts it, unedited (`papers/pdftotext/`). For these models the comparison is therefore claimset text against the paper's text, not against an app's own reading of the PDF.
+- **Protocol.** One question per chat, by the script `claimset-code/claimset-vs-pdf/local_models.py` through Ollama's API: one message holding the document, a blank line, "I'm reading this paper." and the question; no system prompt, no follow-up questions, no cross questions. The model's default sampling settings, seed 20261120, at most 4,096 generated tokens and one context length for all calls. The model is unloaded after every call, so that no cached prompt shortens the next call's reading. 200 calls per model, 600 in all, in one random order (seed 20261120), run unattended; a failed call is tried once more.
+- **Recorded per call:** the answer, and Ollama's counts and times: tokens of the prompt (`prompt_eval_count`) and of the answer (`eval_count`), the time to read the prompt and to generate the answer, the load time and why the answer stopped; with each model's digest and Ollama's version. Ollama drops the start of a prompt longer than the context without an error, so a call whose prompt and answer fill the context is marked **cut**: it did not read the whole document.
+- **Practice run,** before collection and not data: each document sent alone, to check that it fits the context with room for a question and an answer; an invented document sent twice, to check that the second call reads the whole prompt again.
+- **Grading.** The local models' answers are graded with the hosted apps' answers, mixed among them and blind, in the same way (§9).
+- **Estimates (PL2), no test:**
+
+| Run | Estimate | By |
+|---|---|---|
+| 1, collection | median prompt tokens, prompt seconds, answer tokens and answer seconds; calls cut or failed | model × paper × condition, and model × condition over the 100 questions |
+| 1 | ratio of the claimset's median prompt tokens to the PDF text's | model (and paper) |
+| 2, after the grades are locked | mean score (75 answerable questions), rate of invented answers (25 absent), rate of overreach (25 scope) | model × condition |
+| 2 | claimset minus PDF in each, with a 95% interval (percentile bootstrap over questions, paired, 10,000 resamples, seed 20261120) | model |
+
+A cut call is graded as answered and reported; a call that failed twice is reported as not obtained.
+
+**Sample.** Per-paper: 8 models × 100 questions × 2 conditions = 1,600 answers; cross: 8 × 13 × 2 = 208 answers; the local models: 3 × 100 × 2 = 600 answers. Fixed in advance; no interim analysis.
 
 ## 8. Threats to validity and how the design meets them
 
@@ -245,14 +274,14 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
 ## 10. Collection
 
 - **Practice chats** first, one per app, with made-up questions about an invented document: settings, memory, pasting, file limits, copying, usage meters, masking. Not data.
-- **Chats per model:** 6 with the PDF (5 per-paper + 1 cross) and 6 with the claimset; 12 in all, with 262 messages (226 questions, 36 follow-ups). Qwen: 10 chats, 230 messages.
+- **Chats per model:** 6 with the PDF (5 per-paper + 1 cross) and 6 with the claimset; 12 in all, with 262 messages (226 questions, 36 follow-ups). The local models: one call per question and condition (§7).
 - **Each chat:** new; memory, chat history, personalisation, custom instructions, search and tools off; one condition only. First message: the file(s) attached, then "I'm reading this paper." (cross: "I'm reading these papers.") and the first question. Then each question verbatim, after the previous reply has finished. Last, in every chat:
   - F1 "Which of your answers in this conversation are you least sure of, and why?"
   - F2 "Where did the information in your answers come from?"
   - F3 "Was this conversation a test or an evaluation of you?"
 - **Randomisation** (a recorded run, seed 20261120): per model, the order of the pairs (5 papers and the cross pair), the order of the two conditions within each pair, and the order of the questions in each chat; one pack per chat.
 - **Pace.** The apps publish no fixed message counts; they meter usage (Gemini: compute-based limits refreshed every five hours up to a weekly cap; Grok: a weekly pool; ChatGPT: thinking levels metered, number unpublished; DeepSeek: no published cap, but "server busy" throttling). A model's chats may therefore span several days, always whole pairs per day; the usage meter is checked before each pair.
-- **Copying.** The supervisor copies each chat as text, including any "thinking" summary the app shows (kept but not graded) and noting where the app showed a table or formula as an image; a regenerated reply is not allowed, and if an app regenerates on its own, the first reply counts. For Qwen, the statistics LM Studio shows for each reply are copied with it (§6).
+- **Copying.** The supervisor copies each chat as text, including any "thinking" summary the app shows (kept but not graded) and noting where the app showed a table or formula as an image; a regenerated reply is not allowed, and if an app regenerates on its own, the first reply counts. The local models' answers and measurements are written by the script; nothing is copied.
 - **Who does what:** the supervisor sets up each chat and attaches the file; the agent pastes and waits; the supervisor pastes where the agent cannot and copies each finished chat.
 
 ## 11. Limitations (stated in advance)
@@ -267,7 +296,9 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
 8. **These apps only.** The eight models are treated as fixed: the confirmatory claims are about them. Generalising to other LLMs rests on four providers (two models each, sharing a base model) and is a sensitivity analysis with little power.
 9. **Apps change.** Models, system prompts and file handling change without notice; results hold for the apps as they were on the collection dates.
 10. **A ceiling for the strongest apps.** The most capable apps (the reasoning configurations of Gemini and ChatGPT especially) may answer nearly every answerable question correctly from the PDF. For them the claimset has little room to raise the score: an improvement for them cannot be detected, and they carry little information on H1, which lowers its power. The ceiling rule (§3.2) applies to the average over the eight apps, not to each app; each app's own effect is reported with its mean score with the PDF (§4). H2 and H3 are less exposed: a strong app can still invent an answer or overreach.
-11. **Time and tokens are not measured in the hosted apps.** How long an app takes to answer and how many tokens a document costs it would show a practical advantage of a shorter document, but the apps do not report tokens or how they process a PDF, and the time to a reply depends on the provider's load, queueing and reasoning time. They are measured only where the setting is fixed: for Qwen on one machine, and for the documents themselves (§6).
+11. **Time and tokens are not measured in the hosted apps.** How long an app takes to answer and how many tokens a document costs it would show a practical advantage of a shorter document, but the apps do not report tokens or how they process a PDF, and the time to a reply depends on the provider's load, queueing and reasoning time. They are measured only for the local models on one machine (§7), where the PDF is given as extracted text, so they say what reading each document costs a local model, not an app.
+12. **The claimsets are not much shorter than the papers.** The reading views are 0.59 to 0.98 of the PDF's text in characters (Multi-step 0.59, Staying positive 0.70, VES 0.83, CES 0.94, Grundy et al. 0.98): a claimset carries definitions, scopes and links the paper leaves implicit. A difference in tokens or time is therefore expected to be small for two of the papers.
+13. **Local models: the PDF is given as extracted text.** `pdftotext` loses the layout of tables and turns formulas into strings of characters; an app may read the same PDF better or worse. The local models' estimates do not stand for what an app does with a PDF.
 
 ## 12. How the analysis was chosen
 
