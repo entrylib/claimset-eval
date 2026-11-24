@@ -9,7 +9,7 @@
 - **It can test time and tokens.** The models run on one machine through a script, so every count and time is measured, and the study is repeatable from its seed.
 - **It is cheap to extend.** A model is 200 scripted calls, run unattended.
 
-The two studies share the questions, the reference answers and marking guides, the claimsets' reading views and the grading (the answers of both may be graded in one blind pass, mixed together); each plan says so, and each paper cites the other.
+This study builds on claimset-vs-pdf, whose plan was recorded first: it reuses that study's questions, reference answers and marking guides and the claimsets' reading views, and grades by the same procedure, in a grading pass of its own. This study and its paper refer to claimset-vs-pdf; claimset-vs-pdf does not refer to this one.
 
 ## Research question
 
@@ -46,7 +46,7 @@ By the script `claimset-code/claimset-vs-pdf/local_models.py` (tested against a 
 - Recorded per call: the answer (and any thinking text), Ollama's `prompt_eval_count` (input tokens), `prompt_eval_duration` (reading time), `eval_count` (output tokens, thinking included), `eval_duration` (generation time), `load_duration`, `done_reason`, each model's digest and Ollama's version. A call whose prompt and answer fill the context is marked **cut**: Ollama drops the start of a prompt longer than the context without an error.
 - **Practice run** first, not data (`practice-prompt.md`): fixes the models, digests and context length; checks that every document fits; checks with an invented document that a repeated call reads the whole prompt again.
 
-Grading as in claimset-vs-pdf (§9 of its plan): two judges in turn, Claude Fable then Mistral, a disagreement report, two moderators, a consistency check, locking.
+Grading by the procedure of claimset-vs-pdf (§9 of its plan), in a pass of its own: two judges in turn, Claude Fable then Mistral, a disagreement report, two moderators, a consistency check, locking.
 
 ## Hypotheses (draft)
 
