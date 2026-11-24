@@ -11,7 +11,12 @@
     "cross-sectional information",
     "retail forecasting"
    ],
-   "subfield": "openalex:subfields/1803"
+   "subfield": "openalex:subfields/1803",
+   "topics": [
+    "openalex:T11918",
+    "openalex:T13487",
+    "openalex:T13309"
+   ]
   },
   "contributions": [
    "C1",
@@ -31,35 +36,35 @@
    "corrections": [
     {
      "kind": "misprint",
-     "field": "D4.definition",
+     "field": "D45.tables[0]",
      "where": "Table 1 of the published paper",
-     "printed": "W_3 = \\Phi (individual seasonal)",
-     "recorded": "W_3 = I_n",
-     "reason": "The seasonal state enters the measurement undamped: the common seasonal case of the same table has W_3 = 1_n and the individual level W_1 = I_n; the damping matrix belongs to the trend."
+     "printed": "$W_3 = \\Phi$ (individual seasonal)",
+     "recorded": "$W_3 = I_n$",
+     "reason": "The seasonal state enters the measurement undamped: the common seasonal case of the same table has $W_3 = 1_n$ and the individual level $W_1 = I_n$; the damping matrix belongs to the trend."
     },
     {
      "kind": "misprint",
-     "field": "D4.definition",
+     "field": "D45.tables[1]",
      "where": "Table 1 of the published paper",
-     "printed": "A = \\alpha 1_n' (common level smoothing parameter)",
-     "recorded": "A = \\alpha I_n",
-     "reason": "A is the n by n block G_1 of an individual level; the paper's own example in Section 4.1 has G_1 = \\alpha I_2, and \\Phi = \\phi I_n in the same table."
+     "printed": "$A = \\alpha 1_n'$ (common level smoothing parameter)",
+     "recorded": "$A = \\alpha I_n$",
+     "reason": "$A$ is the $n$ by $n$ block $G_1$ of an individual level; the paper's own example in Section 4.1 has $G_1 = \\alpha I_2$, and $\\Phi = \\phi I_n$ in the same table."
     },
     {
      "kind": "misprint",
-     "field": "D4.definition",
+     "field": "D45.tables[1]",
      "where": "Table 1 of the published paper",
-     "printed": "B = \\beta 1_n' (common trend smoothing parameter)",
-     "recorded": "B = \\beta I_n",
-     "reason": "B is the n by n block G_2 of an individual trend; the paper's own example in Section 4.1 has G_2 = \\beta I_2."
+     "printed": "$B = \\beta 1_n'$ (common trend smoothing parameter)",
+     "recorded": "$B = \\beta I_n$",
+     "reason": "$B$ is the $n$ by $n$ block $G_2$ of an individual trend; the paper's own example in Section 4.1 has $G_2 = \\beta I_2$."
     },
     {
      "kind": "misprint",
-     "field": "D4.definition",
+     "field": "D45.tables[1]",
      "where": "Table 1 of the published paper",
-     "printed": "\\Gamma = \\gamma 1_n' (common seasonal smoothing parameter)",
-     "recorded": "\\Gamma = \\gamma I_n",
-     "reason": "\\Gamma is the n by n block G_3 of an individual seasonal component, as A and B are for level and trend."
+     "printed": "$\\Gamma = \\gamma 1_n'$ (common seasonal smoothing parameter)",
+     "recorded": "$\\Gamma = \\gamma I_n$",
+     "reason": "$\\Gamma$ is the $n$ by $n$ block $G_3$ of an individual seasonal component, as $A$ and $B$ are for level and trend."
     }
    ]
   },
@@ -75,7 +80,132 @@
    "C3",
    "C4",
    "C5"
-  ]
+  ],
+  "sections": [
+   {
+    "title": "Pure additive and pure multiplicative VETS",
+    "claims": [
+     "C22",
+     "C23",
+     "C24",
+     "C25"
+    ]
+   },
+   {
+    "title": "The PIC taxonomy",
+    "claims": [
+     "C8",
+     "C9",
+     "C26",
+     "C10"
+    ]
+   },
+   {
+    "title": "Number of estimated parameters",
+    "claims": [
+     "C27",
+     "C12",
+     "C28",
+     "C29"
+    ]
+   },
+   {
+    "title": "Constructing VETS-PIC models from block matrices",
+    "claims": [
+     "C11",
+     "C13",
+     "C1"
+    ]
+   },
+   {
+    "title": "Estimation and stability of VETS models",
+    "claims": [
+     "C30",
+     "C31"
+    ]
+   },
+   {
+    "title": "Simulation: point forecast accuracy of the PIC variants",
+    "claims": [
+     "C2",
+     "C14",
+     "C15",
+     "C16"
+    ]
+   },
+   {
+    "title": "Simulation: prediction intervals and common smoothing parameters",
+    "claims": [
+     "C17",
+     "C18",
+     "C19",
+     "C20",
+     "C21",
+     "C4"
+    ]
+   },
+   {
+    "title": "Simulation: the most robust PIC variants",
+    "claims": [
+     "C3",
+     "C32",
+     "C33",
+     "C34"
+    ]
+   },
+   {
+    "title": "M5 data: point forecast accuracy",
+    "claims": [
+     "C5",
+     "C6",
+     "C35",
+     "C36",
+     "C37",
+     "C38"
+    ]
+   },
+   {
+    "title": "M5 data: prediction intervals",
+    "claims": [
+     "C39",
+     "C40",
+     "C41",
+     "C42",
+     "C7",
+     "C43",
+     "C44"
+    ]
+   },
+   {
+    "title": "M5 data: restrictions chosen by the selection procedure",
+    "claims": [
+     "C45",
+     "C46",
+     "C47",
+     "C48"
+    ]
+   },
+   {
+    "title": "M5 data: accuracy by forecast horizon",
+    "claims": [
+     "C49",
+     "C50"
+    ]
+   },
+   {
+    "title": "Recommendations for practice",
+    "claims": [
+     "C51",
+     "C52",
+     "C53",
+     "C54"
+    ]
+   }
+  ],
+  "id": "entrylib:2026.000017",
+  "version": 1,
+  "date": "2026-11-24",
+  "status": "active"
  },
  "contributors": [
   {
@@ -161,28 +291,16 @@
   {
    "id": "D1",
    "term": "VETS",
-   "definition": "Vector exponential smoothing: a state space model for a group of n time series $y_t = (y_{1,t}, \\ldots, y_{n,t})'$, where $y_{i,t}$ is the value of series $i$ at time $t$, with measurement matrix $W$, transition matrix $F$, persistence matrix $G$ of smoothing parameters, state vector $v_t$ with component lags $l$ and error vector $\\epsilon_t$, in one of two forms, [[D2:pure additive VETS]] or [[D3:pure multiplicative VETS]].",
+   "definition": "Vector exponential smoothing: a state space model for a group of n time series $y_t = (y_{1,t}, \\ldots, y_{n,t})'$ (the prime $'$ denoting transposition), where $y_{i,t}$ is the value of series $i$ at time $t$: $$\\begin{aligned} y_t &= W v_{t-l} + \\epsilon_t \\\\ v_t &= F v_{t-l} + G \\epsilon_t \\end{aligned}$$ where $W$ is the measurement matrix, $F$ the transition matrix, $G$ the persistence matrix of smoothing parameters, $v_t$ the state vector ($v_{t-l}$ takes each of its components at its own lag $l$: 1 for the level, the seasonal period for the seasonal component) and $\\epsilon_t$ the error vector. The model takes one of two forms: pure additive, written VETS(A,N,N), VETS(A,N,A) and so on, in which these equations hold for the data, the states and the errors themselves; and pure multiplicative, in which they hold for their logarithms (below).",
    "kind": "method",
    "assumptions": [
     "C57"
    ]
   },
   {
-   "id": "D2",
-   "term": "pure additive VETS",
-   "definition": "[[D1:VETS]] on the original data, written VETS(A,N,N), VETS(A,N,A) and so on: $y_t = W v_{t-l} + \\epsilon_t$, $v_t = F v_{t-l} + G \\epsilon_t$, with $\\epsilon_t \\sim N(0_n, \\Sigma)$, where $v_{t-l}$ takes each component of the state vector at its own lag (1 for the level, the seasonal period for the seasonal component), and $N(0_n, \\Sigma)$ is the multivariate normal distribution with mean $0_n$, the vector of $n$ zeroes, and covariance matrix $\\Sigma$.",
-   "kind": "method",
-   "broader": [
-    "D1"
-   ],
-   "assumptions": [
-    "C55"
-   ]
-  },
-  {
    "id": "D3",
    "term": "pure multiplicative VETS",
-   "definition": "[[D1:VETS]] on the logarithms of data, states and errors, written VETS(M,N,N;LN), VETS(M,N,M;LN) and so on: $\\log y_t = W \\log v_{t-l} + \\log \\epsilon_t$, $\\log v_t = F \\log v_{t-l} + G \\log \\epsilon_t$, the logarithm taken element-wise, with $\\log \\epsilon_t \\sim N(0_n, \\Sigma)$.",
+   "definition": "[[D1:VETS]] whose equations hold for the logarithms of the data, states and errors, written VETS(M,N,N;LN), VETS(M,N,M;LN) and so on: $$\\begin{aligned} \\log y_t &= W \\log v_{t-l} + \\log \\epsilon_t \\\\ \\log v_t &= F \\log v_{t-l} + G \\log \\epsilon_t \\end{aligned}$$ the logarithm taken element-wise, with $\\log \\epsilon_t \\sim N(0_n, \\Sigma)$.",
    "kind": "method",
    "broader": [
     "D1"
@@ -194,19 +312,284 @@
   {
    "id": "D4",
    "term": "PIC taxonomy",
-   "definition": "A classification of [[D1:VETS]] models by which of their Parameters, Initial values and Components are common to all series of the group rather than individual, written VETS(...)PIC(P,I,C): P lists the common smoothing parameters (L level, T trend, S seasonal) and D for a common damping parameter, I the common initial values (L, T, S), C the common components (L, T, S); N means none is common. PIC(N,N,N) has everything individual. A model of the taxonomy is built from block matrices for level (1), trend (2) and seasonal (3) components: $W = (W_1 \\; W_2 \\; W_3)$, $$F = \\begin{pmatrix} F_{1,1} & F_{1,2} & F_{1,3} \\\\ F_{2,1} & F_{2,2} & F_{2,3} \\\\ F_{3,1} & F_{3,2} & F_{3,3} \\end{pmatrix}$$, $G = \\begin{pmatrix} G_1 \\\\ G_2 \\\\ G_3 \\end{pmatrix}$, with the values: individual level $F_{1,1} = I_n$, $W_1 = I_n$, $G_1 = A$; individual trend $F_{2,2} = \\Phi$, $W_2 = \\Phi$, $G_2 = B$; individual seasonal $F_{3,3} = I_n$, $W_3 = I_n$, $G_3 = \\Gamma$; common level $F_{1,1} = 1$, $W_1 = 1_n$, $G_1 = \\alpha_n'$; common trend $F_{2,2} = \\phi$, $W_2 = \\phi 1_n$, $G_2 = \\beta_n'$; common seasonal $F_{3,3} = 1$, $W_3 = 1_n$, $G_3 = \\gamma_n'$; level and trend both individual $F_{1,2} = \\Phi$, $F_{2,1} = O_n$; individual level with common trend $F_{1,2} = \\phi 1_n$, $F_{2,1} = 0_n'$; both common $F_{1,2} = \\phi$, $F_{2,1} = 0$; every block between level and seasonal or between trend and seasonal is zero: $O_n$ when both are individual, $0_n'$ or $0_n$ when one is common, $0$ when both are; here $I_n$ is the $n \\times n$ identity matrix, $O_n$ the $n \\times n$ matrix of zeroes and $1_n$ the vector of $n$ ones, $\\alpha$, $\\beta$ and $\\gamma$ are the smoothing parameters of the level, trend and seasonal components and $\\phi$ the damping parameter, and $\\alpha_i$, $\\beta_i$, $\\gamma_i$, $\\phi_i$ those of series $i$. Individual smoothing and damping parameters give $A = \\mathrm{diag}(\\alpha_1, \\ldots, \\alpha_n)$, $B = \\mathrm{diag}(\\beta_1, \\ldots, \\beta_n)$, $\\Gamma = \\mathrm{diag}(\\gamma_1, \\ldots, \\gamma_n)$, $\\Phi = \\mathrm{diag}(\\phi_1, \\ldots, \\phi_n)$ (not stated in the paper); common ones give $A = \\alpha I_n$, $B = \\beta I_n$, $\\Gamma = \\gamma I_n$, $\\Phi = \\phi I_n$ and $\\alpha_n = \\alpha 1_n$, $\\beta_n = \\beta 1_n$, $\\gamma_n = \\gamma 1_n$, $\\phi_n = \\phi 1_n$. A common component is one state shared by all series (for the level $l_{i,t}$ of series $i$ at time $t$, $l_{1,t} = \\cdots = l_{n,t} = l_t$, and so for trend and seasonal); common initial values only set the starting states equal and leave the matrices unchanged. A common level with individual trends is not feasible.",
+   "definition": "A classification of [[D1:VETS]] models by which of their Parameters, Initial values and Components are common to all series of the group rather than individual to each, written VETS(...)PIC(P,I,C): P lists the common smoothing parameters (L for the level, T for the trend, S for the seasonal component) and D for a common damping parameter, I the components whose initial values are common (L, T, S), and C the common components (L, T, S); N in a position means that nothing there is common, so PIC(N,N,N) has everything individual. A common component is one state shared by all series: for the level $l_{i,t}$ of series $i$ at time $t$, $l_{1,t} = \\cdots = l_{n,t} = l_t$, and so for the trend and the seasonal component. Common initial values only set the starting states of the series equal and leave the matrices $W$, $F$ and $G$ unchanged. A common level with individual trends is not feasible, since different trends would make the levels drift apart.",
    "kind": "concept"
+  },
+  {
+   "id": "D46",
+   "term": "identity matrix",
+   "symbol": "$I_n$",
+   "definition": "The $n \\times n$ identity matrix.",
+   "kind": "concept"
+  },
+  {
+   "id": "D47",
+   "term": "matrix of zeroes",
+   "symbol": "$O_n$",
+   "definition": "The $n \\times n$ matrix whose entries are all zero.",
+   "kind": "concept"
+  },
+  {
+   "id": "D48",
+   "term": "vector of ones",
+   "symbol": "$1_n$",
+   "definition": "The column vector of $n$ ones.",
+   "kind": "concept"
+  },
+  {
+   "id": "D49",
+   "term": "level smoothing matrix",
+   "symbol": "$A$",
+   "definition": "The $n \\times n$ matrix of the level smoothing parameters of the $n$ series: the block of the persistence matrix $G$ for an individual level. With a common level smoothing parameter $\\alpha$ (L in P of the [[D4:PIC taxonomy]]), $A = \\alpha I_n$; with individual ones, $\\alpha_i$ for series $i$, $A = \\mathrm{diag}(\\alpha_1, \\ldots, \\alpha_n)$ (an inference: the paper does not state the form for individual parameters).",
+   "kind": "concept",
+   "part_of": [
+    "D45"
+   ]
+  },
+  {
+   "id": "D50",
+   "term": "trend smoothing matrix",
+   "symbol": "$B$",
+   "definition": "The $n \\times n$ matrix of the trend smoothing parameters of the $n$ series: the block of the persistence matrix $G$ for an individual trend. With a common trend smoothing parameter $\\beta$ (T in P), $B = \\beta I_n$; with individual ones, $\\beta_i$ for series $i$, $B = \\mathrm{diag}(\\beta_1, \\ldots, \\beta_n)$ (an inference: the paper does not state the form for individual parameters).",
+   "kind": "concept",
+   "part_of": [
+    "D45"
+   ]
+  },
+  {
+   "id": "D51",
+   "term": "seasonal smoothing matrix",
+   "symbol": "$\\Gamma$",
+   "definition": "The $n \\times n$ matrix of the seasonal smoothing parameters of the $n$ series: the block of the persistence matrix $G$ for an individual seasonal component. With a common seasonal smoothing parameter $\\gamma$ (S in P), $\\Gamma = \\gamma I_n$; with individual ones, $\\gamma_i$ for series $i$, $\\Gamma = \\mathrm{diag}(\\gamma_1, \\ldots, \\gamma_n)$ (an inference: the paper does not state the form for individual parameters).",
+   "kind": "concept",
+   "part_of": [
+    "D45"
+   ]
+  },
+  {
+   "id": "D52",
+   "term": "damping matrix",
+   "symbol": "$\\Phi$",
+   "definition": "The $n \\times n$ matrix of the damping parameters of the $n$ series: the block of the measurement matrix $W$ and of the transition matrix $F$ for an individual trend. With a common damping parameter $\\phi$ (D in P), $\\Phi = \\phi I_n$; with individual ones, $\\phi_i$ for series $i$, $\\Phi = \\mathrm{diag}(\\phi_1, \\ldots, \\phi_n)$ (an inference: the paper does not state the form for individual parameters).",
+   "kind": "concept",
+   "part_of": [
+    "D45"
+   ]
+  },
+  {
+   "id": "D53",
+   "term": "level smoothing vector",
+   "symbol": "$\\alpha_n$",
+   "definition": "The vector of the level smoothing parameters of the $n$ series, whose transpose $\\alpha_n'$ is the block of the persistence matrix $G$ for a common level, so that each series' error can move the common level by its own weight. With a common level smoothing parameter, $\\alpha_n = \\alpha 1_n$.",
+   "kind": "concept",
+   "part_of": [
+    "D45"
+   ]
+  },
+  {
+   "id": "D54",
+   "term": "trend smoothing vector",
+   "symbol": "$\\beta_n$",
+   "definition": "The vector of the trend smoothing parameters of the $n$ series, whose transpose $\\beta_n'$ is the block of the persistence matrix $G$ for a common trend. With a common trend smoothing parameter, $\\beta_n = \\beta 1_n$.",
+   "kind": "concept",
+   "part_of": [
+    "D45"
+   ]
+  },
+  {
+   "id": "D55",
+   "term": "seasonal smoothing vector",
+   "symbol": "$\\gamma_n$",
+   "definition": "The vector of the seasonal smoothing parameters of the $n$ series, whose transpose $\\gamma_n'$ is the block of the persistence matrix $G$ for a common seasonal component. With a common seasonal smoothing parameter, $\\gamma_n = \\gamma 1_n$.",
+   "kind": "concept",
+   "part_of": [
+    "D45"
+   ]
+  },
+  {
+   "id": "D56",
+   "term": "damping vector",
+   "symbol": "$\\phi_n$",
+   "definition": "The vector of the damping parameters of the $n$ series. With a common damping parameter, $\\phi_n = \\phi 1_n$.",
+   "kind": "concept",
+   "part_of": [
+    "D45"
+   ]
+  },
+  {
+   "id": "D45",
+   "term": "block matrices of a PIC model",
+   "definition": "The measurement, transition and persistence matrices $W$, $F$ and $G$ of a model of the [[D4:PIC taxonomy]], written in blocks for the level (1), trend (2) and seasonal (3) components: $W = (W_1 \\; W_2 \\; W_3)$, $$F = \\begin{pmatrix} F_{1,1} & F_{1,2} & F_{1,3} \\\\ F_{2,1} & F_{2,2} & F_{2,3} \\\\ F_{3,1} & F_{3,2} & F_{3,3} \\end{pmatrix}, \\quad G = \\begin{pmatrix} G_1 \\\\ G_2 \\\\ G_3 \\end{pmatrix},$$ where each block is a matrix, a vector or a scalar according to the model's restrictions. A model is built like a construction kit: its blocks are read from the tables below, for its restrictions on components (each of level, trend and seasonal individual or common, and each pair of them) and on parameters, and inserted into these matrices. The blocks are written with the [[D46:identity matrix]] $I_n$, the [[D47:matrix of zeroes]] $O_n$, the [[D48:vector of ones]] $1_n$, $0_n$ and the scalar $0$, the parameter matrices: the [[D49:level smoothing matrix]] $A$, the [[D50:trend smoothing matrix]] $B$, the [[D51:seasonal smoothing matrix]] $\\Gamma$ and the [[D52:damping matrix]] $\\Phi$, the parameter vectors: the [[D53:level smoothing vector]] $\\alpha_n$, the [[D54:trend smoothing vector]] $\\beta_n$, the [[D55:seasonal smoothing vector]] $\\gamma_n$ and the [[D56:damping vector]] $\\phi_n$, and the common parameters $\\alpha$, $\\beta$, $\\gamma$ and $\\phi$. A block not given for a model's restrictions does not occur in it; the infeasible common level with individual trends has no row.",
+   "kind": "concept",
+   "part_of": [
+    "D4"
+   ],
+   "tables": [
+    {
+     "description": "The blocks set by the restrictions on components (Table 1 of the paper, as corrected): 'individual' and 'common' say whether each component is one state per series or one state shared by all series; a row for a pair of components gives the blocks of $F$ between them.",
+     "columns": [
+      "Restriction",
+      "$W$",
+      "$F$",
+      "$G$"
+     ],
+     "rows": [
+      [
+       "Individual level",
+       "$W_1 = I_n$",
+       "$F_{1,1} = I_n$",
+       "$G_1 = A$"
+      ],
+      [
+       "Individual trend",
+       "$W_2 = \\Phi$",
+       "$F_{2,2} = \\Phi$",
+       "$G_2 = B$"
+      ],
+      [
+       "Individual seasonal",
+       "$W_3 = I_n$",
+       "$F_{3,3} = I_n$",
+       "$G_3 = \\Gamma$"
+      ],
+      [
+       "Common level",
+       "$W_1 = 1_n$",
+       "$F_{1,1} = 1$",
+       "$G_1 = \\alpha_n'$"
+      ],
+      [
+       "Common trend",
+       "$W_2 = \\phi 1_n$",
+       "$F_{2,2} = \\phi$",
+       "$G_2 = \\beta_n'$"
+      ],
+      [
+       "Common seasonal",
+       "$W_3 = 1_n$",
+       "$F_{3,3} = 1$",
+       "$G_3 = \\gamma_n'$"
+      ],
+      [
+       "Individual level, individual trend",
+       "",
+       "$F_{1,2} = \\Phi$, $F_{2,1} = O_n$",
+       ""
+      ],
+      [
+       "Individual level, common trend",
+       "",
+       "$F_{1,2} = \\phi 1_n$, $F_{2,1} = 0_n'$",
+       ""
+      ],
+      [
+       "Common level, common trend",
+       "",
+       "$F_{1,2} = \\phi$, $F_{2,1} = 0$",
+       ""
+      ],
+      [
+       "Individual level, individual seasonal",
+       "",
+       "$F_{1,3} = O_n$, $F_{3,1} = O_n$",
+       ""
+      ],
+      [
+       "Common level, individual seasonal",
+       "",
+       "$F_{1,3} = 0_n'$, $F_{3,1} = 0_n$",
+       ""
+      ],
+      [
+       "Individual level, common seasonal",
+       "",
+       "$F_{1,3} = 0_n$, $F_{3,1} = 0_n'$",
+       ""
+      ],
+      [
+       "Common level, common seasonal",
+       "",
+       "$F_{1,3} = 0$, $F_{3,1} = 0$",
+       ""
+      ],
+      [
+       "Individual trend, individual seasonal",
+       "",
+       "$F_{2,3} = O_n$, $F_{3,2} = O_n$",
+       ""
+      ],
+      [
+       "Common trend, individual seasonal",
+       "",
+       "$F_{2,3} = 0_n'$, $F_{3,2} = 0_n$",
+       ""
+      ],
+      [
+       "Individual trend, common seasonal",
+       "",
+       "$F_{2,3} = 0_n$, $F_{3,2} = 0_n'$",
+       ""
+      ],
+      [
+       "Common trend, common seasonal",
+       "",
+       "$F_{2,3} = 0$, $F_{3,2} = 0$",
+       ""
+      ]
+     ]
+    },
+    {
+     "description": "The parameter matrices and vectors when a parameter is common (Table 1 of the paper, as corrected): the matrix is a block of an individual component (in $G$, or for damping in $W$ and $F$), and the vector, transposed, the block of $G$ for a common component.",
+     "columns": [
+      "Restriction",
+      "Matrix",
+      "Vector"
+     ],
+     "rows": [
+      [
+       "Common level smoothing parameter $\\alpha$",
+       "$A = \\alpha I_n$",
+       "$\\alpha_n = \\alpha 1_n$"
+      ],
+      [
+       "Common trend smoothing parameter $\\beta$",
+       "$B = \\beta I_n$",
+       "$\\beta_n = \\beta 1_n$"
+      ],
+      [
+       "Common seasonal smoothing parameter $\\gamma$",
+       "$\\Gamma = \\gamma I_n$",
+       "$\\gamma_n = \\gamma 1_n$"
+      ],
+      [
+       "Common damping parameter $\\phi$",
+       "$\\Phi = \\phi I_n$",
+       "$\\phi_n = \\phi 1_n$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "D44",
+   "term": "multivariate AICc",
+   "definition": "The Akaike information criterion corrected for small samples in multivariate models.",
+   "source": "B3",
+   "kind": "method",
+   "part_of": [
+    "D5"
+   ]
   },
   {
    "id": "D5",
    "term": "VETS-PIC selection procedure",
-   "definition": "The proposed procedure for choosing the [[D4:PIC]] restrictions of a [[D1:VETS]] model by an information criterion (the paper recommends the [[D44:multivariate AICc]] without saying which criterion its implementation uses): first the restrictions on initial values, then on smoothing parameters, then on components; the ETS components are chosen beforehand when the series are grouped. Implemented as auto.vets() in the legion package.",
+   "definition": "The proposed procedure for choosing the [[D4:PIC]] restrictions of a [[D1:VETS]] model by an information criterion (the paper recommends the [[D44:multivariate AICc]] without saying which criterion its implementation uses): first the restrictions on initial values, then on smoothing parameters, then on components; the ETS components are chosen beforehand when the series are grouped. Implemented as `auto.vets()` in the legion package.",
    "kind": "method"
   },
   {
    "id": "D6",
    "term": "nine PIC variants of VETS(M,N,M;LN)",
-   "definition": "VETS(M,N,M;LN) estimated by maximum likelihood with vets() from the legion package under the restrictions [[D7:PIC(LS,S,S)]], [[D8:PIC(S,S,S)]], [[D9:PIC(N,S,S)]], [[D10:PIC(LS,S,N)]], [[D11:PIC(S,S,N)]], [[D12:PIC(N,S,N)]], [[D13:PIC(LS,N,N)]], [[D14:PIC(S,N,N)]] and [[D15:PIC(N,N,N)]].",
+   "definition": "VETS(M,N,M;LN) estimated by maximum likelihood with `vets()` from the legion package under nine restrictions of the [[D4:PIC taxonomy]], each defined below: PIC(LS,S,S), PIC(S,S,S), PIC(N,S,S), PIC(LS,S,N), PIC(S,S,N), PIC(N,S,N), PIC(LS,N,N), PIC(S,N,N) and PIC(N,N,N).",
    "kind": "method",
    "members": [
     "D7",
@@ -370,129 +753,13 @@
   {
    "id": "D22",
    "term": "simulated VETS(M,N,M;LN) data",
-   "definition": "Groups of 2, 10, 20, 30, 40 or 50 quarterly series of 24 or 64 observations generated with sim.ves() from the legion package 0.1.0 from each of the [[D6:nine PIC variants of VETS(M,N,M;LN)]] (VETS(A,N,A) data exponentiated): initial level drawn from [4, 10], seasonal indices drawn from (-1, 1) and normalised, independent normal errors with standard deviation 0.3, smoothing parameters alpha = 0.3 and gamma = 0.1 for PIC(LS,*,*), alpha in [0, 0.3] and gamma = 0.1 for PIC(S,*,*), alpha in [0, 0.3] and gamma in [0, 1 - alpha] for PIC(N,*,*); 1000 iterations.",
+   "definition": "Groups of 2, 10, 20, 30, 40 or 50 quarterly series of 24 or 64 observations generated with `sim.ves()` from the legion package 0.1.0 from each of the [[D6:nine PIC variants of VETS(M,N,M;LN)]] (VETS(A,N,A) data exponentiated): initial level drawn from [4, 10], seasonal indices drawn from (-1, 1) and normalised, independent normal errors with standard deviation 0.3, smoothing parameters $\\alpha = 0.3$ and $\\gamma = 0.1$ for PIC(LS,*,*), $\\alpha \\in [0, 0.3]$ and $\\gamma = 0.1$ for PIC(S,*,*), $\\alpha \\in [0, 0.3]$ and $\\gamma \\in [0, 1 - \\alpha]$ for PIC(N,*,*); 1000 iterations.",
    "kind": "data"
   },
   {
    "id": "D23",
    "term": "simulation holdout",
    "definition": "The last 8 quarters of each simulated series held out, forecast 1 to 8 steps ahead from the end of the in-sample part of 16 or 56 quarters.",
-   "kind": "design"
-  },
-  {
-   "id": "D24",
-   "term": "VETS F",
-   "definition": "VETS(M,N,M;LN) for seasonal groups and VETS(M,N,N;LN) for non-seasonal groups, with a full covariance matrix of the errors and the PIC restrictions chosen by the [[D5:VETS-PIC selection procedure]], auto.vets() from the legion package.",
-   "kind": "method",
-   "broader": [
-    "D3"
-   ]
-  },
-  {
-   "id": "D25",
-   "term": "VETS D",
-   "definition": "[[D24:VETS F]] with a diagonal covariance matrix of the errors (loss = \"diagonal\").",
-   "kind": "method",
-   "broader": [
-    "D3"
-   ],
-   "assumptions": [
-    "C60"
-   ]
-  },
-  {
-   "id": "D26",
-   "term": "ETS LN",
-   "definition": "ETS(A,N,N) or ETS(A,N,A) fitted to the logarithms of each series by adam() from the smooth package with distribution = \"dnorm\", the forecasts exponentiated.",
-   "source": "B19",
-   "kind": "method"
-  },
-  {
-   "id": "D27",
-   "term": "ETS",
-   "definition": "ETS(M,N,N) or ETS(M,N,M) fitted to each series by ets() from the forecast package.",
-   "source": "B14",
-   "kind": "method"
-  },
-  {
-   "id": "D28",
-   "term": "ETS (ADAM)",
-   "definition": "ETS(M,N,N) or ETS(M,N,M) fitted to each series by adam() from the smooth package with distribution = \"dnorm\".",
-   "source": "B19",
-   "kind": "method"
-  },
-  {
-   "id": "D29",
-   "term": "the five models",
-   "kind": "method",
-   "members": [
-    "D24",
-    "D25",
-    "D26",
-    "D27",
-    "D28"
-   ],
-   "definition": "[[D24:VETS F]], [[D25:VETS D]], [[D26:ETS LN]], [[D28:ETS (ADAM)]] and [[D27:ETS]], as compared on the [[D32:M5 data]]."
-  },
-  {
-   "id": "D30",
-   "term": "the three ETS models",
-   "kind": "method",
-   "members": [
-    "D26",
-    "D27",
-    "D28"
-   ],
-   "definition": "[[D26:ETS LN]], [[D28:ETS (ADAM)]] and [[D27:ETS]], as compared on the [[D32:M5 data]]."
-  },
-  {
-   "id": "D31",
-   "term": "the VETS models",
-   "kind": "method",
-   "members": [
-    "D24",
-    "D25"
-   ],
-   "definition": "[[D24:VETS F]] and [[D25:VETS D]]."
-  },
-  {
-   "id": "D32",
-   "term": "M5 departmental data",
-   "definition": "The M5 competition series aggregated to monthly frequency and to department-store level: 70 series of 63 observations; 69 used, in 7 seasonal groups (57 series) and 4 non-seasonal groups (12 series) of the same department, classified by adam() from the smooth package; a group of one series removed; trended models excluded.",
-   "source": "B17",
-   "kind": "data",
-   "assumptions": [
-    "C58",
-    "C59"
-   ]
-  },
-  {
-   "id": "D33",
-   "term": "M5 long holdout",
-   "definition": "The first 51 observations of each M5 series used for estimation and the last 12 held out.",
-   "kind": "design"
-  },
-  {
-   "id": "D34",
-   "term": "M5 short holdout",
-   "definition": "The last 36 observations of each M5 series used: 24 for estimation and the last 12 held out (the same holdout as the long one).",
-   "kind": "design"
-  },
-  {
-   "id": "D35",
-   "term": "the two M5 histories",
-   "kind": "design",
-   "definition": "The [[D33:M5 long holdout]] and the [[D34:M5 short holdout]]: long and short histories with the same 12-month holdout.",
-   "members": [
-    "D33",
-    "D34"
-   ]
-  },
-  {
-   "id": "D36",
-   "term": "MCB test",
-   "definition": "Multiple comparisons with the best on the ranks of an error measure across series; here on [[D37:rMAE]], with rmcb() from the greybox package.",
-   "source": "B13",
    "kind": "design"
   },
   {
@@ -533,27 +800,135 @@
    "kind": "variable"
   },
   {
+   "id": "D32",
+   "term": "M5 departmental data",
+   "definition": "The M5 competition series aggregated to monthly frequency and to department-store level: 70 series of 63 observations; 69 used, in 7 seasonal groups (57 series) and 4 non-seasonal groups (12 series) of the same department, classified by `adam()` from the smooth package; a group of one series removed; trended models excluded.",
+   "source": "B17",
+   "kind": "data",
+   "assumptions": [
+    "C58",
+    "C59"
+   ]
+  },
+  {
+   "id": "D33",
+   "term": "M5 long holdout",
+   "definition": "The first 51 observations of each M5 series used for estimation and the last 12 held out.",
+   "kind": "design"
+  },
+  {
+   "id": "D34",
+   "term": "M5 short holdout",
+   "definition": "The last 36 observations of each M5 series used: 24 for estimation and the last 12 held out (the same holdout as the long one).",
+   "kind": "design"
+  },
+  {
+   "id": "D35",
+   "term": "the two M5 histories",
+   "kind": "design",
+   "definition": "The [[D33:M5 long holdout]] and the [[D34:M5 short holdout]]: long and short histories with the same 12-month holdout.",
+   "members": [
+    "D33",
+    "D34"
+   ]
+  },
+  {
+   "id": "D24",
+   "term": "VETS F",
+   "definition": "VETS(M,N,M;LN) for seasonal groups and VETS(M,N,N;LN) for non-seasonal groups, with a full covariance matrix of the errors and the PIC restrictions chosen by the [[D5:VETS-PIC selection procedure]], `auto.vets()` from the legion package.",
+   "kind": "method",
+   "broader": [
+    "D3"
+   ]
+  },
+  {
+   "id": "D25",
+   "term": "VETS D",
+   "definition": "[[D24:VETS F]] with a diagonal covariance matrix of the errors (loss = \"diagonal\").",
+   "kind": "method",
+   "broader": [
+    "D3"
+   ],
+   "assumptions": [
+    "C60"
+   ]
+  },
+  {
+   "id": "D26",
+   "term": "ETS LN",
+   "definition": "ETS(A,N,N) or ETS(A,N,A) fitted to the logarithms of each series by `adam()` from the smooth package with `distribution = \"dnorm\"`, the forecasts exponentiated.",
+   "source": "B19",
+   "kind": "method"
+  },
+  {
+   "id": "D27",
+   "term": "ETS",
+   "definition": "ETS(M,N,N) or ETS(M,N,M) fitted to each series by `ets()` from the forecast package.",
+   "source": "B14",
+   "kind": "method"
+  },
+  {
+   "id": "D28",
+   "term": "ETS (ADAM)",
+   "definition": "ETS(M,N,N) or ETS(M,N,M) fitted to each series by `adam()` from the smooth package with `distribution = \"dnorm\"`.",
+   "source": "B19",
+   "kind": "method"
+  },
+  {
+   "id": "D29",
+   "term": "the five models",
+   "kind": "method",
+   "members": [
+    "D24",
+    "D25",
+    "D26",
+    "D27",
+    "D28"
+   ],
+   "definition": "[[D24:VETS F]], [[D25:VETS D]], [[D26:ETS LN]], [[D28:ETS (ADAM)]] and [[D27:ETS]], as compared on the [[D32:M5 data]]."
+  },
+  {
+   "id": "D30",
+   "term": "the three ETS models",
+   "kind": "method",
+   "members": [
+    "D26",
+    "D27",
+    "D28"
+   ],
+   "definition": "[[D26:ETS LN]], [[D28:ETS (ADAM)]] and [[D27:ETS]], as compared on the [[D32:M5 data]]."
+  },
+  {
+   "id": "D31",
+   "term": "the VETS models",
+   "kind": "method",
+   "members": [
+    "D24",
+    "D25"
+   ],
+   "definition": "[[D24:VETS F]] and [[D25:VETS D]]."
+  },
+  {
+   "id": "D36",
+   "term": "MCB test",
+   "definition": "Multiple comparisons with the best on the ranks of an error measure across series; here on [[D37:rMAE]], with `rmcb()` from the greybox package.",
+   "source": "B13",
+   "kind": "design"
+  },
+  {
    "id": "D43",
    "term": "GMRAE",
    "definition": "Geometric mean relative absolute error: the absolute error of a forecast at one horizon divided by that of the Naive forecast, aggregated over series by the geometric mean.",
    "source": "B8",
    "kind": "variable"
-  },
-  {
-   "id": "D44",
-   "term": "multivariate AICc",
-   "definition": "The Akaike information criterion corrected for small samples in multivariate models.",
-   "source": "B3",
-   "kind": "method",
-   "part_of": [
-    "D5"
-   ]
   }
  ],
  "claims": [
   {
    "id": "C1",
-   "statement": "Every feasible model of the [[D4:PIC taxonomy]] for [[D2:pure additive VETS]] and [[D3:pure multiplicative VETS]] can be built by inserting the block values for its restrictions on components and parameters into the block measurement, transition and persistence matrices.",
+   "name": "Every PIC model is built from block matrices",
+   "summary": "Any feasible model of the taxonomy, additive or multiplicative, can be assembled like a construction kit: the blocks for its restrictions on components and parameters are read from the paper's table and inserted into the block measurement, transition and persistence matrices.",
+   "statement": "Every feasible model of the [[D4:PIC taxonomy]] for pure additive [[D1:VETS]] and [[D3:pure multiplicative VETS]] can be built by inserting the block values for its restrictions on components and parameters into the [[D45:block measurement, transition and persistence matrices]].",
    "type": "formal",
    "role": "principal",
    "novelty": "extension",
@@ -600,13 +975,17 @@
     "object": null,
     "comparator": null,
     "conditions": [
-     "D2",
+     "D1",
      "D3"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C2",
+   "name": "Common seasonality fails on individually seasonal data",
+   "summary": "In simulations with short quarterly histories, the variants that force all series to share one seasonal component forecast much less accurately than the correct model when the series in fact have their own seasonal patterns and starting values.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, the [[D16:PIC(*,S,S) variants]] of VETS(M,N,M;LN), with common seasonal components, have much higher [[D37:rMAE]] than the correct variant on data with individual seasonal components and initial values, from the [[D18:PIC(*,N,N) variants]].",
    "type": "descriptive",
    "role": "principal",
@@ -652,10 +1031,14 @@
      "16 in-sample quarters",
      "data from the PIC(*,N,N) variants"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C3",
+   "name": "Sharing only initial seasonal indices is the most robust choice",
+   "summary": "Of the nine simulated variants, those in which the series share only the starting values of their seasonal indices, each keeping its own seasonal component, can be considered the most robust when the model is misspecified.",
    "statement": "The [[D17:PIC(*,S,N) variants]] of VETS(M,N,M;LN), with common initial seasonal indices and individual seasonal components, can be considered the most robust of the [[D6:nine PIC variants]] of the [[D4:PIC taxonomy]] to model misspecification.",
    "type": "interpretive",
    "role": "principal",
@@ -709,10 +1092,14 @@
      "VETS(M,N,M;LN) data and models",
      "16 or 56 in-sample quarters and 8 held out"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C4",
+   "name": "Common smoothing parameters improve the upper interval bound",
+   "summary": "In simulations with short quarterly histories, sharing smoothing parameters across the series lowers the relative pinball loss of the upper bound of the 95% prediction interval, whichever variant generated the data.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, common smoothing parameters lower the [[D40:rPinballU]] of the [[D6:nine PIC variants]] of VETS(M,N,M;LN) on data from every PIC variant.",
    "type": "descriptive",
    "role": "principal",
@@ -772,10 +1159,14 @@
      "D6",
      "data from every variant"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C5",
+   "name": "VETS D most accurate on long M5 histories",
+   "summary": "On monthly department-level M5 sales with 51 observations for estimation, the vector model whose errors are uncorrelated across series (VETS D) has the lowest relative mean absolute error of the five models, by geometric mean and by median.",
    "statement": "On the [[D33:long histories]] of the [[D32:M5 departmental data]], [[D25:VETS D]] has the lowest geometric mean and median [[D37:rMAE]] of [[D29:the five models]] over all series.",
    "type": "descriptive",
    "role": "principal",
@@ -817,10 +1208,14 @@
     "conditions": [
      "51 observations for estimation and 12 held out"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C6",
+   "name": "VETS D most accurate on short M5 histories",
+   "summary": "On monthly department-level M5 sales with 24 observations for estimation, the vector model whose errors are uncorrelated across series (VETS D) has the lowest relative mean absolute error of the five models, by geometric mean and by median.",
    "statement": "On the [[D34:short histories]] of the [[D32:M5 departmental data]], [[D25:VETS D]] has the lowest geometric mean and median [[D37:rMAE]] of [[D29:the five models]] over all series.",
    "type": "descriptive",
    "role": "principal",
@@ -862,10 +1257,14 @@
     "conditions": [
      "24 observations for estimation and 12 held out"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C7",
+   "name": "VETS D coverage closest to nominal on long M5 histories",
+   "summary": "On the long M5 histories, the 95% prediction intervals of the vector model with errors uncorrelated across series (VETS D) contain the actual values at the rate closest to 95% among the five models.",
    "statement": "On the [[D33:long histories]] of the [[D32:M5 departmental data]], the [[D42:coverage]] of the 95% prediction interval of [[D25:VETS D]] is the closest to the nominal level of [[D29:the five models]].",
    "type": "descriptive",
    "role": "principal",
@@ -906,10 +1305,14 @@
      "51 observations for estimation and 12 held out",
      "95% prediction interval"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C8",
+   "name": "Common initial values reduce the parameter count",
+   "summary": "Making the starting values of a component the same for all series means estimating one value instead of one per series, so fewer parameters are estimated.",
    "statement": "In a [[D4:PIC taxonomy]] model, making initial values common reduces the number of estimated parameters.",
    "type": "formal",
    "role": "supporting",
@@ -935,10 +1338,14 @@
     "conditions": [
      "D4"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C9",
+   "name": "A common component needs common initial values",
+   "summary": "If the series share a component, that shared state starts from one value, so the component's initial values must be common too.",
    "statement": "In a [[D4:PIC taxonomy]] model, a common component requires common initial values of that component.",
    "type": "formal",
    "role": "supporting",
@@ -964,10 +1371,14 @@
     "conditions": [
      "D4"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C10",
+   "name": "A common level is infeasible with individual trends",
+   "summary": "The series cannot share one level while each follows its own trend.",
    "statement": "In a [[D4:PIC taxonomy]] model, a common level cannot be combined with individual trends.",
    "type": "formal",
    "role": "supporting",
@@ -992,11 +1403,15 @@
     "conditions": [
      "D4"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C11",
-   "statement": "In a [[D4:PIC taxonomy]] model, making a component common changes the measurement, transition and persistence matrices.",
+   "name": "Common components change the model matrices",
+   "summary": "Making a component common to all series changes the measurement, transition and persistence matrices of the model.",
+   "statement": "In a [[D4:PIC taxonomy]] model, making a component common changes the [[D45:measurement, transition and persistence matrices]].",
    "type": "formal",
    "role": "supporting",
    "novelty": "no_prior_found",
@@ -1016,15 +1431,19 @@
    "about": {
     "subject": "making a component common",
     "relation": "changes",
-    "object": "the measurement, transition and persistence matrices",
+    "object": "D45",
     "comparator": null,
     "conditions": [
      "D4"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C12",
+   "name": "Common components leave the parameter count unchanged",
+   "summary": "Making a component common changes the structure of the model but not the number of parameters to estimate.",
    "statement": "In a [[D4:PIC taxonomy]] model, making a component common leaves the number of estimated parameters unchanged.",
    "type": "formal",
    "role": "supporting",
@@ -1049,11 +1468,15 @@
     "conditions": [
      "D4"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C13",
-   "statement": "In a [[D4:PIC taxonomy]] model, making initial values common leaves the matrices of the model unchanged.",
+   "name": "Common initial values leave the matrices unchanged",
+   "summary": "Making starting values common changes only how many values are estimated: the measurement, transition and persistence matrices stay as they are.",
+   "statement": "In a [[D4:PIC taxonomy]] model, making initial values common leaves the [[D45:matrices of the model]] unchanged.",
    "type": "formal",
    "role": "supporting",
    "novelty": "no_prior_found",
@@ -1072,15 +1495,19 @@
    "about": {
     "subject": "making initial values common",
     "relation": "leaves unchanged",
-    "object": "the matrices of the model",
+    "object": "D45",
     "comparator": null,
     "conditions": [
      "D4"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C14",
+   "name": "PIC(*,S,N) close to the correct variant in rMAE",
+   "summary": "In simulations with short quarterly histories, the variants that share initial seasonal indices but keep individual components forecast almost as accurately (relative mean absolute error) as the correct variant, whichever variant generated the data.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, the [[D37:rMAE]] of each of the [[D17:PIC(*,S,N) variants]] of VETS(M,N,M;LN) is close to that of the correct variant on data from every variant.",
    "type": "descriptive",
    "role": "supporting",
@@ -1121,10 +1548,14 @@
      "16 in-sample quarters",
      "data from every variant"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C15",
+   "name": "PIC(*,S,S) less accurate than PIC(*,S,N) on individual seasonality",
+   "summary": "When the simulated series have their own seasonal components, also sharing the seasonal component gives a higher relative mean absolute error than sharing only the initial seasonal indices.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, the [[D16:PIC(*,S,S) variants]] of VETS(M,N,M;LN) have higher [[D37:rMAE]] than the [[D17:PIC(*,S,N) variants]] on data with individual seasonal components.",
    "type": "descriptive",
    "role": "supporting",
@@ -1162,10 +1593,14 @@
      "16 in-sample quarters",
      "data with individual seasonal components"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C16",
+   "name": "PIC(*,N,N) less accurate than PIC(*,S,N) on common seasonality",
+   "summary": "When the simulated series share a seasonal component, the fully individual variants have a higher relative mean absolute error than the variants that share initial seasonal indices.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, the [[D18:PIC(*,N,N) variants]] of VETS(M,N,M;LN) have higher [[D37:rMAE]] than the [[D17:PIC(*,S,N) variants]] on data with common seasonal components.",
    "type": "descriptive",
    "role": "supporting",
@@ -1203,10 +1638,14 @@
      "16 in-sample quarters",
      "data with common seasonal components"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C17",
+   "name": "PIC(*,S,N) upper bound worse than the correct variant on individual data",
+   "summary": "On simulated data with individual seasonal components and starting values, the variants that share initial seasonal indices have a higher relative pinball loss for the upper 95% interval bound than the correct, fully individual variant.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, the [[D17:PIC(*,S,N) variants]] of VETS(M,N,M;LN) have higher [[D40:rPinballU]] than the correct variant on data with individual seasonal components and initial values, from the [[D18:PIC(*,N,N) variants]].",
    "type": "descriptive",
    "role": "supporting",
@@ -1246,10 +1685,14 @@
      "16 in-sample quarters",
      "data from the PIC(*,N,N) variants"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C18",
+   "name": "PIC(*,S,N) upper bound better than PIC(*,S,S) on individual data",
+   "summary": "On simulated data with individual seasonal components and starting values, sharing only the initial seasonal indices generally gives a lower relative pinball loss for the upper interval bound than also sharing the seasonal component.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, the [[D17:PIC(*,S,N) variants]] of VETS(M,N,M;LN) generally have lower [[D40:rPinballU]] than the [[D16:PIC(*,S,S) variants]] on data with individual seasonal components and initial values, from the [[D18:PIC(*,N,N) variants]].",
    "type": "descriptive",
    "role": "supporting",
@@ -1287,10 +1730,14 @@
      "16 in-sample quarters",
      "data from the PIC(*,N,N) variants"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C19",
+   "name": "PIC(*,N,N) upper bound worse than PIC(*,S,N) on common seasonal data",
+   "summary": "On simulated data with a common seasonal component, the fully individual variants have a higher relative pinball loss for the upper interval bound than the variants that share initial seasonal indices.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, the [[D18:PIC(*,N,N) variants]] of VETS(M,N,M;LN) have higher [[D40:rPinballU]] than the [[D17:PIC(*,S,N) variants]] on data with common seasonal components, from the [[D16:PIC(*,S,S) variants]].",
    "type": "descriptive",
    "role": "supporting",
@@ -1328,10 +1775,14 @@
      "16 in-sample quarters",
      "data from the PIC(*,S,S) variants"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C20",
+   "name": "A common level parameter never worsens the upper bound",
+   "summary": "In simulations, adding a common level smoothing parameter to a common seasonal one never raises the relative pinball loss of the upper interval bound, other restrictions equal, whichever variant generated the data.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, each of the [[D19:PIC(LS,*,*) variants]] of VETS(M,N,M;LN), with common level and seasonal smoothing parameters, has [[D40:rPinballU]] at or below that of the one of the [[D20:PIC(S,*,*) variants]] with the same initial-value and component restrictions, on data from every variant.",
    "type": "descriptive",
    "role": "supporting",
@@ -1370,10 +1821,14 @@
      "16 in-sample quarters",
      "data from every variant"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C21",
+   "name": "A common seasonal parameter never worsens the upper bound",
+   "summary": "In simulations, a common seasonal smoothing parameter never raises the relative pinball loss of the upper interval bound compared with individual smoothing parameters, other restrictions equal, whichever variant generated the data.",
    "statement": "On the [[D22:simulated VETS(M,N,M;LN) data]] with 16 in-sample quarters, each of the [[D20:PIC(S,*,*) variants]] of VETS(M,N,M;LN), with a common seasonal smoothing parameter, has [[D40:rPinballU]] at or below that of the one of the [[D21:PIC(N,*,*) variants]] with the same initial-value and component restrictions, on data from every variant.",
    "type": "descriptive",
    "role": "supporting",
@@ -1412,10 +1867,14 @@
      "16 in-sample quarters",
      "data from every variant"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C22",
+   "name": "Pure multiplicative VETS preferred for demand data",
+   "summary": "For demand data, vector models whose components all combine multiplicatively are more desirable than mixed models that combine additive and multiplicative components.",
    "statement": "For demand data, [[D3:pure multiplicative VETS]] models are more desirable than mixed models with additive and multiplicative components.",
    "type": "interpretive",
    "role": "secondary",
@@ -1446,11 +1905,15 @@
     "conditions": [
      "demand data"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C23",
-   "statement": "For seasonality shared across products whose sales differ in scale or unit, a multiplicative form of [[D1:VETS]] is more natural than an additive one.",
+   "name": "Multiplicative seasonality suits products of different scales",
+   "summary": "When products whose sales differ in scale or unit share a seasonal pattern, a multiplicative vector model is more natural than an additive one.",
+   "statement": "For seasonality shared across products whose sales differ in scale or unit, [[D3:pure multiplicative VETS]] is more natural than pure additive [[D1:VETS]].",
    "type": "interpretive",
    "role": "secondary",
    "novelty": "no_prior_found",
@@ -1474,10 +1937,14 @@
     "conditions": [
      "seasonality shared across products whose sales differ in scale or unit"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C24",
+   "name": "Geometric means as point forecasts of multiplicative VETS",
+   "summary": "The pure multiplicative vector model should give the geometric mean of its forecast distribution as its point forecast, not the arithmetic mean.",
    "statement": "[[D3:Pure multiplicative VETS]] should produce geometric means of the forecast distribution as point forecasts rather than arithmetic means.",
    "type": "interpretive",
    "role": "secondary",
@@ -1504,10 +1971,14 @@
     "object": "geometric means of the forecast distribution",
     "comparator": "arithmetic means",
     "conditions": []
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C25",
+   "name": "Mixed VETS models need a different formulation",
+   "summary": "Vector models that mix additive and multiplicative components would have to be formulated differently, with complex interactions between their components.",
    "statement": "Mixed [[D1:VETS]] models, with both additive and multiplicative components, would need a different formulation with complex interactions between the components.",
    "type": "methodological",
    "role": "secondary",
@@ -1530,11 +2001,15 @@
     "object": "a different formulation with complex interactions between components",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C26",
-   "statement": "The group-seasonal model of Ouwehand et al. (2007) is a collection of univariate ETS(M,A,M) models with PIC(N,S,S) restrictions, with seasonal smoothing parameters $\\gamma_i = \\gamma w_i$, where $w_i$ is the individual weight that Ouwehand et al. estimate for series $i$.",
+   "name": "The group-seasonal model of Ouwehand et al. is PIC(N,S,S)",
+   "summary": "The group-seasonal model of Ouwehand and colleagues is a set of univariate models with a shared seasonal component and shared initial seasonal indices, whose per-series weights act as individual seasonal smoothing parameters.",
+   "statement": "The group-seasonal model of [[B15:Ouwehand et al. (2007)]] is a collection of univariate ETS(M,A,M) models with PIC(N,S,S) restrictions, with seasonal smoothing parameters $\\gamma_i = \\gamma w_i$, where $w_i$ is the individual weight that Ouwehand et al. estimate for series $i$.",
    "type": "formal",
    "role": "secondary",
    "novelty": "no_prior_found",
@@ -1562,10 +2037,14 @@
     "object": "univariate ETS(M,A,M) models with PIC(N,S,S) restrictions",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C27",
+   "name": "Number of estimated parameters of a VETS model",
+   "summary": "With likelihood estimation and a full error covariance matrix, a vector model estimates the variances and covariances of the errors plus each smoothing, damping and initial value, counted once if common and once per series if individual.",
    "statement": "A [[D1:VETS]] model with likelihood estimation and a full covariance matrix of the errors, for n series of seasonal period m, has $$k = n(n+1)/2 + \\sum_{a \\in \\{L,T,S,D\\}} \\eta^P_a + \\sum_{a \\in \\{L,T\\}} \\eta^I_a + (m-1)\\eta^I_S$$ estimated parameters, where $\\eta^P_a$ (for the smoothing parameters of level L, trend T and seasonal S and the damping parameter D) and $\\eta^I_a$ (for the initial values) are 0 when the element is not in the model, 1 when it is estimated in common and n when it is estimated individually.",
    "type": "methodological",
    "role": "secondary",
@@ -1590,10 +2069,14 @@
      "likelihood estimation",
      "a full covariance matrix of the errors"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C28",
+   "name": "A diagonal covariance matrix needs n variance terms",
+   "summary": "If the errors of different series are taken as uncorrelated, the covariance part of the parameter count falls from n(n+1)/2 to n, the number of series.",
    "statement": "With a diagonal covariance matrix of the errors, the first term of the parameter count of a [[D1:VETS]] model, n(n+1)/2, becomes n.",
    "type": "methodological",
    "role": "secondary",
@@ -1617,10 +2100,14 @@
     "conditions": [
      "a diagonal covariance matrix of the errors"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C29",
+   "name": "Estimable only with fewer parameters than observations per series",
+   "summary": "A vector model can be estimated only when its number of estimated parameters per series is lower than the number of observations in each series.",
    "statement": "A [[D1:VETS]] model with k estimated parameters for n series is estimable only when k/n is lower than the number of observations per series.",
    "type": "methodological",
    "role": "secondary",
@@ -1644,10 +2131,14 @@
     "conditions": [
      "k/n lower than the number of observations per series"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C30",
+   "name": "Smoothing parameters need not lie in (0, 1)",
+   "summary": "The smoothing parameters of vector exponential smoothing do not have to be restricted to values between 0 and 1.",
    "statement": "The smoothing parameters of [[D1:VETS]] need not be restricted to the interval (0, 1).",
    "type": "methodological",
    "role": "secondary",
@@ -1672,11 +2163,15 @@
     "object": "the interval (0, 1)",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C31",
-   "statement": "The stability condition of Hyndman et al. (2008) and Snyder et al. (2017), that all eigenvalues of the discount matrix $D = F - GW$ lie inside the unit circle, applies to [[D1:VETS]].",
+   "name": "The eigenvalue stability condition applies to VETS",
+   "summary": "The usual stability condition of exponential smoothing, that all eigenvalues of the discount matrix lie inside the unit circle, applies to vector models too.",
+   "statement": "The stability condition of [[B12:Hyndman et al. (2008)]] and [[B20:Snyder et al. (2017)]], that all eigenvalues of the discount matrix $D = F - GW$ lie inside the unit circle, applies to [[D1:VETS]].",
    "type": "methodological",
    "role": "secondary",
    "novelty": "no_prior_found",
@@ -1700,10 +2195,14 @@
     "object": "D1",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C32",
+   "name": "Common seasonality only for very similar seasonal patterns",
+   "summary": "Variants that share the seasonal component across series should be used only for homogeneous series whose seasonal patterns are very similar.",
    "statement": "[[D16:PIC(*,S,S) variants]], with common seasonal components, should be applied only to homogeneous series with very similar seasonal patterns.",
    "type": "interpretive",
    "role": "secondary",
@@ -1732,10 +2231,14 @@
     "object": "homogeneous series with very similar seasonal patterns",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C33",
+   "name": "PIC(LS,S,N) among the most robust variants",
+   "summary": "Sharing the level and seasonal smoothing parameters and the initial seasonal indices, with individual components, is one of the most robust of the nine variants, in point forecast accuracy and in prediction intervals.",
    "statement": "[[D10:PIC(LS,S,N)]] is one of the most robust of the [[D6:nine PIC variants]] of VETS(M,N,M;LN) in the [[D4:PIC taxonomy]], in both forecasting accuracy and prediction intervals.",
    "type": "interpretive",
    "role": "secondary",
@@ -1770,10 +2273,14 @@
     "object": null,
     "comparator": "D6",
     "conditions": []
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C34",
+   "name": "PIC(LS,N,N) among the most robust variants",
+   "summary": "Sharing only the level and seasonal smoothing parameters, with individual initial values and components, is one of the most robust of the nine variants, in point forecast accuracy and in prediction intervals.",
    "statement": "[[D13:PIC(LS,N,N)]] is one of the most robust of the [[D6:nine PIC variants]] of VETS(M,N,M;LN) in the [[D4:PIC taxonomy]], in both forecasting accuracy and prediction intervals.",
    "type": "interpretive",
    "role": "secondary",
@@ -1805,10 +2312,14 @@
     "object": null,
     "comparator": "D6",
     "conditions": []
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C35",
+   "name": "VETS D best mean but not median rMAE on long seasonal series",
+   "summary": "On seasonal M5 series with long histories, the vector model with errors uncorrelated across series has the lowest geometric mean relative mean absolute error of the five models, but not the lowest median.",
    "statement": "On the [[D33:long histories]] of the [[D32:M5 departmental data]], [[D25:VETS D]] has the lowest geometric mean [[D37:rMAE]] of [[D29:the five models]] on seasonal series, but not the lowest median.",
    "type": "descriptive",
    "role": "secondary",
@@ -1838,10 +2349,14 @@
      "D33",
      "seasonal series"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C36",
+   "name": "VETS D not most accurate on long non-seasonal series",
+   "summary": "On non-seasonal M5 series with long histories, the vector model with errors uncorrelated across series has neither the lowest geometric mean nor the lowest median relative mean absolute error of the five models.",
    "statement": "On the [[D33:long histories]] of the [[D32:M5 departmental data]], [[D25:VETS D]] has neither the lowest geometric mean nor the lowest median [[D37:rMAE]] of [[D29:the five models]] on non-seasonal series.",
    "type": "descriptive",
    "role": "secondary",
@@ -1878,10 +2393,14 @@
      "target": "C5",
      "id_type": "local"
     }
-   ]
+   ],
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C37",
+   "name": "VETS D best median but not mean rMAE on short non-seasonal series",
+   "summary": "On non-seasonal M5 series with short histories, the vector model with errors uncorrelated across series has the lowest median relative mean absolute error of the five models, but not the lowest geometric mean.",
    "statement": "On the [[D34:short histories]] of the [[D32:M5 departmental data]], [[D25:VETS D]] has the lowest median [[D37:rMAE]] of [[D29:the five models]] on non-seasonal series, but not the lowest geometric mean.",
    "type": "descriptive",
    "role": "secondary",
@@ -1918,10 +2437,14 @@
      "target": "C6",
      "id_type": "local"
     }
-   ]
+   ],
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C38",
+   "name": "Cross-sectional information improves accuracy on M5 data",
+   "summary": "Estimating from the whole group of related series, rather than series by series, improves forecasting accuracy on the department-level M5 data.",
    "statement": "Using cross-sectional information for estimation improves forecasting accuracy on the [[D32:M5 departmental data]].",
    "type": "interpretive",
    "role": "secondary",
@@ -1953,10 +2476,14 @@
     "conditions": [
      "D32"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C39",
+   "name": "VETS F intervals over-cover on long M5 histories",
+   "summary": "On long M5 histories, the 95% prediction intervals of the vector model with a full error covariance matrix (VETS F) contain the actual values more often than 95% of the time.",
    "statement": "On the [[D33:long histories]] of the [[D32:M5 departmental data]], the [[D42:coverage]] of the 95% prediction interval of [[D24:VETS F]] is above the nominal level.",
    "type": "descriptive",
    "role": "secondary",
@@ -1985,10 +2512,14 @@
      "D32",
      "D33"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C40",
+   "name": "VETS F intervals over-cover on short M5 histories",
+   "summary": "On short M5 histories, the 95% prediction intervals of the vector model with a full error covariance matrix (VETS F) contain the actual values more often than 95% of the time.",
    "statement": "On the [[D34:short histories]] of the [[D32:M5 departmental data]], the [[D42:coverage]] of the 95% prediction interval of [[D24:VETS F]] is above the nominal level.",
    "type": "descriptive",
    "role": "secondary",
@@ -2017,10 +2548,14 @@
      "D32",
      "D34"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C41",
+   "name": "VETS F worst pinball values on long M5 histories",
+   "summary": "On long M5 histories, the vector model with a full error covariance matrix has the highest relative pinball loss of the five models, for both the upper and the lower bound of the 95% prediction interval.",
    "statement": "On the [[D33:long histories]] of the [[D32:M5 departmental data]], [[D24:VETS F]] has the highest [[D40:rPinballU]] and [[D41:rPinballL]] of [[D29:the five models]].",
    "type": "descriptive",
    "role": "secondary",
@@ -2050,10 +2585,14 @@
      "D32",
      "D33"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C42",
+   "name": "VETS F worst pinball values on short M5 histories",
+   "summary": "On short M5 histories, the vector model with a full error covariance matrix has the highest relative pinball loss of the five models, for both the upper and the lower bound of the 95% prediction interval.",
    "statement": "On the [[D34:short histories]] of the [[D32:M5 departmental data]], [[D24:VETS F]] has the highest [[D40:rPinballU]] and [[D41:rPinballL]] of [[D29:the five models]].",
    "type": "descriptive",
    "role": "secondary",
@@ -2083,10 +2622,14 @@
      "D32",
      "D34"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C43",
+   "name": "VETS D upper bound worse, lower bound better than ETS on long histories",
+   "summary": "On long M5 histories, VETS D has a higher relative pinball loss than ETS of the forecast package for the upper 95% interval bound, and a lower one for the lower bound.",
    "statement": "On the [[D33:long histories]] of the [[D32:M5 departmental data]], [[D25:VETS D]] has higher [[D40:rPinballU]] and lower [[D41:rPinballL]] than [[D27:ETS]].",
    "type": "descriptive",
    "role": "secondary",
@@ -2117,10 +2660,14 @@
      "D32",
      "D33"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C44",
+   "name": "VETS D pinball values worse than ETS on short M5 histories",
+   "summary": "On short M5 histories, VETS D has higher relative pinball losses than all three univariate ETS models, for both bounds of the 95% prediction interval.",
    "statement": "On the [[D34:short histories]] of the [[D32:M5 departmental data]], [[D25:VETS D]] has higher [[D40:rPinballU]] and [[D41:rPinballL]] than [[D30:the three ETS models]], [[D26:ETS LN]], [[D28:ETS (ADAM)]] and [[D27:ETS]].",
    "type": "descriptive",
    "role": "secondary",
@@ -2150,10 +2697,14 @@
      "D32",
      "D34"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C45",
+   "name": "PIC(LS,S,N) chosen most often on M5 data",
+   "summary": "On the M5 data, the selection procedure most often gives VETS D common level and seasonal smoothing parameters, common initial seasonal indices and individual components.",
    "statement": "On the [[D32:M5 departmental data]], the [[D5:VETS-PIC selection procedure]] chooses [[D10:PIC(LS,S,N)]] for [[D25:VETS D]] more often than any other restriction.",
    "type": "descriptive",
    "role": "secondary",
@@ -2187,10 +2738,14 @@
     "conditions": [
      "D32"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C46",
+   "name": "M5 gains come from seasonal initial values and smoothing parameters",
+   "summary": "The accuracy gains of vector smoothing on the M5 data come mainly from sharing the initial seasonal values and the smoothing parameters across series.",
    "statement": "The accuracy gains of VETS on the [[D32:M5 departmental data]] arise mainly from the PIC restrictions on seasonal initial values and on smoothing parameters.",
    "type": "interpretive",
    "role": "secondary",
@@ -2232,10 +2787,14 @@
      "target": "C6",
      "id_type": "local"
     }
-   ]
+   ],
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C47",
+   "name": "M5 selections confirm the simulation's robust variant",
+   "summary": "That the selection procedure often chooses common level and seasonal smoothing parameters with common initial seasonal indices on M5 data confirms the simulation finding that this variant is one of the most robust.",
    "statement": "The frequent choice of [[D10:PIC(LS,S,N)]] on the [[D32:M5 departmental data]] confirms the simulation finding that PIC(LS,S,N) is one of the most robust variants.",
    "type": "interpretive",
    "role": "secondary",
@@ -2274,10 +2833,14 @@
     "conditions": [
      "D32"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C48",
+   "name": "Only one M5 group needs a common seasonal component",
+   "summary": "On the M5 data, only one group of series modelled by VETS D needs a seasonal component shared across its series.",
    "statement": "On the [[D32:M5 departmental data]], only one group of [[D25:VETS D]] needs common seasonal components.",
    "type": "descriptive",
    "role": "secondary",
@@ -2304,10 +2867,14 @@
     "conditions": [
      "D32"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C49",
+   "name": "No VETS model best by GMRAE on long M5 histories",
+   "summary": "On long M5 histories, neither vector model has the lowest geometric mean relative absolute error (against the naive forecast) of the five models at 3, 6 or 12 months ahead.",
    "statement": "On the [[D33:long histories]] of the [[D32:M5 departmental data]], neither of [[D31:the VETS models]] has the lowest [[D43:GMRAE]] of [[D29:the five models]] at horizons of 3, 6 or 12 months.",
    "type": "descriptive",
    "role": "secondary",
@@ -2343,10 +2910,14 @@
      "target": "C5",
      "id_type": "local"
     }
-   ]
+   ],
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C50",
+   "name": "A VETS model best by GMRAE at 3 and 12 months on short histories",
+   "summary": "On short M5 histories, one of the two vector models has the lowest geometric mean relative absolute error (against the naive forecast) of the five models at 3 and 12 months ahead, but not at 6 months.",
    "statement": "On the [[D34:short histories]] of the [[D32:M5 departmental data]], one of [[D31:the VETS models]] has the lowest [[D43:GMRAE]] of [[D29:the five models]] at horizons of 3 and 12 months, but not at 6 months.",
    "type": "descriptive",
    "role": "secondary",
@@ -2375,10 +2946,14 @@
      "D32",
      "D34"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C51",
+   "name": "VETS D recommended over VETS F",
+   "summary": "On real data, vector smoothing with errors taken as uncorrelated across series is recommended over the version with a full error covariance matrix.",
    "statement": "On real data, [[D25:VETS D]], VETS estimated with a diagonal covariance matrix, is recommended over [[D24:VETS F]], VETS with a full covariance matrix.",
    "type": "interpretive",
    "role": "secondary",
@@ -2406,10 +2981,14 @@
     "conditions": [
      "real data"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C52",
+   "name": "VETS D recommended over ETS except on short histories for pinball",
+   "summary": "On real data, vector smoothing with errors taken as uncorrelated across series is recommended over univariate ETS, unless pinball losses matter most and the history is short.",
    "statement": "On real data, [[D25:VETS D]], VETS estimated with a diagonal covariance matrix, is recommended over ETS, except when pinball values matter most and the history is short.",
    "type": "interpretive",
    "role": "secondary",
@@ -2438,10 +3017,14 @@
      "real data",
      "except when pinball values matter most and the history is short"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C53",
+   "name": "Start from the full PIC framework and drop what is not needed",
+   "summary": "In practice, forecasters should first consider every element of the PIC framework and then drop the elements their data do not need.",
    "statement": "In practice the full PIC framework should be considered first and the elements that are not needed dropped.",
    "type": "interpretive",
    "role": "secondary",
@@ -2465,10 +3048,14 @@
     "conditions": [
      "in practice"
     ]
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C54",
+   "name": "Dropping unneeded PIC elements reduces the models to evaluate",
+   "summary": "Removing the PIC elements that are not needed reduces the number of candidate models to evaluate.",
    "statement": "Dropping the PIC elements that are not needed reduces the number of models to evaluate.",
    "type": "methodological",
    "role": "secondary",
@@ -2490,11 +3077,15 @@
     "object": "the number of models to evaluate",
     "comparator": null,
     "conditions": []
-   }
+   },
+   "verifiability": "open",
+   "verifiability_flags": []
   },
   {
    "id": "C55",
-   "statement": "The error vector of [[D2:pure additive VETS]] is multivariate normal with zero mean and covariance matrix $\\Sigma$.",
+   "name": "Normal errors of pure additive VETS",
+   "summary": "In the additive model, the errors of the series follow a multivariate normal distribution with mean zero and covariance matrix $\\Sigma$.",
+   "statement": "The error vector of pure additive [[D1:VETS]] is multivariate normal with zero mean and covariance matrix $\\Sigma$.",
    "type": "descriptive",
    "role": "secondary",
    "support": [
@@ -2508,10 +3099,14 @@
     "p3.9",
     "p6.19"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
   },
   {
    "id": "C56",
+   "name": "Log-normal errors of pure multiplicative VETS",
+   "summary": "In the multiplicative model, the logarithms of the errors follow a multivariate normal distribution with mean zero and covariance matrix $\\Sigma$.",
    "statement": "The logarithm of the error vector of [[D3:pure multiplicative VETS]] is multivariate normal with zero mean and covariance matrix $\\Sigma$.",
    "type": "descriptive",
    "role": "supporting",
@@ -2526,10 +3121,14 @@
     "p3.12",
     "p6.25"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
   },
   {
    "id": "C57",
+   "name": "VETS errors are serially uncorrelated",
+   "summary": "The errors of the vector model are uncorrelated over time.",
    "statement": "The errors of [[D1:VETS]] are serially uncorrelated over time.",
    "type": "descriptive",
    "role": "supporting",
@@ -2543,11 +3142,15 @@
    "source_spans": [
     "p6.19-p6.21"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
   },
   {
    "id": "C58",
-   "statement": "The classification of the M5 series by adam() into seasonal or non-seasonal and trended or non-trended is correct.",
+   "name": "M5 seasonality and trend correctly classified",
+   "summary": "The `adam()` function of the smooth package classifies each M5 series correctly as seasonal or not and as trended or not.",
+   "statement": "The classification of the M5 series by `adam()` into seasonal or non-seasonal and trended or non-trended is correct.",
    "type": "descriptive",
    "role": "supporting",
    "support": [
@@ -2560,10 +3163,14 @@
    "source_spans": [
     "p12.9-p12.11"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
   },
   {
    "id": "C59",
+   "name": "M5 series correctly grouped by department and seasonality",
+   "summary": "The M5 series are correctly grouped into seasonally homogeneous groups from the same department.",
    "statement": "The M5 series are correctly grouped into seasonally homogeneous groups of the same department.",
    "type": "descriptive",
    "role": "supporting",
@@ -2578,10 +3185,14 @@
     "p12.11",
     "p14.15"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
   },
   {
    "id": "C60",
+   "name": "VETS D errors uncorrelated across series",
+   "summary": "In VETS D, the errors of different series are uncorrelated with each other.",
    "statement": "In [[D25:VETS D]], the errors of different series are uncorrelated.",
    "type": "descriptive",
    "role": "supporting",
@@ -2596,14 +3207,16 @@
     "p12.15",
     "p14.15"
    ],
-   "provenance": "author_stated"
+   "provenance": "author_stated",
+   "verifiability": "not_applicable",
+   "verifiability_flags": []
   }
  ],
  "evidence": [
   {
    "id": "E1",
    "profile": "formal",
-   "description": "Construction of VETS-PIC models: the restrictions of each PIC element on the block measurement, transition and persistence matrices, with a worked example and the reformulation of the Ouwehand et al. (2007) seasonal component.",
+   "description": "Construction of VETS-PIC models: the restrictions of each PIC element on the [[D45:block measurement, transition and persistence matrices]], with a worked example and the reformulation of the [[B15:Ouwehand et al. (2007)]] seasonal component.",
    "foundation": "Linear state space models; matrix algebra",
    "availability": {
     "level": "public"
@@ -5373,7 +5986,7 @@
   {
    "id": "E4",
    "profile": "formal",
-   "description": "Derivation of the log-likelihood of [[D2:pure additive VETS]] and [[D3:pure multiplicative VETS]], the maximum likelihood estimate of the covariance matrix and the concentrated likelihood.",
+   "description": "Derivation of the log-likelihood of pure additive [[D1:VETS]] and [[D3:pure multiplicative VETS]], the maximum likelihood estimate of the covariance matrix and the concentrated likelihood.",
    "foundation": "Multivariate normal likelihood; matrix algebra",
    "assumptions": [
     "C55",
@@ -5407,7 +6020,7 @@
    "id": "W2",
    "reasoning": "deductive",
    "premises": [],
-   "text": "A common component is one state shared by all series, which changes the measurement, transition and persistence matrices; common initial values only replace n starting values by one, leaving the matrices unchanged."
+   "text": "A common component is one state shared by all series, which changes the [[D45:measurement, transition and persistence matrices]]; common initial values only replace n starting values by one, leaving the matrices unchanged."
   },
   {
    "id": "W3",
@@ -5727,7 +6340,7 @@
   {
    "id": "A2",
    "kind": "software",
-   "description": "legion package for R, version 0.1.0 (forecasting using multivariate models): sim.ves() generated the simulated VETS data, vets() fitted the nine PIC variants in the simulation, and auto.vets() selected the PIC restrictions of VETS F and VETS D (loss = \"diagonal\") on the M5 data.",
+   "description": "legion package for R, version 0.1.0 (forecasting using multivariate models): `sim.ves()` generated the simulated VETS data, `vets()` fitted the nine PIC variants in the simulation, and `auto.vets()` selected the PIC restrictions of VETS F and VETS D (`loss = \"diagonal\"`) on the M5 data.",
    "version": "0.1.0",
    "uri": "https://CRAN.R-project.org/package=legion",
    "reference": "B18",
@@ -5739,7 +6352,7 @@
   {
    "id": "A3",
    "kind": "software",
-   "description": "smooth package for R, version 3.1.1 (forecasting using state space models): adam() with bounds = \"admissible\" classified the M5 series as trended or not and seasonal or not, and produced the ETS LN and ETS (ADAM) benchmarks.",
+   "description": "smooth package for R, version 3.1.1 (forecasting using state space models): `adam()` with `bounds = \"admissible\"` classified the M5 series as trended or not and seasonal or not, and produced the ETS LN and ETS (ADAM) benchmarks.",
    "version": "3.1.1",
    "uri": "https://CRAN.R-project.org/package=smooth",
    "reference": "B16",
@@ -5751,7 +6364,7 @@
   {
    "id": "A4",
    "kind": "software",
-   "description": "forecast package for R: ets() produced the ETS(M,N,N) and ETS(M,N,M) benchmark denoted \"ETS\" on the M5 data.",
+   "description": "forecast package for R: `ets()` produced the ETS(M,N,N) and ETS(M,N,M) benchmark denoted \"ETS\" on the M5 data.",
    "reference": "B23",
    "availability": {
     "level": "public"
@@ -5761,7 +6374,7 @@
   {
    "id": "A5",
    "kind": "software",
-   "description": "greybox package for R (version 0.6.9): rmcb() ran the MCB test on the rMAE of the models on the M5 data.",
+   "description": "greybox package for R (version 0.6.9): `rmcb()` ran the MCB test on the rMAE of the models on the M5 data.",
    "version": "0.6.9",
    "uri": "https://CRAN.R-project.org/package=greybox",
    "reference": "B11",
@@ -5773,7 +6386,7 @@
   {
    "id": "A6",
    "kind": "software",
-   "description": "R, the language and environment for statistical computing (R Core Team, 2020), in which the simulated data were generated and the R packages of the experiments were run.",
+   "description": "R, the language and environment for statistical computing ([[B21:R Core Team, 2020]]), in which the simulated data were generated and the R packages of the experiments were run.",
    "uri": "https://www.R-project.org/",
    "reference": "B21",
    "availability": {
