@@ -1,0 +1,11 @@
+---
+title: "A damped trend for monthly hotel occupancy"
+author: "Working note, 2026"
+---
+
+Monthly occupancy of 27 hotels on the Varn coast, 2012 to 2019, was forecast 12 months ahead with additive and damped trends. The damped trend had a lower mean absolute scaled error (0.94 against 1.08), and its estimated damping parameter had a median of 0.91.
+
+| Model | MASE |
+|---|---|
+| Additive trend | 1.08 |
+| Damped trend | 0.94 |

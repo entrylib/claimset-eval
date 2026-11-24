@@ -1,0 +1,75 @@
+CLAIMSET Harbour-weighted exponential smoothing for weekly ferry passenger forecasting
+summary Ferry operators plan crews and sailings from forecasts of weekly passenger numbers, which follow the season and also move with how busy the departure harbour is. This paper adds to exponential smoothing one parameter, the harbour weight, which links a route to the traffic of its harbour. In simulations the weight is estimated well from three years of weekly data, but not from two. On 48 routes of one ferry operator, the new model was more accurate than exponential smoothing and the seasonal naive method, most of all in winter.
+licence CC-BY-4.0; contributions C1, C2, C4; highlights D1, C2, C4
+sections
+  1. Estimating the harbour weight: C1, C6
+  2. Accuracy on the Aldmoor routes: C2, C3, C4, C5, C7
+declarations funding: none | competing interests: None declared.
+
+DEFINITIONS
+D1 [method] HWS: Harbour-weighted exponential smoothing: a state space model for a route's weekly passengers $y_t$ that adds to exponential smoothing with additive error and weekly seasonality a [[D2:harbour weight]] $\eta$ on the deviation of the departure harbour's traffic from its mean: $$\begin{aligned} y_t &= \ell_{t-1} + s_{t-52} + \eta (h_{t-1} - \bar{h}_{t-1}) + \varepsilon_t \\ \ell_t &= \ell_{t-1} + \alpha \varepsilon_t \\ s_t &= s_{t-52} + \gamma \varepsilon_t \end{aligned}$$ where $\ell_t$ is the level, $s_t$ the weekly seasonal component (period 52), $h_t$ the total passengers of the route's departure harbour in week $t$ (all its routes), $\bar{h}_{t-1}$ its mean over the previous 52 weeks, $\alpha$ and $\gamma$ the smoothing parameters and $\varepsilon_t$ an error with mean zero and variance $\sigma^2$. The parameters are estimated by maximum likelihood under normal errors; the point forecast $k$ weeks ahead ($k \le 52$) is $\hat{y}_{t+k|t} = \ell_t + s_{t+k-52} + \eta (h_t - \bar{h}_t)$, using the last observed harbour deviation.
+D2 [variable] harbour weight: The parameter $\eta$ of [[D1:HWS]]: how much a route's passengers move with the deviation of its departure harbour's traffic from its 52-week mean. The model does not restrict it; all estimates in the paper lie in $[0, 1]$.
+D3 [method] ETS: Exponential smoothing in state space form, with the model selected by AICc. [source B2]
+D4 [method] seasonal naive method: Forecasts each week by the value of the same week one year earlier.
+D5 [data] Aldmoor ferry data: Weekly passenger numbers of the 48 routes of Aldmoor Ferries, from 6 harbours, from the first week of 2015 to the last week of 2023 (469 weeks per route). Weeks in which a route did not sail (strikes, storms), 1.7% of route-weeks, were filled with the mean of the two neighbouring weeks. Commercial data, not shared.
+D6 [variable] MASE: Mean absolute scaled error: the mean absolute forecast error divided by the in-sample mean absolute error of the [[D4:seasonal naive method]]. [source B3]
+D7 [design] rolling-origin evaluation: 26 forecast origins in 2023, with forecasts 1 to 8 weeks ahead from each origin.
+D8 [data] winter origins: The 9 of the 26 forecast origins of the [[D7:rolling-origin evaluation]] that fall from November to February.
+D9 [data] simulated HWS series: 1,000 series simulated from [[D1:HWS]] for each of three lengths, 104, 156 and 260 weeks, with $\alpha = 0.2$, $\gamma = 0.1$ and $\eta$ drawn uniformly from $[0.1, 0.6]$.
+
+CLAIMS
+== 1. Estimating the harbour weight
+C1 "The harbour weight is estimated well from three years of data" [descriptive; principal; support: empirical_quant E1 (E1.T1.r1, E1.T1.r2, E1.T1.r3); limitations L2]
+  On the [[D9:simulated HWS series]], the mean absolute error of the estimated [[D2:harbour weight]] is 0.084 with 104 weeks of data, 0.031 with 156 weeks and 0.018 with 260 weeks.
+  in plain words: In simulations, the harbour weight was estimated with a small error from 156 or more weeks of data, and poorly from 104 weeks.
+C6 "Two years are not enough" [descriptive; secondary; support: empirical_quant E1 (E1.T1.r1, E1.T1.r2, E1.T1.r3)]
+  With 104 weeks of data, only 41% of the estimates of the [[D2:harbour weight]] on the [[D9:simulated HWS series]] lie within 0.05 of the true value, against 79% with 156 weeks and 92% with 260 weeks.
+  in plain words: With two years of weekly data the harbour weight is poorly estimated.
+== 2. Accuracy on the Aldmoor routes
+C2 "HWS most accurate on the Aldmoor routes" [descriptive; principal; support: empirical_quant E2 (E2.T1.r1, E2.T1.r2, E2.T1.r3); limitations L1, L2, L3]
+  On the [[D5:Aldmoor ferry data]], in the [[D7:rolling-origin evaluation]], [[D1:HWS]] has a mean [[D6:MASE]] of 0.812, against 0.861 for [[D3:ETS]] and 0.893 for the [[D4:seasonal naive method]].
+  in plain words: On 48 ferry routes, HWS had a lower mean error than exponential smoothing and the seasonal naive method.
+  scope: population: the 48 routes of one ferry operator | conditions: weekly data; horizons 1 to 8 weeks
+C3 "HWS lowest median error" [descriptive; secondary; support: empirical_quant E2 (E2.T1.r1, E2.T1.r2, E2.T1.r3); limitations L1]
+  On the [[D5:Aldmoor ferry data]], in the [[D7:rolling-origin evaluation]], [[D1:HWS]] has a median [[D6:MASE]] of 0.774, against 0.809 for [[D3:ETS]] and 0.851 for the [[D4:seasonal naive method]].
+  in plain words: HWS also had the lowest median error of the three methods.
+C4 "Larger gain in winter" [descriptive; principal; support: empirical_quant E2 (E2.T1.r1, E2.T1.r2); limitations L1]
+  At the [[D8:winter origins]], the mean [[D6:MASE]] of [[D1:HWS]] is 0.791 against 0.874 for [[D3:ETS]], a larger difference than over all 26 origins (0.812 against 0.861).
+  in plain words: The advantage of HWS over exponential smoothing was larger in winter.
+C5 "The gap widens to horizon 4" [descriptive; secondary; support: empirical_quant E2 artefacts A1]
+  On the [[D5:Aldmoor ferry data]], the difference in mean [[D6:MASE]] between [[D3:ETS]] and [[D1:HWS]] widens from horizon 1 to horizon 4 and stays roughly constant up to horizon 8.
+  in plain words: The advantage of HWS over exponential smoothing grows over the first four weeks ahead and then stays about the same.
+C7 "Harbour weights from 0.04 to 0.57" [descriptive; secondary; support: empirical_quant E2 (E2.R1, E2.R2, E2.R3)]
+  On the [[D5:Aldmoor ferry data]], the estimated [[D2:harbour weight]]s range from 0.04 to 0.57, with a median of 0.22, and the routes from the two largest harbours have the highest weights.
+  in plain words: The estimated harbour weights varied between routes, and were highest for routes from the two largest harbours.
+
+EVIDENCE
+E1 [quant; design other; data_origin primary; n 3000] [[D1:HWS]] estimated on each of the [[D9:simulated HWS series]], and the estimated [[D2:harbour weight]] compared with the true one.
+  setup: studied D1; cases D9; lens D2
+  E1.T1 Estimation of the harbour weight in simulations, 1,000 series per length
+  | row | series length (weeks) | mean absolute error of the estimated harbour weight | share of estimates within 0.05 of the true harbour weight |
+  | r1 | 104 | 0.084 | 0.41 |
+  | r2 | 156 | 0.031 | 0.79 |
+  | r3 | 260 | 0.018 | 0.92 |
+E2 [quant; design benchmark; data_origin secondary; n 48] [[D1:HWS]] compared with [[D3:ETS]] and the [[D4:seasonal naive method]] on the [[D5:Aldmoor ferry data]] by [[D6:MASE]] in the [[D7:rolling-origin evaluation]].
+  setup: studied D1, D3, D4; cases D5, D8; procedure D7; lens D6
+  E2.R1 D2 (min) = 0.04 {routes: all 48}
+  E2.R2 D2 (max) = 0.57 {routes: all 48}
+  E2.R3 D2 (median) = 0.22 {routes: all 48}
+  E2.T1 Accuracy on the 48 Aldmoor routes, horizons 1 to 8 weeks, 26 origins in 2023
+  | row | method | D6 (mean) | D6 (median) | D6 {origins: D8} (mean) |
+  | r1 | D1 | 0.812 | 0.774 | 0.791 |
+  | r2 | D3 | 0.861 | 0.809 | 0.874 |
+  | r3 | D4 | 0.893 | 0.851 | 0.902 |
+
+LIMITATIONS
+L1 [sampling; affects C2, C3, C4; reduces_transferability; mitigation none] All 48 routes come from one operator, in one region.
+L2 [sample_size; affects C1, C2; reduces_transferability; mitigation none] [[D1:HWS]] needs at least three years of weekly data for the [[D2:harbour weight]] to be estimated well; routes with less were not evaluated.
+L3 [model_specification; affects C2; reduces_transferability; mitigation none] Forecasts use the last observed harbour traffic, so a sudden change in a harbour (a new route, a closure) is not anticipated. Only weekly data were evaluated.
+
+ARTEFACTS
+A1 [figure, data_plot] Mean MASE of HWS and ETS by forecast horizon, 1 to 8 weeks, 48 routes (Figure 1). shows E2.T1
+
+REFERENCES
+B2 10.1007/978-3-540-71918-2 (doi)
+B3 10.1016/j.ijforecast.2006.03.001 (doi)

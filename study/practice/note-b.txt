@@ -1,0 +1,7 @@
+Daily bakery sales and the weather in Tollund
+
+Daily bread sales of four bakeries in Tollund, 2021 to 2023, were forecast with and without the day's forecast temperature as a regressor. Adding temperature lowered the mean absolute percentage error from 11.4% to 10.2% on weekdays and did not change it at weekends (13.9% both).
+
+Days	MAPE without	MAPE with
+Weekdays	11.4%	10.2%
+Weekends	13.9%	13.9%
