@@ -11,7 +11,8 @@ A model is NAME or NAME=THINK, THINK one of false, true, low, medium, high: Olla
 document alone (one token generated) to see whether it fits the context, `practice` sends an invented document
 twice to check that the second call reads the whole prompt again (no cached prompt). `run` writes manifest.json
 (settings, Ollama's version, each model's digest, every input file's SHA-256), calls.jsonl (the calls in their
-random order) and replies.jsonl (one line per finished call); it resumes where it stopped. `summary` writes
+random order) and replies.jsonl (one line per attempt); it resumes where it stopped, and tries a failed call once
+more. `summary` writes
 summary.csv: per model, paper and condition, the medians of Ollama's counts and times and the number of cut prompts.
 
 Each call: a new chat of one user message, the document (the claimset's reading view or the PDF's pdftotext
@@ -40,6 +41,7 @@ PAPERS = ("doi-10-1002-nav-22074", "doi-10-1007-s00180-023-01377-x", "doi-10-101
 CONDITIONS = ("claimset", "pdf")
 SEED = 20261120
 NUM_PREDICT = 4096
+MAX_ATTEMPTS = 2
 OPENING = "I'm reading this paper."
 THINK = {"false": False, "true": True, "low": "low", "medium": "medium", "high": "high"}
 KEPT = ("done_reason", "prompt_eval_count", "prompt_eval_duration", "eval_count", "eval_duration",
@@ -161,8 +163,14 @@ def run(args):
             for c in plan_calls(models):
                 f.write(json.dumps(c) + "\n")
     calls = [json.loads(line) for line in read(cpath).splitlines()]
-    done = {json.loads(line)["call"] for line in read(rpath).splitlines()} if os.path.exists(rpath) else set()
-    todo = [c for c in calls if c["call"] not in done][: args.limit]
+    attempts, answered = {}, set()
+    for line in (read(rpath).splitlines() if os.path.exists(rpath) else []):
+        r = json.loads(line)
+        attempts[r["call"]] = attempts.get(r["call"], 0) + 1
+        if "error" not in r:
+            answered.add(r["call"])
+    # A call that failed (Ollama's error, a timeout) is tried once more on a later run; its errors stay recorded.
+    todo = [c for c in calls if c["call"] not in answered and attempts.get(c["call"], 0) < MAX_ATTEMPTS][: args.limit]
     model = {m["name"]: m for m in models}
     texts, questions = {}, {}
     for i, c in enumerate(todo, 1):
@@ -192,8 +200,11 @@ def run(args):
 
 def summary(args):
     replies = [json.loads(line) for line in read(os.path.join(args.out, "replies.jsonl")).splitlines()]
+    final = {}
+    for r in replies:  # a call's last attempt stands for it
+        final[r["call"]] = r
     groups = {}
-    for r in replies:
+    for r in final.values():
         groups.setdefault((r["model"], r["paper"], r["condition"]), []).append(r)
     fields = ("prompt_eval_count", "prompt_eval_duration", "eval_count", "eval_duration")
     path = os.path.join(args.out, "summary.csv")

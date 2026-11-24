@@ -117,13 +117,21 @@ class LocalModelsTest(unittest.TestCase):
         self.run_args("--limit", "4")
         self.run_args("--limit", "3")
         replies = self.replies()
-        self.assertEqual([r["call"] for r in replies], list(range(1, 8)))
+        self.assertEqual([r["call"] for r in replies], [1, 2, 3, 4, 2, 5, 6])
         self.assertIn("error", replies[1])
+        self.assertNotIn("error", replies[4])
         self.assertEqual(replies[0]["prompt_eval_duration"], 2 * 10**9)
         with open(os.path.join(self.out, "manifest.json")) as f:
             manifest = json.load(f)
         self.assertEqual(manifest["models"][1], {"name": "gpt-oss:20b", "think": "low", "digest": "d-gpt-oss:20b"})
         self.assertEqual(len(manifest["files"]), 15)
+
+    def test_a_call_failing_twice_is_not_tried_again(self):
+        FakeOllama.fail = {1, 2}
+        self.run_args("--limit", "1")
+        self.run_args("--limit", "1")
+        self.run_args("--limit", "1")
+        self.assertEqual([r["call"] for r in self.replies()], [1, 1, 2])
 
     def test_resume_with_other_settings_is_refused(self):
         self.run_args("--limit", "1")
@@ -145,7 +153,7 @@ class LocalModelsTest(unittest.TestCase):
         with open(path) as f:
             rows = list(csv.DictReader(f))
         self.assertEqual(sum(int(r["replies"]) for r in rows), 12)
-        self.assertEqual(sum(int(r["errors"]) for r in rows), 1)
+        self.assertEqual(sum(int(r["errors"]) for r in rows), 1)  # call 1 failed once, not yet tried again
         ok = [r for r in rows if r["replies"] != r["errors"]]
         self.assertTrue(all(r["median prompt seconds"] == "2.0" for r in ok))
 
