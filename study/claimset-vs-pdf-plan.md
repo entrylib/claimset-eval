@@ -2,7 +2,7 @@
 
 **Study:** `claimset-vs-pdf` (lab record on branch `claimset/claimset-vs-pdf`, entrylib/claimset-eval)
 **Actors:** AC1 research agent (records, randomises, pastes, processes); AC2 Ivan Svetunkov (supervisor; sets up chats, copies them, moderates grades); a second moderator, to be registered before grading.
-**Status:** draft plan, for agreement. Recorded decision D1: Claude models are excluded as subjects (conflict of interest).
+**Status:** draft plan, for agreement. Recorded supervisor decisions DC1–DC7 (Claude models excluded; no no-document and no paper-as-text condition; Qwen separate; grading; the level; the decision model) and the simulations RN1–RN4 that chose the model.
 
 ---
 
@@ -38,9 +38,36 @@ The comparison is **pragmatic**: each condition is the file as the app handles i
 - **Per-paper questions:** 20 for each of the 5 pilot papers, 100 in all: 30 lookup, 25 scope, 20 evidence, 25 absent. The 75 answerable ones (lookup, scope, evidence) are all answered in the claimsets; the 25 absent ones are answered by neither document.
 - **Cross questions:** 13 across the papers (5 identification, 3 comparison, 5 relation); the claimsets hold the answer to 10. Exploratory (§6).
 
+The question files (`study/questions/`, with each question's reference answer and marking guide), SHA-256:
+
+| File | SHA-256 |
+|---|---|
+| `doi-10-1002-nav-22074.json` (CES) | `acb606f1e8c6b50e5485666431d64d930284b9c244a4730cece0010f851ae4de` |
+| `doi-10-1007-s00180-023-01377-x.json` (Multi-step estimators) | `52bf7a3e7a5f4cec58dfca9360b39a9fc6c8ecd1d0652f9b0df201bd3e762171` |
+| `doi-10-1016-j-ejor-2022-04-040.json` (VES) | `43a59d01bc6dc37e39b243690b686bbfc41c573f5c6ea8662a8f42656226a862` |
+| `doi-10-1093-imaman-dpad028.json` (Staying positive) | `dcbde5b3fd800f05d5a4157f0e3b86d247caeeab734e12bb670ca12fb92ab9ea` |
+| `doi-10-1111-jtsa-12843.json` (Grundy et al.) | `903e6f444ce416c40c8b0ae8620025412446e4110984324fe392adee000c3252` |
+| `cross-pilot.json` (cross questions) | `8a82fce9fde05bafddc48ddf0a19a19c41d0578b476358dbd7f60ca94e9d46c7` |
+
 **Conditions:**
 - **PDF:** the paper's published PDF, attached to the chat (cross chats: all five). For Grundy et al., the supplement is not attached; the questions do not need it. For VES, the authors' accepted manuscript: its tables are text, while in the published PDF they are images; every element the questions need is the same in both.
-- **Claimset:** the paper's claimset reading view (`claimset render` of its current EntryLib version), attached as a .txt file (cross chats: all five).
+
+| Paper | PDF (`papers/pilot/`) | SHA-256 |
+|---|---|---|
+| CES | `Svetunkov et al. (2022) - Complex exponential smoothing.pdf` | `7ef69f7eb75152314abaa10bca49e9bc66802825ee5f674a86cbf26c3d900b6a` |
+| Multi-step estimators | `s00180-023-01377-x.pdf` | `cfdbf84a4554a060e83ab8591996aba0c7dce56d121f1b2e51b3d7ec33d29780` |
+| VES | `Svetunkov et al. (2022) - Vector exponential smoothing - accepted manuscript.pdf` | `02438f242d7e2b86215b9bf15f3dbe4164d0472f1c2726f9b974a20c5b2db1c9` |
+| Staying positive | `dpad028.pdf` | `45bd7257df064666d76be2d9e57feec66cc35e564590cf78ca369d005ef752cb` |
+| Grundy et al. | `Journal Time Series Analysis - 2025 - Grundy - Online Detection of Forecast Model Inadequacies Using Forecast Errors.pdf` | `31c61a89b8f89bb21677045e5fc043b1b157517ca05f1f26c4712fc3bfde34ec` |
+- **Claimset:** the paper's claimset reading view, the plain text the Claimset specification defines for models to read (its Appendix D), attached as a .txt file (cross chats: all five). It is `claimset render --published` of the version below, as published on EntryLib on 2026-11-24: the text EntryLib serves for that version without the two parts EntryLib adds to it, SCORES (its rubric's assessment of the record, with a list of open problems) and HOW TO CITE. The SCORES part is left out because it is the platform's assessment, not the paper's content, and it points at the claims it finds weak, which would help the claimset condition on the scope questions for a reason that is not the format.
+
+| Paper | Claimset | Reading view (`claimset/pilot/<name>.claimset.txt`), SHA-256 |
+|---|---|---|
+| CES | entrylib:2026.000012@v3 | `c207bc53eb568f14608eaaeb9aa82936b7247e4c60aedfaf78f6f4706a6f9d71` |
+| Multi-step estimators | entrylib:2026.000011@v4 | `3c9a799dee12f81ff95e6b6afc5764df4178aed706233e8a9c9cb676fc1bd8f3` |
+| VES | entrylib:2026.000017@v1 | `db78dc8f3c031565be83bdcc7c6ba27d8e48d6acc52ab08e8fd3d5d6fdba16f2` |
+| Staying positive | entrylib:2026.000006@v6 | `3291932ef6d66a9f8eac86c4e9ab286e37d81863ed1aac68e213bab53fc6d9d4` |
+| Grundy et al. | entrylib:2026.000010@v4 | `0baa250662c333fb33015cc197d9b5bbabc57c98ed4a5c1427df1d7836f991d7` |
 
 **Hypotheses.** Two co-primary hypotheses answer RQ1; one secondary hypothesis looks inside the answers.
 
@@ -50,13 +77,7 @@ The comparison is **pragmatic**: each condition is the file as the app handles i
 | **H2** (co-primary) | LLMs give invented answers less often with the claimset than with the PDF | invented (0/1) | the 25 absent | no invented answers |
 | **H3** (secondary) | LLMs overreach less often with the claimset than with the PDF | overreach (0/1) | the 25 scope | not saying more than the paper says |
 
-**Answer to RQ1**, fixed in advance:
-- **Yes, better:** H1 and H2 both supported.
-- **Better in part:** one of H1, H2 supported and the other not refuted (inconclusive); the result says which.
-- **No:** either refuted (the claimset significantly worse on it), or both inconclusive.
-- A claimset that only makes models say "not stated" more often, while answering no better, is reported as such: H2 supported, H1 inconclusive.
-
-**Ceiling rule.** If the mean score with the PDF on the answerable questions is above 0.9 (averaged over models), an inconclusive H1 is reported as uninformative: there was little room to improve.
+How the hypotheses answer RQ1 is fixed in §3.2.
 
 ## 3. Decision model and tests
 
@@ -183,7 +204,7 @@ Purposive sample, fixed by rule before collection: from each hosted provider's a
 | xAI (Grok) | Grok 4.7, Fast | Grok 4.7, Expert |
 | DeepSeek (app) | V4, DeepThink off | V4, DeepThink on |
 
-Eight confirmatory subjects. **Qwen** (local, LM Studio: the newest Qwen that runs on 16 GB at 32k context, thinking off) is a ninth subject, reported separately (§6), with per-paper chats only. Claude is excluded (D1). Conclusions are about these eight apps as used in late 2026, on questions like these; how far they extend to other LLMs is a sensitivity analysis (§4).
+Eight confirmatory subjects. **Qwen** (local, LM Studio: the newest Qwen that runs on 16 GB at 32k context, thinking off) is a ninth subject, reported separately (§6), with per-paper chats only. Claude is excluded (DC1). Conclusions are about these eight apps as used in late 2026, on questions like these; how far they extend to other LLMs is a sensitivity analysis (§4).
 
 **Sample.** Per-paper: 8 models × 100 questions × 2 conditions = 1,600 answers; cross: 8 × 13 × 2 = 208 answers; Qwen: 200 answers. Fixed in advance; no interim analysis.
 
@@ -208,8 +229,8 @@ Neither the judges nor the moderators learn which condition or model an answer c
 
 1. **Coding.** The import run splits the chats into answers and gives each a random code. The key (code → model, condition, chat) goes to a file that only the final analysis run reads.
 2. **Masking**, the same in both conditions: claimset identifiers (C12, E3, L2, …) and paragraph markers, and locators (page, section, table, figure, appendix numbers) are replaced by "[location]"; phrases naming the document's form ("the claimset", "the reading view", "the PDF", "the .txt file") by "the paper". Masking is tried on the practice chats first and its rules fixed before grading.
-3. **Two judges**, Claude Fable and Mistral (most capable model, through its API), each grade every answer against the reference answer and its **marking guide** (what is required, what else is correct, what is not required, what is wrong), written so that it does not tell the documents apart; graders never see the authors' notes on the questions: a grade, the flags (invented, overreach) and a reason. Answers are graded one question at a time, all its answers in random order, models and conditions mixed. Instructions are fixed and their hash recorded.
-4. **Two moderators**, the supervisor and a second person, each review every answer on the blinded sheet, with both judges' grades, and approve or replace the grade, with a reason. Where the moderators disagree, they agree a grade together, still blind. The agreed grade is analysed; the judges' and moderators' grades are kept, and their agreement is reported (weighted κ).
+3. **Two judges**, in turn: first Claude Fable grades every answer, then Mistral (its most capable model, through its API), without seeing Fable's grades. Each grades every answer against the reference answer and its **marking guide** (what is required, what else is correct, what is not required, what is wrong), written so that it does not tell the documents apart; graders never see the authors' notes on the questions: a grade, the flags (invented, overreach) and a reason. Answers are graded one question at a time, all its answers in random order, models and conditions mixed. Instructions are fixed and their hash recorded.
+4. **Two moderators**, the supervisor and a second person, last, once both judges have graded every answer. Each reviews every answer on the blinded sheet, with both judges' grades, and approves or replaces the grade, with a reason. Where the moderators disagree, they agree a grade together, still blind. The agreed grade is analysed; the judges' and moderators' grades are kept, and their agreement is reported (weighted κ).
 5. **Locking.** The final grades are recorded (hashed) before the key is opened; only then does the analysis join grades to models and conditions.
 6. **Blinding check**, after grades are locked: each judge and each moderator guesses the condition of a random 10% of answers (PDF, claimset, cannot tell). If Bang's blinding index for correct guesses exceeds 0.2 for any assessor, the results are also reported with the judges' grades alone, and the report says that blinding was partial.
 
