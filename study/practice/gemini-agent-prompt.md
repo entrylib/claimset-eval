@@ -48,7 +48,7 @@ T: the same transcript message as in chat A.
 CHAT X2: new chat, the same model and thinking level as X1, attach the five .txt files (harbour-weighted-smoothing.claimset.txt, croston-spare-parts.txt, bakery-sales-weather.txt, call-centre-reconciliation.txt, hotel-occupancy-damped-trend.txt). The same three messages as chat X1 (X1, X2, T).
 
 LOG
-Keep a log as you go and show it to me after each chat: first the chat's model and thinking level as the picker shows them, then a table with one row per message: message id (P1 to F3, M, X1, X2), the time you sent it and the time the reply finished (with seconds), and any error, limit, downgrade or warning message (its text). Nothing from the replies themselves.
+Keep a log as you go and show it to me after each chat: first the chat's model and thinking level as the picker shows them, then a table with one row per message: message id (P1 to F3, M, X1, X2, T), the time you sent it and the time the reply finished (with seconds), and any error, limit, downgrade or warning message (its text). Nothing from the replies themselves.
 
 REPORT
 At the end, write a short report: whether you could type into Gemini's box and send; how you told that a reply had finished and whether that was reliable; anything that blocked you or needed me; how long each chat took; and what you would change in this procedure. Then give me the whole log once more as a single table.
