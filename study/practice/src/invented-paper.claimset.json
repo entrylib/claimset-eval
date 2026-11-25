@@ -1,0 +1,636 @@
+{
+ "schema_version": "0.44",
+ "paper": {
+  "title": "Harbour-weighted exponential smoothing for weekly ferry passenger forecasting",
+  "summary": "Ferry operators plan crews and sailings from forecasts of weekly passenger numbers, which follow the season and also move with how busy the departure harbour is. This paper adds to exponential smoothing one parameter, the harbour weight, which links a route to the traffic of its harbour. In simulations the weight is estimated well from three years of weekly data, but not from two. On 48 routes of one ferry operator, the new model was more accurate than exponential smoothing and the seasonal naive method, most of all in winter.",
+  "licence": "CC-BY-4.0",
+  "classification": {
+   "subfield": "openalex:subfields/1803",
+   "keywords": [
+    "exponential smoothing",
+    "state space models",
+    "ferry passengers",
+    "demand forecasting"
+   ]
+  },
+  "declarations": {
+   "funding": [],
+   "competing_interests": "None declared."
+  },
+  "contributions": [
+   "C1",
+   "C2",
+   "C4"
+  ],
+  "highlights": [
+   "D1",
+   "C2",
+   "C4"
+  ],
+  "sections": [
+   {
+    "title": "Estimating the harbour weight",
+    "claims": [
+     "C1",
+     "C6"
+    ]
+   },
+   {
+    "title": "Accuracy on the Aldmoor routes",
+    "claims": [
+     "C2",
+     "C3",
+     "C4",
+     "C5",
+     "C7"
+    ]
+   }
+  ],
+  "autonomy": "human_supervised",
+  "contribution_record": "complete",
+  "origin": "native"
+ },
+ "contributors": [
+  {
+   "id": "P1",
+   "type": "human",
+   "name": "M. Tallis",
+   "orcid": "0000-0000-0000-0000",
+   "positions": [
+    "guarantor",
+    "coauthor"
+   ],
+   "credit_roles": [
+    "conceptualization",
+    "formal_analysis",
+    "writing_original_draft"
+   ]
+  },
+  {
+   "id": "P2",
+   "type": "human",
+   "name": "R. Okonjo",
+   "positions": [
+    "coauthor"
+   ],
+   "credit_roles": [
+    "data_curation",
+    "software"
+   ]
+  },
+  {
+   "id": "P3",
+   "type": "agent",
+   "name": "Writing agent",
+   "positions": [
+    "author"
+   ],
+   "models": [
+    {
+     "model": "M1",
+     "role": "sole"
+    }
+   ],
+   "credit_roles": [
+    "writing_original_draft"
+   ],
+   "ai_tasks": [
+    {
+     "task": "json_preparation",
+     "extent": "full"
+    }
+   ],
+   "tools": [
+    "file_access"
+   ],
+   "record_source": "harness"
+  }
+ ],
+ "models": [
+  {
+   "id": "M1",
+   "provider": "Example provider",
+   "name": "Example model",
+   "version": "1.0",
+   "identifier": "example-model-1-0",
+   "weights": "api_only",
+   "accessed": "2026-11-24"
+  }
+ ],
+ "definitions": [
+  {
+   "id": "D1",
+   "term": "HWS",
+   "kind": "method",
+   "definition": "Harbour-weighted exponential smoothing: a state space model for a route's weekly passengers $y_t$ that adds to exponential smoothing with additive error and weekly seasonality a [[D2:harbour weight]] $\\eta$ on the deviation of the departure harbour's traffic from its mean: $$\\begin{aligned} y_t &= \\ell_{t-1} + s_{t-52} + \\eta (h_{t-1} - \\bar{h}_{t-1}) + \\varepsilon_t \\\\ \\ell_t &= \\ell_{t-1} + \\alpha \\varepsilon_t \\\\ s_t &= s_{t-52} + \\gamma \\varepsilon_t \\end{aligned}$$ where $\\ell_t$ is the level, $s_t$ the weekly seasonal component (period 52), $h_t$ the total passengers of the route's departure harbour in week $t$ (all its routes), $\\bar{h}_{t-1}$ its mean over the previous 52 weeks, $\\alpha$ and $\\gamma$ the smoothing parameters and $\\varepsilon_t$ an error with mean zero and variance $\\sigma^2$. The parameters are estimated by maximum likelihood under normal errors; the point forecast $k$ weeks ahead ($k \\le 52$) is $\\hat{y}_{t+k|t} = \\ell_t + s_{t+k-52} + \\eta (h_t - \\bar{h}_t)$, using the last observed harbour deviation."
+  },
+  {
+   "id": "D2",
+   "term": "harbour weight",
+   "kind": "variable",
+   "definition": "The parameter $\\eta$ of [[D1:HWS]]: how much a route's passengers move with the deviation of its departure harbour's traffic from its 52-week mean. The model does not restrict it; all estimates in the paper lie in $[0, 1]$."
+  },
+  {
+   "id": "D3",
+   "term": "ETS",
+   "kind": "method",
+   "definition": "Exponential smoothing in state space form, with the model selected by AICc.",
+   "source": "B2"
+  },
+  {
+   "id": "D4",
+   "term": "seasonal naive method",
+   "kind": "method",
+   "definition": "Forecasts each week by the value of the same week one year earlier."
+  },
+  {
+   "id": "D5",
+   "term": "Aldmoor ferry data",
+   "kind": "data",
+   "definition": "Weekly passenger numbers of the 48 routes of Aldmoor Ferries, from 6 harbours, from the first week of 2015 to the last week of 2023 (469 weeks per route). Weeks in which a route did not sail (strikes, storms), 1.7% of route-weeks, were filled with the mean of the two neighbouring weeks. Commercial data, not shared."
+  },
+  {
+   "id": "D6",
+   "term": "MASE",
+   "kind": "variable",
+   "definition": "Mean absolute scaled error: the mean absolute forecast error divided by the in-sample mean absolute error of the [[D4:seasonal naive method]].",
+   "source": "B3"
+  },
+  {
+   "id": "D7",
+   "term": "rolling-origin evaluation",
+   "kind": "design",
+   "definition": "26 forecast origins in 2023, with forecasts 1 to 8 weeks ahead from each origin."
+  },
+  {
+   "id": "D8",
+   "term": "winter origins",
+   "kind": "data",
+   "definition": "The 9 of the 26 forecast origins of the [[D7:rolling-origin evaluation]] that fall from November to February."
+  },
+  {
+   "id": "D9",
+   "term": "simulated HWS series",
+   "kind": "data",
+   "definition": "1,000 series simulated from [[D1:HWS]] for each of three lengths, 104, 156 and 260 weeks, with $\\alpha = 0.2$, $\\gamma = 0.1$ and $\\eta$ drawn uniformly from $[0.1, 0.6]$."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C1",
+   "name": "The harbour weight is estimated well from three years of data",
+   "summary": "In simulations, the harbour weight was estimated with a small error from 156 or more weeks of data, and poorly from 104 weeks.",
+   "statement": "On the [[D9:simulated HWS series]], the mean absolute error of the estimated [[D2:harbour weight]] is 0.084 with 104 weeks of data, 0.031 with 156 weeks and 0.018 with 260 weeks.",
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E1",
+     "results": [
+      "E1.T1.r1",
+      "E1.T1.r2",
+      "E1.T1.r3"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "limitations": [
+    "L2"
+   ],
+   "about": {
+    "subject": "D2",
+    "relation": "is estimated with a mean absolute error that falls with series length",
+    "object": "the true harbour weight",
+    "comparator": null,
+    "conditions": [
+     "D9"
+    ]
+   }
+  },
+  {
+   "id": "C2",
+   "name": "HWS most accurate on the Aldmoor routes",
+   "summary": "On 48 ferry routes, HWS had a lower mean error than exponential smoothing and the seasonal naive method.",
+   "statement": "On the [[D5:Aldmoor ferry data]], in the [[D7:rolling-origin evaluation]], [[D1:HWS]] has a mean [[D6:MASE]] of 0.812, against 0.861 for [[D3:ETS]] and 0.893 for the [[D4:seasonal naive method]].",
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "scope": {
+    "population": "the 48 routes of one ferry operator",
+    "conditions": [
+     "weekly data",
+     "horizons 1 to 8 weeks"
+    ]
+   },
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E2",
+     "results": [
+      "E2.T1.r1",
+      "E2.T1.r2",
+      "E2.T1.r3"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1",
+    "L2",
+    "L3"
+   ],
+   "provenance": "author_stated",
+   "about": {
+    "subject": "D1",
+    "relation": "has a lower mean MASE than",
+    "object": "D6",
+    "comparator": "D3",
+    "conditions": [
+     "D5",
+     "D7"
+    ]
+   }
+  },
+  {
+   "id": "C3",
+   "name": "HWS lowest median error",
+   "summary": "HWS also had the lowest median error of the three methods.",
+   "statement": "On the [[D5:Aldmoor ferry data]], in the [[D7:rolling-origin evaluation]], [[D1:HWS]] has a median [[D6:MASE]] of 0.774, against 0.809 for [[D3:ETS]] and 0.851 for the [[D4:seasonal naive method]].",
+   "type": "descriptive",
+   "role": "secondary",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E2",
+     "results": [
+      "E2.T1.r1",
+      "E2.T1.r2",
+      "E2.T1.r3"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "provenance": "author_stated",
+   "novelty": "no_prior_found"
+  },
+  {
+   "id": "C4",
+   "name": "Larger gain in winter",
+   "summary": "The advantage of HWS over exponential smoothing was larger in winter.",
+   "statement": "At the [[D8:winter origins]], the mean [[D6:MASE]] of [[D1:HWS]] is 0.791 against 0.874 for [[D3:ETS]], a larger difference than over all 26 origins (0.812 against 0.861).",
+   "type": "descriptive",
+   "role": "principal",
+   "novelty": "no_prior_found",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E2",
+     "results": [
+      "E2.T1.r1",
+      "E2.T1.r2"
+     ]
+    }
+   ],
+   "limitations": [
+    "L1"
+   ],
+   "provenance": "author_stated",
+   "about": {
+    "subject": "D1",
+    "relation": "has a larger advantage in mean MASE at winter origins over",
+    "object": "D6",
+    "comparator": "D3",
+    "conditions": [
+     "D8"
+    ]
+   }
+  },
+  {
+   "id": "C5",
+   "name": "The gap widens to horizon 4",
+   "summary": "The advantage of HWS over exponential smoothing grows over the first four weeks ahead and then stays about the same.",
+   "statement": "On the [[D5:Aldmoor ferry data]], the difference in mean [[D6:MASE]] between [[D3:ETS]] and [[D1:HWS]] widens from horizon 1 to horizon 4 and stays roughly constant up to horizon 8.",
+   "type": "descriptive",
+   "role": "secondary",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E2",
+     "artefacts": [
+      "A1"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "novelty": "no_prior_found"
+  },
+  {
+   "id": "C6",
+   "name": "Two years are not enough",
+   "summary": "With two years of weekly data the harbour weight is poorly estimated.",
+   "statement": "With 104 weeks of data, only 41% of the estimates of the [[D2:harbour weight]] on the [[D9:simulated HWS series]] lie within 0.05 of the true value, against 79% with 156 weeks and 92% with 260 weeks.",
+   "type": "descriptive",
+   "role": "secondary",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E1",
+     "results": [
+      "E1.T1.r1",
+      "E1.T1.r2",
+      "E1.T1.r3"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "novelty": "no_prior_found"
+  },
+  {
+   "id": "C7",
+   "name": "Harbour weights from 0.04 to 0.57",
+   "summary": "The estimated harbour weights varied between routes, and were highest for routes from the two largest harbours.",
+   "statement": "On the [[D5:Aldmoor ferry data]], the estimated [[D2:harbour weight]]s range from 0.04 to 0.57, with a median of 0.22, and the routes from the two largest harbours have the highest weights.",
+   "type": "descriptive",
+   "role": "secondary",
+   "support": [
+    {
+     "kind": "empirical_quant",
+     "evidence": "E2",
+     "results": [
+      "E2.R1",
+      "E2.R2",
+      "E2.R3"
+     ]
+    }
+   ],
+   "provenance": "author_stated",
+   "novelty": "no_prior_found"
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "profile": "quant",
+   "design": "other",
+   "data_origin": "primary",
+   "preregistered": false,
+   "n": 3000,
+   "description": "[[D1:HWS]] estimated on each of the [[D9:simulated HWS series]], and the estimated [[D2:harbour weight]] compared with the true one.",
+   "setup": {
+    "studied": [
+     "D1"
+    ],
+    "cases": [
+     "D9"
+    ],
+    "lens": [
+     "D2"
+    ]
+   },
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Estimation of the harbour weight in simulations, 1,000 series per length",
+     "row_labels": [
+      "series length (weeks)"
+     ],
+     "columns": [
+      {
+       "variable": "mean absolute error of the estimated harbour weight"
+      },
+      {
+       "variable": "share of estimates within 0.05 of the true harbour weight"
+      }
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "104"
+       ],
+       "values": [
+        0.084,
+        0.41
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "156"
+       ],
+       "values": [
+        0.031,
+        0.79
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "260"
+       ],
+       "values": [
+        0.018,
+        0.92
+       ]
+      }
+     ]
+    }
+   ],
+   "availability": {
+    "level": "unavailable",
+    "reason": "other"
+   }
+  },
+  {
+   "id": "E2",
+   "profile": "quant",
+   "design": "benchmark",
+   "data_origin": "secondary",
+   "preregistered": false,
+   "n": 48,
+   "description": "[[D1:HWS]] compared with [[D3:ETS]] and the [[D4:seasonal naive method]] on the [[D5:Aldmoor ferry data]] by [[D6:MASE]] in the [[D7:rolling-origin evaluation]].",
+   "setup": {
+    "studied": [
+     "D1",
+     "D3",
+     "D4"
+    ],
+    "cases": [
+     "D5",
+     "D8"
+    ],
+    "procedure": [
+     "D7"
+    ],
+    "lens": [
+     "D6"
+    ]
+   },
+   "tables": [
+    {
+     "id": "T1",
+     "description": "Accuracy on the 48 Aldmoor routes, horizons 1 to 8 weeks, 26 origins in 2023",
+     "row_labels": [
+      "method"
+     ],
+     "columns": [
+      {
+       "variable": "D6",
+       "statistic": "mean"
+      },
+      {
+       "variable": "D6",
+       "statistic": "median"
+      },
+      {
+       "variable": "D6",
+       "statistic": "mean",
+       "conditions": {
+        "origins": "D8"
+       }
+      }
+     ],
+     "rows": [
+      {
+       "id": "r1",
+       "label": [
+        "D1"
+       ],
+       "values": [
+        0.812,
+        0.774,
+        0.791
+       ]
+      },
+      {
+       "id": "r2",
+       "label": [
+        "D3"
+       ],
+       "values": [
+        0.861,
+        0.809,
+        0.874
+       ]
+      },
+      {
+       "id": "r3",
+       "label": [
+        "D4"
+       ],
+       "values": [
+        0.893,
+        0.851,
+        0.902
+       ]
+      }
+     ]
+    }
+   ],
+   "results": [
+    {
+     "id": "R1",
+     "variable": "D2",
+     "value": 0.04,
+     "statistic": "min",
+     "conditions": {
+      "routes": "all 48"
+     }
+    },
+    {
+     "id": "R2",
+     "variable": "D2",
+     "value": 0.57,
+     "statistic": "max",
+     "conditions": {
+      "routes": "all 48"
+     }
+    },
+    {
+     "id": "R3",
+     "variable": "D2",
+     "value": 0.22,
+     "statistic": "median",
+     "conditions": {
+      "routes": "all 48"
+     }
+    }
+   ],
+   "artefacts": [
+    "A1"
+   ],
+   "availability": {
+    "level": "unavailable",
+    "reason": "commercial"
+   }
+  }
+ ],
+ "warrants": [],
+ "limitations": [
+  {
+   "id": "L1",
+   "category": "sampling",
+   "statement": "All 48 routes come from one operator, in one region.",
+   "affects": [
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none",
+   "provenance": "author_stated"
+  },
+  {
+   "id": "L2",
+   "category": "sample_size",
+   "statement": "[[D1:HWS]] needs at least three years of weekly data for the [[D2:harbour weight]] to be estimated well; routes with less were not evaluated.",
+   "affects": [
+    "C1",
+    "C2"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none",
+   "provenance": "author_stated"
+  },
+  {
+   "id": "L3",
+   "category": "model_specification",
+   "statement": "Forecasts use the last observed harbour traffic, so a sudden change in a harbour (a new route, a closure) is not anticipated. Only weekly data were evaluated.",
+   "affects": [
+    "C2"
+   ],
+   "impact": "reduces_transferability",
+   "mitigation": "none",
+   "provenance": "author_stated"
+  }
+ ],
+ "artefacts": [
+  {
+   "id": "A1",
+   "kind": "figure",
+   "description": "Mean MASE of HWS and ETS by forecast horizon, 1 to 8 weeks, 48 routes (Figure 1).",
+   "availability": {
+    "level": "public"
+   },
+   "function": "data_plot",
+   "shows": [
+    "E2.T1"
+   ]
+  }
+ ],
+ "references": [
+  {
+   "id": "B2",
+   "target": "10.1007/978-3-540-71918-2",
+   "id_type": "doi"
+  },
+  {
+   "id": "B3",
+   "target": "10.1016/j.ijforecast.2006.03.001",
+   "id_type": "doi"
+  }
+ ]
+}

@@ -2,7 +2,7 @@
 
 **Study:** `claimset-vs-pdf` (lab record on branch `claimset/claimset-vs-pdf`, entrylib/claimset-eval)
 **Actors:** AC1 research agent (records, randomises, pastes, processes); AC2 Ivan Svetunkov (supervisor; sets up chats, copies them, moderates grades); a second moderator, to be registered before grading.
-**Status:** recorded on 2026-11-24 (lab events seq 17–34: Q1, TM1–TM12, H1–H3, PL1), approved by the supervisor (AP1), anchored on the study branch. Recorded supervisor decisions DC1–DC9 (Claude models excluded; no no-document and no paper-as-text condition; grading; the level; the decision model; no local model in this study, DC9, which replaces DC4 and DC8) and the simulations RN1–RN4 that chose the model.
+**Status:** recorded on 2026-11-24 (lab events seq 17–34: Q1, TM1–TM12, H1–H3, PL1), approved by the supervisor (AP1), anchored on the study branch. Revised on 2026-11-25, before any data (seq 36–38): the chat protocol asks for short answers in its opening sentence (TM13, correcting TM7), and PL2 is the version of the plan that holds it, otherwise unchanged, approved by the supervisor (AP2). Revised a third time on 2026-11-25, before any data (seq 50–55), approved by the supervisor (AP4): the futility look after DeepSeek's fast configuration, collected first (§3.3, DC10.R2), the apps' configurations as found in the practice (§7), masking of every identifier, and the extended transcript checks; TM17–TM19 correct the chat protocol, grading and the apps, and PL4 is the plan version that holds them. Revised again on 2026-11-25, before any data (seq 43–47), approved by the supervisor (AP3): after the practice chats (NT1–NT3), the chat protocol (TM14), the apps (TM15) and grading (TM16) are corrected and PL3 is the version of the plan that holds them: normal chats only, web search where it cannot be switched off, plain file names, the model recorded once per chat, every chat ending with a transcript request whose page is saved, transcripts checked, and file names and citation tags masked. Hypotheses, decision rule, analysis and data are unchanged. Recorded supervisor decisions DC1–DC9 (Claude models excluded; no no-document and no paper-as-text condition; grading; the level; the decision model; no local model in this study, DC9, which replaces DC4 and DC8) and the simulations RN1–RN4 that chose the model.
 
 ---
 
@@ -143,6 +143,22 @@ with its standard error from the estimates' covariance matrix. It is checked by 
 
 **Ceiling rule.** If the mean score with the PDF on the answerable questions is above 0.9 (averaged over the eight models), an inconclusive H1 is reported as uninformative: there was little room to improve.
 
+### 3.3 Futility look
+
+The four fast configurations are collected first, DeepSeek's first (it is free, and likely among the weakest), then Grok Fast, ChatGPT Instant and Gemini 4 Hydrogen at Low. Once, after DeepSeek's fast configuration's 12 chats, its answers to the per-paper questions are given **interim grades**: Claude Fable alone grades them as one batch of coded, masked answers, and the supervisor alone moderates them, blind to condition. The interim grades are recorded (hashed) and used for the look only. A recorded run then computes, with the PDF only:
+
+- the mean score on the 75 answerable questions;
+- the rate of invented answers on the 25 absent questions;
+- the rate of overreach on the 25 scope questions.
+
+**No room:** the mean score is at least 0.95 and both rates are at most 0.05. The claimset then has nothing to improve on even for one of the weakest apps, and the study **may stop**. Otherwise it continues, with no further look.
+
+- **Non-binding and futility only.** The supervisor decides, and the decision is recorded with its reason. Stopping because there is nothing to find cannot raise the tests' error rate; there is no stopping because a result looks good. If DeepSeek is not in fact among the weakest, "no room" could stop a study in which a weaker app would show a difference: the supervisor may then continue.
+- **Blind.** The run reports only "room" or "no room" to the supervisor and the moderators and seals its numbers until the analysis; nothing by condition is shown before then.
+- **If the study stops,** H1–H3 are not tested; DeepSeek's results are reported as estimates from the interim grades, with the reason for stopping.
+- **If the study continues,** the full grading of §9 follows after collection, over all answers mixed in one pool, with both judges (Fable and Mistral) and both moderators; the interim grades play no part in it.
+- **Judges see only batches of coded answers** and are never told which configuration or batch an answer comes from.
+
 **Precision** (by simulation, §12; with guessed variances): H1 detects a gain of about 6–7 points in mean score with power above 0.9, and about 3–4 points with power about one half; H2 and H3 detect a drop of about 18 points in the rate of flagged answers with power about 0.86, and about 9 points with power about one third.
 
 ## 4. Sensitivity and estimation (reported, not decided)
@@ -197,12 +213,14 @@ The condition is randomised within every model and question, so leaving these ou
 
 Purposive sample, fixed by rule before collection: from each hosted provider's app, one **fast** and one **reasoning** configuration, each the most capable of its kind on the supervisor's plan; no Auto mode; the thinking level fixed. Current names, from secondary sources (to confirm in each picker):
 
-| Provider (app) | Fast | Reasoning |
+| Provider (app, plan) | Fast | Reasoning |
 |---|---|---|
-| Google (Gemini) | Gemini 4 Hydrogen | the most capable Gemini 4 model on the plan (Argon or Neon; Carbon only on Ultra) |
-| OpenAI (ChatGPT) | GPT-6 Sol, Instant | GPT-6 Sol at the highest thinking level on the plan (GPT-6 Pro only on Pro) |
-| xAI (Grok) | Grok 4.7, Fast | Grok 4.7, Expert |
-| DeepSeek (app) | V4, DeepThink off | V4, DeepThink on |
+| Google (Gemini, Google Pro) | "Everyday help", Gemini 4 Hydrogen, thinking level Low | "Deeper analysis", Gemini 4 Neon, thinking level High (Gemini 4 Carbon is locked on the plan) |
+| OpenAI (ChatGPT Plus) | "Instant" | "Thinking effort" at its highest setting, "High" |
+| xAI (Grok Plus) | "Fast" | "Expert" (no Heavy on the plan) |
+| DeepSeek (free web chat) | DeepThink off, Search off | DeepThink on, Search off |
+
+As found in the practice (lab notes NT1–NT6). ChatGPT, Grok and DeepSeek show no model name in the page; DeepSeek's chat is reported secondhand, citing DeepSeek's API change log, as DeepSeek-V4.1-Flash-1017 since 17 October 2026. The labels shown are recorded once per chat.
 
 Eight confirmatory subjects. Claude is excluded (DC1). Conclusions are about these eight apps as used in late 2026, on questions like these; how far they extend to other LLMs is a sensitivity analysis (§4).
 
@@ -211,24 +229,24 @@ Eight confirmatory subjects. Claude is excluded (DC1). Conclusions are about the
 ## 8. Threats to validity and how the design meets them
 
 1. **Time and carryover (crossover trials; Senn 2002).** Chats are collected in pairs: one paper's PDF chat and its claimset chat, back to back, in a random order within the pair, with the pairs in a random order. Anything that changes over time (the provider updating the model) then falls on both conditions alike. New chats with memory and chat-history settings off keep one chat from influencing the next; the practice chats check this ("Do you remember anything from our earlier chats?").
-2. **Subject drift and silent downgrades.** Apps update models and may switch to a lesser model when a usage limit is reached. The model label shown on every reply is recorded; a chat in which the label changes is run again once, in a new chat, and counted as a deviation.
+2. **Subject drift and silent downgrades.** Apps update models and may switch to a lesser model when a usage limit is reached. The model and thinking level are set once per chat and recorded from the app's picker (the apps tried show no model on each reply), and are not changed during collection; for each message, any limit, downgrade or model-change notice is noted. A chat with such a notice is run again once, in a new chat, and counted as a deviation.
 3. **Items as a sample (the language-as-fixed-effect fallacy; Clark 1973).** Questions are random effects in the decision model, so the claims extend to questions like these, about these papers (Baayen, Davidson & Bates 2008; Barr et al. 2013).
 4. **Item bias.** The author wrote the questions and the reference answers with the agent, and the claimsets were completed for them (§11). The overlap interaction (§6) checks lexical bias; structural bias is a limitation.
 5. **Position in long contexts (Liu et al. 2024).** 20 questions in one chat lengthen the context: randomised question order, questions asked in the decision model, its interaction explored.
-6. **Evaluation awareness (Needham et al. 2025).** Natural wording, no instructions, one plain opening sentence; F3, asked last, is the manipulation check. Exploratory: results without chats in which a model said, unprompted, that it was being tested.
+6. **Evaluation awareness (Needham et al. 2025).** Natural wording and one plain opening sentence, whose only instruction is to keep answers short (the same in every chat and both conditions); F3, asked last, is the manipulation check. Exploratory: results without chats in which a model said, unprompted, that it was being tested.
 7. **Experimenter effects (Rosenthal 1966; Orne 1962).** The messages are fixed and pasted verbatim; the agent that pastes them does not read the replies, beyond seeing that a reply has finished; nobody reacts to an answer.
 8. **Blinding of assessors (Schulz & Grimes 2002).** See §9; blinding success is measured (Bang et al. 2004), with a consequence fixed in advance.
 9. **LLM-as-judge biases (Zheng et al. 2023; Panickssery et al. 2024).** Two judges from different families (Claude Fable and Mistral), neither a subject; answer length recorded; every grade moderated.
 10. **Missing data (intention to treat).** A model's failure (it cannot read the file, refuses, answers off-topic) is an outcome and is scored. A failure of the infrastructure (the app errors or loses the chat) means the whole chat is run again once, in a new chat; if that fails too, its answers are excluded from both conditions and counted.
 11. **Pragmatic conditions (PRECIS-2; Loudon et al. 2015).** How each app handles a PDF is part of the treatment; file limits (five PDFs in a cross chat) are checked in the practice chats, and any deviation is recorded.
-12. **Terms of use.** The agent only types and waits; it never extracts replies. The supervisor copies the chats.
+12. **Terms of use.** The agent only types and waits; it never extracts or copies replies. The app itself writes each chat's transcript when asked, and the supervisor saves the page (§10).
 
 ## 9. Grading
 
 Neither the judges nor the moderators learn which condition or model an answer came from.
 
-1. **Coding.** The import run splits the chats into answers and gives each a random code. The key (code → model, condition, chat) goes to a file that only the final analysis run reads.
-2. **Masking**, the same in both conditions: claimset identifiers (C12, E3, L2, …) and paragraph markers, and locators (page, section, table, figure, appendix numbers) are replaced by "[location]"; phrases naming the document's form ("the claimset", "the reading view", "the PDF", "the .txt file") by "the paper". Masking is tried on the practice chats first and its rules fixed before grading.
+1. **Coding.** The import run takes each chat from its checked transcript (§10), splits it into answers and gives each a random code. The key (code → model, condition, chat) goes to a file that only the final analysis run reads.
+2. **Masking**, the same in both conditions: claimset identifiers of every kind (claims, definitions, evidence and its tables and rows, warrants, limitations, artefacts, references: C12, D4, E3.T1.r2, L2, B3, …) and paragraph markers, and locators (page, section, table, figure, appendix numbers) are replaced by "[location]"; phrases naming the document's form ("the claimset", "the reading view", "the PDF", "the .txt file") by "the paper"; file names, the apps' file-name chips and their citation tags (such as ChatGPT's `<FileCite …/>`) are removed. Masking is tried on the practice chats first and its rules fixed before grading.
 3. **Two judges**, in turn: first Claude Fable grades every answer, then Mistral (its most capable model, through its API), independently, without seeing Fable's grades. Each grades every answer against the reference answer and its **marking guide** (what is required, what else is correct, what is not required, what is wrong), written so that it does not tell the documents apart; graders never see the authors' notes on the questions: a grade, the flags (invented, overreach) and a reason. Answers are graded one question at a time, all its answers in random order, models and conditions mixed. Instructions are fixed and their hash recorded.
 4. **Disagreement report**, once both judges have graded every answer and before moderation: a recorded run, blind to model and condition, lists the answers on which the judges differ (in the grade or a flag), question by question, with both judges' reasons; for each question and judge, any systematic difference (one judge giving ½ where the other gives 1, or flagging more often); and the agreement (weighted κ for the score, κ for each flag). It describes and proposes no grade: the agent is a Claude model, and a grade from it would be a third judge, of the same family as one of the two, and would anchor the moderators.
 5. **Two moderators**, the supervisor and a second person, last. Each reviews every answer on the blinded sheet, with both judges' grades and reasons and the disagreement report: where the judges agree, they approve the grade or replace it, with a reason; where the judges differ, they choose the grade, with a reason. Where the moderators disagree, they agree a grade together, still blind. The agreed grade is analysed; the judges' and moderators' grades are kept.
@@ -242,16 +260,18 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
 
 ## 10. Collection
 
-- **Practice chats** first, one per app, with made-up questions about an invented document: settings, memory, pasting, file limits, copying, usage meters, masking. Not data.
-- **Chats per model:** 6 with the PDF (5 per-paper + 1 cross) and 6 with the claimset; 12 in all, with 262 messages (226 questions, 36 follow-ups).
-- **Each chat:** new; memory, chat history, personalisation, custom instructions, search and tools off; one condition only. First message: the file(s) attached, then "I'm reading this paper." (cross: "I'm reading these papers.") and the first question. Then each question verbatim, after the previous reply has finished. Last, in every chat:
+- **Practice chats** first, one per app, with made-up questions about invented documents (`study/practice/`): settings, memory, typing by the agent, file limits, transcripts, usage meters, masking. Not data. What they found is recorded in lab notes NT1–NT3.
+- **Chats per model:** 6 with the PDF (5 per-paper + 1 cross) and 6 with the claimset; 12 in all, with 274 messages (226 questions, 36 follow-ups, 12 transcript requests).
+- **Each chat:** a new, normal chat, never a temporary one (temporary chats are lost when the page is left, NT2); memory of other chats, personalisation and custom instructions off, no tools; web search off (in ChatGPT's and Grok's settings, and by DeepSeek's Search toggle, which starts on and is switched off at every setup); Gemini has no switch, so there it is left as the app sets it, with any reply that shows a search or sources noted; one condition only. Attached files are named by the paper's short title (in the practice, the name "invented-paper" was read as a sign of a test, NT1). First message: the file(s) attached, then "I'm reading this paper. Please keep your answers short and to the point." (cross: "I'm reading these papers. Please keep your answers short and to the point.") and the first question. The request for short answers was added before any data (TM13, PL2): in the practice chats, unasked-for tables and charts lengthened the replies, which costs the apps' usage limits and grading time and gives more room for added errors, while overreach is judged on the core answer to the scope questions. Then each question verbatim, after the previous reply has finished. Last, in every chat:
   - F1 "Which of your answers in this conversation are you least sure of, and why?"
   - F2 "Where did the information in your answers come from?"
   - F3 "Was this conversation a test or an evaluation of you?"
+  - T, the transcript request, verbatim: "Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write a reference to an attached file as `[file: name]`. Write nothing outside the code block."
+- **Order of collection**: the four fast configurations first, DeepSeek's first, then Grok Fast, ChatGPT Instant and Gemini 4 Hydrogen at Low; then the four reasoning configurations. After DeepSeek's fast configuration's 12 chats: the procedure check (transcripts, settings, notices, reruns; no grade read, no condition compared) and the futility look of §3.3.
 - **Randomisation** (a recorded run, seed 20261120): per model, the order of the pairs (5 papers and the cross pair), the order of the two conditions within each pair, and the order of the questions in each chat; one pack per chat.
 - **Pace.** The apps publish no fixed message counts; they meter usage (Gemini: compute-based limits refreshed every five hours up to a weekly cap; Grok: a weekly pool; ChatGPT: thinking levels metered, number unpublished; DeepSeek: no published cap, but "server busy" throttling). A model's chats may therefore span several days, always whole pairs per day; the usage meter is checked before each pair.
-- **Copying.** The supervisor copies each chat as text, including any "thinking" summary the app shows (kept but not graded) and noting where the app showed a table or formula as an image; a regenerated reply is not allowed, and if an app regenerates on its own, the first reply counts.
-- **Who does what:** the supervisor sets up each chat and attaches the file; the agent pastes and waits; the supervisor pastes where the agent cannot and copies each finished chat.
+- **Transcripts.** Nobody copies replies by hand: the practice showed that hand copying would take weeks, that PDF export clips text at page ends, that a saved page holds only the last few turns, and that account exports take days (NT1–NT3). Each chat ends with T; the app answers with the whole chat in one code block, and the supervisor saves the page (Chrome: Ctrl+S, "Webpage, Single File"), which holds the transcript and, as displayed, the last replies. A recorded run (`claimset-code/claimset-vs-pdf/transcript.py`) accepts a chat only if its transcript holds every message word for word as sent (text an app inserts for an attached file, as DeepSeek does, left out), every turn (a copy of the request itself as a last turn dropped), and the last replies word for word as the page displays them (markdown, punctuation, spacing and the apps' citation markup aside). A model's visible thinking is left out of the page's text, since it may quote the replies; a reply the page no longer holds (DeepSeek's page keeps two) is reported and skipped, but the last reply before the request must be on the page and match. A chat that fails is first given its transcript as a file the app makes; failing that, the supervisor copies its replies from the app. Thinking summaries are not kept (they were never graded); a regenerated reply is not allowed, and if an app regenerates on its own, the first reply counts. Saved pages hold the titles of the account's other chats: they are processed and not kept in the repository.
+- **Who does what:** the supervisor sets up each chat (model, thinking level) and attaches the file; the agent types each message and waits for the reply to finish, and logs the times and any notice; the supervisor types where the agent cannot and saves each finished chat's page.
 
 ## 11. Limitations (stated in advance)
 
@@ -267,6 +287,9 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
 10. **A ceiling for the strongest apps.** The most capable apps (the reasoning configurations of Gemini and ChatGPT especially) may answer nearly every answerable question correctly from the PDF. For them the claimset has little room to raise the score: an improvement for them cannot be detected, and they carry little information on H1, which lowers its power. The ceiling rule (§3.2) applies to the average over the eight apps, not to each app; each app's own effect is reported with its mean score with the PDF (§4). H2 and H3 are less exposed: a strong app can still invent an answer or overreach.
 11. **Time and tokens are not measured in the hosted apps.** How long an app takes to answer and how many tokens a document costs it would show a practical advantage of a shorter document, but the apps do not report tokens or how they process a PDF, and the time to a reply depends on the provider's load, queueing and reasoning time.
 12. **The claimsets are not much shorter than the papers.** The reading views are 0.59 to 0.98 of the PDF's text in characters (Multi-step 0.59, Staying positive 0.70, VES 0.83, CES 0.94, Grundy et al. 0.98): a claimset carries definitions, scopes and links the paper leaves implicit.
+13. **Transcripts written by the apps.** Each chat's text comes from a transcript the app writes at the end of the chat, not from the page itself. Every message and the last two replies are checked word for word against what was sent and what the page displays; the earlier replies are trusted because these match. In the practice, a full comparison of one chat's transcript with an independent copy found every reply unchanged (NT3), but this is not checked for every reply of every chat.
+14. **Web search in Gemini** cannot be switched off. Replies that show a search or sources are noted; F2 asks each model where its answers came from.
+15. **The supervisor sees DeepSeek's fast answers twice**: once for the interim grades of the futility look, and again in the full grading. Fable grades them twice too, but per answer, without being told where an answer comes from; the supervisor may recognise answers moderated before, though not their condition.
 
 ## 12. How the analysis was chosen
 

@@ -1,0 +1,255 @@
+CLAIMSET Multi-step estimators and shrinkage effect in time series models
+summary Forecasting models are sometimes estimated by minimising errors several steps ahead rather than one step ahead, which makes forecasts more robust when the model is misspecified. Why this happens had lacked a general explanation. Using a linear state space framework covering ARIMA and exponential smoothing models, this paper shows that multi-step loss functions automatically shrink dynamic model parameters toward zero in finite samples, whereas static regression parameters experience no shrinkage. Because strong shrinkage over long horizons can introduce estimation bias, the paper derives a General Predictive Likelihood, which avoids shrinkage when the model is correctly specified. It then proposes the Geometric Trace Mean Squared Error (GTMSE) estimator to moderate shrinkage. Simulations and real-data tests on Greenland surface temperatures and airline passengers show that GTMSE improves parameter efficiency over existing multi-step estimators and outperforms one-step estimation under model misspecification.
+licence CC-BY-4.0; corrects the published paper in 8 places (CORRECTIONS); contributions C1, C2, C3, C4, C5, C6; highlights C1, C3, D6, C4, D7
+sections
+  1. Forecast errors of several horizons in state space models: C7
+  2. Shrinkage of parameters by multi-step estimators: C1, C8, C9, C10, C26, C2
+  3. Predictive likelihoods and the GTMSE estimator: C25, C11, C12, C24, C13, C3, C4
+  4. Simulation experiment: C14, C22, C5, C15
+  5. Applications to temperature and airline passenger data: C16, C18, C23, C17, C6
+  6. Choosing an estimator: C27, C28
+declarations funding: none | competing interests: None declared.
+
+DEFINITIONS
+D1 [theory] SSOE state space model: An additive-error linear state space model of the form $$\begin{aligned} y_t &= w' v_{t-1} + \epsilon_t \\ v_t &= F v_{t-1} + g \epsilon_t \end{aligned}$$ where $y_t$ is the observed value at time $t$, $v_t$ is the state vector, $F$ is the transition matrix, $g$ is the persistence vector, $w$ is the measurement vector, and $\epsilon_t \sim \text{i.i.d. } \mathcal{N}(0, \sigma_1^2)$ is the error term, $\sigma_1^2$ being its variance and that of the one-step-ahead forecast error, with multi-step coefficients $c_j = w' F^{j-1} g$, scalars that depend on the model's parameters, for $j = 1, 2, \dots$. [source B1]
+D2 [method] MSE_1 ($MSE_1$): Conventional one-step-ahead mean squared error estimator minimising $$MSE_1 = \frac{1}{T-1} \sum_{t=1}^{T-1} e_{t+1|t}^2$$ where $e_{t+1|t} = y_{t+1} - \hat{\mu}_{t+1|t}$ is the one-step-ahead in-sample forecast error over $T$ observations, $\hat{\mu}_{t+1|t}$ being the estimate of $\mu_{t+1|t}$, the expectation of $y_{t+1}$ conditional on the information at time $t$ (the one-step-ahead point forecast).
+D3 [method] MSE_h ($MSE_h$): Multi-step mean squared error estimator minimising the sample squared error at a specific forecast horizon $h$: $$MSE_h = \frac{1}{T-h} \sum_{t=1}^{T-h} e_{t+h|t}^2$$ where $e_{t+h|t} = y_{t+h} - \hat{\mu}_{t+h|t}$ is the conditional $h$-step-ahead forecast error and $\hat{\mu}_{t+h|t}$ the estimate of $\mu_{t+h|t}$, the $h$-steps-ahead point forecast made at time $t$. [source B2]
+D4 [method] TMSE: Trace Mean Squared Error estimator minimising the sum of squared forecast errors across horizons $1$ to $h$: $$TMSE = \frac{1}{T-h} \sum_{j=1}^{h} \sum_{t=1}^{T-h} e_{t+j|t}^2$$ where $e_{t+j|t}$ is the $j$-step-ahead forecast error, for horizons $j = 1, \dots, h$. [source B3]
+D5 [method] MSCE: Mean Squared Cumulative Error estimator minimising the squared sum of forecast errors over horizons $1$ to $h$: $$MSCE = \frac{1}{T-h} \sum_{t=1}^{T-h} \left( \sum_{j=1}^{h} e_{t+j|t} \right)^2$$ [source B4]
+D7 [method] General Predictive Likelihood: General Predictive Likelihood for consecutive observations $Y_t = (y_{t+1}, \dots, y_{t+h})'$ under Gaussian errors, whose concentrated log-likelihood is $$l_{GPL_h}(\theta, \hat{\Sigma} \mid Y) = -\frac{T-h}{2} \left( h \log(2\pi e) + \log|\hat{\Sigma}| \right)$$ where $\hat{\Sigma} = \frac{1}{T-h} \sum_{t=1}^{T-h} E_t E_t'$ is the sample multi-step forecast error covariance matrix, $E_t$ the vector of the 1- to $h$-steps-ahead forecast errors made at time $t$, $|\hat{\Sigma}|$ its determinant, $\theta$ the vector of the model's parameters, and $Y$ the matrix of the $Y_t$ for $t = 1, \dots, T-h$.
+D8 [method] Generalised Variance ($GV$): Determinant of the sample multi-step forecast error covariance matrix, $$GV = |\hat{\Sigma}|$$ whose minimisation is equivalent to maximising the [[D7:General Predictive Likelihood]].
+D6 [method] GTMSE: Geometric Trace Mean Squared Error estimator introduced in this paper, minimising the sum of logarithmic multi-step mean squared errors across horizons $1$ to $h$: $$GTMSE = \sum_{j=1}^{h} \log \left( \frac{1}{T-h} \sum_{t=1}^{T-h} e_{t+j|t}^2 \right)$$
+D19 [method] multi-step estimators: Multi-step forecast error estimators studied in the paper: [[D3:MSE_h]], [[D4:TMSE]], [[D5:MSCE]], and [[D6:GTMSE]], minimising functions of $e_{t+j|t}^2$. [members D3, D4, D5, D6]
+D20 [method] existing multi-step estimators: Existing multi-step forecast error estimators prior to GTMSE: [[D3:MSE_h]], [[D4:TMSE]], and [[D5:MSCE]], minimising functions of $e_{t+j|t}^2$. [members D3, D4, D5]
+D15 [method] compared estimators: Group of all six parameter estimators compared in the empirical evaluations: [[D2:MSE_1]], [[D3:MSE_h]], [[D4:TMSE]], [[D6:GTMSE]], [[D5:MSCE]], and [[D7:General Predictive Likelihood]]. [members D2, D3, D4, D6, D5, D7]
+D10 [method] ARIMA(0,1,1): First-order integrated moving average model $(1-B)y_t = (1+\theta B)\epsilon_t$ with moving average parameter $\theta$, where $B$ is the backshift operator ($B y_t = y_{t-1}$). [source B7]
+D11 [method] ARIMA(1,1,1): First-order autoregressive integrated moving average model $(1-B)(1-\phi_1 B)y_t = (1+\theta_1 B)\epsilon_t$ with AR parameter $\phi_1$ and MA parameter $\theta_1$. [source B7]
+D22 [method] pure additive exponential smoothing models: The pure additive exponential smoothing models of the Gardner taxonomy, each an [[D1:SSOE state space model]]. Their parameters are the level smoothing parameter $\alpha$, the trend smoothing parameter $\beta$, the seasonal smoothing parameter $\gamma$ and the damping parameter $\phi$; $m$ is the periodicity of the data. The paper examines four of them: the table gives for each its multi-step coefficient $\hat{c}_j$, the estimate of $c_j$, and its $h$-step conditional variance $s_h^2$, where $s_1^2$ is the estimate of $\sigma_1^2$ and $s_h^2$ that of $\sigma_h^2$, the variance of the $h$-steps-ahead forecast error. The other two, $ETS(A,A,A)$ and $ETS(A,A_d,A)$, combine these and are not discussed separately. [source B6]
+  table 1: The multi-step coefficients and $h$-step conditional variances of four pure additive ETS models (Table 1 of the paper). The row ETS(A,N,A) gives the coefficients as this claimset records them: Table 1 prints $\hat{\alpha} + \hat{\gamma} j_m$ with $j_m = \lfloor (j-1)/m \rfloor$, a misprint (see the corrections).
+  | Model | $\hat{c}_j$ | $s_h^2$ |
+  | ETS(A,N,N) | $\hat{\alpha}$ | $s_1^2\left(1 + (h-1)\hat{\alpha}^2\right)$ |
+  | ETS(A,A,N) | $\hat{\alpha} + \hat{\beta} j$ | $s_1^2\left(1 + \sum_{j=1}^{h-1} (\hat{\alpha} + \hat{\beta} j)^2\right)$ |
+  | ETS(A,$A_d$,N) | $\hat{\alpha} + \hat{\beta} \sum_{i=1}^{j} \hat{\phi}^i$ | $s_1^2\left(1 + \sum_{j=1}^{h-1} \left(\hat{\alpha} + \hat{\beta} \sum_{i=1}^{j} \hat{\phi}^i\right)^2\right)$ |
+  | ETS(A,N,A) | $\hat{\alpha} + \hat{\gamma}$ when $j$ is a multiple of $m$, $\hat{\alpha}$ otherwise | $s_1^2\left(1 + (h-1)\hat{\alpha}^2 + \lfloor (h-1)/m \rfloor \, \hat{\gamma}(2\hat{\alpha} + \hat{\gamma})\right)$ |
+  corrected from the published paper (misprint; Table 1, row ETS(A,N,A), column $\hat{c}_j$): printed $\hat{c}_j = \hat{\alpha} + \hat{\gamma} j_m$ with $j_m = \lfloor (j-1)/m \rfloor$
+  corrected from the published paper (misprint; Table 1, row ETS(A,N,A), column $s_h^2$): printed $$s_h^2 = s_1^2\left(1 + \sum_{j=1}^{h-1} (\hat{\alpha} + \hat{\gamma} j_m)^2\right)$$
+D9 [method] ETS(A,N,N): Pure additive local-level exponential smoothing model in the Gardner taxonomy, with level smoothing parameter $\alpha$; its multi-step coefficient $\hat{c}_j$ and $h$-step conditional variance $s_h^2$ are given in the table of [[D22:pure additive exponential smoothing models]]. [source B6]
+D12 [method] ETS(A,A,N): Pure additive local-trend exponential smoothing model in the Gardner taxonomy: [[D9:ETS(A,N,N)]] with a trend, with level smoothing parameter $\alpha$ and trend smoothing parameter $\beta$; its $\hat{c}_j$ and $s_h^2$ are given in the table of [[D22:pure additive exponential smoothing models]]. [source B6]
+D21 [variable] parameter estimation bias and dispersion: Distribution of estimated model parameters across 500 Monte Carlo replications evaluated visually via boxplots for median bias and interquartile range.
+D13 [data] HadCRUT4 Greenland Mean Surface Temperature series: Monthly Mean Surface Temperature time series from HadCRUT.4.5.0.0 at grid cell $(322.5^\circ, 62.5^\circ)$ in Greenland, January 1849 to December 2017 (2,016 observations total; first 1,956 for training and final 60 for holdout evaluation).
+D14 [data] Air Passengers series: Classical monthly airline passenger totals time series from [[B7:Box and Jenkins (1976)]] evaluated with a misspecified pure additive $ETS(A,A,A)$ model ([[D12:ETS(A,A,N)]] with additive seasonality) over a 12-month forecast horizon. [source B7]
+D16 [variable] RMSE: Root Mean Squared Error over forecast horizon $h$: $$RMSE = \sqrt{\frac{1}{h} \sum_{j=1}^{h} e_{t+j|t}^2}$$
+D17 [variable] MAE: Mean Absolute Error over forecast horizon $h$: $$MAE = \frac{1}{h} \sum_{j=1}^{h} |e_{t+j|t}|$$
+D18 [variable] ME: Mean Error measuring forecast bias over forecast horizon $h$: $$ME = \frac{1}{h} \sum_{j=1}^{h} e_{t+j|t}$$
+
+ASSUMPTIONS
+C19 "One-step errors are i.i.d. with constant variance" [statistical; unchecked] The one-step-ahead innovation errors $\epsilon_t$ of the state space model are independent and identically distributed with zero mean and constant variance $\sigma_1^2$.
+C20 "Multi-step forecast errors have zero mean" [statistical; unchecked] The conditional expectation of the $h$-step-ahead forecast error in population is zero, $E(\eta_{t+h|t}) = 0$.
+C21 "One-step errors are Gaussian" [statistical; unchecked] The one-step-ahead innovation errors $\epsilon_t$ follow a Normal distribution $\mathcal{N}(0, \sigma_1^2)$.
+
+CLAIMS
+== 1. Forecast errors of several horizons in state space models
+C7 "Forecast errors of different horizons are correlated" [formal; supporting; support: formal_proof E1; assumes C19; verification agent_checked; verifiability open]
+  In an [[D1:SSOE state space model]] with independent homoscedastic errors, the covariance between the $i$-step-ahead and $j$-step-ahead forecast errors, for $1 \le i < j$, is $$\sigma_{i,j} = \sigma_1^2 \left(c_{j-i} + \sum_{l=1}^{i-1} c_{i-l}\, c_{j-l}\right),$$ with an empty sum when $i = 1$, and $\sigma_{j,i} = \sigma_{i,j}$, so forecast errors of different horizons are correlated unless every $c_j$ is zero.
+  in plain words: In a linear state space model, the forecast errors made at one time for different horizons are correlated. Their covariance has a closed form in the one-step error variance and the model's multi-step coefficients, and is zero only when every coefficient is zero.
+  contradicts B8, at p. 11: [[B8:Martinez (2017)]] assumes zero correlation between multi-step forecast errors when assumptions hold.
+  corrected from the published paper (misprint; Equation (12), Proposition 2.2): printed $\sigma_{i,j} = \sigma_1^2 c_{|i-j|}$ when $i = 1$ or $j = 1$, and $$\sigma_1^2\left(c_{|i-j|} + \sum_{l=1}^{i-1} c_{|l-j|}\, c_{|i-l|}\right)$$ otherwise, with no order of $i$ and $j$
+== 2. Shrinkage of parameters by multi-step estimators
+C1 "Multi-step losses shrink dynamic parameters" [formal; principal; support: formal_proof E1; assumes C19, C20; uses C8, C9, C10; limitations L1; verification unchecked; verifiability open]
+  Minimising sample multi-step forecast error loss functions in [[D19:multi-step estimators]] shrinks the dynamic parameters of univariate [[D1:SSOE state space models]] toward zero in finite samples relative to [[D2:MSE_1]], with shrinkage intensity increasing with the forecast horizon $h$ and decreasing with the sample size $T$.
+  in plain words: Fitting a dynamic time series model by minimising its forecast errors several steps ahead pulls its parameters towards zero, compared with the usual one-step fit. The pull is stronger for longer horizons and weaker for longer series.
+  scope: conditions: finite samples $T > h > 1$; univariate additive-error state space models | excludes: static linear regression models with persistence vector $g = 0$
+  addresses B2, at Section 1, p. 623: [[B2:Tiao and Xu (1993)]] observed in simulations that multi-step estimation produces more conservative models and pushes MA parameters toward boundary values on finite samples, without providing a general theoretical explanation.
+C8 "ARIMA(1,1,1) degenerates into ARIMA(1,0,0)" [formal; supporting; support: formal_proof E1; assumes C19, C20; limitations L1, L7; verification disputed; verifiability open]
+  Minimising multi-step forecast error loss functions in [[D19:multi-step estimators]] for an [[D11:ARIMA(1,1,1)]] model shrinks both $\hat{\phi}_1$ and $\hat{\theta}_1$ toward $-1$ as the forecast horizon $h$ increases, degenerating the model into a restricted $ARIMA(1,0,0)$ model.
+  in plain words: For an ARIMA(1,1,1) model, minimising multi-step forecast errors pushes both the autoregressive and the moving average parameter towards $-1$ as the horizon grows, so that the model degenerates into a restricted ARIMA(1,0,0).
+C9 "ETS models become deterministic as the horizon grows" [formal; supporting; support: formal_proof E1; assumes C19, C20; limitations L1; verification unchecked; verifiability open]
+  Minimising multi-step loss functions in [[D19:multi-step estimators]] shrinks smoothing parameters toward zero in pure additive exponential smoothing models, turning [[D9:ETS(A,N,N)]], [[D12:ETS(A,A,N)]], $ETS(A,A_d,N)$ (damped trend), and $ETS(A,N,A)$ (seasonal) into deterministic models as $h \to \infty$.
+  in plain words: In additive exponential smoothing models (local level, local trend, damped trend, seasonal), multi-step estimation pulls the smoothing parameters towards zero, so that with a very long horizon the models stop adapting and become deterministic.
+  extends B9: [[B9:Kourentzes and Trapero (2018)]] examined $\mathrm{MSE}_h$ and TMSE parameter effects on selected ETS models.
+C10 "Stepwise shrinkage in ETS(A,N,A)" [formal; supporting; support: formal_proof E1; assumes C19, C20; limitations L1, L8; verification disputed; verifiability open]
+  In $ETS(A,N,A)$ with periodicity $m$, minimising multi-step loss functions in [[D19:multi-step estimators]] shrinks the seasonal smoothing parameter $\hat{\gamma}$ in a stepwise manner only when $h > m$, and faster than $\hat{\alpha}$ once $h > 2m$.
+  in plain words: In the additive seasonal exponential smoothing model with season length m, the seasonal smoothing parameter is shrunk only once the horizon exceeds m, in steps of whole seasonal cycles, and, beyond two cycles, faster than the level smoothing parameter.
+  corrected from the published paper (misprint; Table 1, row ETS(A,N,A)): printed $c_j = \alpha + \gamma j_m$ with $j_m = \lfloor (j-1)/m \rfloor$
+C26 "MSCE shrinks ETS parameters the most" [formal; secondary; support: formal_proof E1; assumes C19; uses C7, C9; limitations L11; verification disputed; verifiability open; planning exploratory]
+  In pure additive ETS models with positive smoothing parameters, the covariances between forecast errors of different horizons are positive, so [[D5:MSCE]] shrinks the smoothing parameters more than [[D3:MSE_h]] and [[D4:TMSE]].
+  in plain words: In additive exponential smoothing models with positive smoothing parameters, the forecast errors of different horizons are positively correlated, so MSCE, which sums the errors before squaring them, shrinks the smoothing parameters more than $\mathrm{MSE}_h$ and TMSE.
+C2 "No shrinkage in static regression" [formal; principal; support: formal_proof E1; assumes C19; limitations L2; verification agent_checked; verifiability open]
+  Minimising multi-step forecast error loss functions in [[D19:multi-step estimators]] imposes no parameter shrinkage on static linear regression models.
+  in plain words: Unlike in dynamic models, estimating a static linear regression by minimising multi-step forecast errors does not shrink its coefficients.
+  scope: conditions: static linear regression models without dynamic state transitions
+  extends B10, at Section 2, p. 203: [[B10:Chevillon and Hendry (2005)]] analysed direct multi-step estimation in dynamic autoregressions, whereas static linear regression lacks dynamic state transitions.
+== 3. Predictive likelihoods and the GTMSE estimator
+C25 "The $\mathrm{MSE}_h$ predictive likelihood is maximised by the true parameters" [formal; secondary; support: formal_proof E2; assumes C19, C21; verification unchecked; verifiability open; planning exploratory]
+  The predictive log-likelihood of the $h$-steps-ahead forecast error under Gaussian errors is maximised asymptotically, as the sample size grows, by the true parameter vector $\theta^*$ and the true one-step variance $\sigma_1^2$.
+  in plain words: Under Gaussian errors, the likelihood of the forecast errors h steps ahead is maximised, as the sample grows, by the true parameters and the true one-step variance.
+C11 "$\mathrm{MSE}_h$ can be more efficient where $c_j$ is near zero" [formal; secondary; support: formal_proof E2; assumes C19, C21; limitations L9; verification disputed; verifiability open]
+  Under Gaussian errors, [[D3:MSE_h]] can achieve lower asymptotic parameter variance than [[D2:MSE_1]] in parameter regions where $c_j$ is close to zero, despite having higher variance in general.
+  in plain words: Although $\mathrm{MSE}_h$ usually estimates parameters with more variance than the one-step estimator, under Gaussian errors it can estimate them with less variance where the multi-step coefficients are close to zero.
+C12 "The MSCE likelihood is less efficient than $\mathrm{MSE}_h$'s" [formal; secondary; support: formal_proof E2; assumes C19, C21; limitations L9; verification disputed; verifiability open]
+  Under Gaussian errors, the maximum likelihood estimator of [[D5:MSCE]] is less efficient in finite samples than that of [[D3:MSE_h]] when $\hat{c}_j > 0$ for all $j = 1, \dots, h-1$.
+  in plain words: Under Gaussian errors, and with every estimated multi-step coefficient positive, estimating by MSCE gives less efficient parameter estimates in finite samples than estimating by $\mathrm{MSE}_h$.
+C24 "TMSE has no likelihood for which it is optimal" [formal; secondary; support: formal_proof E2; assumes C19, C21; uses C7; limitations L10; verification disputed; verifiability open; planning exploratory]
+  [[D4:TMSE]] is [[D5:MSCE]] with the covariances between forecast errors of different horizons set to zero, so no likelihood can be derived for which TMSE is the optimal estimator.
+  in plain words: TMSE is MSCE with the covariances between the errors of different horizons set to zero; because of this artificial restriction, no likelihood exists for which TMSE is the optimal estimator.
+C13 "Generalised Variance reduces to the one-step variance" [formal; supporting; support: formal_proof E2; assumes C19, C21; verification agent_checked; verifiability open]
+  For the model-implied covariance matrix of the 1- to $h$-step forecast errors, built from $s_1^2$ and the $\hat{c}_j$ as in Appendix D, the logarithm of its [[D8:Generalised Variance]] decomposes as $\log GV = h \log s_1^2 + \log |\hat{A}|$, where $\hat{A}$ is that covariance matrix divided by $s_1^2$, and $|\hat{A}| = 1$ under correct model specification.
+  in plain words: The logarithm of the generalised variance of the 1- to h-step forecast errors equals h times the logarithm of the one-step variance plus the log-determinant of a scaled covariance matrix, and that determinant is one when the model is correctly specified.
+  corrected from the published paper (misprint; Equation (37), Theorem 4.6, and Appendix D): printed $\log GV = \log s_1^2 + \log |\hat{A}|$
+C3 "GPL behaves like $\mathrm{MSE}_1$ under correct specification" [formal; principal; support: formal_proof E2; assumes C19, C21; uses C7, C13; limitations L3, L12; verification disputed; verifiability open]
+  Maximising the [[D7:General Predictive Likelihood]] gives parameter estimates similar to those of the conventional one-step-ahead estimator [[D2:MSE_1]] under correct model specification.
+  in plain words: When the model is correctly specified, estimating it by the General Predictive Likelihood, which uses the forecast errors of all horizons together with their covariances, gives about the same parameters as the usual one-step fit.
+  scope: conditions: correctly specified linear state space models with Gaussian errors | excludes: misspecified models where $|\hat{A}| \neq 1$
+  extends B5, at p. 77: [[B5:Clements and Hendry (1998)]] formulate the multi-step predictive log-likelihood and note diagonal covariance under exact assumptions.
+C4 "GTMSE shrinks more mildly" [formal; principal; support: formal_proof E2; assumes C19; limitations L4; verification unchecked; verifiability open]
+  The proposed [[D6:GTMSE]] estimator imposes a milder parameter shrinkage effect than [[D20:existing multi-step estimators]] in finite samples.
+  in plain words: The paper's new estimator GTMSE, which sums the logarithms of the mean squared errors of horizons 1 to $h$, pulls parameters towards zero less strongly than the earlier multi-step estimators $\mathrm{MSE}_h$, TMSE and MSCE on finite samples.
+  scope: conditions: univariate state space models estimated on finite samples with $h > 1$
+  addresses B3, at p. 484: Weiss and Andersen (1984) introduced the additive Trace Mean Squared Error (TMSE) multi-step loss function across horizons 1 to h.
+== 4. Simulation experiment
+C14 "$\mathrm{MSE}_1$ the least biased and most efficient in simulations" [descriptive; supporting; support: simulation E3 artefacts A1; limitations L5; strength moderate (author); verifiability unverifiable; planning exploratory]
+  In Monte Carlo simulations of [[D9:ETS(A,N,N)]] and [[D10:ARIMA(0,1,1)]] processes, [[D2:MSE_1]] produces more efficient and less biased parameter estimates with lower [[D21:parameter estimation bias and dispersion]] than [[D19:multi-step estimators]] when true model parameters are non-zero.
+  in plain words: In simulations where the fitted model's parameters are non-zero, the usual one-step estimator gave less biased and less dispersed parameter estimates than any multi-step estimator.
+  scope: conditions: correctly specified or analogous models with non-zero true parameters | data_type: simulated univariate time series
+C22 "Multi-step estimators remove a redundant trend parameter faster" [descriptive; secondary; support: simulation E3 artefacts A1; limitations L5; strength moderate (author); verifiability unverifiable; planning exploratory]
+  When [[D12:ETS(A,A,N)]] is fitted to [[D9:ETS(A,N,N)]] or [[D10:ARIMA(0,1,1)]] data, whose trend parameter $\beta$ is zero, [[D19:multi-step estimators]] shrink $\hat{\beta}$ towards zero and estimate it more efficiently than [[D2:MSE_1]] on small samples.
+  in plain words: When a trend model is fitted to data that have no trend, multi-step estimators pull the redundant trend parameter towards zero and, on small samples, estimate it with less variance than the one-step estimator.
+  scope: conditions: $h = 50$ shown; the pattern is reported as similar for all $h$ | data_type: simulated univariate time series
+  qualifies C14: Where the true parameter is zero, the multi-step estimators do better than $\mathrm{MSE}_1$.
+C5 "GTMSE the least biased multi-step estimator in simulations" [descriptive; principal; support: simulation E3 artefacts A1; uses C14; limitations L5; strength moderate (author); verifiability unverifiable; planning exploratory]
+  In Monte Carlo simulations of [[D9:ETS(A,N,N)]] and [[D10:ARIMA(0,1,1)]] processes, [[D6:GTMSE]] produces less biased and more efficient parameter estimates with lower [[D21:parameter estimation bias and dispersion]] than [[D20:existing multi-step estimators]].
+  in plain words: In simulations of a local-level process and an ARIMA(0,1,1) process, GTMSE gave less biased and less dispersed parameter estimates than the other multi-step estimators ($\mathrm{MSE}_h$, TMSE and MSCE).
+  scope: conditions: sample sizes $T \in \{20, 50, 100, 200, 500, 1000, 5000\}$ with $T > h$; horizons $h \in \{10, 20, 50, 100, 200\}$ | data_type: simulated univariate time series
+  addresses B2, at Section 3, pp. 628-633: [[B2:Tiao and Xu (1993)]] demonstrated via simulation that multi-step estimators lose finite-sample parameter efficiency relative to one-step MSE as horizon increases.
+C15 "Multi-step estimators push the ARIMA(1,1,1) AR parameter negative" [descriptive; secondary; support: simulation E3 artefacts A1; limitations L5; strength moderate (author); verifiability unverifiable; planning exploratory]
+  When fitting an over-parameterised [[D11:ARIMA(1,1,1)]] model to [[D9:ETS(A,N,N)]] data on small samples, [[D19:multi-step estimators]] force the autoregressive parameter $\hat{\phi}_1$ toward negative values and produce worse parameter estimates than [[D2:MSE_1]].
+  in plain words: When an over-parameterised ARIMA(1,1,1) model is fitted to local-level data on small samples, multi-step estimators push its autoregressive parameter towards negative values and estimate the parameters worse than the one-step estimator.
+  scope: conditions: small samples with $h = 50$ on ETS(A,N,N) DGP | data_type: simulated univariate time series
+  qualifies C5: Qualifies the benefit of multi-step shrinkage under model misspecification by showing parameter distortion when fitting an over-parameterised ARIMA(1,1,1) model.
+== 5. Applications to temperature and airline passenger data
+C16 "TMSE, GTMSE and MSCE beat $\mathrm{MSE}_1$ and GPL on temperatures" [descriptive; supporting; support: empirical_quant E4 (E4.T1); limitations L6; strength moderate (author); verifiability open; planning exploratory]
+  On the [[D13:HadCRUT4 Greenland Mean Surface Temperature series]], [[D6:GTMSE]], [[D4:TMSE]], and [[D5:MSCE]] achieve lower out-of-sample [[D16:RMSE]], [[D17:MAE]], and absolute [[D18:ME]] than [[D2:MSE_1]] and [[D7:General Predictive Likelihood]].
+  in plain words: On the Greenland temperature series, TMSE, GTMSE and MSCE gave more accurate and less biased out-of-sample forecasts than the one-step estimator and the General Predictive Likelihood.
+  scope: conditions: 60-month holdout window (Jan 2013–Dec 2017) with ARIMA(1,1,2) | data_type: monthly climate time series
+C18 "$\mathrm{MSE}_h$ most accurate on temperatures" [descriptive; secondary; support: empirical_quant E4 (E4.T1.r2); limitations L6; strength moderate (author); verifiability open; planning exploratory]
+  On the [[D13:HadCRUT4 Greenland Mean Surface Temperature series]], [[D3:MSE_h]] with $h=60$ achieves the lowest out-of-sample [[D16:RMSE]], [[D17:MAE]], and absolute [[D18:ME]] among all [[D15:compared estimators]].
+  in plain words: On the Greenland temperature series, $\mathrm{MSE}_h$ with a horizon of 60 months gave the most accurate and least biased out-of-sample forecasts of the six estimators compared.
+  scope: conditions: 60-month holdout window with $h = 60$ and ARIMA(1,1,2) | data_type: monthly climate time series
+  qualifies C16: Qualifies the out-of-sample accuracy advantage of $\mathrm{MSE}_h$ on the Greenland temperature series by showing parameter distortion.
+C23 "Milder-shrinkage AR(1) estimates agree with the climate literature" [interpretive; secondary; support: argument W1, empirical_quant E4 (E4.T1.r2, E4.T1.r4, E4.T1.r5, E4.T1.r6), cited B12, cited B13, cited B14; limitations L6; verifiability open; planning exploratory]
+  On the [[D13:HadCRUT4 Greenland Mean Surface Temperature series]], the estimates of the $AR(1)$ parameter (the autoregressive parameter of the fitted ARIMA(1,1,2)) by [[D6:GTMSE]], [[D5:MSCE]] and the [[D7:General Predictive Likelihood]] are realistic: positive, as climatologists expect, and similar to those of earlier climate studies, unlike the negative estimate of [[D3:MSE_h]].
+  in plain words: On the Greenland temperature series, the autoregressive estimates from GTMSE, MSCE and the General Predictive Likelihood are positive, as climatologists expect, and close to those of earlier climate studies, unlike the negative estimate from $\mathrm{MSE}_h$.
+  scope: conditions: ARIMA(1,1,2), one temperature series
+  qualifies C18: The most accurate estimator on this series gives an unrealistic AR(1) parameter.
+C17 "GTMSE most accurate on Air Passengers" [descriptive; supporting; support: empirical_quant E5 (E5.T1); limitations L6; strength moderate (author); verifiability open; planning exploratory]
+  On the misspecified [[D14:Air Passengers series]], [[D6:GTMSE]] achieves the lowest out-of-sample [[D16:RMSE]], [[D17:MAE]], and [[D18:ME]] among all [[D15:compared estimators]].
+  in plain words: On the airline passenger series, fitted with a misspecified additive seasonal model, GTMSE gave the most accurate and least biased out-of-sample forecasts of the six estimators compared.
+  scope: conditions: 12-month holdout window with misspecified ETS(A,A,A) | data_type: monthly airline passenger time series
+C6 "GTMSE more accurate than $\mathrm{MSE}_1$ on both series" [descriptive; principal; support: empirical_quant E4 (E4.T1), empirical_quant E5 (E5.T1); uses C16, C17; limitations L6; strength moderate (author); verifiability open; planning exploratory]
+  On the [[D13:HadCRUT4 Greenland Mean Surface Temperature series]] and the misspecified [[D14:Air Passengers series]], [[D6:GTMSE]] achieves lower out-of-sample [[D16:RMSE]], [[D17:MAE]], and absolute [[D18:ME]] than [[D2:MSE_1]].
+  in plain words: On the Greenland temperature series, and on the airline passenger series fitted with a wrong model, forecasts from GTMSE estimates were more accurate and less biased out of sample than those from the usual one-step estimator.
+  scope: conditions: 60-month holdout on Greenland temperature and 12-month holdout on Air Passengers | data_type: monthly univariate time series
+  extends B11, at Section 1, p. 266: Proietti (2011) showed that multi-step estimation gains over one-step estimation depend on model misspecification and data characteristics.
+== 6. Choosing an estimator
+C27 "$\mathrm{MSE}_1$ when the parameters matter" [interpretive; secondary; support: argument W2; verifiability open; planning exploratory]
+  When the parameters are of main interest and the model approximates the data well, [[D2:MSE_1]] should be preferred to [[D19:multi-step estimators]], especially on small samples.
+  in plain words: When the parameters themselves matter and the model approximates the data well, the usual one-step estimator should be preferred to multi-step estimators, especially on small samples.
+  scope: conditions: univariate linear state space models (ARIMA and pure additive ETS)
+  explains C14: The recommendation the simulation and the two applications lead to.
+C28 "Multi-step estimators when the forecasts matter" [interpretive; secondary; support: argument W2; verifiability open; planning exploratory]
+  When forecast accuracy is of main interest, [[D19:multi-step estimators]] can be advantageous over [[D2:MSE_1]].
+  in plain words: When forecast accuracy is what matters, multi-step estimators can be better than the usual one-step estimator.
+  scope: conditions: univariate linear state space models (ARIMA and pure additive ETS)
+  explains C6: The recommendation the two applications lead to.
+
+EVIDENCE
+E1 [formal; foundation Kolmogorov probability axioms and linear algebra] Analytical derivation in the single source of error (SSOE) state space framework showing that multi-step loss functions minimise multi-step forecast error variances and covariances, shrinking dynamic state-space parameters toward zero (and regression parameters not at all because $g=0$), along with specific derivations for ARIMA(1,1,1) and pure additive ETS models (Sections 2, 3, and Appendices A–B).
+  S1 $$\eta_{t+h|t} = y_{t+h} - \mu_{t+h|t} = \sum_{j=1}^{h-1} c_{h-j}\, \epsilon_{t+j} + \epsilon_{t+h}, \quad c_j = w' F^{j-1} g$$ (by D1; definition)
+  S2 $$\sigma_h^2 = \sigma_1^2 \left(1 + \sum_{j=1}^{h-1} c_j^2\right), \quad \sigma_{i,j} = \sigma_1^2 \left(c_{j-i} + \sum_{l=1}^{i-1} c_{i-l}\, c_{j-l}\right)$$ for $1 \le i < j$ (by S1, C19; variance and covariance of linear combinations)
+  S3 Minimising $\mathrm{MSE}_h$, TMSE, or MSCE minimises $s_1^2$ and $\hat{c}_j^2$ toward 0 for $h > 1$, whereas $g=0$ in static regression implies $c_j = 0$ and no shrinkage. (by S2; sample substitution and minimisation)
+  corrected from the published paper (misprint; Equation (10), Section 2.2): printed $\eta_{t+h|t} = \sum_{j=1}^{h-1} c_j\, \epsilon_{t+j} + \epsilon_{t+h}$
+E2 [formal; foundation Kolmogorov probability axioms and multivariate normal likelihood theory] Analytical derivation of concentrated predictive log-likelihoods for $\mathrm{MSE}_h$, MSCE, and the General Predictive Likelihood (GPL), proving that $\log GV = h \log s_1^2 + \log |\hat{A}|$ (as corrected in C13) and that $|\hat{A}| = 1$ under correct specification, and defining GTMSE via diagonal restriction on $\hat{\Sigma}$ (Section 4 and Appendices C–E).
+  S1 $$l_{GPL_h}(\theta, \hat{\Sigma} \mid Y) = -\frac{T-h}{2}\left(h \log(2\pi e) + \log|\hat{\Sigma}|\right), \quad GV = |\hat{\Sigma}|$$ (by D7, C21; concentrating multivariate normal log-likelihood)
+  S2 $\log GV = h \log s_1^2 + \log|\hat{A}|, \quad |\hat{A}| = 1$ under correct model specification (by S1; matrix determinant reduction)
+  S3 $$GTMSE \propto \sum_{j=1}^{h} \log(s_j^2) = h \log(s_1^2) + \sum_{j=2}^{h} \log\left(1 + \sum_{i=1}^{j-1} \hat{c}_i^2\right)$$ (by S1, D6; diagonal restriction and logarithmic scaling)
+  corrected from the published paper (misprint; Section 4.2, the comparison of the likelihoods of $\mathrm{MSE}_h$ and MSCE): printed the bias of $\ell_{\mathrm{MSE}_h}$ is higher than the bias of $\ell_{\mathrm{MSCE}}$ when $\hat{c}_j > 0$, which implies that the MLE of MSCE is less efficient
+  corrected from the published paper (misprint; Equations (30) and (32), Section 4): printed (30): a factor $1/2$ before $\frac{\left(\sum_j \eta_{t+j|t}\right)^2}{2\varsigma_h^2}$; (32): the sum $\sum_{t=1}^{T}$
+E3 [simulation; runs 500] Monte Carlo simulation experiment generating 500 series of length 5,000 each from ETS(A,N,N) ($\alpha = 0.2$) and ARIMA(0,1,1) ($\theta = 0.6$), evaluated on sub-samples $T \in \{20, 50, 100, 200, 500, 1000, 5000\}$ and horizons $h \in \{10, 20, 50, 100, 200\}$ across four fitted models (ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1)) and five estimators ($\mathrm{MSE}_1$, $\mathrm{MSE}_h$, TMSE, GTMSE, MSCE) using R package smooth v2.5.3 (Section 5, Figures 1–12).
+  setup: studied D2, D3, D4, D6, D5; cases D9, D10; lens D21
+  E3.R1 D21 = boxplots in Figures 1-12 showing lower bias and narrower interquartile spread for GTMSE than $\mathrm{MSE}_h$, TMSE, and MSCE across $T$ and $h$ n 500
+  parameters: A1
+E4 [quant; design benchmark; data_origin secondary; n 2016] Empirical out-of-sample evaluation of ARIMA(1,1,2) estimated with $\mathrm{MSE}_1$, $\mathrm{MSE}_h$ ($h=60$), TMSE, GTMSE, MSCE, and GPL on the HadCRUT.4.5.0.0 monthly Mean Surface Temperature series for Greenland (322.5°, 62.5°), trained on 1,956 observations (Jan 1849–Dec 2012) and tested on 60 holdout observations (Jan 2013–Dec 2017) using smooth v3.2.1 in R (Section 6.1, Table 2).
+  setup: studied D15; cases D13; lens D16, D17, D18
+  E4.T1 Out-of-sample error measures and estimated ARIMA(1,1,2) parameters on the HadCRUT4 Greenland Mean Surface Temperature series (Table 2). {D13: 60-step holdout (Jan 2013-Dec 2017)}
+  | row | D15 | D16 | D17 | D18 | AR(1) parameter | MA(1) parameter | MA(2) parameter |
+  | r1 | D2 | 1.217 | 0.849 | -0.45 | 0.558 | -1.235 | 0.265 |
+  | r2 | D3 | 1.128 | 0.784 | 0.009 | -0.786 | -0.13 | -0.858 |
+  | r3 | D4 | 1.198 | 0.827 | -0.402 | -0.002 | -0.68 | -0.291 |
+  | r4 | D6 | 1.19 | 0.819 | -0.366 | 0.691 | -1.291 | 0.305 |
+  | r5 | D5 | 1.185 | 0.817 | -0.343 | 0.634 | -1.059 | 0.077 |
+  | r6 | D7 | 1.214 | 0.846 | -0.444 | 0.532 | -1.219 | 0.244 |
+E5 [quant; design benchmark; data_origin secondary; n 144] Empirical out-of-sample evaluation of a misspecified pure additive ETS(A,A,A) model estimated with $\mathrm{MSE}_1$, $\mathrm{MSE}_h$ ($h=12$), TMSE, GTMSE, MSCE, and GPL on the monthly Air Passengers series over a 12-month forecast horizon using `es()` in smooth v3.2.1 in R (Section 6.2, Table 3).
+  setup: studied D15; cases D14; lens D16, D17, D18
+  E5.T1 Out-of-sample error measures and estimated ETS(A,A,A) smoothing parameters on the Air Passengers series (Table 3). {D14: 12-step holdout}
+  | row | D15 | D16 | D17 | D18 | level smoothing parameter alpha | trend smoothing parameter beta | seasonal smoothing parameter gamma |
+  | r1 | D2 | 49.423 | 37.115 | 28.369 | 1 | 0 | 0 |
+  | r2 | D3 | 77.194 | 57.983 | 54.619 | 0.806 | 0 | 0.089 |
+  | r3 | D4 | 19.266 | 15.616 | 9.739 | 0.126 | 0 | 0.798 |
+  | r4 | D6 | 18.672 | 15.005 | 8.369 | 0.145 | 0 | 0.826 |
+  | r5 | D5 | 22.601 | 18.736 | 13.922 | 0.102 | 0 | 0.546 |
+  | r6 | D7 | 20.014 | 16.426 | 11.128 | 0.111 | 0 | 0.846 |
+
+WARRANTS
+W1 [abductive; premises C18] Climatologists expect the AR(1) parameter of temperature series to be positive. The GTMSE, MSCE and GPL estimates on the Greenland series are positive and similar to those reported in the climate literature ([[B12:Hartmann et al. 2013]]; [[B13:Cahill et al. 2015]]; [[B14:Rahmstorf et al. 2017]]), while $\mathrm{MSE}_h$ pushes the parameter to a negative value; the authors read this as showing that the milder shrinkage is beneficial compared with the model estimated by $\mathrm{MSE}_1$. The comparison with the literature is qualitative, on one series, and the $\mathrm{MSE}_1$ estimate is positive as well.
+W2 [inductive; premises C5, C14, C15, C16, C17, C22] When the model is correct or analogous to the true one, $\mathrm{MSE}_1$ gives the least biased and most efficient estimates in the simulations, and the multi-step estimators over-shrink, especially on small samples and long horizons. Under misspecification the shrinkage removes redundant ETS parameters and the multi-step estimators forecast better on the two real series, so the choice depends on whether the parameters or the forecasts matter most.
+
+LIMITATIONS
+L1 [model_specification; affects C1, C8, C9, C10; could_bias_magnitude; mitigation none] In finite samples with large forecast horizons $h$, multi-step estimators can over-shrink parameters toward boundary values, introducing finite-sample estimation bias and slow convergence rates.
+L2 [model_specification; affects C2; reduces_transferability; mitigation none] The zero-shrinkage analytical result applies to static linear regression models without dynamic state transitions ($g = 0$) and does not transfer to dynamic regression models with autoregressive or moving-average error structures.
+L3 [model_specification; affects C3; reduces_transferability; mitigation none] The equivalence between General Predictive Likelihood and one-step-ahead $\mathrm{MSE}_1$ relies on correct model specification so that $|\hat{A}| = 1$; under model misspecification, off-diagonal covariances do not cancel and GPL estimates diverge from $\mathrm{MSE}_1$.
+L4 [model_specification; affects C4; reduces_transferability; mitigation none] The analytical derivation of GTMSE imposes a diagonal restriction setting off-diagonal forecast error covariances to zero, which does not hold in real dynamic time series processes whenever $c_j \ne 0$.
+L5 [sample_size; affects C5, C14, C15, C22; reduces_transferability; mitigation none] Monte Carlo simulation results are restricted to two univariate data-generating processes (ETS(A,N,N) with $\alpha=0.2$ and ARIMA(0,1,1) with $\theta=0.6$) and pure additive linear models, and numerical outcomes are reported visually via boxplots rather than tabulated summary statistics.
+L6 [sampling; affects C6, C16, C17, C18, C23; reduces_transferability; mitigation none] Empirical evaluations are limited to two individual univariate time series (Greenland Mean Surface Temperature and Air Passengers) with single fixed holdout origins rather than a large multi-series benchmark.
+L7 [other; affects C8; could_reverse; mitigation none] The limit of ARIMA(1,1,1) under multi-step estimation is not $\hat{\phi}_1 = \hat{\theta}_1 = -1$: there the $h$-step variance factor equals $h$. Its minimum is at $\hat{\phi}_1 = 0$, $\hat{\theta}_1 = -1$, where every $c_j$ is zero, a deterministic level rather than ARIMA(1,0,0). Found by the independent proof check.
+L8 [other; affects C10; could_reverse; mitigation none] The switch at $h > 2m$ rests on the misprinted coefficients of ETS(A,N,A) in Table 1; with the correct $c_j = \alpha + \gamma$ when $j$ is a multiple of $m$, the pressure on $\hat{\alpha}$ always exceeds that on $\hat{\gamma}$. Found by the independent proof check.
+L9 [other; affects C11, C12; could_reverse; mitigation none] The efficiency comparisons are argued from the curvature of the likelihoods, not proved: under correct specification no consistent multi-step estimator has a lower asymptotic variance than the one-step Gaussian estimator, and a Monte Carlo with ETS(A,N,N) found MSCE more efficient than $\mathrm{MSE}_h$. Found by the independent proof check.
+L10 [other; affects C24; reduces_precision; mitigation none] TMSE is the maximum likelihood estimator when the forecast errors of all horizons are taken as independent with equal variances; what has no likelihood is TMSE with the variances the model implies, which grow with the horizon. Found by the independent proof check.
+L11 [other; affects C26; reduces_transferability; mitigation none] MSCE shrinks the most only for small smoothing parameters: for ETS(A,N,N) with $\alpha = 0.7$ and for ETS(A,A,N) with small $\alpha$ and $\beta$ at long horizons, $\mathrm{MSE}_h$ shrinks more. Found by the independent proof check.
+L12 [other; affects C3; reduces_precision; mitigation none] Under correct specification the General Predictive Likelihood approaches $\mathrm{MSE}_1$ only when the sample is much longer than the horizon: it minimises the log-determinant of the residual autocovariance matrix, and in small samples it shrinks (ETS(A,N,N), $\alpha = 0.2$, $T = 50$, $h = 10$: 63% of estimates at zero against 29% for $\mathrm{MSE}_1$). Found by the second proof check.
+
+OPEN QUESTIONS
+O1 [from C1, C9] How the multi-step shrinkage mechanism extends to pure multiplicative state space exponential smoothing models remains only partially explored and is not analytically established across all multiplicative forms.
+
+ARTEFACTS
+A1 [manuscript] The published article, Computational Statistics (2024) 39:1203-1239.
+A2 [software, version 2.5.3] The R package smooth ([[B15:Svetunkov 2023b]]), version 2.5.3 as stated in Section 5: its sim.es and sim.ssarima functions generated the simulated series and its es and ssarima functions estimated the models in the simulation experiment. (The reference list gives version 3.2.1 for the same citation.)
+A3 [software, version 3.2.1] The R package smooth ([[B15:Svetunkov 2023b]]), version 3.2.1 as stated in Section 6.1 and the reference list: its msarima function fitted ARIMA(1,1,2) to the temperature series, and its `es()` function (Section 6.2, version not restated there) fitted ETS(A,A,A) to the Air Passengers series.
+A4 [software] R: a language and environment for statistical computing (R Core Team 2023, R Foundation for Statistical Computing, Vienna), in which all simulations and model estimations were run; the paper gives no version.
+
+CORRECTIONS
+E1 [misprint; Equation (10), Section 2.2; found by P5] printed $\eta_{t+h|t} = \sum_{j=1}^{h-1} c_j\, \epsilon_{t+j} + \epsilon_{t+h}$; recorded $\eta_{t+h|t} = \sum_{j=1}^{h-1} c_{h-j}\, \epsilon_{t+j} + \epsilon_{t+h}$; Equation (7) of the same section writes the sum as $\sum c_j \epsilon_{t+h-j}$, and Appendix A uses that form; (10) reverses the index of $c$, which (7) contradicts.
+C7.statement [misprint; Equation (12), Proposition 2.2; found by P5] printed $\sigma_{i,j} = \sigma_1^2 c_{|i-j|}$ when $i = 1$ or $j = 1$, and $$\sigma_1^2\left(c_{|i-j|} + \sum_{l=1}^{i-1} c_{|l-j|}\, c_{|i-l|}\right)$$ otherwise, with no order of $i$ and $j$; recorded $$\sigma_{i,j} = \sigma_1^2 \left(c_{j-i} + \sum_{l=1}^{i-1} c_{i-l}\, c_{j-l}\right)$$ for $1 \le i < j$, and $\sigma_{j,i} = \sigma_{i,j}$; Appendix A derives the formula for $j > i$; read for $i \ge j$ the printed sum brings in $c_0$ and terms of a different covariance. With $i < j$ it agrees with a direct derivation and with simulation (ETS(A,N,N), $\alpha = 0.3$: sample covariance 0.297 against 0.3).
+C13.statement [misprint; Equation (37), Theorem 4.6, and Appendix D; found by P5] printed $\log GV = \log s_1^2 + \log |\hat{A}|$; recorded $\log GV = h \log s_1^2 + \log |\hat{A}|$; $\hat{\Sigma} = s_1^2 \hat{A}$ is an $h \times h$ matrix, so taking $s_1^2$ out of its determinant gives $(s_1^2)^h$; for example $h = 5$, $s_1 = 1.7$: $\log \det = 5.306 = h \log s_1^2$, not $\log s_1^2 = 1.061$.
+C10 [misprint; Table 1, row ETS(A,N,A); found by P5] printed $c_j = \alpha + \gamma j_m$ with $j_m = \lfloor (j-1)/m \rfloor$; recorded $c_j = \alpha + \gamma$ when $j$ is a multiple of $m$, and $\alpha$ otherwise; $c_j = w' F^{j-1} g$ for ETS(A,N,A) gives 0.3, 0.3, 0.3, 0.5, 0.3, … for $m = 4$, $\alpha = 0.3$, $\gamma = 0.2$, as in Hyndman et al. (2008); the printed form gives 0.3 four times, then 0.5 four times, then 0.7.
+E2 [misprint; Section 4.2, the comparison of the likelihoods of $\mathrm{MSE}_h$ and MSCE; found by P5] printed the bias of $\ell_{\mathrm{MSE}_h}$ is higher than the bias of $\ell_{\mathrm{MSCE}}$ when $\hat{c}_j > 0$, which implies that the MLE of MSCE is less efficient; recorded for $\hat{c}_j > 0$ the bias term of $\ell_{\mathrm{MSCE}}$ is the higher one; With every $\hat{c}_j > 0$ the covariance terms in $B_{\mathrm{MSCE}}$ are positive, so $B_{\mathrm{MSCE}}$ exceeds $B_{\mathrm{MSE}_h}$; the printed sentence contradicts the conclusion drawn from it in the same paragraph.
+E2 [misprint; Equations (30) and (32), Section 4; found by P6] printed (30): a factor $1/2$ before $\frac{\left(\sum_j \eta_{t+j|t}\right)^2}{2\varsigma_h^2}$; (32): the sum $\sum_{t=1}^{T}$; recorded (30): $\frac{\left(\sum_j \eta_{t+j|t}\right)^2}{\varsigma_h^2}$ after the factor $1/2$; (32): $\sum_{t=1}^{T-h}$; The Gaussian log-likelihood has the squared error over twice the variance once; (30) halves it twice. The vectors $E_t$ of (32) exist only for $t = 1, \dots, T - h$, as (33) and the factor $\frac{T - h}{2}$ of (32) itself use.
+D22.tables [misprint; Table 1, row ETS(A,N,A), column $\hat{c}_j$; found by P5] printed $\hat{c}_j = \hat{\alpha} + \hat{\gamma} j_m$ with $j_m = \lfloor (j-1)/m \rfloor$; recorded $\hat{c}_j = \hat{\alpha} + \hat{\gamma}$ when $j$ is a multiple of $m$, and $\hat{\alpha}$ otherwise; The same misprint as recorded for C10: $\hat{c}_j = w' F^{j-1} g$ for ETS(A,N,A) adds $\hat{\gamma}$ only at multiples of $m$.
+D22.tables [misprint; Table 1, row ETS(A,N,A), column $s_h^2$; found by P6] printed $$s_h^2 = s_1^2\left(1 + \sum_{j=1}^{h-1} (\hat{\alpha} + \hat{\gamma} j_m)^2\right)$$; recorded $$s_h^2 = s_1^2\left(1 + (h-1)\hat{\alpha}^2 + \lfloor (h-1)/m \rfloor \, \hat{\gamma}(2\hat{\alpha} + \hat{\gamma})\right)$$; $s_h^2 = s_1^2\left(1 + \sum_{j=1}^{h-1} \hat{c}_j^2\right)$ with the corrected $\hat{c}_j$: $\hat{\alpha}^2$ for every $j$, plus $\hat{\gamma}(2\hat{\alpha}+\hat{\gamma})$ at the $\lfloor (h-1)/m \rfloor$ multiples of $m$ below $h$. A simulation of ETS(A,N,A) gave a variance of 3.591 at $h = 21$ against 3.600 from the recorded formula and 12.400 from the printed one.
+
+REFERENCES
+B1 10.1111/j.2517-6161.1985.tb01355.x (doi)
+B2 10.1093/biomet/80.3.623 (doi)
+B3 10.2307/2981736 (doi)
+B4 10.1016/j.omega.2022.102614 (doi)
+B5 10.1017/CBO9780511599286 (doi)
+B6 10.1016/j.ijforecast.2006.03.005 (doi)
+B7 Box G, Jenkins G (1976) Time series analysis: forecasting and control. Holden-day, Oakland
+B8 10.26509/frbc-wp-201717 (doi)
+B9 Kourentzes N, Trapero JR (2018) On the use of multi-step cost functions for generating forecasts. Department of Management Science Working Paper Series
+B10 10.1016/j.ijforecast.2004.08.004 (doi)
+B11 10.1016/j.ijforecast.2010.01.007 (doi)
+B12 Hartmann D, Klein Tank A, Rusticucci M, et al. (2013) Observations: atmosphere and surface. Cambridge University Press, Cambridge, pp 159-254
+B13 Cahill N, Rahmstorf S, Parnell AC (2015) Change points of global temperature. Environ Res Lett 10:084002
+B14 Rahmstorf S, Foster G, Cahill N (2017) Global temperature evolution: recent trends and some pitfalls. Environ Res Lett 12:054001
+B15 10.32614/CRAN.package.smooth (doi)
+B16 https://www.R-project.org/ (url)
