@@ -106,6 +106,12 @@ class TranscriptTest(unittest.TestCase):
         r = self.run_check(f"<!DOCTYPE html><html><body>{body}</body></html>".encode(), suffix=".html")
         self.assertTrue(r["checks"]["tail"], r["problems"])
 
+    def test_app_citation_tags_in_the_transcript_are_not_words(self):
+        tagged = REPLIES[:2] + ['Everything came from the PDF you uploaded, <grok-card data-id="f2" data-type="citation_card" >'
+                                '</grok-card> apart from my own arithmetic. <FileCite ref_id="turn0file0" line_range_start={1}/>']
+        r = self.run_check(page(REPLIES[1:], transcript_text(replies=tagged)))
+        self.assertTrue(r["checks"]["tail"], r["problems"])
+
     def test_no_transcript_fails(self):
         r = self.run_check(page(REPLIES, "print('hello')"))
         self.assertIn("no transcript", r["problems"][0])

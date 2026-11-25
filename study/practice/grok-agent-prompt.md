@@ -10,13 +10,13 @@ You will type messages into Grok (grok.com) in my browser, for a practice run of
 RULES
 - Type each message exactly as written below, on one line, and send it. Never add, shorten or correct a word, and never type anything else into Grok.
 - Send the next message only when the previous reply has finished. Tell this from the page's visible elements, not from screenshots of the reply: the visible stop control has gone and the reply's own buttons (read aloud, copy) have appeared. Pages can hold hidden copies of the input box whose stop button never goes away: watch only visible controls. You may run a script in the page that only watches these elements and logs the times; it must change nothing. If a reply has not finished after 5 minutes, tell me and wait.
-- Do not read, quote, summarise or judge Grok's replies, and do not react to them. Look only at whether a reply has finished, whether a "Thinking" status was shown while it ran, and whether an error, limit, downgrade or warning message appeared.
+- Do not read, quote, summarise or judge Grok's replies, and do not react to them. Look only at whether a reply has finished, whether the reply left a thinking or reasoning summary on the page (a "Thought for …" line or a reasoning block; a brief "Thinking" label at the start of every reply does not count), and whether an error, limit, downgrade or warning message appeared.
 - Never regenerate a reply, edit a sent message, rate a reply, or click suggestions, sources or follow-up chips.
 - Do not change Grok's settings, attach or upload files, or open new chats yourself: ask me, and wait until I say "ready".
 - If Grok shows a captcha, a sign-in page, or anything that stops you, tell me and wait.
 
 PROCEDURE, for each chat below
-1. Tell me what to set up (a new chat, the model and thinking level, the file(s) to attach) and wait for "ready". When I say "ready", read the model and thinking level shown in the picker and log them once for the chat. If a reply shows which model produced it, log that too.
+1. Tell me what to set up (a new chat, the model and thinking level, the file(s) to attach) and wait for "ready". When I say "ready", check that the file(s) are attached in the input box of the tab you are driving (if not, tell me and wait), then read the model and thinking level shown in the picker and log them once for the chat. If a reply shows which model produced it, log that too.
 2. Type the chat's first message into the box where my files are attached, and send it. Then send the other messages one at a time, as the rules say. If Grok refuses the files or the message because of a limit, log its text, tell me and wait.
 3. When the transcript reply (T) has finished, tell me the chat is done and ask me to save the page (Ctrl+S, "Webpage, Single File") as grok-<chat>.mhtml, for example grok-A.mhtml. Copy nothing yourself. Wait for "next".
 
@@ -48,7 +48,7 @@ T: the same transcript message as in chat A.
 CHAT X2: new chat, the same model and thinking level as X1, attach the five .txt files (harbour-weighted-smoothing.claimset.txt, croston-spare-parts.txt, bakery-sales-weather.txt, call-centre-reconciliation.txt, hotel-occupancy-damped-trend.txt). The same three messages as chat X1 (X1, X2, T).
 
 LOG
-Keep a log as you go and show it to me after each chat: first the chat's model and thinking level as the picker shows them, then a table with one row per message: message id (P1 to F3, M, X1, X2, T), the time you sent it and the time the reply finished (with seconds), whether a "Thinking" status was shown, and any error, limit, downgrade or warning message (its text). Nothing from the replies themselves.
+Keep a log as you go and show it to me after each chat: first the chat's model and thinking level as the picker shows them, then a table with one row per message: message id (P1 to F3, M, X1, X2, T), the time you sent it and the time the reply finished (with seconds), whether a thinking or reasoning summary was left on the page, and any error, limit, downgrade or warning message (its text). Nothing from the replies themselves.
 
 REPORT
 At the end, write a short report: whether you could type into Grok's box and send; how you told that a reply had finished and whether that was reliable; anything that blocked you or needed me; how long each chat took; and what you would change in this procedure. Then give me the whole log once more as a single table.

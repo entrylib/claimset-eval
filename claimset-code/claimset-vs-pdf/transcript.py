@@ -42,6 +42,9 @@ TRANSCRIPT_REQUEST = (
     "code block.")
 HEADING = re.compile(r"^#{2,4} (User|Assistant) (\d+)\s*$", re.M)
 FILE_REF = re.compile(r"\[file:[^\]]*\]")
+# The apps' own citation markup, kept in transcripts but not displayed as text: ChatGPT's <FileCite .../>,
+# Grok's <grok-card ...>...</grok-card>. Not words of the reply; masking removes it too.
+APP_TAG = re.compile(r"</?(?:FileCite|grok-card)\b[^>]*>", re.I)
 
 
 def page_html(path):
@@ -130,6 +133,7 @@ def split_turns(text):
 def words(text):
     """Words for comparing a reply with the page: markdown, LaTeX delimiters and file references dropped."""
     text = FILE_REF.sub(" ", text)
+    text = APP_TAG.sub(" ", text)
     text = re.sub(r"[*_`#>|]|^\s*[-+]\s|^\s*\d+\.\s|-{3,}|:?-{3,}:?|\$+", " ", text, flags=re.M)
     return re.findall(r"[^\W_]+(?:[.,'’][^\W_]+)*|[^\w\s]", text)
 
