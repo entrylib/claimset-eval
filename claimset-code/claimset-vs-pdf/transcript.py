@@ -39,6 +39,8 @@ TRANSCRIPT_REQUEST = (
     "tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, "
     "and add nothing. Write a reference to an attached file as `[file: name]`. If you cannot make a file, give the "
     "transcript in one Markdown code block fenced with four backticks instead, and write nothing outside it.")
+HEADING = re.compile(r"^#{2,4} (User|Assistant) (\d+)\s*$", re.M)
+FILE_REF = re.compile(r"\[file:[^\]]*\]")
 
 
 def page_html(path):
