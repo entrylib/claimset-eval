@@ -19,12 +19,12 @@ Find and note each of these (names change; note what you find):
 3. **Gems**: none in use.
 4. **Apps / extensions** (Gmail, Drive, YouTube, …): off.
 5. **Web search**: is there a way to stop Gemini searching the web? If there is none, note that.
-6. **Activity** (Gemini Apps Activity, "Keep activity"): note whether it is on. If it is off, chats may not be kept, so copy each one before closing it. Also look for a **temporary chat** option, and note whether it allows choosing the model and attaching files.
+6. **Activity** (Gemini Apps Activity, "Keep activity"): keep it on, so that the chats are kept. **No temporary chats** (lab note NT2): they disappear when the page is left. Use normal chats, with the memory settings above off.
 7. Canvas, Deep Research and other tools: not selected.
 
 ## 3. Chat A: PDF, fast model
 
-1. New chat (temporary if that works with model choice and files), fast model.
+1. New chat (not temporary), fast model.
 2. Attach `harbour-weighted-smoothing.pdf`. In the same first message type, on one line:
    `I'm reading this paper. Please keep your answers short and to the point. What mean MASE did harbour-weighted smoothing reach on the ferry routes, and how did it compare with ETS and the seasonal naive method?`
 3. After each reply has finished, send the next message, verbatim, one at a time:
@@ -55,7 +55,7 @@ As chat A, in a new chat with the **reasoning** model, attaching `harbour-weight
 
 ## 6. Copying
 
-For chat A, try the ways Gemini offers to get a whole chat out as text: the copy button on each reply, selecting the whole page, export to Docs, a share link. Note which keeps **your questions, the answers, tables and formulas** (and the thinking summary, if any) with least effort. Save every chat as text with the way that works best: `gemini-A-pdf-fast.txt`, `gemini-B-claimset-reasoning.txt`, `gemini-memory.txt`, `gemini-cross-pdf.txt`, `gemini-cross-txt.txt`.
+Not PDF export, which clips text at page ends (lab note NT1). First try Google Takeout (takeout.google.com, "My Activity" with Gemini Apps selected): send its zip, and it is checked whether it holds every reply whole. If it does not, for chat A try the other ways Gemini offers to get a whole chat out as text: the copy button on each reply, selecting the whole page, export to Docs, a share link. Note which keeps **your questions, the answers, tables and formulas** (and the thinking summary, if any) with least effort. Save every chat as text with the way that works best: `gemini-A-pdf-fast.txt`, `gemini-B-claimset-reasoning.txt`, `gemini-memory.txt`, `gemini-cross-pdf.txt`, `gemini-cross-txt.txt`.
 
 ## 7. Usage
 

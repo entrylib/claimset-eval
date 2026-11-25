@@ -16,23 +16,18 @@ Find and note each (names change; note what you find):
 
 1. **Memory**: saved memories off, and "reference chat history" off.
 2. **Custom instructions / personalisation**: empty.
-3. **Temporary chat**: use it for every chat (no memory, not in history). Note whether it still allows choosing the model and attaching files.
+3. **No temporary chats** (lab note NT2): they disappear when the page is left and ChatGPT's export leaves them out. Use normal chats, with the memory settings above off, and keep them until the export has been checked.
 4. **Web search**: is there a setting or a toggle that turns it off? Note what there is. If none, note that.
 5. **Tools** (connectors, apps, canvas, image generation, deep research): not selected.
 6. **Data controls**: note whether "improve the model for everyone" is on (it does not change the answers; it is recorded).
 
 ## 3. During the run
 
-The agent types; you set up each chat when it asks (a new temporary chat, the model, the file(s)) and say "ready", and say "next" after copying. Note anything the agent could not do.
+The agent types; you set up each chat when it asks (a new chat, the model, the file(s)) and say "ready", and "next" when it says the chat is done. Note anything the agent could not do.
 
-## 4. Copying: choose the method
+## 4. Getting the chats out: ChatGPT's export
 
-Do not use PDF export: in the Gemini practice it clipped text at page ends (lab note NT1). For chat A, try both and compare each with the screen:
-
-1. **The copy button under each reply**, pasted into a text file after the question it answers (you paste the questions from the prompt). It should give markdown, with tables and formulas as text.
-2. **Selecting the whole conversation** (Ctrl+A in the chat, copy, paste into a text file).
-
-Note which keeps every reply whole, its tables and its formulas, with least effort, and use it for the other chats. Save them as `chatgpt-A-pdf-fast.txt`, `chatgpt-B-claimset-reasoning.txt`, `chatgpt-memory.txt`, `chatgpt-cross-pdf.txt`, `chatgpt-cross-txt.txt`.
+Nothing is copied by hand, and the agent copies nothing. When all chats are done, request ChatGPT's own export: Settings, Data controls, Export data. It arrives by email as a zip whose `conversations.json` holds every normal chat, with each reply as markdown and the model that produced it. Send the zip; each chat is taken out of it by a script and checked against what you saw on screen. Delete the chats from ChatGPT only after that check. Not PDF export: in the Gemini practice it clipped text at page ends (lab note NT1).
 
 ## 5. Limits
 
@@ -40,4 +35,4 @@ Note any message about limits (messages, file uploads, thinking), when it appear
 
 ## 6. Send back
 
-`chatgpt-log.txt`, the agent's log and report, and the saved chats.
+`chatgpt-log.txt`, the agent's log and report, and the export's zip.

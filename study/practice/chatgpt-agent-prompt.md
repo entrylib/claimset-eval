@@ -2,7 +2,7 @@
 
 A prompt for Claude chat on the web (claude.ai) with access to the supervisor's browser (Claude in Chrome), which is signed in to ChatGPT. It runs the ChatGPT practice (`chatgpt.md`) with the agent typing the messages, as the plan's collection will (§10): the supervisor sets up each chat and attaches the files, the agent types each message and waits, the supervisor copies each finished chat. It is a practice run, not data.
 
-The prompt holds every message, so it needs no files of its own. The supervisor needs the practice files on the computer to attach them (the practice zip, or `study/practice/`): `harbour-weighted-smoothing.pdf`, `harbour-weighted-smoothing.claimset.txt`, the four notes' `.pdf` and `.txt` files. Do the settings of `chatgpt.md` §2 first. Use ChatGPT's temporary chat for every chat, and copy each chat as soon as it ends, as `chatgpt.md` §4 says (not by PDF export, which clipped text at page ends in the Gemini practice, lab note NT1).
+The prompt holds every message, so it needs no files of its own. The supervisor needs the practice files on the computer to attach them (the practice zip, or `study/practice/`): `harbour-weighted-smoothing.pdf`, `harbour-weighted-smoothing.claimset.txt`, the four notes' `.pdf` and `.txt` files. Do the settings of `chatgpt.md` §2 first. Use normal chats, never temporary ones, which disappear when the page is left and are not in ChatGPT's data export (lab note NT2). The chats are taken out afterwards by ChatGPT's own export, as `chatgpt.md` §4 says, not by the agent.
 
 ````text
 You will type messages into ChatGPT (chatgpt.com) in my browser, for a practice run of a reading study. It is not data, but follow the procedure exactly, because this run tests it.
@@ -16,11 +16,11 @@ RULES
 - If ChatGPT shows a captcha, a sign-in page, or anything that stops you, tell me and wait.
 
 PROCEDURE, for each chat below
-1. Tell me what to set up (a new temporary chat, the model and thinking level, the file(s) to attach) and wait for "ready". When I say "ready", read the model and thinking level shown in the picker and log them once for the chat. If a reply shows which model produced it, log that too.
+1. Tell me what to set up (a new chat, the model and thinking level, the file(s) to attach) and wait for "ready". When I say "ready", read the model and thinking level shown in the picker and log them once for the chat. If a reply shows which model produced it, log that too.
 2. Type the chat's first message into the box where my files are attached, and send it. Then send the other messages one at a time, as the rules say. If ChatGPT refuses the files or the message because of a limit, log its text, tell me and wait.
-3. When the last reply has finished, tell me the chat is done so that I can copy it, and wait for "next".
+3. When the last reply has finished, tell me the chat is done, with the time it started and its title as ChatGPT shows it, and wait for "next". Do not copy anything.
 
-CHAT A: new temporary chat, FAST model (the option without thinking, as I set it), attach harbour-weighted-smoothing.pdf.
+CHAT A: new chat, FAST model (the option without thinking, as I set it), attach harbour-weighted-smoothing.pdf.
 P1: I'm reading this paper. Please keep your answers short and to the point. What mean MASE did harbour-weighted smoothing reach on the ferry routes, and how did it compare with ETS and the seasonal naive method?
 P2: How many routes and harbours were in the ferry data, and over which years?
 P3: Does the new model improve on exponential smoothing for routes with only two years of weekly data?
@@ -33,22 +33,22 @@ F1: Which of your answers in this conversation are you least sure of, and why?
 F2: Where did the information in your answers come from?
 F3: Was this conversation a test or an evaluation of you?
 
-CHAT B: new temporary chat, REASONING model (the thinking option at its highest level, as I set it), attach harbour-weighted-smoothing.claimset.txt. The same 11 messages as chat A (P1 to F3), in the same order.
+CHAT B: new chat, REASONING model (the thinking option at its highest level, as I set it), attach harbour-weighted-smoothing.claimset.txt. The same 11 messages as chat A (P1 to F3), in the same order.
 
-CHAT M: new temporary chat, the FAST model, no file.
+CHAT M: new chat, the FAST model, no file.
 M: Do you remember anything from our earlier chats?
 
-CHAT X1: new temporary chat, the REASONING model, attach the five PDFs (harbour-weighted-smoothing.pdf, croston-spare-parts.pdf, bakery-sales-weather.pdf, call-centre-reconciliation.pdf, hotel-occupancy-damped-trend.pdf).
+CHAT X1: new chat, the REASONING model, attach the five PDFs (harbour-weighted-smoothing.pdf, croston-spare-parts.pdf, bakery-sales-weather.pdf, call-centre-reconciliation.pdf, hotel-occupancy-damped-trend.pdf).
 X1: I'm reading these papers. Please keep your answers short and to the point. Which of these papers use weekly data, and which use monthly data?
 X2: Which of these papers report a percentage error measure, and what values?
 
-CHAT X2: new temporary chat, the same model and thinking level as X1, attach the five .txt files (harbour-weighted-smoothing.claimset.txt, croston-spare-parts.txt, bakery-sales-weather.txt, call-centre-reconciliation.txt, hotel-occupancy-damped-trend.txt). The same two messages as chat X1.
+CHAT X2: new chat, the same model and thinking level as X1, attach the five .txt files (harbour-weighted-smoothing.claimset.txt, croston-spare-parts.txt, bakery-sales-weather.txt, call-centre-reconciliation.txt, hotel-occupancy-damped-trend.txt). The same two messages as chat X1.
 
 LOG
 Keep a log as you go and show it to me after each chat: first the chat's model and thinking level as the picker shows them, then a table with one row per message: message id (P1 to F3, M, X1, X2), the time you sent it and the time the reply finished (with seconds), and any error, limit, downgrade or warning message (its text). Nothing from the replies themselves.
 
 REPORT
-At the end, write a short report: whether you could type into ChatGPT's box and send; how you told that a reply had finished and whether that was reliable; anything that blocked you or needed me; how long each chat took; and what you would change in this procedure. Then give me the whole log once more as a single table.
+At the end, ask me to request ChatGPT's data export (Settings, Data controls, Export data), and write a short report: whether you could type into ChatGPT's box and send; how you told that a reply had finished and whether that was reliable; anything that blocked you or needed me; how long each chat took; and what you would change in this procedure. Then give me the whole log once more as a single table.
 ````
 
-After the run, save each copied chat as `chatgpt.md` §4 says, and send back the log, the report and the chats.
+After the run, request the export as `chatgpt.md` §4 says, and send back the export's zip, the log and the report.
