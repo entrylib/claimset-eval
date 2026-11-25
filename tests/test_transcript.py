@@ -112,6 +112,26 @@ class TranscriptTest(unittest.TestCase):
         r = self.run_check(page(REPLIES[1:], transcript_text(replies=tagged)))
         self.assertTrue(r["checks"]["tail"], r["problems"])
 
+    def test_thinking_that_quotes_a_reply_does_not_stand_for_the_displayed_reply(self):
+        changed = REPLIES[:2] + [REPLIES[2].replace("own arithmetic", "own reading")]
+        thinking = f'<div class="ds-think-content">I will copy: {escape(changed[2])}<br>and the rest.</div>'
+        html = page(REPLIES[1:], transcript_text(replies=changed), mhtml=False).replace(b"<body>", b"<body>" + thinking.encode())
+        r = self.run_check(html, suffix=".html")
+        self.assertFalse(r["checks"]["tail"])
+
+    def test_a_tail_reply_not_on_the_page_is_skipped_but_the_last_must_be_there(self):
+        r = tr.check(self.write(page(REPLIES[2:], transcript_text())), EXPECTED, tail=2)
+        self.assertTrue(r["checks"]["tail"], r["problems"])
+        self.assertEqual(r["not_on_page"], [2])
+        r = tr.check(self.write(page(REPLIES[:2], transcript_text())), EXPECTED, tail=2)
+        self.assertFalse(r["checks"]["tail"])
+
+    def test_the_request_copied_as_a_last_turn_is_dropped(self):
+        text = transcript_text() + f"\n### User 4\n{tr.TRANSCRIPT_REQUEST}\n"
+        r = self.run_check(page(REPLIES[1:], text))
+        self.assertTrue(all(r["checks"].values()), r["problems"])
+        self.assertTrue(r["dropped_request"])
+
     def test_no_transcript_fails(self):
         r = self.run_check(page(REPLIES, "print('hello')"))
         self.assertIn("no transcript", r["problems"][0])

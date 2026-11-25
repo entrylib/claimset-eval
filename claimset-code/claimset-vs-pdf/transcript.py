@@ -11,8 +11,10 @@ with --transcript.)
     complete  the turns numbered 1..N without gaps, one reply per message, the code block closed;
     tail      the last replies before the request (F2 and F3, say) are found in the page as displayed, every word
               and number in order (markdown, punctuation and spacing aside): the transcript copied what the app
-              showed. The page holds only the last few replies, so the earlier ones are trusted because the
-              messages and the tail match.
+              showed. The page holds only the last few replies (DeepSeek's, two), so a tail reply most of whose
+              words are absent is reported as not on the page and skipped; the last reply must be on the page.
+              The earlier replies are trusted because the messages and the tail match. A model's visible
+              thinking is left out of the page's text, since it may quote the replies.
 
     python3 transcript.py check PAGE.mhtml [--transcript transcript.md] --expected MESSAGES.json [--tail 2] [--out CHAT.json]
     python3 transcript.py expected --questions study/practice/practice-questions.json --chat A -o MESSAGES.json
@@ -61,38 +63,46 @@ def page_html(path):
 
 
 class Page(HTMLParser):
-    """Collects the text of every <code> element, and the page's visible text without the code blocks. A code
-    block is a <code> of several lines (apps differ: <pre><code>, or a <code> styled as a block); a one-line
-    <code> (a file name shown as code, say) is inline and stays in the visible text."""
+    """Collects the text of every code element, and the page's visible text without the code blocks. Apps differ:
+    <pre><code> (Gemini, Grok), a <code> styled as a block (ChatGPT), a <pre> of spans (DeepSeek). A code element
+    of several lines is a block; a one-line <code> (a file name shown as code, say) is inline and stays in the
+    visible text."""
 
     BLOCK = {"p", "div", "li", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "br", "pre", "section"}
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.codes, self.text, self.skip, self.code, self.pre = [], [], 0, None, 0
+        self.codes, self.text, self.skip, self.code, self.thinking = [], [], 0, None, 0
 
     def handle_starttag(self, tag, attrs):
+        if self.thinking:
+            self.thinking += tag not in VOID
+            return
+        if THINKING.search(dict(attrs).get("class") or ""):
+            self.thinking = 1  # the model's visible thinking: its own words, not a reply as displayed
+            return
         if tag in ("script", "style", "svg", "template"):
             self.skip += 1
-        elif tag == "pre":
-            self.pre += 1
-        elif tag == "code" and self.code is None and not self.skip:
-            self.code, self.depth = [], 0
-        elif tag == "code" and self.code is not None:
+        elif tag == "pre" and self.code is None and not self.skip:
+            self.code, self.depth, self.opened = [], 0, "pre"  # a block without <code> (DeepSeek)
+        elif tag in ("pre", "code") and self.code is not None:
             self.depth += 1
+        elif tag == "code" and self.code is None and not self.skip:
+            self.code, self.depth, self.opened = [], 0, "code"
         if tag in self.BLOCK:
             (self.code if self.code is not None else self.text).append("\n")
         elif tag in ("span", "button", "a") and self.code is None:
             self.text.append(" ")  # a file chip or link next to the text is a word of its own
 
     def handle_endtag(self, tag):
-        if tag in self.BLOCK and self.code is None:
-            self.text.append("\n")
+        if self.thinking:
+            self.thinking -= tag not in VOID
+            return
+        if tag in self.BLOCK:
+            (self.code if self.code is not None else self.text).append("\n")
         if tag in ("script", "style", "svg", "template"):
             self.skip = max(0, self.skip - 1)
-        elif tag == "pre":
-            self.pre = max(0, self.pre - 1)
-        elif tag == "code" and self.code is not None:
+        elif tag in ("pre", "code") and self.code is not None:
             if self.depth:
                 self.depth -= 1
             else:
@@ -103,9 +113,19 @@ class Page(HTMLParser):
                 self.code = None
 
     def handle_data(self, data):
-        if self.skip:
+        if self.skip or self.thinking:
             return
         (self.code if self.code is not None else self.text).append(data)
+
+
+# A tail reply with more than this share of its words missing from the page is taken as not on the page (apps keep
+# only the last few replies in a page), not as changed; a reply on the page must have every word.
+ABSENT_SHARE = 0.5
+
+# Elements holding a model's visible thinking (DeepSeek: ds-think-content), left out of the page's text: a thinking
+# step may quote the replies, and the tail must be checked against the replies as displayed, not the model's words.
+THINKING = re.compile(r"(?:think|thoughts?|reasoning)-content|\bmodel-thoughts\b", re.I)  # not state flags such as has-thoughts
+VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 
 
 def parse_page(path):
@@ -147,8 +167,13 @@ def not_found(reply, page_words):
     return [w for k, w in enumerate(r) if k not in got and re.search(r"\w", w)]
 
 
+# Text an app inserts into the user's message for an attached file (DeepSeek: [file content begin] ... [file content
+# end]); it is not what the user typed, so it is left out when messages are compared.
+FILE_CONTENT = re.compile(r"\[file content begin\].*?\[file content end\]", re.S)
+
+
 def norm(text):
-    return re.sub(r"\s+", " ", FILE_REF.sub(" ", text)).strip()
+    return re.sub(r"\s+", " ", FILE_REF.sub(" ", FILE_CONTENT.sub(" ", text))).strip()
 
 
 def check(page, expected, tail=2, transcript=None):
@@ -166,6 +191,9 @@ def check(page, expected, tail=2, transcript=None):
         result["problems"].append("no transcript code block (### User 1 ... ### Assistant 1) in the page")
         return result
     turns = split_turns(found)
+    if turns and turns[-1][0] == "user" and norm(turns[-1][2]) == norm(TRANSCRIPT_REQUEST):
+        turns = turns[:-1]  # the app copied the transcript request itself as a last turn (DeepSeek did)
+        result["dropped_request"] = True
     users = [(n, b) for r, n, b in turns if r == "user"]
     replies = {n: b for r, n, b in turns if r == "assistant"}
     order = [(r, n) for r, n, _ in turns]
@@ -184,9 +212,20 @@ def check(page, expected, tail=2, transcript=None):
         result["problems"].append(f"{missing} message(s) missing")
     page_words = words(shown)
     last = sorted(replies)[-tail:] if replies else []
-    missing_words = {n: not_found(replies[n], page_words) for n in last}
-    result["checks"]["tail"] = bool(last) and not any(missing_words.values())
+    missing_words, absent = {}, []
+    for n in last:
+        miss = not_found(replies[n], page_words)
+        total = sum(1 for w in words(replies[n]) if re.search(r"\w", w))
+        if total and len(miss) / total > ABSENT_SHARE:
+            absent.append(n)  # not on the page at all: the app keeps only the last few replies in the page
+        else:
+            missing_words[n] = miss
+    checked = sorted(missing_words)
+    result["checks"]["tail"] = bool(last) and last[-1] in missing_words and not any(missing_words.values())
     result["tail"] = {n: len(w) for n, w in missing_words.items()}
+    result["not_on_page"] = absent
+    if last and last[-1] in absent:
+        result["problems"].append(f"Assistant {last[-1]}, the last reply, is not on the page: nothing to check the transcript against")
     for n, w in missing_words.items():
         if w:
             result["problems"].append(f"Assistant {n}: {len(w)} word(s) not found in the page as displayed: {' '.join(w[:12])}")
@@ -233,7 +272,8 @@ def main(argv=None):
             json.dump(result, f, ensure_ascii=False, indent=1)
             f.write("\n")
     print(("PASSED" if ok else "FAILED") + f": {len(result['turns'])} turns; checks {result['checks']}; "
-          f"words not found in the tail {result.get('tail')}")
+          f"words not found in the tail {result.get('tail')}"
+          + (f"; not on the page: {result['not_on_page']}" if result.get("not_on_page") else ""))
     for x in result["problems"]:
         print("  " + x)
     return 0 if ok else 1
