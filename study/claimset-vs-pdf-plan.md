@@ -145,7 +145,7 @@ with its standard error from the estimates' covariance matrix. It is checked by 
 
 ### 3.3 Futility look (draft, for approval: PL4)
 
-The four fast configurations are collected first, the weakest first (Grok Fast, ChatGPT Instant, Gemini 4 Hydrogen at Low, DeepSeek with DeepThink off). Once, after their 48 chats, their answers are graded as in §9 (both judges, the disagreement report, moderation, the consistency check among them) and their grades are locked. A recorded run then computes, over the four fast configurations together and with the PDF only:
+The four fast configurations are collected first, the weakest first (Grok Fast, ChatGPT Instant, Gemini 4 Hydrogen at Low, DeepSeek with DeepThink off). Once, after their 48 chats, their answers are given **interim grades**: Claude Fable alone grades them as one batch of coded, masked answers, and the supervisor alone moderates them, blind to condition. The interim grades are recorded (hashed) and used for the look only. A recorded run then computes, over the four fast configurations together and with the PDF only:
 
 - the mean score on the 75 answerable questions;
 - the rate of invented answers on the 25 absent questions;
@@ -155,8 +155,9 @@ The four fast configurations are collected first, the weakest first (Grok Fast, 
 
 - **Non-binding and futility only.** The supervisor decides, and the decision is recorded with its reason. Stopping because there is nothing to find cannot raise the tests' error rate; there is no stopping because a result looks good.
 - **Blind.** The run reports only "room" or "no room" to the supervisor and the moderators and seals its numbers until the analysis; nothing by condition is shown before then, so later grading stays blind.
-- **If the study stops,** H1–H3 are not tested. The fast configurations' results are reported as estimates, with the reason for stopping.
-- **Locked grades stay locked:** the grades fixed at the look are not changed later.
+- **If the study stops,** H1–H3 are not tested. The fast configurations' results are reported as estimates from the interim grades, with the reason for stopping.
+- **If the study continues,** the full grading of §9 follows after collection, over all answers, fast and reasoning configurations mixed in one pool, with both judges (Fable and Mistral) and both moderators; the interim grades play no part in it.
+- **Judges see only batches of coded answers** and are never told which configuration or batch an answer comes from.
 
 **Precision** (by simulation, §12; with guessed variances): H1 detects a gain of about 6–7 points in mean score with power above 0.9, and about 3–4 points with power about one half; H2 and H3 detect a drop of about 18 points in the rate of flagged answers with power about 0.86, and about 9 points with power about one third.
 
@@ -286,7 +287,7 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
 12. **The claimsets are not much shorter than the papers.** The reading views are 0.59 to 0.98 of the PDF's text in characters (Multi-step 0.59, Staying positive 0.70, VES 0.83, CES 0.94, Grundy et al. 0.98): a claimset carries definitions, scopes and links the paper leaves implicit.
 13. **Transcripts written by the apps.** Each chat's text comes from a transcript the app writes at the end of the chat, not from the page itself. Every message and the last two replies are checked word for word against what was sent and what the page displays; the earlier replies are trusted because these match. In the practice, a full comparison of one chat's transcript with an independent copy found every reply unchanged (NT3), but this is not checked for every reply of every chat.
 14. **Web search in Gemini** cannot be switched off. Replies that show a search or sources are noted; F2 asks each model where its answers came from.
-15. **Grading in two batches** (draft, PL4): the fast configurations' answers are graded and locked before the reasoning configurations' answers are collected. Graders stay blind to condition, but know which batch an answer comes from, and so whether it came from a fast or a reasoning configuration.
+15. **The supervisor sees the fast configurations' answers twice** (draft, PL4): once for the interim grades of the futility look, and again in the full grading. Fable grades them twice too, but grading is per answer and the judges are not told where an answer comes from; the supervisor may recognise answers moderated before, though not their condition.
 
 ## 12. How the analysis was chosen
 
