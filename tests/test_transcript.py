@@ -98,6 +98,14 @@ class TranscriptTest(unittest.TestCase):
         r = tr.check(self.write(page(REPLIES[1:], "")), EXPECTED, tail=2, transcript=bad)
         self.assertFalse(r["checks"]["tail"])
 
+    def test_inline_code_in_a_displayed_reply_counts_as_displayed(self):
+        replies = REPLIES[:2] + ["Everything came from `paper.claimset.txt`, the file you uploaded."]
+        body = ('<div><p>The paper does not say which software was used.</p></div>'
+                '<div><p>Everything came from <code>paper.claimset.txt</code>, the file you uploaded.</p></div>'
+                f'<pre><code>{escape(transcript_text(replies=replies))}</code></pre>')
+        r = self.run_check(f"<!DOCTYPE html><html><body>{body}</body></html>".encode(), suffix=".html")
+        self.assertTrue(r["checks"]["tail"], r["problems"])
+
     def test_no_transcript_fails(self):
         r = self.run_check(page(REPLIES, "print('hello')"))
         self.assertIn("no transcript", r["problems"][0])

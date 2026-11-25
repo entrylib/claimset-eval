@@ -57,17 +57,21 @@ def page_html(path):
 
 
 class Page(HTMLParser):
-    """Collects the text of every <code> element, and the page's visible text without them."""
+    """Collects the text of every <code> element, and the page's visible text without the code blocks. A code
+    block is a <code> of several lines (apps differ: <pre><code>, or a <code> styled as a block); a one-line
+    <code> (a file name shown as code, say) is inline and stays in the visible text."""
 
     BLOCK = {"p", "div", "li", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "br", "pre", "section"}
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.codes, self.text, self.skip, self.code = [], [], 0, None
+        self.codes, self.text, self.skip, self.code, self.pre = [], [], 0, None, 0
 
     def handle_starttag(self, tag, attrs):
         if tag in ("script", "style", "svg", "template"):
             self.skip += 1
+        elif tag == "pre":
+            self.pre += 1
         elif tag == "code" and self.code is None and not self.skip:
             self.code, self.depth = [], 0
         elif tag == "code" and self.code is not None:
@@ -82,11 +86,16 @@ class Page(HTMLParser):
             self.text.append("\n")
         if tag in ("script", "style", "svg", "template"):
             self.skip = max(0, self.skip - 1)
+        elif tag == "pre":
+            self.pre = max(0, self.pre - 1)
         elif tag == "code" and self.code is not None:
             if self.depth:
                 self.depth -= 1
             else:
-                self.codes.append("".join(self.code))
+                text = "".join(self.code)
+                self.codes.append(text)
+                if "\n" not in text.strip():
+                    self.text.append(" " + text + " ")
                 self.code = None
 
     def handle_data(self, data):
