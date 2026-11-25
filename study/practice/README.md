@@ -9,6 +9,6 @@ The practice chats of the claimset-vs-pdf plan (§10): one round per app, with m
 - `note-a.pdf` … `note-d.pdf` and `note-a.txt` … `note-d.txt`: four one-page invented notes, to fill a cross chat to five files.
 - `practice-questions.json`: 8 per-paper questions (2 of each type), 2 cross questions, F1–F3 and the memory check.
 - `gemini.md`: the Gemini practice, step by step.
-- `gemini-agent-prompt.md`: the same practice with an agent (Claude Code with Claude in Chrome on the supervisor's computer) typing the messages, as in collection.
+- `gemini-agent-prompt.md`: the same practice with an agent (Claude chat on the web with access to the supervisor's browser) typing the messages, as in collection.
 
 Everything here is invented: the operator, routes, data, results and authors. Only the cited textbooks and articles are real.
