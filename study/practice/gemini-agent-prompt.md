@@ -20,7 +20,7 @@ PROCEDURE, for each chat below
 2. Type the chat's first message into the box where my files are attached, and send it. Then send the other messages one at a time, as the rules say.
 3. When the last reply has finished, tell me the chat is done so that I can copy it, and wait for "next".
 
-CHAT A: new temporary chat, FAST model: Everyday help (Gemini 4 Hydrogen), attach harbour-weighted-smoothing.pdf.
+CHAT A: new temporary chat, FAST model: Everyday help (Gemini 4 Hydrogen), thinking level Low, attach harbour-weighted-smoothing.pdf.
 P1: I'm reading this paper. What mean MASE did harbour-weighted smoothing reach on the ferry routes, and how did it compare with ETS and the seasonal naive method?
 P2: How many routes and harbours were in the ferry data, and over which years?
 P3: Does the new model improve on exponential smoothing for routes with only two years of weekly data?
@@ -35,14 +35,14 @@ F3: Was this conversation a test or an evaluation of you?
 
 CHAT B: new temporary chat, REASONING model: Deeper analysis (Gemini 4 Neon), thinking level High, attach harbour-weighted-smoothing.claimset.txt. The same 11 messages as chat A (P1 to F3), in the same order.
 
-CHAT M: new temporary chat, Everyday help (Gemini 4 Hydrogen), no file.
+CHAT M: new temporary chat, Everyday help (Gemini 4 Hydrogen), thinking level Low, no file.
 M: Do you remember anything from our earlier chats?
 
 CHAT X1: new temporary chat, Deeper analysis (Gemini 4 Neon), thinking level High, attach the five PDFs (harbour-weighted-smoothing.pdf, croston-spare-parts.pdf, bakery-sales-weather.pdf, call-centre-reconciliation.pdf, hotel-occupancy-damped-trend.pdf).
 X1: I'm reading these papers. Which of these papers use weekly data, and which use monthly data?
 X2: Which of these papers report a percentage error measure, and what values?
 
-CHAT X2: new chat, the same model as X1, attach the five .txt files (harbour-weighted-smoothing.claimset.txt, croston-spare-parts.txt, bakery-sales-weather.txt, call-centre-reconciliation.txt, hotel-occupancy-damped-trend.txt). The same two messages as chat X1.
+CHAT X2: new temporary chat, the same model and thinking level as X1, attach the five .txt files (harbour-weighted-smoothing.claimset.txt, croston-spare-parts.txt, bakery-sales-weather.txt, call-centre-reconciliation.txt, hotel-occupancy-damped-trend.txt). The same two messages as chat X1.
 
 LOG
 Keep a log as you go and show it to me after each chat: first the chat's model and thinking level as the picker shows them, then a table with one row per message: message id (P1 to F3, M, X1, X2), the time you sent it and the time the reply finished (with seconds), and any error, limit, downgrade or warning message (its text). Nothing from the replies themselves.
