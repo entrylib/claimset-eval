@@ -55,7 +55,7 @@ As chat A, in a new chat with the **reasoning** model, attaching `harbour-weight
 
 ## 6. Getting the chats out: transcript and saved page
 
-Nobody copies replies by hand, and the agent copies nothing. Every chat ends with the transcript request (T in the agent's prompt, `transcript` in `practice-questions.json`): the app answers with the whole chat in one code block. When the agent says the chat is done, save the page in Chrome: Ctrl+S, "Webpage, Single File" (.mhtml; "HTML only" saves a page without the chat). Name it `gemini-<chat>.mhtml` (gemini-A.mhtml, …). The page holds the transcript and the last replies as the app shows them; `claimset-code/claimset-vs-pdf/transcript.py` takes the transcript out and checks that it has every message as sent, every turn, and the last replies word for word as displayed. The page also holds the titles of your other chats: it is processed and not committed. Keep the chats in the app until the check has passed. Not PDF export (it clips text at page ends, lab note NT1), and not the app's account export (it can take days and holds every chat of the account).
+Nobody copies replies by hand, and the agent copies nothing. Every chat ends with the transcript request (T in the agent's prompt, `transcript` in `practice-questions.json`): the app answers with the whole chat as a Markdown file to download (or, if it cannot make files, in one code block). When the agent says the chat is done, download the file as `gemini-<chat>-transcript.md` and save the page in Chrome: Ctrl+S, "Webpage, Single File" (.mhtml; "HTML only" saves a page without the chat). Name it `gemini-<chat>.mhtml` (gemini-A.mhtml, …). The page holds the last replies as the app shows them; `claimset-code/claimset-vs-pdf/transcript.py` takes the transcript from the file (or from the page's code block) and checks that it has every message as sent, every turn, and the last replies word for word as displayed. The page also holds the titles of your other chats: it is processed and not committed. Keep the chats in the app until the check has passed. Not PDF export (it clips text at page ends, lab note NT1), and not the app's account export (it can take days and holds every chat of the account).
 
 ## 7. Usage
 
@@ -67,4 +67,4 @@ The plan has an agent paste the messages in your browser while you set up each c
 
 ## 9. Send back
 
-`gemini-log.txt` and the saved pages. From them I will: fix the model names in the plan's table, record the settings, draft the masking rules from the answers, and list anything that needs a decision before collection.
+`gemini-log.txt` and the saved pages with the transcript files. From them I will: fix the model names in the plan's table, record the settings, draft the masking rules from the answers, and list anything that needs a decision before collection.

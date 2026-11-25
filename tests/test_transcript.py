@@ -90,6 +90,14 @@ class TranscriptTest(unittest.TestCase):
         self.assertTrue(r["checks"]["complete"], r["problems"])
         self.assertIn("### Sources", r["turns"][2]["assistant"])
 
+    def test_transcript_from_a_downloaded_file(self):
+        md = self.write(transcript_text().encode(), ".md")
+        r = tr.check(self.write(page(REPLIES[1:], "")), EXPECTED, tail=2, transcript=md)
+        self.assertTrue(all(r["checks"].values()), r["problems"])
+        bad = self.write(transcript_text(replies=REPLIES[:2] + ["Something else entirely."]).encode(), ".md")
+        r = tr.check(self.write(page(REPLIES[1:], "")), EXPECTED, tail=2, transcript=bad)
+        self.assertFalse(r["checks"]["tail"])
+
     def test_no_transcript_fails(self):
         r = self.run_check(page(REPLIES, "print('hello')"))
         self.assertIn("no transcript", r["problems"][0])

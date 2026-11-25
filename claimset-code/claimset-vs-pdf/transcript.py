@@ -1,9 +1,10 @@
 """claimset-vs-pdf: take a chat out of a saved chat page by the transcript the app was asked for, and check it.
 
 Each chat ends with the message TRANSCRIPT_REQUEST below, typed verbatim after the last question. The app answers
-with the whole conversation in one code block. The supervisor saves the page (Chrome: Ctrl+S, "Webpage, Single
-File", .mhtml), which holds the transcript and, as the app displays them, the last few original replies. This
-script finds the transcript in the page and checks it three ways:
+with the whole conversation as a Markdown file to download (transcript.md), or, if it cannot make files, in one code
+block. The supervisor downloads the file and saves the page (Chrome: Ctrl+S, "Webpage, Single File", .mhtml), which
+holds, as the app displays them, the last few original replies (and the code block, if there is no file). This script
+takes the transcript from the file or the page and checks it three ways:
 
     users     every message of the chat, in order, word for word as sent (the expected messages are given);
     complete  the turns numbered 1..N without gaps, one reply per message, the code block closed;
@@ -12,7 +13,7 @@ script finds the transcript in the page and checks it three ways:
               showed. The page holds only the last few replies, so the earlier ones are trusted because the
               messages and the tail match.
 
-    python3 transcript.py check PAGE.mhtml --expected MESSAGES.json [--tail 2] [--out CHAT.json]
+    python3 transcript.py check PAGE.mhtml [--transcript transcript.md] --expected MESSAGES.json [--tail 2] [--out CHAT.json]
     python3 transcript.py expected --questions study/practice/practice-questions.json --chat A -o MESSAGES.json
 
 MESSAGES.json is a list of the chat's messages as sent, the transcript request excluded. CHAT.json gets the turns
@@ -32,14 +33,12 @@ from email import policy
 from html.parser import HTMLParser
 
 TRANSCRIPT_REQUEST = (
-    "Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced "
-    "with four backticks. Copy every message exactly as written, in order: each of my messages under a line "
-    "`### User N` and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, "
-    "with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise "
-    "anything, and add nothing. Write a reference to an attached file as `[file: name]`. Write nothing outside the "
-    "code block.")
-HEADING = re.compile(r"^#{2,4} (User|Assistant) (\d+)\s*$", re.M)
-FILE_REF = re.compile(r"\[file:[^\]]*\]")
+    "Save this whole conversation, up to your previous reply, as a Markdown file I can download, named "
+    "transcript.md. Copy every message exactly as written, in order: each of my messages under a line `### User N` "
+    "and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, with its "
+    "tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, "
+    "and add nothing. Write a reference to an attached file as `[file: name]`. If you cannot make a file, give the "
+    "transcript in one Markdown code block fenced with four backticks instead, and write nothing outside it.")
 
 
 def page_html(path):
@@ -136,10 +135,17 @@ def norm(text):
     return re.sub(r"\s+", " ", FILE_REF.sub(" ", text)).strip()
 
 
-def check(page, expected, tail=2):
+def check(page, expected, tail=2, transcript=None):
+    """Check a chat's transcript: from the downloaded file `transcript` if given, else from the code block in the
+    page; the page is always the source of the displayed replies for the tail check."""
     codes, shown = parse_page(page)
     result = {"page": page, "checks": {}, "problems": [], "turns": []}
-    found = find_transcript(codes)
+    if transcript:
+        with open(transcript, encoding="utf-8") as f:
+            found = f.read()
+        found = found if find_transcript([found]) else None
+    else:
+        found = find_transcript(codes)
     if found is None:
         result["problems"].append("no transcript code block (### User 1 ... ### Assistant 1) in the page")
         return result
@@ -190,6 +196,7 @@ def main(argv=None):
     sub = p.add_subparsers(dest="command", required=True)
     c = sub.add_parser("check")
     c.add_argument("page")
+    c.add_argument("--transcript", help="the transcript file the app made (transcript.md), if it made one")
     c.add_argument("--expected", required=True, help="JSON list of the chat's messages as sent")
     c.add_argument("--tail", type=int, default=2)
     c.add_argument("--out")
@@ -202,7 +209,7 @@ def main(argv=None):
         with open(args.output, "w") as f:
             json.dump(expected_practice(args.questions, args.chat), f, ensure_ascii=False, indent=1)
         return 0
-    result = check(args.page, json.load(open(args.expected)), args.tail)
+    result = check(args.page, json.load(open(args.expected)), args.tail, args.transcript)
     ok = bool(result["checks"]) and all(result["checks"].values()) and not result["problems"]
     result["passed"] = ok
     if args.out:
