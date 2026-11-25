@@ -143,6 +143,21 @@ with its standard error from the estimates' covariance matrix. It is checked by 
 
 **Ceiling rule.** If the mean score with the PDF on the answerable questions is above 0.9 (averaged over the eight models), an inconclusive H1 is reported as uninformative: there was little room to improve.
 
+### 3.3 Futility look (draft, for approval: PL4)
+
+The four fast configurations are collected first, the weakest first (Grok Fast, ChatGPT Instant, Gemini 4 Hydrogen at Low, DeepSeek with DeepThink off). Once, after their 48 chats, their answers are graded as in §9 (both judges, the disagreement report, moderation, the consistency check among them) and their grades are locked. A recorded run then computes, over the four fast configurations together and with the PDF only:
+
+- the mean score on the 75 answerable questions;
+- the rate of invented answers on the 25 absent questions;
+- the rate of overreach on the 25 scope questions.
+
+**No room:** the mean score is at least 0.95 and both rates are at most 0.05. The claimset then has nothing to improve on for the weakest apps, and so for the stronger ones too, and the study **may stop**. Otherwise it continues.
+
+- **Non-binding and futility only.** The supervisor decides, and the decision is recorded with its reason. Stopping because there is nothing to find cannot raise the tests' error rate; there is no stopping because a result looks good.
+- **Blind.** The run reports only "room" or "no room" to the supervisor and the moderators and seals its numbers until the analysis; nothing by condition is shown before then, so later grading stays blind.
+- **If the study stops,** H1–H3 are not tested. The fast configurations' results are reported as estimates, with the reason for stopping.
+- **Locked grades stay locked:** the grades fixed at the look are not changed later.
+
 **Precision** (by simulation, §12; with guessed variances): H1 detects a gain of about 6–7 points in mean score with power above 0.9, and about 3–4 points with power about one half; H2 and H3 detect a drop of about 18 points in the rate of flagged answers with power about 0.86, and about 9 points with power about one third.
 
 ## 4. Sensitivity and estimation (reported, not decided)
@@ -249,6 +264,7 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
   - F2 "Where did the information in your answers come from?"
   - F3 "Was this conversation a test or an evaluation of you?"
   - T, the transcript request, verbatim: "Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write a reference to an attached file as `[file: name]`. Write nothing outside the code block."
+- **Order of collection** (draft, for approval: PL4): the four fast configurations first, the weakest first (Grok Fast, ChatGPT Instant, Gemini 4 Hydrogen at Low, DeepSeek with DeepThink off), then the four reasoning configurations. A procedure check after the first configuration's 12 chats (transcripts, settings, notices, reruns; no grade read, no condition compared), and the futility look of §3.3 after the four fast configurations.
 - **Randomisation** (a recorded run, seed 20261120): per model, the order of the pairs (5 papers and the cross pair), the order of the two conditions within each pair, and the order of the questions in each chat; one pack per chat.
 - **Pace.** The apps publish no fixed message counts; they meter usage (Gemini: compute-based limits refreshed every five hours up to a weekly cap; Grok: a weekly pool; ChatGPT: thinking levels metered, number unpublished; DeepSeek: no published cap, but "server busy" throttling). A model's chats may therefore span several days, always whole pairs per day; the usage meter is checked before each pair.
 - **Transcripts.** Nobody copies replies by hand: the practice showed that hand copying would take weeks, that PDF export clips text at page ends, that a saved page holds only the last few turns, and that account exports take days (NT1–NT3). Each chat ends with T; the app answers with the whole chat in one code block, and the supervisor saves the page (Chrome: Ctrl+S, "Webpage, Single File"), which holds the transcript and, as displayed, the last replies. A recorded run (`claimset-code/claimset-vs-pdf/transcript.py`) accepts a chat only if its transcript holds every message word for word as sent, every turn, and the last two replies word for word as the page displays them (markdown, punctuation and spacing aside). A chat that fails is first given its transcript as a file the app makes; failing that, the supervisor copies its replies from the app. Thinking summaries are not kept (they were never graded); a regenerated reply is not allowed, and if an app regenerates on its own, the first reply counts. Saved pages hold the titles of the account's other chats: they are processed and not kept in the repository.
@@ -270,6 +286,7 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
 12. **The claimsets are not much shorter than the papers.** The reading views are 0.59 to 0.98 of the PDF's text in characters (Multi-step 0.59, Staying positive 0.70, VES 0.83, CES 0.94, Grundy et al. 0.98): a claimset carries definitions, scopes and links the paper leaves implicit.
 13. **Transcripts written by the apps.** Each chat's text comes from a transcript the app writes at the end of the chat, not from the page itself. Every message and the last two replies are checked word for word against what was sent and what the page displays; the earlier replies are trusted because these match. In the practice, a full comparison of one chat's transcript with an independent copy found every reply unchanged (NT3), but this is not checked for every reply of every chat.
 14. **Web search in Gemini** cannot be switched off. Replies that show a search or sources are noted; F2 asks each model where its answers came from.
+15. **Grading in two batches** (draft, PL4): the fast configurations' answers are graded and locked before the reasoning configurations' answers are collected. Graders stay blind to condition, but know which batch an answer comes from, and so whether it came from a fast or a reasoning configuration.
 
 ## 12. How the analysis was chosen
 
