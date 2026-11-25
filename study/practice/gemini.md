@@ -53,9 +53,9 @@ As chat A, in a new chat with the **reasoning** model, attaching `harbour-weight
    Note: were all five files accepted in one message? Any limit on files or size?
 3. The same with the five .txt files (`harbour-weighted-smoothing.claimset.txt`, the four notes' `.txt` files).
 
-## 6. Copying
+## 6. Getting the chats out: transcript and saved page
 
-Not PDF export, which clips text at page ends (lab note NT1). First try Google Takeout (takeout.google.com, "My Activity" with Gemini Apps selected): send its zip, and it is checked whether it holds every reply whole. If it does not, for chat A try the other ways Gemini offers to get a whole chat out as text: the copy button on each reply, selecting the whole page, export to Docs, a share link. Note which keeps **your questions, the answers, tables and formulas** (and the thinking summary, if any) with least effort. Save every chat as text with the way that works best: `gemini-A-pdf-fast.txt`, `gemini-B-claimset-reasoning.txt`, `gemini-memory.txt`, `gemini-cross-pdf.txt`, `gemini-cross-txt.txt`.
+Nobody copies replies by hand, and the agent copies nothing. Every chat ends with the transcript request (T in the agent's prompt, `transcript` in `practice-questions.json`): the app answers with the whole chat in one code block. When the agent says the chat is done, save the page in Chrome: Ctrl+S, "Webpage, Single File" (.mhtml; "HTML only" saves a page without the chat). Name it `gemini-<chat>.mhtml` (gemini-A.mhtml, …). The page holds the transcript and the last replies as the app shows them; `claimset-code/claimset-vs-pdf/transcript.py` takes the transcript out and checks that it has every message as sent, every turn, and the last replies word for word as displayed. The page also holds the titles of your other chats: it is processed and not committed. Keep the chats in the app until the check has passed. Not PDF export (it clips text at page ends, lab note NT1), and not the app's account export (it can take days and holds every chat of the account).
 
 ## 7. Usage
 
@@ -67,4 +67,4 @@ The plan has an agent paste the messages in your browser while you set up each c
 
 ## 9. Send back
 
-`gemini-log.txt` and the saved chats. From them I will: fix the model names in the plan's table, record the settings, draft the masking rules from the answers, and list anything that needs a decision before collection.
+`gemini-log.txt` and the saved pages. From them I will: fix the model names in the plan's table, record the settings, draft the masking rules from the answers, and list anything that needs a decision before collection.
