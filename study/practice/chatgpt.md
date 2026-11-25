@@ -27,7 +27,7 @@ The agent types; you set up each chat when it asks (a new chat, the model, the f
 
 ## 4. Getting the chats out: transcript and saved page
 
-Nobody copies replies by hand, and the agent copies nothing. Every chat ends with the transcript request (T in the agent's prompt, `transcript` in `practice-questions.json`): the app answers with the whole chat as a Markdown file to download (or, if it cannot make files, in one code block). When the agent says the chat is done, download the file as `chatgpt-<chat>-transcript.md` and save the page in Chrome: Ctrl+S, "Webpage, Single File" (.mhtml; "HTML only" saves a page without the chat). Name it `chatgpt-<chat>.mhtml` (chatgpt-A.mhtml, …). The page holds the last replies as the app shows them; `claimset-code/claimset-vs-pdf/transcript.py` takes the transcript from the file (or from the page's code block) and checks that it has every message as sent, every turn, and the last replies word for word as displayed. The page also holds the titles of your other chats: it is processed and not committed. Keep the chats in the app until the check has passed. Not PDF export (it clips text at page ends, lab note NT1), and not the app's account export (it can take days and holds every chat of the account).
+Nobody copies replies by hand, and the agent copies nothing. Every chat ends with the transcript request (T in the agent's prompt, `transcript` in `practice-questions.json`): the app answers with the whole chat in one code block. When the agent says the chat is done, save the page in Chrome: Ctrl+S, "Webpage, Single File" (.mhtml; "HTML only" saves a page without the chat). Name it `chatgpt-<chat>.mhtml` (chatgpt-A.mhtml, …). The page holds the transcript and the last replies as the app shows them, so one save per chat is enough; `claimset-code/claimset-vs-pdf/transcript.py` takes the transcript out of the page's code block and checks that it has every message as sent, every turn, and the last replies word for word as displayed. The page also holds the titles of your other chats: it is processed and not committed. Keep the chats in the app until the check has passed. Not PDF export (it clips text at page ends, lab note NT1), and not the app's account export (it can take days and holds every chat of the account).
 
 ## 5. Limits
 
@@ -35,4 +35,4 @@ Note any message about limits (messages, file uploads, thinking), when it appear
 
 ## 6. Send back
 
-`chatgpt-log.txt`, the agent's log and report, and the saved pages with the transcript files.
+`chatgpt-log.txt`, the agent's log and report, and the saved pages.

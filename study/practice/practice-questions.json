@@ -69,5 +69,5 @@
   }
  ],
  "memory_check": "Do you remember anything from our earlier chats?",
- "transcript": "Save this whole conversation, up to your previous reply, as a Markdown file I can download, named transcript.md. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write a reference to an attached file as `[file: name]`. If you cannot make a file, give the transcript in one Markdown code block fenced with four backticks instead, and write nothing outside it."
+ "transcript": "Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write a reference to an attached file as `[file: name]`. Write nothing outside the code block."
 }
