@@ -25,7 +25,7 @@ Find and note each of these (names change; note what you find):
 ## 3. Chat A: PDF, fast model
 
 1. New chat (temporary if that works with model choice and files), fast model.
-2. Attach `invented-paper.pdf`. In the same first message type, on one line:
+2. Attach `harbour-weighted-smoothing.pdf`. In the same first message type, on one line:
    `I'm reading this paper. What mean MASE did harbour-weighted smoothing reach on the ferry routes, and how did it compare with ETS and the seasonal naive method?`
 3. After each reply has finished, send the next message, verbatim, one at a time:
    - `How many routes and harbours were in the ferry data, and over which years?`
@@ -42,16 +42,16 @@ Find and note each of these (names change; note what you find):
 
 ## 4. Chat B: claimset, reasoning model
 
-As chat A, in a new chat with the **reasoning** model, attaching `invented-paper.claimset.txt` instead of the PDF. Note also whether the .txt upload was accepted as it is, and the thinking level you chose.
+As chat A, in a new chat with the **reasoning** model, attaching `harbour-weighted-smoothing.claimset.txt` instead of the PDF. Note also whether the .txt upload was accepted as it is, and the thinking level you chose.
 
 ## 5. Memory check and cross chats
 
 1. New chat, no file: `Do you remember anything from our earlier chats?` Note the answer.
-2. New chat, any model: attach the five PDFs (`invented-paper.pdf`, `note-a.pdf` … `note-d.pdf`) in one message with:
+2. New chat, any model: attach the five PDFs (`harbour-weighted-smoothing.pdf`, the four notes' `.pdf` files) in one message with:
    `I'm reading these papers. Which of these papers use weekly data, and which use monthly data?`
    then `Which of these papers report a percentage error measure, and what values?`
    Note: were all five files accepted in one message? Any limit on files or size?
-3. The same with the five .txt files (`invented-paper.claimset.txt`, `note-a.txt` … `note-d.txt`).
+3. The same with the five .txt files (`harbour-weighted-smoothing.claimset.txt`, the four notes' `.txt` files).
 
 ## 6. Copying
 
