@@ -1,7 +1,7 @@
 {
  "note": "Practice questions about invented documents. Not data. Each message is pasted verbatim.",
- "opening": "I'm reading this paper.",
- "opening_cross": "I'm reading these papers.",
+ "opening": "I'm reading this paper. Please keep your answers short and to the point.",
+ "opening_cross": "I'm reading these papers. Please keep your answers short and to the point.",
  "per_paper": [
   {
    "id": "P1",

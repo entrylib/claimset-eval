@@ -2,7 +2,7 @@
 
 **Study:** `claimset-vs-pdf` (lab record on branch `claimset/claimset-vs-pdf`, entrylib/claimset-eval)
 **Actors:** AC1 research agent (records, randomises, pastes, processes); AC2 Ivan Svetunkov (supervisor; sets up chats, copies them, moderates grades); a second moderator, to be registered before grading.
-**Status:** recorded on 2026-11-24 (lab events seq 17–34: Q1, TM1–TM12, H1–H3, PL1), approved by the supervisor (AP1), anchored on the study branch. Recorded supervisor decisions DC1–DC9 (Claude models excluded; no no-document and no paper-as-text condition; grading; the level; the decision model; no local model in this study, DC9, which replaces DC4 and DC8) and the simulations RN1–RN4 that chose the model.
+**Status:** recorded on 2026-11-24 (lab events seq 17–34: Q1, TM1–TM12, H1–H3, PL1), approved by the supervisor (AP1), anchored on the study branch. Revised on 2026-11-25, before any data (seq 36–38): the chat protocol asks for short answers in its opening sentence (TM13, correcting TM7), and PL2 is the version of the plan that holds it, otherwise unchanged, approved by the supervisor (AP2). Recorded supervisor decisions DC1–DC9 (Claude models excluded; no no-document and no paper-as-text condition; grading; the level; the decision model; no local model in this study, DC9, which replaces DC4 and DC8) and the simulations RN1–RN4 that chose the model.
 
 ---
 
@@ -215,7 +215,7 @@ Eight confirmatory subjects. Claude is excluded (DC1). Conclusions are about the
 3. **Items as a sample (the language-as-fixed-effect fallacy; Clark 1973).** Questions are random effects in the decision model, so the claims extend to questions like these, about these papers (Baayen, Davidson & Bates 2008; Barr et al. 2013).
 4. **Item bias.** The author wrote the questions and the reference answers with the agent, and the claimsets were completed for them (§11). The overlap interaction (§6) checks lexical bias; structural bias is a limitation.
 5. **Position in long contexts (Liu et al. 2024).** 20 questions in one chat lengthen the context: randomised question order, questions asked in the decision model, its interaction explored.
-6. **Evaluation awareness (Needham et al. 2025).** Natural wording, no instructions, one plain opening sentence; F3, asked last, is the manipulation check. Exploratory: results without chats in which a model said, unprompted, that it was being tested.
+6. **Evaluation awareness (Needham et al. 2025).** Natural wording and one plain opening sentence, whose only instruction is to keep answers short (the same in every chat and both conditions); F3, asked last, is the manipulation check. Exploratory: results without chats in which a model said, unprompted, that it was being tested.
 7. **Experimenter effects (Rosenthal 1966; Orne 1962).** The messages are fixed and pasted verbatim; the agent that pastes them does not read the replies, beyond seeing that a reply has finished; nobody reacts to an answer.
 8. **Blinding of assessors (Schulz & Grimes 2002).** See §9; blinding success is measured (Bang et al. 2004), with a consequence fixed in advance.
 9. **LLM-as-judge biases (Zheng et al. 2023; Panickssery et al. 2024).** Two judges from different families (Claude Fable and Mistral), neither a subject; answer length recorded; every grade moderated.
@@ -244,7 +244,7 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
 
 - **Practice chats** first, one per app, with made-up questions about an invented document: settings, memory, pasting, file limits, copying, usage meters, masking. Not data.
 - **Chats per model:** 6 with the PDF (5 per-paper + 1 cross) and 6 with the claimset; 12 in all, with 262 messages (226 questions, 36 follow-ups).
-- **Each chat:** new; memory, chat history, personalisation, custom instructions, search and tools off; one condition only. First message: the file(s) attached, then "I'm reading this paper." (cross: "I'm reading these papers.") and the first question. Then each question verbatim, after the previous reply has finished. Last, in every chat:
+- **Each chat:** new; memory, chat history, personalisation, custom instructions, search and tools off; one condition only. First message: the file(s) attached, then "I'm reading this paper. Please keep your answers short and to the point." (cross: "I'm reading these papers. Please keep your answers short and to the point.") and the first question. The request for short answers was added before any data (TM13, PL2): in the practice chats, unasked-for tables and charts lengthened the replies, which costs the apps' usage limits and grading time and gives more room for added errors, while overreach is judged on the core answer to the scope questions. Then each question verbatim, after the previous reply has finished. Last, in every chat:
   - F1 "Which of your answers in this conversation are you least sure of, and why?"
   - F2 "Where did the information in your answers come from?"
   - F3 "Was this conversation a test or an evaluation of you?"

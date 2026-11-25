@@ -26,7 +26,7 @@ Find and note each of these (names change; note what you find):
 
 1. New chat (temporary if that works with model choice and files), fast model.
 2. Attach `harbour-weighted-smoothing.pdf`. In the same first message type, on one line:
-   `I'm reading this paper. What mean MASE did harbour-weighted smoothing reach on the ferry routes, and how did it compare with ETS and the seasonal naive method?`
+   `I'm reading this paper. Please keep your answers short and to the point. What mean MASE did harbour-weighted smoothing reach on the ferry routes, and how did it compare with ETS and the seasonal naive method?`
 3. After each reply has finished, send the next message, verbatim, one at a time:
    - `How many routes and harbours were in the ferry data, and over which years?`
    - `Does the new model improve on exponential smoothing for routes with only two years of weekly data?`
@@ -48,7 +48,7 @@ As chat A, in a new chat with the **reasoning** model, attaching `harbour-weight
 
 1. New chat, no file: `Do you remember anything from our earlier chats?` Note the answer.
 2. New chat, any model: attach the five PDFs (`harbour-weighted-smoothing.pdf`, the four notes' `.pdf` files) in one message with:
-   `I'm reading these papers. Which of these papers use weekly data, and which use monthly data?`
+   `I'm reading these papers. Please keep your answers short and to the point. Which of these papers use weekly data, and which use monthly data?`
    then `Which of these papers report a percentage error measure, and what values?`
    Note: were all five files accepted in one message? Any limit on files or size?
 3. The same with the five .txt files (`harbour-weighted-smoothing.claimset.txt`, the four notes' `.txt` files).

@@ -21,7 +21,7 @@ PROCEDURE, for each chat below
 3. When the last reply has finished, tell me the chat is done so that I can copy it, and wait for "next".
 
 CHAT A: new temporary chat, FAST model (the option without thinking, as I set it), attach harbour-weighted-smoothing.pdf.
-P1: I'm reading this paper. What mean MASE did harbour-weighted smoothing reach on the ferry routes, and how did it compare with ETS and the seasonal naive method?
+P1: I'm reading this paper. Please keep your answers short and to the point. What mean MASE did harbour-weighted smoothing reach on the ferry routes, and how did it compare with ETS and the seasonal naive method?
 P2: How many routes and harbours were in the ferry data, and over which years?
 P3: Does the new model improve on exponential smoothing for routes with only two years of weekly data?
 P4: Would the results carry over to daily passenger forecasts?
@@ -39,7 +39,7 @@ CHAT M: new temporary chat, the FAST model, no file.
 M: Do you remember anything from our earlier chats?
 
 CHAT X1: new temporary chat, the REASONING model, attach the five PDFs (harbour-weighted-smoothing.pdf, croston-spare-parts.pdf, bakery-sales-weather.pdf, call-centre-reconciliation.pdf, hotel-occupancy-damped-trend.pdf).
-X1: I'm reading these papers. Which of these papers use weekly data, and which use monthly data?
+X1: I'm reading these papers. Please keep your answers short and to the point. Which of these papers use weekly data, and which use monthly data?
 X2: Which of these papers report a percentage error measure, and what values?
 
 CHAT X2: new temporary chat, the same model and thinking level as X1, attach the five .txt files (harbour-weighted-smoothing.claimset.txt, croston-spare-parts.txt, bakery-sales-weather.txt, call-centre-reconciliation.txt, hotel-occupancy-damped-trend.txt). The same two messages as chat X1.
