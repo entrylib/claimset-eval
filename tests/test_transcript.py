@@ -132,7 +132,8 @@ class TranscriptTest(unittest.TestCase):
 
     def test_every_practice_prompt_ends_its_chats_with_the_request_verbatim(self):
         d = os.path.join(os.path.dirname(__file__), "..", "study", "practice")
-        for name in ("gemini-agent-prompt.md", "chatgpt-agent-prompt.md"):
+        for name in ("gemini-agent-prompt.md", "chatgpt-agent-prompt.md", "grok-agent-prompt.md",
+                     "deepseek-agent-prompt.md"):
             text = open(os.path.join(d, name)).read()
             self.assertIn("T: " + tr.TRANSCRIPT_REQUEST + "\n", text, name)
 

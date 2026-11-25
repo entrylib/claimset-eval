@@ -12,6 +12,6 @@ The files have plain names, as the study's attachments will: in the first Gemini
 - `practice-questions.json`: 8 per-paper questions (2 of each type), 2 cross questions, F1–F3 and the memory check.
 - `gemini.md`: the Gemini practice, step by step.
 - `gemini-agent-prompt.md`: the same practice with an agent (Claude chat on the web with access to the supervisor's browser) typing the messages, as in collection.
-- `chatgpt.md` and `chatgpt-agent-prompt.md`: the same for ChatGPT.
+- `chatgpt.md` and `chatgpt-agent-prompt.md`, `grok.md` and `grok-agent-prompt.md`, `deepseek.md` and `deepseek-agent-prompt.md`: the same for the other apps.
 
 Everything here is invented: the operator, routes, data, results and authors. Only the cited textbooks and articles are real.
