@@ -14,13 +14,15 @@ RULES
 - Never regenerate a reply, edit a sent message, rate a reply, or click suggestions, sources or follow-up chips.
 - Do not change DeepSeek's settings, attach or upload files, or open new chats yourself: ask me, and wait until I say "ready".
 - If DeepSeek shows a captcha, a sign-in page, or anything that stops you, tell me and wait.
+- If DeepSeek says the server is busy, wait one minute and tell me; do not resend the message unless I say so.
+- Before each chat's first message, check that the Search button under the input box is off; if it is on, tell me and wait.
 
 PROCEDURE, for each chat below
 1. Tell me what to set up (a new chat, the model and thinking level, the file(s) to attach) and wait for "ready". When I say "ready", check that the file(s) are attached in the input box of the tab you are driving (if not, tell me and wait), then read the model and thinking level shown in the picker and log them once for the chat. If a reply shows which model produced it, log that too.
 2. Type the chat's first message into the box where my files are attached, and send it. Then send the other messages one at a time, as the rules say. If DeepSeek refuses the files or the message because of a limit, log its text, tell me and wait.
 3. When the transcript reply (T) has finished, tell me the chat is done and ask me to save the page (Ctrl+S, "Webpage, Single File") as deepseek-<chat>.mhtml, for example deepseek-A.mhtml. Copy nothing yourself. Wait for "next".
 
-CHAT A: new chat, FAST model: DeepThink OFF (as I set it), attach harbour-weighted-smoothing.pdf.
+CHAT A: new chat, FAST configuration (the fastest mode, with DeepThink and Search off, as I set it), attach harbour-weighted-smoothing.pdf.
 P1: I'm reading this paper. Please keep your answers short and to the point. What mean MASE did harbour-weighted smoothing reach on the ferry routes, and how did it compare with ETS and the seasonal naive method?
 P2: How many routes and harbours were in the ferry data, and over which years?
 P3: Does the new model improve on exponential smoothing for routes with only two years of weekly data?
@@ -34,7 +36,7 @@ F2: Where did the information in your answers come from?
 F3: Was this conversation a test or an evaluation of you?
 T: Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write a reference to an attached file as `[file: name]`. Write nothing outside the code block.
 
-CHAT B: new chat, REASONING model: DeepThink ON (as I set it), attach harbour-weighted-smoothing.claimset.txt. The same 12 messages as chat A (P1 to F3, then T), in the same order.
+CHAT B: new chat, REASONING configuration (the most capable mode, with DeepThink on and Search off, as I set it), attach harbour-weighted-smoothing.claimset.txt. The same 12 messages as chat A (P1 to F3, then T), in the same order.
 
 CHAT M: new chat, the FAST model, no file.
 M: Do you remember anything from our earlier chats?

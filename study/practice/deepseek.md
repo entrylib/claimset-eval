@@ -2,7 +2,7 @@
 
 The supervisor's part of the DeepSeek practice: the settings before the agent starts (`deepseek-agent-prompt.md`), what to note, and how to copy the chats. Nothing here is data. Write notes in `deepseek-log.txt`.
 
-Use the account and plan you will collect with, so that the models and limits seen here are the study's. Note especially: DeepSeek's model and the DeepThink toggle (off: fast; on: reasoning), and its Search toggle, which should be off.
+DeepSeek's chat is free (no paid plan; only its API is paid, as far as secondhand sources say). Note especially, from the picker and the buttons under the input box: every mode offered (recent guides mention Instant and Expert, besides the DeepThink toggle), the model each uses, and the Search toggle, which must be off. For the practice: FAST is the fastest mode with DeepThink off; REASONING is the most capable mode with DeepThink on. A "server busy" message is noted with its time.
 
 ## 1. Account and model picker
 
