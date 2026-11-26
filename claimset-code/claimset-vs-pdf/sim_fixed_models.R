@@ -1,10 +1,10 @@
 # Models fixed, questions random: level and power of the test of the claimset effect averaged over the
 # models. Design: 2 x P models (P providers x fast/reasoning; P = 4 by default, 3 after DeepSeek was dropped), 2 conditions; flags on 25 questions,
 # score (two binomial points) on 75. The effect varies by provider (SD 0.4), model (0.3) and question (0.7).
-# Null: the effect averaged over these 8 models is 0 (model effects centred in the sample); question
+# Null: the effect averaged over these models is 0 (model effects centred in the sample); question
 # effects are drawn with mean 0 (other questions are part of the target).
 # Model: glmer, logit, y ~ condition x model + (1 + condition | question); the tested quantity is the
-# mean of the eight model effects, by Wald z and by t on (questions - 1) degrees of freedom.
+# mean of the model effects, by Wald z and by t on (questions - 1) degrees of freedom.
 suppressMessages({library(lme4); library(parallel); library(jsonlite)})
 args <- commandArgs(TRUE); reps0 <- if (length(args) > 0) as.integer(args[1]) else 1000
 reps1 <- if (length(args) > 1) as.integer(args[2]) else 300
