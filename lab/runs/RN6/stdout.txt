@@ -1,0 +1,30 @@
+  0.0320  rejection rate under no effect, one-sided | flag | 25 | 6 | 0 | 1000 | Wald z | 0.0167
+  0.0290  rejection rate under no effect, one-sided | flag | 25 | 6 | 0 | 1000 | t | 0.0167
+ -0.0101  mean raw difference, claimset minus PDF | flag | 25 | 6 | 0 | 1000
+  0.0110  share of singular fits | flag | 25 | 6 | 0 | 1000
+  0.0000  share of failed fits | flag | 25 | 6 | 0 | 1000
+  0.3267  power, one-sided | flag | 25 | 6 | -0.5 | 300 | Wald z | 0.0167
+  0.2633  power, one-sided | flag | 25 | 6 | -0.5 | 300 | t | 0.0167
+ -0.0954  mean raw difference, claimset minus PDF | flag | 25 | 6 | -0.5 | 300
+  0.0067  share of singular fits | flag | 25 | 6 | -0.5 | 300
+  0.0000  share of failed fits | flag | 25 | 6 | -0.5 | 300
+  0.8700  power, one-sided | flag | 25 | 6 | -1 | 300 | Wald z | 0.0167
+  0.8400  power, one-sided | flag | 25 | 6 | -1 | 300 | t | 0.0167
+ -0.1819  mean raw difference, claimset minus PDF | flag | 25 | 6 | -1 | 300
+  0.0167  share of singular fits | flag | 25 | 6 | -1 | 300
+  0.0000  share of failed fits | flag | 25 | 6 | -1 | 300
+  0.0200  rejection rate under no effect, one-sided | score | 75 | 6 | 0 | 1000 | Wald z | 0.0167
+  0.0180  rejection rate under no effect, one-sided | score | 75 | 6 | 0 | 1000 | t | 0.0167
+ -0.0100  mean raw difference, claimset minus PDF | score | 75 | 6 | 0 | 1000
+  0.0040  share of singular fits | score | 75 | 6 | 0 | 1000
+  0.0000  share of failed fits | score | 75 | 6 | 0 | 1000
+  0.4467  power, one-sided | score | 75 | 6 | 0.3 | 300 | Wald z | 0.0167
+  0.4400  power, one-sided | score | 75 | 6 | 0.3 | 300 | t | 0.0167
+  0.0374  mean raw difference, claimset minus PDF | score | 75 | 6 | 0.3 | 300
+  0.0033  share of singular fits | score | 75 | 6 | 0.3 | 300
+  0.0000  share of failed fits | score | 75 | 6 | 0.3 | 300
+  0.8433  power, one-sided | score | 75 | 6 | 0.5 | 300 | Wald z | 0.0167
+  0.8400  power, one-sided | score | 75 | 6 | 0.5 | 300 | t | 0.0167
+  0.0672  mean raw difference, claimset minus PDF | score | 75 | 6 | 0.5 | 300
+  0.0067  share of singular fits | score | 75 | 6 | 0.5 | 300
+  0.0000  share of failed fits | score | 75 | 6 | 0.5 | 300
