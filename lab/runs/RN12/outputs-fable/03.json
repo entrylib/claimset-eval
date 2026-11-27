@@ -1,0 +1,12 @@
+{
+ "attempts": [
+  {
+   "exit": 0,
+   "models": [
+    "claude-fable-5-2"
+   ],
+   "error": false,
+   "seconds": 43.6
+  }
+ ]
+}

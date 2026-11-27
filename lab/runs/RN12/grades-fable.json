@@ -1,0 +1,1402 @@
+{
+ "DADTJD": {
+  "question": "doi-10-1093-imaman-dpad028#Q18",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper reports no computation times or runtime comparison, which is what the marking guide requires on this absent question."
+ },
+ "PMNHKH": {
+  "question": "doi-10-1093-imaman-dpad028#Q18",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report a timing comparison and gives no figure as the authors'."
+ },
+ "9EUVMX": {
+  "question": "doi-10-1111-jtsa-12843#Q6",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the required formula Δ_μ,m = δ_μ,m(1 − φ)."
+ },
+ "7EEAJ7": {
+  "question": "doi-10-1111-jtsa-12843#Q6",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Derives the AR(1) case from the general ARMA formula and reaches Δ_μ,m = δ_μ,m(1 − φ), with φ the autoregressive coefficient, which the guide accepts."
+ },
+ "JEN34A": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q15",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Covers climatologists' expectation of a positive AR(1) parameter, the similarity to earlier climate studies and the negative MSE_h estimate; the added note that conventional MSE gives 0.558 is also correct."
+ },
+ "TATFRJ": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q15",
+  "score": 0.5,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the similarity to published climate estimates and the contrast with MSE_h's −0.786, but omits the required point that climatologists expect the AR(1) parameter to be positive."
+ },
+ "MEAJFK": {
+  "question": "doi-10-1093-imaman-dpad028#Q2",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives ETS(M,Md,N), Inverse Gaussian errors, known true parameters and the varied factors σ, α, β, φ and h, with a grid matching the reference."
+ },
+ "PE7DYU": {
+  "question": "doi-10-1093-imaman-dpad028#Q2",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives ETS(M,Md,N) as generating and applied model, Inverse Gaussian errors, known parameters and the varied factors, with correct grid values."
+ },
+ "WYQNY4": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q11",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says they help only for highly homogeneous series with very similar seasonal shapes and harm accuracy and pinball values on data with individual seasonal components, and notes PIC(*,S,N) does about as well on common-seasonality data."
+ },
+ "9KVXW7": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q11",
+  "score": 0.5,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Has both required points, but adds that PIC(*,S,S) variants are 'the most accurate' on common-seasonality data, whereas the reference says they are no better than PIC(*,S,N) there."
+ },
+ "JTAN9N": {
+  "question": "doi-10-1111-jtsa-12843#Q11",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Correctly answers no and gives the 0.075 bound and the variance-change result, but says the mean/trend false detection probability is above 0.05, when the paper only describes it as low; that unstated claim sets the invented flag."
+ },
+ "HQD4JX": {
+  "question": "doi-10-1111-jtsa-12843#Q11",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Answers no, and reports the below-0.075 bound for the autoregressive scenarios and 'low' elsewhere, matching the reference."
+ },
+ "EV9XXE": {
+  "question": "doi-10-1002-nav-22074#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not give MASE and RMSSE for the hourly series, as required on this absent question."
+ },
+ "MCVENP": {
+  "question": "doi-10-1002-nav-22074#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no per-frequency results are given and offers no figures as the authors'."
+ },
+ "FRFFJE": {
+  "question": "doi-10-1111-jtsa-12843#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the forecasting model is not identified because only the forecast errors were available to the authors."
+ },
+ "99THTN": {
+  "question": "doi-10-1111-jtsa-12843#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not state the forecasting model Royal Mail used."
+ },
+ "XA4NF4": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q8",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Answers no because the persistence vector is zero in a static regression; the caveat about regressions with dynamic errors is accepted by the guide."
+ },
+ "JKDUTY": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q8",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Answers no because a regression has no dynamic elements (zero persistence vector), so no shrinkage is imposed on its coefficients."
+ },
+ "MFKKVY": {
+  "question": "doi-10-1093-imaman-dpad028#Q13",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the non-convex likelihood and possible inconsistency of the estimates, plus the two roots and the ≤ 1 condition for the closed-form scale estimate."
+ },
+ "NJW4VF": {
+  "question": "doi-10-1093-imaman-dpad028#Q13",
+  "score": 0.5,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the non-convex likelihood under μ = −σ²/2 and the corrected scale formula, but gives local optima as the consequence and omits that the estimates may be inconsistent."
+ },
+ "KHYXAR": {
+  "question": "doi-10-1002-nav-22074#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report typical or median values across the M3 series, and gives the two individual-series estimates only as examples."
+ },
+ "EJPJNQ": {
+  "question": "doi-10-1002-nav-22074#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no typical or median values across the M3 series are given, and presents the two individual-series values as just that."
+ },
+ "KFQRP9": {
+  "question": "doi-10-1111-jtsa-12843#Q18",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper gives no specific count of hospitals."
+ },
+ "A4AU97": {
+  "question": "doi-10-1111-jtsa-12843#Q18",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper gives no hospital count."
+ },
+ "JQWHM4": {
+  "question": "doi-10-1093-imaman-dpad028#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not test intermittent demand data, and gives no accuracy result for it as the paper's; the extra detail concerns the non-intermittent experiments."
+ },
+ "NNR3ME": {
+  "question": "doi-10-1093-imaman-dpad028#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper reports no experiments on intermittent demand, and correctly attributes the nearby statement to Svetunkov and Boylan (2023) as other work."
+ },
+ "J3C9QW": {
+  "question": "doi-10-1111-jtsa-12843#Q15",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the listed limitations: the peak start is inferred from the rise in mean and variance of the forecast errors, and the underlying volumes and forecasts are unknown to the authors."
+ },
+ "4CMCHW": {
+  "question": "doi-10-1111-jtsa-12843#Q15",
+  "score": 0,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper states no limitations for this evidence, which the marking guide names as wrong."
+ },
+ "CMNEAA": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q9",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no under correct specification (covariances cancel, estimates similar to the one-step estimator) and that estimates may differ under misspecification. The parenthetical 'always' is loose but sits inside the correct-specification condition."
+ },
+ "AHHE9T": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q9",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no under correct specification with estimates similar to MSE_1, that they differ under misspecification, and adds the small-sample caveat the guide lists as also correct."
+ },
+ "TUJEP7": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q6",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Covers all required points: stepwise shrinkage, no shrinkage of gamma while h ≤ m, alpha faster on short horizons, gamma faster once h > 2m, and a deterministic model as h → ∞."
+ },
+ "P49MN3": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q6",
+  "score": 0.5,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the stepwise shrinkage, the h > m and h > 2m points, and the accepted caveat on the coefficients, but omits that the model becomes deterministic as h → ∞."
+ },
+ "YDDPEC": {
+  "question": "doi-10-1002-nav-22074#Q12",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the SCUM against SCUM(noCES) comparison on both datasets, the Nemenyi result, and the mean MSIS exception (2.333 against 2.223)."
+ },
+ "KDVNWH": {
+  "question": "doi-10-1002-nav-22074#Q12",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the comparison on both datasets, the Nemenyi result, and the mean MSIS exception with the correct values; it does not mention MSIS on M4, but states nothing wrong."
+ },
+ "XW9Y3W": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q2",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correct model and data, and shows the conventional MSE with the highest RMSE and MAE and the largest bias in ME, so it performed poorly on all three measures."
+ },
+ "AD7KEF": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q2",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correct model and data, and says the conventional MSE did worst of the six estimators on RMSE, MAE and ME, with GPL close to it."
+ },
+ "PW4KUY": {
+  "question": "doi-10-1093-imaman-dpad028#Q10",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no: the restriction is derived only for ETS(M,N,N), and similar restrictions are stated for more complex models without derivation."
+ },
+ "UYNHPJ": {
+  "question": "doi-10-1093-imaman-dpad028#Q10",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Correct that the derivation is only for ETS(M,N,N) from positivity of 1 + αε_t, but it presents as the paper's a quoted 'by analogy... without a derivation' wording and an 'explicitly marked unchecked' status that the reference does not support."
+ },
+ "443JPW": {
+  "question": "doi-10-1111-jtsa-12843#Q16",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper reports no such simulation result, and correctly treats the 24-month figure as coming from the admissions application."
+ },
+ "7EEADH": {
+  "question": "doi-10-1111-jtsa-12843#Q16",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report it and that no model-based sequential method is in the simulation study."
+ },
+ "9VUF4E": {
+  "question": "doi-10-1111-jtsa-12843#Q1",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the 300-observation training sample, theoretical thresholds with false alarm rate 0.05 and 1,000 repetitions; the extra details (packages, γ = 0, Bartlett estimator) match the reference."
+ },
+ "V4NC7K": {
+  "question": "doi-10-1111-jtsa-12843#Q1",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "All three required elements are present (300 training observations, theoretical thresholds at 0.05, 1,000 repetitions), and the added details agree with the reference."
+ },
+ "TF49DW": {
+  "question": "doi-10-1093-imaman-dpad028#Q12",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "The derivation via Jensen's inequality and both examples are correct, and two limitations are acceptable. The third limitation (a single series with horizons of only 1-18) is presented as the authors' but is not in the acceptable list."
+ },
+ "NERKWJ": {
+  "question": "doi-10-1093-imaman-dpad028#Q12",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "Both examples are given, but the derivation is only vaguely stated, with no ordering of the three quantities or Jensen's inequality. Two limitations (bias mechanism rather than accuracy; not a general proof) are presented as the authors' but are not in the acceptable list."
+ },
+ "7QVVXK": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q14",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "States that the covariances depend on the c_j coefficients, vanish only when all c_j = 0 (a deterministic model), and that assuming zero covariance is therefore unrealistic."
+ },
+ "MFQWJU": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q14",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the accepted covariance formula and that it is zero only if every c_j = 0, contradicting the zero-correlation assumption of Martinez (2017). It does not use the word 'deterministic', but the substance is there."
+ },
+ "D9E9XQ": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q12",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "Analytical and simulation support are correct, and the MSE_1 and wrong-ARIMA(1,1,1) limitations are acceptable. The temperature-data limitation is not in the acceptable list, and the simulation result is stated as holding across all models, horizons and sample sizes."
+ },
+ "JXTADV": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q12",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "Gives the simulation support but omits the analytical argument that the logarithms make GTMSE's shrinkage milder. Several limitations are acceptable, but 'only holds where T > h' is presented as the authors' and is not in the acceptable list."
+ },
+ "EP7M9J": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q5",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Correctly states that both parameters tend to -1 and the model degenerates into ARIMA(1,0,0). It then calls the resulting model deterministic and non-stochastic, which the reference does not support and which contradicts the equation it gives, (1+B)y_t = e_t."
+ },
+ "AM3AKR": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q5",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the authors' statement (both parameters tend to -1, degenerating into ARIMA(1,0,0)) and adds the note about the minimum at φ = 0, θ = -1, which the marking guide accepts as also correct."
+ },
+ "C34FWE": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q15",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Recommends the diagonal matrix (VETS D) and gives the estimability reason (n rather than n(n+1)/2 terms, important on short histories), plus M5 results consistent with the reference."
+ },
+ "37JU7D": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q15",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "The recommendation, the estimability reason and the M5 support are correct. It adds as the paper's a 'more robust / simulation findings carry over / avoids overfitting' reason and a pinball 'exception' for VETS D, neither of which the reference supports."
+ },
+ "9NP7WP": {
+  "question": "doi-10-1093-imaman-dpad028#Q5",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "States that E(1 + ϵt) = 1 and gives all three restrictions correctly, with a reason consistent with the reference."
+ },
+ "DAVXNP": {
+  "question": "doi-10-1093-imaman-dpad028#Q5",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "The unit-mean requirement and all three restrictions are correct. Its closing remark on why the restriction matters differs from the reference's reason, but the reason is not required."
+ },
+ "WFMYVK": {
+  "question": "doi-10-1002-nav-22074#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says the paper does not report coverage rates, only MSIS."
+ },
+ "A7DXRR": {
+  "question": "doi-10-1002-nav-22074#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says the percentage is not reported, and treats the single-series example and MSIS as not being coverage rates."
+ },
+ "P9N39J": {
+  "question": "doi-10-1002-nav-22074#Q7",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, with ETS(A,Ad,N) better on every measure except median RMSSE; all values match the reference."
+ },
+ "WMRVHJ": {
+  "question": "doi-10-1002-nav-22074#Q7",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, with the damped trend model better on the mean error measures and CES second best on most measures, consistent with the reference."
+ },
+ "FWPKQT": {
+  "question": "doi-10-1002-nav-22074#Q1",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives CES mean 1.959 and median 1.170, the lowest of the four methods, with comparison values matching the reference."
+ },
+ "CYTWPF": {
+  "question": "doi-10-1002-nav-22074#Q1",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the correct CES values and comparison values, and states that CES is lowest of the four on both mean and median."
+ },
+ "DEDWNQ": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q14",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "Gives the required evidence (VETS D lowest geometric mean and median rMAE on both long and short histories) and three acceptable limitations. It also presents as the authors' two limitations not in the list (no direct with/without-restrictions comparison on M5; untested robustness of the simulation findings), which the guide marks wrong and overreach."
+ },
+ "VTCKAW": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q14",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "Evidence essentially matches (VETS D best on long and short histories) and the correct-grouping limitation is acceptable. It also presents as the authors' four limitations not in the list (pinball trade-off, VETS F estimation difficulties, small non-seasonal sample, aggregation choice), which the guide marks wrong and overreach."
+ },
+ "FQRQRM": {
+  "question": "doi-10-1111-jtsa-12843#Q10",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "States that results are shown only for one-step-ahead errors, that the framework is said to be general for h steps ahead, and that multiple horizons are future work."
+ },
+ "THYHJE": {
+  "question": "doi-10-1111-jtsa-12843#Q10",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, the results are derived for one-step-ahead errors, and combining several horizons is left as future work; this covers the required content."
+ },
+ "QU4CVT": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q5",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the model (VETS(A,N,A) exponentiated to VETS(M,N,M;LN)), quarterly data, 24 or 64 observations and group sizes 2 to 50, plus correct optional details matching the reference."
+ },
+ "V9CYUR": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q5",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "All required elements are correct (model, quarterly, 24/64 observations, group sizes), and the extra details agree with the reference or are correct transformations of it."
+ },
+ "3U39R4": {
+  "question": "doi-10-1111-jtsa-12843#Q8",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, the assumptions are not necessarily satisfied in all scenarios, and performance is still satisfactory, matching the reference."
+ },
+ "MT3MEJ": {
+  "question": "doi-10-1111-jtsa-12843#Q8",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, the two assumptions are not necessarily satisfied in all simulated scenarios, so the thresholds are not guaranteed valid everywhere; consistent with the guide."
+ },
+ "3D4QUQ": {
+  "question": "doi-10-1093-imaman-dpad028#Q16",
+  "score": 1,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Correctly says the paper does not name the test. Invented is set because it attributes to the paper an explicit quoted statement ('the test is not named in the paper') that the paper would not contain."
+ },
+ "CY3PDN": {
+  "question": "doi-10-1093-imaman-dpad028#Q16",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says no specific test is named, citing only the nearby non-significance statement."
+ },
+ "9EAF9M": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "All five coverage values are correct, with ETS models below 95%, VETS D closest and VETS F too wide."
+ },
+ "773JJC": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "All five coverage values are correct and the nominal 0.95 is stated, which shows the three ETS models below it; VETS F over-covers and VETS D is closest."
+ },
+ "NHHRX4": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper reports no daily M5 results, only monthly aggregates; the monthly figures are offered as context, not as an answer for daily data."
+ },
+ "QRTWK7": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the analysis is monthly only and the daily rMAE for VETS D is not reported."
+ },
+ "UKK7MA": {
+  "question": "doi-10-1111-jtsa-12843#Q7",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says not reliably: forecast errors return to zero after a mean change so nothing persists unless α = 0, and variance changes remain detectable through squared errors."
+ },
+ "PD7QDV": {
+  "question": "doi-10-1111-jtsa-12843#Q7",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, gives the accepted formula δ_μ,m(1−α)^(s−1) decaying to zero, the failure of the incomplete-adjustment assumption, and that variance changes remain detectable."
+ },
+ "XN7VQV": {
+  "question": "doi-10-1093-imaman-dpad028#Q9",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "The 'No' is right, but the supporting example is wrong: on the Inverse Gaussian data the AICc-selected model is the lowest, and the real exceptions (Normal and Gamma data) are not given. Invented is set for the false claim about the fixed Gamma model."
+ },
+ "R4X33W": {
+  "question": "doi-10-1093-imaman-dpad028#Q9",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "The 'No' and the Normal-data exception (5.255 against 5.258) are right, but it wrongly says the AICc-selected model is best on the Gamma data, where the Normal model is lower (5.193 against 5.208). Invented is set for that false claim."
+ },
+ "VAKFPK": {
+  "question": "doi-10-1111-jtsa-12843#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper reports no cost savings or monetary figures."
+ },
+ "PECYNV": {
+  "question": "doi-10-1111-jtsa-12843#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper gives no staffing-cost figures or cost analysis."
+ },
+ "WJPQKT": {
+  "question": "doi-10-1002-nav-22074#Q6",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives ARMA(2,2) and all four required coefficients correctly under different names. The added remark on the parameter space is not contradicted by the reference or marking guide."
+ },
+ "4ADJR4": {
+  "question": "doi-10-1002-nav-22074#Q6",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives ARMA(2,2) and all four required coefficients correctly; the second-equation coefficients match the accepted values."
+ },
+ "KF9YH7": {
+  "question": "doi-10-1093-imaman-dpad028#Q14",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Gives the closed-form scale MLE and the Folks and Chhikara point correctly. It also presents as the authors' reasons flexible skewness/kurtosis and a relation to the Normal case, which are not among the reasons in the reference or marking guide."
+ },
+ "DYVUMK": {
+  "question": "doi-10-1093-imaman-dpad028#Q14",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives all the convenience properties, the contrasts with Log-Normal and Gamma, the Folks and Chhikara support, and that the support is an argument rather than an empirical result."
+ },
+ "WQHK4A": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q13",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives both required pieces of evidence (rMAE close to the correct method on every DGP; chosen most often on M5, 6 of 11 groups). All the limitations it lists are in the accepted list, and it does not make the wrong pinball claim."
+ },
+ "TTA4CC": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q13",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "Required evidence is present and several limitations are accepted ones. It also presents as the authors' limitations not in the accepted list (correlated errors tested only in a small side experiment; higher-frequency data untested and flagged as future work), which the marking guide marks as wrong and as overreach."
+ },
+ "T7QNWD": {
+  "question": "doi-10-1002-nav-22074#Q8",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says not always: in Nemenyi tests at the 5% level CES has the best rank on RMSSE and MASE but the differences are not all significant. The SCUM remark is consistent with the reference."
+ },
+ "QTEURC": {
+  "question": "doi-10-1002-nav-22074#Q8",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says not all differences are significant in Nemenyi tests at the 5% level, with CES having the best mean rank on RMSSE and MASE."
+ },
+ "NRFKMH": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q9",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no significant differences between VETS and ETS on the same history length, with detail consistent with the reference."
+ },
+ "393XNM": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q9",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Answers no, the differences between the models are not statistically significant, which covers the same-history comparisons asked about, though with little detail."
+ },
+ "RJMUKF": {
+  "question": "doi-10-1093-imaman-dpad028#Q7",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no: performance is similar in the tails and Akram's advantage is in the middle quantiles. The remark on practical importance matches a point the marking guide lists as not required."
+ },
+ "WWPYPW": {
+  "question": "doi-10-1093-imaman-dpad028#Q7",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no: the advantage is in the central quantiles (0.2 to 0.8) and tail performance is similar. The precision figures it adds are not contradicted by the reference or marking guide."
+ },
+ "VQUPCT": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not use a separate model per horizon, so what is asked is not reported. The results it gives are explicitly for a different, single-model estimator."
+ },
+ "7K33YM": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says explicitly that the paper did not use the direct estimator with a separate model per horizon on this data. The results it gives are clearly labelled as those of the single MSE_h model."
+ },
+ "DNN3P3": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q16",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not state the significance level of the MCB test."
+ },
+ "WM4TU3": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q16",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not state the significance level. The surrounding detail does not supply a level."
+ },
+ "MMP77A": {
+  "question": "doi-10-1093-imaman-dpad028#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report the smoothing parameters. The nearby context it gives is not offered as an answer."
+ },
+ "4RXD94": {
+  "question": "doi-10-1093-imaman-dpad028#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the estimated smoothing parameters are not given in the paper."
+ },
+ "EFJQR9": {
+  "question": "doi-10-1002-nav-22074#Q5",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives α1 = 1 and that α0 − 1 corresponds to the SES smoothing parameter, with the correct stationary and random-walk cases."
+ },
+ "WQXDJT": {
+  "question": "doi-10-1002-nav-22074#Q5",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives α1 = 1 and that α0 − 1 corresponds to the SES α, with the 1.24 and 0.24 example."
+ },
+ "P79Y3D": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q13",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Gives the required analytical argument: minimising the multi-step loss pushes ĉ_j² towards zero, more strongly for larger h and less so as T grows. It then adds that the paper marks verification as 'unchecked', which the reference does not support and which conflicts with the simulation support it describes, so it is treated as an added error and as invented."
+ },
+ "7JXEKT": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q13",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the analytical argument that minimising the h-step variance term forces ĉ_j towards zero, more strongly with larger h and more weakly with larger T. The simulation points match the reference; the extra empirical detail cannot be checked against the reference and was not counted against it."
+ },
+ "XPAY37": {
+  "question": "doi-10-1111-jtsa-12843#Q13",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "States that the Raw CUSUM ignores seasonality, so the Phase I variance estimate is too large and changes are harder to detect, as required. The added detail is consistent with the reference."
+ },
+ "77A4QY": {
+  "question": "doi-10-1111-jtsa-12843#Q13",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Covers all required elements: seasonality not accounted for, variance overestimated in Phase I, and changes therefore harder to detect."
+ },
+ "H9MTDC": {
+  "question": "doi-10-1111-jtsa-12843#Q14",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Names the constant pre-change forecast bias and cites the second assumption for the mean-change case (its label was redacted). Gives the correct change sizes and the Assumptions C–E conditions for the limiting theory."
+ },
+ "DX9VC3": {
+  "question": "doi-10-1111-jtsa-12843#Q14",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Names both forecasting-model assumptions (constant bias, incomplete adjustment) and gives the correct change sizes for the variance-only and mean-plus-variance cases. The misspecification caveat is in line with the guide's accepted additions."
+ },
+ "33CRFD": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q1",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives both DGPs with their parameters, all seven sample sizes and all five horizons. The further details match the reference."
+ },
+ "CYJEYW": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q1",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives both DGPs with their parameters, the sample sizes and the horizons. The fitted models, estimators and software match the reference."
+ },
+ "R4TNR4": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q18",
+  "score": 1,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Correctly says no multiplicative ETS models were simulated. It attributes to the paper a quoted remark ('only partially explored and is not analytically established') that does not match the authors' remark given in the guide, so it is flagged as invented."
+ },
+ "W9A3EJ": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q18",
+  "score": 1,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Correctly says no multiplicative models were simulated and cites the authors' remark about extension to some multiplicative cases. It lists ETS(A,Ad,N), ETS(A,N,A) and ETS(A,A,A) as simulated models, which the reference's simulation design does not include, so it is flagged as invented."
+ },
+ "AJPQPX": {
+  "question": "doi-10-1111-jtsa-12843#Q2",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives 2 December 2020 and both detectors, with the correct training period and monitoring start."
+ },
+ "3VHT79": {
+  "question": "doi-10-1111-jtsa-12843#Q2",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives 2 December 2020 and both the mean and squared-error detectors, with the correct July–October training sample and monitoring from 1 November."
+ },
+ "CRP9TD": {
+  "question": "doi-10-1111-jtsa-12843#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper reports only γ = 0 and does not say which value gives the shortest delays."
+ },
+ "HEWUPM": {
+  "question": "doi-10-1111-jtsa-12843#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report this and that only γ = 0 was used."
+ },
+ "F333HA": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q10",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no: MSE_h is less efficient in general but can be more efficient where the true parameters make c_j close to zero. 'Shows analytically' is a little stronger than the authors' argued claim, but not enough to flag."
+ },
+ "3CPUNA": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q10",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no: MSE_1 is generally more efficient, with exceptions where c_j is near zero and for a zero-valued parameter on small samples. Noting that the efficiency argument is disputed is accepted by the guide."
+ },
+ "E3Q7MY": {
+  "question": "doi-10-1111-jtsa-12843#Q5",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the ETS(A,A,N) model and the signal 7 time points after the change."
+ },
+ "V4337D": {
+  "question": "doi-10-1111-jtsa-12843#Q5",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the ETS(A,A,N) model and the 7-time-point delay, with correct detail on the trend and the change at time point 400."
+ },
+ "MKDPEH": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q18",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report the estimated smoothing parameter values for the M5 data and does not offer the simulation settings as an answer."
+ },
+ "HRD7W7": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q18",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report the estimated smoothing parameter values for the M5 groups."
+ },
+ "KPHCNP": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q1",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the monthly, department-store aggregation with 63 observations, the long split (51 estimation, last 12 held out) and the short split (last 36, 24 estimation, same 12 held out). Extra detail does not contradict the marking guide."
+ },
+ "HW4EVP": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q1",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "All required elements are correct: monthly department-store aggregation, 63 observations, 51/12 for long histories and last 36 split 24/12 for short. The grouping details are consistent with the reference."
+ },
+ "TYEPQK": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correct definition (sum over horizons of the logs of in-sample mean squared j-step errors) and correct derivation from the Generalised Variance of the GPL with off-diagonal covariances set to zero, so the determinant is the product of variances."
+ },
+ "EPYVVD": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correct definition and derivation: GPL covariance determinant with a diagonal restriction (off-diagonal covariances set to zero), giving the sum of log variances."
+ },
+ "AU9RTP": {
+  "question": "doi-10-1002-nav-22074#Q13",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "The support is given only loosely (no eigenvalue or α1 > 1 condition, and 'appropriate parameters' rather than a stationary and a non-stationary estimate). It also presents limitations as stated by the paper, whereas the authors state none, so both flags are set."
+ },
+ "FFCHFD": {
+  "question": "doi-10-1002-nav-22074#Q13",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "The support is right: stationarity depends on the complex parameter with no switch, and the two M3 examples have stationary and non-stationary estimates. But it lists several limitations as stated by the paper, whereas the authors state none, which the marking guide marks as wrong and as overreach."
+ },
+ "PKCQ3H": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q6",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Reads P = LTSD, I = LTS and C = S correctly, with level and trend individual, and describes the base model correctly."
+ },
+ "4FNUET": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q6",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Reads P, I and C correctly: common smoothing and damping parameters, common initial values, and only the seasonal component common with level and trend individual."
+ },
+ "XMNKWQ": {
+  "question": "doi-10-1002-nav-22074#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Identifies the M1 series on which CES failed to identify the trend, with MSIS 523.034 for CES against 25.590 for ETS."
+ },
+ "7PW7AV": {
+  "question": "doi-10-1002-nav-22074#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Identifies M1 series 47 and gives both MSIS values correctly. It describes the failure as missing the holdout surge rather than failing to identify the trend, which is consistent with the reference."
+ },
+ "3Q7MD3": {
+  "question": "doi-10-1002-nav-22074#Q3",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the correct parameter 0.99999 + 0.99884i and the conclusion that CES identified the series as stationary."
+ },
+ "FMDWY3": {
+  "question": "doi-10-1002-nav-22074#Q3",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the correct parameter and says it lies in the stationary region, in agreement with the graphical analysis and the ADF and KPSS tests. The remark about closeness to ETS(A,N,N) does not contradict the reference."
+ },
+ "HPRWKR": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says the paper does not report WRMSSE."
+ },
+ "YHNVJ7": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says the paper does not report WRMSSE."
+ },
+ "NJQANY": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q2",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "PIC(LS,S,N) is given as the most frequent with 6 of 11, and the other restrictions and counts match the reference."
+ },
+ "UCKJJU": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q2",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "PIC(LS,S,N) in 6 groups as the most frequent, and all other counts match the reference."
+ },
+ "KYJEAN": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q7",
+  "score": 0,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "Says VETS D is lowest at 3 months on long histories, where no VETS model is lowest at any horizon, and misses the 12-month short-history result. The values do not match the reference, and a VETS win on long histories is the overreach the marking guide names."
+ },
+ "YVN4FQ": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q7",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "The horizons are right: none on long histories, 3 and 12 months but not 6 on short. But it attributes the 12-month short-history win to VETS D (0.938) instead of VETS F (0.872), and gives ETS (ADAM) 0.988 as the long-history 12-month lowest instead of ETS 0.939, so wrong values are presented as the paper's."
+ },
+ "MRNKCQ": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q7",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly answers no: MSE_h was the most accurate on the temperature series, with values matching the reference. The added remark on over-shrinkage does not contradict the marking guide."
+ },
+ "VEAT77": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q7",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly answers no: MSE_h was the most accurate on the temperature data, with RMSE, MAE and ME values matching the reference."
+ },
+ "NMK3NC": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q3",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Names GTMSE as the most accurate, with the ETS(A,A,A) model, 12-step horizon and values matching the reference. The extra detail on other estimators does not contradict the reference."
+ },
+ "T4HQMJ": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q3",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Names GTMSE as the most accurate, with the correct model, horizon and error values."
+ },
+ "W9KANX": {
+  "question": "doi-10-1093-imaman-dpad028#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the company is not named and gives only the nearby description and the non-disclosure agreement, which the marking guide accepts."
+ },
+ "PME4UM": {
+  "question": "doi-10-1093-imaman-dpad028#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not name the provider and gives no company as the authors' answer."
+ },
+ "XVPXQC": {
+  "question": "doi-10-1002-nav-22074#Q18",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper makes no comparison of CES with gradient-boosted trees or neural networks."
+ },
+ "FRAKAT": {
+  "question": "doi-10-1002-nav-22074#Q18",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not compare CES with machine learning methods and gives no result as the authors'."
+ },
+ "VPAADA": {
+  "question": "doi-10-1002-nav-22074#Q14",
+  "score": 0,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Does not give the required result on the seasonal subset, where automatically selected CES beats every seasonal ETS model on RMSSE and MASE; it only says CES performs well overall. Saying the authors state no explicit limitations is acceptable."
+ },
+ "FN4TRV": {
+  "question": "doi-10-1002-nav-22074#Q14",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "Gives the required seasonal-subset result and two listed limitations. It also presents as the authors' a limitation not in the list (parameter restrictions for seasonal CES stability not derived), which the guide marks wrong and as overreach."
+ },
+ "DNHFDF": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q8",
+  "score": 0.5,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correct on pinball, with the right values, and mentions the 0.970 coverage. But it answers a flat 'No' and never says VETS D is better than the ETS models on coverage, so the coverage half is incomplete."
+ },
+ "Q3XHPP": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q8",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Separates coverage (yes) from pinball (no) correctly. But it gives wrong values as the paper's: coverage 0.938 instead of 0.970, ETS coverages outside 0.815–0.886, and upper pinball 1.567 instead of 2.515."
+ },
+ "HXUXKP": {
+  "question": "doi-10-1111-jtsa-12843#Q9",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, and that the result holds only for the specific scenarios tested (mean and trend changes in seasonal data, AR parameter changes). It does not generalise."
+ },
+ "RMFVD7": {
+  "question": "doi-10-1111-jtsa-12843#Q9",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, and that the evidence is simulation-based and limited to specific scenarios, consistent with the listed scenarios and the simpler supplementary structures."
+ },
+ "NTPQXU": {
+  "question": "doi-10-1002-nav-22074#Q2",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says CES had the lowest mean and median MASE and RMSSE of the four methods, and that 10 series were excluded because outliers and structural breaks made ETS break down."
+ },
+ "E33PWT": {
+  "question": "doi-10-1002-nav-22074#Q2",
+  "score": 0.5,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correct that CES had the lowest mean and median MASE and RMSSE and that 10 series were excluded. It omits the required reason for the exclusion (influential outliers and structural breaks making ETS break down)."
+ },
+ "Q7PY3V": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not compare VETS D with hierarchically reconciled ETS forecasts."
+ },
+ "FNJ4VV": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q19",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper contains no such comparison and that the question cannot be answered from it."
+ },
+ "UUAAX9": {
+  "question": "doi-10-1111-jtsa-12843#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the required 19 time points after the change, plus the correct change point (400) and m = 300."
+ },
+ "QCEDQP": {
+  "question": "doi-10-1111-jtsa-12843#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the required 19 time points after the change, plus the correct change point (400) and m = 300."
+ },
+ "CTX399": {
+  "question": "doi-10-1111-jtsa-12843#Q12",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the supporting simulation results (lower delay than Raw CUSUM for seasonal mean and trend changes, better in all AR scenarios, false detection below 0.075). Its two limitations are both in the list."
+ },
+ "WVMM4M": {
+  "question": "doi-10-1111-jtsa-12843#Q12",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "Gives supporting results and the listed limitation on the assumptions. But it extends higher detection probability and false detection below 0.075 to all scenarios and detectors, and presents as the authors' a limitation not in the list (results specific to seasonal frequencies, change sizes and models)."
+ },
+ "3DWW4N": {
+  "question": "doi-10-1111-jtsa-12843#Q3",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives all required points: mean detector 4 observations after the change, squared-error detector 2, and a minimum 24-month delay for a model-based sequential approach due to yearly seasonality. The added calendar dates and 2010 start are not in the reference but do not contradict it."
+ },
+ "VYJWC9": {
+  "question": "doi-10-1111-jtsa-12843#Q3",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "States the 4-point and 2-point delays, the 24-month minimum delay from yearly seasonality, and the correct model orders, Phase I sample and monitoring start. Calling the model SARIMA rather than SARMA is the same specification."
+ },
+ "HJRFC9": {
+  "question": "doi-10-1002-nav-22074#Q16",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says the paper does not report estimation times and gives no figure as the authors'."
+ },
+ "HUQHUT": {
+  "question": "doi-10-1002-nav-22074#Q16",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says the paper does not report computation times for these models."
+ },
+ "WTK4HF": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q10",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, with the correct reasons: the simulation uses only VETS(M,N,M;LN) and the M5 analysis excluded trended models."
+ },
+ "VXYWM3": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q10",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, citing the simulation's sole use of VETS(M,N,M;LN) and the exclusion of trend models on M5 because the two trends were weak. Extra detail does not contradict the reference."
+ },
+ "WJ3DDJ": {
+  "question": "doi-10-1093-imaman-dpad028#Q11",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says no holdout accuracy is reported and that the example shows only a lower AICc and positive prediction intervals on the low-volume subsample. No accuracy advantage is claimed."
+ },
+ "VKFHQ9": {
+  "question": "doi-10-1093-imaman-dpad028#Q11",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "States that no holdout accuracy measures are reported and correctly describes the Normal interval covering negative values against the reasonable Gamma interval."
+ },
+ "7N43YR": {
+  "question": "doi-10-1093-imaman-dpad028#Q15",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "The evidence is correct (bias and precision close to zero for all models and DGPs, coverage fluctuating randomly around nominal levels). The limitations go beyond the acceptable list: a single DGP model class and no calibration shown for real-world data are presented as the paper's, which sets both flags."
+ },
+ "PEDKAM": {
+  "question": "doi-10-1093-imaman-dpad028#Q15",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "The evidence is correct and the fixed-parameter-vector limitation with σ = 0.1 is acceptable. It also presents as 'stated limitations' an unnamed significance test and the restriction to ETS(M,Md,M), which are not in the acceptable list, so both flags are set."
+ },
+ "FM94VF": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says the paper does not report prediction interval coverage for the Air Passengers data."
+ },
+ "RJUVPV": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q20",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says the paper does not report prediction interval coverage for the Air Passengers data."
+ },
+ "UCN3XN": {
+  "question": "doi-10-1093-imaman-dpad028#Q8",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, the matching distribution does not necessarily perform best, and notes the differences are usually small and not significant."
+ },
+ "U9EAMW": {
+  "question": "doi-10-1093-imaman-dpad028#Q8",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no and gives the correct examples from the guide (IG 5.221 beaten by Gamma 5.192; Gamma 5.231 beaten by Normal 5.193 and IG 5.224). The presentation is muddled and some other figures cannot be checked against the reference, but nothing contradicts it."
+ },
+ "KRM7DD": {
+  "question": "doi-10-1002-nav-22074#Q11",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no, with mean MSIS as the exception, and names the four seasonal ETS models below CES, matching the reference (1.934 against 2.188 for ETS(M,Md,M))."
+ },
+ "VNJFFE": {
+  "question": "doi-10-1002-nav-22074#Q11",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no: CES does not have the lowest mean MSIS, with ETS(M,Md,M) lower at 1.934 against 2.188, while CES leads on median MSIS."
+ },
+ "DWD74E": {
+  "question": "doi-10-1093-imaman-dpad028#Q1",
+  "score": 0.5,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly names φ as largest and α as smallest, but ranks the horizon ahead of β even though its own quoted coefficients (3.656 against 3.739) show the reverse. The middle order is therefore imprecise."
+ },
+ "77XRUN": {
+  "question": "doi-10-1093-imaman-dpad028#Q1",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the exact required order: φ, β, forecast horizon, σ, α."
+ },
+ "E3EUNC": {
+  "question": "doi-10-1002-nav-22074#Q9",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Distinguishes mean from median on both datasets: lowest median MSIS (0.869 and 0.592) but highest mean on M1/M3/tourism (3.465) and not the lowest mean on M4 (2.379 against 2.272 for ARIMA)."
+ },
+ "DYQ3X9": {
+  "question": "doi-10-1002-nav-22074#Q9",
+  "score": 0.5,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correct that CES does not have the lowest mean MSIS on either dataset, but it never mentions that CES has the lowest median MSIS, so the required 'only by the median' point is missing. It also first names Theta as lowest on mean for M1/M3/tourism, where the reference has ETS lower."
+ },
+ "93WM7R": {
+  "question": "doi-10-1002-nav-22074#Q15",
+  "score": 0.5,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correct that non-seasonal CES stability comes from the invertibility conditions of the underlying ARMA(2,2), and that it is not derived for seasonal CES. It omits that seasonal stability is checked through the eigenvalues of the discount matrix and that the restrictions cannot be easily analysed."
+ },
+ "H7RAVC": {
+  "question": "doi-10-1002-nav-22074#Q15",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Derives the non-seasonal region from the eigenvalues of the discount matrix, which the guide accepts. Correctly says the seasonal region is not derived, is checked through the discount matrix eigenvalues, and cannot be easily analysed."
+ },
+ "XDNK9C": {
+  "question": "doi-10-1093-imaman-dpad028#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Names Akram's log-ETS approach as lowest for all five data generating processes, with values matching the reference. The remark about the second-best model is extra and cannot be checked against the guide."
+ },
+ "UWNRHT": {
+  "question": "doi-10-1093-imaman-dpad028#Q4",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly names Akram's approach as lowest for every data generating process; the values are not required."
+ },
+ "YAKNNW": {
+  "question": "doi-10-1002-nav-22074#Q10",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says no: CES is formulated with an additive error only and a multiplicative-error version is not developed."
+ },
+ "KU4XDN": {
+  "question": "doi-10-1002-nav-22074#Q10",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says no: CES is limited to the additive error case and the multiplicative version is left to future research."
+ },
+ "9YEUQF": {
+  "question": "doi-10-1093-imaman-dpad028#Q3",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives ETS(M,Md,M) with Gamma, AICc 6398.57, and the additive ETS(A,Ad,A) Normal model with the higher AICc 6418.296, so the multiplicative model is preferred. The subsample remark is extra detail outside the guide."
+ },
+ "AXVDPN": {
+  "question": "doi-10-1093-imaman-dpad028#Q3",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Gives the correct model, distribution, both AICc values and the preference for the multiplicative model; the difference of about 19.7 is computed correctly."
+ },
+ "MHAR4E": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report forecast accuracy for the simulation experiments, as required for this absent question."
+ },
+ "RRHTT3": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q17",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report forecast accuracy for the simulations, as required for this absent question."
+ },
+ "CPMATR": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q3",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Names VETS D for both history lengths on both measures, with values matching the reference."
+ },
+ "D9D7QM": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q3",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 0,
+  "reason": "Names VETS D correctly in all four cases, but gives a wrong long-history median (0.878 instead of 0.934) and a wrong short-history geometric mean (0.979 instead of 0.936). Those figures are presented as the paper's overall results, so invented is set."
+ },
+ "EXXR3V": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q12",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "The required simulation evidence is present and several limitations are acceptable. It also presents as the authors' limitations not in the guide's list (monthly seasonality, error standard deviations and cross-correlated errors not shown; no direct M5 comparison; MCB differences not significant), which the guide marks wrong and overreach."
+ },
+ "34XKXU": {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q12",
+  "score": 0.5,
+  "invented": 1,
+  "overreach": 1,
+  "reason": "The required simulation evidence is present and some limitations are acceptable. It presents as the authors' limitations not in the guide's list (additive models not tested, uncorrelated errors) and states the overfitting explanation as the paper's attribution although the guide says it is not established."
+ },
+ "T4EDP3": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q16",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says no computation times are reported, as required for this absent question."
+ },
+ "HWXWVT": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q16",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the paper does not report computation times, as required for this absent question."
+ },
+ "FVR7EV": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q11",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Says the shrinkage is not uniformly beneficial: it removes the redundant ETS trend parameter but pushes the ARIMA(1,1,1) AR parameter negative, worse than MSE_1. The closing reframing is the assistant's own interpretation and does not contradict the required content."
+ },
+ "7T3KVP": {
+  "question": "doi-10-1007-s00180-023-01377-x#Q11",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Correctly says no: the shrinkage helps remove redundant ETS parameters but can damage ARIMA estimates, with the AR parameter forced negative on small samples."
+ },
+ "7YDXJH": {
+  "question": "doi-10-1093-imaman-dpad028#Q6",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Lists all three required cases: h = 1, h ≤ m for non-trended models with multiplicative seasonality, and ETS(M,N,N). The closing remark on other cases is extra detail outside the guide."
+ },
+ "CHKAHK": {
+  "question": "doi-10-1093-imaman-dpad028#Q6",
+  "score": 1,
+  "invented": 0,
+  "overreach": 0,
+  "reason": "Lists all three required cases correctly and adds none outside the list."
+ }
+}
