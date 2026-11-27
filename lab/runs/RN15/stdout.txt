@@ -1,0 +1,30 @@
+  0.0100  rejection rate under no effect, one-sided | flag | 25 | 10 | 0 | 400 | 2.5 | pooled points | 0.0167
+  0.0075  rejection rate under no effect, one-sided | flag | 25 | 10 | 0 | 400 | 2.5 | pooled points + (1 | answer) | 0.0167
+  0.0000  share of failed fits, with (1 | answer) | flag | 25 | 10 | 0 | 400 | 2.5
+  0.0025  share of singular fits, with (1 | answer) | flag | 25 | 10 | 0 | 400 | 2.5
+  0.5068  correlation of the two judges' points | flag | 25 | 10 | 0 | 400 | 2.5
+  0.2133  power, one-sided | flag | 25 | 10 | -0.5 | 150 | 2.5 | pooled points | 0.0167
+  0.2467  power, one-sided | flag | 25 | 10 | -0.5 | 150 | 2.5 | pooled points + (1 | answer) | 0.0167
+  0.0000  share of failed fits, with (1 | answer) | flag | 25 | 10 | -0.5 | 150 | 2.5
+  0.0067  share of singular fits, with (1 | answer) | flag | 25 | 10 | -0.5 | 150 | 2.5
+  0.5078  correlation of the two judges' points | flag | 25 | 10 | -0.5 | 150 | 2.5
+  0.7733  power, one-sided | flag | 25 | 10 | -1 | 150 | 2.5 | pooled points | 0.0167
+  0.8000  power, one-sided | flag | 25 | 10 | -1 | 150 | 2.5 | pooled points + (1 | answer) | 0.0167
+  0.0000  share of failed fits, with (1 | answer) | flag | 25 | 10 | -1 | 150 | 2.5
+  0.0000  share of singular fits, with (1 | answer) | flag | 25 | 10 | -1 | 150 | 2.5
+  0.5117  correlation of the two judges' points | flag | 25 | 10 | -1 | 150 | 2.5
+  0.0250  rejection rate under no effect, one-sided | score | 75 | 10 | 0 | 400 | 2.5 | pooled points | 0.0167
+  0.0300  rejection rate under no effect, one-sided | score | 75 | 10 | 0 | 400 | 2.5 | pooled points + (1 | answer) | 0.0167
+  0.0000  share of failed fits, with (1 | answer) | score | 75 | 10 | 0 | 400 | 2.5
+  0.0000  share of singular fits, with (1 | answer) | score | 75 | 10 | 0 | 400 | 2.5
+  0.6628  correlation of the two judges' points | score | 75 | 10 | 0 | 400 | 2.5
+  0.3467  power, one-sided | score | 75 | 10 | 0.3 | 150 | 2.5 | pooled points | 0.0167
+  0.3667  power, one-sided | score | 75 | 10 | 0.3 | 150 | 2.5 | pooled points + (1 | answer) | 0.0167
+  0.0000  share of failed fits, with (1 | answer) | score | 75 | 10 | 0.3 | 150 | 2.5
+  0.0000  share of singular fits, with (1 | answer) | score | 75 | 10 | 0.3 | 150 | 2.5
+  0.6596  correlation of the two judges' points | score | 75 | 10 | 0.3 | 150 | 2.5
+  0.7733  power, one-sided | score | 75 | 10 | 0.5 | 150 | 2.5 | pooled points | 0.0167
+  0.7867  power, one-sided | score | 75 | 10 | 0.5 | 150 | 2.5 | pooled points + (1 | answer) | 0.0167
+  0.0000  share of failed fits, with (1 | answer) | score | 75 | 10 | 0.5 | 150 | 2.5
+  0.0067  share of singular fits, with (1 | answer) | score | 75 | 10 | 0.5 | 150 | 2.5
+  0.6594  correlation of the two judges' points | score | 75 | 10 | 0.5 | 150 | 2.5
