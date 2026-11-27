@@ -14,7 +14,8 @@ look (plan §3.3 and §9).
         The judge's prompt for one batch: the fixed instructions, then the batch.
     python3 grading.py grades --batches DIR --outputs DIR --judge NAME [--out DIR]
         Reads each batch's judge output (OUTPUTS/NN.txt, a JSON object as the instructions ask) and checks it: one
-        grade for every answer, score 0, 0.5 or 1, flags 0 or 1, a reason. Writes grades-JUDGE.json.
+        grade for every answer, score 0, 0.5 or 1, flags 0 or 1, a reason. Writes grades-JUDGE.json, and the
+        outputs as given to outputs-JUDGE/.
     python3 grading.py sheet --batches DIR --grades FILE --seed SEED [--out DIR]
         The moderator's sheet: every answer under a fresh moderation code (not the answer code), question by
         question in a new random order, with the judge's grade and reason. Writes moderation.html (opened in a
@@ -345,10 +346,15 @@ def main(argv=None):
         return 0
     if args.command == "grades":
         grades, problems = {}, []
+        kept = os.path.join(out, f"outputs-{args.judge}")
+        os.makedirs(kept, exist_ok=True)
         for path in sorted(glob.glob(os.path.join(args.batches, "*.json"))):
             name = os.path.basename(path)[:-5]
             try:
-                output = parse_output(open(os.path.join(args.outputs, name + ".txt"), encoding="utf-8").read())
+                raw = open(os.path.join(args.outputs, name + ".txt"), encoding="utf-8").read()
+                with open(os.path.join(kept, name + ".txt"), "w", encoding="utf-8") as f:
+                    f.write(raw)  # the judge's output as given, kept with the run
+                output = parse_output(raw)
             except (OSError, ValueError) as e:
                 problems.append(f"batch {name}: {e}")
                 continue
