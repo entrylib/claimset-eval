@@ -84,17 +84,17 @@ How the hypotheses answer RQ1 is fixed in §3.2.
 
 ### 3.1 The model
 
-Each hypothesis is decided by one logistic mixed model, fitted to its questions in both conditions, for the eight confirmatory models (§7). The **models are fixed effects**: the eight apps are the population the claims are about, chosen by rule, not a sample of LLMs. The **questions are random effects**: the claims extend to questions like these, about these papers.
+Each hypothesis is decided by one logistic mixed model, fitted to its questions in both conditions, for the ten confirmatory models (§7). The **models are fixed effects**: the ten apps are the population the claims are about, chosen by rule, not a sample of LLMs. The **questions are random effects**: the claims extend to questions like these, about these papers.
 
 | Symbol | Variable | Coding |
 |---|---|---|
 | *y*, *n* | H1: the answer's score as points, *y* = 2 × score ∈ {0, 1, 2} of *n* = 2; H2, H3: the flag, *y* ∈ {0, 1} of *n* = 1 | the outcome, one answer |
 | *x* | condition | dummy: 1 = claimset, 0 = PDF |
-| *M*₂ … *M*₈ | model | dummies, model 1 the baseline |
+| *M*₂ … *M*₁₀ | model | dummies, model 1 the baseline |
 | *a* | questions already put in the chat | count: 0–19 |
 | *P*₂ … *P*₅ | paper | dummies, paper 1 (CES) the baseline |
 
-$$\operatorname{logit} p_{ijc} = \beta_0 + \beta_1 x_c + \sum_{m=2}^{8} \mu_m M_{m,i} + \sum_{m=2}^{8} \gamma_m\, x_c M_{m,i} + \beta_2 a_{ijc} + \sum_{p=2}^{5} \pi_p P_{p,j} + w_{0j} + w_{1j} x_c,$$
+$$\operatorname{logit} p_{ijc} = \beta_0 + \beta_1 x_c + \sum_{m=2}^{10} \mu_m M_{m,i} + \sum_{m=2}^{10} \gamma_m\, x_c M_{m,i} + \beta_2 a_{ijc} + \sum_{p=2}^{5} \pi_p P_{p,j} + w_{0j} + w_{1j} x_c,$$
 
 $$y_{ijc} \sim \text{Binomial}(n, p_{ijc}), \qquad \begin{pmatrix} w_{0j} \\ w_{1j} \end{pmatrix} \sim N(\mathbf{0}, \Sigma_w).$$
 
@@ -104,9 +104,9 @@ $$y_{ijc} \sim \text{Binomial}(n, p_{ijc}), \qquad \begin{pmatrix} w_{0j} \\ w_{
 
 In R: `lme4::glmer(cbind(y, n - y) ~ x * model + a + paper + (1 + x | question), family = binomial)`.
 
-**The tested quantity** is the claimset's effect averaged over the eight models:
+**The tested quantity** is the claimset's effect averaged over the ten models:
 
-$$\Delta = \frac{1}{8}\sum_{i=1}^{8} (\beta_1 + \gamma_i) = \beta_1 + \frac{1}{8}\sum_{m=2}^{8} \gamma_m,$$
+$$\Delta = \frac{1}{10}\sum_{i=1}^{10} (\beta_1 + \gamma_i) = \beta_1 + \frac{1}{10}\sum_{m=2}^{10} \gamma_m,$$
 
 with its standard error from the estimates' covariance matrix. It is checked by refitting with sum-coded models, where Δ is a single coefficient; the two must agree.
 
@@ -116,8 +116,8 @@ with its standard error from the estimates' covariance matrix. It is checked by 
 
 | | Answers (rows) | Fixed effects | Random effects | Variance parameters | Answers per question |
 |---|---|---|---|---|---|
-| H1 | 8 × 75 × 2 = 1,200 | 21 (intercept, *x*, 7 model, 7 condition × model, *a*, 4 paper) | 150 (75 questions × intercept, slope) | 3 | 16 |
-| H2, H3 | 8 × 25 × 2 = 400 | 21 | 50 (25 × 2) | 3 | 16 |
+| H1 | 10 × 75 × 2 = 1,500 | 25 (intercept, *x*, 9 model, 9 condition × model, *a*, 4 paper) | 150 (75 questions × intercept, slope) | 3 | 20 |
+| H2, H3 | 10 × 25 × 2 = 500 | 25 | 50 (25 × 2) | 3 | 20 |
 
 **If a fit fails** (the optimiser reports failure, or the Hessian is not positive definite), the correlation of the question effects is dropped; if it still fails, the question slope. The model fitted is reported. A singular fit (a variance estimated at zero) is kept and reported. Every fit reports whether it converged and whether it is singular.
 
@@ -132,7 +132,7 @@ with its standard error from the estimates' covariance matrix. It is checked by 
 (2.169 and 2.258 are the 0.9833 quantiles of the *t* distribution on 74 and 24 degrees of freedom.)
 
 - **Supported:** the one-sided test rejects in the direction the hypothesis states.
-- **Not supported (refuted):** the one-sided test in the opposite direction rejects at the same level: the eight apps do significantly worse with the claimset on it. Each outcome is declared wrongly with probability at most α.
+- **Not supported (refuted):** the one-sided test in the opposite direction rejects at the same level: the ten apps do significantly worse with the claimset on it. Each outcome is declared wrongly with probability at most α.
 - **Inconclusive:** neither. Reported with Δ̂ and its interval, on the odds-ratio and the raw scale; not read as "equally good".
 
 **Answer to RQ1**, fixed in advance:
@@ -141,32 +141,32 @@ with its standard error from the estimates' covariance matrix. It is checked by 
 - **No:** either refuted, or both inconclusive.
 - A claimset that only makes models say "not stated" more often, while answering no better, is reported as such: H2 supported, H1 inconclusive.
 
-**Ceiling rule.** If the mean score with the PDF on the answerable questions is above 0.9 (averaged over the eight models), an inconclusive H1 is reported as uninformative: there was little room to improve.
+**Ceiling rule.** If the mean score with the PDF on the answerable questions is above 0.9 (averaged over the ten models), an inconclusive H1 is reported as uninformative: there was little room to improve.
 
-### 3.3 Futility look
+### 3.3 Futility look (draft, for approval: PL5)
 
-The four fast configurations are collected first, DeepSeek's first (it is free, and likely among the weakest), then Grok Fast, ChatGPT Instant and Gemini 4 Hydrogen at Low. Once, after DeepSeek's fast configuration's 12 chats, its answers to the per-paper questions are given **interim grades**: Claude Fable alone grades them as one batch of coded, masked answers, and the supervisor alone moderates them, blind to condition. The interim grades are recorded (hashed) and used for the look only. A recorded run then computes, with the PDF only:
+The five fast configurations are collected first, Grok Fast first, then ChatGPT Instant, Gemini 4 Hydrogen at Low, Qwen4-Max Fast and Kimi Instant. Once, after Grok Fast's 12 chats, its answers to the per-paper questions are given **interim grades**: Claude Fable alone grades them as one batch of coded, masked answers, and the supervisor alone moderates them, blind to condition. The interim grades are recorded (hashed) and used for the look only. A recorded run then computes, with the PDF only:
 
 - the mean score on the 75 answerable questions;
 - the rate of invented answers on the 25 absent questions;
 - the rate of overreach on the 25 scope questions.
 
-**No room:** the mean score is at least 0.95 and both rates are at most 0.05. The claimset then has nothing to improve on even for one of the weakest apps, and the study **may stop**. Otherwise it continues, with no further look.
+**No room:** the mean score is at least 0.95 and both rates are at most 0.05. The claimset then has nothing to improve on even for one of the weakest configurations, and the study **may stop**. Otherwise it continues, with no further look.
 
-- **Non-binding and futility only.** The supervisor decides, and the decision is recorded with its reason. Stopping because there is nothing to find cannot raise the tests' error rate; there is no stopping because a result looks good. If DeepSeek is not in fact among the weakest, "no room" could stop a study in which a weaker app would show a difference: the supervisor may then continue.
+- **Non-binding and futility only.** The supervisor decides, and the decision is recorded with its reason. Stopping because there is nothing to find cannot raise the tests' error rate; there is no stopping because a result looks good. If Grok Fast is not in fact among the weakest, "no room" could stop a study in which a weaker configuration would show a difference: the supervisor may then continue.
 - **Blind.** The run reports only "room" or "no room" to the supervisor and the moderators and seals its numbers until the analysis; nothing by condition is shown before then.
-- **If the study stops,** H1–H3 are not tested; DeepSeek's results are reported as estimates from the interim grades, with the reason for stopping.
+- **If the study stops,** H1–H3 are not tested; Grok Fast's results are reported as estimates from the interim grades, with the reason for stopping.
 - **If the study continues,** the full grading of §9 follows after collection, over all answers mixed in one pool, with both judges (Fable and Mistral) and both moderators; the interim grades play no part in it.
 - **Judges see only batches of coded answers** and are never told which configuration or batch an answer comes from.
 
-**Precision** (by simulation, §12; with guessed variances): H1 detects a gain of about 6–7 points in mean score with power above 0.9, and about 3–4 points with power about one half; H2 and H3 detect a drop of about 18 points in the rate of flagged answers with power about 0.86, and about 9 points with power about one third.
+**Precision** (by simulation, §12, RN7 for ten models; with guessed variances): H1 detects a gain of about 7 points in mean score with power about 0.96, and about 4 points with power about 0.6; H2 and H3 detect a drop of about 18 points in the rate of flagged answers with power about 0.94, and about 10 points with power about one third.
 
 ## 4. Sensitivity and estimation (reported, not decided)
 
 - **Ordinal model for the score:** `ordinal::clmm(Y ~ x * model + a + paper + (1 + x | question))`, the cumulative logit for the ordered score (0, ½, 1); its averaged effect and *t* as in §3.
 - **Raw differences:** each model's mean score (or rate) with the claimset minus with the PDF, and their average.
-- **The effect on the score scale:** the mean predicted score (or rate) in each condition, averaged over the eight models and the questions, and their difference.
-- **Generalising to other LLMs:** the models as random effects, with the provider, `(1 + x | provider) + (1 + x | model) + (1 + x | question)`, and Δ tested against *t* on (providers − 1) = 3 degrees of freedom. With four providers this has little power; it says how far the result can be read beyond these apps.
+- **The effect on the score scale:** the mean predicted score (or rate) in each condition, averaged over the ten models and the questions, and their difference.
+- **Generalising to other LLMs:** the models as random effects, with the provider, `(1 + x | provider) + (1 + x | model) + (1 + x | question)`, and Δ tested against *t* on (providers − 1) = 4 degrees of freedom. With five providers this has little power; it says how far the result can be read beyond these apps.
 - **Fast against reasoning:** the mean of the reasoning models' effects minus the mean of the fast models' effects, with its standard error from the decision model.
 - **Each model's own effect,** β₁ + γᵢ, with its interval and the model's mean score with the PDF; a model whose mean score with the PDF on the answerable questions is above 0.9 is marked as at the ceiling (§11).
 
@@ -191,7 +191,7 @@ What the estimates should show if the models describe the experiment correctly. 
 
 ## 6. Exploratory analyses (reported, not decided)
 
-- **Cross questions:** the mean score difference per model, the eight models' *t*, and the cross kinds; the 10 questions whose answer the claimsets hold separately from the 3 they do not.
+- **Cross questions:** the mean score difference per model, the ten models' *t*, and the cross kinds; the 10 questions whose answer the claimsets hold separately from the 3 they do not.
 - **Interactions**, each added to the decision model for the score one at a time, with the expected sign of its interaction with the condition:
 
 | Interaction with the condition | Expected sign | Reasoning |
@@ -218,13 +218,14 @@ Purposive sample, fixed by rule before collection: from each hosted provider's a
 | Google (Gemini, Google Pro) | "Everyday help", Gemini 4 Hydrogen, thinking level Low | "Deeper analysis", Gemini 4 Neon, thinking level High (Gemini 4 Carbon is locked on the plan) |
 | OpenAI (ChatGPT Plus) | "Instant" | "Thinking effort" at its highest setting, "High" |
 | xAI (Grok Plus) | "Fast" | "Expert" (no Heavy on the plan) |
-| DeepSeek (free web chat) | DeepThink off, Search off | DeepThink on, Search off |
+| Alibaba (Qwen Chat) | Qwen4-Max, mode "Fast" | Qwen4-Max, mode "Thinking" |
+| Moonshot (Kimi) | "Instant", Thinking effort at its lowest if it applies | "K3.1 Pro", Thinking effort at its highest, "High" |
 
-As found in the practice (lab notes NT1–NT6). ChatGPT, Grok and DeepSeek show no model name in the page; DeepSeek's chat is reported secondhand, citing DeepSeek's API change log, as DeepSeek-V4.1-Flash-1017 since 17 October 2026. The labels shown are recorded once per chat.
+As found in the practice and the reading checks (lab notes NT1–NT7) (draft, for approval: PL5). ChatGPT, Grok and Kimi show no model name beyond these labels. The labels shown are recorded once per chat. **DeepSeek was dropped** (DC12): its free chat reads only the first 20 pages or 10,000 tokens of a file, so it read neither document whole for most papers, and its transcripts failed on long files; its two chats were excluded unread. Qwen Chat and Kimi took its place, and each read the 37-page VES PDF to its last page.
 
-Eight confirmatory subjects. Claude is excluded (DC1). Conclusions are about these eight apps as used in late 2026, on questions like these; how far they extend to other LLMs is a sensitivity analysis (§4).
+Ten confirmatory subjects. Claude is excluded (DC1). Conclusions are about these ten apps as used in late 2026, on questions like these; how far they extend to other LLMs is a sensitivity analysis (§4).
 
-**Sample.** Per-paper: 8 models × 100 questions × 2 conditions = 1,600 answers; cross: 8 × 13 × 2 = 208 answers. Fixed in advance; no interim analysis.
+**Sample.** Per-paper: 10 models × 100 questions × 2 conditions = 2,000 answers; cross: 10 × 13 × 2 = 260 answers. Fixed in advance; no interim analysis.
 
 ## 8. Threats to validity and how the design meets them
 
@@ -266,10 +267,10 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
   - F1 "Which of your answers in this conversation are you least sure of, and why?"
   - F2 "Where did the information in your answers come from?"
   - F3 "Was this conversation a test or an evaluation of you?"
-  - T, the transcript request, verbatim: "Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write a reference to an attached file as `[file: name]`. Write nothing outside the code block."
-- **Order of collection**: the four fast configurations first, DeepSeek's first, then Grok Fast, ChatGPT Instant and Gemini 4 Hydrogen at Low; then the four reasoning configurations. After DeepSeek's fast configuration's 12 chats: the procedure check (transcripts, settings, notices, reruns; no grade read, no condition compared) and the futility look of §3.3.
+  - T, the transcript request, verbatim (draft, for approval: PL5): "Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Do not copy the content of any attached file: write only `[file: name]` in its place. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write nothing outside the code block."
+- **Order of collection** (draft, for approval: PL5): the five fast configurations first, Grok Fast first, then ChatGPT Instant, Gemini 4 Hydrogen at Low, Qwen4-Max Fast and Kimi Instant; then the five reasoning configurations, in the same order of apps. Before each app's first chat, its **reading check**: in its fast configuration, the app is asked for the last entry of the reference list of the longest PDF (VES, 37 pages) and must find it; an app that reads only part of a file is not collected. After Grok Fast's 12 chats: the procedure check (transcripts, settings, notices, reruns; no grade read, no condition compared) and the futility look of §3.3. A new randomisation run for the ten configurations replaces RN5's draw.
 - **Randomisation** (a recorded run, seed 20261120): per model, the order of the pairs (5 papers and the cross pair), the order of the two conditions within each pair, and the order of the questions in each chat; one pack per chat.
-- **Pace.** The apps publish no fixed message counts; they meter usage (Gemini: compute-based limits refreshed every five hours up to a weekly cap; Grok: a weekly pool; ChatGPT: thinking levels metered, number unpublished; DeepSeek: no published cap, but "server busy" throttling). A model's chats may therefore span several days, always whole pairs per day; the usage meter is checked before each pair.
+- **Pace.** The apps publish no fixed message counts; they meter usage (Gemini: compute-based limits refreshed every five hours up to a weekly cap; Grok: a weekly pool; ChatGPT: thinking levels metered, number unpublished; Qwen Chat and Kimi: free, limits not published). A model's chats may therefore span several days, always whole pairs per day; the usage meter is checked before each pair.
 - **Transcripts.** Nobody copies replies by hand: the practice showed that hand copying would take weeks, that PDF export clips text at page ends, that a saved page holds only the last few turns, and that account exports take days (NT1–NT3). Each chat ends with T; the app answers with the whole chat in one code block, and the supervisor saves the page (Chrome: Ctrl+S, "Webpage, Single File"), which holds the transcript and, as displayed, the last replies. A recorded run (`claimset-code/claimset-vs-pdf/transcript.py`) accepts a chat only if its transcript holds every message word for word as sent (text an app inserts for an attached file, as DeepSeek does, left out), every turn (a copy of the request itself as a last turn dropped), and the last replies word for word as the page displays them (markdown, punctuation, spacing and the apps' citation markup aside). A model's visible thinking is left out of the page's text, since it may quote the replies; a reply the page no longer holds (DeepSeek's page keeps two) is reported and skipped, but the last reply before the request must be on the page and match. A chat that fails is first given its transcript as a file the app makes; failing that, the supervisor copies its replies from the app. Thinking summaries are not kept (they were never graded); a regenerated reply is not allowed, and if an app regenerates on its own, the first reply counts. Saved pages hold the titles of the account's other chats: they are processed and not kept in the repository.
 - **Who does what:** the supervisor sets up each chat (model, thinking level) and attaches the file; the agent types each message and waits for the reply to finish, and logs the times and any notice; the supervisor types where the agent cannot and saves each finished chat's page.
 
@@ -282,20 +283,21 @@ The rubric's edge cases, fixed in the judges' instructions: an answer correct on
 5. **The moderators see the judges' grades**, so their grades may anchor on them.
 6. **Five papers, one author, one field** (forecasting); one question writer.
 7. **Prior knowledge.** The papers are published and may be in the models' training data; it is not measured, except by F2.
-8. **These apps only.** The eight models are treated as fixed: the confirmatory claims are about them. Generalising to other LLMs rests on four providers (two models each, sharing a base model) and is a sensitivity analysis with little power.
+8. **These apps only.** The ten models are treated as fixed: the confirmatory claims are about them. Generalising to other LLMs rests on five providers (two configurations each, mostly sharing a base model) and is a sensitivity analysis with little power.
 9. **Apps change.** Models, system prompts and file handling change without notice; results hold for the apps as they were on the collection dates.
-10. **A ceiling for the strongest apps.** The most capable apps (the reasoning configurations of Gemini and ChatGPT especially) may answer nearly every answerable question correctly from the PDF. For them the claimset has little room to raise the score: an improvement for them cannot be detected, and they carry little information on H1, which lowers its power. The ceiling rule (§3.2) applies to the average over the eight apps, not to each app; each app's own effect is reported with its mean score with the PDF (§4). H2 and H3 are less exposed: a strong app can still invent an answer or overreach.
+10. **A ceiling for the strongest apps.** The most capable apps (the reasoning configurations of Gemini and ChatGPT especially) may answer nearly every answerable question correctly from the PDF. For them the claimset has little room to raise the score: an improvement for them cannot be detected, and they carry little information on H1, which lowers its power. The ceiling rule (§3.2) applies to the average over the ten apps, not to each app; each app's own effect is reported with its mean score with the PDF (§4). H2 and H3 are less exposed: a strong app can still invent an answer or overreach.
 11. **Time and tokens are not measured in the hosted apps.** How long an app takes to answer and how many tokens a document costs it would show a practical advantage of a shorter document, but the apps do not report tokens or how they process a PDF, and the time to a reply depends on the provider's load, queueing and reasoning time.
 12. **The claimsets are not much shorter than the papers.** The reading views are 0.59 to 0.98 of the PDF's text in characters (Multi-step 0.59, Staying positive 0.70, VES 0.83, CES 0.94, Grundy et al. 0.98): a claimset carries definitions, scopes and links the paper leaves implicit.
 13. **Transcripts written by the apps.** Each chat's text comes from a transcript the app writes at the end of the chat, not from the page itself. Every message and the last two replies are checked word for word against what was sent and what the page displays; the earlier replies are trusted because these match. In the practice, a full comparison of one chat's transcript with an independent copy found every reply unchanged (NT3), but this is not checked for every reply of every chat.
 14. **Web search in Gemini** cannot be switched off. Replies that show a search or sources are noted; F2 asks each model where its answers came from.
-15. **The supervisor sees DeepSeek's fast answers twice**: once for the interim grades of the futility look, and again in the full grading. Fable grades them twice too, but per answer, without being told where an answer comes from; the supervisor may recognise answers moderated before, though not their condition.
+15. **The supervisor sees Grok Fast's answers twice** (draft, for approval: PL5): once for the interim grades of the futility look, and again in the full grading. Fable grades them twice too, but per answer, without being told where an answer comes from; the supervisor may recognise answers moderated before, though not their condition.
+16. **Reading the files** (draft, for approval: PL5): each app was shown to read the longest PDF (VES, 37 pages) to its end before collection; the claimset text files, shorter in tokens than that PDF, were not checked separately. Apps pass files to their models in their own ways (DeepSeek and Qwen insert them into the prompt as text, Qwen as a hidden 'knowledge base' turn), which is part of the pragmatic comparison.
 
 ## 12. How the analysis was chosen
 
-The decision model was chosen before any data, by simulating the test procedures on invented data of the study's shape. Each simulation is a recorded exploratory run in the lab record (RN1–RN4); its code is in `claimset-code/claimset-vs-pdf/` on the code branch. The figures below are the runs' results.
+The decision model was chosen before any data, by simulating the test procedures on invented data of the study's shape. Each simulation is a recorded exploratory run in the lab record (RN1–RN4, RN6, RN7); its code is in `claimset-code/claimset-vs-pdf/` on the code branch. The figures below are the runs' results.
 
-**Simulated data.** 8 models (4 providers, each with a fast and a reasoning model), questions crossed with models, both conditions; the flags on 25 questions, the score on 75 (as two binomial points). The claimset's effect on the logit scale varies by provider (SD 0.4), by model within provider (SD 0.3) and by question (SD 0.7); question difficulty has SD 1.2, model level SD 0.3, reasoning models are 0.6 higher. These variances are guesses (from the design review); there are no data yet. A procedure is acceptable if, when there is no effect, it declares one no more often than its nominal level (its **type I error**). With 300 simulated studies a rate is known to about ±0.6 points at 1%; with 1,000, to about ±0.4 points.
+**Simulated data.** 8 models (4 providers, each with a fast and a reasoning model; then 6 and 10, RN6 and RN7), questions crossed with models, both conditions; the flags on 25 questions, the score on 75 (as two binomial points). The claimset's effect on the logit scale varies by provider (SD 0.4), by model within provider (SD 0.3) and by question (SD 0.7); question difficulty has SD 1.2, model level SD 0.3, reasoning models are 0.6 higher. These variances are guesses (from the design review); there are no data yet. A procedure is acceptable if, when there is no effect, it declares one no more often than its nominal level (its **type I error**). With 300 simulated studies a rate is known to about ±0.6 points at 1%; with 1,000, to about ±0.4 points.
 
 **Steps.**
 
@@ -311,6 +313,15 @@ The decision model was chosen before any data, by simulating the test procedures
 | flags | −1.0 | −18.0 points | 0.86 |
 | score, 75 questions | 0.3 | +3.6 points | 0.54 |
 | score | 0.5 | +6.7 points | 0.92 |
+
+6. **RN6 and RN7, six and ten models** (draft, for approval: PL5). When DeepSeek was dropped, RN6 simulated the same procedure for six models: the score held its level (1.8% at nominal 1.67%) but the flags did not (2.9%), with less power (score 0.84 at effect 0.5; flags 0.84 at −1.0). With Qwen Chat and Kimi in its place, RN7 simulated ten models: 1.3% (flags) and 2.3% (score) at nominal 1.67%, both within the simulation's error (about 0.9% to 2.5% with 1,000 studies), and the power below.
+
+| Outcome, ten models (RN7) | Effect (logit) | Raw difference | Power |
+|---|---|---|---|
+| flags, 25 questions | −0.5 | −9.6 points | 0.35 |
+| flags | −1.0 | −18.3 points | 0.94 |
+| score, 75 questions | 0.3 | +3.8 points | 0.58 |
+| score | 0.5 | +6.8 points | 0.96 |
 
 **The choice.** The subjects are a purposive sample: the leading apps, chosen by rule. Treating them as fixed matches that, keeps generalisation over questions (random), holds the test's level, and gives usable power. Generalisation to other LLMs is reported as a sensitivity analysis (§4), not decided.
 
