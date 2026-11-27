@@ -23,10 +23,11 @@ def transcript_text(expected=EXPECTED, replies=REPLIES):
     return "\n".join(out)
 
 
-def page(shown_replies, code, mhtml=True):
+def page(shown_replies, code, mhtml=True, messages=()):
     """A saved chat page: the replies as displayed (the last ones only, as ChatGPT keeps), then the transcript
     in a code block; wrapped in MHTML like Chrome's 'Webpage, Single File'."""
-    body = "".join(f'<div data-role="assistant"><p>{escape(r).replace("**", "")}</p>'
+    body = "".join(f'<div data-role="user">{escape(m)}</div>' for m in messages)
+    body += "".join(f'<div data-role="assistant"><p>{escape(r).replace("**", "")}</p>'
                    f'<span class="chip">paper.pdf</span></div>' for r in shown_replies)
     body += f'<div data-role="assistant"><pre><div>markdown</div><code>{escape(code)}</code></pre></div>'
     html = f"<!DOCTYPE html><html><body><nav>Other chat title</nav>{body}<script>var x=1;</script></body></html>"
@@ -139,6 +140,32 @@ class TranscriptTest(unittest.TestCase):
         r = self.run_check(page(REPLIES[1:], text))
         self.assertTrue(all(r["checks"].values()), r["problems"])
         self.assertEqual(r["injected_turns"], ["user 4", "assistant 4"])
+
+    def test_a_turn_left_out_of_the_transcript_is_filled_from_the_page(self):
+        # the transcript skipped turn 2; the page shows it
+        text = transcript_text([EXPECTED[0], EXPECTED[2]], [REPLIES[0], REPLIES[2]])
+        data = page(REPLIES, text, messages=EXPECTED)
+        r = self.run_check(data)
+        self.assertFalse(r["checks"]["complete"])
+        r = tr.check(self.write(data), EXPECTED, tail=2, fill={2: REPLIES[1]})
+        self.assertTrue(all(r["checks"].values()), r["problems"])
+        self.assertEqual(r["problems"], [])
+        self.assertEqual(r["filled"], [2])
+        self.assertEqual(r["turns"][1]["assistant"], REPLIES[1])
+        self.assertEqual(r["turns"][2]["user"], EXPECTED[2])
+
+    def test_a_fill_not_on_the_page_fails(self):
+        text = transcript_text([EXPECTED[0], EXPECTED[2]], [REPLIES[0], REPLIES[2]])
+        r = tr.check(self.write(page(REPLIES, text, messages=EXPECTED)), EXPECTED, tail=2, fill={2: "The software was R."})
+        self.assertIn("filled turn 2: the reply is not on the page as displayed", r["problems"])
+
+    def test_every_reply_can_be_compared_with_the_page(self):
+        r = tr.check(self.write(page(REPLIES, transcript_text())), EXPECTED, tail=2, compare_all=True)
+        self.assertEqual(r["all_replies"], {1: 0, 2: 0, 3: 0})
+        changed = [REPLIES[0].replace("ETS", "ARIMA")] + REPLIES[1:]
+        r = tr.check(self.write(page(REPLIES, transcript_text(replies=changed))), EXPECTED, tail=2, compare_all=True)
+        self.assertEqual(r["all_replies"][1], 1)
+        self.assertTrue(r["checks"]["tail"])  # reported, not checked
 
     def test_no_transcript_fails(self):
         r = self.run_check(page(REPLIES, "print('hello')"))
