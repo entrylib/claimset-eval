@@ -17,7 +17,7 @@ class RandomiseTest(unittest.TestCase):
         cls.key, cls.packs = rz.draw()
 
     def test_design_counts(self):
-        self.assertEqual(len(self.packs), 96)
+        self.assertEqual(len(self.packs), 120)
         per = collections.Counter(p["configuration"] for p in self.packs)
         self.assertEqual(set(per.values()), {12})
         # 274 messages per configuration: 226 questions, 36 follow-ups, 12 transcript requests
@@ -51,28 +51,37 @@ class RandomiseTest(unittest.TestCase):
                 self.assertTrue(os.path.exists(os.path.join(rz.ROOT, "study", "attachments", f)), f)
 
     def test_codes_are_unique_and_the_draw_is_fixed_by_the_seed(self):
-        self.assertEqual(len(self.key), 96)
+        self.assertEqual(len(self.key), 120)
         self.assertEqual(rz.draw()[0], self.key)
         self.assertNotEqual(rz.draw(1)[0], self.key)
         self.assertTrue(all(set(c) <= set(rz.CODE_LETTERS) and len(c) == 4 for c in self.key))
 
-    def test_deepseek_fast_is_collected_first(self):
-        self.assertEqual(rz.CONFIGS[0]["name"], "deepseek-fast")
-        self.assertEqual([c["name"] for c in rz.CONFIGS[:4]],
-                         ["deepseek-fast", "grok-fast", "chatgpt-fast", "gemini-fast"])
+    def test_kimi_fast_is_collected_first_and_deepseek_is_gone(self):
+        self.assertEqual([c["name"] for c in rz.CONFIGS[:5]],
+                         ["kimi-fast", "grok-fast", "chatgpt-fast", "gemini-fast", "qwen-fast"])
+        self.assertFalse(any(c["app"] == "DeepSeek" for c in rz.CONFIGS))
+
+    def test_qwen_prompts_ask_for_the_copied_transcript(self):
+        out = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, out)
+        rz.write(out, self.key, self.packs)
+        qwen = open(os.path.join(out, "prompts", "5-qwen-fast.md"), encoding="utf-8").read()
+        self.assertIn("Click Copy on the transcript's code block", qwen)
+        kimi = open(os.path.join(out, "prompts", "1-kimi-fast.md"), encoding="utf-8").read()
+        self.assertNotIn("Click Copy", kimi)
 
     def test_written_prompts_hold_every_message_and_the_request(self):
         out = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, out)
         rz.write(out, self.key, self.packs)
-        first = open(os.path.join(out, "prompts", "1-deepseek-fast.md"), encoding="utf-8").read()
-        mine = [p for p in self.packs if p["configuration"] == "deepseek-fast"]
+        first = open(os.path.join(out, "prompts", "1-kimi-fast.md"), encoding="utf-8").read()
+        mine = [p for p in self.packs if p["configuration"] == "kimi-fast"]
         for p in mine:
             self.assertIn(f"CHAT {p['code']} ", first)
             for m in p["messages"]:
                 self.assertIn(m["text"], first)
         self.assertEqual(first.count("T: " + tr.TRANSCRIPT_REQUEST), 12)
-        self.assertIn("Search button", first)
+        self.assertIn("web search is off", first)
         pack = json.load(open(os.path.join(out, "packs", mine[0]["code"] + ".json"), encoding="utf-8"))
         self.assertEqual(pack["messages"], mine[0]["messages"])
 
