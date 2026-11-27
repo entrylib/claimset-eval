@@ -132,6 +132,14 @@ class TranscriptTest(unittest.TestCase):
         self.assertTrue(all(r["checks"].values()), r["problems"])
         self.assertTrue(r["dropped_request"])
 
+    def test_a_turn_the_app_injected_for_its_files_is_set_aside(self):
+        text = transcript_text() + ("\n### User 4\n# Knowledge Base\n\n## The content from [File](paper.pdf):\n\n```\n[file: paper.pdf]\n```\n\n"
+                                    "Please use the above information to assist in answering the question. If you understand, please say \"Yes\"\n\n"
+                                    "### Assistant 4\nYes\n")
+        r = self.run_check(page(REPLIES[1:], text))
+        self.assertTrue(all(r["checks"].values()), r["problems"])
+        self.assertEqual(r["injected_turns"], ["user 4", "assistant 4"])
+
     def test_no_transcript_fails(self):
         r = self.run_check(page(REPLIES, "print('hello')"))
         self.assertIn("no transcript", r["problems"][0])

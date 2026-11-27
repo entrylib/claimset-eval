@@ -140,6 +140,21 @@ def find_transcript(codes):
     return hits[-1] if hits else None
 
 
+# A turn an app adds to pass attached files to the model, copied into the transcript though it was never typed nor
+# shown (Qwen: "# Knowledge Base ... The content from [File](...) ... Please use the above information"). It and the
+# reply to it are set aside, and the turns renumbered.
+INJECTED = re.compile(r"^\s*# Knowledge Base\b|Please use the above information to assist in answering", re.M)
+
+
+def renumber(turns):
+    """User and Assistant turns numbered again from 1, in order, after injected turns were set aside."""
+    out, n = [], 0
+    for role, _, body in turns:
+        n += role == "user"
+        out.append((role, n, body))
+    return out
+
+
 def split_turns(text):
     """[(role, n, body)] in order, cut at the numbered headings only (replies may have headings of their own)."""
     marks = list(HEADING.finditer(text))
@@ -191,6 +206,14 @@ def check(page, expected, tail=2, transcript=None):
         result["problems"].append("no transcript code block (### User 1 ... ### Assistant 1) in the page")
         return result
     turns = split_turns(found)
+    injected = []
+    for k in range(len(turns) - 1):
+        if turns[k][0] == "user" and INJECTED.search(turns[k][2]) and turns[k + 1][0] == "assistant":
+            injected += [k, k + 1]  # a turn the app added for its attached files (Qwen), not typed by the user
+    if injected:
+        result["injected_turns"] = [f"{turns[k][0]} {turns[k][1]}" for k in injected]
+        turns = [x for k, x in enumerate(turns) if k not in injected]
+        turns = renumber(turns)
     if turns and turns[-1][0] == "user" and norm(turns[-1][2]) == norm(TRANSCRIPT_REQUEST):
         turns = turns[:-1]  # the app copied the transcript request itself as a last turn (DeepSeek did)
         result["dropped_request"] = True
