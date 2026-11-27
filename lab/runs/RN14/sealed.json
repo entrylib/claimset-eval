@@ -1,0 +1,9 @@
+{
+ "pdf mean score, answerable": 0.86,
+ "n answerable": 75,
+ "pdf invented rate, absent": 0.04,
+ "n absent": 25,
+ "pdf overreach rate, scope": 0.04,
+ "n scope": 25,
+ "verdict": "room"
+}
