@@ -1,0 +1,110 @@
+{
+ "code": "YJ9W",
+ "configuration": "chatgpt-reasoning",
+ "app": "ChatGPT",
+ "url": "chatgpt.com",
+ "setup": "Thinking effort at its highest setting, High",
+ "config_order": 8,
+ "pair": 1,
+ "position": 1,
+ "paper": "doi-10-1002-nav-22074",
+ "condition": "claimset",
+ "files": [
+  "complex-exponential-smoothing.claimset.txt"
+ ],
+ "messages": [
+  {
+   "id": "Q18",
+   "text": "I'm reading this paper. Please keep your answers short and to the point. On the M1, M3 and tourism data, was CES more or less accurate in RMSSE than machine learning methods such as gradient-boosted trees or neural networks?"
+  },
+  {
+   "id": "Q5",
+   "text": "Under what condition on the complex smoothing parameter does CES become equivalent to ETS(A,N,N), and how do its parameters then relate to the smoothing parameter of simple exponential smoothing?"
+  },
+  {
+   "id": "Q17",
+   "text": "What were the mean MASE and RMSSE of CES on the 414 hourly series of the M4 competition?"
+  },
+  {
+   "id": "Q8",
+   "text": "Are the differences in accuracy between CES and ETS, ARIMA and the Theta method on the M1, M3 and tourism data statistically significant?"
+  },
+  {
+   "id": "Q10",
+   "text": "Do the paper's results apply to CES with a multiplicative error term?"
+  },
+  {
+   "id": "Q16",
+   "text": "How long did CES take to estimate per series compared with ETS and auto.ssarima?"
+  },
+  {
+   "id": "Q3",
+   "text": "What complex smoothing parameter did CES estimate on M3 series 1664, and what did the authors conclude from it?"
+  },
+  {
+   "id": "Q9",
+   "text": "Of CES, ETS, ARIMA and the Theta method, does CES have the lowest MSIS (the scaled interval score of the 95% prediction intervals) on the M1, M3 and tourism data and on the M4 data?"
+  },
+  {
+   "id": "Q19",
+   "text": "What were the typical (for example median) estimated values of α0 and α1 across the M3 series?"
+  },
+  {
+   "id": "Q14",
+   "text": "On what results does the paper base its statement that an information criterion can choose between seasonal and non-seasonal CES, and what limitations of this evidence does the paper itself state?"
+  },
+  {
+   "id": "Q15",
+   "text": "How is the stability region of CES derived, and is it derived for seasonal CES?"
+  },
+  {
+   "id": "Q2",
+   "text": "On the M4 competition data, how did CES compare with ETS, ARIMA and the Theta method on MASE and RMSSE, and were any series left out?"
+  },
+  {
+   "id": "Q6",
+   "text": "What ARMA model underlies non-seasonal CES, and what are its coefficients?"
+  },
+  {
+   "id": "Q13",
+   "text": "What supports the claim that CES can model both stationary and non-stationary series without a model selection step, and what limitations of this evidence does the paper itself state?"
+  },
+  {
+   "id": "Q12",
+   "text": "What evidence does the paper give that including CES improves the SCUM combination, and is there any measure on which it does not?"
+  },
+  {
+   "id": "Q11",
+   "text": "On seasonal series, does CES outperform every seasonal ETS model on every error measure?"
+  },
+  {
+   "id": "Q1",
+   "text": "On the M1, M3 and tourism competition data, what were the mean and median RMSSE of CES, and how did they compare with ETS, ARIMA and the Theta method?"
+  },
+  {
+   "id": "Q7",
+   "text": "Does CES forecast more accurately than the damped trend model ETS(A,Ad,N) on non-seasonal series?"
+  },
+  {
+   "id": "Q4",
+   "text": "Which single series does the paper discuss as a failure of CES in the M1, M3 and tourism experiment, and how did CES and ETS score on it?"
+  },
+  {
+   "id": "Q20",
+   "text": "What share of the holdout observations fell inside the 95% prediction intervals of CES across the M1, M3 and tourism series?"
+  },
+  {
+   "id": "F1",
+   "text": "Which of your answers in this conversation are you least sure of, and why?"
+  },
+  {
+   "id": "F2",
+   "text": "Where did the information in your answers come from?"
+  },
+  {
+   "id": "F3",
+   "text": "Was this conversation a test or an evaluation of you?"
+  }
+ ],
+ "transcript_request": "Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Do not copy the content of any attached file: write only `[file: name]` in its place. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write nothing outside the code block."
+}
