@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q3",
+  "text": "On the Air Passengers data, which model and horizon were used, and which estimator gave the most accurate forecasts?",
+  "reference": "A misspecified ETS(A,A,A) model with a 12-month horizon. GTMSE had the lowest RMSE (18.672), MAE (15.005) and ME (8.369); MSE_h was the worst (RMSE 77.194) and the conventional MSE also poor (RMSE 49.423).",
+  "marking": "Required: names GTMSE as the most accurate. Not required: the other details of the reference answer.",
+  "answers": [
+   {
+    "answer": "NMK3NC",
+    "text": "**Model/horizon:** ETS(A,A,A) (additive error, trend, seasonality — deliberately misspecified since the series is multiplicative), horizon h = 12 (one year).\r\n\r\n**Most accurate:** GTMSE — RMSE 18.672, MAE 15.005, ME 8.369 (all lowest). MSCE was worst among the multi-step estimators (RMSE 22.601); MSE_h was far worse (77.194)."
+   },
+   {
+    "answer": "T4HQMJ",
+    "text": "A misspecified pure additive **ETS(A,A,A)** model (local trend with additive seasonality) was fitted over a **12-month forecast horizon** (12-month holdout).\r\n\r\n**GTMSE** gave the most accurate forecasts: lowest RMSE (18.672), MAE (15.005) and ME (8.369) of the six estimators."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q17",
+  "text": "Which company provided the electric vehicle charging data?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that the data come from a company tracking electricity used by electric vehicles and are under a non-disclosure agreement, does not answer it; saying the company is not named is correct.",
+  "answers": [
+   {
+    "answer": "W9KANX",
+    "text": "The paper does not name the company. [location] only says it was “a company that tracks the amount of electricity used by such vehicles,” and the data availability note says the data cannot be shared publicly due to a non-disclosure agreement."
+   },
+   {
+    "answer": "PME4UM",
+    "text": "The paper doesn't say. The dataset is described only as \"511 daily aggregated observations of electricity used by electric vehicles in a geographical area\" and is restricted by a non-disclosure agreement, so the provider is not named."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q18",
+  "text": "On the M1, M3 and tourism data, was CES more or less accurate in RMSSE than machine learning methods such as gradient-boosted trees or neural networks?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "XVPXQC",
+    "text": "The paper does not compare CES with gradient-boosted trees or neural networks on M1/M3/tourism, so that comparison cannot be made from its results."
+   },
+   {
+    "answer": "FRAKAT",
+    "text": "The paper doesn't compare CES with machine learning methods — only with ETS, ARIMA, the Theta method, and the SCUM combinations. No gradient-boosted trees or neural networks appear in the evidence."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q14",
+  "text": "On what results does the paper base its statement that an information criterion can choose between seasonal and non-seasonal CES, and what limitations of this evidence does the paper itself state?",
+  "reference": "On the results for the seasonal subset (2,053 series): CES, with its seasonal or non-seasonal form chosen automatically by the criterion, beats every seasonal ETS model on RMSSE and MASE. The authors note that the split into seasonal and non-seasonal series was made by ETS model selection, and no experiment compares the criterion with another way of choosing.",
+  "marking": "Required: the results on the seasonal series: CES, with its seasonal or non-seasonal form chosen automatically by the criterion, is more accurate than every seasonal ETS model on RMSSE and MASE. Also correct: calling the criterion AIC or AICc. Not required: the values; the number of series (2,053); giving limitations. Wrong: explaining only why an information criterion can be computed for CES (its likelihood) instead of giving the results. Limitations the authors state: (1) the split into seasonal and non-seasonal series was made by ETS model selection; (2) no experiment compares selection by an information criterion with another way of choosing between seasonal and non-seasonal CES. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "VPAADA",
+    "text": "The paper bases this on the M1/M3/tourism and M4 experiments, where auto.ces uses AIC to select between seasonal and non-seasonal CES and still performs well overall.\r\n\r\nThe paper does not state explicit limitations of that evidence, but it notes the seasonal model has many more parameters ($k = 4 + 2m + 3$), so AIC is needed to tell whether the added flexibility is worthwhile."
+   },
+   {
+    "answer": "FN4TRV",
+    "text": "**Evidence:** On the seasonal subset (2,053 series), CES with seasonal/non-seasonal form chosen by AICc had lower RMSSE and MASE than every seasonal ETS model. The authors take this as showing the criterion picks the seasonal form when needed.\r\n\r\n**Limitations the paper itself states:**\r\n- The argument is from accuracy results only — no experiment compares AICc selection against other ways of choosing between seasonal and non-seasonal CES.\r\n- The parameter restrictions for seasonal CES stability are not derived (affecting [location]).\r\n- It assumes ETS model selection correctly identifies which series are seasonal (unchecked)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q8",
+  "text": "On short M5 histories, are the prediction intervals of VETS D better than those of the univariate ETS models?",
+  "reference": "In coverage yes: 0.970 against 0.815–0.886 for the ETS models. In relative pinball no: VETS D has higher upper and lower pinball values than all three ETS models (e.g. upper 2.515). The authors therefore do not recommend VETS when the pinball measure matters most and the history is short.",
+  "marking": "Required: separates the two measures: in coverage yes (VETS D 0.970 against 0.815 to 0.886 for the ETS models); in relative pinball no (VETS D has higher upper and lower pinball values than all three ETS models). Not required: the values; that the authors do not recommend VETS when pinball matters most and the history is short. Wrong (overreach): saying VETS D has better intervals without separating coverage and pinball.",
+  "answers": [
+   {
+    "answer": "DNHFDF",
+    "text": "No. On short histories, VETS D has higher rPinballU and rPinballL than all three ETS models (rPinballU 2.515 vs 0.938–1.155; rPinballL 1.567 vs 0.895–1.194). Its coverage (0.970) is close to nominal, but its intervals are wider/less sharp than ETS's. Hence the recommendation [location]: VETS D over ETS except when pinball values matter most and the history is short."
+   },
+   {
+    "answer": "Q3XHPP",
+    "text": "Mixed — it depends on the metric:\r\n\r\n- **Coverage:** Yes. VETS D achieves 0.938 coverage on short data, close to the nominal 95% and better than ETS LN (0.826), ETS (ADAM) (0.870) and ETS (0.870), which all fall well below 95%.\r\n- **Pinball values:** No. On short data, VETS D has worse relative pinball values than the ETS models (e.g. pinballU 1.567 for VETS D vs 0.895–1.194 for ETS variants), meaning its intervals are wider/less sharp.\r\n\r\nSo VETS D intervals are better calibrated (coverage) but less sharp (higher pinball) than univariate ETS on short histories."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q9",
+  "text": "Does the paper show that monitoring forecast errors detects changes faster than the Raw CUSUM for any kind of data and change?",
+  "reference": "No. It shows this in simulations of specific scenarios: a mean change and a trend change in seasonal data with ARMA errors, and a change in the autoregressive parameter of AR(1) errors in quarterly seasonal data (with simpler structures in supplementary simulations). All simulated data have an ARMA error structure, normal innovations unless otherwise specified, and a training sample of 300 in the principal simulations. The applications have no Raw CUSUM comparison.",
+  "marking": "Required: no; the result is shown only for the simulated scenarios. Also correct: the scenarios are a mean change and a trend change in seasonal data with ARMA errors, and a change in the autoregressive parameter of AR(1) errors in quarterly seasonal data, with simpler structures in supplementary simulations; all simulated data have an ARMA error structure and normal innovations unless otherwise specified; a training sample of 300, or 300 and 200; the applications have no Raw CUSUM comparison. Not required: the list of scenarios and conditions. Wrong: generalising beyond the simulated scenarios.",
+  "answers": [
+   {
+    "answer": "HXUXKP",
+    "text": "No. The paper shows faster detection for the specific scenarios tested (mean/trend changes in seasonal data, AR parameter changes), but does not claim universality. The theory requires assumptions on the forecasting model, which don't always hold — ETS(A,N,N) adapting to mean changes is one counterexample."
+   },
+   {
+    "answer": "RMFVD7",
+    "text": "No. The evidence is simulation-based and limited to specific cases: seasonal ARMA data with mean, trend, or AR-parameter changes, and non-seasonal AR/ARMA data with mean or variance changes. There is one exception even there—an AR(1) variance change where Raw CUSUM had lower ADD. The paper does not establish the claim for arbitrary data or change types."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q2",
+  "text": "On the M4 competition data, how did CES compare with ETS, ARIMA and the Theta method on MASE and RMSSE, and were any series left out?",
+  "reference": "CES had the lowest mean MASE (2.921) and RMSSE (2.339) of the univariate models, and the lowest medians (1.803 and 1.529). Ten series (19357, 43160, 51552, 62738, 92370, 92435, 93159, 93196, 93412, 93491) were excluded because influential outliers and structural breaks made ETS break down.",
+  "marking": "Required: CES had the lowest mean and median MASE and RMSSE of CES, ETS, ARIMA and the Theta method; 10 series were excluded because influential outliers and structural breaks made ETS break down. Also correct: saying CES was the best of the univariate (single) models. Not required: the values (mean MASE 2.921, mean RMSSE 2.339, medians 1.803 and 1.529); the numbers of the excluded series. Wrong: saying CES beat SCUM or SCUM(noCES), whose MASE and RMSSE are lower.",
+  "answers": [
+   {
+    "answer": "NTPQXU",
+    "text": "On the M4 data, CES had the **lowest mean and median MASE and RMSSE** of the four methods:\r\n\r\n| Method | MASE mean | RMSSE mean | MASE median | RMSSE median |\r\n|---|---|---|---|---|\r\n| CES | 2.921 | 2.339 | 1.803 | 1.529 |\r\n| ETS | 3.310 | 2.688 | 1.831 | 1.542 |\r\n| ARIMA | 3.037 | 2.436 | 1.903 | 1.606 |\r\n| Theta | 2.980 | 2.394 | 1.865 | 1.574 |\r\n\r\n**Excluded series:** 10 series (19357, 43160, 51552, 62738, 92370, 92435, 93159, 93196, 93412, 93491) whose influential outliers and structural breaks made ETS break down — 99,990 of the 100,000 series remained."
+   },
+   {
+    "answer": "E33PWT",
+    "text": "On M4, CES had mean MASE 2.921 and mean RMSSE 2.339, better than ETS (3.310, 2.688), ARIMA (3.037, 2.436) and Theta (2.980, 2.394). Median MASE/RMSSE were also lowest for CES among these four.\r\n\r\nYes, 10 series were excluded: 19357, 43160, 51552, 62738, 92370, 92435, 93159, 93196, 93412, 93491."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q19",
+  "text": "On the M5 data, was VETS D more or less accurate in rMAE than univariate ETS forecasts made coherent by a hierarchical reconciliation method?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A mention of earlier work that compared a multivariate model with reconciliation approaches on other data does not answer it.",
+  "answers": [
+   {
+    "answer": "Q7PY3V",
+    "text": "The paper does not compare VETS D against hierarchically reconciled ETS forecasts. It benchmarks VETS D only against univariate ETS models (ETS, ETS (ADAM), ETS LN) and Naïve — no reconciliation methods (e.g. MinT) are applied or evaluated."
+   },
+   {
+    "answer": "FNJ4VV",
+    "text": "The paper does not contain any comparison of VETS D with hierarchically reconciled ETS forecasts. The only benchmarks on the M5 data are the three univariate ETS models (ETS LN, ETS (ADAM), ETS) and the Naïve method, so this comparison cannot be answered from the document."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q4",
+  "text": "In the illustration with data from an ARMA(1,1) model, where was the change, what training size was used, and how long after the change did the mean detector signal it?",
+  "reference": "The change in mean is at time point 400 and the detector uses m = 300. The mean detector D_μ(m,k) crossed its threshold 19 time points after the change (at time 419).",
+  "marking": "Required: 19 time points after the change. Also correct: the change in mean at time point 400; m = 300; the signal at time 419. Not required: the change point, m, the time 419, and the ARMA parameters (λ = 0, φ = −0.8, θ = 0.2).",
+  "answers": [
+   {
+    "answer": "UUAAX9",
+    "text": "In the [location] illustration: the mean change was at time point 400, the training (Phase I) size was m = 300, and the mean detector signalled 19 time points after the change."
+   },
+   {
+    "answer": "QCEDQP",
+    "text": "Change at time point 400; training size m = 300; the mean detector D_μ signalled 19 time points after the change."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q12",
+  "text": "What in the paper's simulations supports the claim that monitoring forecast errors greatly reduces the detection delay while keeping a low false positive rate, and what limitations of this evidence does the paper itself state?",
+  "reference": "In the simulations, ARMA Forecast Errors has a high detection probability and a lower average detection delay than the Raw CUSUM for mean and trend changes in seasonal data, forecast errors do better than the Raw CUSUM in all autoregressive parameter scenarios, and the false detection probability is low (below 0.075 in the autoregressive scenarios). Limitations the authors state: Assumptions 1 and 2, which the theoretical validity of the stopping rule requires, are not necessarily satisfied in all scenarios; and the forecasting model chosen by auto.arima may be misspecified.",
+  "marking": "Required: at least one simulation result that supports the claim: ARMA Forecast Errors has a high detection probability and a lower average detection delay than the Raw CUSUM for mean and trend changes in seasonal data; forecast errors do better than the Raw CUSUM in all autoregressive parameter scenarios; the false detection probability is low (below 0.075 in the autoregressive scenarios). Not required: limitations. Limitations the authors state: (1) Assumptions 1 and 2, which the theoretical validity of the thresholds requires, are not necessarily satisfied in all the simulated scenarios; (2) the forecasting model chosen by auto.arima may be misspecified; (3) all simulated data have an ARMA error structure with normally distributed innovations and a training sample of 300 (200 in the simpler supplementary simulations). Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "CTX399",
+    "text": "**Supporting evidence (simulations [location]):**\r\n- Seasonal mean changes: ARMA forecast errors had higher detection probability and lower ADD than Raw CUSUM at all sizes.\r\n- Seasonal trend changes: both near-perfect DP, but forecast errors had lower ADD.\r\n- AR-parameter changes: ARMA and ETS errors beat Raw CUSUM on DP and ADD in all scenarios.\r\n- Non-seasonal mean changes: much lower ADD with DP at least as high.\r\n- Non-seasonal variance changes: nearly always lower ADD.\r\n- Low false positives: FDP below 0.075 for AR changes, below 0.05 for variance changes; \"low\" for mean/trend.\r\n\r\n**Stated limitations:**\r\n- [location]: the two forecasting-model assumptions (constant bias, incomplete adjustment) are not necessarily satisfied in all simulated scenarios, so theoretical thresholds may not be valid everywhere.\r\n- [location]: all data are ARMA with normal innovations and a training sample of 300 (200 in the supplementary simulations), limiting transferability."
+   },
+   {
+    "answer": "WVMM4M",
+    "text": "Supporting evidence: In all simulated scenarios (mean and trend changes in seasonal data; AR parameter changes), the ARMA/ETS forecast-error detectors had higher detection probabilities and shorter average detection delays than the Raw CUSUM, with FDP near the nominal 0.05 (all < 0.075).\r\n\r\nLimitations stated by the paper: (1) [location] are not satisfied in all scenarios, so the theoretical validity of thresholds doesn't always hold; (2) results are specific to the tested settings — seasonal frequencies, change types/sizes, and the particular models used; no universal claim is made."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1002 @@
+[
+ {
+  "answer": "33CRFD",
+  "question": "doi-10-1007-s00180-023-01377-x#Q1",
+  "text": "Two simulation experiments:\r\n\r\n**Design common to both:**\r\n- 500 time series of 5000 observations each\r\n- Sub-samples of 20, 50, 100, 200, 500, 1000, 5000 observations to assess sample-size effects\r\n- Four models fitted: ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1) — covering true, analogous, misspecified, and wrong models\r\n- Five estimators: MSE₁, MSE_h, TMSE, GTMSE, MSCE\r\n- Forecast horizons h = 10, 20, 50, 100, 200 (estimation skipped if T ≤ h)\r\n- Estimation via the smooth package (v2.5.3) in R\r\n\r\n**DGPs:**\r\n1. ETS(A,N,N) with α = 0.2\r\n2. ARIMA(0,1,1) with θ = 0.6\r\n\r\nNote: θ = α − 1 links the two DGPs, so the ETS and ARIMA \"true\" models are analogous. GPL was excluded from the simulations."
+ },
+ {
+  "answer": "34XKXU",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q12",
+  "text": "**Evidence from the simulation experiment:**\r\n\r\n- Within each block of methods, restricting smoothing parameters improves accuracy and pinball values monotonically: PIC(LS,*,*) outperforms PIC(S,*,*), which outperforms PIC(N,*,*) — regardless of the DGP. E.g. for rPinballU on flexible DGPs, PIC(LS,S,N) ≈ 1.19–1.26 vs PIC(N,S,N) ≈ 1.65–1.70.\r\n- The benefit is attributed to parsimony: common parameters are \"averaged out\" across series, protecting against overfitting — especially with larger groups and shorter histories.\r\n- On M5, the auto-selected restrictions were mostly PIC(LS,S,N) (6 of 11 groups), corroborating that common level+seasonal smoothing parameters work well empirically.\r\n\r\n**Limitations the paper itself states:**\r\n\r\n- The simulation range for smoothing parameters was restricted (α ∈ [0,0.3], γ ∈ [0,1−α]), not covering the whole parameter space.\r\n- The finding is demonstrated for VETS(M,N,M;LN) only — no trend component, quarterly seasonality mainly (monthly checked separately with similar findings), uncorrelated errors in the main experiment.\r\n- Common parameters help *given the correct model class*; if the DGP is very different (e.g. flexible PIC(N,N,N) data), restrictive methods still lose accuracy, so common parameters cannot compensate for a wrongly restricted component structure.\r\n- The evidence is specific to the pure multiplicative (log-normal) framework; additive models were not tested in the simulation."
+ },
+ {
+  "answer": "37JU7D",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q15",
+  "text": "The paper recommends estimating VETS with a **diagonal covariance matrix** (VETS D), i.e. assuming errors across series are uncorrelated.\r\n\r\nReasons given:\r\n- **Easier to estimate**, especially on small samples — the full matrix (VETS F) requires estimating $n(n+1)/2$ variance-covariance terms, which quickly exceeds the number of observations (e.g. 1275 parameters for 50 series).\r\n- **Better empirical performance on M5:** VETS D outperformed VETS F on both long and short samples in terms of rMAE and prediction-interval coverage (VETS F produced intervals that were too wide, with high pinball values, due to estimation difficulties).\r\n- **More robust:** the simulation findings (common parameters/initials, e.g. PIC(LS,S,N)) carry over to the diagonal case, and the diagonal assumption avoids overfitting.\r\n\r\nThe only exception noted: if the **pinball measure** is the primary concern and the history is short, VETS D may not be preferred (ETS models had better relative pinball values on short data)."
+ },
+ {
+  "answer": "393XNM",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q9",
+  "text": "No. [location] states that in the MCB test on rMAE, the differences between the five models on the M5 data are not shown to be statistically significant. [location] likewise notes the differences are not statistically significant."
+ },
+ {
+  "answer": "3CPUNA",
+  "question": "doi-10-1007-s00180-023-01377-x#Q10",
+  "text": "No. In the simulations with non-zero true parameters, MSE₁ was the least biased and most efficient, and under correct specification no consistent multi-step estimator has lower asymptotic variance than the one-step Gaussian estimator.\r\n\r\nBut there are exceptions:\r\n- when a redundant parameter is zero (e.g., trend β = 0), multi-step estimators estimate it more efficiently than MSE₁ on small samples.\r\n- MSE_h can have lower asymptotic parameter variance than MSE₁ where \\(c_j\\) is near zero — though this is disputed (argued from likelihood curvature, not proved; a Monte Carlo found MSCE more efficient than MSE_h)."
+ },
+ {
+  "answer": "3D4QUQ",
+  "question": "doi-10-1093-imaman-dpad028#Q16",
+  "text": "The paper doesn't name the test. [location] explicitly notes \"the test is not named in the paper.\""
+ },
+ {
+  "answer": "3DWW4N",
+  "question": "doi-10-1111-jtsa-12843#Q3",
+  "text": "**Application:** A SARMA(1,0,0)(1,0,0)₁₂ model was fitted to monthly GRP admission proportions (2010–2013), then one-step-ahead forecasts were produced for 2013–2020. The first 36 forecast errors (2013–2016) formed the Phase I sample; both the mean detector (Dμ) and squared-error detector (Dξ) monitored from 2016 onward.\r\n\r\n**Detection speed:** The mean detector signalled 4 observations after the change (July 2017); the squared-error detector signalled 2 observations after (May 2017).\r\n\r\n**Comparison:** Both delays (4 and 2 months) are far shorter than the ≥24 months a model-based sequential detector would need to fit a post-change model with yearly seasonality."
+ },
+ {
+  "answer": "3Q7MD3",
+  "question": "doi-10-1002-nav-22074#Q3",
+  "text": "For M3 series 1664, CES estimated $\\alpha_0+i\\alpha_1=0.99999+0.99884i$. The authors concluded that CES identified the series as stationary and produced a stationary trajectory."
+ },
+ {
+  "answer": "3U39R4",
+  "question": "doi-10-1111-jtsa-12843#Q8",
+  "text": "No. The paper explicitly states that [location] \"are not necessarily satisfied in all scenarios,\" but shows satisfactory performance anyway."
+ },
+ {
+  "answer": "3VHT79",
+  "question": "doi-10-1111-jtsa-12843#Q2",
+  "text": "Both detectors signalled on **2 December 2020**: the mean detector (Dμ) and the squared-error detector (Dξ).\r\n\r\n**Training data:** the Phase I sample was the forecast errors from **1 July to 31 October 2020** (July–October); monitoring began 1 November 2020. Only the forecast errors were available—the underlying parcel volumes and forecasting model were unknown to the authors."
+ },
+ {
+  "answer": "443JPW",
+  "question": "doi-10-1111-jtsa-12843#Q16",
+  "text": "The paper doesn't report one. Model-based sequential detection is only discussed in the GRP admissions application, where it's argued to need at least 24 months post-change—no ADD is given for it in any simulation."
+ },
+ {
+  "answer": "4ADJR4",
+  "question": "doi-10-1002-nav-22074#Q6",
+  "text": "Non-seasonal CES has an underlying ARMA(2,2):\r\n\r\n- AR: $\\phi_1 = 2 - \\alpha_0$, $\\phi_2 = \\alpha_0 + \\alpha_1 - 2$\r\n- MA for $y_t$: $\\theta_{1,1} = 2 - 2\\alpha_0 + \\alpha_1$, $\\theta_{1,2} = 3\\alpha_0 + \\alpha_1 - 2 - \\alpha_0^2 - \\alpha_1^2$\r\n- MA for $\\xi_t = \\varepsilon_t - c_{t-1}$: $\\theta_{2,1} = -2 + \\alpha_1$, $\\theta_{2,2} = \\alpha_0 - \\alpha_1 - 2$"
+ },
+ {
+  "answer": "4CMCHW",
+  "question": "doi-10-1111-jtsa-12843#Q15",
+  "text": "The paper doesn't explicitly state limitations for that evidence. It only reports that both detectors signalled on 2 December and that this \"corresponds to a rise in the mean and variance,\" without caveats about alternative explanations or validation."
+ },
+ {
+  "answer": "4FNUET",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q6",
+  "text": "Breaking it down:\r\n\r\n**VETS(M,Md,M;LN)** — the base model:\r\n- **M** (first): multiplicative error\r\n- **Md**: multiplicative trend, **damped**\r\n- **M** (third): multiplicative seasonality\r\n- **;LN**: the equations hold for the logarithms of the data, states and errors (log-normal errors)\r\n\r\n**PIC(LTSD,LTS,S)** — the sharing restrictions:\r\n- **P = LTSD**: common smoothing parameters for **L**evel, **T**rend, **S**easonal component, and the **D**amping parameter\r\n- **I = LTS**: common **i**nitial values for level, trend and seasonal component\r\n- **C = S**: common **c**omponent (one state shared by all series) for the seasonal component only; level and trend remain individual to each series"
+ },
+ {
+  "answer": "4RXD94",
+  "question": "doi-10-1093-imaman-dpad028#Q20",
+  "text": "The paper does not report them. It only says ETS(M,M,N) was applied to series N2703 with `adam` from smooth v3.2.0; the estimated smoothing parameters are not given in the text."
+ },
+ {
+  "answer": "773JJC",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q4",
+  "text": "From [location] (long histories):\r\n\r\n- VETS F: 0.982\r\n- VETS D: 0.947\r\n- ETS LN: 0.934\r\n- ETS (ADAM): 0.925\r\n- ETS: 0.937\r\n\r\nNominal level: 0.95. VETS F over-covers; VETS D is closest to nominal."
+ },
+ {
+  "answer": "77A4QY",
+  "question": "doi-10-1111-jtsa-12843#Q13",
+  "text": "The Raw CUSUM doesn't account for seasonality, so it overestimates the variance during Phase I training; a larger variance estimate makes changes harder to detect, hurting its detection probability and delay."
+ },
+ {
+  "answer": "77XRUN",
+  "question": "doi-10-1093-imaman-dpad028#Q1",
+  "text": "Largest to smallest effect: dampening parameter φ, trend smoothing β, forecast horizon h, scale σ, level smoothing α."
+ },
+ {
+  "answer": "7EEADH",
+  "question": "doi-10-1111-jtsa-12843#Q16",
+  "text": "The paper doesn't report it. The simulations compare forecast-error detectors against Raw CUSUM only; no model-based sequential changepoint method is included in the simulation study."
+ },
+ {
+  "answer": "7EEAJ7",
+  "question": "doi-10-1111-jtsa-12843#Q6",
+  "text": "For an AR(1) model, φ₁ = φ and θ = 1, so ψ₀ = 1 and ψₗ = 0 for l ≥ 1. The formula of [location] gives:\r\n\r\nΔ_μ,m = δ_μ,m (1 − φ)\r\n\r\nSo the mean change in the forecast errors is the raw-data mean change scaled by one minus the autoregressive coefficient."
+ },
+ {
+  "answer": "7JXEKT",
+  "question": "doi-10-1007-s00180-023-01377-x#Q13",
+  "text": "**Analytical support:**\r\n- The h-step variance contains the sum Σ_{j=1}^{h-1} ĉ_j², which grows with h, so minimizing it forces ĉ_j (and hence parameters) closer to zero as h increases.\r\n- The likelihood decomposition shows the \"bias\" term B_MSEh is weighted by (T−h)/2, so larger T weakens the penalty relative to the data term.\r\n\r\n**Simulation support:**\r\n- Boxplots show parameter distributions more biased and dispersed at h = 200 than h = 10 for the same sample size.\r\n- For the same h, estimates converge to true values as the sample grows from 20 to 5000; at h = 10 the distributions are nearly identical to MSE₁ even on moderate samples.\r\n\r\n**Empirical support:**\r\n- On the temperature data (T = 2016, h = 60), MSE_h's AR(1) shrank to −0.786 while GTMSE/MSCE/GPL stayed near 0.53–0.69 — shrinkage visible at large h relative to sample size."
+ },
+ {
+  "answer": "7K33YM",
+  "question": "doi-10-1007-s00180-023-01377-x#Q19",
+  "text": "The paper did not use the direct multi-step estimator (DMS) with a separate model per horizon on this data. For MSE_h, only the single model estimated for the specific horizon h = 60 was used, not 60 separate models.\r\n\r\nThat single MSE_h model performed best in accuracy (RMSE 1.128, MAE 0.784, ME 0.009), but fit the data poorly — it didn't react to local changes, as it was optimized only for the 60-step-ahead horizon. Its parameters were also heavily shrunk (AR(1) = −0.786), which climatologists would consider unrealistic."
+ },
+ {
+  "answer": "7N43YR",
+  "question": "doi-10-1093-imaman-dpad028#Q15",
+  "text": "Evidence:\r\n- Quantile bias and precision in [location] are all small and close to zero across DGPs and models.\r\n- Reliability diagrams show quantile coverage fluctuating randomly around nominal levels.\r\n- A repeat run produced different coverage curves, supporting random rather than systematic miscalibration.\r\n\r\nLimitations:\r\n- Calibration is assessed only in the simulation experiment with one DGP model class, ETS(M,Md,M), σ = 0.1, and specific smoothing parameters.\r\n- The paper does not establish calibration universally for all ETS(M,*,*) models or real-world datasets."
+ },
+ {
+  "answer": "7PW7AV",
+  "question": "doi-10-1002-nav-22074#Q4",
+  "text": "Series 47 from the M1 dataset. CES missed the unpredictable holdout surge and had MSIS 523.034, while ETS(M,N,N) scored 25.590."
+ },
+ {
+  "answer": "7QVVXK",
+  "question": "doi-10-1007-s00180-023-01377-x#Q14",
+  "text": "Because the errors share common innovation terms. From the state space model, the h-step-ahead error is η_{t+h|t} = Σ_{j=1}^{h-1} c_j ε_{t+j} + ε_{t+h}, so errors at different horizons contain overlapping ε terms. The covariance σ_{i,j} is a function of the c_j parameters and equals zero only if all c_j = 0 — i.e., only for a deterministic model. Hence assuming zero off-diagonal covariances (as in TMSE, or in Martinez 2017) is unrealistic for any stochastic model."
+ },
+ {
+  "answer": "7T3KVP",
+  "question": "doi-10-1007-s00180-023-01377-x#Q11",
+  "text": "No — it differs by model family:\r\n\r\n- **ETS:** Beneficial for redundant parameters. When a wrong ETS model was used (e.g., ETS(A,A,N) on level data), the unnecessary trend parameter β shrank to zero faster than with MSE₁.\r\n- **ARIMA:** Potentially damaging. Wrong parameters were emphasized rather than removed — e.g., the AR parameter of ARIMA(1,1,1) was forced negative on small samples instead of shrinking to zero, making misspecification worse.\r\n\r\nSo shrinkage helps ETS remove redundant components but can harm ARIMA by distorting parameters."
+ },
+ {
+  "answer": "7YDXJH",
+  "question": "doi-10-1093-imaman-dpad028#Q6",
+  "text": "Per [location], the conventional point forecast equals both conditional expectations only in three cases:\r\n\r\n1. **One-step-ahead forecasts** (h = 1)\r\n2. **Within the first seasonal cycle** (h ≤ m) for non-trended models with multiplicative seasonality\r\n3. **ETS(M,N,N)** — the level-only model, for any horizon\r\n\r\nIn all other cases (h > 1 with trend, or h > m with seasonality), the point forecast lies below the geometric mean, which lies below the arithmetic mean."
+ },
+ {
+  "answer": "93WM7R",
+  "question": "doi-10-1002-nav-22074#Q15",
+  "text": "**Non-seasonal CES:** Derived from the invertibility conditions of its underlying ARMA(2,2) model. The stable region is bounded by three circles: $(\\alpha_0-2.5)^2+\\alpha_1^2>1.25$, $(\\alpha_0-0.5)^2+(\\alpha_1-1)^2>0.25$, and $(\\alpha_0-1.5)^2+(\\alpha_1-0.5)^2<1.5$.\r\n\r\n**Seasonal CES:** No — the parameter restrictions under which seasonal CES is stable are **not derived**. Its stationarity/non-stationarity is only argued by analogy to non-seasonal CES."
+ },
+ {
+  "answer": "99THTN",
+  "question": "doi-10-1111-jtsa-12843#Q17",
+  "text": "The paper doesn't say. It states that only the forecast errors were available to the authors, not the underlying data or the forecasting model used by Royal Mail."
+ },
+ {
+  "answer": "9EAF9M",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q4",
+  "text": "Coverage on long M5 histories (51 estimation observations, 12-month holdout), nominal 95%:\r\n\r\n| Model | Coverage |\r\n|---|---|\r\n| ETS LN | 0.934 |\r\n| ETS (ADAM) | 0.925 |\r\n| ETS | 0.937 |\r\n| VETS D | 0.947 |\r\n| VETS F | 0.982 |\r\n\r\nAll univariate ETS variants fell below the nominal 95%. VETS D came closest (0.947), while VETS F overshot with intervals that were too wide (0.982)."
+ },
+ {
+  "answer": "9EUVMX",
+  "question": "doi-10-1111-jtsa-12843#Q6",
+  "text": "Δ_μ,m = δ_μ,m(1 − φ)."
+ },
+ {
+  "answer": "9KVXW7",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q11",
+  "text": "**Help:** When the series truly share a seasonal pattern (data from PIC(*,S,S) variants), PIC(*,S,S) variants are the most accurate — e.g., rMAE ≈ 0.95 vs 1.0 for the correct PIC(N,N,N) on common-seasonality data.\r\n\r\n**Harm:** When series have individual seasonal components, forcing a common one is very damaging — rMAE rises to 1.55–1.88 on PIC(N,N,N) data, vs ≈1.0–1.02 for PIC(*,S,N). Hence the recommendation: use common seasonal components only for very similar seasonal patterns."
+ },
+ {
+  "answer": "9NP7WP",
+  "question": "doi-10-1093-imaman-dpad028#Q5",
+  "text": "They impose E(1 + εt) = 1 so one-step forecasts match conditional expectations.\r\n\r\n- Inverse Gaussian: location μ = 1.\r\n- Log-Normal: location μ = −σ²/2.\r\n- Gamma: shape ξ = 1/σ².\r\n\r\nThis keeps the error mean at one and avoids bias in the ETS recursion."
+ },
+ {
+  "answer": "9VUF4E",
+  "question": "doi-10-1111-jtsa-12843#Q1",
+  "text": "Models were trained on an initial segment of n_train = 300 observations, then produced sequential one-step-ahead forecasts. ARMA models were selected/estimated via auto.arima (forecast package) and ETS via es (smooth package). Thresholds were theoretical, from [location] (Supporting Information), with γ = 0 and false alarm rate 0.05; for Raw CUSUM, σ̂ was the Bartlett long-run variance estimator, while forecast-error detectors used the standard i.i.d. estimator. Each scenario was repeated 1,000 times."
+ },
+ {
+  "answer": "9YEUQF",
+  "question": "doi-10-1093-imaman-dpad028#Q3",
+  "text": "Automatic AICc selection (`smooth::auto.adam`) chose **ETS(M,Md,M) with Gamma errors**, with **AICc = 6398.57**.\r\n\r\nThe comparison additive model was **ETS(A,Ad,A) with Normal errors**, which had a higher **AICc = 6418.296** — a difference of about 19.7 in favor of the multiplicative Gamma model. Additionally, on the low-volume initial 49-observation subsample, the Gamma model produced strictly positive 95% prediction intervals, while the Normal additive model did not."
+ },
+ {
+  "answer": "A4AU97",
+  "question": "doi-10-1111-jtsa-12843#Q18",
+  "text": "The paper doesn't say. [location] only describes the data as the monthly proportion of GRP A&E admissions \"in participating hospitals across England\"—no hospital count is given."
+ },
+ {
+  "answer": "A7DXRR",
+  "question": "doi-10-1002-nav-22074#Q20",
+  "text": "The paper does not report that percentage. It only states for one M3 example (series 1664) that all holdout observations fell inside the 95% interval, and gives aggregate error measures (e.g., MSIS) across M1/M3/tourism — not coverage rates."
+ },
+ {
+  "answer": "AD7KEF",
+  "question": "doi-10-1007-s00180-023-01377-x#Q2",
+  "text": "**Model/data:** ARIMA(1,1,2) fitted to monthly HadCRUT4 mean surface temperature data (HadCRUT.4.5.0.0) for a location in Greenland (322.5°E, 62.5°N), January 1849–December 2017 (2016 observations), with the last 5 years (60 points) withheld for testing.\r\n\r\n**MSE performance:** The conventional MSE performed worst of all six estimators — RMSE 1.217, MAE 0.849, ME −0.450 (highest errors, most biased). All multi-step estimators beat it; MSE_h was best (RMSE 1.128, MAE 0.784, ME 0.009). GPL was nearly identical to MSE."
+ },
+ {
+  "answer": "AHHE9T",
+  "question": "doi-10-1007-s00180-023-01377-x#Q9",
+  "text": "No — under correct model specification it does not. Maximising the GPL gives estimates similar to MSE₁, because the log-determinant decomposes as \\(\\log GV = h \\log s_1^2 + \\log|\\hat{A}|\\) with \\(|\\hat{A}| = 1\\) when the model is correctly specified, so no extra shrinkage pressure is exerted on the \\(\\hat{c}_j\\).\r\n\r\nCaveats the paper itself notes:\r\n- under misspecification (\\(|\\hat{A}| \\neq 1\\)), off-diagonal covariances don't cancel and GPL estimates diverge from MSE₁.\r\n- GPL approaches MSE₁ only when \\(T\\) is much larger than \\(h\\); in small samples it can shrink even more than MSE₁ (e.g., ETS(A,N,N), \\(T=50\\), \\(h=10\\): 63% of estimates at zero vs 29% for MSE₁)."
+ },
+ {
+  "answer": "AJPQPX",
+  "question": "doi-10-1111-jtsa-12843#Q2",
+  "text": "Both detectors D_μ(m,k) and D_ξ(m,k) signalled a change on 2 December 2020. Training data: forecast errors from 1 July to 31 October 2020 (Phase I), with monitoring beginning 1 November 2020."
+ },
+ {
+  "answer": "AM3AKR",
+  "question": "doi-10-1007-s00180-023-01377-x#Q5",
+  "text": "According to the paper's [location]: as the horizon \\(h\\) grows, the AR parameter \\(\\hat{\\phi}_1\\) and MA parameter \\(\\hat{\\theta}_1\\) are both shrunk toward \\(-1\\), so the model degenerates into a restricted ARIMA(1,0,0).\r\n\r\nBut note the paper's own correction (found by independent proof check): this limit is wrong. At \\(\\hat{\\phi}_1 = \\hat{\\theta}_1 = -1\\) the \\(h\\)-step variance factor equals \\(h\\), which is not the minimum. The actual minimum is at \\(\\hat{\\phi}_1 = 0\\), \\(\\hat{\\theta}_1 = -1\\), where every multi-step coefficient \\(c_j = 0\\) — i.e., a deterministic level, not ARIMA(1,0,0)."
+ },
+ {
+  "answer": "AU9RTP",
+  "question": "doi-10-1002-nav-22074#Q13",
+  "text": "Support:\r\n- Theory: the stationarity of CES depends on the complex smoothing parameter $\\alpha_0+i\\alpha_1$, with the stationarity region derived in [location], so one model covers both cases.\r\n- Demonstrations: M3 series 1664 is stationary and 2721 is trended/non-stationary, and CES fits both with appropriate parameters.\r\n- Empirics: CES performs well on competition data containing both types of series.\r\n\r\nLimitations stated by the paper:\r\n- It does not claim CES is appropriate for every forecasting scenario.\r\n- The work focuses on the additive error case; multiplicative error and sample-size effects are left to future research."
+ },
+ {
+  "answer": "AXVDPN",
+  "question": "doi-10-1093-imaman-dpad028#Q3",
+  "text": "It chose ETS(M,Md,M) with a Gamma distribution, AICc = 6,398.570. The additive ETS(A,Ad,A) with Normal errors had AICc = 6,418.296, so the multiplicative Gamma model was better by about 19.7 AICc points."
+ },
+ {
+  "answer": "C34FWE",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q15",
+  "text": "**Recommendation:** A **diagonal** covariance matrix — i.e., VETS D, with errors uncorrelated across series — is recommended over the full covariance matrix (VETS F).\r\n\r\n**Reasons:**\r\n- **Accuracy:** VETS D has the lowest geometric mean and median rMAE of the five models on both long and short M5 histories.\r\n- **Interval calibration:** Its 95% prediction intervals have coverage closest to the nominal level on long histories.\r\n- **Estimability:** A diagonal covariance needs only n variance terms instead of n(n+1)/2, so it is easier to estimate — important with short histories and many series.\r\n- **VETS F's problems:** It over-covers (intervals too wide) and has the highest pinball losses of all five models on both histories, plausibly because its many more parameters are hard to estimate."
+ },
+ {
+  "answer": "CHKAHK",
+  "question": "doi-10-1093-imaman-dpad028#Q6",
+  "text": "The paper gives three cases:\r\n\r\n1. One-step-ahead forecasts, h = 1, for all pure multiplicative ETS models.\r\n2. Horizons h ≤ m for non-trended models with multiplicative seasonality.\r\n3. The special model ETS(M,N,N), for any horizon h."
+ },
+ {
+  "answer": "CMNEAA",
+  "question": "doi-10-1007-s00180-023-01377-x#Q9",
+  "text": "No. When the model is correctly specified, GPL produces estimates similar to MSE₁ with no shrinkage — the covariances between horizons cancel out the effect (det(A) = 1 always). Only under misspecification may GPL estimates differ from MSE₁."
+ },
+ {
+  "answer": "CPMATR",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q3",
+  "text": "**Long histories:** VETS D — geometric mean 0.894, median 0.934.\r\n\r\n**Short histories:** VETS D — geometric mean 0.936, median 0.974."
+ },
+ {
+  "answer": "CRP9TD",
+  "question": "doi-10-1111-jtsa-12843#Q20",
+  "text": "The paper only reports results for γ = 0; no other values were tested, so it doesn't say which gives the shortest delays."
+ },
+ {
+  "answer": "CTX399",
+  "question": "doi-10-1111-jtsa-12843#Q12",
+  "text": "**Supporting evidence (simulations [location]):**\r\n- Seasonal mean changes: ARMA forecast errors had higher detection probability and lower ADD than Raw CUSUM at all sizes.\r\n- Seasonal trend changes: both near-perfect DP, but forecast errors had lower ADD.\r\n- AR-parameter changes: ARMA and ETS errors beat Raw CUSUM on DP and ADD in all scenarios.\r\n- Non-seasonal mean changes: much lower ADD with DP at least as high.\r\n- Non-seasonal variance changes: nearly always lower ADD.\r\n- Low false positives: FDP below 0.075 for AR changes, below 0.05 for variance changes; \"low\" for mean/trend.\r\n\r\n**Stated limitations:**\r\n- [location]: the two forecasting-model assumptions (constant bias, incomplete adjustment) are not necessarily satisfied in all simulated scenarios, so theoretical thresholds may not be valid everywhere.\r\n- [location]: all data are ARMA with normal innovations and a training sample of 300 (200 in the supplementary simulations), limiting transferability."
+ },
+ {
+  "answer": "CY3PDN",
+  "question": "doi-10-1093-imaman-dpad028#Q16",
+  "text": "The paper does not name a specific statistical test. It only says the differences were “not statistically significant (on 5% significance level).”"
+ },
+ {
+  "answer": "CYJEYW",
+  "question": "doi-10-1007-s00180-023-01377-x#Q1",
+  "text": "**Design:**\r\n- **Data-generating processes:** 500 series of length 5,000 each from ETS(A,N,N) (α = 0.2) and ARIMA(0,1,1) (θ = 0.6).\r\n- **Sample sizes:** sub-samples T ∈ {20, 50, 100, 200, 500, 1000, 5000}.\r\n- **Horizons:** h ∈ {10, 20, 50, 100, 200}.\r\n- **Fitted models:** four — ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1) (the latter two cases fitting over-parameterised/misspecified models to the DGPs).\r\n- **Estimators:** five — MSE₁, MSE_h, TMSE, GTMSE, MSCE.\r\n- **Software:** R package smooth v2.5.3 (sim.es, sim.ssarima, es, ssarima).\r\n- **Evaluation:** parameter estimation bias and dispersion via boxplots over the 500 replications.\r\n\r\n**Limitation:** only two univariate DGPs and pure additive linear models; results reported visually, not as tabulated statistics."
+ },
+ {
+  "answer": "CYTWPF",
+  "question": "doi-10-1002-nav-22074#Q1",
+  "text": "On the 5,315 M1/M3/tourism series:\r\n\r\n| Method | RMSSE mean | RMSSE median |\r\n|---|---|---|\r\n| **CES** | **1.959** | **1.170** |\r\n| ETS | 1.970 | 1.181 |\r\n| ARIMA | 2.134 | 1.271 |\r\n| Theta | 1.965 | 1.238 |\r\n\r\nCES had the lowest mean and median RMSSE of the four methods."
+ },
+ {
+  "answer": "D9D7QM",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q3",
+  "text": "**Long history (51 obs):**\r\n- Geometric mean: **VETS D** (0.894)\r\n- Median: **VETS D** (0.878)\r\n\r\n**Short history (24 obs):**\r\n- Geometric mean: **VETS D** (0.979)\r\n- Median: **VETS D** (0.974)\r\n\r\nSo **VETS D** (diagonal covariance) had both the lowest geometric mean and median rMAE in both cases."
+ },
+ {
+  "answer": "D9E9XQ",
+  "question": "doi-10-1007-s00180-023-01377-x#Q12",
+  "text": "**Support:**\r\n- **Analytical:** GTMSE's log form balances the one-step-ahead variance against the $\\hat{c}_j^2$ terms, so its shrinkage is milder than MSE_h/TMSE/MSCE.\r\n- **Simulation:** Boxplots show GTMSE's parameter estimates converge to true values faster, with less bias and dispersion than other multi-step estimators across both DGPs, all models, horizons, and sample sizes.\r\n\r\n**Limitations stated in the paper:**\r\n- GTMSE is still generally less efficient and more biased than MSE₁ when the model is correct — the improvement is only relative to other multi-step estimators.\r\n- With a wrong model (e.g., ARIMA(1,1,1) on ETS data), GTMSE still distorts parameters and \"does not help\" — it makes the situation worse on small samples, like the other multi-step estimators.\r\n- On the temperature data, GTMSE forecasts were no better than TMSE/MSCE and worse than MSE_h."
+ },
+ {
+  "answer": "DADTJD",
+  "question": "doi-10-1093-imaman-dpad028#Q18",
+  "text": "The paper doesn't report computation times. It only documents that conditional expectations require Monte Carlo simulation and that the M3 example used simulation to obtain them — no runtime comparison is given."
+ },
+ {
+  "answer": "DAVXNP",
+  "question": "doi-10-1093-imaman-dpad028#Q5",
+  "text": "All three are restricted so the multiplicative error has unit mean, E(1 + ϵt) = 1, keeping the model unbiased:\r\n\r\n- **Inverse Gaussian**: location μ = 1 (scale σ² free), so mean = μ = 1.\r\n- **Log-Normal**: location μ = −σ²/2, so mean = exp(μ + σ²/2) = 1.\r\n- **Gamma**: shape ξ = 1/σ², so mean = ξσ² = 1.\r\n\r\nThis unit-mean restriction is what allows these positive distributions to be applied directly to the multiplicative error of conventional ETS(M,*,*) models without log-transforming the model."
+ },
+ {
+  "answer": "DEDWNQ",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q14",
+  "text": "**Evidence:**\r\n- VETS D — which estimates from the whole group — has the lowest geometric mean and median rMAE of the five models on both long and short histories (0.894/0.934 long, 0.936/0.974 short), beating the three univariate ETS models.\r\n- The selection procedure most often chose PIC(LS,S,N) (6 of 11 groups), i.e., restrictions that pool information across series, and the authors attribute the gains mainly to shared seasonal initial values and smoothing parameters.\r\n\r\n**Limitations stated (apart from significance):**\r\n- Evidence is a single monthly data set of 69 series in 11 groups, each with one 12-month holdout.\r\n- Seasonality/trend classification and departmental grouping rely on `adam` and are assumed correct.\r\n- No trend-component models were analysed.\r\n- No experiment on M5 compares VETS with and without the cross-series restrictions directly — the attribution to shared parameters/initial values is abductive, not tested.\r\n- Robustness of the simulation findings outside the simulated settings is untested; the M5 evidence alone does not establish that cross-sectional information helps generally."
+ },
+ {
+  "answer": "DNHFDF",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q8",
+  "text": "No. On short histories, VETS D has higher rPinballU and rPinballL than all three ETS models (rPinballU 2.515 vs 0.938–1.155; rPinballL 1.567 vs 0.895–1.194). Its coverage (0.970) is close to nominal, but its intervals are wider/less sharp than ETS's. Hence the recommendation [location]: VETS D over ETS except when pinball values matter most and the history is short."
+ },
+ {
+  "answer": "DNN3P3",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q16",
+  "text": "The paper does not state the significance level of the MCB test. It only reports that the differences between the five models were not shown to be statistically significant."
+ },
+ {
+  "answer": "DWD74E",
+  "question": "doi-10-1093-imaman-dpad028#Q1",
+  "text": "Based on the Box-Cox odds regression estimates (scaled predictors):\r\n\r\n1. **φ (damping parameter)** — largest effect (estimate 6.167)\r\n2. **Horizon** (3.656)\r\n3. **β (trend smoothing)** (3.739) — essentially tied with horizon\r\n4. **σ (scale)** (2.755)\r\n5. **α (level smoothing)** — smallest effect (1.578)\r\n\r\nSo: φ > horizon ≈ β > σ > α."
+ },
+ {
+  "answer": "DX9VC3",
+  "question": "doi-10-1111-jtsa-12843#Q14",
+  "text": "**Support:** formal proof [location] ([location] of the paper), which derives the change size from the two forecasting-model assumptions ([location] constant bias, [location] incomplete adjustment).\r\n\r\n**Conditions:**\r\n- **Variance only** (δμ,m = 0): the shift in centred squared errors equals the variance change, Δξ,m = Var_G′[Y_t|ỹ_t] − Var_F[Y_t|ỹ_t], requiring only the constant-bias assumption.\r\n- **Mean and variance** (δμ,m ≠ 0): Δξ,m = Var_G′[Y_t|ỹ_t] − Var_F[Y_t|ỹ_t] + Δμ,m², requiring both [location].\r\n\r\nCaveat: for a misspecified model the multiplier need not be 1—e.g., ETS(A,N,N) with α = 0.5 gives 2δξ/(2 − α)."
+ },
+ {
+  "answer": "DYQ3X9",
+  "question": "doi-10-1002-nav-22074#Q9",
+  "text": "No.\r\n\r\n- M1/M3/tourism: Theta has the lowest mean MSIS (2.252... wait, MSIS column: Theta 2.531 vs CES 3.465), so Theta is lower than CES.\r\n- M4: Theta also has lower mean MSIS than CES (2.130 vs 2.379).\r\n\r\nSo CES does not have the lowest MSIS among those four on either dataset."
+ },
+ {
+  "answer": "DYVUMK",
+  "question": "doi-10-1093-imaman-dpad028#Q14",
+  "text": "**Why:**\r\n- Its unit-mean restriction is simple: just set location μ = 1.\r\n- Its scale σ² has a closed-form MLE: (1/T)Σ εₜ²/(1+εₜ).\r\n- The convolution of i.i.d. Inverse Gaussian variables is well defined.\r\n- By contrast, Log-Normal has a non-convex likelihood with a scale estimate existing only in some cases, and Gamma has no closed-form scale MLE.\r\n\r\n**Support:** The argument is explicitly one of convenience, not empirical superiority — the authors note that Folks & Chhikara (1978) found data can be described equally well by all three distributions, and their own simulations show the three perform very similarly. [location] concedes \"the argument is not tested.\""
+ },
+ {
+  "answer": "E33PWT",
+  "question": "doi-10-1002-nav-22074#Q2",
+  "text": "On M4, CES had mean MASE 2.921 and mean RMSSE 2.339, better than ETS (3.310, 2.688), ARIMA (3.037, 2.436) and Theta (2.980, 2.394). Median MASE/RMSSE were also lowest for CES among these four.\r\n\r\nYes, 10 series were excluded: 19357, 43160, 51552, 62738, 92370, 92435, 93159, 93196, 93412, 93491."
+ },
+ {
+  "answer": "E3EUNC",
+  "question": "doi-10-1002-nav-22074#Q9",
+  "text": "**M1/M3/tourism:** No. CES has the lowest **median** MSIS (0.869) but the **highest mean** MSIS (3.465) of the four — worse than ETS (2.258), ARIMA (3.335) and Theta (2.531). The high mean is driven by the failure on M1 series 47 (MSIS 523.034).\r\n\r\n**M4:** No. CES has the lowest **median** MSIS (0.592) but not the lowest **mean** — ARIMA is lower (2.272 vs CES's 2.379)."
+ },
+ {
+  "answer": "E3Q7MY",
+  "question": "doi-10-1111-jtsa-12843#Q5",
+  "text": "An ETS(A,A,N) model was used, and the detector D_ξ(m,k) signalled 7 time points after the change."
+ },
+ {
+  "answer": "EFJQR9",
+  "question": "doi-10-1002-nav-22074#Q5",
+  "text": "When **α₁ = 1** (imaginary part equals one), CES is equivalent to ETS(A,N,N), the local level model.\r\n\r\nIt is then simple exponential smoothing with smoothing parameter **α₀ − 1**: the real part α₀ plays the role of the SES smoothing parameter plus one. So for a stationary series, α₀ ≈ 1 (SES parameter ≈ 0); for a random walk, α₀ ≈ 2 (SES parameter ≈ 1)."
+ },
+ {
+  "answer": "EJPJNQ",
+  "question": "doi-10-1002-nav-22074#Q19",
+  "text": "The paper reports estimated α₀ and α₁ for only **two** M3 series:\r\n\r\n- **Series 1664** (stationary): α₀ = 0.99999, α₁ = 0.99884\r\n- **Series 2721** (trended): α₀ = 1.48098, α₁ = 1.00346\r\n\r\nNo typical or median values across the M3 series are given."
+ },
+ {
+  "answer": "EP7M9J",
+  "question": "doi-10-1007-s00180-023-01377-x#Q5",
+  "text": "As the forecast horizon grows, the parameters shrink: φ̂₁ → −1 and θ̂₁ → −1. The model degenerates into a restricted ARIMA(1,0,0), i.e., (1+B)y_t = e_t — a deterministic, non-stochastic model."
+ },
+ {
+  "answer": "EPYVVD",
+  "question": "doi-10-1007-s00180-023-01377-x#Q4",
+  "text": "**Definition:**\r\n$$GTMSE = \\sum_{j=1}^{h} \\log \\left( \\frac{1}{T-h} \\sum_{t=1}^{T-h} e_{t+j|t}^2 \\right)$$\r\n— the sum of the logarithms of the mean squared errors across horizons 1 to \\(h\\).\r\n\r\n**Derivation:** Start from the General Predictive Likelihood, whose concentrated log-likelihood is\r\n$$l_{GPL_h} = -\\frac{T-h}{2}\\left( h \\log(2\\pi e) + \\log|\\hat{\\Sigma}| \\right).$$\r\nGTMSE is obtained by imposing a **diagonal restriction** on the multi-step error covariance matrix \\(\\hat{\\Sigma}\\) — setting all covariances between errors of different horizons to zero — and applying logarithmic scaling. This gives:\r\n$$GTMSE \\propto \\sum_{j=1}^{h} \\log(s_j^2) = h \\log(s_1^2) + \\sum_{j=2}^{h} \\log\\left(1 + \\sum_{i=1}^{j-1} \\hat{c}_i^2\\right),$$\r\nusing \\(\\sigma_h^2 = \\sigma_1^2\\left(1 + \\sum_{j=1}^{h-1} c_j^2\\right)\\).\r\n\r\n**Purpose:** the diagonal restriction moderates the shrinkage that full multi-step losses impose on the \\(\\hat{c}_j\\), making GTMSE's shrinkage milder than MSE_h, TMSE and MSCE. Note [location]: the restriction is artificial, since off-diagonal covariances are nonzero whenever \\(c_j \\neq 0\\)."
+ },
+ {
+  "answer": "EV9XXE",
+  "question": "doi-10-1002-nav-22074#Q17",
+  "text": "The paper does not report M4 results broken down by frequency, so mean MASE and RMSSE for the 414 hourly series are not given."
+ },
+ {
+  "answer": "EXXR3V",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q12",
+  "text": "**Evidence:**\r\n- Simulation [location] (16 in-sample quarters): for every pair of variants differing only in smoothing parameters, the one with more common parameters has rPinballU at or below the other, on data from every generating variant — e.g., PIC(LS,S,N) ≤ PIC(S,S,N) ≤ PIC(N,S,N) in rPinballU on each column.\r\n- The effect extends to point accuracy: PIC(*,S,N) and PIC(LS,N,N) stay close to the correct variant in rMAE, and common parameters help most on short histories (rPinballU 0.86 for PIC(LS,S,N) vs 1.02 for PIC(N,S,N) at 16 quarters).\r\n- Corroboration on M5: the selection procedure most often chose common level and seasonal smoothing parameters (PIC(LS,S,N), 6 of 11 groups), and the authors attribute VETS's accuracy gains mainly to shared seasonal initial values and smoothing parameters.\r\n\r\n**Limitations the paper states:**\r\n- Findings rest on simulation of VETS(M,N,M;LN) only, quarterly data, smoothing parameters drawn from restricted ranges not covering the full parameter space.\r\n- Whether common parameters help on histories as short as about one year is unknown.\r\n- Groups of more than 50 series were not tested.\r\n- No trend-component models were analysed.\r\n- Whether the benefit comes from reduced overfitting (averaging parameters across series) is not established.\r\n- Whether findings hold for monthly seasonality, lower error standard deviations, or cross-correlated errors is not shown — the paper mentions similar results without reporting them.\r\n- On M5, no experiment compares VETS with and without these restrictions directly, and the MCB differences are not statistically significant."
+ },
+ {
+  "answer": "F333HA",
+  "question": "doi-10-1007-s00180-023-01377-x#Q10",
+  "text": "No. The paper shows analytically that there are regions of the parameter space where MSE_h is *more* efficient than MSE_1 — specifically when the true parameters are such that the c_j values are close to zero. This holds despite MSE_h being less efficient in general."
+ },
+ {
+  "answer": "FFCHFD",
+  "question": "doi-10-1002-nav-22074#Q13",
+  "text": "**Support:**\r\n\r\n- **Theoretical:** CES is stationary or non-stationary depending on its complex smoothing parameter, moving continuously between the two as the parameter changes; no separate model choice is needed. At α₁ = 1 it equals ETS(A,N,N), and its five forecast trajectories cover flat, growing, declining and oscillating paths.\r\n- **Empirical:** On M3 series 1664 (stationary per ADF/KPSS), CES estimated a stationary parameter (0.99999 + 0.99884i); on trended series 2721, a non-stationary one (1.48098 + 1.00346i). On the M1/M3/tourism data, CES beat ETS, ARIMA and Theta on most measures, and on the non-seasonal subset it beat level and multiplicative-trend ETS models.\r\n\r\n**Limitations the paper states:**\r\n\r\n- Stationarity is not imposed — parameters are not restricted to the stationary region, so estimation can land anywhere.\r\n- CES is required only to be stable or forecastable; the stable region contains both stationary and non-stationary values.\r\n- The stability conditions for **seasonal** CES are not derived.\r\n- The effect of series length on accuracy is not analysed.\r\n- Robustness is claimed but not defined or tested across conditions.\r\n- CES can fail on individual series (e.g., M1 series 47)."
+ },
+ {
+  "answer": "FM94VF",
+  "question": "doi-10-1007-s00180-023-01377-x#Q20",
+  "text": "The paper doesn't report prediction interval coverage for the Air Passengers data — only point-forecast accuracy (RMSE, MAE, ME) and estimated smoothing parameters."
+ },
+ {
+  "answer": "FMDWY3",
+  "question": "doi-10-1002-nav-22074#Q3",
+  "text": "On M3 series 1664, CES estimated **α₀ + iα₁ = 0.99999 + 0.99884i**.\r\n\r\nSince graphical analysis and the ADF and KPSS tests indicate the series is stationary, the authors concluded that CES estimated a parameter in its **stationary region** — with α₁ ≈ 1, close to the ETS(A,N,N)/simple exponential smoothing case."
+ },
+ {
+  "answer": "FN4TRV",
+  "question": "doi-10-1002-nav-22074#Q14",
+  "text": "**Evidence:** On the seasonal subset (2,053 series), CES with seasonal/non-seasonal form chosen by AICc had lower RMSSE and MASE than every seasonal ETS model. The authors take this as showing the criterion picks the seasonal form when needed.\r\n\r\n**Limitations the paper itself states:**\r\n- The argument is from accuracy results only — no experiment compares AICc selection against other ways of choosing between seasonal and non-seasonal CES.\r\n- The parameter restrictions for seasonal CES stability are not derived (affecting [location]).\r\n- It assumes ETS model selection correctly identifies which series are seasonal (unchecked)."
+ },
+ {
+  "answer": "FNJ4VV",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q19",
+  "text": "The paper does not contain any comparison of VETS D with hierarchically reconciled ETS forecasts. The only benchmarks on the M5 data are the three univariate ETS models (ETS LN, ETS (ADAM), ETS) and the Naïve method, so this comparison cannot be answered from the document."
+ },
+ {
+  "answer": "FQRQRM",
+  "question": "doi-10-1111-jtsa-12843#Q10",
+  "text": "The paper focuses on one-step-ahead errors but notes the framework is general for h-steps ahead. However, the theoretical results are shown only for the one-step-ahead case; multi-horizon errors are mentioned as future work, not validated."
+ },
+ {
+  "answer": "FRAKAT",
+  "question": "doi-10-1002-nav-22074#Q18",
+  "text": "The paper doesn't compare CES with machine learning methods — only with ETS, ARIMA, the Theta method, and the SCUM combinations. No gradient-boosted trees or neural networks appear in the evidence."
+ },
+ {
+  "answer": "FRFFJE",
+  "question": "doi-10-1111-jtsa-12843#Q17",
+  "text": "The authors don't know. [location] states the underlying data and forecasts \"are not known to the authors\"—only the forecast errors were available, so the forecasting model is unidentified."
+ },
+ {
+  "answer": "FVR7EV",
+  "question": "doi-10-1007-s00180-023-01377-x#Q11",
+  "text": "Not uniformly — it depends on whether the fitted model matches the data-generating process.\r\n\r\n**Beneficial cases:** When a redundant parameter is zero — e.g., fitting ETS(A,A,N) to ETS(A,N,N) or ARIMA(0,1,1) data (β = 0) — multi-step estimators shrink \\(\\hat{\\beta}\\) toward zero and estimate it more efficiently than MSE₁ on small samples.\r\n\r\n**Harmful case:** When an over-parameterised ARIMA(1,1,1) is fitted to ETS(A,N,N) data, multi-step estimators push \\(\\hat{\\phi}_1\\) toward negative values and produce worse parameter estimates than MSE₁.\r\n\r\nSo the benefit is not specific to ETS vs. ARIMA per se, but to whether shrinkage removes a truly redundant parameter versus distorts a needed one."
+ },
+ {
+  "answer": "FWPKQT",
+  "question": "doi-10-1002-nav-22074#Q1",
+  "text": "On M1/M3/tourism, CES had mean RMSSE 1.959 and median RMSSE 1.170.\r\n\r\nComparison:\r\n- ETS: mean 1.970, median 1.181 — slightly worse than CES.\r\n- ARIMA: mean 2.134, median 1.271 — worse than CES.\r\n- Theta: mean 1.965, median 1.238 — slightly worse than CES.\r\n\r\nSo CES had the lowest mean and median RMSSE among these four."
+ },
+ {
+  "answer": "H7RAVC",
+  "question": "doi-10-1002-nav-22074#Q15",
+  "text": "It is derived from the discount matrix $D = F - gw'$ in the SSOE state-space form. CES is stable when all eigenvalues of $D$ lie inside the unit circle; substituting the CES matrices gives eigenvalues\r\n\r\n$$\\lambda = \\frac{2 - 2\\alpha_0 + \\alpha_1 \\pm \\sqrt{8\\alpha_1 + 4\\alpha_0 - 4\\alpha_0\\alpha_1 - 4 - 3\\alpha_1^2}}{2},$$\r\n\r\nwhich lead to the inequalities in (15) (circles in the $\\alpha_0$–$\\alpha_1$ plane).\r\n\r\nFor seasonal CES, the paper only says stability can be checked from the eigenvalues of the 4×4 discount matrix in (21), but it does not derive an explicit region and says the restrictions “cannot be easily analyzed.”"
+ },
+ {
+  "answer": "H9MTDC",
+  "question": "doi-10-1111-jtsa-12843#Q14",
+  "text": "[location] in the paper: under [location] (constant forecast bias b_μ pre-change), a variance change δ_ξ,m in the raw data produces a mean change Δ_ξ,m = Var_G′[Y_t|ỹ_t] − Var_F[Y_t|ỹ_t] in the centred squared forecast errors. If there is also a mean change δ_μ,m ≠ 0 and [location] holds, then Δ_ξ,m = Var_G′ − Var_F + Δ_μ,m².\r\n\r\nThe forecast errors must be i.i.d. (or satisfy a weak invariance principle), and the change sizes must satisfy Assumptions C–E from the Supporting Information for the limiting detection theory to hold. [location] then give the null and alternative distributions of the stopping time."
+ },
+ {
+  "answer": "HEWUPM",
+  "question": "doi-10-1111-jtsa-12843#Q20",
+  "text": "The paper doesn't say. All simulations use γ = 0, and no other values are compared, so no comparison of detection delays across γ values is reported."
+ },
+ {
+  "answer": "HJRFC9",
+  "question": "doi-10-1002-nav-22074#Q16",
+  "text": "The paper doesn't report estimation times. It only gives accuracy results (RMSSE/MASE/MSIS) and software versions — no runtime comparison between `auto.ces`, `es` and `auto.ssarima`. You'd need to check the paper's text or run the benchmarks yourself for timing."
+ },
+ {
+  "answer": "HPRWKR",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q20",
+  "text": "The paper does not report WRMSSE. The M5 evaluation uses rMAE, rRMSE, GMRAE, rPinballU/L and coverage — not the M5 competition's WRMSSE — so those values are not available from this document."
+ },
+ {
+  "answer": "HQD4JX",
+  "question": "doi-10-1111-jtsa-12843#Q11",
+  "text": "No. The paper reports FDP < 0.075 in the AR parameter change scenarios and \"low\" FDP elsewhere, but does not show it stayed at or below the nominal 0.05 in every scenario."
+ },
+ {
+  "answer": "HRD7W7",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q18",
+  "text": "The paper does not report the estimated smoothing parameter values. It only reports which PIC restrictions were selected and the resulting forecast accuracy/interval measures — not the actual α, γ, etc. estimates for the M5 groups."
+ },
+ {
+  "answer": "HUQHUT",
+  "question": "doi-10-1002-nav-22074#Q16",
+  "text": "The paper does not report computation times for CES, ETS, or auto.ssarima, so that comparison cannot be made from it."
+ },
+ {
+  "answer": "HW4EVP",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q1",
+  "text": "**Data:** M5 competition series (Walmart sales) aggregated to monthly frequency and department-store level: 70 series of 63 observations, of which 69 were used — 7 seasonal groups (57 series) and 4 non-seasonal groups (12 series) of the same department, classified by `adam` from the smooth package; one single-series group removed; trended models excluded.\r\n\r\n**Split:**\r\n- **Long histories:** first 51 observations for estimation, last 12 held out.\r\n- **Short histories:** last 36 observations used — 24 for estimation, same 12-month holdout."
+ },
+ {
+  "answer": "HWXWVT",
+  "question": "doi-10-1007-s00180-023-01377-x#Q16",
+  "text": "The paper does not report computation times for GTMSE versus MSE_1."
+ },
+ {
+  "answer": "HXUXKP",
+  "question": "doi-10-1111-jtsa-12843#Q9",
+  "text": "No. The paper shows faster detection for the specific scenarios tested (mean/trend changes in seasonal data, AR parameter changes), but does not claim universality. The theory requires assumptions on the forecasting model, which don't always hold — ETS(A,N,N) adapting to mean changes is one counterexample."
+ },
+ {
+  "answer": "J3C9QW",
+  "question": "doi-10-1111-jtsa-12843#Q15",
+  "text": "The paper's stated limitation is [location]: the start of the Christmas peak is only *inferred* from the rise in the mean and variance of the forecast errors—the underlying parcel volumes and forecasts are not known to the authors, so the evidence is indirect (reduces precision, no mitigation)."
+ },
+ {
+  "answer": "JEN34A",
+  "question": "doi-10-1007-s00180-023-01377-x#Q15",
+  "text": "The [location]: those estimates are positive (0.691, 0.634, 0.532), matching climatologists' expectation of a positive AR(1) parameter for temperature series, and similar to values reported in the climate literature (Hartmann et al. 2013; Cahill et al. 2015; Rahmstorf et al. 2017). By contrast, MSE_h's estimate was −0.786, which the authors read as unrealistic over-shrinkage.\r\n\r\nCaveats the paper itself notes: the comparison is qualitative, based on a single series, and MSE₁'s estimate (0.558) is also positive."
+ },
+ {
+  "answer": "JKDUTY",
+  "question": "doi-10-1007-s00180-023-01377-x#Q8",
+  "text": "No. The paper states that regression has no dynamic elements — its persistence vector g is zero, so all c_j = 0 and the multi-step variance equals the one-step variance. Hence no shrinkage is imposed on regression coefficients; this shrinkage is a univariate time-series phenomenon."
+ },
+ {
+  "answer": "JQWHM4",
+  "question": "doi-10-1093-imaman-dpad028#Q19",
+  "text": "The paper doesn't test intermittent demand data. Its real-life demonstration uses a daily EV charging series (511 observations, continuous demand with 7-day seasonality), where the Gamma ETS(M,Md,M) achieved AICc 6398.57 (vs 6418.296 for additive Normal ETS) and strictly positive 95% prediction intervals on the low-volume subsample. The simulations use regular, non-intermittent synthetic series."
+ },
+ {
+  "answer": "JTAN9N",
+  "question": "doi-10-1111-jtsa-12843#Q11",
+  "text": "No. In the seasonal mean/trend scenarios the FDP is only described as \"low\", and in the autoregressive scenarios it is below 0.075—both above the 0.05 nominal rate. Only in the supplementary non-seasonal variance scenarios does the FDP stay below 0.05."
+ },
+ {
+  "answer": "JXTADV",
+  "question": "doi-10-1007-s00180-023-01377-x#Q12",
+  "text": "**Support:** Monte Carlo simulations — 500 series each from ETS(A,N,N) (α=0.2) and ARIMA(0,1,1) (θ=0.6), across T ∈ {20…5000} and h ∈ {10…200}, comparing MSE₁, MSE_h, TMSE, GTMSE, MSCE. Boxplots show lower median bias and narrower interquartile range for GTMSE than for MSE_h, TMSE and MSCE.\r\n\r\n**Stated limitations:**\r\n- Only two univariate DGPs and pure additive linear models; results shown visually via boxplots, not tabulated statistics.\r\n- **[location] scope:** Only holds where T > h; benefit is relative to other multi-step estimators, not to MSE₁ (which [location] shows is less biased when true parameters are non-zero).\r\n- **[location] qualifies it:** under misspecification with an over-parameterised ARIMA(1,1,1), multi-step estimators distort parameters — shrinkage isn't universally beneficial."
+ },
+ {
+  "answer": "KDVNWH",
+  "question": "doi-10-1002-nav-22074#Q12",
+  "text": "Evidence: on M1/M3/tourism, SCUM beats SCUM(noCES) on mean and median RMSSE and MASE; on M4, SCUM also beats SCUM(noCES) on mean/median MASE and RMSSE. The Nemenyi test says SCUM is significantly better than SCUM(noCES) across all error measures.\r\n\r\nException: on M1/M3/tourism mean MSIS, SCUM(noCES) is better (2.223 vs 2.333), because CES can fail badly on some series."
+ },
+ {
+  "answer": "KF9YH7",
+  "question": "doi-10-1093-imaman-dpad028#Q14",
+  "text": "They consider it most convenient because it has simple location/scale parameters tied to mean and variance, flexible positive skewness/kurtosis, a tractable closed-form MLE for scale, and a direct relation to the Normal case on high-volume data. They also cite Folks & Chhikara (1978), who found Log-Normal, Gamma and Inverse Gaussian often fit data equally well, so convenience can decide."
+ },
+ {
+  "answer": "KFQRP9",
+  "question": "doi-10-1111-jtsa-12843#Q18",
+  "text": "The paper doesn't say — it only mentions \"a number of participating hospitals across England,\" with no specific count given."
+ },
+ {
+  "answer": "KHYXAR",
+  "question": "doi-10-1002-nav-22074#Q19",
+  "text": "The paper does not report typical or median estimated $\\alpha_0$ and $\\alpha_1$ values across the M3 series. It only gives the two example estimates: $0.99999+0.99884i$ for series 1664 and $1.48098+1.00346i$ for series 2721."
+ },
+ {
+  "answer": "KPHCNP",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q1",
+  "text": "The authors used M5 data from Walmart, aggregated to **monthly frequency at department-store level** (70 products, 63 observations each), avoiding the intermittence of the original daily data.\r\n\r\nSplit into two experiments:\r\n- **Long (\"full\"):** 51 observations for estimation, last 12 withheld for accuracy measurement.\r\n- **Short:** last 36 observations only — 24 for fitting, next 12 for evaluation.\r\n\r\nThe same 12-month holdout was used in both cases, keeping results comparable. Series were grouped by department-store (11 seasonal/non-seasonal groups after removing a singleton group), and models were selected per group via `auto.vets`."
+ },
+ {
+  "answer": "KRM7DD",
+  "question": "doi-10-1002-nav-22074#Q11",
+  "text": "No — not on **every** measure. On the 2,053 seasonal series, CES beats each seasonal ETS model on mean and median RMSSE and MASE, and on median MSIS — but **not on mean MSIS**, where it is worse than every seasonal ETS model:\r\n\r\n| Comparison model | CES mean MSIS | Model mean MSIS |\r\n|---|---|---|\r\n| ETS(A,N,A) | 2.188 | 2.037 |\r\n| ETS(A,Ad,A) | 2.188 | 2.155 |\r\n| ETS(M,M,M) | 2.188 | 2.153 |\r\n| ETS(M,Md,M) | 2.188 | 1.934 |\r\n\r\nSo CES wins on 5 of 6 measures against each seasonal ETS model; mean MSIS is the consistent exception."
+ },
+ {
+  "answer": "KU4XDN",
+  "question": "doi-10-1002-nav-22074#Q10",
+  "text": "No. The paper explicitly limits CES to the additive error case and says future research should extend it to a multiplicative error term."
+ },
+ {
+  "answer": "KYJEAN",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q7",
+  "text": "**Long history:** VETS D has the lowest GMRAE at **h3** (0.888, vs ETS LN 0.962, ETS (ADAM) 0.939, ETS 0.923, VETS F 0.897). At h6 and h12, VETS models do not lead.\r\n\r\n**Short history:** VETS D has the lowest GMRAE at **h3** (0.946, vs ETS LN 1.167, ETS (ADAM) 1.198, ETS 1.170, VETS F 1.065). At h6 and h12, VETS models do not lead (ETS LN is best at h6; ETS (ADAM) at h12).\r\n\r\nSo in both cases, the only horizon where a VETS model wins is **3 months ahead**, with **VETS D** being the best model."
+ },
+ {
+  "answer": "MCVENP",
+  "question": "doi-10-1002-nav-22074#Q17",
+  "text": "The paper doesn't break accuracy down by M4 frequency — [location] reports only overall means/medians across all 99,990 series. No per-frequency (hourly, daily, etc.) results are given."
+ },
+ {
+  "answer": "MEAJFK",
+  "question": "doi-10-1093-imaman-dpad028#Q2",
+  "text": "**Setup:**\r\n- 10,000 iterations of 100-observation series simulated from ETS(M,Md,N) (damped multiplicative trend, no seasonality) with Inverse Gaussian errors, using `smooth::sim.es`\r\n\r\n**Parameter grids:**\r\n- σ ∈ {0.01, 0.05, 0.1, 0.5, 1}\r\n- α, β ∈ {0.1, 0.2, 0.5}\r\n- φ ∈ {0.5, 0.9, 0.95, 1}\r\n- Horizons h ∈ {10, 50, 100}\r\n\r\n**Procedure:** For each simulated series, the percentage difference (PD) between the conditional expectation and the conventional point forecast was computed, transformed to odds PD/(1−PD), then Box-Cox transformed (λ = 0.146) and regressed on scaled parameters (σ, horizon, α, β, φ) via `greybox::alm` with a Box-Cox Normal distribution.\r\n\r\n**Limitation:** Only ETS(M,Md,N) with IG errors and known true parameters was evaluated."
+ },
+ {
+  "answer": "MFKKVY",
+  "question": "doi-10-1093-imaman-dpad028#Q13",
+  "text": "Because its scale estimate has issues: the closed-form MLE only exists if the mean squared log-error is ≤ 1, otherwise numerical optimization is needed. It also gives two roots, and the likelihood is not convex, which can make parameter estimates potentially inconsistent."
+ },
+ {
+  "answer": "MFQWJU",
+  "question": "doi-10-1007-s00180-023-01377-x#Q14",
+  "text": "Because the errors share the same innovations. From [location]:\r\n\r\n$$\\eta_{t+h|t} = \\sum_{j=1}^{h-1} c_{h-j}\\, \\epsilon_{t+j} + \\epsilon_{t+h}$$\r\n\r\nErrors at different horizons made at time \\(t\\) overlap in the \\(\\epsilon_{t+j}\\) terms, giving covariance:\r\n\r\n$$\\sigma_{i,j} = \\sigma_1^2 \\left( c_{j-i} + \\sum_{l=1}^{i-1} c_{i-l}\\, c_{j-l} \\right), \\quad 1 \\le i < j$$\r\n\r\nwhich is zero only if every \\(c_j = 0\\). This contradicts Martinez (2017), who assumed zero correlation between multi-step forecast errors."
+ },
+ {
+  "answer": "MHAR4E",
+  "question": "doi-10-1007-s00180-023-01377-x#Q17",
+  "text": "The paper doesn't report forecast accuracy (RMSE, MAE, etc.) for the simulation experiments. [location] evaluates only **parameter estimation bias and dispersion** via boxplots of estimated parameters across the 500 replications — not out-of-sample forecast errors."
+ },
+ {
+  "answer": "MKDPEH",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q18",
+  "text": "The paper does not report the estimated values of the smoothing parameters for the M5 data. It reports only which PIC restrictions the selection procedure chose (most often PIC(LS,S,N) — common level and seasonal smoothing parameters, common initial seasonal indices, individual components), not the numerical estimates of α and γ."
+ },
+ {
+  "answer": "MMP77A",
+  "question": "doi-10-1093-imaman-dpad028#Q20",
+  "text": "The paper doesn't report them. It only documents that ETS(M,M,N) was fitted to M3 series N2703 with `adam` (smooth 3.2.0), producing 1–18 step forecasts where the gap between point forecast and simulated conditional expectation grew exponentially — no parameter estimates (α, β) are given."
+ },
+ {
+  "answer": "MRNKCQ",
+  "question": "doi-10-1007-s00180-023-01377-x#Q7",
+  "text": "No. On the HadCRUT4 Greenland temperature series, MSE_h (h=60) had the lowest RMSE (1.128), MAE (0.784) and |ME| (0.009) — better than TMSE (1.198/0.827/0.402), GTMSE (1.190/0.819/0.366) and MSCE (1.185/0.817/0.343).\r\n\r\nBut the paper notes: MSE_h achieved this by over-shrinking — its AR(1) estimate was −0.786, an unrealistic negative value, whereas GTMSE/MSCE/GPL gave positive estimates consistent with the climate literature."
+ },
+ {
+  "answer": "MT3MEJ",
+  "question": "doi-10-1111-jtsa-12843#Q8",
+  "text": "No. [location] states that the two forecasting-model assumptions (constant bias [location] and incomplete adjustment [location]) \"are not necessarily satisfied in all the simulated scenarios,\" so the theoretical thresholds are not guaranteed to be valid everywhere in the simulations."
+ },
+ {
+  "answer": "NERKWJ",
+  "question": "doi-10-1093-imaman-dpad028#Q12",
+  "text": "Evidence:\r\n- Theory: point forecasts, geometric means, and arithmetic conditional expectations generally differ in pure multiplicative ETS.\r\n- Example: M3 series N2703 with ETS(M,M,N) shows the gap grows exponentially with horizon.\r\n- Simulation: regression on 10,000 runs finds bias increases with φ, β, σ, and horizon.\r\n\r\nLimitations:\r\n- Simulation uses one model class, ETS(M,Md,N), with Inverse Gaussian errors.\r\n- It studies bias mechanism, not predictive accuracy or best forecasting method.\r\n- Results are simulation-based, not a general proof for all ETS(M,*,*) models."
+ },
+ {
+  "answer": "NHHRX4",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q17",
+  "text": "The paper does not report results on daily M5 series. The M5 data were **aggregated to monthly frequency** (department-store level, 70 products), so all reported rMAE values — including VETS D's geometric mean 0.894 / median 0.878 (long) and 0.979 / 0.974 (short) — are for **monthly** series, not daily."
+ },
+ {
+  "answer": "NJQANY",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q2",
+  "text": "The auto.vets selection chose these PIC restrictions for the 11 VETS D models:\r\n\r\n| PIC restriction | Frequency |\r\n|---|---|\r\n| N,N,N | 1 |\r\n| L,N,N | 1 |\r\n| L,L,N | 2 |\r\n| LS,S,N | 6 |\r\n| LS,S,S | 1 |\r\n\r\nThe most frequently selected was **PIC(LS,S,N)** — common smoothing parameters for level and seasonality plus common initial seasonal indices (chosen 6 times). One seasonal group got the stricter PIC(LS,S,S) with common seasonal components."
+ },
+ {
+  "answer": "NJW4VF",
+  "question": "doi-10-1093-imaman-dpad028#Q13",
+  "text": "Per [location]: under the unit-mean restriction (μ = −σ²/2), the concentrated log-likelihood is **non-convex**, creating potential local optima during numerical optimisation, and the MLE of σ² exists only in some cases — the paper references a corrected formula superseding the erroneous closed-form root printed in the 2023 article."
+ },
+ {
+  "answer": "NMK3NC",
+  "question": "doi-10-1007-s00180-023-01377-x#Q3",
+  "text": "**Model/horizon:** ETS(A,A,A) (additive error, trend, seasonality — deliberately misspecified since the series is multiplicative), horizon h = 12 (one year).\r\n\r\n**Most accurate:** GTMSE — RMSE 18.672, MAE 15.005, ME 8.369 (all lowest). MSCE was worst among the multi-step estimators (RMSE 22.601); MSE_h was far worse (77.194)."
+ },
+ {
+  "answer": "NNR3ME",
+  "question": "doi-10-1093-imaman-dpad028#Q19",
+  "text": "The paper does not report experiments on intermittent demand. It only cites Svetunkov & Boylan (2023) as showing multiplicative ETS can work well there."
+ },
+ {
+  "answer": "NRFKMH",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q9",
+  "text": "No. The MCB test found no statistically significant differences between VETS and ETS models on the same history length:\r\n\r\n- **Long history:** VETS F had the lowest mean rank, but was **not statistically different** from VETS D, ETS LN, ETS (ADAM), or ETS.\r\n- **Short history:** VETS D ranked best, but was **not statistically different** from ETS LN, ETS (ADAM), or ETS (VETS F on short data ranked lower and was also not significantly different from the ETS models).\r\n\r\nSo while VETS models tended to have better (lower) ranks, the differences were not statistically significant at the level used."
+ },
+ {
+  "answer": "NTPQXU",
+  "question": "doi-10-1002-nav-22074#Q2",
+  "text": "On the M4 data, CES had the **lowest mean and median MASE and RMSSE** of the four methods:\r\n\r\n| Method | MASE mean | RMSSE mean | MASE median | RMSSE median |\r\n|---|---|---|---|---|\r\n| CES | 2.921 | 2.339 | 1.803 | 1.529 |\r\n| ETS | 3.310 | 2.688 | 1.831 | 1.542 |\r\n| ARIMA | 3.037 | 2.436 | 1.903 | 1.606 |\r\n| Theta | 2.980 | 2.394 | 1.865 | 1.574 |\r\n\r\n**Excluded series:** 10 series (19357, 43160, 51552, 62738, 92370, 92435, 93159, 93196, 93412, 93491) whose influential outliers and structural breaks made ETS break down — 99,990 of the 100,000 series remained."
+ },
+ {
+  "answer": "P49MN3",
+  "question": "doi-10-1007-s00180-023-01377-x#Q6",
+  "text": "Per [location]: the seasonal smoothing parameter \\(\\hat{\\gamma}\\) shrinks **stepwise** — only when \\(h > m\\), in steps of whole seasonal cycles — and once \\(h > 2m\\), it shrinks faster than the level parameter \\(\\hat{\\alpha}\\).\r\n\r\nMechanism: the multi-step coefficient \\(c_j = \\alpha + \\gamma\\) when \\(j\\) is a multiple of \\(m\\), and \\(\\alpha\\) otherwise (corrected from the paper's misprint). Multi-step losses minimise \\(\\hat{c}_j^2\\), so \\(\\gamma\\) is pressured only at horizons that reach seasonal lags, while \\(\\alpha\\) is pressured at every horizon.\r\n\r\nCaveat: the \\(h > 2m\\) switch rests on the misprinted coefficients; with the corrected \\(c_j\\), the pressure on \\(\\hat{\\alpha}\\) always exceeds that on \\(\\hat{\\gamma}\\)."
+ },
+ {
+  "answer": "P79Y3D",
+  "question": "doi-10-1007-s00180-023-01377-x#Q13",
+  "text": "The claim is supported by analytical derivation: multi-step losses minimise the estimated multi-step coefficients \\(\\hat{c}_j^2\\) and one-step variance \\(s_1^2\\), and since \\(\\sigma_h^2 = \\sigma_1^2(1 + \\sum_{j=1}^{h-1} c_j^2)\\), longer horizons impose stronger pressure toward zero. Finite-sample minimisation of these terms yields shrinkage that diminishes as \\(T\\) grows.\r\n\r\nHowever, verification is marked \"unchecked\" in the paper, and the paper itself notes that with large \\(h\\), over-shrinkage toward boundary values can introduce finite-sample bias."
+ },
+ {
+  "answer": "P9N39J",
+  "question": "doi-10-1002-nav-22074#Q7",
+  "text": "No — on the 3,262 non-seasonal series, **ETS(A,Ad,N) beats CES on almost every measure**:\r\n\r\n| Measure | CES | ETS(A,Ad,N) |\r\n|---|---|---|\r\n| RMSSE mean | 2.534 | **2.502** |\r\n| RMSSE median | **1.654** | 1.660 |\r\n| MASE mean | 2.949 | **2.907** |\r\n| MASE median | 1.880 | **1.863** |\r\n| MSIS mean | 4.269 | **3.769** |\r\n| MSIS median | 0.863 | **0.854** |\r\n\r\nCES wins only on **median RMSSE**; the damped trend model is better everywhere else."
+ },
+ {
+  "answer": "PD7QDV",
+  "question": "doi-10-1111-jtsa-12843#Q7",
+  "text": "No. ETS(A,N,N) adapts to mean changes: its expected forecast error after the change is δμ,m(1−α)^(s−1), which decays to zero, so the incomplete-adjustment assumption fails and the mean change does not persist in the errors. Only variance changes remain detectable via the squared-error detector."
+ },
+ {
+  "answer": "PE7DYU",
+  "question": "doi-10-1093-imaman-dpad028#Q2",
+  "text": "They simulated 10,000 series of 100 observations from an ETS(M,Md,N) DGP with Inverse Gaussian errors, using known parameters, then applied the same model to produce point forecasts and simulated conditional expectations. They measured percentage difference PD = (μₜ₊ₕ − ŷₜ₊ₕ)/μₜ₊ₕ, aggregated over horizons, and regressed it on σ, α, β, horizon, and φ. Factors varied: σ ∈ {0.01, 0.05, 0.1, 0.5, 1}, α, β ∈ {0.1, 0.2, 0.5}, h ∈ {10, 50, 100}, φ ∈ {0.5, 0.9, 0.95, 1}."
+ },
+ {
+  "answer": "PECYNV",
+  "question": "doi-10-1111-jtsa-12843#Q19",
+  "text": "The paper doesn't say. The Royal Mail application only reports that both detectors signalled on 2 December 2020; it gives no staffing-cost figures or any cost analysis."
+ },
+ {
+  "answer": "PEDKAM",
+  "question": "doi-10-1093-imaman-dpad028#Q15",
+  "text": "**Evidence:**\r\n- Quantile bias is near zero across all DGPs: e.g., −0.005 to 0.001 for the Log-Normal DGP across the four distributions; −0.004 to 0.011 for IG.\r\n- Quantile precision is small (0.004–0.011 range), indicating empirical coverage stays close to nominal τ across the 99 quantile levels.\r\n- This holds for Normal, IG, Gamma, and Log-Normal variants of ETS(M,Md,M), as well as the AICc-selected model.\r\n\r\n**Stated limitations:**\r\n- Simulation 2 uses a single fixed parameter vector (σ = 0.1, α = 0.1, β = 0.05, γ = 0.2, φ = 0.95), so multiplicative errors are small and Normal/log approximations behave regularly — calibration may not generalize to larger σ or other parameter regimes.\r\n- The significance test for score differences is not named.\r\n- Results are for ETS(M,Md,M) only; no other component structures tested."
+ },
+ {
+  "answer": "PKCQ3H",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q6",
+  "text": "**VETS(M,Md,M;LN)** — the base model:\r\n- **M** (first): multiplicative error\r\n- **Md**: damped multiplicative trend\r\n- **M** (third): multiplicative seasonality\r\n- **;LN**: estimated on log-transformed data (pure multiplicative, log-normal errors, geometric-mean forecasts)\r\n\r\n**PIC(LTSD,LTS,S)** — the commonality restrictions across the n series:\r\n- **P = LTSD**: common smoothing parameters for Level, Trend, Seasonality, and Damping (one shared α, β, γ, φ)\r\n- **I = LTS**: common Initial values for level, trend, and seasonal indices\r\n- **C = S**: common seasonal Component (a single shared seasonal index $s_t$ across all series); levels and trends remain individual\r\n\r\nSo all series share one seasonal pattern, one set of smoothing/damping parameters, and common starting values — while each keeps its own level and trend trajectory. This is the example worked through in [location] (with n=2)."
+ },
+ {
+  "answer": "PME4UM",
+  "question": "doi-10-1093-imaman-dpad028#Q17",
+  "text": "The paper doesn't say. The dataset is described only as \"511 daily aggregated observations of electricity used by electric vehicles in a geographical area\" and is restricted by a non-disclosure agreement, so the provider is not named."
+ },
+ {
+  "answer": "PMNHKH",
+  "question": "doi-10-1093-imaman-dpad028#Q18",
+  "text": "The paper does not report a timing comparison, so I can’t quantify it from the text."
+ },
+ {
+  "answer": "PW4KUY",
+  "question": "doi-10-1093-imaman-dpad028#Q10",
+  "text": "No. It derives the restriction explicitly for ETS(M,N,N), then says more complex pure multiplicative models share similar restrictions, but it does not derive them for every model."
+ },
+ {
+  "answer": "Q3XHPP",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q8",
+  "text": "Mixed — it depends on the metric:\r\n\r\n- **Coverage:** Yes. VETS D achieves 0.938 coverage on short data, close to the nominal 95% and better than ETS LN (0.826), ETS (ADAM) (0.870) and ETS (0.870), which all fall well below 95%.\r\n- **Pinball values:** No. On short data, VETS D has worse relative pinball values than the ETS models (e.g. pinballU 1.567 for VETS D vs 0.895–1.194 for ETS variants), meaning its intervals are wider/less sharp.\r\n\r\nSo VETS D intervals are better calibrated (coverage) but less sharp (higher pinball) than univariate ETS on short histories."
+ },
+ {
+  "answer": "Q7PY3V",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q19",
+  "text": "The paper does not compare VETS D against hierarchically reconciled ETS forecasts. It benchmarks VETS D only against univariate ETS models (ETS, ETS (ADAM), ETS LN) and Naïve — no reconciliation methods (e.g. MinT) are applied or evaluated."
+ },
+ {
+  "answer": "QCEDQP",
+  "question": "doi-10-1111-jtsa-12843#Q4",
+  "text": "Change at time point 400; training size m = 300; the mean detector D_μ signalled 19 time points after the change."
+ },
+ {
+  "answer": "QRTWK7",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q17",
+  "text": "The paper's M5 analysis uses monthly department-level series only; no daily M5 data are analysed, so VETS D's rMAE on daily series is not reported."
+ },
+ {
+  "answer": "QTEURC",
+  "question": "doi-10-1002-nav-22074#Q8",
+  "text": "Not all of them.\r\n\r\n- **Ranks:** CES had the best mean rank of the four methods on RMSSE and MASE.\r\n- **Significance:** In Nemenyi tests at the 5% level, **not all differences** between CES and ETS, ARIMA and the Theta method on RMSSE and MASE were statistically significant (which qualifies [location]).\r\n\r\nSo CES's advantage in average rank was not uniformly significant against each benchmark."
+ },
+ {
+  "answer": "QU4CVT",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q5",
+  "text": "**Data generation:** Groups of 2, 10, 20, 30, 40 or 50 quarterly series of 24 or 64 observations were generated with `sim.ves` from the legion package 0.1.0, from each of the nine PIC variants of VETS(M,N,M;LN) (i.e., VETS(A,N,A) data exponentiated):\r\n\r\n- Initial level drawn from [4, 10]\r\n- Seasonal indices drawn from (−1, 1) and normalised\r\n- Independent normal errors with standard deviation 0.3\r\n- Smoothing parameters by variant:\r\n - PIC(LS,*,*): α = 0.3, γ = 0.1\r\n - PIC(S,*,*): α ∈ [0, 0.3], γ = 0.1\r\n - PIC(N,*,*): α ∈ [0, 0.3], γ ∈ [0, 1 − α]\r\n\r\n1000 iterations; the last 8 quarters held out for forecasting."
+ },
+ {
+  "answer": "R4TNR4",
+  "question": "doi-10-1007-s00180-023-01377-x#Q18",
+  "text": "The simulations only used **pure additive** models — ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1). No multiplicative ETS models were simulated.\r\n\r\nMultiplicative models are noted only as an open question: how the shrinkage mechanism extends to them \"remains only partially explored and is not analytically established.\""
+ },
+ {
+  "answer": "R4X33W",
+  "question": "doi-10-1093-imaman-dpad028#Q9",
+  "text": "No. The Auto (AICc) row beats all four fixed-distribution models on the Inverse Gaussian, Gamma, Log-Normal, and Akram DGPs, but **not** on the Normal DGP, where the fixed Normal model has the lowest SPS (5.255 vs Auto's 5.258)."
+ },
+ {
+  "answer": "RJMUKF",
+  "question": "doi-10-1093-imaman-dpad028#Q7",
+  "text": "No. It performs similarly in the tails; its advantage is mainly in the middle quantiles, which the authors say are less practically important."
+ },
+ {
+  "answer": "RJUVPV",
+  "question": "doi-10-1007-s00180-023-01377-x#Q20",
+  "text": "The paper does not report prediction interval coverage for the Air Passengers data — only point forecast accuracy (RMSE, MAE, ME) and smoothing parameter values."
+ },
+ {
+  "answer": "RMFVD7",
+  "question": "doi-10-1111-jtsa-12843#Q9",
+  "text": "No. The evidence is simulation-based and limited to specific cases: seasonal ARMA data with mean, trend, or AR-parameter changes, and non-seasonal AR/ARMA data with mean or variance changes. There is one exception even there—an AR(1) variance change where Raw CUSUM had lower ADD. The paper does not establish the claim for arbitrary data or change types."
+ },
+ {
+  "answer": "RRHTT3",
+  "question": "doi-10-1007-s00180-023-01377-x#Q17",
+  "text": "The paper does not report forecast accuracy (RMSE or other error measures) for the simulation experiments. The simulations report only the distributions of estimated parameters (boxplots in [location]), not out-of-sample forecast errors. Accuracy measures are reported only for the two empirical applications (temperature and Air Passengers data)."
+ },
+ {
+  "answer": "T4EDP3",
+  "question": "doi-10-1007-s00180-023-01377-x#Q16",
+  "text": "The paper contains no information about computation time for GTMSE versus MSE₁ — no runtimes are reported in the evidence or artefacts."
+ },
+ {
+  "answer": "T4HQMJ",
+  "question": "doi-10-1007-s00180-023-01377-x#Q3",
+  "text": "A misspecified pure additive **ETS(A,A,A)** model (local trend with additive seasonality) was fitted over a **12-month forecast horizon** (12-month holdout).\r\n\r\n**GTMSE** gave the most accurate forecasts: lowest RMSE (18.672), MAE (15.005) and ME (8.369) of the six estimators."
+ },
+ {
+  "answer": "T7QNWD",
+  "question": "doi-10-1002-nav-22074#Q8",
+  "text": "Not always. The Nemenyi test at the 5% level shows CES ranks best among the univariate models on RMSSE and MASE, but the differences are not statistically significant in all cases. SCUM is significantly better than the others, including SCUM(noCES)."
+ },
+ {
+  "answer": "TATFRJ",
+  "question": "doi-10-1007-s00180-023-01377-x#Q15",
+  "text": "The paper bases this on consistency with published estimates in the climate literature — specifically Hartmann et al. (2013), Cahill et al. (2015), and Rahmstorf et al. (2017) — whose AR(1) estimates for global temperature data are similar to those produced by GTMSE, MSCE and GPL (around 0.53–0.69), unlike MSE_h's −0.786."
+ },
+ {
+  "answer": "TF49DW",
+  "question": "doi-10-1093-imaman-dpad028#Q12",
+  "text": "**Evidence:**\r\n\r\n1. **Formal proof:** In logarithmic state space form, the conventional point forecast equals the conditional *geometric* mean. By Jensen's inequality, it is generally below the arithmetic conditional expectation: ŷ ≤ ỹ ≤ μ. Equality holds only at h = 1, within the first seasonal cycle for non-trended seasonal models, or for ETS(M,N,N).\r\n\r\n2. **Simulation:** 10,000 ETS(M,Md,N) series with IG errors show the percentage difference between expectation and point forecast grows with φ, horizon, β, σ, and α (R² = 0.986) — non-negligible and substantial.\r\n\r\n3. **Empirical example:** On M3 series N2703 with ETS(M,M,N), the gap is negligible at short horizons but grows exponentially up to 18 steps — contradicting Hyndman et al. (2008), who called the difference \"negligible.\"\r\n\r\n**Stated limitations:**\r\n\r\n- No closed-form conditional expectations exist for models other than ETS(M,N,N); Monte Carlo simulation is required.\r\n- Simulation 1 covers only ETS(M,Md,N) with IG errors and known true parameters.\r\n- **[location] scope:** The empirical evidence is a single series with horizons of only 1–18 steps."
+ },
+ {
+  "answer": "THYHJE",
+  "question": "doi-10-1111-jtsa-12843#Q10",
+  "text": "No. The framework is specifically built on one-step-ahead forecast errors \\(e_t = Y_t - \\hat{y}_t(1)\\), and the theoretical results—[location]—are derived for those errors. Combining information from several forecast horizons is explicitly left as future work."
+ },
+ {
+  "answer": "TTA4CC",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q13",
+  "text": "**Evidence for robustness of PIC(LS,S,N):**\r\n\r\n- **Simulation, point forecasts:** It performs well across all nine DGPs — never far from the correct method's rMAE, and much better than PIC(*,S,S) when DGPs are flexible (top-right corners), while only slightly worse than flexible methods on restrictive DGPs.\r\n- **Simulation, prediction intervals:** Consistently strong rPinballU across DGPs; e.g. on flexible DGPs it achieves ~1.19–1.26 vs ~1.7–2.0 for PIC(*,S,S) methods. With 50 series its pinball is ~35% lower than the benchmark.\r\n- **Group size:** Benefits grow with group size, stabilising after ~10 series.\r\n- **Empirical validation:** Auto-selection chose PIC(LS,S,N) in 6 of 11 M5 groups — the most frequent restriction — and the paper states this \"validates our simulation findings.\"\r\n\r\n**Limitations the paper itself states:**\r\n\r\n- Simulation covers only **VETS(M,N,M;LN)** — no trend, quarterly seasonality (monthly checked separately), uncorrelated errors in the main experiment; correlated errors tested only in a small side experiment (groups of 2 and 10).\r\n- Smoothing parameter ranges were restricted (α ∈ [0,0.3], γ ∈ [0,1−α]), not the full parameter space.\r\n- Robustness holds \"as long as the time series exhibit similar seasonal patterns\"; if seasonality differs substantially, individual-component methods PIC(*,N,N) are needed instead.\r\n- The M5 evidence is aggregated monthly department-store data; higher-frequency (weekly/daily) behaviour is untested and flagged as future work."
+ },
+ {
+  "answer": "TUJEP7",
+  "question": "doi-10-1007-s00180-023-01377-x#Q6",
+  "text": "For ETS(A,N,A), the shrinkage happens in a stepwise manner, tied to complete seasonal cycles:\r\n\r\n- **α (level):** shrinks towards zero immediately, faster than γ on short horizons (h ≤ m).\r\n- **γ (seasonal):** does not shrink at all while h ≤ m; it starts shrinking only once the horizon exceeds the seasonal periodicity, because its weight enters via j_m = ⌊(j−1)/m⌋.\r\n- **Switch:** for h > 2m, γ starts shrinking faster than α, since its weight dominates the sum.\r\n\r\nAs h → ∞, the model becomes deterministic. Also, since all smoothing parameters are positive, the forecast-error covariances are positive, making MSCE's shrinkage the strongest of all multi-step loss functions for this model."
+ },
+ {
+  "answer": "TYEPQK",
+  "question": "doi-10-1007-s00180-023-01377-x#Q4",
+  "text": "**Definition** ([location] in the paper):\r\n\r\n$$\\mathrm{GTMSE} = \\sum_{j=1}^{h} \\log\\left(\\frac{1}{T-h}\\sum_{t=1}^{T-h} e_{t+j|t}^2\\right)$$\r\n\r\n**Derivation:** It comes from the General Predictive Likelihood (GPL). GPL maximization is equivalent to minimizing the determinant of the h×h covariance matrix of 1- to h-step-ahead forecast errors (the \"Generalised Variance\"). If all off-diagonal covariances in that matrix are set to zero (an artificial restriction, since they are nonzero in reality), the determinant becomes the product of the diagonal variances. Taking logs converts the product into a sum, giving GTMSE — i.e., the sum of log variances of each horizon's errors.\r\n\r\nBecause of the log transformation, the one-step-ahead variance is balanced against the $\\hat{c}_j^2$ terms, so GTMSE retains shrinkage but much milder than MSE_h, TMSE, or MSCE."
+ },
+ {
+  "answer": "U9EAMW",
+  "question": "doi-10-1093-imaman-dpad028#Q8",
+  "text": "No. Checking each column of [location], the true distribution never wins:\r\n\r\n| DGP | Best fixed model (SPS) | True model's SPS |\r\n|---|---|---|\r\n| Normal | Normal (5.255) | 5.255 — tie with Akram? No, Akram 5.110 is lower. So Normal is best *among fixed*, but Akram beats it. |\r\n| Inverse Gaussian | Gamma (5.192) | IG: 5.221 |\r\n| Gamma | Gamma (5.231)... wait, IG 5.224, Gamma 5.231? Actually IG 5.224 < Gamma 5.231. Let me recheck: IG 5.221? No — IG row, Gamma column = 5.192? No. |\r\n\r\nCorrect values from the table:\r\n- **Normal DGP:** Normal 5.255; best is Akram 5.110. True (Normal) is best among the four fixed, but not overall.\r\n- **IG DGP:** IG 5.221; Gamma 5.192 is lower. True distribution loses.\r\n- **Gamma DGP:** Gamma 5.231; Normal 5.193 and IG 5.224 are lower. True distribution loses.\r\n- **Log-Normal DGP:** Log-Normal 9.423; Gamma 9.388 is lower. True distribution loses.\r\n- **Akram DGP:** Akram 5.089 wins (it *is* the DGP).\r\n\r\nSo only for the Akram DGP does the true model win; for the four ETS DGPs, the true distribution never has the lowest SPS."
+ },
+ {
+  "answer": "UCKJJU",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q2",
+  "text": "From [location], for the 11 VETS D groups:\r\n\r\n- PIC(LS,S,N): 6 groups (most often)\r\n- PIC(L,L,N): 2 groups\r\n- PIC(N,N,N): 1 group\r\n- PIC(L,N,N): 1 group\r\n- PIC(LS,S,S): 1 group (the only group needing a common seasonal component)"
+ },
+ {
+  "answer": "UCN3XN",
+  "question": "doi-10-1093-imaman-dpad028#Q8",
+  "text": "No. The paper says the matching distribution does not necessarily perform best, though differences are usually small and not statistically significant."
+ },
+ {
+  "answer": "UKK7MA",
+  "question": "doi-10-1111-jtsa-12843#Q7",
+  "text": "No, not reliably. The paper shows ETS(A,N,N) does not satisfy [location]: after a mean change, its forecasts adapt and the forecast errors return to zero, so there is no persistent mean shift in the errors to detect (unless α=0). It can still detect variance changes via squared forecast errors."
+ },
+ {
+  "answer": "UUAAX9",
+  "question": "doi-10-1111-jtsa-12843#Q4",
+  "text": "In the [location] illustration: the mean change was at time point 400, the training (Phase I) size was m = 300, and the mean detector signalled 19 time points after the change."
+ },
+ {
+  "answer": "UWNRHT",
+  "question": "doi-10-1093-imaman-dpad028#Q4",
+  "text": "Akram’s approach had the lowest mean scaled pinball score for every DGP."
+ },
+ {
+  "answer": "UYNHPJ",
+  "question": "doi-10-1093-imaman-dpad028#Q10",
+  "text": "No. The paper derives it only for ETS(M,N,N) (positivity of 1 + αεₜ requires α ≤ 1). For other models, the restriction α, β, γ ∈ [0, 1] is assumed \"by analogy... without a derivation\" (explicitly marked unchecked)."
+ },
+ {
+  "answer": "V4337D",
+  "question": "doi-10-1111-jtsa-12843#Q5",
+  "text": "The illustration used an **ETS(A,A,N)** model (Holt's linear trend, additive error) on data with a trend and a variance change at time point 400. The squared-error detector signalled **7 time points** after the change."
+ },
+ {
+  "answer": "V4NC7K",
+  "question": "doi-10-1111-jtsa-12843#Q1",
+  "text": "**Training:** Models were trained once on the first n_train = 300 observations, then produced one-step-ahead forecasts sequentially without retraining.\r\n\r\n**Thresholds:** Theoretical Page's CUSUM thresholds with γ = 0 and false alarm rate α = 0.05; for ARMA/ETS error detectors the standard deviation was the traditional estimator treating errors as i.i.d., while Raw CUSUM used the Bartlett long-run variance estimator.\r\n\r\n**Repetitions:** Each scenario was repeated **1000 times**."
+ },
+ {
+  "answer": "V9CYUR",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q5",
+  "text": "Data were generated using the `sim.ves` function from the R package **legion v0.1.0**. The underlying process was **VETS(A,N,A)**, then exponentiated to obtain **VETS(M,N,M;LN)** (pure multiplicative, log-normal errors).\r\n\r\nKey setup:\r\n- **Seasonal cycle:** quarterly, $m=4$ (monthly also checked, similar findings)\r\n- **Initial level:** random from [4,10] in logs → [54, 22000] in data scale\r\n- **Seasonal indices:** random from (−1,1), normalised → multiplicative indices in (0.37, 2.72)\r\n- **Sample sizes:** $T = 24$ or $64$ quarters (6 or 16 years), last 8 quarters (2 years) as holdout\r\n- **Group sizes:** $n = 2, 10, 20, 30, 40, 50$ series\r\n- **Errors:** i.i.d. normal with $\\sigma = 0.3$ (log-normal after exponentiation), uncorrelated across series\r\n- **Smoothing parameters:** varied by PIC restriction — e.g. $\\alpha=0.3, \\gamma=0.1$ for PIC(LS,*,*); $\\alpha \\in [0,0.3], \\gamma \\in [0,1-\\alpha]$ for PIC(N,*,*)\r\n- **Replications:** 1000 iterations"
+ },
+ {
+  "answer": "VAKFPK",
+  "question": "doi-10-1111-jtsa-12843#Q19",
+  "text": "The paper doesn't report any cost savings — it only notes the change was detected on 2 December and that this would allow staffing to be \"appropriately adjusted.\" No monetary figures are given."
+ },
+ {
+  "answer": "VEAT77",
+  "question": "doi-10-1007-s00180-023-01377-x#Q7",
+  "text": "No. On the mean surface temperature data, MSE_h was the most accurate: RMSE 1.128, MAE 0.784, ME 0.009 — all better than TMSE (1.198, 0.827, −0.402), GTMSE (1.190, 0.819, −0.366), and MSCE (1.185, 0.817, −0.343)."
+ },
+ {
+  "answer": "VKFHQ9",
+  "question": "doi-10-1093-imaman-dpad028#Q11",
+  "text": "Not exactly. The example shows the Normal-distribution model gives an unrealistic prediction interval covering negative values on low-volume data, while the Gamma model gives a reasonable positive interval. It does not report holdout accuracy measures comparing forecast errors."
+ },
+ {
+  "answer": "VNJFFE",
+  "question": "doi-10-1002-nav-22074#Q11",
+  "text": "No. On the seasonal subset, CES has the best RMSSE and MASE, but not the best MSIS: ETS(M,Md,M) has lower mean MSIS (1.934 vs 2.188), while CES has the best median MSIS."
+ },
+ {
+  "answer": "VPAADA",
+  "question": "doi-10-1002-nav-22074#Q14",
+  "text": "The paper bases this on the M1/M3/tourism and M4 experiments, where auto.ces uses AIC to select between seasonal and non-seasonal CES and still performs well overall.\r\n\r\nThe paper does not state explicit limitations of that evidence, but it notes the seasonal model has many more parameters ($k = 4 + 2m + 3$), so AIC is needed to tell whether the added flexibility is worthwhile."
+ },
+ {
+  "answer": "VQUPCT",
+  "question": "doi-10-1007-s00180-023-01377-x#Q19",
+  "text": "The paper doesn't use a separate model per horizon. Its \"direct\" multi-step estimator, MSE_h, fits a single ARIMA(1,1,2) by minimising squared errors at one horizon — h = 60 on the Greenland temperature data.\r\n\r\nIt achieved the best accuracy (RMSE 1.128, MAE 0.784, |ME| 0.009) but at the cost of a distorted, negative AR(1) estimate (−0.786), unlike the positive estimates from GTMSE, MSCE and GPL."
+ },
+ {
+  "answer": "VTCKAW",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q14",
+  "text": "**Evidence supporting the claim:**\r\n\r\n- VETS D (geometric mean rMAE 0.894, median 0.878) and VETS F (0.906 / 0.894) beat all univariate ETS benchmarks on long histories — ETS LN (0.917 / 0.959), ETS (ADAM) (0.955 / 0.997), and ETS (0.933 / 0.975) — with Naïve as benchmark.\r\n- On short histories, VETS D (0.979 / 0.974) again outperformed ETS models, some of which were worse than Naïve.\r\n- The automatically selected PIC restrictions were predominantly LS,S,N — common level/seasonal smoothing parameters and common initial seasonal indices — indicating the cross-series restrictions drive the gains.\r\n- VETS D also achieved near-nominal 95% coverage (0.947 long, 0.938 short) vs. ETS models falling below 95%.\r\n\r\n**Limitations the paper itself states (apart from statistical significance):**\r\n\r\n- **Assumes correct grouping:** benefits \"assume that the data is correctly grouped\" — cross-sectional estimation helps only if series are truly homogeneous.\r\n- **Pinball trade-off on short data:** VETS D had worse relative pinball values than ETS models on short histories, so the accuracy gain comes at the cost of less sharp intervals.\r\n- **VETS F estimation difficulties:** the full covariance model produced too-wide intervals (coverage 0.982, high pinball), limiting its practical use.\r\n- **Small non-seasonal sample:** only 13 non-seasonal series in 4 groups, making conclusions for non-seasonal data unreliable.\r\n- **Aggregation choice:** results are for monthly department-store aggregates; granularity choice (e.g. weekly/daily) may affect findings — noted as future work."
+ },
+ {
+  "answer": "VXYWM3",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q10",
+  "text": "**No — neither covers trend models in the experiments.**\r\n\r\n- **Simulation:** focuses exclusively on **VETS(M,N,M;LN)** — the \"N\" denotes no trend. The paper states this explicitly: the simulation \"focuses on the VETS(M,N,M;LN) model and compares performances of its various PIC variations.\"\r\n\r\n- **Empirical (M5):** after classifying the 70 series with `adam`, the authors found the majority were seasonal but **non-trended** (\"The trends in the two time series are not very strong, and so models with trend components have been excluded from consideration\"). They applied only **VETS(M,N,M;LN)** to seasonal groups and **VETS(M,N,N;LN)** to non-seasonal groups.\r\n\r\nThe trend component is discussed only in the theoretical framework (e.g., the VETS(M,Md,M;LN)PIC(LTSD,LTS,S) example in [location]), not in the reported experiments."
+ },
+ {
+  "answer": "VYJWC9",
+  "question": "doi-10-1111-jtsa-12843#Q3",
+  "text": "A SARIMA(1,0,0)(1,0,0)₁₂ model was fitted on data up to 2013 and used to generate one-step-ahead forecasts; forecast errors from 2013–2016 served as Phase I training (m = 36), with monitoring from 2016 using both D_μ and D_ξ.\r\n\r\nD_μ detected the change 4 data points after the changepoint identified by Taib et al. (2021); D_ξ detected it 2 time points after the change. A model-based sequential approach would have a minimum delay of 24 months due to yearly seasonality, so the framework was much faster."
+ },
+ {
+  "answer": "W9A3EJ",
+  "question": "doi-10-1007-s00180-023-01377-x#Q18",
+  "text": "The paper's simulations used **only pure additive ETS models** (ETS(A,N,N), ETS(A,A,N), ETS(A,Ad,N), ETS(A,N,A), ETS(A,A,A)) — no multiplicative ETS models were included in the simulation study.\r\n\r\nThe authors state they \"examine pure additive ETS models only, keeping in mind that the main findings can be extended to some of the multiplicative cases as well.\" So the shrinkage behavior for multiplicative ETS models was not directly tested or demonstrated in the simulations."
+ },
+ {
+  "answer": "W9KANX",
+  "question": "doi-10-1093-imaman-dpad028#Q17",
+  "text": "The paper does not name the company. [location] only says it was “a company that tracks the amount of electricity used by such vehicles,” and the data availability note says the data cannot be shared publicly due to a non-disclosure agreement."
+ },
+ {
+  "answer": "WFMYVK",
+  "question": "doi-10-1002-nav-22074#Q20",
+  "text": "The paper doesn't report coverage rates (the share of holdout observations inside the 95% intervals). It reports only the MSIS interval scores, not empirical coverage."
+ },
+ {
+  "answer": "WJ3DDJ",
+  "question": "doi-10-1093-imaman-dpad028#Q11",
+  "text": "The paper doesn't report holdout forecast accuracy for the EV example — only in-sample AICc (6398.57 Gamma vs 6418.296 Normal) and strictly positive 95% prediction intervals on the low-volume subsample. So the example shows better fit and positivity, not demonstrated holdout accuracy."
+ },
+ {
+  "answer": "WJPQKT",
+  "question": "doi-10-1002-nav-22074#Q6",
+  "text": "Non-seasonal CES has an underlying **ARMA(2,2)** model:\r\n\r\n- $\\phi_1 = 2 - \\alpha_0$\r\n- $\\phi_2 = \\alpha_0 + \\alpha_1 - 2$\r\n- $\\theta_1 = 2 - 2\\alpha_0 + \\alpha_1$\r\n- $\\theta_2 = 3\\alpha_0 + \\alpha_1 - 2 - \\alpha_0^2 - \\alpha_1^2$\r\n\r\nAll four coefficients are functions of the same two parameters $\\alpha_0$ and $\\alpha_1$, so the AR and MA coefficients are tied together; $\\theta_2$ is nonlinear in them. Its parameter space differs from the general ARMA(2,2) and is not restricted to stationary models."
+ },
+ {
+  "answer": "WM4TU3",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q16",
+  "text": "The paper does not state the significance level. It only reports that VETS F (long history) had the lowest mean rank but was **not statistically different** from VETS D, ETS LN, ETS (ADAM), ETS (long), and VETS D (short) — without specifying the alpha level used in the MCB test (Koning et al., 2005)."
+ },
+ {
+  "answer": "WMRVHJ",
+  "question": "doi-10-1002-nav-22074#Q7",
+  "text": "No. On the non-seasonal subset, ETS(A,Ad,N) has lower mean RMSSE (2.502 vs 2.534) and lower mean MASE (2.907 vs 2.949) than CES. CES is only close behind and remains second best on most measures."
+ },
+ {
+  "answer": "WQHK4A",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q13",
+  "text": "**Evidence:**\r\n- **Point accuracy:** PIC(LS,S,N) stays close to the correct variant in rMAE on data from every generating variant (1.00–1.06, vs up to 1.7 for PIC(*,S,S) and up to 1.07 for PIC(*,N,N) on mismatched data).\r\n- **Prediction intervals:** Among the lowest rPinballU values across all data-generating processes (0.89–1.26, vs up to 2.05 for PIC(*,S,S) and 1.39 for PIC(N,N,N)).\r\n- **Corroboration on real data:** The selection procedure chose PIC(LS,S,N) most often on the M5 data (6 of 11 groups).\r\n\r\n**Limitations the paper states:**\r\n- Robustness is only shown in simulation; it is **not tested outside the simulated settings**.\r\n- The simulation covers only VETS(M,N,M;LN), quarterly data, smoothing parameters from restricted ranges.\r\n- Groups of more than 50 series were not tested.\r\n- Models with a trend component are not analysed.\r\n- Whether the findings hold for histories as short as about one year is unknown.\r\n- Selection frequency on M5 does not measure robustness as such, and the M5 evidence is a single data set of 69 series with one 12-month holdout."
+ },
+ {
+  "answer": "WQXDJT",
+  "question": "doi-10-1002-nav-22074#Q5",
+  "text": "When $\\alpha_1 = 1$, CES reduces to ETS(A,N,N). Then the CES level update uses $(\\alpha_0 - 1)\\varepsilon_t$, so $\\alpha_0 - 1$ corresponds to the SES smoothing parameter $\\alpha$; e.g., $\\alpha_0 = 1.24$ in CES is equivalent to $\\alpha = 0.24$ in SES."
+ },
+ {
+  "answer": "WTK4HF",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q10",
+  "text": "No. [location] states that models with a trend component are not analysed, neither in the simulation nor on the M5 data. The simulation uses only VETS(M,N,M;LN) (no trend), and the M5 analysis explicitly excluded trended models."
+ },
+ {
+  "answer": "WVMM4M",
+  "question": "doi-10-1111-jtsa-12843#Q12",
+  "text": "Supporting evidence: In all simulated scenarios (mean and trend changes in seasonal data; AR parameter changes), the ARMA/ETS forecast-error detectors had higher detection probabilities and shorter average detection delays than the Raw CUSUM, with FDP near the nominal 0.05 (all < 0.075).\r\n\r\nLimitations stated by the paper: (1) [location] are not satisfied in all scenarios, so the theoretical validity of thresholds doesn't always hold; (2) results are specific to the tested settings — seasonal frequencies, change types/sizes, and the particular models used; no universal claim is made."
+ },
+ {
+  "answer": "WWPYPW",
+  "question": "doi-10-1093-imaman-dpad028#Q7",
+  "text": "No. The paper states Akram's log-ETS advantage comes from the central quantiles (τ ∈ [0.2, 0.8]); performance in the tails (τ < 0.2 and τ > 0.8) is similar. The quantile bias/precision table confirms comparable tail behavior, e.g. for the Log-Normal DGP: Akram precision 0.008 vs 0.004–0.009 for the positive-distribution models."
+ },
+ {
+  "answer": "WYQNY4",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q11",
+  "text": "**When they help:**\r\n- When the data-generating process truly has common seasonality (PIC(*,S,S) DGPs), the restrictive methods perform well — e.g. rMAE ≈ 0.95–0.98 vs benchmark when applied to PIC(LS,S,S) data, with gains growing as group size increases (up to ~35% lower pinball for 50 series).\r\n- Benefits are greatest with **short data histories** and **larger groups**, where pooling compensates for few observations per series.\r\n\r\n**When they harm:**\r\n- When the DGP has individual seasonal components (flexible DGPs like PIC(*,N,N)), common seasonal components perform very poorly — rMAE up to **1.7–1.9** and pinball values up to **2.0**, i.e. roughly double the error. The top-right corners of the simulation tables show the worst degradation.\r\n- The harm comes from imposing a shared seasonal pattern on series that genuinely differ, biasing all series in the group toward an \"average\" seasonality that fits none well.\r\n\r\n**Practical guidance from the paper:** apply PIC(*,S,S) only to highly homogeneous series with very similar seasonal shapes; otherwise use PIC(*,S,N) (individual seasonal components with common initials/parameters), which is nearly as good when seasonality is common and far more robust when it is not."
+ },
+ {
+  "answer": "XA4NF4",
+  "question": "doi-10-1007-s00180-023-01377-x#Q8",
+  "text": "No — not for a static linear regression. [location] states that multi-step loss functions impose **no parameter shrinkage** on static linear regression models, because the persistence vector \\(g = 0\\), which implies all multi-step coefficients \\(c_j = w'F^{j-1}g = 0\\), so there is nothing for the loss to shrink.\r\n\r\nCaveat: this zero-shrinkage result applies only to static regressions without dynamic state transitions; it does not transfer to dynamic regression models with AR or MA error structures."
+ },
+ {
+  "answer": "XDNK9C",
+  "question": "doi-10-1093-imaman-dpad028#Q4",
+  "text": "Akram's log-ETS model had the lowest mean SPS for every DGP:\r\n\r\n| DGP | Lowest SPS | Akram's SPS |\r\n|---|---|---|\r\n| Normal | Akram | 5.110 |\r\n| Inverse Gaussian | Akram | 5.052 |\r\n| Gamma | Akram | 5.074 |\r\n| Log-Normal | Akram | 9.180 |\r\n| Akram | Akram | 5.089 |\r\n\r\nThe AICc-selected multiplicative model was second-best in most cases."
+ },
+ {
+  "answer": "XMNKWQ",
+  "question": "doi-10-1002-nav-22074#Q4",
+  "text": "M1 series 47.\r\n\r\n- **CES:** MSIS = 523.034 — it failed to identify the trend.\r\n- **ETS:** selected ETS(M,N,N), MSIS = 25.590.\r\n\r\nThis single failure inflated CES's mean MSIS on the M1/M3/tourism data."
+ },
+ {
+  "answer": "XN7VQV",
+  "question": "doi-10-1093-imaman-dpad028#Q9",
+  "text": "No. The Auto/AICc-selected model is not consistently lower than all fixed-distribution models on every DGP. For example, on the Inverse Gaussian DGP, the fixed Gamma model has a lower score than Auto."
+ },
+ {
+  "answer": "XPAY37",
+  "question": "doi-10-1111-jtsa-12843#Q13",
+  "text": "The paper's explanation (explaining [location]) is that the Raw CUSUM monitors the raw data without modelling their quarterly seasonality (quarter means −2, 5, 7, −10). Its Phase I variance estimate therefore includes the seasonal variation and is too large; since the threshold grows with that estimate, a change must be larger to be detected. The ARMA/ETS forecasting models capture the seasonality, so their forecast errors do not carry it and detection is better. The paper gives this as the reason but does not report the variance estimates themselves."
+ },
+ {
+  "answer": "XVPXQC",
+  "question": "doi-10-1002-nav-22074#Q18",
+  "text": "The paper does not compare CES with gradient-boosted trees or neural networks on M1/M3/tourism, so that comparison cannot be made from its results."
+ },
+ {
+  "answer": "XW9Y3W",
+  "question": "doi-10-1007-s00180-023-01377-x#Q2",
+  "text": "**Model and data:** An ARIMA(1,1,2) was fitted to the HadCRUT.4.5.0.0 monthly Mean Surface Temperature series for Greenland (grid cell 322.5°E, 62.5°N), trained on 1,956 observations (Jan 1849–Dec 2012) and evaluated on a 60-month holdout (Jan 2013–Dec 2017), using the R package smooth v3.2.1.\r\n\r\n**MSE₁ vs. the others:** MSE₁ was outperformed by all multi-step estimators on accuracy — RMSE 1.217 and MAE 0.849, worse than MSE_h (1.128/0.784), TMSE (1.198/0.827), GTMSE (1.190/0.819), MSCE (1.185/0.817) and GPL (1.214/0.846). Its ME (−0.45) was also more biased than MSE_h's (0.009), though comparable to TMSE (−0.402) and GPL (−0.444). Its parameter estimates were plausible, however: AR(1) = 0.558 (positive, as the climate literature expects), unlike MSE_h's distorted −0.786."
+ },
+ {
+  "answer": "YAKNNW",
+  "question": "doi-10-1002-nav-22074#Q10",
+  "text": "No. CES is formulated only with an **additive** error term; a multiplicative-error version is not developed (affecting [location]). All theoretical results (state-space form, stationarity, ARMA equivalence) and empirical benchmarks assume additive errors."
+ },
+ {
+  "answer": "YDDPEC",
+  "question": "doi-10-1002-nav-22074#Q12",
+  "text": "**Evidence:**\r\n\r\n- **M1/M3/tourism:** SCUM (median of ETS, ARIMA, Theta, CES) vs SCUM(noCES): mean RMSSE 1.867 vs 1.911, mean MASE 2.146 vs 2.191, median RMSSE 1.128 vs 1.143, median MASE 1.256 vs 1.279, median MSIS 0.844 vs 0.859 — all lower with CES. Nemenyi tests: SCUM significantly better than every other method including SCUM(noCES) on all three measures.\r\n- **M4:** SCUM vs SCUM(noCES): mean MASE 2.737 vs 2.784, mean RMSSE 2.198 vs 2.241, mean MSIS 1.751 vs 1.798, and all medians lower with CES.\r\n\r\n**Exception:** On M1/M3/tourism, SCUM's **mean MSIS is higher with CES** (2.333 vs 2.223) — the only measure on which adding CES does not improve the combination."
+ },
+ {
+  "answer": "YHNVJ7",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q20",
+  "text": "The paper does not report WRMSSE. It uses rMAE, rRMSE, GMRAE, coverage and pinball values with Naïve forecasts as the benchmark — not the M5 competition's WRMSSE measure."
+ },
+ {
+  "answer": "YVN4FQ",
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q7",
+  "text": "From [location]:\r\n\r\n**Long histories (51 obs. estimation):** Neither VETS model has the lowest GMRAE at any horizon — ETS (ADAM) is lowest at 3 and 12 months (0.716, 0.988), ETS at 6 months (0.827).\r\n\r\n**Short histories (24 obs. estimation):** VETS D is lowest at 3 months (1.037) and 12 months (0.938); at 6 months ETS is lowest (0.946)."
+ }
+]

@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1111-jtsa-12843#Q3",
+  "text": "How was the framework applied to the gallstone-related pathology (GRP) admissions data, how quickly did it detect the change, and how does its delay compare with that of a model-based sequential approach?",
+  "reference": "A SARMA(1,0,0)(1,0,0)12 model was fitted to the monthly proportion of GRP A&E admissions up to 2013 and used to produce one-step-ahead forecasts up to 2020. Data from 2013 to 2016 formed the Phase I sample (m = 36), with monitoring from 2016. The mean detector signalled four data points after the changepoint found in the retrospective analysis of Taib et al. (2021), and the squared-error detector two time points after the change. A model-based sequential approach would have a minimum detection delay of 24 months because of the yearly seasonality.",
+  "marking": "Required: the mean detector signals 4 observations after the change and the squared-error detector 2; a model-based sequential approach has a minimum detection delay of 24 months because of the yearly seasonality. Also correct: a SARMA(1,0,0)(1,0,0)12 model fitted to the monthly proportion of GRP A&E admissions up to 2013, giving one-step-ahead forecasts up to 2020; 2013 to 2016 as the training (Phase I) sample, m = 36; monitoring from 2016; the delay of 4 counted from the changepoint found retrospectively by Taib et al. (2021). Not required: the details of the model and the training sample.",
+  "answers": [
+   {
+    "answer": "3DWW4N",
+    "text": "**Application:** A SARMA(1,0,0)(1,0,0)₁₂ model was fitted to monthly GRP admission proportions (2010–2013), then one-step-ahead forecasts were produced for 2013–2020. The first 36 forecast errors (2013–2016) formed the Phase I sample; both the mean detector (Dμ) and squared-error detector (Dξ) monitored from 2016 onward.\r\n\r\n**Detection speed:** The mean detector signalled 4 observations after the change (July 2017); the squared-error detector signalled 2 observations after (May 2017).\r\n\r\n**Comparison:** Both delays (4 and 2 months) are far shorter than the ≥24 months a model-based sequential detector would need to fit a post-change model with yearly seasonality."
+   },
+   {
+    "answer": "VYJWC9",
+    "text": "A SARIMA(1,0,0)(1,0,0)₁₂ model was fitted on data up to 2013 and used to generate one-step-ahead forecasts; forecast errors from 2013–2016 served as Phase I training (m = 36), with monitoring from 2016 using both D_μ and D_ξ.\r\n\r\nD_μ detected the change 4 data points after the changepoint identified by Taib et al. (2021); D_ξ detected it 2 time points after the change. A model-based sequential approach would have a minimum delay of 24 months due to yearly seasonality, so the framework was much faster."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q16",
+  "text": "How long did CES take to estimate per series compared with ETS and auto.ssarima?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "HJRFC9",
+    "text": "The paper doesn't report estimation times. It only gives accuracy results (RMSSE/MASE/MSIS) and software versions — no runtime comparison between `auto.ces`, `es` and `auto.ssarima`. You'd need to check the paper's text or run the benchmarks yourself for timing."
+   },
+   {
+    "answer": "HUQHUT",
+    "text": "The paper does not report computation times for CES, ETS, or auto.ssarima, so that comparison cannot be made from it."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q10",
+  "text": "Do the paper's simulation and empirical results cover vector ETS models with a trend component?",
+  "reference": "No. The simulation uses only VETS(M,N,M;LN), and on the M5 data models with trend were excluded because the trends in the two trended series were weak. The authors name the trend element as something that may change how the methods behave, for future work.",
+  "marking": "Required: no; the results do not cover models with a trend. Not required: the reasons (the simulation uses only VETS(M,N,M;LN); on the M5 data trend models were excluded because the trends of the two trended series were weak); that the authors name the trend element for future work. Wrong (overreach): extending the findings to trended models.",
+  "answers": [
+   {
+    "answer": "WTK4HF",
+    "text": "No. [location] states that models with a trend component are not analysed, neither in the simulation nor on the M5 data. The simulation uses only VETS(M,N,M;LN) (no trend), and the M5 analysis explicitly excluded trended models."
+   },
+   {
+    "answer": "VXYWM3",
+    "text": "**No — neither covers trend models in the experiments.**\r\n\r\n- **Simulation:** focuses exclusively on **VETS(M,N,M;LN)** — the \"N\" denotes no trend. The paper states this explicitly: the simulation \"focuses on the VETS(M,N,M;LN) model and compares performances of its various PIC variations.\"\r\n\r\n- **Empirical (M5):** after classifying the 70 series with `adam`, the authors found the majority were seasonal but **non-trended** (\"The trends in the two time series are not very strong, and so models with trend components have been excluded from consideration\"). They applied only **VETS(M,N,M;LN)** to seasonal groups and **VETS(M,N,N;LN)** to non-seasonal groups.\r\n\r\nThe trend component is discussed only in the theoretical framework (e.g., the VETS(M,Md,M;LN)PIC(LTSD,LTS,S) example in [location]), not in the reported experiments."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q11",
+  "text": "Does the electric vehicle charging example show that the selected model forecasts the holdout more accurately than a model with the Normal distribution?",
+  "reference": "No accuracy measure is reported for the holdout. The example shows that the selected ETS(M,Md,M) model with the Gamma distribution has a lower AICc than an additive ETS(A,Ad,A) model, and that on the first 49 observations the Normal model gives a 95% prediction interval that covers negative values while the Gamma model gives a reasonable one that does not cover negative values.",
+  "marking": "Required: No; no accuracy measure for the holdout is reported. Also correct: what the example does show: the selected ETS(M,Md,M) model with the Gamma distribution has a lower AICc than an additive ETS(A,Ad,A) model, and on the first 49 observations the Normal model's 95% prediction interval covers negative values while the Gamma model's is reasonable and does not. Wrong (overreach): claiming an accuracy advantage on the holdout.",
+  "answers": [
+   {
+    "answer": "WJ3DDJ",
+    "text": "The paper doesn't report holdout forecast accuracy for the EV example — only in-sample AICc (6398.57 Gamma vs 6418.296 Normal) and strictly positive 95% prediction intervals on the low-volume subsample. So the example shows better fit and positivity, not demonstrated holdout accuracy."
+   },
+   {
+    "answer": "VKFHQ9",
+    "text": "Not exactly. The example shows the Normal-distribution model gives an unrealistic prediction interval covering negative values on low-volume data, while the Gamma model gives a reasonable positive interval. It does not report holdout accuracy measures comparing forecast errors."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q15",
+  "text": "What evidence supports the claim that the ETS models with all the distributions considered are well calibrated, and what limitations of this evidence does the paper itself state?",
+  "reference": "In simulation experiment 2 the quantile bias and quantile precision are small and close to zero for every model on every data generating process (bias between −0.013 and 0.011). The authors add that the quantile coverage fluctuates randomly around the nominal levels, a new run giving different shapes. Limits: the authors state none in the text.",
+  "marking": "Required: in simulation experiment 2 the quantile bias and quantile precision are small and close to zero for every model on every data generating process. Not required: the bias range (−0.013 to 0.011); that the quantile coverage fluctuates randomly around the nominal levels, a new run giving different shapes; giving limitations. Acceptable limitations: a single fixed parameter vector with an error standard deviation of 0.1, at which the multiplicative errors are small enough that Normal and logarithmic approximations behave regularly. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "7N43YR",
+    "text": "Evidence:\r\n- Quantile bias and precision in [location] are all small and close to zero across DGPs and models.\r\n- Reliability diagrams show quantile coverage fluctuating randomly around nominal levels.\r\n- A repeat run produced different coverage curves, supporting random rather than systematic miscalibration.\r\n\r\nLimitations:\r\n- Calibration is assessed only in the simulation experiment with one DGP model class, ETS(M,Md,M), σ = 0.1, and specific smoothing parameters.\r\n- The paper does not establish calibration universally for all ETS(M,*,*) models or real-world datasets."
+   },
+   {
+    "answer": "PEDKAM",
+    "text": "**Evidence:**\r\n- Quantile bias is near zero across all DGPs: e.g., −0.005 to 0.001 for the Log-Normal DGP across the four distributions; −0.004 to 0.011 for IG.\r\n- Quantile precision is small (0.004–0.011 range), indicating empirical coverage stays close to nominal τ across the 99 quantile levels.\r\n- This holds for Normal, IG, Gamma, and Log-Normal variants of ETS(M,Md,M), as well as the AICc-selected model.\r\n\r\n**Stated limitations:**\r\n- Simulation 2 uses a single fixed parameter vector (σ = 0.1, α = 0.1, β = 0.05, γ = 0.2, φ = 0.95), so multiplicative errors are small and Normal/log approximations behave regularly — calibration may not generalize to larger σ or other parameter regimes.\r\n- The significance test for score differences is not named.\r\n- Results are for ETS(M,Md,M) only; no other component structures tested."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q20",
+  "text": "What coverage did the prediction intervals of each estimator achieve on the Air Passengers data?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "FM94VF",
+    "text": "The paper doesn't report prediction interval coverage for the Air Passengers data — only point-forecast accuracy (RMSE, MAE, ME) and estimated smoothing parameters."
+   },
+   {
+    "answer": "RJUVPV",
+    "text": "The paper does not report prediction interval coverage for the Air Passengers data — only point forecast accuracy (RMSE, MAE, ME) and smoothing parameter values."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q8",
+  "text": "In simulation experiment 2, does the ETS model with the distribution that generated the data have the lowest mean scaled pinball score on that data?",
+  "reference": "Not necessarily. For example, on Inverse Gaussian data the Inverse Gaussian model (5.221) is beaten by the Gamma (5.192) and Normal (5.204) models, and on Gamma data the Gamma model (5.231) is beaten by the Normal model (5.193). The authors state the differences between the models are typically small and not statistically significant at the 5% level, except for Akram's approach.",
+  "marking": "Required: No (not necessarily), with the point that the matching distribution does not always give the lowest score. Also correct: examples such as, on Inverse Gaussian data, the Inverse Gaussian model (5.221) beaten by the Gamma (5.192), Normal (5.204) and Log-Normal (5.215) models; on Gamma data, the Gamma model (5.231) beaten by the Normal (5.193), Inverse Gaussian (5.224) and Log-Normal (5.224) models; that the differences are typically small and not significant at the 5% level, except for Akram's approach. Not required: specific values. Wrong (overreach): saying the correct distribution always gives the best score.",
+  "answers": [
+   {
+    "answer": "UCN3XN",
+    "text": "No. The paper says the matching distribution does not necessarily perform best, though differences are usually small and not statistically significant."
+   },
+   {
+    "answer": "U9EAMW",
+    "text": "No. Checking each column of [location], the true distribution never wins:\r\n\r\n| DGP | Best fixed model (SPS) | True model's SPS |\r\n|---|---|---|\r\n| Normal | Normal (5.255) | 5.255 — tie with Akram? No, Akram 5.110 is lower. So Normal is best *among fixed*, but Akram beats it. |\r\n| Inverse Gaussian | Gamma (5.192) | IG: 5.221 |\r\n| Gamma | Gamma (5.231)... wait, IG 5.224, Gamma 5.231? Actually IG 5.224 < Gamma 5.231. Let me recheck: IG 5.221? No — IG row, Gamma column = 5.192? No. |\r\n\r\nCorrect values from the table:\r\n- **Normal DGP:** Normal 5.255; best is Akram 5.110. True (Normal) is best among the four fixed, but not overall.\r\n- **IG DGP:** IG 5.221; Gamma 5.192 is lower. True distribution loses.\r\n- **Gamma DGP:** Gamma 5.231; Normal 5.193 and IG 5.224 are lower. True distribution loses.\r\n- **Log-Normal DGP:** Log-Normal 9.423; Gamma 9.388 is lower. True distribution loses.\r\n- **Akram DGP:** Akram 5.089 wins (it *is* the DGP).\r\n\r\nSo only for the Akram DGP does the true model win; for the four ETS DGPs, the true distribution never has the lowest SPS."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q11",
+  "text": "On seasonal series, does CES outperform every seasonal ETS model on every error measure?",
+  "reference": "No. On the 2,053 seasonal series CES has the lowest mean and median RMSSE and MASE and the lowest median MSIS, but not the lowest mean MSIS: ETS(M,Md,M) ranks first (1.934 against 2.188 for CES), and ETS(A,N,A), ETS(A,Ad,A) and ETS(M,M,M) are also below CES on mean MSIS.",
+  "marking": "Required: no; CES does not have the lowest mean MSIS. Not required: which models are lower on mean MSIS (ETS(M,Md,M) lowest at 1.934 against 2.188 for CES; ETS(A,N,A), ETS(A,Ad,A) and ETS(M,M,M) also lower); that CES has the lowest mean and median RMSSE and MASE and the lowest median MSIS; the number of series (2,053). Wrong: saying CES outperforms every seasonal ETS model on every measure (overreach).",
+  "answers": [
+   {
+    "answer": "KRM7DD",
+    "text": "No — not on **every** measure. On the 2,053 seasonal series, CES beats each seasonal ETS model on mean and median RMSSE and MASE, and on median MSIS — but **not on mean MSIS**, where it is worse than every seasonal ETS model:\r\n\r\n| Comparison model | CES mean MSIS | Model mean MSIS |\r\n|---|---|---|\r\n| ETS(A,N,A) | 2.188 | 2.037 |\r\n| ETS(A,Ad,A) | 2.188 | 2.155 |\r\n| ETS(M,M,M) | 2.188 | 2.153 |\r\n| ETS(M,Md,M) | 2.188 | 1.934 |\r\n\r\nSo CES wins on 5 of 6 measures against each seasonal ETS model; mean MSIS is the consistent exception."
+   },
+   {
+    "answer": "VNJFFE",
+    "text": "No. On the seasonal subset, CES has the best RMSSE and MASE, but not the best MSIS: ETS(M,Md,M) has lower mean MSIS (1.934 vs 2.188), while CES has the best median MSIS."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q1",
+  "text": "In simulation experiment 1, which variable had the largest effect on the bias of the point forecasts, which had the smallest, and in what order did the others fall?",
+  "reference": "All five variables increase the bias (the percentage difference between the conditional expectation and the point forecast) (all regression coefficients positive, 99.9% intervals excluding zero). The damping parameter φ has the largest effect (6.167), followed by β (3.739), the forecast horizon (3.656) and the scale σ (2.755); α has the smallest (1.578). All variables were scaled to lie between 0 and 1.",
+  "marking": "Required: φ (the damping parameter) has the largest effect and α the smallest; the others in the order β, then the forecast horizon, then the scale σ. An answer that puts σ before the horizon earns partial credit (the authors' own summary names the error variance right after β). Not required: the coefficient values, the confidence level, the scaling of the variables. Wrong: any other variable named as largest or smallest.",
+  "answers": [
+   {
+    "answer": "DWD74E",
+    "text": "Based on the Box-Cox odds regression estimates (scaled predictors):\r\n\r\n1. **φ (damping parameter)** — largest effect (estimate 6.167)\r\n2. **Horizon** (3.656)\r\n3. **β (trend smoothing)** (3.739) — essentially tied with horizon\r\n4. **σ (scale)** (2.755)\r\n5. **α (level smoothing)** — smallest effect (1.578)\r\n\r\nSo: φ > horizon ≈ β > σ > α."
+   },
+   {
+    "answer": "77XRUN",
+    "text": "Largest to smallest effect: dampening parameter φ, trend smoothing β, forecast horizon h, scale σ, level smoothing α."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q9",
+  "text": "Of CES, ETS, ARIMA and the Theta method, does CES have the lowest MSIS (the scaled interval score of the 95% prediction intervals) on the M1, M3 and tourism data and on the M4 data?",
+  "reference": "Only by the median. On the M1, M3 and tourism data CES has the lowest median MSIS of the univariate models (.869) but the highest mean MSIS (3.465, against 2.258 for ETS). On M4 it again has the lowest median MSIS (.592) but not the lowest mean (2.379, against 2.130 for Theta and 2.272 for ARIMA).",
+  "marking": "Required: only by the median. On the M1, M3 and tourism data CES has the lowest median MSIS (.869) but the highest mean MSIS (3.465, against 2.258 for ETS); on the M4 data it has the lowest median MSIS (.592) but not the lowest mean (2.379, against 2.130 for Theta and 2.272 for ARIMA). Not required: the values; explaining what MSIS measures (interval width plus a penalty for observations outside the interval; it is not a coverage measure). Wrong: saying CES has the lowest MSIS without distinguishing mean and median (overreach).",
+  "answers": [
+   {
+    "answer": "E3EUNC",
+    "text": "**M1/M3/tourism:** No. CES has the lowest **median** MSIS (0.869) but the **highest mean** MSIS (3.465) of the four — worse than ETS (2.258), ARIMA (3.335) and Theta (2.531). The high mean is driven by the failure on M1 series 47 (MSIS 523.034).\r\n\r\n**M4:** No. CES has the lowest **median** MSIS (0.592) but not the lowest **mean** — ARIMA is lower (2.272 vs CES's 2.379)."
+   },
+   {
+    "answer": "DYQ3X9",
+    "text": "No.\r\n\r\n- M1/M3/tourism: Theta has the lowest mean MSIS (2.252... wait, MSIS column: Theta 2.531 vs CES 3.465), so Theta is lower than CES.\r\n- M4: Theta also has lower mean MSIS than CES (2.130 vs 2.379).\r\n\r\nSo CES does not have the lowest MSIS among those four on either dataset."
+   }
+  ]
+ }
+]

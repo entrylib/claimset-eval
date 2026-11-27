@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q13",
+  "text": "What supports the claim that the shrinkage imposed by multi-step estimators grows with the forecast horizon and weakens with the sample size?",
+  "reference": "Analytically, minimising MSE_h minimises the estimated h-step variance s_1²(1 + Σ ĉ_j²), pushing ĉ_j² towards zero with a strength that grows with h and falls with the sample size T; TMSE and MSCE shrink too, TMSE more weakly because the short horizons weigh in. In the simulations, longer horizons give larger bias and slower convergence for the same sample size, and on large samples the effect is negligible (the estimates for h = 1 and h = 10 look alike). At h = 200 the ARIMA(0,1,1) estimates remain biased and inefficient even at 5,000 observations.",
+  "marking": "Required: the analytical argument: minimising the multi-step loss minimises the estimated h-step variance and pushes ĉ_j² towards zero, more strongly for larger h and smaller sample size T. Not required: the comparison of TMSE and MSCE with MSE_h; the simulation details.",
+  "answers": [
+   {
+    "answer": "P79Y3D",
+    "text": "The claim is supported by analytical derivation: multi-step losses minimise the estimated multi-step coefficients \\(\\hat{c}_j^2\\) and one-step variance \\(s_1^2\\), and since \\(\\sigma_h^2 = \\sigma_1^2(1 + \\sum_{j=1}^{h-1} c_j^2)\\), longer horizons impose stronger pressure toward zero. Finite-sample minimisation of these terms yields shrinkage that diminishes as \\(T\\) grows.\r\n\r\nHowever, verification is marked \"unchecked\" in the paper, and the paper itself notes that with large \\(h\\), over-shrinkage toward boundary values can introduce finite-sample bias."
+   },
+   {
+    "answer": "7JXEKT",
+    "text": "**Analytical support:**\r\n- The h-step variance contains the sum Σ_{j=1}^{h-1} ĉ_j², which grows with h, so minimizing it forces ĉ_j (and hence parameters) closer to zero as h increases.\r\n- The likelihood decomposition shows the \"bias\" term B_MSEh is weighted by (T−h)/2, so larger T weakens the penalty relative to the data term.\r\n\r\n**Simulation support:**\r\n- Boxplots show parameter distributions more biased and dispersed at h = 200 than h = 10 for the same sample size.\r\n- For the same h, estimates converge to true values as the sample grows from 20 to 5000; at h = 10 the distributions are nearly identical to MSE₁ even on moderate samples.\r\n\r\n**Empirical support:**\r\n- On the temperature data (T = 2016, h = 60), MSE_h's AR(1) shrank to −0.786 while GTMSE/MSCE/GPL stayed near 0.53–0.69 — shrinkage visible at large h relative to sample size."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q13",
+  "text": "According to the paper, what explains the Raw CUSUM's results in the scenarios with a change in the autoregressive parameter?",
+  "reference": "The Raw CUSUM does not take the seasonality into account, so the variance is overestimated in the Phase I (training) period, and a larger variance estimate makes changes much harder to detect.",
+  "marking": "Required: the Raw CUSUM does not take the seasonality into account, so it overestimates the variance in the training (Phase I) period, and a larger variance estimate makes changes much harder to detect.",
+  "answers": [
+   {
+    "answer": "XPAY37",
+    "text": "The paper's explanation (explaining [location]) is that the Raw CUSUM monitors the raw data without modelling their quarterly seasonality (quarter means −2, 5, 7, −10). Its Phase I variance estimate therefore includes the seasonal variation and is too large; since the threshold grows with that estimate, a change must be larger to be detected. The ARMA/ETS forecasting models capture the seasonality, so their forecast errors do not carry it and detection is better. The paper gives this as the reason but does not report the variance estimates themselves."
+   },
+   {
+    "answer": "77A4QY",
+    "text": "The Raw CUSUM doesn't account for seasonality, so it overestimates the variance during Phase I training; a larger variance estimate makes changes harder to detect, hurting its detection probability and delay."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q14",
+  "text": "What supports the claim that mean and variance changes in the raw data show up as a mean change in the centred squared forecast errors, and under what conditions?",
+  "reference": "Proposition 1, proved from the definition of the forecast errors: under Assumption 1 the change size is Var_G′[Y_t] − Var_F[Y_t] when the mean does not change, plus Δ²_μ,m when it does and Assumption 2 holds. Proposition 2 and Corollary 1 then give the limiting distributions of the detector, provided the change size satisfies Assumptions C–E (large enough). For ARMA models the result agrees with Aue et al. (2015), where a variance change of size δ gives a change of δ in the squared errors.",
+  "marking": "Required: mentions the assumptions on the forecasting model (a constant forecast bias before the change; for a mean change, that the model does not fully adjust to it). Also correct: Proposition 1, derived from the definition of the forecast errors: the change size is Var_G′[Y_t] − Var_F[Y_t] when the mean does not change, plus Δ²_μ,m when it does; Proposition 2 and Corollary 1 give the detector's limiting distributions when the change size is large enough (Assumptions C–E); for ARMA models a variance change of size δ gives a change of δ in the squared errors, in agreement with Aue et al. (2015); the derivation written with G′ or with G after the change, and with +δ_μ,m or −δ_μ,m in its intermediate step; adding that the limit distribution under a variance change is disputed, or that the change equals the variance change only if the forecast bias stays constant and the conditional variances are constant. Not required: the items listed under Also correct.",
+  "answers": [
+   {
+    "answer": "H9MTDC",
+    "text": "[location] in the paper: under [location] (constant forecast bias b_μ pre-change), a variance change δ_ξ,m in the raw data produces a mean change Δ_ξ,m = Var_G′[Y_t|ỹ_t] − Var_F[Y_t|ỹ_t] in the centred squared forecast errors. If there is also a mean change δ_μ,m ≠ 0 and [location] holds, then Δ_ξ,m = Var_G′ − Var_F + Δ_μ,m².\r\n\r\nThe forecast errors must be i.i.d. (or satisfy a weak invariance principle), and the change sizes must satisfy Assumptions C–E from the Supporting Information for the limiting detection theory to hold. [location] then give the null and alternative distributions of the stopping time."
+   },
+   {
+    "answer": "DX9VC3",
+    "text": "**Support:** formal proof [location] ([location] of the paper), which derives the change size from the two forecasting-model assumptions ([location] constant bias, [location] incomplete adjustment).\r\n\r\n**Conditions:**\r\n- **Variance only** (δμ,m = 0): the shift in centred squared errors equals the variance change, Δξ,m = Var_G′[Y_t|ỹ_t] − Var_F[Y_t|ỹ_t], requiring only the constant-bias assumption.\r\n- **Mean and variance** (δμ,m ≠ 0): Δξ,m = Var_G′[Y_t|ỹ_t] − Var_F[Y_t|ỹ_t] + Δμ,m², requiring both [location].\r\n\r\nCaveat: for a misspecified model the multiplier need not be 1—e.g., ETS(A,N,N) with α = 0.5 gives 2δξ/(2 − α)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q1",
+  "text": "How were the simulation experiments designed?",
+  "reference": "Two data generating processes, ETS(A,N,N) with α = 0.2 and ARIMA(0,1,1) with θ = 0.6, each giving 500 series of 5,000 observations, of which sub-samples of 20, 50, 100, 200, 500, 1,000 and 5,000 observations were used. Four models were fitted (ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1)) with MSE_h, TMSE, GTMSE, MSCE and the conventional MSE_1, for horizons 10, 20, 50, 100 and 200, skipping cases where the sample was not longer than the horizon (smooth package v2.5.3). GPL was not included.",
+  "marking": "Required: the two data generating processes (ETS(A,N,N) with α = 0.2 and ARIMA(0,1,1) with θ = 0.6), the sample sizes (20, 50, 100, 200, 500, 1,000 and 5,000) and the horizons (10, 20, 50, 100 and 200). Not required: the other details of the reference answer.",
+  "answers": [
+   {
+    "answer": "33CRFD",
+    "text": "Two simulation experiments:\r\n\r\n**Design common to both:**\r\n- 500 time series of 5000 observations each\r\n- Sub-samples of 20, 50, 100, 200, 500, 1000, 5000 observations to assess sample-size effects\r\n- Four models fitted: ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1) — covering true, analogous, misspecified, and wrong models\r\n- Five estimators: MSE₁, MSE_h, TMSE, GTMSE, MSCE\r\n- Forecast horizons h = 10, 20, 50, 100, 200 (estimation skipped if T ≤ h)\r\n- Estimation via the smooth package (v2.5.3) in R\r\n\r\n**DGPs:**\r\n1. ETS(A,N,N) with α = 0.2\r\n2. ARIMA(0,1,1) with θ = 0.6\r\n\r\nNote: θ = α − 1 links the two DGPs, so the ETS and ARIMA \"true\" models are analogous. GPL was excluded from the simulations."
+   },
+   {
+    "answer": "CYJEYW",
+    "text": "**Design:**\r\n- **Data-generating processes:** 500 series of length 5,000 each from ETS(A,N,N) (α = 0.2) and ARIMA(0,1,1) (θ = 0.6).\r\n- **Sample sizes:** sub-samples T ∈ {20, 50, 100, 200, 500, 1000, 5000}.\r\n- **Horizons:** h ∈ {10, 20, 50, 100, 200}.\r\n- **Fitted models:** four — ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1) (the latter two cases fitting over-parameterised/misspecified models to the DGPs).\r\n- **Estimators:** five — MSE₁, MSE_h, TMSE, GTMSE, MSCE.\r\n- **Software:** R package smooth v2.5.3 (sim.es, sim.ssarima, es, ssarima).\r\n- **Evaluation:** parameter estimation bias and dispersion via boxplots over the 500 replications.\r\n\r\n**Limitation:** only two univariate DGPs and pure additive linear models; results reported visually, not as tabulated statistics."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q18",
+  "text": "How did the multi-step estimators behave for multiplicative ETS models in the paper's simulations?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. Also correct: saying that no multiplicative models were simulated, and citing the authors' remark that the findings may extend to some multiplicative cases.",
+  "answers": [
+   {
+    "answer": "R4TNR4",
+    "text": "The simulations only used **pure additive** models — ETS(A,N,N), ETS(A,A,N), ARIMA(0,1,1), ARIMA(1,1,1). No multiplicative ETS models were simulated.\r\n\r\nMultiplicative models are noted only as an open question: how the shrinkage mechanism extends to them \"remains only partially explored and is not analytically established.\""
+   },
+   {
+    "answer": "W9A3EJ",
+    "text": "The paper's simulations used **only pure additive ETS models** (ETS(A,N,N), ETS(A,A,N), ETS(A,Ad,N), ETS(A,N,A), ETS(A,A,A)) — no multiplicative ETS models were included in the simulation study.\r\n\r\nThe authors state they \"examine pure additive ETS models only, keeping in mind that the main findings can be extended to some of the multiplicative cases as well.\" So the shrinkage behavior for multiplicative ETS models was not directly tested or demonstrated in the simulations."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q2",
+  "text": "When did the framework detect a change in the Royal Mail forecast errors, with which detectors, and what data were used for training?",
+  "reference": "Both the mean detector D_μ(m,k) and the squared-error detector D_ξ(m,k) signalled a changepoint on 2 December 2020. The forecast errors of one delivery office from 1 July to 31 December 2020 were used: July to October as the Phase I (training) sample, with monitoring from 1 November. The change corresponds to a rise in the mean and variance of the forecast errors, taken as the start of the Christmas peak season.",
+  "marking": "Required: 2 December 2020; both detectors, the mean detector D_μ(m,k) and the squared-error detector D_ξ(m,k). Also correct: forecast errors of one delivery office from 1 July to 31 December 2020; July to October as the training (Phase I) sample; monitoring from 1 November; the change is a rise in the mean and variance of the forecast errors, taken as the start of the Christmas peak season. Not required: the training data and the interpretation of the change.",
+  "answers": [
+   {
+    "answer": "AJPQPX",
+    "text": "Both detectors D_μ(m,k) and D_ξ(m,k) signalled a change on 2 December 2020. Training data: forecast errors from 1 July to 31 October 2020 (Phase I), with monitoring beginning 1 November 2020."
+   },
+   {
+    "answer": "3VHT79",
+    "text": "Both detectors signalled on **2 December 2020**: the mean detector (Dμ) and the squared-error detector (Dξ).\r\n\r\n**Training data:** the Phase I sample was the forecast errors from **1 July to 31 October 2020** (July–October); monitoring began 1 November 2020. Only the forecast errors were available—the underlying parcel volumes and forecasting model were unknown to the authors."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q20",
+  "text": "Which value of the tuning parameter γ gave the shortest detection delays in the simulations?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. Also correct: saying that only γ = 0 was used.",
+  "answers": [
+   {
+    "answer": "CRP9TD",
+    "text": "The paper only reports results for γ = 0; no other values were tested, so it doesn't say which gives the shortest delays."
+   },
+   {
+    "answer": "HEWUPM",
+    "text": "The paper doesn't say. All simulations use γ = 0, and no other values are compared, so no comparison of detection delays across γ values is reported."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q10",
+  "text": "Are multi-step estimators always less efficient than the conventional one-step estimator MSE_1?",
+  "reference": "No. The authors argue they are in general less efficient, but that MSE_h can be more efficient where the true parameters make c_j close to zero. In the simulations, multi-step estimators were more efficient than MSE_1 on small samples for a parameter whose true value is zero (β of ETS(A,A,N) fitted to ETS(A,N,N) data).",
+  "marking": "Required: No: they are less efficient in general, but MSE_h can be more efficient where the true parameters make c_j close to zero. Also correct: noting that the efficiency argument is disputed (argued, not proved; not an asymptotic effect). Not required: the simulation result for a parameter whose true value is zero (β of ETS(A,A,N) fitted to ETS(A,N,N) data). Wrong: saying they are always less efficient (overreach).",
+  "answers": [
+   {
+    "answer": "F333HA",
+    "text": "No. The paper shows analytically that there are regions of the parameter space where MSE_h is *more* efficient than MSE_1 — specifically when the true parameters are such that the c_j values are close to zero. This holds despite MSE_h being less efficient in general."
+   },
+   {
+    "answer": "3CPUNA",
+    "text": "No. In the simulations with non-zero true parameters, MSE₁ was the least biased and most efficient, and under correct specification no consistent multi-step estimator has lower asymptotic variance than the one-step Gaussian estimator.\r\n\r\nBut there are exceptions:\r\n- when a redundant parameter is zero (e.g., trend β = 0), multi-step estimators estimate it more efficiently than MSE₁ on small samples.\r\n- MSE_h can have lower asymptotic parameter variance than MSE₁ where \\(c_j\\) is near zero — though this is disputed (argued from likelihood curvature, not proved; a Monte Carlo found MSCE more efficient than MSE_h)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q5",
+  "text": "In the illustration with a variance change, which forecasting model was used and how long after the change did the detector signal it?",
+  "reference": "The data have a trend and a variance change at time point 400. An ETS(A,A,N) model was used, with prediction intervals of ±2 standard errors. The squared-error detector D_ξ(m,k), with m = 300, reached its threshold 7 time points after the change.",
+  "marking": "Required: an ETS(A,A,N) model; the detector signals 7 time points after the change. Also correct: data with a trend and a variance change at time point 400; the squared-error detector D_ξ(m,k) with m = 300. Not required: prediction intervals of ±2 standard errors, and the other details.",
+  "answers": [
+   {
+    "answer": "E3Q7MY",
+    "text": "An ETS(A,A,N) model was used, and the detector D_ξ(m,k) signalled 7 time points after the change."
+   },
+   {
+    "answer": "V4337D",
+    "text": "The illustration used an **ETS(A,A,N)** model (Holt's linear trend, additive error) on data with a trend and a variance change at time point 400. The squared-error detector signalled **7 time points** after the change."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q18",
+  "text": "What values of the level and seasonal smoothing parameters did VETS D estimate for the seasonal groups of the M5 data?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. The simulation settings (α = 0.3, γ = 0.1 and the ranges of the smoothing parameters used to generate simulated data) are not estimates on the M5 data and do not answer it.",
+  "answers": [
+   {
+    "answer": "MKDPEH",
+    "text": "The paper does not report the estimated values of the smoothing parameters for the M5 data. It reports only which PIC restrictions the selection procedure chose (most often PIC(LS,S,N) — common level and seasonal smoothing parameters, common initial seasonal indices, individual components), not the numerical estimates of α and γ."
+   },
+   {
+    "answer": "HRD7W7",
+    "text": "The paper does not report the estimated smoothing parameter values. It only reports which PIC restrictions were selected and the resulting forecast accuracy/interval measures — not the actual α, γ, etc. estimates for the M5 groups."
+   }
+  ]
+ }
+]

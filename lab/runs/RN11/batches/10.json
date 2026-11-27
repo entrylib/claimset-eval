@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1002-nav-22074#Q15",
+  "text": "How is the stability region of CES derived, and is it derived for seasonal CES?",
+  "reference": "For non-seasonal CES it is derived from the invertibility conditions of the underlying ARMA(2,2), which correspond to stability of the state-space model, giving three inequalities: (α0 − 2.5)² + α1² > 1.25, (α0 − 0.5)² + (α1 − 1)² > 0.25 and (α0 − 1.5)² + (α1 − 0.5)² < 1.5. For seasonal CES it is not derived: stability can be checked by requiring all eigenvalues of the seasonal discount matrix to lie inside the unit circle; the parameter restrictions are not derived because they cannot be easily analysed.",
+  "marking": "Required: for non-seasonal CES, the stability region is derived from the invertibility conditions of the underlying ARMA(2,2), which correspond to stability of the state-space model, or from the eigenvalues of the discount matrix (both correct); for seasonal CES it is not derived: the restrictions cannot be easily analysed, and stability is checked by requiring all eigenvalues of the discount matrix to lie inside the unit circle. Not required: the three inequalities ((α0 − 2.5)² + α1² > 1.25, (α0 − 0.5)² + (α1 − 1)² > 0.25, (α0 − 1.5)² + (α1 − 0.5)² < 1.5).",
+  "answers": [
+   {
+    "answer": "93WM7R",
+    "text": "**Non-seasonal CES:** Derived from the invertibility conditions of its underlying ARMA(2,2) model. The stable region is bounded by three circles: $(\\alpha_0-2.5)^2+\\alpha_1^2>1.25$, $(\\alpha_0-0.5)^2+(\\alpha_1-1)^2>0.25$, and $(\\alpha_0-1.5)^2+(\\alpha_1-0.5)^2<1.5$.\r\n\r\n**Seasonal CES:** No — the parameter restrictions under which seasonal CES is stable are **not derived**. Its stationarity/non-stationarity is only argued by analogy to non-seasonal CES."
+   },
+   {
+    "answer": "H7RAVC",
+    "text": "It is derived from the discount matrix $D = F - gw'$ in the SSOE state-space form. CES is stable when all eigenvalues of $D$ lie inside the unit circle; substituting the CES matrices gives eigenvalues\r\n\r\n$$\\lambda = \\frac{2 - 2\\alpha_0 + \\alpha_1 \\pm \\sqrt{8\\alpha_1 + 4\\alpha_0 - 4\\alpha_0\\alpha_1 - 4 - 3\\alpha_1^2}}{2},$$\r\n\r\nwhich lead to the inequalities in (15) (circles in the $\\alpha_0$–$\\alpha_1$ plane).\r\n\r\nFor seasonal CES, the paper only says stability can be checked from the eigenvalues of the 4×4 discount matrix in (21), but it does not derive an explicit region and says the restrictions “cannot be easily analyzed.”"
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q4",
+  "text": "In simulation experiment 2, which approach had the lowest mean scaled pinball score for each data generating process?",
+  "reference": "Akram's approach (ETS(A,Ad,A) on the logarithms of the data) on every one of the five data generating processes: 5.110 on Normal, 5.052 on Inverse Gaussian, 5.074 on Gamma, 9.180 on Log-Normal and 5.089 on Akram's data.",
+  "marking": "Required: Akram's approach (ETS(A,Ad,A) on the logarithms of the data) for all five data generating processes. Not required: the score values. Wrong: any other approach named as lowest for any process.",
+  "answers": [
+   {
+    "answer": "XDNK9C",
+    "text": "Akram's log-ETS model had the lowest mean SPS for every DGP:\r\n\r\n| DGP | Lowest SPS | Akram's SPS |\r\n|---|---|---|\r\n| Normal | Akram | 5.110 |\r\n| Inverse Gaussian | Akram | 5.052 |\r\n| Gamma | Akram | 5.074 |\r\n| Log-Normal | Akram | 9.180 |\r\n| Akram | Akram | 5.089 |\r\n\r\nThe AICc-selected multiplicative model was second-best in most cases."
+   },
+   {
+    "answer": "UWNRHT",
+    "text": "Akram’s approach had the lowest mean scaled pinball score for every DGP."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q10",
+  "text": "Do the paper's results apply to CES with a multiplicative error term?",
+  "reference": "No. The authors build CES on an additive error term only; a multiplicative error version is named as future research and is not developed or evaluated.",
+  "marking": "Required: no; CES is built on an additive error term only, and a version with a multiplicative error term is not developed or evaluated. Not required: that the authors name it as future research. Wrong: extending the results to multiplicative errors (overreach).",
+  "answers": [
+   {
+    "answer": "YAKNNW",
+    "text": "No. CES is formulated only with an **additive** error term; a multiplicative-error version is not developed (affecting [location]). All theoretical results (state-space form, stationarity, ARMA equivalence) and empirical benchmarks assume additive errors."
+   },
+   {
+    "answer": "KU4XDN",
+    "text": "No. The paper explicitly limits CES to the additive error case and says future research should extend it to a multiplicative error term."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q3",
+  "text": "Which model and error distribution did automatic selection choose for the electric vehicle charging data, with what AICc, and how did it compare with an additive model?",
+  "reference": "ETS(M,Md,M) with the Gamma distribution, selected by AICc among pure multiplicative models and distributions with auto.adam(), with AICc 6,398.570. An ETS(A,Ad,A) model with the Normal distribution had AICc 6,418.296, so the pure multiplicative model was preferred.",
+  "marking": "Required: ETS(M,Md,M) with the Gamma distribution, its AICc of 6,398.570, and that the additive ETS(A,Ad,A) model with the Normal distribution had a higher AICc (6,418.296), so the pure multiplicative model was preferred. Not required: the estimated parameters (α = 0.1683, β = 0, γ = 0.0013, φ = 0.9925, σ = 0.276); how the selection was done. Wrong: a different model, distribution or AICc value.",
+  "answers": [
+   {
+    "answer": "9YEUQF",
+    "text": "Automatic AICc selection (`smooth::auto.adam`) chose **ETS(M,Md,M) with Gamma errors**, with **AICc = 6398.57**.\r\n\r\nThe comparison additive model was **ETS(A,Ad,A) with Normal errors**, which had a higher **AICc = 6418.296** — a difference of about 19.7 in favor of the multiplicative Gamma model. Additionally, on the low-volume initial 49-observation subsample, the Gamma model produced strictly positive 95% prediction intervals, while the Normal additive model did not."
+   },
+   {
+    "answer": "AXVDPN",
+    "text": "It chose ETS(M,Md,M) with a Gamma distribution, AICc = 6,398.570. The additive ETS(A,Ad,A) with Normal errors had AICc = 6,418.296, so the multiplicative Gamma model was better by about 19.7 AICc points."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q17",
+  "text": "What forecast accuracy (for example RMSE) did each estimator achieve in the simulation experiments?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "MHAR4E",
+    "text": "The paper doesn't report forecast accuracy (RMSE, MAE, etc.) for the simulation experiments. [location] evaluates only **parameter estimation bias and dispersion** via boxplots of estimated parameters across the 500 replications — not out-of-sample forecast errors."
+   },
+   {
+    "answer": "RRHTT3",
+    "text": "The paper does not report forecast accuracy (RMSE or other error measures) for the simulation experiments. The simulations report only the distributions of estimated parameters (boxplots in [location]), not out-of-sample forecast errors. Accuracy measures are reported only for the two empirical applications (temperature and Air Passengers data)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q3",
+  "text": "On the M5 data, which model had the lowest overall geometric mean and median rMAE (relative to Naïve forecasts), with long and with short histories?",
+  "reference": "VETS D on both measures and both lengths. Long: geometric mean 0.894 and median 0.934, against 0.906 and 0.960 for VETS F and at least 0.917 and 0.957 for the ETS models. Short: 0.936 and 0.974, against 1.011 and 1.000 for VETS F and at least 0.991 and 0.988 for the ETS models.",
+  "marking": "Required: VETS D, for both long and short histories and on both the geometric mean and the median of rMAE over all series. Not required: the values. Wrong: another model for either history length or either measure; an answer taken from the seasonal or non-seasonal series alone instead of all series.",
+  "answers": [
+   {
+    "answer": "CPMATR",
+    "text": "**Long histories:** VETS D — geometric mean 0.894, median 0.934.\r\n\r\n**Short histories:** VETS D — geometric mean 0.936, median 0.974."
+   },
+   {
+    "answer": "D9D7QM",
+    "text": "**Long history (51 obs):**\r\n- Geometric mean: **VETS D** (0.894)\r\n- Median: **VETS D** (0.878)\r\n\r\n**Short history (24 obs):**\r\n- Geometric mean: **VETS D** (0.979)\r\n- Median: **VETS D** (0.974)\r\n\r\nSo **VETS D** (diagonal covariance) had both the lowest geometric mean and median rMAE in both cases."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q12",
+  "text": "What evidence supports the finding that common smoothing parameters improve forecasts, and what limitations of this evidence does the paper itself state?",
+  "reference": "In the simulation, within each block of methods the pinball values improve as smoothing parameters are made common (PIC(LS,*,*) better than PIC(S,*,*), better than PIC(N,*,*)) on data from every DGP, and rMAE improves slightly with them on data from PIC(LS,S,S). On the M5 data the selection chose common smoothing parameters for most groups, and the authors say the parameters, particularly for level and seasonality, benefited from common estimation. Limitations the authors state: on data generated with individual parameters (PIC(N,N,N)), restricting them lowers point accuracy, though not substantially; the simulated smoothing parameters cover a restricted range, not the whole parameter space; and additional seasonal indices and the trend element, not studied, may change how the methods behave.",
+  "marking": "Required: the simulation result that, within each block of methods, making smoothing parameters common lowers pinball values (PIC(LS,*,*) better than PIC(S,*,*), better than PIC(N,*,*)) on data from every data generating process. Not required: that rMAE improves slightly with common parameters on data from PIC(LS,S,S); that the selection on the M5 data chose common smoothing parameters for most groups; any limitation. Acceptable limitations: on data generated with individual parameters (PIC(N,N,N)), restricting the smoothing parameters lowers point accuracy, though not substantially; the simulated smoothing parameters cover a restricted range, not the whole parameter space; the simulation covers only VETS(M,N,M;LN) on quarterly data; models with a trend are not analysed, and additional seasonal indices or the trend element may change how the methods behave; whether the restrictive variants work on histories as short as about one year is not known; groups of more than 50 series were not tested; whether common smoothing parameters reduce overfitting because they are averaged across series is not established. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "EXXR3V",
+    "text": "**Evidence:**\r\n- Simulation [location] (16 in-sample quarters): for every pair of variants differing only in smoothing parameters, the one with more common parameters has rPinballU at or below the other, on data from every generating variant — e.g., PIC(LS,S,N) ≤ PIC(S,S,N) ≤ PIC(N,S,N) in rPinballU on each column.\r\n- The effect extends to point accuracy: PIC(*,S,N) and PIC(LS,N,N) stay close to the correct variant in rMAE, and common parameters help most on short histories (rPinballU 0.86 for PIC(LS,S,N) vs 1.02 for PIC(N,S,N) at 16 quarters).\r\n- Corroboration on M5: the selection procedure most often chose common level and seasonal smoothing parameters (PIC(LS,S,N), 6 of 11 groups), and the authors attribute VETS's accuracy gains mainly to shared seasonal initial values and smoothing parameters.\r\n\r\n**Limitations the paper states:**\r\n- Findings rest on simulation of VETS(M,N,M;LN) only, quarterly data, smoothing parameters drawn from restricted ranges not covering the full parameter space.\r\n- Whether common parameters help on histories as short as about one year is unknown.\r\n- Groups of more than 50 series were not tested.\r\n- No trend-component models were analysed.\r\n- Whether the benefit comes from reduced overfitting (averaging parameters across series) is not established.\r\n- Whether findings hold for monthly seasonality, lower error standard deviations, or cross-correlated errors is not shown — the paper mentions similar results without reporting them.\r\n- On M5, no experiment compares VETS with and without these restrictions directly, and the MCB differences are not statistically significant."
+   },
+   {
+    "answer": "34XKXU",
+    "text": "**Evidence from the simulation experiment:**\r\n\r\n- Within each block of methods, restricting smoothing parameters improves accuracy and pinball values monotonically: PIC(LS,*,*) outperforms PIC(S,*,*), which outperforms PIC(N,*,*) — regardless of the DGP. E.g. for rPinballU on flexible DGPs, PIC(LS,S,N) ≈ 1.19–1.26 vs PIC(N,S,N) ≈ 1.65–1.70.\r\n- The benefit is attributed to parsimony: common parameters are \"averaged out\" across series, protecting against overfitting — especially with larger groups and shorter histories.\r\n- On M5, the auto-selected restrictions were mostly PIC(LS,S,N) (6 of 11 groups), corroborating that common level+seasonal smoothing parameters work well empirically.\r\n\r\n**Limitations the paper itself states:**\r\n\r\n- The simulation range for smoothing parameters was restricted (α ∈ [0,0.3], γ ∈ [0,1−α]), not covering the whole parameter space.\r\n- The finding is demonstrated for VETS(M,N,M;LN) only — no trend component, quarterly seasonality mainly (monthly checked separately with similar findings), uncorrelated errors in the main experiment.\r\n- Common parameters help *given the correct model class*; if the DGP is very different (e.g. flexible PIC(N,N,N) data), restrictive methods still lose accuracy, so common parameters cannot compensate for a wrongly restricted component structure.\r\n- The evidence is specific to the pure multiplicative (log-normal) framework; additive models were not tested in the simulation."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q16",
+  "text": "How long did estimation with GTMSE take compared with the conventional MSE_1?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "T4EDP3",
+    "text": "The paper contains no information about computation time for GTMSE versus MSE₁ — no runtimes are reported in the evidence or artefacts."
+   },
+   {
+    "answer": "HWXWVT",
+    "text": "The paper does not report computation times for GTMSE versus MSE_1."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q11",
+  "text": "In the simulations, is the shrinkage from multi-step estimators beneficial for both ETS and ARIMA models?",
+  "reference": "No. It helps remove redundant ETS parameters (the trend parameter β of ETS(A,A,N) on ETS(A,N,N) data shrinks to zero faster), but for ARIMA it can be damaging: fitting ARIMA(1,1,1) to ETS(A,N,N) data, the multi-step estimators force the AR parameter negative on small samples, worse than MSE_1. When the parameters matter, MSE_1 is preferred.",
+  "marking": "Required: No: the shrinkage helps remove redundant ETS parameters but can damage ARIMA estimates. Not required: the other details of the reference answer. Wrong: saying the shrinkage is beneficial in general (overreach).",
+  "answers": [
+   {
+    "answer": "FVR7EV",
+    "text": "Not uniformly — it depends on whether the fitted model matches the data-generating process.\r\n\r\n**Beneficial cases:** When a redundant parameter is zero — e.g., fitting ETS(A,A,N) to ETS(A,N,N) or ARIMA(0,1,1) data (β = 0) — multi-step estimators shrink \\(\\hat{\\beta}\\) toward zero and estimate it more efficiently than MSE₁ on small samples.\r\n\r\n**Harmful case:** When an over-parameterised ARIMA(1,1,1) is fitted to ETS(A,N,N) data, multi-step estimators push \\(\\hat{\\phi}_1\\) toward negative values and produce worse parameter estimates than MSE₁.\r\n\r\nSo the benefit is not specific to ETS vs. ARIMA per se, but to whether shrinkage removes a truly redundant parameter versus distorts a needed one."
+   },
+   {
+    "answer": "7T3KVP",
+    "text": "No — it differs by model family:\r\n\r\n- **ETS:** Beneficial for redundant parameters. When a wrong ETS model was used (e.g., ETS(A,A,N) on level data), the unnecessary trend parameter β shrank to zero faster than with MSE₁.\r\n- **ARIMA:** Potentially damaging. Wrong parameters were emphasized rather than removed — e.g., the AR parameter of ARIMA(1,1,1) was forced negative on small samples instead of shrinking to zero, making misspecification worse.\r\n\r\nSo shrinkage helps ETS remove redundant components but can harm ARIMA by distorting parameters."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q6",
+  "text": "In which cases does the conventional point forecast of a pure multiplicative ETS model coincide with its conditional geometric and arithmetic expectations?",
+  "reference": "Only in three cases: for h = 1 in all models; for h ≤ m in non-trended models with multiplicative seasonality; and for the ETS(M,N,N) model.",
+  "marking": "Required: all three cases: h = 1 in all models; h ≤ m in non-trended models with multiplicative seasonality; the ETS(M,N,N) model. Wrong: a missing case, or a case not in this list presented as one of them.",
+  "answers": [
+   {
+    "answer": "7YDXJH",
+    "text": "Per [location], the conventional point forecast equals both conditional expectations only in three cases:\r\n\r\n1. **One-step-ahead forecasts** (h = 1)\r\n2. **Within the first seasonal cycle** (h ≤ m) for non-trended models with multiplicative seasonality\r\n3. **ETS(M,N,N)** — the level-only model, for any horizon\r\n\r\nIn all other cases (h > 1 with trend, or h > m with seasonality), the point forecast lies below the geometric mean, which lies below the arithmetic mean."
+   },
+   {
+    "answer": "CHKAHK",
+    "text": "The paper gives three cases:\r\n\r\n1. One-step-ahead forecasts, h = 1, for all pure multiplicative ETS models.\r\n2. Horizons h ≤ m for non-trended models with multiplicative seasonality.\r\n3. The special model ETS(M,N,N), for any horizon h."
+   }
+  ]
+ }
+]

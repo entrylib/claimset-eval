@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1111-jtsa-12843#Q1",
+  "text": "How were the forecasting models trained and the detection thresholds set in the simulation study, and how many times was each scenario repeated?",
+  "reference": "Each forecasting model is trained once on the first 300 observations and then produces one-step-ahead forecasts sequentially, without re-training. ARMA models are fitted with the forecast R package (Arima, auto.arima) and ETS models with es() from the smooth R package. Changes are signalled using the theoretical thresholds of the authors' limit theorems with γ = 0 and a false alarm rate of 0.05. For the Raw CUSUM the standard deviation in the threshold is a Bartlett long-run variance estimate (sandwich package); for the forecast errors, assumed i.i.d., the ordinary standard deviation is used. Each scenario is repeated 1,000 times, with normally distributed innovations unless stated otherwise.",
+  "marking": "Required: a training sample of 300 observations; the theoretical thresholds with a false alarm rate of 0.05; 1,000 repetitions of each scenario. Also correct: the models are trained once and not re-trained, then produce one-step-ahead forecasts sequentially; ARMA models fitted with the forecast R package (Arima, auto.arima) and ETS models with es() from the smooth R package; γ = 0; for the Raw CUSUM a Bartlett long-run variance estimate (sandwich package), for the forecast errors, assumed i.i.d., the ordinary standard deviation; normally distributed innovations unless stated otherwise. Not required: any of the details listed under Also correct.",
+  "answers": [
+   {
+    "answer": "9VUF4E",
+    "text": "Models were trained on an initial segment of n_train = 300 observations, then produced sequential one-step-ahead forecasts. ARMA models were selected/estimated via auto.arima (forecast package) and ETS via es (smooth package). Thresholds were theoretical, from [location] (Supporting Information), with γ = 0 and false alarm rate 0.05; for Raw CUSUM, σ̂ was the Bartlett long-run variance estimator, while forecast-error detectors used the standard i.i.d. estimator. Each scenario was repeated 1,000 times."
+   },
+   {
+    "answer": "V4NC7K",
+    "text": "**Training:** Models were trained once on the first n_train = 300 observations, then produced one-step-ahead forecasts sequentially without retraining.\r\n\r\n**Thresholds:** Theoretical Page's CUSUM thresholds with γ = 0 and false alarm rate α = 0.05; for ARMA/ETS error detectors the standard deviation was the traditional estimator treating errors as i.i.d., while Raw CUSUM used the Bartlett long-run variance estimator.\r\n\r\n**Repetitions:** Each scenario was repeated **1000 times**."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q12",
+  "text": "What evidence does the paper give that the conventional point forecast formula of pure multiplicative ETS models should not be used as the conditional expectation, and what limitations of this evidence does the paper itself state?",
+  "reference": "A derivation shows that the point forecast is at most the conditional geometric expectation, which is at most the arithmetic expectation (by Jensen's inequality). An example with ETS(M,M,N) on M3 series N2703 shows the difference growing exponentially with the horizon, and simulation experiment 1 shows it increasing with all five factors studied. Limits stated by the authors: the regression in simulation experiment 1 only shows the direction and relative size of the effects; its specific coefficient values are difficult to interpret.",
+  "marking": "Required: the derivation (the point forecast is at most the conditional geometric expectation, which is at most the arithmetic expectation, by Jensen's inequality) and at least one of the two examples: ETS(M,M,N) on one M3 series, where the difference grows exponentially with the horizon; or simulation experiment 1, where it increases with all five factors studied. Not required: naming the M3 series; giving limitations. Acceptable limitations: the regression in simulation experiment 1 shows only the direction and relative size of the effects, and its coefficient values are difficult to interpret; simulation experiment 1 uses only ETS(M,Md,N) with Inverse Gaussian errors and known true parameters; conditional expectations of pure multiplicative models other than ETS(M,N,N) have no closed form and must be obtained by simulation. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "TF49DW",
+    "text": "**Evidence:**\r\n\r\n1. **Formal proof:** In logarithmic state space form, the conventional point forecast equals the conditional *geometric* mean. By Jensen's inequality, it is generally below the arithmetic conditional expectation: ŷ ≤ ỹ ≤ μ. Equality holds only at h = 1, within the first seasonal cycle for non-trended seasonal models, or for ETS(M,N,N).\r\n\r\n2. **Simulation:** 10,000 ETS(M,Md,N) series with IG errors show the percentage difference between expectation and point forecast grows with φ, horizon, β, σ, and α (R² = 0.986) — non-negligible and substantial.\r\n\r\n3. **Empirical example:** On M3 series N2703 with ETS(M,M,N), the gap is negligible at short horizons but grows exponentially up to 18 steps — contradicting Hyndman et al. (2008), who called the difference \"negligible.\"\r\n\r\n**Stated limitations:**\r\n\r\n- No closed-form conditional expectations exist for models other than ETS(M,N,N); Monte Carlo simulation is required.\r\n- Simulation 1 covers only ETS(M,Md,N) with IG errors and known true parameters.\r\n- **[location] scope:** The empirical evidence is a single series with horizons of only 1–18 steps."
+   },
+   {
+    "answer": "NERKWJ",
+    "text": "Evidence:\r\n- Theory: point forecasts, geometric means, and arithmetic conditional expectations generally differ in pure multiplicative ETS.\r\n- Example: M3 series N2703 with ETS(M,M,N) shows the gap grows exponentially with horizon.\r\n- Simulation: regression on 10,000 runs finds bias increases with φ, β, σ, and horizon.\r\n\r\nLimitations:\r\n- Simulation uses one model class, ETS(M,Md,N), with Inverse Gaussian errors.\r\n- It studies bias mechanism, not predictive accuracy or best forecasting method.\r\n- Results are simulation-based, not a general proof for all ETS(M,*,*) models."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q14",
+  "text": "Why does the paper hold that the covariances between forecast errors at different horizons are not zero?",
+  "reference": "The authors express each covariance through the coefficients c_j of the state space model (σ_ij = σ_1²c_{|i−j|} when i or j is 1, and σ_1²(c_{|i−j|} + Σ c c) otherwise), so all covariances vanish only when every c_j = 0, a deterministic model. Assuming zero correlation, as some literature does (Martinez 2017), is therefore unrealistic.",
+  "marking": "Required: each covariance is expressed through the coefficients c_j of the state space model, so all covariances vanish only when every c_j = 0 (a deterministic model); assuming zero correlation is therefore unrealistic. Also correct: either form of the covariance formula: σ_ij = σ_1²c_{|i−j|} when i or j is 1 and σ_1²(c_{|i−j|} + Σ_{l=1}^{i−1} c_{|l−j|}c_{|i−l|}) otherwise; or, for i < j, σ_ij = σ_1²(c_{j−i} + Σ_{l=1}^{i−1} c_{i−l}c_{j−l}) with σ_ji = σ_ij. Also correct: adding that TMSE has no likelihood for which it is optimal, or that TMSE is the maximum likelihood estimator when the errors of all horizons are independent with equal variances. Not required: the formula in detail; what follows for TMSE.",
+  "answers": [
+   {
+    "answer": "7QVVXK",
+    "text": "Because the errors share common innovation terms. From the state space model, the h-step-ahead error is η_{t+h|t} = Σ_{j=1}^{h-1} c_j ε_{t+j} + ε_{t+h}, so errors at different horizons contain overlapping ε terms. The covariance σ_{i,j} is a function of the c_j parameters and equals zero only if all c_j = 0 — i.e., only for a deterministic model. Hence assuming zero off-diagonal covariances (as in TMSE, or in Martinez 2017) is unrealistic for any stochastic model."
+   },
+   {
+    "answer": "MFQWJU",
+    "text": "Because the errors share the same innovations. From [location]:\r\n\r\n$$\\eta_{t+h|t} = \\sum_{j=1}^{h-1} c_{h-j}\\, \\epsilon_{t+j} + \\epsilon_{t+h}$$\r\n\r\nErrors at different horizons made at time \\(t\\) overlap in the \\(\\epsilon_{t+j}\\) terms, giving covariance:\r\n\r\n$$\\sigma_{i,j} = \\sigma_1^2 \\left( c_{j-i} + \\sum_{l=1}^{i-1} c_{i-l}\\, c_{j-l} \\right), \\quad 1 \\le i < j$$\r\n\r\nwhich is zero only if every \\(c_j = 0\\). This contradicts Martinez (2017), who assumed zero correlation between multi-step forecast errors."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q12",
+  "text": "What supports the claim that GTMSE is the least biased and most efficient of the multi-step estimators, and what limitations of the claim does the paper itself state?",
+  "reference": "Analytically, the logarithms in GTMSE balance the one-step variance against the sum of ĉ_j terms, so its shrinkage is milder than that of MSE_h, TMSE or MSCE. In the simulations GTMSE gives the least biased and most efficient estimates among the multi-step estimators in the cases the authors report, and converges faster than the other multi-step estimators. Limitations the authors state: MSE_1 still gives more efficient and less biased estimates in the simulations, and outperforms GTMSE; GTMSE rests on setting the covariances between forecast errors to zero, which the authors say cannot hold in real life; and for the wrong ARIMA(1,1,1) model all the multi-step estimators, GTMSE included, make the AR estimate worse on small samples.",
+  "marking": "Required: the support: the logarithms make GTMSE's shrinkage milder than that of MSE_h, TMSE and MSCE, and in the simulations GTMSE gives the least biased and most efficient estimates among the multi-step estimators. Not required: that GTMSE converges faster than the other multi-step estimators. Acceptable limitations: (1) MSE_1 still gives more efficient and less biased estimates in the simulations, and outperforms GTMSE; (2) GTMSE rests on setting the covariances between forecast errors of different horizons to zero, which cannot hold in real dynamic series unless every c_j is zero; (3) for a wrong ARIMA(1,1,1) model all the multi-step estimators, GTMSE included, make the AR estimate worse on small samples; (4) the simulations cover only two data generating processes (ETS(A,N,N) with α = 0.2 and ARIMA(0,1,1) with θ = 0.6) and pure additive linear models; (5) the simulation results are shown visually as boxplots, not as tabulated summary statistics. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "D9E9XQ",
+    "text": "**Support:**\r\n- **Analytical:** GTMSE's log form balances the one-step-ahead variance against the $\\hat{c}_j^2$ terms, so its shrinkage is milder than MSE_h/TMSE/MSCE.\r\n- **Simulation:** Boxplots show GTMSE's parameter estimates converge to true values faster, with less bias and dispersion than other multi-step estimators across both DGPs, all models, horizons, and sample sizes.\r\n\r\n**Limitations stated in the paper:**\r\n- GTMSE is still generally less efficient and more biased than MSE₁ when the model is correct — the improvement is only relative to other multi-step estimators.\r\n- With a wrong model (e.g., ARIMA(1,1,1) on ETS data), GTMSE still distorts parameters and \"does not help\" — it makes the situation worse on small samples, like the other multi-step estimators.\r\n- On the temperature data, GTMSE forecasts were no better than TMSE/MSCE and worse than MSE_h."
+   },
+   {
+    "answer": "JXTADV",
+    "text": "**Support:** Monte Carlo simulations — 500 series each from ETS(A,N,N) (α=0.2) and ARIMA(0,1,1) (θ=0.6), across T ∈ {20…5000} and h ∈ {10…200}, comparing MSE₁, MSE_h, TMSE, GTMSE, MSCE. Boxplots show lower median bias and narrower interquartile range for GTMSE than for MSE_h, TMSE and MSCE.\r\n\r\n**Stated limitations:**\r\n- Only two univariate DGPs and pure additive linear models; results shown visually via boxplots, not tabulated statistics.\r\n- **[location] scope:** Only holds where T > h; benefit is relative to other multi-step estimators, not to MSE₁ (which [location] shows is less biased when true parameters are non-zero).\r\n- **[location] qualifies it:** under misspecification with an over-parameterised ARIMA(1,1,1), multi-step estimators distort parameters — shrinkage isn't universally beneficial."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q5",
+  "text": "What happens to an ARIMA(1,1,1) model estimated with a multi-step loss function as the forecast horizon grows?",
+  "reference": "Both φ̂1 and θ̂1 tend to −1, and the model degenerates: (1 − B)(1 + B)y_t = (1 − B)e_t reduces to (1 + B)y_t = e_t, an ARIMA(1,0,0) model.",
+  "marking": "Required: φ̂1 and θ̂1 both tend to −1 and the model degenerates into an ARIMA(1,0,0) model. Also correct: adding, alongside the authors' statement, that the minimum is instead at φ̂1 = 0, θ̂1 = −1 (a deterministic level). Not required: the equations.",
+  "answers": [
+   {
+    "answer": "EP7M9J",
+    "text": "As the forecast horizon grows, the parameters shrink: φ̂₁ → −1 and θ̂₁ → −1. The model degenerates into a restricted ARIMA(1,0,0), i.e., (1+B)y_t = e_t — a deterministic, non-stochastic model."
+   },
+   {
+    "answer": "AM3AKR",
+    "text": "According to the paper's [location]: as the horizon \\(h\\) grows, the AR parameter \\(\\hat{\\phi}_1\\) and MA parameter \\(\\hat{\\theta}_1\\) are both shrunk toward \\(-1\\), so the model degenerates into a restricted ARIMA(1,0,0).\r\n\r\nBut note the paper's own correction (found by independent proof check): this limit is wrong. At \\(\\hat{\\phi}_1 = \\hat{\\theta}_1 = -1\\) the \\(h\\)-step variance factor equals \\(h\\), which is not the minimum. The actual minimum is at \\(\\hat{\\phi}_1 = 0\\), \\(\\hat{\\theta}_1 = -1\\), where every multi-step coefficient \\(c_j = 0\\) — i.e., a deterministic level, not ARIMA(1,0,0)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q15",
+  "text": "What covariance matrix does the paper recommend estimating VETS with, and for what reasons?",
+  "reference": "A diagonal covariance matrix (VETS D, assuming the errors of different series are uncorrelated) rather than a full one (VETS F). The authors' stated reason: it is easier to estimate, with far fewer parameters (n variances instead of n(n+1)/2 variances and covariances), especially on small samples. Supporting results on the M5 data: VETS D is more accurate than VETS F on both long and short histories, its coverage is closest to 95% on long data, and it has lower relative pinball values; VETS F gives intervals that are a little too wide and the highest pinball values, which the authors attribute to estimation difficulties. VETS F, however, had the lowest mean rank on long histories in the MCB test (not significant) and the best coverage in the space-planning evaluation on short histories.",
+  "marking": "Required: a diagonal covariance matrix (VETS D) rather than a full one (VETS F), and the reason that it is easier to estimate, with fewer parameters (n variances rather than n(n+1)/2 variances and covariances), especially on small samples. Also correct: the supporting results on the M5 data (VETS D more accurate than VETS F on both history lengths, coverage closest to 95% on long histories, lower relative pinball values; VETS F intervals a little too wide, with the highest pinball values, attributed to estimation difficulties). Not required: the M5 results; that VETS F had the lowest mean rank on long histories in the MCB test (not significant) or the best coverage in the space-planning evaluation on short histories.",
+  "answers": [
+   {
+    "answer": "C34FWE",
+    "text": "**Recommendation:** A **diagonal** covariance matrix — i.e., VETS D, with errors uncorrelated across series — is recommended over the full covariance matrix (VETS F).\r\n\r\n**Reasons:**\r\n- **Accuracy:** VETS D has the lowest geometric mean and median rMAE of the five models on both long and short M5 histories.\r\n- **Interval calibration:** Its 95% prediction intervals have coverage closest to the nominal level on long histories.\r\n- **Estimability:** A diagonal covariance needs only n variance terms instead of n(n+1)/2, so it is easier to estimate — important with short histories and many series.\r\n- **VETS F's problems:** It over-covers (intervals too wide) and has the highest pinball losses of all five models on both histories, plausibly because its many more parameters are hard to estimate."
+   },
+   {
+    "answer": "37JU7D",
+    "text": "The paper recommends estimating VETS with a **diagonal covariance matrix** (VETS D), i.e. assuming errors across series are uncorrelated.\r\n\r\nReasons given:\r\n- **Easier to estimate**, especially on small samples — the full matrix (VETS F) requires estimating $n(n+1)/2$ variance-covariance terms, which quickly exceeds the number of observations (e.g. 1275 parameters for 50 series).\r\n- **Better empirical performance on M5:** VETS D outperformed VETS F on both long and short samples in terms of rMAE and prediction-interval coverage (VETS F produced intervals that were too wide, with high pinball values, due to estimation difficulties).\r\n- **More robust:** the simulation findings (common parameters/initials, e.g. PIC(LS,S,N)) carry over to the diagonal case, and the diagonal assumption avoids overfitting.\r\n\r\nThe only exception noted: if the **pinball measure** is the primary concern and the history is short, VETS D may not be preferred (ETS models had better relative pinball values on short data)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q5",
+  "text": "What restrictions does the paper place on the parameters of the Inverse Gaussian, Log-Normal and Gamma distributions of the error term 1 + ϵt in ETS(M,*,*) models, and why?",
+  "reference": "The expectation of 1 + ϵt must equal 1: for the Inverse Gaussian μ = 1, for the Log-Normal μ = −σ²/2, and for the Gamma the shape ξ = 1/σ². This guarantees that the one-step-ahead point forecast equals the expectation of the model, which the construction of the model needs (fitted values are the one-step-ahead forecasts that start the recursion).",
+  "marking": "Required: the expectation of 1 + ϵt must equal 1, and the restriction for each distribution: Inverse Gaussian μ = 1; Log-Normal μ = −σ²/2; Gamma shape ξ = 1/σ². Not required: the reason (that it makes the one-step-ahead point forecast equal the expectation of the model, which the construction of the model needs). Wrong: a wrong restriction for any of the three distributions.",
+  "answers": [
+   {
+    "answer": "9NP7WP",
+    "text": "They impose E(1 + εt) = 1 so one-step forecasts match conditional expectations.\r\n\r\n- Inverse Gaussian: location μ = 1.\r\n- Log-Normal: location μ = −σ²/2.\r\n- Gamma: shape ξ = 1/σ².\r\n\r\nThis keeps the error mean at one and avoids bias in the ETS recursion."
+   },
+   {
+    "answer": "DAVXNP",
+    "text": "All three are restricted so the multiplicative error has unit mean, E(1 + ϵt) = 1, keeping the model unbiased:\r\n\r\n- **Inverse Gaussian**: location μ = 1 (scale σ² free), so mean = μ = 1.\r\n- **Log-Normal**: location μ = −σ²/2, so mean = exp(μ + σ²/2) = 1.\r\n- **Gamma**: shape ξ = 1/σ², so mean = ξσ² = 1.\r\n\r\nThis unit-mean restriction is what allows these positive distributions to be applied directly to the multiplicative error of conventional ETS(M,*,*) models without log-transforming the model."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q20",
+  "text": "What share of the holdout observations fell inside the 95% prediction intervals of CES across the M1, M3 and tourism series?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. The statement that all holdout observations of one M3 series lay inside its 95% prediction interval does not answer it; MSIS is not a coverage measure.",
+  "answers": [
+   {
+    "answer": "WFMYVK",
+    "text": "The paper doesn't report coverage rates (the share of holdout observations inside the 95% intervals). It reports only the MSIS interval scores, not empirical coverage."
+   },
+   {
+    "answer": "A7DXRR",
+    "text": "The paper does not report that percentage. It only states for one M3 example (series 1664) that all holdout observations fell inside the 95% interval, and gives aggregate error measures (e.g., MSIS) across M1/M3/tourism — not coverage rates."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q7",
+  "text": "Does CES forecast more accurately than the damped trend model ETS(A,Ad,N) on non-seasonal series?",
+  "reference": "No, not in general. On the 3,262 non-seasonal series, ETS(A,Ad,N) has lower mean RMSSE (2.502 vs 2.534), mean and median MASE (2.907 vs 2.949; 1.863 vs 1.880) and mean and median MSIS (3.769 vs 4.269; .854 vs .863); CES is better only on median RMSSE (1.654 vs 1.660). The authors state that CES lags behind the damped trend model on mean error measures and is second best in most cases.",
+  "marking": "Required: no, not in general: the damped trend model ETS(A,Ad,N) is more accurate on most measures, including the mean error measures. Also correct: CES is better only on median RMSSE (1.654 against 1.660); CES is second best in most cases. Not required: the values (mean RMSSE 2.502 against 2.534, mean and median MASE 2.907 against 2.949 and 1.863 against 1.880, mean and median MSIS 3.769 against 4.269 and .854 against .863); the number of series (3,262). Wrong: saying CES beats all ETS models, or the damped trend model, on non-seasonal data (overreach).",
+  "answers": [
+   {
+    "answer": "P9N39J",
+    "text": "No — on the 3,262 non-seasonal series, **ETS(A,Ad,N) beats CES on almost every measure**:\r\n\r\n| Measure | CES | ETS(A,Ad,N) |\r\n|---|---|---|\r\n| RMSSE mean | 2.534 | **2.502** |\r\n| RMSSE median | **1.654** | 1.660 |\r\n| MASE mean | 2.949 | **2.907** |\r\n| MASE median | 1.880 | **1.863** |\r\n| MSIS mean | 4.269 | **3.769** |\r\n| MSIS median | 0.863 | **0.854** |\r\n\r\nCES wins only on **median RMSSE**; the damped trend model is better everywhere else."
+   },
+   {
+    "answer": "WMRVHJ",
+    "text": "No. On the non-seasonal subset, ETS(A,Ad,N) has lower mean RMSSE (2.502 vs 2.534) and lower mean MASE (2.907 vs 2.949) than CES. CES is only close behind and remains second best on most measures."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q1",
+  "text": "On the M1, M3 and tourism competition data, what were the mean and median RMSSE of CES, and how did they compare with ETS, ARIMA and the Theta method?",
+  "reference": "Over the 5,315 series of the M1, M3 and tourism data, CES had mean RMSSE 1.959 and median RMSSE 1.170, the lowest of the univariate models: ETS 1.970 and 1.181, ARIMA 2.134 and 1.271, Theta 1.965 and 1.238. The combination SCUM was lower still (1.867 and 1.128).",
+  "marking": "Required: CES had mean RMSSE 1.959 and median RMSSE 1.170, the lowest of CES, ETS, ARIMA and the Theta method on both. Not required: the values of ETS (1.970, 1.181), ARIMA (2.134, 1.271), Theta (1.965, 1.238) and SCUM (1.867, 1.128); the number of series (5,315). Wrong: saying CES beat the SCUM combination, whose mean and median RMSSE are lower.",
+  "answers": [
+   {
+    "answer": "FWPKQT",
+    "text": "On M1/M3/tourism, CES had mean RMSSE 1.959 and median RMSSE 1.170.\r\n\r\nComparison:\r\n- ETS: mean 1.970, median 1.181 — slightly worse than CES.\r\n- ARIMA: mean 2.134, median 1.271 — worse than CES.\r\n- Theta: mean 1.965, median 1.238 — slightly worse than CES.\r\n\r\nSo CES had the lowest mean and median RMSSE among these four."
+   },
+   {
+    "answer": "CYTWPF",
+    "text": "On the 5,315 M1/M3/tourism series:\r\n\r\n| Method | RMSSE mean | RMSSE median |\r\n|---|---|---|\r\n| **CES** | **1.959** | **1.170** |\r\n| ETS | 1.970 | 1.181 |\r\n| ARIMA | 2.134 | 1.271 |\r\n| Theta | 1.965 | 1.238 |\r\n\r\nCES had the lowest mean and median RMSSE of the four methods."
+   }
+  ]
+ }
+]

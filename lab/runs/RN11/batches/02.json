@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1002-nav-22074#Q19",
+  "text": "What were the typical (for example median) estimated values of α0 and α1 across the M3 series?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. Values reported for individual series (two M3 series and one M1 series) do not answer it.",
+  "answers": [
+   {
+    "answer": "KHYXAR",
+    "text": "The paper does not report typical or median estimated $\\alpha_0$ and $\\alpha_1$ values across the M3 series. It only gives the two example estimates: $0.99999+0.99884i$ for series 1664 and $1.48098+1.00346i$ for series 2721."
+   },
+   {
+    "answer": "EJPJNQ",
+    "text": "The paper reports estimated α₀ and α₁ for only **two** M3 series:\r\n\r\n- **Series 1664** (stationary): α₀ = 0.99999, α₁ = 0.99884\r\n- **Series 2721** (trended): α₀ = 1.48098, α₁ = 1.00346\r\n\r\nNo typical or median values across the M3 series are given."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q18",
+  "text": "How many hospitals contributed to the GRP admissions data?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "KFQRP9",
+    "text": "The paper doesn't say — it only mentions \"a number of participating hospitals across England,\" with no specific count given."
+   },
+   {
+    "answer": "A4AU97",
+    "text": "The paper doesn't say. [location] only describes the data as the monthly proportion of GRP A&E admissions \"in participating hospitals across England\"—no hospital count is given."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q19",
+  "text": "How accurate were pure multiplicative ETS models with the Gamma distribution on intermittent demand data in this paper's experiments?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that other work (Svetunkov and Boylan, 2023) used pure multiplicative ETS on intermittent data and found it worked well, does not answer it; citing it as other work is correct, presenting it as a result of this work is wrong.",
+  "answers": [
+   {
+    "answer": "JQWHM4",
+    "text": "The paper doesn't test intermittent demand data. Its real-life demonstration uses a daily EV charging series (511 observations, continuous demand with 7-day seasonality), where the Gamma ETS(M,Md,M) achieved AICc 6398.57 (vs 6418.296 for additive Normal ETS) and strictly positive 95% prediction intervals on the low-volume subsample. The simulations use regular, non-intermittent synthetic series."
+   },
+   {
+    "answer": "NNR3ME",
+    "text": "The paper does not report experiments on intermittent demand. It only cites Svetunkov & Boylan (2023) as showing multiplicative ETS can work well there."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q15",
+  "text": "What limitations does the paper itself state of the evidence that the change signalled in the Royal Mail forecast errors marks the start of the Christmas peak season?",
+  "reference": "Only the forecast errors were available: the underlying parcel volumes and the forecasts are unknown to the authors, so the start of the peak season is inferred from the rise in the mean and variance of the forecast errors.",
+  "marking": "Required: at least one limitation from the list below. Limitations the authors state: (1) only the forecast errors were available: the underlying parcel volumes and the forecasts are unknown to the authors; (2) the start of the peak season is inferred from the rise in the mean and variance of the forecast errors; (3) the data are not available. Wrong: saying the authors state no limitations; presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "J3C9QW",
+    "text": "The paper's stated limitation is [location]: the start of the Christmas peak is only *inferred* from the rise in the mean and variance of the forecast errors—the underlying parcel volumes and forecasts are not known to the authors, so the evidence is indirect (reduces precision, no mitigation)."
+   },
+   {
+    "answer": "4CMCHW",
+    "text": "The paper doesn't explicitly state limitations for that evidence. It only reports that both detectors signalled on 2 December and that this \"corresponds to a rise in the mean and variance,\" without caveats about alternative explanations or validation."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q9",
+  "text": "Does the General Predictive Likelihood shrink the parameters as the other multi-step estimators do?",
+  "reference": "Not when the model is correctly specified: the covariances between the multi-step errors cancel the effect, and GPL gives estimates similar to the conventional one-step estimator. Under misspecification it may give different estimates. GPL was not included in the simulations for this reason.",
+  "marking": "Required: No when the model is correctly specified (the covariances cancel the effect, and the estimates are similar to those of the conventional one-step estimator); under misspecification the estimates may differ. Also correct: adding that the General Predictive Likelihood shrinks in small samples and approaches MSE_1 only when T is much larger than h. Not required: that it was left out of the simulations for this reason. Wrong: saying it gives identical estimates in every case, or that it shrinks like MSE_h (overreach).",
+  "answers": [
+   {
+    "answer": "CMNEAA",
+    "text": "No. When the model is correctly specified, GPL produces estimates similar to MSE₁ with no shrinkage — the covariances between horizons cancel out the effect (det(A) = 1 always). Only under misspecification may GPL estimates differ from MSE₁."
+   },
+   {
+    "answer": "AHHE9T",
+    "text": "No — under correct model specification it does not. Maximising the GPL gives estimates similar to MSE₁, because the log-determinant decomposes as \\(\\log GV = h \\log s_1^2 + \\log|\\hat{A}|\\) with \\(|\\hat{A}| = 1\\) when the model is correctly specified, so no extra shrinkage pressure is exerted on the \\(\\hat{c}_j\\).\r\n\r\nCaveats the paper itself notes:\r\n- under misspecification (\\(|\\hat{A}| \\neq 1\\)), off-diagonal covariances don't cancel and GPL estimates diverge from MSE₁.\r\n- GPL approaches MSE₁ only when \\(T\\) is much larger than \\(h\\); in small samples it can shrink even more than MSE₁ (e.g., ETS(A,N,N), \\(T=50\\), \\(h=10\\): 63% of estimates at zero vs 29% for MSE₁)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q6",
+  "text": "How do multi-step loss functions shrink the smoothing parameters of ETS(A,N,A)?",
+  "reference": "Stepwise, as complete seasonal cycles accumulate: γ̂ does not shrink while h ≤ m; α̂ shrinks faster than γ̂ on shorter horizons, and γ̂ shrinks faster once h > 2m. As h → ∞ the model becomes deterministic.",
+  "marking": "Required: the stepwise shrinkage: γ̂ does not shrink while h ≤ m, α̂ shrinks faster than γ̂ on shorter horizons, γ̂ shrinks faster once h > 2m, and the model becomes deterministic as h → ∞. Also correct: adding, alongside the authors' statement, that the switch at h > 2m rests on incorrect coefficients and that with the correct ones the pressure on α̂ always exceeds that on γ̂. Also correct: either form of the coefficients, c_j = α + γ j_m with j_m = ⌊(j−1)/m⌋, or c_j = α + γ when j is a multiple of m and α otherwise. Not required: the coefficients.",
+  "answers": [
+   {
+    "answer": "TUJEP7",
+    "text": "For ETS(A,N,A), the shrinkage happens in a stepwise manner, tied to complete seasonal cycles:\r\n\r\n- **α (level):** shrinks towards zero immediately, faster than γ on short horizons (h ≤ m).\r\n- **γ (seasonal):** does not shrink at all while h ≤ m; it starts shrinking only once the horizon exceeds the seasonal periodicity, because its weight enters via j_m = ⌊(j−1)/m⌋.\r\n- **Switch:** for h > 2m, γ starts shrinking faster than α, since its weight dominates the sum.\r\n\r\nAs h → ∞, the model becomes deterministic. Also, since all smoothing parameters are positive, the forecast-error covariances are positive, making MSCE's shrinkage the strongest of all multi-step loss functions for this model."
+   },
+   {
+    "answer": "P49MN3",
+    "text": "Per [location]: the seasonal smoothing parameter \\(\\hat{\\gamma}\\) shrinks **stepwise** — only when \\(h > m\\), in steps of whole seasonal cycles — and once \\(h > 2m\\), it shrinks faster than the level parameter \\(\\hat{\\alpha}\\).\r\n\r\nMechanism: the multi-step coefficient \\(c_j = \\alpha + \\gamma\\) when \\(j\\) is a multiple of \\(m\\), and \\(\\alpha\\) otherwise (corrected from the paper's misprint). Multi-step losses minimise \\(\\hat{c}_j^2\\), so \\(\\gamma\\) is pressured only at horizons that reach seasonal lags, while \\(\\alpha\\) is pressured at every horizon.\r\n\r\nCaveat: the \\(h > 2m\\) switch rests on the misprinted coefficients; with the corrected \\(c_j\\), the pressure on \\(\\hat{\\alpha}\\) always exceeds that on \\(\\hat{\\gamma}\\)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q12",
+  "text": "What evidence does the paper give that including CES improves the SCUM combination, and is there any measure on which it does not?",
+  "reference": "SCUM (with CES) is compared with SCUM(noCES). On the M1, M3 and tourism data SCUM has lower mean and median RMSSE and MASE (e.g. mean RMSSE 1.867 vs 1.911) and lower median MSIS, and in Nemenyi tests it is significantly better than every other approach, SCUM(noCES) included. On M4 SCUM is lower on every reported measure. The exception is mean MSIS on the M1, M3 and tourism data, where SCUM (2.333) is worse than SCUM(noCES) (2.223).",
+  "marking": "Required: the comparison of SCUM (with CES) against SCUM(noCES): SCUM has lower errors on most measures on the M1, M3 and tourism data and on every reported measure on the M4 data; and the exception: mean MSIS on the M1, M3 and tourism data, where SCUM (2.333) is worse than SCUM(noCES) (2.223). Also correct: that on Nemenyi ranks SCUM is significantly better than every other approach, SCUM(noCES) included, on every measure, MSIS included, given together with the mean MSIS exception. Not required: the other values (e.g. mean RMSSE 1.867 against 1.911). Wrong: saying SCUM is better on every measure without the mean MSIS exception.",
+  "answers": [
+   {
+    "answer": "YDDPEC",
+    "text": "**Evidence:**\r\n\r\n- **M1/M3/tourism:** SCUM (median of ETS, ARIMA, Theta, CES) vs SCUM(noCES): mean RMSSE 1.867 vs 1.911, mean MASE 2.146 vs 2.191, median RMSSE 1.128 vs 1.143, median MASE 1.256 vs 1.279, median MSIS 0.844 vs 0.859 — all lower with CES. Nemenyi tests: SCUM significantly better than every other method including SCUM(noCES) on all three measures.\r\n- **M4:** SCUM vs SCUM(noCES): mean MASE 2.737 vs 2.784, mean RMSSE 2.198 vs 2.241, mean MSIS 1.751 vs 1.798, and all medians lower with CES.\r\n\r\n**Exception:** On M1/M3/tourism, SCUM's **mean MSIS is higher with CES** (2.333 vs 2.223) — the only measure on which adding CES does not improve the combination."
+   },
+   {
+    "answer": "KDVNWH",
+    "text": "Evidence: on M1/M3/tourism, SCUM beats SCUM(noCES) on mean and median RMSSE and MASE; on M4, SCUM also beats SCUM(noCES) on mean/median MASE and RMSSE. The Nemenyi test says SCUM is significantly better than SCUM(noCES) across all error measures.\r\n\r\nException: on M1/M3/tourism mean MSIS, SCUM(noCES) is better (2.223 vs 2.333), because CES can fail badly on some series."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q2",
+  "text": "On the mean surface temperature data, which model and data were used, and how did the conventional MSE estimator compare with the other estimators?",
+  "reference": "An ARIMA(1,1,2) model on the monthly HadCRUT4 series for a location in Greenland (322.5°, 62.5°), January 1849 to December 2017, 2,016 observations, with the last 60 held out. The conventional MSE did worst of the six estimators on every measure (RMSE 1.217, MAE 0.849, ME −0.450); GPL was very close to it (1.214, 0.846, −0.444), and the multi-step estimators did better.",
+  "marking": "Required: says the conventional MSE did worst, or did not perform well, on all three error measures (RMSE, MAE, ME). Not required: the other details of the reference answer.",
+  "answers": [
+   {
+    "answer": "XW9Y3W",
+    "text": "**Model and data:** An ARIMA(1,1,2) was fitted to the HadCRUT.4.5.0.0 monthly Mean Surface Temperature series for Greenland (grid cell 322.5°E, 62.5°N), trained on 1,956 observations (Jan 1849–Dec 2012) and evaluated on a 60-month holdout (Jan 2013–Dec 2017), using the R package smooth v3.2.1.\r\n\r\n**MSE₁ vs. the others:** MSE₁ was outperformed by all multi-step estimators on accuracy — RMSE 1.217 and MAE 0.849, worse than MSE_h (1.128/0.784), TMSE (1.198/0.827), GTMSE (1.190/0.819), MSCE (1.185/0.817) and GPL (1.214/0.846). Its ME (−0.45) was also more biased than MSE_h's (0.009), though comparable to TMSE (−0.402) and GPL (−0.444). Its parameter estimates were plausible, however: AR(1) = 0.558 (positive, as the climate literature expects), unlike MSE_h's distorted −0.786."
+   },
+   {
+    "answer": "AD7KEF",
+    "text": "**Model/data:** ARIMA(1,1,2) fitted to monthly HadCRUT4 mean surface temperature data (HadCRUT.4.5.0.0) for a location in Greenland (322.5°E, 62.5°N), January 1849–December 2017 (2016 observations), with the last 5 years (60 points) withheld for testing.\r\n\r\n**MSE performance:** The conventional MSE performed worst of all six estimators — RMSE 1.217, MAE 0.849, ME −0.450 (highest errors, most biased). All multi-step estimators beat it; MSE_h was best (RMSE 1.128, MAE 0.784, ME 0.009). GPL was nearly identical to MSE."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q10",
+  "text": "Does the paper derive the restriction of the smoothing parameters to [0, 1] for every pure multiplicative ETS model?",
+  "reference": "No. It derives α ≤ 1 for ETS(M,N,N) from the requirement that 1 + αϵt stay positive (assuming α is non-negative) and concludes α ∈ [0, 1]. For more complicated pure multiplicative models it states that the smoothing parameters should have similar restrictions for the same reasons, without deriving them.",
+  "marking": "Required: No; the restriction is derived only for ETS(M,N,N) (α ≤ 1 from the requirement that 1 + αϵt stay positive, with α assumed non-negative, giving α ∈ [0, 1]); for the other pure multiplicative models the authors state that similar restrictions should hold, without deriving them. Wrong (overreach): saying the restriction is proved for all pure multiplicative models.",
+  "answers": [
+   {
+    "answer": "PW4KUY",
+    "text": "No. It derives the restriction explicitly for ETS(M,N,N), then says more complex pure multiplicative models share similar restrictions, but it does not derive them for every model."
+   },
+   {
+    "answer": "UYNHPJ",
+    "text": "No. The paper derives it only for ETS(M,N,N) (positivity of 1 + αεₜ requires α ≤ 1). For other models, the restriction α, β, γ ∈ [0, 1] is assumed \"by analogy... without a derivation\" (explicitly marked unchecked)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q16",
+  "text": "What was the average detection delay of a model-based sequential changepoint method in the paper's simulations?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, the minimum detection delay of 24 months for a model-based approach on the monthly admissions data, is not a simulation result and does not answer it.",
+  "answers": [
+   {
+    "answer": "443JPW",
+    "text": "The paper doesn't report one. Model-based sequential detection is only discussed in the GRP admissions application, where it's argued to need at least 24 months post-change—no ADD is given for it in any simulation."
+   },
+   {
+    "answer": "7EEADH",
+    "text": "The paper doesn't report it. The simulations compare forecast-error detectors against Raw CUSUM only; no model-based sequential changepoint method is included in the simulation study."
+   }
+  ]
+ }
+]

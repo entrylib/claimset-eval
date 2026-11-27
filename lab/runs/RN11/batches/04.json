@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q14",
+  "text": "What evidence supports the claim that using cross-sectional information improves forecast accuracy on the M5 data, and what limitations of this evidence, apart from statistical significance, does the paper itself state?",
+  "reference": "VETS D has the lowest overall geometric mean and median rMAE of the five models on both long and short histories, and the authors say the VETS models are almost always better than Naïve and than the univariate ETS models on long histories, and typically better than Naïve on short ones. Limitation the authors state: the benefit assumes that the series are correctly grouped.",
+  "marking": "Required: VETS D has the lowest overall geometric mean and median rMAE of the five models on both long and short histories. Also correct: the VETS models are almost always better than Naïve and than the univariate ETS models on long histories, and typically better than Naïve on short ones; the differences in the MCB test are not statistically significant (excluded by the question, but not wrong). Not required: any limitation. Acceptable limitations: the benefit assumes the series are correctly grouped; it assumes the classification of the series into seasonal or non-seasonal and trended or non-trended is correct; the evidence is one data set of 69 series in 11 groups, each evaluated on a single 12-month holdout; models with a trend are not analysed. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "DEDWNQ",
+    "text": "**Evidence:**\r\n- VETS D — which estimates from the whole group — has the lowest geometric mean and median rMAE of the five models on both long and short histories (0.894/0.934 long, 0.936/0.974 short), beating the three univariate ETS models.\r\n- The selection procedure most often chose PIC(LS,S,N) (6 of 11 groups), i.e., restrictions that pool information across series, and the authors attribute the gains mainly to shared seasonal initial values and smoothing parameters.\r\n\r\n**Limitations stated (apart from significance):**\r\n- Evidence is a single monthly data set of 69 series in 11 groups, each with one 12-month holdout.\r\n- Seasonality/trend classification and departmental grouping rely on `adam` and are assumed correct.\r\n- No trend-component models were analysed.\r\n- No experiment on M5 compares VETS with and without the cross-series restrictions directly — the attribution to shared parameters/initial values is abductive, not tested.\r\n- Robustness of the simulation findings outside the simulated settings is untested; the M5 evidence alone does not establish that cross-sectional information helps generally."
+   },
+   {
+    "answer": "VTCKAW",
+    "text": "**Evidence supporting the claim:**\r\n\r\n- VETS D (geometric mean rMAE 0.894, median 0.878) and VETS F (0.906 / 0.894) beat all univariate ETS benchmarks on long histories — ETS LN (0.917 / 0.959), ETS (ADAM) (0.955 / 0.997), and ETS (0.933 / 0.975) — with Naïve as benchmark.\r\n- On short histories, VETS D (0.979 / 0.974) again outperformed ETS models, some of which were worse than Naïve.\r\n- The automatically selected PIC restrictions were predominantly LS,S,N — common level/seasonal smoothing parameters and common initial seasonal indices — indicating the cross-series restrictions drive the gains.\r\n- VETS D also achieved near-nominal 95% coverage (0.947 long, 0.938 short) vs. ETS models falling below 95%.\r\n\r\n**Limitations the paper itself states (apart from statistical significance):**\r\n\r\n- **Assumes correct grouping:** benefits \"assume that the data is correctly grouped\" — cross-sectional estimation helps only if series are truly homogeneous.\r\n- **Pinball trade-off on short data:** VETS D had worse relative pinball values than ETS models on short histories, so the accuracy gain comes at the cost of less sharp intervals.\r\n- **VETS F estimation difficulties:** the full covariance model produced too-wide intervals (coverage 0.982, high pinball), limiting its practical use.\r\n- **Small non-seasonal sample:** only 13 non-seasonal series in 4 groups, making conclusions for non-seasonal data unreliable.\r\n- **Aggregation choice:** results are for monthly department-store aggregates; granularity choice (e.g. weekly/daily) may affect findings — noted as future work."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q10",
+  "text": "Do the paper's results apply to forecast errors more than one step ahead?",
+  "reference": "No results are given for them. The authors focus on one-step-ahead forecast errors; they say the framework is general for h steps ahead and names combining information from several forecast horizons as an interesting extension.",
+  "marking": "Required: no results are shown for forecast errors more than one step ahead; the work focuses on one-step-ahead errors. Also correct: the authors say the framework is general for h steps ahead, and name combining information from several forecast horizons as an extension not yet done; citing the authors' 'without loss of generality' statement, provided the answer says no results for h > 1 are shown. Not required: that the framework is general for h steps ahead. Wrong: saying results were shown for h > 1.",
+  "answers": [
+   {
+    "answer": "FQRQRM",
+    "text": "The paper focuses on one-step-ahead errors but notes the framework is general for h-steps ahead. However, the theoretical results are shown only for the one-step-ahead case; multi-horizon errors are mentioned as future work, not validated."
+   },
+   {
+    "answer": "THYHJE",
+    "text": "No. The framework is specifically built on one-step-ahead forecast errors \\(e_t = Y_t - \\hat{y}_t(1)\\), and the theoretical results—[location]—are derived for those errors. Combining information from several forecast horizons is explicitly left as future work."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q5",
+  "text": "How were the data generated in the simulation experiment?",
+  "reference": "With sim.ves() from the legion package: VETS(A,N,A) data exponentiated to give VETS(M,N,M;LN), from each of the nine PIC variants studied. Quarterly seasonality (m = 4), 24 or 64 observations (6 or 16 years) with the last 8 held out, groups of 2, 10, 20, 30, 40 and 50 series, initial level from [4, 10], seasonal indices from (−1, 1) normalised, independent normal errors with standard deviation 0.3, smoothing parameters set by variant (α = 0.3 and γ = 0.1 for PIC(LS,*,*); α in [0, 0.3] and γ = 0.1 for PIC(S,*,*); α in [0, 0.3] and γ in [0, 1 − α] for PIC(N,*,*)), and 1000 iterations.",
+  "marking": "Required: the model, VETS(M,N,M;LN) (VETS(A,N,A) data exponentiated); quarterly data; the two sample lengths, 24 and 64 observations; the group sizes 2, 10, 20, 30, 40 and 50 series. Not required: the generating function (sim.ves() from legion), the nine PIC variants used to generate data, the 8-observation holdout, the initial level and seasonal indices, the error standard deviation 0.3, the smoothing parameters, the 1000 iterations. Wrong: another model, frequency, sample length or group size.",
+  "answers": [
+   {
+    "answer": "QU4CVT",
+    "text": "**Data generation:** Groups of 2, 10, 20, 30, 40 or 50 quarterly series of 24 or 64 observations were generated with `sim.ves` from the legion package 0.1.0, from each of the nine PIC variants of VETS(M,N,M;LN) (i.e., VETS(A,N,A) data exponentiated):\r\n\r\n- Initial level drawn from [4, 10]\r\n- Seasonal indices drawn from (−1, 1) and normalised\r\n- Independent normal errors with standard deviation 0.3\r\n- Smoothing parameters by variant:\r\n - PIC(LS,*,*): α = 0.3, γ = 0.1\r\n - PIC(S,*,*): α ∈ [0, 0.3], γ = 0.1\r\n - PIC(N,*,*): α ∈ [0, 0.3], γ ∈ [0, 1 − α]\r\n\r\n1000 iterations; the last 8 quarters held out for forecasting."
+   },
+   {
+    "answer": "V9CYUR",
+    "text": "Data were generated using the `sim.ves` function from the R package **legion v0.1.0**. The underlying process was **VETS(A,N,A)**, then exponentiated to obtain **VETS(M,N,M;LN)** (pure multiplicative, log-normal errors).\r\n\r\nKey setup:\r\n- **Seasonal cycle:** quarterly, $m=4$ (monthly also checked, similar findings)\r\n- **Initial level:** random from [4,10] in logs → [54, 22000] in data scale\r\n- **Seasonal indices:** random from (−1,1), normalised → multiplicative indices in (0.37, 2.72)\r\n- **Sample sizes:** $T = 24$ or $64$ quarters (6 or 16 years), last 8 quarters (2 years) as holdout\r\n- **Group sizes:** $n = 2, 10, 20, 30, 40, 50$ series\r\n- **Errors:** i.i.d. normal with $\\sigma = 0.3$ (log-normal after exponentiation), uncorrelated across series\r\n- **Smoothing parameters:** varied by PIC restriction — e.g. $\\alpha=0.3, \\gamma=0.1$ for PIC(LS,*,*); $\\alpha \\in [0,0.3], \\gamma \\in [0,1-\\alpha]$ for PIC(N,*,*)\r\n- **Replications:** 1000 iterations"
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q8",
+  "text": "Are the assumptions under which the detectors' thresholds are valid satisfied in all the simulated scenarios?",
+  "reference": "No. The authors state that Assumptions 1 and 2, which the theoretical validity of the stopping rule requires, are not necessarily satisfied in all the simulated scenarios, and that the performance is still satisfactory.",
+  "marking": "Required: no. Also correct: the authors state that Assumptions 1 and 2, which the theoretical validity of the stopping rule requires, are not necessarily satisfied in all the simulated scenarios, and that performance is still satisfactory; adding that the validity of the detectors' limit distributions is disputed. Not required: the disputed limit distributions. Wrong: saying the assumptions hold, or that the thresholds are theoretically valid, in every simulation.",
+  "answers": [
+   {
+    "answer": "3U39R4",
+    "text": "No. The paper explicitly states that [location] \"are not necessarily satisfied in all scenarios,\" but shows satisfactory performance anyway."
+   },
+   {
+    "answer": "MT3MEJ",
+    "text": "No. [location] states that the two forecasting-model assumptions (constant bias [location] and incomplete adjustment [location]) \"are not necessarily satisfied in all the simulated scenarios,\" so the theoretical thresholds are not guaranteed to be valid everywhere in the simulations."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q16",
+  "text": "Which statistical test did the paper use to find that the differences in mean scaled pinball score are not significant at the 5% level?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that the differences are not significant at the 5% level, does not answer it: no test is named.",
+  "answers": [
+   {
+    "answer": "3D4QUQ",
+    "text": "The paper doesn't name the test. [location] explicitly notes \"the test is not named in the paper.\""
+   },
+   {
+    "answer": "CY3PDN",
+    "text": "The paper does not name a specific statistical test. It only says the differences were “not statistically significant (on 5% significance level).”"
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q4",
+  "text": "What coverage did the 95% prediction intervals of each model reach on the long M5 histories (51 observations for estimation)?",
+  "reference": "Long histories: ETS LN 0.934, ETS (ADAM) 0.925, ETS 0.937, VETS D 0.947, VETS F 0.982. The three ETS models are below 95%; VETS F is a little too wide; VETS D is closest to 95%.",
+  "marking": "Required: VETS D 0.947 and VETS F 0.982, and that the three ETS models fall short of 95%. Also correct: the ETS values (ETS LN 0.934, ETS (ADAM) 0.925, ETS 0.937); VETS F is a little too wide; VETS D is closest to 95%. Not required: values for the short histories (not wrong either). Wrong: other values for the long histories.",
+  "answers": [
+   {
+    "answer": "9EAF9M",
+    "text": "Coverage on long M5 histories (51 estimation observations, 12-month holdout), nominal 95%:\r\n\r\n| Model | Coverage |\r\n|---|---|\r\n| ETS LN | 0.934 |\r\n| ETS (ADAM) | 0.925 |\r\n| ETS | 0.937 |\r\n| VETS D | 0.947 |\r\n| VETS F | 0.982 |\r\n\r\nAll univariate ETS variants fell below the nominal 95%. VETS D came closest (0.947), while VETS F overshot with intervals that were too wide (0.982)."
+   },
+   {
+    "answer": "773JJC",
+    "text": "From [location] (long histories):\r\n\r\n- VETS F: 0.982\r\n- VETS D: 0.947\r\n- ETS LN: 0.934\r\n- ETS (ADAM): 0.925\r\n- ETS: 0.937\r\n\r\nNominal level: 0.95. VETS F over-covers; VETS D is closest to nominal."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q17",
+  "text": "What geometric mean and median rMAE (relative to Naïve) did VETS D reach on the daily M5 series?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "NHHRX4",
+    "text": "The paper does not report results on daily M5 series. The M5 data were **aggregated to monthly frequency** (department-store level, 70 products), so all reported rMAE values — including VETS D's geometric mean 0.894 / median 0.878 (long) and 0.979 / 0.974 (short) — are for **monthly** series, not daily."
+   },
+   {
+    "answer": "QRTWK7",
+    "text": "The paper's M5 analysis uses monthly department-level series only; no daily M5 data are analysed, so VETS D's rMAE on daily series is not reported."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q7",
+  "text": "Can the framework detect mean changes when the forecasting model is the ETS(A,N,N) local level model?",
+  "reference": "Generally not. Proposition 3 shows that the expected forecast errors of ETS(A,N,N) return to zero after a mean change whenever α > 0, faster for larger α, so Assumption 2 is not satisfied unless α = 0; a mean change manifests in the forecast errors only if α is small. The framework can still detect variance changes with ETS models, through the squared forecast errors.",
+  "marking": "Required: no, not in general: after a mean change the expected forecast errors of ETS(A,N,N) return to zero when α > 0, so a mean change does not persist in them. Also correct: the return to zero is faster for larger α; the incomplete-adjustment assumption (Assumption 2) holds only if α = 0; a mean change shows in the forecast errors only if α is small; variance changes can still be detected with ETS models through the squared forecast errors. If the expected forecast error is quoted, both forms are correct: δ_μ,m(1 − α)^{s−1}, or δ_μ,m for s = 1 and (λ + δ_μ,m)(1 − Σ_{i=0}^{s−2} α(1−α)^i) − λ(α(1−α)^{s−1} − (1−α)^s) for s ≥ 2. Not required: the formula and the variance-change point. Wrong: saying the framework detects mean changes with ETS models in general.",
+  "answers": [
+   {
+    "answer": "UKK7MA",
+    "text": "No, not reliably. The paper shows ETS(A,N,N) does not satisfy [location]: after a mean change, its forecasts adapt and the forecast errors return to zero, so there is no persistent mean shift in the errors to detect (unless α=0). It can still detect variance changes via squared forecast errors."
+   },
+   {
+    "answer": "PD7QDV",
+    "text": "No. ETS(A,N,N) adapts to mean changes: its expected forecast error after the change is δμ,m(1−α)^(s−1), which decays to zero, so the incomplete-adjustment assumption fails and the mean change does not persist in the errors. Only variance changes remain detectable via the squared-error detector."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q9",
+  "text": "In simulation experiment 2, does the ETS(M,Md,M) model with the distribution selected by AICc for each series have a lower mean scaled pinball score than all four ETS(M,Md,M) models with a fixed distribution, on every data generating process?",
+  "reference": "No. It is lowest on the Inverse Gaussian (5.175), Log-Normal (9.332) and Akram (5.178) data, but the Normal model is lower on the Normal data (5.255 against 5.258) and on the Gamma data (5.193 against 5.208). The authors describe the AICc selection as performing well in the majority of cases.",
+  "marking": "Required: No; it is lowest on the Inverse Gaussian (5.175), Log-Normal (9.332) and Akram (5.178) data, but the Normal model is lower on the Normal data (5.255 against 5.258) and on the Gamma data (5.193 against 5.208). Not required: that the authors describe the AICc selection as performing well in the majority of cases. Wrong (overreach): saying the AICc selection is always best.",
+  "answers": [
+   {
+    "answer": "XN7VQV",
+    "text": "No. The Auto/AICc-selected model is not consistently lower than all fixed-distribution models on every DGP. For example, on the Inverse Gaussian DGP, the fixed Gamma model has a lower score than Auto."
+   },
+   {
+    "answer": "R4X33W",
+    "text": "No. The Auto (AICc) row beats all four fixed-distribution models on the Inverse Gaussian, Gamma, Log-Normal, and Akram DGPs, but **not** on the Normal DGP, where the fixed Normal model has the lowest SPS (5.255 vs Auto's 5.258)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q19",
+  "text": "How much did the framework's detection of the change in the Royal Mail forecast errors reduce staffing costs at the delivery office?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "VAKFPK",
+    "text": "The paper doesn't report any cost savings — it only notes the change was detected on 2 December and that this would allow staffing to be \"appropriately adjusted.\" No monetary figures are given."
+   },
+   {
+    "answer": "PECYNV",
+    "text": "The paper doesn't say. The Royal Mail application only reports that both detectors signalled on 2 December 2020; it gives no staffing-cost figures or any cost analysis."
+   }
+  ]
+ }
+]

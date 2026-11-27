@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q18",
+  "text": "How much longer did computing the conditional expectation by simulation take than computing the conventional point forecast?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that the conditional expectation should be obtained by simulation, does not answer it.",
+  "answers": [
+   {
+    "answer": "DADTJD",
+    "text": "The paper doesn't report computation times. It only documents that conditional expectations require Monte Carlo simulation and that the M3 example used simulation to obtain them — no runtime comparison is given."
+   },
+   {
+    "answer": "PMNHKH",
+    "text": "The paper does not report a timing comparison, so I can’t quantify it from the text."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q6",
+  "text": "According to the paper, what change size Δ_μ,m appears in the forecast errors of a perfectly specified AR(1) forecasting model after a change of size δ_μ,m in the mean of the raw data?",
+  "reference": "Δ_μ,m = δ_μ,m(1 − φ), where φ is the autoregressive parameter.",
+  "marking": "Required: Δ_μ,m = δ_μ,m(1 − φ), with φ the autoregressive parameter. Also correct: δ_μ,m at the first post-change point, then δ_μ,m(1 − φ) from the next point on; deriving the AR(1) case from the general ARMA formula Δ_μ,m = δ_μ,m(1 − Σφ_j)Σψ_l(θ), with the expansion of 1/θ(z) written either as Σψ_l(θ) z^l or as Σψ_l(θ). Not required: the general ARMA formula.",
+  "answers": [
+   {
+    "answer": "9EUVMX",
+    "text": "Δ_μ,m = δ_μ,m(1 − φ)."
+   },
+   {
+    "answer": "7EEAJ7",
+    "text": "For an AR(1) model, φ₁ = φ and θ = 1, so ψ₀ = 1 and ψₗ = 0 for l ≥ 1. The formula of [location] gives:\r\n\r\nΔ_μ,m = δ_μ,m (1 − φ)\r\n\r\nSo the mean change in the forecast errors is the raw-data mean change scaled by one minus the autoregressive coefficient."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q15",
+  "text": "On what does the paper base its view that the AR(1) estimates from GTMSE, MSCE and GPL on the temperature data are realistic?",
+  "reference": "Climatologists argue that the AR(1) parameter should be positive. The GTMSE, MSCE and GPL estimates (0.691, 0.634, 0.532) are similar to those found by others in the field (Hartmann et al. 2013; Cahill et al. 2015; Rahmstorf et al. 2017), whereas MSE_h shrinks it to −0.786, which the authors call unrealistic. The authors conclude that the shrinkage is beneficial compared with the model estimated by MSE.",
+  "marking": "Required: climatologists expect the AR(1) parameter to be positive; the GTMSE, MSCE and GPL estimates are positive and similar to those of earlier climate studies, whereas MSE_h gives a negative estimate. Also correct: adding that the conventional MSE also gives a positive AR(1) estimate (0.558), close to GPL's. Not required: the cited studies by name; the estimates' values.",
+  "answers": [
+   {
+    "answer": "JEN34A",
+    "text": "The [location]: those estimates are positive (0.691, 0.634, 0.532), matching climatologists' expectation of a positive AR(1) parameter for temperature series, and similar to values reported in the climate literature (Hartmann et al. 2013; Cahill et al. 2015; Rahmstorf et al. 2017). By contrast, MSE_h's estimate was −0.786, which the authors read as unrealistic over-shrinkage.\r\n\r\nCaveats the paper itself notes: the comparison is qualitative, based on a single series, and MSE₁'s estimate (0.558) is also positive."
+   },
+   {
+    "answer": "TATFRJ",
+    "text": "The paper bases this on consistency with published estimates in the climate literature — specifically Hartmann et al. (2013), Cahill et al. (2015), and Rahmstorf et al. (2017) — whose AR(1) estimates for global temperature data are similar to those produced by GTMSE, MSCE and GPL (around 0.53–0.69), unlike MSE_h's −0.786."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q2",
+  "text": "How was simulation experiment 1 set up?",
+  "reference": "Series of 100 observations were generated from ETS(M,Md,N) with an Inverse Gaussian error distribution (sim.es() from smooth 3.2.0), and the same model with the known parameters was applied to produce point forecasts and conditional expectations. The grid was σ ∈ {0.01, 0.05, 0.1, 0.5, 1}, α, β ∈ {0.1, 0.2, 0.5}, φ ∈ {0.5, 0.9, 0.95, 1} and h ∈ {10, 50, 100}, with 10,000 iterations. The percentage difference between the conditional expectation and the point forecast was aggregated over the horizon and regressed on the scaled variables (a Box-Cox transformed odds regression with alm() from greybox).",
+  "marking": "Required: ETS(M,Md,N) as the generating and applied model, the Inverse Gaussian error distribution, the known (true) parameters used for forecasting, and the varied factors (σ, α, β, φ and the horizon h). Not required: the exact grid values, the series length, the number of iterations, the software and the regression used to summarise the results; giving them correctly is also correct.",
+  "answers": [
+   {
+    "answer": "MEAJFK",
+    "text": "**Setup:**\r\n- 10,000 iterations of 100-observation series simulated from ETS(M,Md,N) (damped multiplicative trend, no seasonality) with Inverse Gaussian errors, using `smooth::sim.es`\r\n\r\n**Parameter grids:**\r\n- σ ∈ {0.01, 0.05, 0.1, 0.5, 1}\r\n- α, β ∈ {0.1, 0.2, 0.5}\r\n- φ ∈ {0.5, 0.9, 0.95, 1}\r\n- Horizons h ∈ {10, 50, 100}\r\n\r\n**Procedure:** For each simulated series, the percentage difference (PD) between the conditional expectation and the conventional point forecast was computed, transformed to odds PD/(1−PD), then Box-Cox transformed (λ = 0.146) and regressed on scaled parameters (σ, horizon, α, β, φ) via `greybox::alm` with a Box-Cox Normal distribution.\r\n\r\n**Limitation:** Only ETS(M,Md,N) with IG errors and known true parameters was evaluated."
+   },
+   {
+    "answer": "PE7DYU",
+    "text": "They simulated 10,000 series of 100 observations from an ETS(M,Md,N) DGP with Inverse Gaussian errors, using known parameters, then applied the same model to produce point forecasts and simulated conditional expectations. They measured percentage difference PD = (μₜ₊ₕ − ŷₜ₊ₕ)/μₜ₊ₕ, aggregated over horizons, and regressed it on σ, α, β, horizon, and φ. Factors varied: σ ∈ {0.01, 0.05, 0.1, 0.5, 1}, α, β ∈ {0.1, 0.2, 0.5}, h ∈ {10, 50, 100}, φ ∈ {0.5, 0.9, 0.95, 1}."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q11",
+  "text": "When do common seasonal components (PIC(*,S,S)) help forecast accuracy, and when do they harm it?",
+  "reference": "They help only when the series share very similar seasonal patterns. In the simulation they do well on data with common seasonal components, with moderate gains over PIC(N,N,N), though no better than common initial seasonal indices with individual components (PIC(*,S,N)). On data with individual seasonal components and initial values (the most flexible DGPs) they are much worse than the correct method in accuracy and do poorly in pinball values. The authors recommend them only for homogeneous series; on the M5 data they were chosen for only one of the 11 groups.",
+  "marking": "Required: they help only for series with very similar seasonal patterns, and they harm accuracy on data with individual seasonal components (and individual initial values). Also correct: they bring no gain over common initial seasonal indices with individual components (PIC(*,S,N)), even on data with common seasonality; they give moderate gains over PIC(N,N,N) on data with common seasonal components; they do poorly in pinball values on the most flexible data. Not required: that on the M5 data they were chosen for only one of the 11 groups. Wrong (overreach): saying common seasonal components improve accuracy in general.",
+  "answers": [
+   {
+    "answer": "WYQNY4",
+    "text": "**When they help:**\r\n- When the data-generating process truly has common seasonality (PIC(*,S,S) DGPs), the restrictive methods perform well — e.g. rMAE ≈ 0.95–0.98 vs benchmark when applied to PIC(LS,S,S) data, with gains growing as group size increases (up to ~35% lower pinball for 50 series).\r\n- Benefits are greatest with **short data histories** and **larger groups**, where pooling compensates for few observations per series.\r\n\r\n**When they harm:**\r\n- When the DGP has individual seasonal components (flexible DGPs like PIC(*,N,N)), common seasonal components perform very poorly — rMAE up to **1.7–1.9** and pinball values up to **2.0**, i.e. roughly double the error. The top-right corners of the simulation tables show the worst degradation.\r\n- The harm comes from imposing a shared seasonal pattern on series that genuinely differ, biasing all series in the group toward an \"average\" seasonality that fits none well.\r\n\r\n**Practical guidance from the paper:** apply PIC(*,S,S) only to highly homogeneous series with very similar seasonal shapes; otherwise use PIC(*,S,N) (individual seasonal components with common initials/parameters), which is nearly as good when seasonality is common and far more robust when it is not."
+   },
+   {
+    "answer": "9KVXW7",
+    "text": "**Help:** When the series truly share a seasonal pattern (data from PIC(*,S,S) variants), PIC(*,S,S) variants are the most accurate — e.g., rMAE ≈ 0.95 vs 1.0 for the correct PIC(N,N,N) on common-seasonality data.\r\n\r\n**Harm:** When series have individual seasonal components, forcing a common one is very damaging — rMAE rises to 1.55–1.88 on PIC(N,N,N) data, vs ≈1.0–1.02 for PIC(*,S,N). Hence the recommendation: use common seasonal components only for very similar seasonal patterns."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q11",
+  "text": "Does the paper show the false detection probability staying at or below the false alarm rate set for the thresholds in every simulated scenario?",
+  "reference": "No. It reports the false detection probability as low across all scenarios of the mean and trend changes, and as below 0.075 for all methods in the autoregressive parameter scenarios, a bound above the false alarm rate of 0.05.",
+  "marking": "Required: no, the authors do not show that. Also correct: the false detection probability is reported as low across the mean and trend change scenarios and as below 0.075 for all methods in the autoregressive parameter scenarios, a bound above 0.05; values read from the authors' plotted results; that it is below 0.05 for variance changes in simpler scenarios. Not required: the 0.075 bound and the variance-change result. Wrong: saying the false detection probability stayed at or below 0.05 everywhere.",
+  "answers": [
+   {
+    "answer": "JTAN9N",
+    "text": "No. In the seasonal mean/trend scenarios the FDP is only described as \"low\", and in the autoregressive scenarios it is below 0.075—both above the 0.05 nominal rate. Only in the supplementary non-seasonal variance scenarios does the FDP stay below 0.05."
+   },
+   {
+    "answer": "HQD4JX",
+    "text": "No. The paper reports FDP < 0.075 in the AR parameter change scenarios and \"low\" FDP elsewhere, but does not show it stayed at or below the nominal 0.05 in every scenario."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q17",
+  "text": "What were the mean MASE and RMSSE of CES on the 414 hourly series of the M4 competition?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "EV9XXE",
+    "text": "The paper does not report M4 results broken down by frequency, so mean MASE and RMSSE for the 414 hourly series are not given."
+   },
+   {
+    "answer": "MCVENP",
+    "text": "The paper doesn't break accuracy down by M4 frequency — [location] reports only overall means/medians across all 99,990 series. No per-frequency (hourly, daily, etc.) results are given."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1111-jtsa-12843#Q17",
+  "text": "Which forecasting model does Royal Mail use to produce the forecasts whose errors were monitored?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "FRFFJE",
+    "text": "The authors don't know. [location] states the underlying data and forecasts \"are not known to the authors\"—only the forecast errors were available, so the forecasting model is unidentified."
+   },
+   {
+    "answer": "99THTN",
+    "text": "The paper doesn't say. It states that only the forecast errors were available to the authors, not the underlying data or the forecasting model used by Royal Mail."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q8",
+  "text": "Do multi-step loss functions shrink the coefficients of a conventional linear regression?",
+  "reference": "No. A conventional regression has no dynamic elements (its persistence vector is zero), so multi-step loss functions impose no shrinkage on its coefficients; the shrinkage is a univariate, dynamic-model effect.",
+  "marking": "Required: No: a conventional regression has no dynamic elements, so there is no shrinkage of its coefficients. Also correct: adding that this need not hold for regressions with dynamic (ARMA) errors. Wrong: extending the shrinkage to regression coefficients (overreach).",
+  "answers": [
+   {
+    "answer": "XA4NF4",
+    "text": "No — not for a static linear regression. [location] states that multi-step loss functions impose **no parameter shrinkage** on static linear regression models, because the persistence vector \\(g = 0\\), which implies all multi-step coefficients \\(c_j = w'F^{j-1}g = 0\\), so there is nothing for the loss to shrink.\r\n\r\nCaveat: this zero-shrinkage result applies only to static regressions without dynamic state transitions; it does not transfer to dynamic regression models with AR or MA error structures."
+   },
+   {
+    "answer": "JKDUTY",
+    "text": "No. The paper states that regression has no dynamic elements — its persistence vector g is zero, so all c_j = 0 and the multi-step variance equals the one-step variance. Hence no shrinkage is imposed on regression coefficients; this shrinkage is a univariate time-series phenomenon."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q13",
+  "text": "Why does the paper say that the Log-Normal distribution should be used with care in ETS(M,*,*) models?",
+  "reference": "Because of the restriction μ = −σ²/2, the maximum likelihood estimate of the scale comes from an equation with two roots: the derivative of the log-likelihood has two roots, so the likelihood is not convex, which may violate the identification and compactness assumptions and make the estimates inconsistent. The closed-form estimate also exists only when the mean of log²(1 + ϵt) is at most 1; otherwise the scale must be found by numerical optimisation.",
+  "marking": "Required: the likelihood is not convex (because of the restriction μ = −σ²/2), which may make the estimates inconsistent. Also correct, as equal alternatives for the scale estimate: either that its formula has two roots and exists in closed form only when the mean of log²(1 + ϵt) is at most 1 (otherwise numerical optimisation is needed), or that the scale is given by a corrected formula rather than the quadratic root formula. Not required: the two roots, the ≤ 1 condition, the identification and compactness assumptions. Wrong: omitting the non-convex likelihood.",
+  "answers": [
+   {
+    "answer": "MFKKVY",
+    "text": "Because its scale estimate has issues: the closed-form MLE only exists if the mean squared log-error is ≤ 1, otherwise numerical optimization is needed. It also gives two roots, and the likelihood is not convex, which can make parameter estimates potentially inconsistent."
+   },
+   {
+    "answer": "NJW4VF",
+    "text": "Per [location]: under the unit-mean restriction (μ = −σ²/2), the concentrated log-likelihood is **non-convex**, creating potential local optima during numerical optimisation, and the MLE of σ² exists only in some cases — the paper references a corrected formula superseding the erroneous closed-form root printed in the 2023 article."
+   }
+  ]
+ }
+]

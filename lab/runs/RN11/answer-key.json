@@ -1,0 +1,1602 @@
+{
+ "W9A3EJ": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q18",
+  "turn": 1
+ },
+ "VEAT77": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q7",
+  "turn": 2
+ },
+ "RJUVPV": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q20",
+  "turn": 3
+ },
+ "7K33YM": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q19",
+  "turn": 4
+ },
+ "TATFRJ": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q15",
+  "turn": 5
+ },
+ "EP7M9J": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q5",
+  "turn": 6
+ },
+ "HWXWVT": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q16",
+  "turn": 7
+ },
+ "TYEPQK": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q4",
+  "turn": 8
+ },
+ "7T3KVP": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q11",
+  "turn": 9
+ },
+ "TUJEP7": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q6",
+  "turn": 10
+ },
+ "7QVVXK": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q14",
+  "turn": 11
+ },
+ "RRHTT3": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q17",
+  "turn": 12
+ },
+ "NMK3NC": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q3",
+  "turn": 13
+ },
+ "33CRFD": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q1",
+  "turn": 14
+ },
+ "CMNEAA": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q9",
+  "turn": 15
+ },
+ "D9E9XQ": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q12",
+  "turn": 16
+ },
+ "AD7KEF": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q2",
+  "turn": 17
+ },
+ "F333HA": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q10",
+  "turn": 18
+ },
+ "JKDUTY": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q8",
+  "turn": 19
+ },
+ "7JXEKT": {
+  "chat": "7A4C",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q13",
+  "turn": 20
+ },
+ "JQWHM4": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q19",
+  "turn": 1
+ },
+ "XDNK9C": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q4",
+  "turn": 2
+ },
+ "DAVXNP": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q5",
+  "turn": 3
+ },
+ "WWPYPW": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q7",
+  "turn": 4
+ },
+ "7YDXJH": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q6",
+  "turn": 5
+ },
+ "MEAJFK": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q2",
+  "turn": 6
+ },
+ "DWD74E": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q1",
+  "turn": 7
+ },
+ "PME4UM": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q17",
+  "turn": 8
+ },
+ "TF49DW": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q12",
+  "turn": 9
+ },
+ "MMP77A": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q20",
+  "turn": 10
+ },
+ "9YEUQF": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q3",
+  "turn": 11
+ },
+ "DADTJD": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q18",
+  "turn": 12
+ },
+ "UYNHPJ": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q10",
+  "turn": 13
+ },
+ "PEDKAM": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q15",
+  "turn": 14
+ },
+ "3D4QUQ": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q16",
+  "turn": 15
+ },
+ "R4X33W": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q9",
+  "turn": 16
+ },
+ "NJW4VF": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q13",
+  "turn": 17
+ },
+ "WJ3DDJ": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q11",
+  "turn": 18
+ },
+ "U9EAMW": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q8",
+  "turn": 19
+ },
+ "DYVUMK": {
+  "chat": "7D99",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q14",
+  "turn": 20
+ },
+ "JXTADV": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q12",
+  "turn": 1
+ },
+ "AM3AKR": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q5",
+  "turn": 2
+ },
+ "MRNKCQ": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q7",
+  "turn": 3
+ },
+ "P79Y3D": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q13",
+  "turn": 4
+ },
+ "JEN34A": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q15",
+  "turn": 5
+ },
+ "EPYVVD": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q4",
+  "turn": 6
+ },
+ "T4HQMJ": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q3",
+  "turn": 7
+ },
+ "VQUPCT": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q19",
+  "turn": 8
+ },
+ "T4EDP3": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q16",
+  "turn": 9
+ },
+ "AHHE9T": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q9",
+  "turn": 10
+ },
+ "XW9Y3W": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q2",
+  "turn": 11
+ },
+ "CYJEYW": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q1",
+  "turn": 12
+ },
+ "XA4NF4": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q8",
+  "turn": 13
+ },
+ "FM94VF": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q20",
+  "turn": 14
+ },
+ "P49MN3": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q6",
+  "turn": 15
+ },
+ "FVR7EV": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q11",
+  "turn": 16
+ },
+ "MFQWJU": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q14",
+  "turn": 17
+ },
+ "MHAR4E": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q17",
+  "turn": 18
+ },
+ "R4TNR4": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q18",
+  "turn": 19
+ },
+ "3CPUNA": {
+  "chat": "7R3N",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "question": "Q10",
+  "turn": 20
+ },
+ "THYHJE": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q10",
+  "turn": 1
+ },
+ "MT3MEJ": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q8",
+  "turn": 2
+ },
+ "JTAN9N": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q11",
+  "turn": 3
+ },
+ "443JPW": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q16",
+  "turn": 4
+ },
+ "PECYNV": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q19",
+  "turn": 5
+ },
+ "HEWUPM": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q20",
+  "turn": 6
+ },
+ "FRFFJE": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q17",
+  "turn": 7
+ },
+ "DX9VC3": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q14",
+  "turn": 8
+ },
+ "3DWW4N": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q3",
+  "turn": 9
+ },
+ "V4337D": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q5",
+  "turn": 10
+ },
+ "J3C9QW": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q15",
+  "turn": 11
+ },
+ "XPAY37": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q13",
+  "turn": 12
+ },
+ "UUAAX9": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q4",
+  "turn": 13
+ },
+ "PD7QDV": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q7",
+  "turn": 14
+ },
+ "RMFVD7": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q9",
+  "turn": 15
+ },
+ "3VHT79": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q2",
+  "turn": 16
+ },
+ "V4NC7K": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q1",
+  "turn": 17
+ },
+ "7EEAJ7": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q6",
+  "turn": 18
+ },
+ "CTX399": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q12",
+  "turn": 19
+ },
+ "A4AU97": {
+  "chat": "ADT3",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q18",
+  "turn": 20
+ },
+ "A7DXRR": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q20",
+  "turn": 1
+ },
+ "KU4XDN": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q10",
+  "turn": 2
+ },
+ "7PW7AV": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q4",
+  "turn": 3
+ },
+ "XVPXQC": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q18",
+  "turn": 4
+ },
+ "3Q7MD3": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q3",
+  "turn": 5
+ },
+ "KDVNWH": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q12",
+  "turn": 6
+ },
+ "DYQ3X9": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q9",
+  "turn": 7
+ },
+ "VPAADA": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q14",
+  "turn": 8
+ },
+ "FWPKQT": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q1",
+  "turn": 9
+ },
+ "4ADJR4": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q6",
+  "turn": 10
+ },
+ "AU9RTP": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q13",
+  "turn": 11
+ },
+ "WQXDJT": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q5",
+  "turn": 12
+ },
+ "WMRVHJ": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q7",
+  "turn": 13
+ },
+ "H7RAVC": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q15",
+  "turn": 14
+ },
+ "T7QNWD": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q8",
+  "turn": 15
+ },
+ "HUQHUT": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q16",
+  "turn": 16
+ },
+ "VNJFFE": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q11",
+  "turn": 17
+ },
+ "KHYXAR": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q19",
+  "turn": 18
+ },
+ "EV9XXE": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q17",
+  "turn": 19
+ },
+ "E33PWT": {
+  "chat": "DEVE",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q2",
+  "turn": 20
+ },
+ "W9KANX": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q17",
+  "turn": 1
+ },
+ "UWNRHT": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q4",
+  "turn": 2
+ },
+ "XN7VQV": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q9",
+  "turn": 3
+ },
+ "4RXD94": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q20",
+  "turn": 4
+ },
+ "9NP7WP": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q5",
+  "turn": 5
+ },
+ "77XRUN": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q1",
+  "turn": 6
+ },
+ "AXVDPN": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q3",
+  "turn": 7
+ },
+ "MFKKVY": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q13",
+  "turn": 8
+ },
+ "PMNHKH": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q18",
+  "turn": 9
+ },
+ "PW4KUY": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q10",
+  "turn": 10
+ },
+ "KF9YH7": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q14",
+  "turn": 11
+ },
+ "NNR3ME": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q19",
+  "turn": 12
+ },
+ "NERKWJ": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q12",
+  "turn": 13
+ },
+ "UCN3XN": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q8",
+  "turn": 14
+ },
+ "RJMUKF": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q7",
+  "turn": 15
+ },
+ "VKFHQ9": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q11",
+  "turn": 16
+ },
+ "7N43YR": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q15",
+  "turn": 17
+ },
+ "CHKAHK": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q6",
+  "turn": 18
+ },
+ "PE7DYU": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q2",
+  "turn": 19
+ },
+ "CY3PDN": {
+  "chat": "DWVP",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "question": "Q16",
+  "turn": 20
+ },
+ "MKDPEH": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q18",
+  "turn": 1
+ },
+ "UCKJJU": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q2",
+  "turn": 2
+ },
+ "9KVXW7": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q11",
+  "turn": 3
+ },
+ "WQHK4A": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q13",
+  "turn": 4
+ },
+ "YVN4FQ": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q7",
+  "turn": 5
+ },
+ "WTK4HF": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q10",
+  "turn": 6
+ },
+ "HW4EVP": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q1",
+  "turn": 7
+ },
+ "C34FWE": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q15",
+  "turn": 8
+ },
+ "393XNM": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q9",
+  "turn": 9
+ },
+ "CPMATR": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q3",
+  "turn": 10
+ },
+ "EXXR3V": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q12",
+  "turn": 11
+ },
+ "4FNUET": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q6",
+  "turn": 12
+ },
+ "DNHFDF": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q8",
+  "turn": 13
+ },
+ "FNJ4VV": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q19",
+  "turn": 14
+ },
+ "DNN3P3": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q16",
+  "turn": 15
+ },
+ "QRTWK7": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q17",
+  "turn": 16
+ },
+ "QU4CVT": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q5",
+  "turn": 17
+ },
+ "HPRWKR": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q20",
+  "turn": 18
+ },
+ "773JJC": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q4",
+  "turn": 19
+ },
+ "DEDWNQ": {
+  "chat": "EWFV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q14",
+  "turn": 20
+ },
+ "V9CYUR": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q5",
+  "turn": 1
+ },
+ "KYJEAN": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q7",
+  "turn": 2
+ },
+ "D9D7QM": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q3",
+  "turn": 3
+ },
+ "37JU7D": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q15",
+  "turn": 4
+ },
+ "Q3XHPP": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q8",
+  "turn": 5
+ },
+ "NHHRX4": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q17",
+  "turn": 6
+ },
+ "NJQANY": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q2",
+  "turn": 7
+ },
+ "WM4TU3": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q16",
+  "turn": 8
+ },
+ "9EAF9M": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q4",
+  "turn": 9
+ },
+ "VXYWM3": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q10",
+  "turn": 10
+ },
+ "NRFKMH": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q9",
+  "turn": 11
+ },
+ "KPHCNP": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q1",
+  "turn": 12
+ },
+ "VTCKAW": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q14",
+  "turn": 13
+ },
+ "PKCQ3H": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q6",
+  "turn": 14
+ },
+ "HRD7W7": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q18",
+  "turn": 15
+ },
+ "YHNVJ7": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q20",
+  "turn": 16
+ },
+ "WYQNY4": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q11",
+  "turn": 17
+ },
+ "34XKXU": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q12",
+  "turn": 18
+ },
+ "TTA4CC": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q13",
+  "turn": 19
+ },
+ "Q7PY3V": {
+  "chat": "Q7XX",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "question": "Q19",
+  "turn": 20
+ },
+ "HJRFC9": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q16",
+  "turn": 1
+ },
+ "FN4TRV": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q14",
+  "turn": 2
+ },
+ "XMNKWQ": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q4",
+  "turn": 3
+ },
+ "93WM7R": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q15",
+  "turn": 4
+ },
+ "NTPQXU": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q2",
+  "turn": 5
+ },
+ "E3EUNC": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q9",
+  "turn": 6
+ },
+ "WJPQKT": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q6",
+  "turn": 7
+ },
+ "MCVENP": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q17",
+  "turn": 8
+ },
+ "YDDPEC": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q12",
+  "turn": 9
+ },
+ "EJPJNQ": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q19",
+  "turn": 10
+ },
+ "QTEURC": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q8",
+  "turn": 11
+ },
+ "FFCHFD": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q13",
+  "turn": 12
+ },
+ "CYTWPF": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q1",
+  "turn": 13
+ },
+ "WFMYVK": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q20",
+  "turn": 14
+ },
+ "P9N39J": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q7",
+  "turn": 15
+ },
+ "FRAKAT": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q18",
+  "turn": 16
+ },
+ "YAKNNW": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q10",
+  "turn": 17
+ },
+ "KRM7DD": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q11",
+  "turn": 18
+ },
+ "EFJQR9": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q5",
+  "turn": 19
+ },
+ "FMDWY3": {
+  "chat": "TQEV",
+  "configuration": "kimi-fast",
+  "condition": "claimset",
+  "paper": "doi-10-1002-nav-22074",
+  "question": "Q3",
+  "turn": 20
+ },
+ "UKK7MA": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q7",
+  "turn": 1
+ },
+ "9EUVMX": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q6",
+  "turn": 2
+ },
+ "KFQRP9": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q18",
+  "turn": 3
+ },
+ "4CMCHW": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q15",
+  "turn": 4
+ },
+ "VAKFPK": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q19",
+  "turn": 5
+ },
+ "HXUXKP": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q9",
+  "turn": 6
+ },
+ "9VUF4E": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q1",
+  "turn": 7
+ },
+ "99THTN": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q17",
+  "turn": 8
+ },
+ "CRP9TD": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q20",
+  "turn": 9
+ },
+ "FQRQRM": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q10",
+  "turn": 10
+ },
+ "E3Q7MY": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q5",
+  "turn": 11
+ },
+ "AJPQPX": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q2",
+  "turn": 12
+ },
+ "3U39R4": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q8",
+  "turn": 13
+ },
+ "WVMM4M": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q12",
+  "turn": 14
+ },
+ "7EEADH": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q16",
+  "turn": 15
+ },
+ "HQD4JX": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q11",
+  "turn": 16
+ },
+ "VYJWC9": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q3",
+  "turn": 17
+ },
+ "QCEDQP": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q4",
+  "turn": 18
+ },
+ "77A4QY": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q13",
+  "turn": 19
+ },
+ "H9MTDC": {
+  "chat": "WRKH",
+  "configuration": "kimi-fast",
+  "condition": "pdf",
+  "paper": "doi-10-1111-jtsa-12843",
+  "question": "Q14",
+  "turn": 20
+ }
+}

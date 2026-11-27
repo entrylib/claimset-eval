@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1002-nav-22074#Q6",
+  "text": "What ARMA model underlies non-seasonal CES, and what are its coefficients?",
+  "reference": "ARMA(2,2), with φ1 = 2 − α0, φ2 = α0 + α1 − 2, θ1,1 = 2 − 2α0 + α1 and θ1,2 = 3α0 + α1 − 2 − α0² − α1². The AR and MA coefficients are linked through the same two parameters.",
+  "marking": "Required: ARMA(2,2), with φ1 = 2 − α0, φ2 = α0 + α1 − 2, θ1,1 = 2 − 2α0 + α1 and θ1,2 = 3α0 + α1 − 2 − α0² − α1² (under any names for the coefficients). Not required: that the AR and MA coefficients are linked through the same two parameters; the coefficients of the second (ξt) equation. Also correct: if the second equation is given, θ2,1 = −2 + α1 or θ2,1 = 2 + α1 (both accepted), and θ2,2 = α0 − α1 − 2.",
+  "answers": [
+   {
+    "answer": "WJPQKT",
+    "text": "Non-seasonal CES has an underlying **ARMA(2,2)** model:\r\n\r\n- $\\phi_1 = 2 - \\alpha_0$\r\n- $\\phi_2 = \\alpha_0 + \\alpha_1 - 2$\r\n- $\\theta_1 = 2 - 2\\alpha_0 + \\alpha_1$\r\n- $\\theta_2 = 3\\alpha_0 + \\alpha_1 - 2 - \\alpha_0^2 - \\alpha_1^2$\r\n\r\nAll four coefficients are functions of the same two parameters $\\alpha_0$ and $\\alpha_1$, so the AR and MA coefficients are tied together; $\\theta_2$ is nonlinear in them. Its parameter space differs from the general ARMA(2,2) and is not restricted to stationary models."
+   },
+   {
+    "answer": "4ADJR4",
+    "text": "Non-seasonal CES has an underlying ARMA(2,2):\r\n\r\n- AR: $\\phi_1 = 2 - \\alpha_0$, $\\phi_2 = \\alpha_0 + \\alpha_1 - 2$\r\n- MA for $y_t$: $\\theta_{1,1} = 2 - 2\\alpha_0 + \\alpha_1$, $\\theta_{1,2} = 3\\alpha_0 + \\alpha_1 - 2 - \\alpha_0^2 - \\alpha_1^2$\r\n- MA for $\\xi_t = \\varepsilon_t - c_{t-1}$: $\\theta_{2,1} = -2 + \\alpha_1$, $\\theta_{2,2} = \\alpha_0 - \\alpha_1 - 2$"
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q14",
+  "text": "Why do the authors consider the Inverse Gaussian distribution the most convenient of the positive distributions, and what supports that?",
+  "reference": "Its unit-mean restriction is simply μ = 1, its scale has a closed-form maximum likelihood estimate, and the convolution of i.i.d. Inverse Gaussian variables is well defined. The Log-Normal has a non-convex likelihood and a problematic scale estimate, and the Gamma has no closed-form maximum likelihood estimate of the scale. Folks and Chhikara (1978) found that data can be described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, so the choice can rest on convenience. The support is an argument, not an empirical result: in the simulation the models perform very similarly.",
+  "marking": "Required: at least one convenience property: its unit-mean restriction is simply μ = 1; its scale has a closed-form maximum likelihood estimate; the convolution of i.i.d. Inverse Gaussian variables is well defined; or, by contrast, the Log-Normal has a non-convex likelihood and a problematic scale estimate and the Gamma has no closed-form maximum likelihood estimate of the scale. Also correct: that Folks and Chhikara (1978) found data described equally well by the Log-Normal, Gamma and Inverse Gaussian distributions, so the choice can rest on convenience. Not required: that the support is an argument, not an empirical result.",
+  "answers": [
+   {
+    "answer": "KF9YH7",
+    "text": "They consider it most convenient because it has simple location/scale parameters tied to mean and variance, flexible positive skewness/kurtosis, a tractable closed-form MLE for scale, and a direct relation to the Normal case on high-volume data. They also cite Folks & Chhikara (1978), who found Log-Normal, Gamma and Inverse Gaussian often fit data equally well, so convenience can decide."
+   },
+   {
+    "answer": "DYVUMK",
+    "text": "**Why:**\r\n- Its unit-mean restriction is simple: just set location μ = 1.\r\n- Its scale σ² has a closed-form MLE: (1/T)Σ εₜ²/(1+εₜ).\r\n- The convolution of i.i.d. Inverse Gaussian variables is well defined.\r\n- By contrast, Log-Normal has a non-convex likelihood with a scale estimate existing only in some cases, and Gamma has no closed-form scale MLE.\r\n\r\n**Support:** The argument is explicitly one of convenience, not empirical superiority — the authors note that Folks & Chhikara (1978) found data can be described equally well by all three distributions, and their own simulations show the three perform very similarly. [location] concedes \"the argument is not tested.\""
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q13",
+  "text": "What evidence supports the claim that PIC(LS,S,N) is one of the most robust variants, and what limitations of this evidence does the paper itself state?",
+  "reference": "In the simulation the PIC(*,S,N) methods have rMAE close to that of the correct method on data from every DGP, being only slightly less accurate, and in pinball values they are robust compared with the other methods: worse than the correct method on the most flexible data, but less so than PIC(*,S,S), and better than the flexible methods on the most restrictive data. With 50 series of common seasonality, PIC(LS,S,N) has a 35% lower pinball value than PIC(N,N,N). On the M5 data it was the restriction chosen most often (6 of 11 groups), which the authors say validates the simulation finding. Limitations the authors state: the PIC(*,S,N) methods are outperformed by the flexible PIC(*,N,N) methods when the data favour those, so they suit series with similar seasonal patterns; and the simulated smoothing parameters cover a restricted range, not the whole parameter space.",
+  "marking": "Required: the simulation evidence that the PIC(*,S,N) methods have rMAE close to that of the correct method on data from every data generating process, and that on the M5 data PIC(LS,S,N) was the restriction chosen most often (6 of 11 groups). Not required: the pinball results; the 35% lower pinball value than PIC(N,N,N) with 50 series; that the authors say the M5 selection validates the simulation finding; any limitation. Wrong: saying PIC(*,S,N) has lower pinball values than every method except the correct one. Acceptable limitations: the PIC(*,S,N) methods are outperformed by the flexible PIC(*,N,N) methods when the data favour those, so they suit series with similar seasonal patterns; the simulated smoothing parameters cover a restricted range, not the whole parameter space; the simulation covers only VETS(M,N,M;LN) on quarterly data; models with a trend are not analysed; whether the restrictive variants work on histories as short as about one year is not known; groups of more than 50 series were not tested; robustness outside the simulated settings is not tested; how often a restriction is selected does not itself measure its robustness; the empirical evidence is one data set of 69 series in 11 groups, each evaluated on a single 12-month holdout; the non-seasonal groups are few and small, so no reliable conclusion can be drawn about the restrictions chosen for them. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "WQHK4A",
+    "text": "**Evidence:**\r\n- **Point accuracy:** PIC(LS,S,N) stays close to the correct variant in rMAE on data from every generating variant (1.00–1.06, vs up to 1.7 for PIC(*,S,S) and up to 1.07 for PIC(*,N,N) on mismatched data).\r\n- **Prediction intervals:** Among the lowest rPinballU values across all data-generating processes (0.89–1.26, vs up to 2.05 for PIC(*,S,S) and 1.39 for PIC(N,N,N)).\r\n- **Corroboration on real data:** The selection procedure chose PIC(LS,S,N) most often on the M5 data (6 of 11 groups).\r\n\r\n**Limitations the paper states:**\r\n- Robustness is only shown in simulation; it is **not tested outside the simulated settings**.\r\n- The simulation covers only VETS(M,N,M;LN), quarterly data, smoothing parameters from restricted ranges.\r\n- Groups of more than 50 series were not tested.\r\n- Models with a trend component are not analysed.\r\n- Whether the findings hold for histories as short as about one year is unknown.\r\n- Selection frequency on M5 does not measure robustness as such, and the M5 evidence is a single data set of 69 series with one 12-month holdout."
+   },
+   {
+    "answer": "TTA4CC",
+    "text": "**Evidence for robustness of PIC(LS,S,N):**\r\n\r\n- **Simulation, point forecasts:** It performs well across all nine DGPs — never far from the correct method's rMAE, and much better than PIC(*,S,S) when DGPs are flexible (top-right corners), while only slightly worse than flexible methods on restrictive DGPs.\r\n- **Simulation, prediction intervals:** Consistently strong rPinballU across DGPs; e.g. on flexible DGPs it achieves ~1.19–1.26 vs ~1.7–2.0 for PIC(*,S,S) methods. With 50 series its pinball is ~35% lower than the benchmark.\r\n- **Group size:** Benefits grow with group size, stabilising after ~10 series.\r\n- **Empirical validation:** Auto-selection chose PIC(LS,S,N) in 6 of 11 M5 groups — the most frequent restriction — and the paper states this \"validates our simulation findings.\"\r\n\r\n**Limitations the paper itself states:**\r\n\r\n- Simulation covers only **VETS(M,N,M;LN)** — no trend, quarterly seasonality (monthly checked separately), uncorrelated errors in the main experiment; correlated errors tested only in a small side experiment (groups of 2 and 10).\r\n- Smoothing parameter ranges were restricted (α ∈ [0,0.3], γ ∈ [0,1−α]), not the full parameter space.\r\n- Robustness holds \"as long as the time series exhibit similar seasonal patterns\"; if seasonality differs substantially, individual-component methods PIC(*,N,N) are needed instead.\r\n- The M5 evidence is aggregated monthly department-store data; higher-frequency (weekly/daily) behaviour is untested and flagged as future work."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q8",
+  "text": "Are the differences in accuracy between CES and ETS, ARIMA and the Theta method on the M1, M3 and tourism data statistically significant?",
+  "reference": "Not in all cases. In Nemenyi tests at the 5% level CES has the best mean rank of the univariate models on RMSSE and MASE, but the differences are not all statistically significant. SCUM is significantly better than all the other approaches on every measure.",
+  "marking": "Required: not in all cases: in Nemenyi tests at the 5% level CES has the best mean rank of CES, ETS, ARIMA and the Theta method on RMSSE and MASE, but the differences are not all statistically significant. Not required: that SCUM is significantly better than all the other approaches on every measure. Wrong: saying CES is significantly better than all of ETS, ARIMA and the Theta method (overreach).",
+  "answers": [
+   {
+    "answer": "T7QNWD",
+    "text": "Not always. The Nemenyi test at the 5% level shows CES ranks best among the univariate models on RMSSE and MASE, but the differences are not statistically significant in all cases. SCUM is significantly better than the others, including SCUM(noCES)."
+   },
+   {
+    "answer": "QTEURC",
+    "text": "Not all of them.\r\n\r\n- **Ranks:** CES had the best mean rank of the four methods on RMSSE and MASE.\r\n- **Significance:** In Nemenyi tests at the 5% level, **not all differences** between CES and ETS, ARIMA and the Theta method on RMSSE and MASE were statistically significant (which qualifies [location]).\r\n\r\nSo CES's advantage in average rank was not uniformly significant against each benchmark."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q9",
+  "text": "In the MCB test on rMAE that the paper reports for the M5 data (its Figure 2), are the differences between the VETS and ETS models on the same history length (long with long, short with short) statistically significant?",
+  "reference": "No. VETS F on long histories has the lowest mean rank, but it is not significantly different from VETS D, ETS LN, ETS (ADAM) and ETS on long histories or from VETS D on short ones; on short histories the ETS models do worse in mean rank, but those differences are not significant either.",
+  "marking": "Required: no; within the same history length no difference between the VETS and ETS models is statistically significant. Also correct: comparisons across history lengths (long-history VETS F against the short-history ETS models and short-history VETS F) are significant. Not required: that VETS F on long histories has the lowest mean rank; that the ETS models have worse mean ranks on short histories. Wrong (overreach): saying VETS is significantly more accurate than ETS on the same history length.",
+  "answers": [
+   {
+    "answer": "NRFKMH",
+    "text": "No. The MCB test found no statistically significant differences between VETS and ETS models on the same history length:\r\n\r\n- **Long history:** VETS F had the lowest mean rank, but was **not statistically different** from VETS D, ETS LN, ETS (ADAM), or ETS.\r\n- **Short history:** VETS D ranked best, but was **not statistically different** from ETS LN, ETS (ADAM), or ETS (VETS F on short data ranked lower and was also not significantly different from the ETS models).\r\n\r\nSo while VETS models tended to have better (lower) ranks, the differences were not statistically significant at the level used."
+   },
+   {
+    "answer": "393XNM",
+    "text": "No. [location] states that in the MCB test on rMAE, the differences between the five models on the M5 data are not shown to be statistically significant. [location] likewise notes the differences are not statistically significant."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q7",
+  "text": "Does the paper show that Akram's approach gives better quantile forecasts than the ETS models with positive distributions in the tails of the predictive distribution?",
+  "reference": "No. Akram's approach has the lowest mean scaled pinball score overall, but its advantage is in the middle quantiles (between 0.2 and 0.8); below 0.2 and above 0.8 all approaches perform very similarly. The authors conclude that Akram's approach has no obvious practical benefit over the ETS models with positive distributions, which are competitive.",
+  "marking": "Required: No; in the tails (below 0.2 and above 0.8) the approaches perform very similarly, and Akram's advantage is in the middle quantiles (0.2 to 0.8). Also correct: that Akram's approach has the lowest mean scaled pinball score overall, and that the authors see no obvious practical benefit of it, calling the ETS models with positive distributions competitive. Not required: that the tails matter more in practice; that Akram's overall advantage is probably due to estimation difficulties of the pure multiplicative models; that Akram's approach is detached from the ETS framework. Wrong (overreach): saying Akram's approach is better in the tails, or that the positive distributions forecast better than Akram's approach.",
+  "answers": [
+   {
+    "answer": "RJMUKF",
+    "text": "No. It performs similarly in the tails; its advantage is mainly in the middle quantiles, which the authors say are less practically important."
+   },
+   {
+    "answer": "WWPYPW",
+    "text": "No. The paper states Akram's log-ETS advantage comes from the central quantiles (τ ∈ [0.2, 0.8]); performance in the tails (τ < 0.2 and τ > 0.8) is similar. The quantile bias/precision table confirms comparable tail behavior, e.g. for the Log-Normal DGP: Akram precision 0.008 vs 0.004–0.009 for the positive-distribution models."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q19",
+  "text": "How did the direct multi-step estimator, with a separate model for each horizon, perform on the mean surface temperature data?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "VQUPCT",
+    "text": "The paper doesn't use a separate model per horizon. Its \"direct\" multi-step estimator, MSE_h, fits a single ARIMA(1,1,2) by minimising squared errors at one horizon — h = 60 on the Greenland temperature data.\r\n\r\nIt achieved the best accuracy (RMSE 1.128, MAE 0.784, |ME| 0.009) but at the cost of a distorted, negative AR(1) estimate (−0.786), unlike the positive estimates from GTMSE, MSCE and GPL."
+   },
+   {
+    "answer": "7K33YM",
+    "text": "The paper did not use the direct multi-step estimator (DMS) with a separate model per horizon on this data. For MSE_h, only the single model estimated for the specific horizon h = 60 was used, not 60 separate models.\r\n\r\nThat single MSE_h model performed best in accuracy (RMSE 1.128, MAE 0.784, ME 0.009), but fit the data poorly — it didn't react to local changes, as it was optimized only for the 60-step-ahead horizon. Its parameters were also heavily shrunk (AR(1) = −0.786), which climatologists would consider unrealistic."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q16",
+  "text": "At what significance level was the MCB test on the rMAE of the M5 forecasts conducted?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "DNN3P3",
+    "text": "The paper does not state the significance level of the MCB test. It only reports that the differences between the five models were not shown to be statistically significant."
+   },
+   {
+    "answer": "WM4TU3",
+    "text": "The paper does not state the significance level. It only reports that VETS F (long history) had the lowest mean rank but was **not statistically different** from VETS D, ETS LN, ETS (ADAM), ETS (long), and VETS D (short) — without specifying the alpha level used in the MCB test (Koning et al., 2005)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1093-imaman-dpad028#Q20",
+  "text": "What smoothing parameters did the model in the paper's M3 competition example estimate?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'. A nearby statement, that the difference between the point forecast and the conditional expectation grows exponentially with the horizon in that example, does not answer it.",
+  "answers": [
+   {
+    "answer": "MMP77A",
+    "text": "The paper doesn't report them. It only documents that ETS(M,M,N) was fitted to M3 series N2703 with `adam` (smooth 3.2.0), producing 1–18 step forecasts where the gap between point forecast and simulated conditional expectation grew exponentially — no parameter estimates (α, β) are given."
+   },
+   {
+    "answer": "4RXD94",
+    "text": "The paper does not report them. It only says ETS(M,M,N) was applied to series N2703 with `adam` from smooth v3.2.0; the estimated smoothing parameters are not given in the text."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q5",
+  "text": "Under what condition on the complex smoothing parameter does CES become equivalent to ETS(A,N,N), and how do its parameters then relate to the smoothing parameter of simple exponential smoothing?",
+  "reference": "When α1 = 1, CES is equivalent to ETS(A,N,N). With α1 close to 1, α0 − 1 in CES corresponds to α in SES (for example α0 = 1.24 corresponds to α = 0.24); α0 near 1 corresponds to a stationary series (SES α near 0) and α0 near 2 to a random walk.",
+  "marking": "Required: α1 = 1 (imaginary part equal to one); with α1 close to 1, α0 − 1 in CES corresponds to the smoothing parameter α of simple exponential smoothing. Not required: the example α0 = 1.24 ↔ α = 0.24; that α0 near 1 corresponds to a stationary series (α near 0) and α0 near 2 to a random walk.",
+  "answers": [
+   {
+    "answer": "EFJQR9",
+    "text": "When **α₁ = 1** (imaginary part equals one), CES is equivalent to ETS(A,N,N), the local level model.\r\n\r\nIt is then simple exponential smoothing with smoothing parameter **α₀ − 1**: the real part α₀ plays the role of the SES smoothing parameter plus one. So for a stationary series, α₀ ≈ 1 (SES parameter ≈ 0); for a random walk, α₀ ≈ 2 (SES parameter ≈ 1)."
+   },
+   {
+    "answer": "WQXDJT",
+    "text": "When $\\alpha_1 = 1$, CES reduces to ETS(A,N,N). Then the CES level update uses $(\\alpha_0 - 1)\\varepsilon_t$, so $\\alpha_0 - 1$ corresponds to the SES smoothing parameter $\\alpha$; e.g., $\\alpha_0 = 1.24$ in CES is equivalent to $\\alpha = 0.24$ in SES."
+   }
+  ]
+ }
+]

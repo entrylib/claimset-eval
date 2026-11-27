@@ -1,0 +1,162 @@
+[
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q1",
+  "text": "What data from the M5 competition were used in the empirical analysis, and how were they split for estimation and evaluation?",
+  "reference": "The M5 series were aggregated to monthly frequency and to department-store level to avoid intermittence, giving 70 series of 63 observations. They were grouped by department into seasonal and non-seasonal groups (classified by adam()); one group of a single series was removed, leaving 11 groups. Long histories: the first 51 observations for estimation and the last 12 held out. Short histories: the last 36 observations, 24 for estimation and the same last 12 held out.",
+  "marking": "Required: the M5 series were aggregated to monthly frequency and to department-store level, giving series of 63 observations; long histories use the first 51 observations for estimation and hold out the last 12; short histories use the last 36 observations, 24 for estimation and the same last 12 held out. Not required: the purpose (avoiding intermittence), the 70 series, the grouping by department into seasonal and non-seasonal groups classified by adam(), the removal of a group of one series, the 11 groups. Wrong: a different aggregation, sample length, split or holdout.",
+  "answers": [
+   {
+    "answer": "KPHCNP",
+    "text": "The authors used M5 data from Walmart, aggregated to **monthly frequency at department-store level** (70 products, 63 observations each), avoiding the intermittence of the original daily data.\r\n\r\nSplit into two experiments:\r\n- **Long (\"full\"):** 51 observations for estimation, last 12 withheld for accuracy measurement.\r\n- **Short:** last 36 observations only — 24 for fitting, next 12 for evaluation.\r\n\r\nThe same 12-month holdout was used in both cases, keeping results comparable. Series were grouped by department-store (11 seasonal/non-seasonal groups after removing a singleton group), and models were selected per group via `auto.vets`."
+   },
+   {
+    "answer": "HW4EVP",
+    "text": "**Data:** M5 competition series (Walmart sales) aggregated to monthly frequency and department-store level: 70 series of 63 observations, of which 69 were used — 7 seasonal groups (57 series) and 4 non-seasonal groups (12 series) of the same department, classified by `adam` from the smooth package; one single-series group removed; trended models excluded.\r\n\r\n**Split:**\r\n- **Long histories:** first 51 observations for estimation, last 12 held out.\r\n- **Short histories:** last 36 observations used — 24 for estimation, same 12-month holdout."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q4",
+  "text": "How is the Geometric Trace Mean Squared Error (GTMSE) defined, and how is it derived?",
+  "reference": "GTMSE is the sum over horizons j = 1, …, h of the logarithms of the in-sample mean squared j-step-ahead errors. It is derived from the Generalised Variance of the General Predictive Likelihood by setting the off-diagonal elements of the covariance matrix of the 1- to h-step errors to zero, so that the determinant is the product of the variances.",
+  "marking": "Required: the definition (the sum over horizons 1 to h of the logarithms of the in-sample mean squared j-step-ahead errors) and the derivation (from the Generalised Variance of the General Predictive Likelihood, by setting the off-diagonal covariances of the 1- to h-step errors to zero, so that the determinant is the product of the variances).",
+  "answers": [
+   {
+    "answer": "TYEPQK",
+    "text": "**Definition** ([location] in the paper):\r\n\r\n$$\\mathrm{GTMSE} = \\sum_{j=1}^{h} \\log\\left(\\frac{1}{T-h}\\sum_{t=1}^{T-h} e_{t+j|t}^2\\right)$$\r\n\r\n**Derivation:** It comes from the General Predictive Likelihood (GPL). GPL maximization is equivalent to minimizing the determinant of the h×h covariance matrix of 1- to h-step-ahead forecast errors (the \"Generalised Variance\"). If all off-diagonal covariances in that matrix are set to zero (an artificial restriction, since they are nonzero in reality), the determinant becomes the product of the diagonal variances. Taking logs converts the product into a sum, giving GTMSE — i.e., the sum of log variances of each horizon's errors.\r\n\r\nBecause of the log transformation, the one-step-ahead variance is balanced against the $\\hat{c}_j^2$ terms, so GTMSE retains shrinkage but much milder than MSE_h, TMSE, or MSCE."
+   },
+   {
+    "answer": "EPYVVD",
+    "text": "**Definition:**\r\n$$GTMSE = \\sum_{j=1}^{h} \\log \\left( \\frac{1}{T-h} \\sum_{t=1}^{T-h} e_{t+j|t}^2 \\right)$$\r\n— the sum of the logarithms of the mean squared errors across horizons 1 to \\(h\\).\r\n\r\n**Derivation:** Start from the General Predictive Likelihood, whose concentrated log-likelihood is\r\n$$l_{GPL_h} = -\\frac{T-h}{2}\\left( h \\log(2\\pi e) + \\log|\\hat{\\Sigma}| \\right).$$\r\nGTMSE is obtained by imposing a **diagonal restriction** on the multi-step error covariance matrix \\(\\hat{\\Sigma}\\) — setting all covariances between errors of different horizons to zero — and applying logarithmic scaling. This gives:\r\n$$GTMSE \\propto \\sum_{j=1}^{h} \\log(s_j^2) = h \\log(s_1^2) + \\sum_{j=2}^{h} \\log\\left(1 + \\sum_{i=1}^{j-1} \\hat{c}_i^2\\right),$$\r\nusing \\(\\sigma_h^2 = \\sigma_1^2\\left(1 + \\sum_{j=1}^{h-1} c_j^2\\right)\\).\r\n\r\n**Purpose:** the diagonal restriction moderates the shrinkage that full multi-step losses impose on the \\(\\hat{c}_j\\), making GTMSE's shrinkage milder than MSE_h, TMSE and MSCE. Note [location]: the restriction is artificial, since off-diagonal covariances are nonzero whenever \\(c_j \\neq 0\\)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q13",
+  "text": "What supports the claim that CES can model both stationary and non-stationary series without a model selection step, and what limitations of this evidence does the paper itself state?",
+  "reference": "The eigenvalues of the CES transition matrix show that the model is stationary or not depending on α0 and α1 (non-stationary when α1 > 1), passing between the two without a switch. Two M3 series illustrate it: on a stationary series (1664) CES estimated a stationary parameter, on a trended one (2721) a non-stationary one. The authors state no limitation of this evidence.",
+  "marking": "Required: stationarity of CES depends on α0 and α1 through the eigenvalues of its transition matrix (non-stationary when α1 > 1), so the model passes between stationary and non-stationary without a switch; and the two M3 examples: on a stationary series (1664) CES estimated a stationary parameter, on a trended series (2721) a non-stationary one. Not required: the series numbers; giving limitations. Limitations the authors state: none. Limitations: correct if the answer gives limitations from this list or says the authors state none. Wrong: presenting as the authors' a limitation not in this list (also overreach).",
+  "answers": [
+   {
+    "answer": "AU9RTP",
+    "text": "Support:\r\n- Theory: the stationarity of CES depends on the complex smoothing parameter $\\alpha_0+i\\alpha_1$, with the stationarity region derived in [location], so one model covers both cases.\r\n- Demonstrations: M3 series 1664 is stationary and 2721 is trended/non-stationary, and CES fits both with appropriate parameters.\r\n- Empirics: CES performs well on competition data containing both types of series.\r\n\r\nLimitations stated by the paper:\r\n- It does not claim CES is appropriate for every forecasting scenario.\r\n- The work focuses on the additive error case; multiplicative error and sample-size effects are left to future research."
+   },
+   {
+    "answer": "FFCHFD",
+    "text": "**Support:**\r\n\r\n- **Theoretical:** CES is stationary or non-stationary depending on its complex smoothing parameter, moving continuously between the two as the parameter changes; no separate model choice is needed. At α₁ = 1 it equals ETS(A,N,N), and its five forecast trajectories cover flat, growing, declining and oscillating paths.\r\n- **Empirical:** On M3 series 1664 (stationary per ADF/KPSS), CES estimated a stationary parameter (0.99999 + 0.99884i); on trended series 2721, a non-stationary one (1.48098 + 1.00346i). On the M1/M3/tourism data, CES beat ETS, ARIMA and Theta on most measures, and on the non-seasonal subset it beat level and multiplicative-trend ETS models.\r\n\r\n**Limitations the paper states:**\r\n\r\n- Stationarity is not imposed — parameters are not restricted to the stationary region, so estimation can land anywhere.\r\n- CES is required only to be stable or forecastable; the stable region contains both stationary and non-stationary values.\r\n- The stability conditions for **seasonal** CES are not derived.\r\n- The effect of series length on accuracy is not analysed.\r\n- Robustness is claimed but not defined or tested across conditions.\r\n- CES can fail on individual series (e.g., M1 series 47)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q6",
+  "text": "What does the model name VETS(M,Md,M;LN)PIC(LTSD,LTS,S) mean?",
+  "reference": "A pure multiplicative vector ETS model with a multiplicative damped trend and multiplicative seasonality, applied to log-transformed data (LN). PIC(LTSD,LTS,S): the smoothing parameters of level, trend and seasonality and the damping parameter are common to all series (P = LTSD); the initial level, trend and seasonal indices are common (I = LTS); and only the seasonal component is common, while level and trend are individual (C = S).",
+  "marking": "Required: a correct reading of each of P, I and C: P = LTSD, the smoothing parameters of level, trend and seasonality and the damping parameter are common to all series; I = LTS, the initial level, trend and seasonal indices are common; C = S, only the seasonal component is common, while level and trend are individual. Also correct: 'damped trend' for Md, with or without 'multiplicative'. If the answer gives block matrices, both forms are correct: for an individual seasonal component W_3 = Φ or W_3 = I_n; for common smoothing parameters A = α1'_n or A = αI_n, B = β1'_n or B = βI_n, Γ = γ1'_n or Γ = γI_n. Not required: that the model is pure multiplicative on log-transformed data. Wrong: misreading any of P, I or C.",
+  "answers": [
+   {
+    "answer": "PKCQ3H",
+    "text": "**VETS(M,Md,M;LN)** — the base model:\r\n- **M** (first): multiplicative error\r\n- **Md**: damped multiplicative trend\r\n- **M** (third): multiplicative seasonality\r\n- **;LN**: estimated on log-transformed data (pure multiplicative, log-normal errors, geometric-mean forecasts)\r\n\r\n**PIC(LTSD,LTS,S)** — the commonality restrictions across the n series:\r\n- **P = LTSD**: common smoothing parameters for Level, Trend, Seasonality, and Damping (one shared α, β, γ, φ)\r\n- **I = LTS**: common Initial values for level, trend, and seasonal indices\r\n- **C = S**: common seasonal Component (a single shared seasonal index $s_t$ across all series); levels and trends remain individual\r\n\r\nSo all series share one seasonal pattern, one set of smoothing/damping parameters, and common starting values — while each keeps its own level and trend trajectory. This is the example worked through in [location] (with n=2)."
+   },
+   {
+    "answer": "4FNUET",
+    "text": "Breaking it down:\r\n\r\n**VETS(M,Md,M;LN)** — the base model:\r\n- **M** (first): multiplicative error\r\n- **Md**: multiplicative trend, **damped**\r\n- **M** (third): multiplicative seasonality\r\n- **;LN**: the equations hold for the logarithms of the data, states and errors (log-normal errors)\r\n\r\n**PIC(LTSD,LTS,S)** — the sharing restrictions:\r\n- **P = LTSD**: common smoothing parameters for **L**evel, **T**rend, **S**easonal component, and the **D**amping parameter\r\n- **I = LTS**: common **i**nitial values for level, trend and seasonal component\r\n- **C = S**: common **c**omponent (one state shared by all series) for the seasonal component only; level and trend remain individual to each series"
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q4",
+  "text": "Which single series does the paper discuss as a failure of CES in the M1, M3 and tourism experiment, and how did CES and ETS score on it?",
+  "reference": "One M1 series (number 47) on which CES failed to identify the trend: its MSIS was 523.034 against 25.590 for ETS. It is the main reason why the mean MSIS of CES is much higher than its median. All models underforecast an unpredictable increase in the holdout, but ETS selected ETS(M,N,N) with a high smoothing parameter (0.881), whose prediction interval exploded and happened to cover it better than the more conservative CES interval.",
+  "marking": "Required: one M1 series on which CES failed to identify the trend; MSIS 523.034 for CES against 25.590 for ETS. Not required: the series number (47); that this series is the main reason why the mean MSIS of CES is much higher than its median; why ETS did better (all models underforecast an unpredictable increase in the holdout; ETS selected ETS(M,N,N) with smoothing parameter 0.881, whose prediction interval exploded and happened to cover it).",
+  "answers": [
+   {
+    "answer": "XMNKWQ",
+    "text": "M1 series 47.\r\n\r\n- **CES:** MSIS = 523.034 — it failed to identify the trend.\r\n- **ETS:** selected ETS(M,N,N), MSIS = 25.590.\r\n\r\nThis single failure inflated CES's mean MSIS on the M1/M3/tourism data."
+   },
+   {
+    "answer": "7PW7AV",
+    "text": "Series 47 from the M1 dataset. CES missed the unpredictable holdout surge and had MSIS 523.034, while ETS(M,N,N) scored 25.590."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1002-nav-22074#Q3",
+  "text": "What complex smoothing parameter did CES estimate on M3 series 1664, and what did the authors conclude from it?",
+  "reference": "α0 + iα1 = 0.99999 + 0.99884i. It satisfies the stationarity condition, so the model produces a stationary trajectory: CES identified the series as stationary, in agreement with graphical analysis and the ADF and KPSS tests. The implied ARMA is stationary with long memory, and all holdout observations lay inside the 95% prediction interval.",
+  "marking": "Required: α0 + iα1 = 0.99999 + 0.99884i, and that it indicates a stationary model (CES identified the series as stationary). Not required: the stationarity condition it satisfies; the implied ARMA parameters (stationary, with long memory); the agreement with graphical analysis and the ADF and KPSS tests; that all holdout observations lay inside the 95% prediction interval.",
+  "answers": [
+   {
+    "answer": "3Q7MD3",
+    "text": "For M3 series 1664, CES estimated $\\alpha_0+i\\alpha_1=0.99999+0.99884i$. The authors concluded that CES identified the series as stationary and produced a stationary trajectory."
+   },
+   {
+    "answer": "FMDWY3",
+    "text": "On M3 series 1664, CES estimated **α₀ + iα₁ = 0.99999 + 0.99884i**.\r\n\r\nSince graphical analysis and the ADF and KPSS tests indicate the series is stationary, the authors concluded that CES estimated a parameter in its **stationary region** — with α₁ ≈ 1, close to the ETS(A,N,N)/simple exponential smoothing case."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q20",
+  "text": "What WRMSSE, the error measure of the M5 competition, did VETS D and VETS F achieve on the M5 data?",
+  "reference": null,
+  "marking": "Required: says the authors do not report this (any wording). Wrong: giving an answer as the authors'.",
+  "answers": [
+   {
+    "answer": "HPRWKR",
+    "text": "The paper does not report WRMSSE. The M5 evaluation uses rMAE, rRMSE, GMRAE, rPinballU/L and coverage — not the M5 competition's WRMSSE — so those values are not available from this document."
+   },
+   {
+    "answer": "YHNVJ7",
+    "text": "The paper does not report WRMSSE. It uses rMAE, rRMSE, GMRAE, coverage and pinball values with Naïve forecasts as the benchmark — not the M5 competition's WRMSSE measure."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q2",
+  "text": "Which PIC restrictions did the automatic selection choose for the 11 VETS D models on the M5 data, and how often was each chosen?",
+  "reference": "PIC(LS,S,N) in 6 groups, PIC(L,L,N) in 2, and PIC(N,N,N), PIC(L,N,N) and PIC(LS,S,S) in 1 each. Only one (seasonal) group had common seasonal components.",
+  "marking": "Required: PIC(LS,S,N) is the most frequent, chosen in 6 of the 11 groups. Not required: the other restrictions and counts (PIC(L,L,N) in 2; PIC(N,N,N), PIC(L,N,N) and PIC(LS,S,S) in 1 each), or that only one group had common seasonal components. Wrong: another restriction as the most frequent, or another count for PIC(LS,S,N).",
+  "answers": [
+   {
+    "answer": "NJQANY",
+    "text": "The auto.vets selection chose these PIC restrictions for the 11 VETS D models:\r\n\r\n| PIC restriction | Frequency |\r\n|---|---|\r\n| N,N,N | 1 |\r\n| L,N,N | 1 |\r\n| L,L,N | 2 |\r\n| LS,S,N | 6 |\r\n| LS,S,S | 1 |\r\n\r\nThe most frequently selected was **PIC(LS,S,N)** — common smoothing parameters for level and seasonality plus common initial seasonal indices (chosen 6 times). One seasonal group got the stricter PIC(LS,S,S) with common seasonal components."
+   },
+   {
+    "answer": "UCKJJU",
+    "text": "From [location], for the 11 VETS D groups:\r\n\r\n- PIC(LS,S,N): 6 groups (most often)\r\n- PIC(L,L,N): 2 groups\r\n- PIC(N,N,N): 1 group\r\n- PIC(L,N,N): 1 group\r\n- PIC(LS,S,S): 1 group (the only group needing a common seasonal component)"
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1016-j-ejor-2022-04-040#Q7",
+  "text": "In the space-planning evaluation on the M5 data (forecasts 3, 6 and 12 months ahead), at which of these horizons does either VETS model have the lowest GMRAE of the five models, with long and with short histories?",
+  "reference": "Long histories: at none; a univariate ETS model is lowest at every horizon (ETS (ADAM) 0.716 at 3 months, ETS 0.827 at 6 and 0.939 at 12). Short histories: at 3 months (VETS D 1.037) and 12 months (VETS F 0.872), but not at 6 months, where ETS (0.946) is lower than both VETS models. The authors say the VETS models do much better on short histories.",
+  "marking": "Required: long histories: at no horizon, a univariate ETS model is lowest at each of 3, 6 and 12 months; short histories: a VETS model is lowest at 3 months (VETS D) and 12 months (VETS F) but not at 6 months, where ETS is lowest. Not required: the values; that the authors say the VETS models do much better on short histories. Wrong (overreach): a VETS model lowest at every horizon on short histories, or at any horizon on long histories.",
+  "answers": [
+   {
+    "answer": "KYJEAN",
+    "text": "**Long history:** VETS D has the lowest GMRAE at **h3** (0.888, vs ETS LN 0.962, ETS (ADAM) 0.939, ETS 0.923, VETS F 0.897). At h6 and h12, VETS models do not lead.\r\n\r\n**Short history:** VETS D has the lowest GMRAE at **h3** (0.946, vs ETS LN 1.167, ETS (ADAM) 1.198, ETS 1.170, VETS F 1.065). At h6 and h12, VETS models do not lead (ETS LN is best at h6; ETS (ADAM) at h12).\r\n\r\nSo in both cases, the only horizon where a VETS model wins is **3 months ahead**, with **VETS D** being the best model."
+   },
+   {
+    "answer": "YVN4FQ",
+    "text": "From [location]:\r\n\r\n**Long histories (51 obs. estimation):** Neither VETS model has the lowest GMRAE at any horizon — ETS (ADAM) is lowest at 3 and 12 months (0.716, 0.988), ETS at 6 months (0.827).\r\n\r\n**Short histories (24 obs. estimation):** VETS D is lowest at 3 months (1.037) and 12 months (0.938); at 6 months ETS is lowest (0.946)."
+   }
+  ]
+ },
+ {
+  "question": "doi-10-1007-s00180-023-01377-x#Q7",
+  "text": "On the mean surface temperature data, did TMSE, GTMSE and MSCE give more accurate forecasts than MSE_h?",
+  "reference": "No. On that series MSE_h (h = 60) was the most accurate in RMSE (1.128) and MAE (0.784) and the least biased in ME (0.009); TMSE, GTMSE and MSCE (RMSE 1.198, 1.190, 1.185) were more accurate than the conventional MSE and GPL, but not than MSE_h. They did beat MSE_h on the Air Passengers data.",
+  "marking": "Required: No: on that series MSE_h was the most accurate. Also correct: giving this and adding that the authors' general concluding statement says TMSE, GTMSE and MSCE are more accurate than both MSE_1 and MSE_h. Not required: the comparison with the conventional MSE and GPL; the Air Passengers comparison. Wrong: saying they beat MSE_h on the temperature data on the strength of that general statement alone (overreach).",
+  "answers": [
+   {
+    "answer": "MRNKCQ",
+    "text": "No. On the HadCRUT4 Greenland temperature series, MSE_h (h=60) had the lowest RMSE (1.128), MAE (0.784) and |ME| (0.009) — better than TMSE (1.198/0.827/0.402), GTMSE (1.190/0.819/0.366) and MSCE (1.185/0.817/0.343).\r\n\r\nBut the paper notes: MSE_h achieved this by over-shrinking — its AR(1) estimate was −0.786, an unrealistic negative value, whereas GTMSE/MSCE/GPL gave positive estimates consistent with the climate literature."
+   },
+   {
+    "answer": "VEAT77",
+    "text": "No. On the mean surface temperature data, MSE_h was the most accurate: RMSE 1.128, MAE 0.784, ME 0.009 — all better than TMSE (1.198, 0.827, −0.402), GTMSE (1.190, 0.819, −0.366), and MSCE (1.185, 0.817, −0.343)."
+   }
+  ]
+ }
+]
