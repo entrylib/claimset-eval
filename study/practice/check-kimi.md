@@ -1,11 +1,11 @@
 # Check before collection: Kimi
 
-Three short chats in Kimi's fast configuration (the most capable model, thinking OFF), typed by an agent (Claude chat with access to the browser). Not data. They check what the practice chats could not: that Kimi reads the study's longest files to the end (R1: the 37-page VES PDF; R2: the 20,000-token VES claimset), that it takes five files at once (X1), and that the transcript request leaves the attached files out (DeepSeek and Qwen copied them in; lab decision DC12). Files: R1 and R2 from `study/attachments/`, X1 from `study/practice/`. Save each page as `kimi-R1.mhtml`, `kimi-R2.mhtml`, `kimi-X1.mhtml`, and send them with the agent's log.
+Three short chats in Kimi's fast configuration (Instant, Thinking effort at its lowest if it applies), typed by an agent (Claude chat with access to the browser). Not data. They check what the practice chats could not: that Kimi reads the study's longest files to the end (R1: the 37-page VES PDF; R2: the 20,000-token VES claimset), that it takes five files at once (X1), and that the transcript request leaves the attached files out (DeepSeek and Qwen copied them in; lab decision DC12). Files: R1 and R2 from `study/attachments/`, X1 from `study/practice/`. Save each page as `kimi-R1.mhtml`, `kimi-R2.mhtml`, `kimi-X1.mhtml`, and send them with the agent's log.
 
 Expected answers, for checking only: R1, Withycombe (1989), "Forecasting with combined seasonal indices", International Journal of Forecasting 5, 547–552; R2, B23, the DOI 10.32614/CRAN.package.forecast (the R `forecast` package).
 
 ````text
-You will type messages into Kimi (kimi.com) in my browser, for a short check of a reading study: three chats. It is not data, but follow the procedure exactly.
+You will type messages into Kimi (kimi.ai) in my browser, for a short check of a reading study: three chats. It is not data, but follow the procedure exactly.
 
 RULES
 - Type each message exactly as written below, on one line, and send it. Never type anything else into Kimi.
@@ -14,7 +14,7 @@ RULES
 - Never regenerate, edit or rate a reply, or click suggestions, sources or chips. Do not change settings, attach files or open chats yourself: ask me and wait for "ready".
 - Before each chat's first message, check that web search is off; if it is on, tell me and wait.
 
-For each chat: tell me what to set up (a new normal chat, never a temporary one; the most capable model, thinking OFF; the file(s) to attach) and wait for "ready". Check that the file(s) are attached in the tab you are driving, then send the messages. When the reply to T has finished, tell me: "Chat <id> is done. Save the page as kimi-<id>.mhtml", and wait for "next".
+For each chat: tell me what to set up (a new normal chat, never a temporary one; Instant, Thinking effort at its lowest if it applies; the file(s) to attach) and wait for "ready". Check that the file(s) are attached in the tab you are driving, then send the messages. When the reply to T has finished, tell me: "Chat <id> is done. Save the page as kimi-<id>.mhtml", and wait for "next".
 
 CHAT R1: attach vector-exponential-smoothing.pdf.
 1: I'm reading this paper. Please keep your answers short and to the point. What is the last entry in its reference list?

@@ -5,7 +5,7 @@ A prompt for Claude chat on the web (claude.ai) with access to the supervisor's 
 The prompt holds every message, so it needs no files of its own. The supervisor needs the practice files on the computer to attach them (the practice zip, or `study/practice/`): `harbour-weighted-smoothing.pdf`, `harbour-weighted-smoothing.claimset.txt`, the four notes' `.pdf` and `.txt` files; and, for the file-reading check, `vector-exponential-smoothing.pdf` and `vector-exponential-smoothing.claimset.txt` from `study/attachments/`. Do the settings of `kimi.md` §2 first. The prompt starts with the file-reading check (`file-reading-check.md`; R1, R2) and then the five practice chats. Use normal chats, never temporary ones, which disappear when the page is left (lab note NT2). Every chat ends with a transcript request (T), and the supervisor saves the page, as `kimi.md` §4 says; nobody copies replies by hand.
 
 ````text
-You will type messages into Kimi (kimi.com) in my browser, for a practice run of a reading study. It is not data, but follow the procedure exactly, because this run tests it.
+You will type messages into Kimi (kimi.ai) in my browser, for a practice run of a reading study. It is not data, but follow the procedure exactly, because this run tests it.
 
 RULES
 - Type each message exactly as written below, on one line, and send it. Never add, shorten or correct a word, and never type anything else into Kimi.
