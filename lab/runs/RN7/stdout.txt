@@ -1,0 +1,30 @@
+  0.0190  rejection rate under no effect, one-sided | flag | 25 | 10 | 0 | 1000 | Wald z | 0.0167
+  0.0130  rejection rate under no effect, one-sided | flag | 25 | 10 | 0 | 1000 | t | 0.0167
+ -0.0098  mean raw difference, claimset minus PDF | flag | 25 | 10 | 0 | 1000
+  0.0060  share of singular fits | flag | 25 | 10 | 0 | 1000
+  0.0000  share of failed fits | flag | 25 | 10 | 0 | 1000
+  0.4100  power, one-sided | flag | 25 | 10 | -0.5 | 300 | Wald z | 0.0167
+  0.3533  power, one-sided | flag | 25 | 10 | -0.5 | 300 | t | 0.0167
+ -0.0958  mean raw difference, claimset minus PDF | flag | 25 | 10 | -0.5 | 300
+  0.0000  share of singular fits | flag | 25 | 10 | -0.5 | 300
+  0.0000  share of failed fits | flag | 25 | 10 | -0.5 | 300
+  0.9467  power, one-sided | flag | 25 | 10 | -1 | 300 | Wald z | 0.0167
+  0.9400  power, one-sided | flag | 25 | 10 | -1 | 300 | t | 0.0167
+ -0.1828  mean raw difference, claimset minus PDF | flag | 25 | 10 | -1 | 300
+  0.0067  share of singular fits | flag | 25 | 10 | -1 | 300
+  0.0000  share of failed fits | flag | 25 | 10 | -1 | 300
+  0.0270  rejection rate under no effect, one-sided | score | 75 | 10 | 0 | 1000 | Wald z | 0.0167
+  0.0230  rejection rate under no effect, one-sided | score | 75 | 10 | 0 | 1000 | t | 0.0167
+ -0.0099  mean raw difference, claimset minus PDF | score | 75 | 10 | 0 | 1000
+  0.0000  share of singular fits | score | 75 | 10 | 0 | 1000
+  0.0000  share of failed fits | score | 75 | 10 | 0 | 1000
+  0.5900  power, one-sided | score | 75 | 10 | 0.3 | 300 | Wald z | 0.0167
+  0.5800  power, one-sided | score | 75 | 10 | 0.3 | 300 | t | 0.0167
+  0.0380  mean raw difference, claimset minus PDF | score | 75 | 10 | 0.3 | 300
+  0.0000  share of singular fits | score | 75 | 10 | 0.3 | 300
+  0.0000  share of failed fits | score | 75 | 10 | 0.3 | 300
+  0.9567  power, one-sided | score | 75 | 10 | 0.5 | 300 | Wald z | 0.0167
+  0.9567  power, one-sided | score | 75 | 10 | 0.5 | 300 | t | 0.0167
+  0.0679  mean raw difference, claimset minus PDF | score | 75 | 10 | 0.5 | 300
+  0.0000  share of singular fits | score | 75 | 10 | 0.5 | 300
+  0.0000  share of failed fits | score | 75 | 10 | 0.5 | 300
