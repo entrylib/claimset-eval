@@ -56,6 +56,12 @@ class RandomiseTest(unittest.TestCase):
         self.assertNotEqual(rz.draw(1)[0], self.key)
         self.assertTrue(all(set(c) <= set(rz.CODE_LETTERS) and len(c) == 4 for c in self.key))
 
+    def test_codes_avoid_earlier_draws_and_orders_follow_the_seed(self):
+        used = set(list(self.key)[:30])
+        key, packs = rz.draw(used=used)
+        self.assertFalse(used & set(key))
+        self.assertEqual([p["messages"] for p in packs], [p["messages"] for p in self.packs])
+
     def test_kimi_fast_is_collected_first_and_deepseek_is_gone(self):
         self.assertEqual([c["name"] for c in rz.CONFIGS[:5]],
                          ["kimi-fast", "grok-fast", "chatgpt-fast", "gemini-fast", "qwen-fast"])

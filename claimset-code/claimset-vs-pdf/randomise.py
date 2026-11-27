@@ -100,8 +100,11 @@ def messages(questions, cross):
     return out
 
 
-def draw(seed=SEED):
+def draw(seed=SEED, used=()):
     rng = random.Random(seed)
+    # Codes from a generator of their own, so that they do not follow the orders: RN8 drew them from the orders'
+    # generator and repeated the codes RN5 had given DeepSeek's chats; codes used before (used) are never drawn.
+    code_rng = random.Random(f"{seed}:codes")
     questions = load_questions()
     codes, key, packs = set(), {}, []
     for ci, config in enumerate(CONFIGS, 1):
@@ -114,8 +117,8 @@ def draw(seed=SEED):
                 qs = list(questions[paper])
                 rng.shuffle(qs)
                 code = None
-                while code is None or code in codes:
-                    code = "".join(rng.choice(CODE_LETTERS) for _ in range(4))
+                while code is None or code in codes or code in used:
+                    code = "".join(code_rng.choice(CODE_LETTERS) for _ in range(4))
                 codes.add(code)
                 pack = {"code": code, "configuration": config["name"], "app": config["app"], "url": config["url"],
                         "setup": config["setup"], "config_order": ci, "pair": pi, "position": position,
@@ -192,10 +195,15 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--seed", type=int, default=SEED)
     p.add_argument("--out", default=os.environ.get("CLAIMSET_RUN_DIR"))
+    p.add_argument("--used", action="append", default=[], help="key.json of an earlier draw whose codes are not reused")
     args = p.parse_args(argv)
     if not args.out:
         raise SystemExit("give --out, or run under `claimset lab run` (CLAIMSET_RUN_DIR)")
-    key, packs = draw(args.seed)
+    used = set()
+    for path in args.used:
+        with open(path, encoding="utf-8") as f:
+            used |= set(json.load(f))
+    key, packs = draw(args.seed, used)
     write(args.out, key, packs)
     print(f"{len(packs)} chats, {sum(len(x['messages']) + 1 for x in packs)} messages, seed {args.seed}")
     return 0
