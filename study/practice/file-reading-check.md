@@ -24,7 +24,7 @@ For each chat: tell me what to set up (a new normal chat, the FAST configuration
 
 CHAT R1: new normal chat, FAST configuration; attach vector-exponential-smoothing.pdf.
 1: I'm reading this paper. Please keep your answers short and to the point. What is the last entry in its reference list?
-T: Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write a reference to an attached file as `[file: name]`. Write nothing outside the code block.
+T: Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### User N` and each of your replies under `### Assistant N`, numbered from 1. Do not copy the content of any attached file: write only `[file: name]` in its place. Copy each reply word for word, with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Write nothing outside the code block.
 
 CHAT R2: new normal chat, FAST configuration; attach vector-exponential-smoothing.claimset.txt. The same two messages (1, then T).
 

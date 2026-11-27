@@ -16,3 +16,4 @@ The files have plain names, as the study's attachments will: in the first Gemini
 - `file-reading-check.md`: whether an app reads the study's longest files to the end.
 
 Everything here is invented: the operator, routes, data, results and authors. Only the cited textbooks and articles are real.
+- `check-<app>.md` (grok, chatgpt, gemini, qwen, kimi): the short check before each app's collection, three chats: the longest files read to the end, five files at once, and the transcript leaving attached files out.
