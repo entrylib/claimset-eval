@@ -110,6 +110,34 @@ class GradingTest(unittest.TestCase):
         del moderation[m]
         self.assertTrue(grading.interim(grades, moderation, mkey)[1])
 
+    def test_judge_is_asked_with_no_tools_and_again_when_its_output_is_not_json(self):
+        calls = []
+
+        class Done:
+            def __init__(self, out):
+                self.returncode, self.stdout = 0, json.dumps({"result": out, "modelUsage": {"claude-fable-5-2": {}}})
+
+        replies = iter(["Here are the grades.", '{"grades": []}'])
+
+        def fake(cmd, **kw):
+            calls.append((cmd, kw["input"], kw["cwd"]))
+            return Done(next(replies))
+
+        real = grading.subprocess.run
+        grading.subprocess.run = fake
+        try:
+            out, meta = grading.ask_claude("PROMPT", "fable")
+        finally:
+            grading.subprocess.run = real
+        self.assertEqual(out, '{"grades": []}')
+        self.assertEqual(len(meta["attempts"]), 2)
+        self.assertEqual(meta["attempts"][-1]["models"], ["claude-fable-5-2"])
+        cmd, text, cwd = calls[0]
+        self.assertEqual(cmd[cmd.index("--tools") + 1], "")
+        self.assertIn("--strict-mcp-config", cmd)
+        self.assertEqual(text, "PROMPT")
+        self.assertNotEqual(os.path.abspath(cwd), os.path.abspath(ROOT))
+
 
 if __name__ == "__main__":
     unittest.main()

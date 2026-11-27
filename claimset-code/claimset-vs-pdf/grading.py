@@ -16,6 +16,11 @@ look (plan §3.3 and §9).
         Reads each batch's judge output (OUTPUTS/NN.txt, a JSON object as the instructions ask) and checks it: one
         grade for every answer, score 0, 0.5 or 1, flags 0 or 1, a reason. Writes grades-JUDGE.json, and the
         outputs as given to outputs-JUDGE/.
+    python3 grading.py judge --batches DIR --instructions FILE --judge NAME --model MODEL [--workers 5] [--out DIR]
+        Claude as the judge: each batch's prompt is given to the claude command line (claude -p) in a new session
+        with no tools, no MCP servers and no settings, run from an empty directory, so the prompt is its only input.
+        Writes outputs-JUDGE/NN.txt (the output as given), NN.json (the model that served it, the time, attempts:
+        a batch whose output is not a JSON object is asked again, at most twice), then checks them as `grades`.
     python3 grading.py sheet --batches DIR --grades FILE --seed SEED [--out DIR]
         The moderator's sheet: every answer under a fresh moderation code (not the answer code), question by
         question in a new random order, with the judge's grade and reason. Writes moderation.html (opened in a
@@ -32,13 +37,17 @@ look (plan §3.3 and §9).
 """
 
 import argparse
+import concurrent.futures
 import glob
 import html
 import json
 import os
 import random
 import re
+import subprocess
 import sys
+import tempfile
+import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import mask  # noqa: E402
@@ -162,6 +171,61 @@ def check_grades(batch, output):
         got[code] = {k: g.get(k) for k in ("question", "score", "invented", "overreach", "reason")}
     problems += [f"no grade for {c}" for c in want if c not in got]
     return got, problems
+
+
+CLAUDE = ["claude", "-p", "--tools", "", "--strict-mcp-config", "--no-session-persistence", "--setting-sources", "",
+          "--output-format", "json"]
+
+
+def ask_claude(text, model, attempts=3):
+    """(output, meta) from a new claude -p session with no tools, run from an empty directory; asked again, at most
+    twice, if the output is not a JSON object."""
+    meta, out = {"attempts": []}, ""
+    for _ in range(attempts):
+        start = time.time()
+        note = {}
+        try:
+            with tempfile.TemporaryDirectory() as empty:
+                r = subprocess.run(CLAUDE + ["--model", model], input=text, capture_output=True, text=True,
+                                   cwd=empty, timeout=3600)
+            note["exit"] = r.returncode
+            d = json.loads(r.stdout)
+            out, note["models"], note["error"] = d.get("result") or "", sorted(d.get("modelUsage", {})), bool(d.get("is_error"))
+            parse_output(out)
+            note["seconds"] = round(time.time() - start, 1)
+            meta["attempts"].append(note)
+            return out, meta
+        except (ValueError, subprocess.TimeoutExpired) as e:
+            note["seconds"] = round(time.time() - start, 1)
+            note["problem"] = str(e)[:200]
+            meta["attempts"].append(note)
+    return out, meta
+
+
+def collect(batches_dir, outputs, out, judge):
+    """Check the judge's outputs for every batch, keep them with the run, write grades-JUDGE.json."""
+    grades, problems = {}, []
+    kept = os.path.join(out, f"outputs-{judge}")
+    os.makedirs(kept, exist_ok=True)
+    for path in sorted(glob.glob(os.path.join(batches_dir, "*.json"))):
+        name = os.path.basename(path)[:-5]
+        try:
+            raw = open(os.path.join(outputs, name + ".txt"), encoding="utf-8").read()
+            if os.path.abspath(outputs) != os.path.abspath(kept):
+                with open(os.path.join(kept, name + ".txt"), "w", encoding="utf-8") as f:
+                    f.write(raw)  # the judge's output as given, kept with the run
+            output = parse_output(raw)
+        except (OSError, ValueError) as e:
+            problems.append(f"batch {name}: {e}")
+            continue
+        got, bad = check_grades(load(path), output)
+        grades.update(got)
+        problems += [f"batch {name}: {x}" for x in bad]
+    dump(os.path.join(out, f"grades-{judge}.json"), grades)
+    print(f"{len(grades)} grades; " + ("no problems" if not problems else f"{len(problems)} problem(s)"))
+    for x in problems:
+        print("  " + x)
+    return 1 if problems else 0
 
 
 SHEET = """<!doctype html>
@@ -319,6 +383,13 @@ def main(argv=None):
     g.add_argument("--outputs", required=True)
     g.add_argument("--judge", required=True)
     g.add_argument("--out")
+    j = sub.add_parser("judge")
+    j.add_argument("--batches", required=True)
+    j.add_argument("--instructions", required=True)
+    j.add_argument("--judge", required=True)
+    j.add_argument("--model", required=True)
+    j.add_argument("--workers", type=int, default=5)
+    j.add_argument("--out")
     s = sub.add_parser("sheet")
     s.add_argument("--batches", required=True)
     s.add_argument("--grades", required=True)
@@ -345,27 +416,26 @@ def main(argv=None):
         print(f"{len(answers)} answers to {sum(len(b) for b in batches)} questions in {len(batches)} batches")
         return 0
     if args.command == "grades":
-        grades, problems = {}, []
+        return collect(args.batches, args.outputs, out, args.judge)
+    if args.command == "judge":
+        instructions = open(args.instructions, encoding="utf-8").read()
         kept = os.path.join(out, f"outputs-{args.judge}")
         os.makedirs(kept, exist_ok=True)
-        for path in sorted(glob.glob(os.path.join(args.batches, "*.json"))):
+        paths = sorted(glob.glob(os.path.join(args.batches, "*.json")))
+
+        def one(path):
             name = os.path.basename(path)[:-5]
-            try:
-                raw = open(os.path.join(args.outputs, name + ".txt"), encoding="utf-8").read()
-                with open(os.path.join(kept, name + ".txt"), "w", encoding="utf-8") as f:
-                    f.write(raw)  # the judge's output as given, kept with the run
-                output = parse_output(raw)
-            except (OSError, ValueError) as e:
-                problems.append(f"batch {name}: {e}")
-                continue
-            got, bad = check_grades(load(path), output)
-            grades.update(got)
-            problems += [f"batch {name}: {x}" for x in bad]
-        dump(os.path.join(out, f"grades-{args.judge}.json"), grades)
-        print(f"{len(grades)} grades; " + ("no problems" if not problems else f"{len(problems)} problem(s)"))
-        for x in problems:
-            print("  " + x)
-        return 1 if problems else 0
+            text, meta = ask_claude(prompt(instructions, load(path)), args.model)
+            with open(os.path.join(kept, name + ".txt"), "w", encoding="utf-8") as f:
+                f.write(text)
+            dump(os.path.join(kept, name + ".json"), meta)
+            return name, meta
+
+        with concurrent.futures.ThreadPoolExecutor(args.workers) as pool:
+            for name, meta in pool.map(one, paths):
+                a = meta["attempts"]
+                print(f"batch {name}: {len(a)} attempt(s), models {a[-1].get('models')}, {a[-1]['seconds']} s")
+        return collect(args.batches, kept, out, args.judge)
     if args.command == "sheet":
         batches = [load(path) for path in sorted(glob.glob(os.path.join(args.batches, "*.json")))]
         text, key = sheet(batches, load(args.grades), args.seed)
