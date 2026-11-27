@@ -1,0 +1,1082 @@
+{
+ "YRQP": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 1,
+  "pair": 1,
+  "position": 1
+ },
+ "VRMR": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 1,
+  "pair": 1,
+  "position": 2
+ },
+ "CVMA": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 1,
+  "pair": 2,
+  "position": 1
+ },
+ "AJHX": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 1,
+  "pair": 2,
+  "position": 2
+ },
+ "UK7P": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 1,
+  "pair": 3,
+  "position": 1
+ },
+ "HKN9": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 1,
+  "pair": 3,
+  "position": 2
+ },
+ "H3TA": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 1,
+  "pair": 4,
+  "position": 1
+ },
+ "EN73": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 1,
+  "pair": 4,
+  "position": 2
+ },
+ "HDFJ": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 1,
+  "pair": 5,
+  "position": 1
+ },
+ "DNCW": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 1,
+  "pair": 5,
+  "position": 2
+ },
+ "KXAE": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 1,
+  "pair": 6,
+  "position": 1
+ },
+ "CWYR": {
+  "configuration": "kimi-fast",
+  "app": "Kimi",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 1,
+  "pair": 6,
+  "position": 2
+ },
+ "QW9U": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 2,
+  "pair": 1,
+  "position": 1
+ },
+ "P99M": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 2,
+  "pair": 1,
+  "position": 2
+ },
+ "M7KC": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 2,
+  "pair": 2,
+  "position": 1
+ },
+ "9YKT": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 2,
+  "pair": 2,
+  "position": 2
+ },
+ "M4EY": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 2,
+  "pair": 3,
+  "position": 1
+ },
+ "CY4H": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 2,
+  "pair": 3,
+  "position": 2
+ },
+ "XRUK": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 2,
+  "pair": 4,
+  "position": 1
+ },
+ "TC94": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 2,
+  "pair": 4,
+  "position": 2
+ },
+ "YAKE": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 2,
+  "pair": 5,
+  "position": 1
+ },
+ "E9YW": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 2,
+  "pair": 5,
+  "position": 2
+ },
+ "PKMY": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 2,
+  "pair": 6,
+  "position": 1
+ },
+ "K9PR": {
+  "configuration": "grok-fast",
+  "app": "Grok",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 2,
+  "pair": 6,
+  "position": 2
+ },
+ "YJM4": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 3,
+  "pair": 1,
+  "position": 1
+ },
+ "M37C": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 3,
+  "pair": 1,
+  "position": 2
+ },
+ "AQCE": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 3,
+  "pair": 2,
+  "position": 1
+ },
+ "MFFY": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 3,
+  "pair": 2,
+  "position": 2
+ },
+ "XVMW": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 3,
+  "pair": 3,
+  "position": 1
+ },
+ "UCTJ": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 3,
+  "pair": 3,
+  "position": 2
+ },
+ "VPY7": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 3,
+  "pair": 4,
+  "position": 1
+ },
+ "R7YE": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 3,
+  "pair": 4,
+  "position": 2
+ },
+ "CQM3": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 3,
+  "pair": 5,
+  "position": 1
+ },
+ "VEDQ": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 3,
+  "pair": 5,
+  "position": 2
+ },
+ "RAHA": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 3,
+  "pair": 6,
+  "position": 1
+ },
+ "NNY9": {
+  "configuration": "chatgpt-fast",
+  "app": "ChatGPT",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 3,
+  "pair": 6,
+  "position": 2
+ },
+ "F3PP": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 4,
+  "pair": 1,
+  "position": 1
+ },
+ "VVNH": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 4,
+  "pair": 1,
+  "position": 2
+ },
+ "KQNW": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 4,
+  "pair": 2,
+  "position": 1
+ },
+ "9ARM": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 4,
+  "pair": 2,
+  "position": 2
+ },
+ "WFUH": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 4,
+  "pair": 3,
+  "position": 1
+ },
+ "XFPJ": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 4,
+  "pair": 3,
+  "position": 2
+ },
+ "3XPN": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 4,
+  "pair": 4,
+  "position": 1
+ },
+ "UXKX": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 4,
+  "pair": 4,
+  "position": 2
+ },
+ "7ADF": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 4,
+  "pair": 5,
+  "position": 1
+ },
+ "MJA3": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 4,
+  "pair": 5,
+  "position": 2
+ },
+ "TMNC": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 4,
+  "pair": 6,
+  "position": 1
+ },
+ "U37T": {
+  "configuration": "gemini-fast",
+  "app": "Gemini",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 4,
+  "pair": 6,
+  "position": 2
+ },
+ "AA3N": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 5,
+  "pair": 1,
+  "position": 1
+ },
+ "DWHR": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 5,
+  "pair": 1,
+  "position": 2
+ },
+ "EWNW": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 5,
+  "pair": 2,
+  "position": 1
+ },
+ "UMFM": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 5,
+  "pair": 2,
+  "position": 2
+ },
+ "CP7R": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 5,
+  "pair": 3,
+  "position": 1
+ },
+ "4CHW": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 5,
+  "pair": 3,
+  "position": 2
+ },
+ "E7JP": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 5,
+  "pair": 4,
+  "position": 1
+ },
+ "KARD": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 5,
+  "pair": 4,
+  "position": 2
+ },
+ "WDAH": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 5,
+  "pair": 5,
+  "position": 1
+ },
+ "MT99": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 5,
+  "pair": 5,
+  "position": 2
+ },
+ "DWK9": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 5,
+  "pair": 6,
+  "position": 1
+ },
+ "KV4H": {
+  "configuration": "qwen-fast",
+  "app": "Qwen",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 5,
+  "pair": 6,
+  "position": 2
+ },
+ "MRNC": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 6,
+  "pair": 1,
+  "position": 1
+ },
+ "4MM3": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 6,
+  "pair": 1,
+  "position": 2
+ },
+ "7JCF": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 6,
+  "pair": 2,
+  "position": 1
+ },
+ "4TYM": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 6,
+  "pair": 2,
+  "position": 2
+ },
+ "RTPK": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 6,
+  "pair": 3,
+  "position": 1
+ },
+ "RXFE": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 6,
+  "pair": 3,
+  "position": 2
+ },
+ "WNX7": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 6,
+  "pair": 4,
+  "position": 1
+ },
+ "YKRX": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 6,
+  "pair": 4,
+  "position": 2
+ },
+ "YR4T": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 6,
+  "pair": 5,
+  "position": 1
+ },
+ "3EJA": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 6,
+  "pair": 5,
+  "position": 2
+ },
+ "JVCR": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 6,
+  "pair": 6,
+  "position": 1
+ },
+ "THAP": {
+  "configuration": "kimi-reasoning",
+  "app": "Kimi",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 6,
+  "pair": 6,
+  "position": 2
+ },
+ "WVR3": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 7,
+  "pair": 1,
+  "position": 1
+ },
+ "KEEN": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 7,
+  "pair": 1,
+  "position": 2
+ },
+ "3ADX": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 7,
+  "pair": 2,
+  "position": 1
+ },
+ "97UE": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 7,
+  "pair": 2,
+  "position": 2
+ },
+ "MQDC": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 7,
+  "pair": 3,
+  "position": 1
+ },
+ "VK3K": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 7,
+  "pair": 3,
+  "position": 2
+ },
+ "YX43": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 7,
+  "pair": 4,
+  "position": 1
+ },
+ "WAC9": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 7,
+  "pair": 4,
+  "position": 2
+ },
+ "33MD": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 7,
+  "pair": 5,
+  "position": 1
+ },
+ "PTDX": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 7,
+  "pair": 5,
+  "position": 2
+ },
+ "3YFQ": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 7,
+  "pair": 6,
+  "position": 1
+ },
+ "H4EN": {
+  "configuration": "grok-reasoning",
+  "app": "Grok",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 7,
+  "pair": 6,
+  "position": 2
+ },
+ "7JYH": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 8,
+  "pair": 1,
+  "position": 1
+ },
+ "EKKC": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 8,
+  "pair": 1,
+  "position": 2
+ },
+ "3VTU": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 8,
+  "pair": 2,
+  "position": 1
+ },
+ "9HR3": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 8,
+  "pair": 2,
+  "position": 2
+ },
+ "WDEV": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 8,
+  "pair": 3,
+  "position": 1
+ },
+ "A7EF": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 8,
+  "pair": 3,
+  "position": 2
+ },
+ "AUAP": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 8,
+  "pair": 4,
+  "position": 1
+ },
+ "3AXT": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 8,
+  "pair": 4,
+  "position": 2
+ },
+ "FMJV": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 8,
+  "pair": 5,
+  "position": 1
+ },
+ "Q74Y": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 8,
+  "pair": 5,
+  "position": 2
+ },
+ "CTX9": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 8,
+  "pair": 6,
+  "position": 1
+ },
+ "WW3Q": {
+  "configuration": "chatgpt-reasoning",
+  "app": "ChatGPT",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 8,
+  "pair": 6,
+  "position": 2
+ },
+ "YFKF": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 9,
+  "pair": 1,
+  "position": 1
+ },
+ "T4YN": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 9,
+  "pair": 1,
+  "position": 2
+ },
+ "XNTP": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 9,
+  "pair": 2,
+  "position": 1
+ },
+ "YFQF": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 9,
+  "pair": 2,
+  "position": 2
+ },
+ "UYCQ": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 9,
+  "pair": 3,
+  "position": 1
+ },
+ "FMTA": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 9,
+  "pair": 3,
+  "position": 2
+ },
+ "QY9J": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 9,
+  "pair": 4,
+  "position": 1
+ },
+ "9AA3": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 9,
+  "pair": 4,
+  "position": 2
+ },
+ "K9HX": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 9,
+  "pair": 5,
+  "position": 1
+ },
+ "7K7R": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 9,
+  "pair": 5,
+  "position": 2
+ },
+ "NAWX": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 9,
+  "pair": 6,
+  "position": 1
+ },
+ "KVUE": {
+  "configuration": "gemini-reasoning",
+  "app": "Gemini",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 9,
+  "pair": 6,
+  "position": 2
+ },
+ "YWX7": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "claimset",
+  "config_order": 10,
+  "pair": 1,
+  "position": 1
+ },
+ "FJRV": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1007-s00180-023-01377-x",
+  "condition": "pdf",
+  "config_order": 10,
+  "pair": 1,
+  "position": 2
+ },
+ "D4RV": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "pdf",
+  "config_order": 10,
+  "pair": 2,
+  "position": 1
+ },
+ "N7KT": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1002-nav-22074",
+  "condition": "claimset",
+  "config_order": 10,
+  "pair": 2,
+  "position": 2
+ },
+ "XURM": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "pdf",
+  "config_order": 10,
+  "pair": 3,
+  "position": 1
+ },
+ "VKKM": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1093-imaman-dpad028",
+  "condition": "claimset",
+  "config_order": 10,
+  "pair": 3,
+  "position": 2
+ },
+ "JE4F": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "cross",
+  "condition": "pdf",
+  "config_order": 10,
+  "pair": 4,
+  "position": 1
+ },
+ "QATF": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "cross",
+  "condition": "claimset",
+  "config_order": 10,
+  "pair": 4,
+  "position": 2
+ },
+ "YYWQ": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "pdf",
+  "config_order": 10,
+  "pair": 5,
+  "position": 1
+ },
+ "AMQX": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1111-jtsa-12843",
+  "condition": "claimset",
+  "config_order": 10,
+  "pair": 5,
+  "position": 2
+ },
+ "RPHH": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "pdf",
+  "config_order": 10,
+  "pair": 6,
+  "position": 1
+ },
+ "QH79": {
+  "configuration": "qwen-reasoning",
+  "app": "Qwen",
+  "paper": "doi-10-1016-j-ejor-2022-04-040",
+  "condition": "claimset",
+  "config_order": 10,
+  "pair": 6,
+  "position": 2
+ }
+}
