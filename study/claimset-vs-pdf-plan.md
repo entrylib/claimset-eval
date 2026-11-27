@@ -219,7 +219,7 @@ Purposive sample, fixed by rule before collection: from each hosted provider's a
 | OpenAI (ChatGPT Plus) | "Instant" | "Thinking effort" at its highest setting, "High" |
 | xAI (Grok Plus) | "Fast" | "Expert" (no Heavy on the plan) |
 | Alibaba (Qwen Chat) | Qwen4-Max, mode "Fast" | Qwen4-Max, mode "Thinking" |
-| Moonshot (Kimi) | "Instant", Thinking effort at its lowest if it applies | "K3.1 Pro", Thinking effort at its highest, "High" |
+| Moonshot (Kimi Plus) | "Instant", Thinking effort at its lowest if it applies | "K3.1 Pro", Thinking effort at its highest, "High" |
 
 As found in the practice and the reading checks (lab notes NT1–NT7) (draft, for approval: PL5). ChatGPT, Grok and Kimi show no model name beyond these labels. The labels shown are recorded once per chat. **DeepSeek was dropped** (DC12): its free chat reads only the first 20 pages or 10,000 tokens of a file, so it read neither document whole for most papers, and its transcripts failed on long files; its two chats were excluded unread. Qwen Chat and Kimi took its place, and each read the 37-page VES PDF to its last page.
 
