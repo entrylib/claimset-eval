@@ -1,20 +1,21 @@
 # Models fixed, questions random: level and power of the test of the claimset effect averaged over the
-# eight models. Design: 8 models (4 providers x fast/reasoning), 2 conditions; flags on 25 questions,
+# models. Design: 2 x P models (P providers x fast/reasoning; P = 4 by default, 3 after DeepSeek was dropped), 2 conditions; flags on 25 questions,
 # score (two binomial points) on 75. The effect varies by provider (SD 0.4), model (0.3) and question (0.7).
-# Null: the effect averaged over these 8 models is 0 (model effects centred in the sample); question
+# Null: the effect averaged over these models is 0 (model effects centred in the sample); question
 # effects are drawn with mean 0 (other questions are part of the target).
 # Model: glmer, logit, y ~ condition x model + (1 + condition | question); the tested quantity is the
-# mean of the eight model effects, by Wald z and by t on (questions - 1) degrees of freedom.
+# mean of the model effects, by Wald z and by t on (questions - 1) degrees of freedom.
 suppressMessages({library(lme4); library(parallel); library(jsonlite)})
 args <- commandArgs(TRUE); reps0 <- if (length(args) > 0) as.integer(args[1]) else 1000
 reps1 <- if (length(args) > 1) as.integer(args[2]) else 300
+P <- if (length(args) > 2) as.integer(args[3]) else 4; M <- 2 * P
 
 one <- function(s, nq, size, delta) {
   set.seed(s)
-  mods <- data.frame(model = factor(1:8), provider = factor(rep(1:4, each = 2)), type = rep(0:1, 4))
+  mods <- data.frame(model = factor(1:M), provider = factor(rep(1:P, each = 2)), type = rep(0:1, P))
   d <- merge(merge(mods, data.frame(question = factor(1:nq))), data.frame(x = 0:1))
-  sm_ <- rnorm(4, 0, 0.4)[as.integer(mods$provider)] + rnorm(8, 0, 0.3); sm_ <- sm_ - mean(sm_) + delta
-  eta <- 0.5 + 0.6 * d$type + rnorm(8, 0, 0.3)[d$model] + rnorm(nq, 0, 1.2)[d$question] +
+  sm_ <- rnorm(P, 0, 0.4)[as.integer(mods$provider)] + rnorm(M, 0, 0.3); sm_ <- sm_ - mean(sm_) + delta
+  eta <- 0.5 + 0.6 * d$type + rnorm(M, 0, 0.3)[d$model] + rnorm(nq, 0, 1.2)[d$question] +
          d$x * (sm_[d$model] + rnorm(nq, 0, 0.7)[d$question])
   d$y <- rbinom(nrow(d), size, plogis(eta)); d$n <- size
   raw <- mean(d$y[d$x == 1] / size) - mean(d$y[d$x == 0] / size)
@@ -22,7 +23,7 @@ one <- function(s, nq, size, delta) {
                 error = function(e) NULL)
   if (is.null(f)) return(c(z = NA, raw = raw, sing = NA))
   b <- fixef(f); V <- as.matrix(vcov(f)); L <- setNames(rep(0, length(b)), names(b))
-  L["x"] <- 1; L[grep("^x:model", names(b))] <- 1/8
+  L["x"] <- 1; L[grep("^x:model", names(b))] <- 1/M
   c(z = sum(L * b) / sqrt(drop(t(L) %*% V %*% L)), raw = raw, sing = isSingular(f))
 }
 out <- list()
@@ -32,7 +33,7 @@ for (sc in list(list(nq = 25, size = 1, outcome = "flag", deltas = c(0, -0.5, -1
   for (delta in sc$deltas) {
     reps <- if (delta == 0) reps0 else reps1
     r <- do.call(rbind, mclapply(1:reps, one, nq = sc$nq, size = sc$size, delta = delta, mc.cores = 4))
-    base <- list(outcome = sc$outcome, questions = sc$nq, `effect, logit` = delta, replications = reps)
+    base <- list(outcome = sc$outcome, questions = sc$nq, models = M, `effect, logit` = delta, replications = reps)
     side <- if (delta < 0 || sc$outcome == "flag") -1 else 1
     for (tst in c("Wald z", "t")) {
       crit <- if (tst == "Wald z") qnorm(1 - 0.05/3) else qt(1 - 0.05/3, sc$nq - 1)

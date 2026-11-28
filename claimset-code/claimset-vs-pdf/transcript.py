@@ -16,10 +16,14 @@ with --transcript.)
               The earlier replies are trusted because the messages and the tail match. A model's visible
               thinking is left out of the page's text, since it may quote the replies.
 
-    python3 transcript.py check PAGE.mhtml [--transcript transcript.md] --expected MESSAGES.json [--tail 2] [--out CHAT.json]
+    python3 transcript.py check PAGE.mhtml [--transcript transcript.md] --expected MESSAGES.json [--tail 2]
+                                [--fill FILL.json] [--all] [--out CHAT.json]
     python3 transcript.py expected --questions study/practice/practice-questions.json --chat A -o MESSAGES.json
 
-MESSAGES.json is a list of the chat's messages as sent, the transcript request excluded. CHAT.json gets the turns
+MESSAGES.json is a list of the chat's messages as sent, the transcript request excluded. FILL.json ({n: reply})
+puts back turns the transcript left out though the page shows them, each reply copied from the page (the filled
+message and reply must be found on the page). --all also counts, for every reply, the words not found on the page
+(for apps whose page holds the whole chat; reported, not checked). CHAT.json gets the turns
 ({n, user, assistant}) and the checks; the exit status is 0 only if every check passed. The page holds personal
 data (the titles of the account's other chats): keep pages out of the repository, keep only CHAT.json.
 
@@ -37,11 +41,11 @@ from html.parser import HTMLParser
 
 TRANSCRIPT_REQUEST = (
     "Give me this whole conversation, up to your previous reply, as a transcript in one Markdown code block fenced "
-    "with four backticks. Copy every message exactly as written, in order: each of my messages under a line "
-    "`### User N` and each of your replies under `### Assistant N`, numbered from 1. Copy each reply word for word, "
-    "with its tables as Markdown tables and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise "
-    "anything, and add nothing. Write a reference to an attached file as `[file: name]`. Write nothing outside the "
-    "code block.")
+    "with four backticks. Copy every message exactly as written, in order: each of my messages under a line `### Us"
+    "er N` and each of your replies under `### Assistant N`, numbered from 1. Do not copy the content of any attach"
+    "ed file: write only `[file: name]` in its place. Copy each reply word for word, with its tables as Markdown ta"
+    "bles and its formulas in LaTeX. Do not shorten, correct, rephrase or summarise anything, and add nothing. Writ"
+    "e nothing outside the code block.")
 HEADING = re.compile(r"^#{2,4} (User|Assistant) (\d+)\s*$", re.M)
 FILE_REF = re.compile(r"\[file:[^\]]*\]")
 # The apps' own citation markup, kept in transcripts but not displayed as text: ChatGPT's <FileCite .../>,
@@ -140,6 +144,21 @@ def find_transcript(codes):
     return hits[-1] if hits else None
 
 
+# A turn an app adds to pass attached files to the model, copied into the transcript though it was never typed nor
+# shown (Qwen: "# Knowledge Base ... The content from [File](...) ... Please use the above information"). It and the
+# reply to it are set aside, and the turns renumbered.
+INJECTED = re.compile(r"^\s*# Knowledge Base\b|Please use the above information to assist in answering", re.M)
+
+
+def renumber(turns):
+    """User and Assistant turns numbered again from 1, in order, after injected turns were set aside."""
+    out, n = [], 0
+    for role, _, body in turns:
+        n += role == "user"
+        out.append((role, n, body))
+    return out
+
+
 def split_turns(text):
     """[(role, n, body)] in order, cut at the numbered headings only (replies may have headings of their own)."""
     marks = list(HEADING.finditer(text))
@@ -176,9 +195,26 @@ def norm(text):
     return re.sub(r"\s+", " ", FILE_REF.sub(" ", FILE_CONTENT.sub(" ", text))).strip()
 
 
-def check(page, expected, tail=2, transcript=None):
+def fill_turns(turns, expected, fill, page_words, result):
+    """Put back turns the app left out of its transcript though the page shows them: for each n in `fill`, the
+    message sent (expected[n-1]) and the reply as the page displays it (fill[n], copied from the page by hand),
+    inserted as turn n, the later turns renumbered. Both must be found on the page word for word."""
+    for n in sorted(fill):
+        k = 2 * (n - 1)
+        turns[k:k] = [("user", n, expected[n - 1]), ("assistant", n, fill[n])]
+        for what, text in (("message", expected[n - 1]), ("reply", fill[n])):
+            if not_found(text, page_words):
+                result["problems"].append(f"filled turn {n}: the {what} is not on the page as displayed")
+    result["filled"] = sorted(fill)
+    return renumber(turns)
+
+
+def check(page, expected, tail=2, transcript=None, fill=None, compare_all=False):
     """Check a chat's transcript: from the downloaded file `transcript` if given, else from the code block in the
-    page; the page is always the source of the displayed replies for the tail check."""
+    page; the page is always the source of the displayed replies for the tail check. `fill` ({n: reply}) puts back
+    turns the transcript left out (fill_turns). With `compare_all`, every reply is also compared with the page, for
+    apps whose page holds the whole chat; the counts of words not found are reported (`all_replies`), not checked:
+    formulas are displayed with other symbols than their LaTeX."""
     codes, shown = parse_page(page)
     result = {"page": page, "checks": {}, "problems": [], "turns": []}
     if transcript:
@@ -191,9 +227,20 @@ def check(page, expected, tail=2, transcript=None):
         result["problems"].append("no transcript code block (### User 1 ... ### Assistant 1) in the page")
         return result
     turns = split_turns(found)
+    injected = []
+    for k in range(len(turns) - 1):
+        if turns[k][0] == "user" and INJECTED.search(turns[k][2]) and turns[k + 1][0] == "assistant":
+            injected += [k, k + 1]  # a turn the app added for its attached files (Qwen), not typed by the user
+    if injected:
+        result["injected_turns"] = [f"{turns[k][0]} {turns[k][1]}" for k in injected]
+        turns = [x for k, x in enumerate(turns) if k not in injected]
+        turns = renumber(turns)
     if turns and turns[-1][0] == "user" and norm(turns[-1][2]) == norm(TRANSCRIPT_REQUEST):
         turns = turns[:-1]  # the app copied the transcript request itself as a last turn (DeepSeek did)
         result["dropped_request"] = True
+    page_words = words(shown)
+    if fill:
+        turns = fill_turns(turns, expected, fill, page_words, result)
     users = [(n, b) for r, n, b in turns if r == "user"]
     replies = {n: b for r, n, b in turns if r == "assistant"}
     order = [(r, n) for r, n, _ in turns]
@@ -210,7 +257,6 @@ def check(page, expected, tail=2, transcript=None):
         result["problems"].append(f"User {n} differs from the message sent")
     if missing > 0:
         result["problems"].append(f"{missing} message(s) missing")
-    page_words = words(shown)
     last = sorted(replies)[-tail:] if replies else []
     missing_words, absent = {}, []
     for n in last:
@@ -229,6 +275,8 @@ def check(page, expected, tail=2, transcript=None):
     for n, w in missing_words.items():
         if w:
             result["problems"].append(f"Assistant {n}: {len(w)} word(s) not found in the page as displayed: {' '.join(w[:12])}")
+    if compare_all:
+        result["all_replies"] = {n: len(not_found(replies[n], page_words)) for n in sorted(replies)}
     result["turns"] = [{"n": n, "user": b, "assistant": replies.get(n, "")} for n, b in users]
     return result
 
@@ -254,6 +302,8 @@ def main(argv=None):
     c.add_argument("--transcript", help="the transcript file the app made (transcript.md), if it made one")
     c.add_argument("--expected", required=True, help="JSON list of the chat's messages as sent")
     c.add_argument("--tail", type=int, default=2)
+    c.add_argument("--fill", help="JSON {n: reply}: turns the transcript left out, each reply copied from the page")
+    c.add_argument("--all", action="store_true", help="also count each reply's words not found in the page")
     c.add_argument("--out")
     e = sub.add_parser("expected")
     e.add_argument("--questions", required=True)
@@ -264,7 +314,8 @@ def main(argv=None):
         with open(args.output, "w") as f:
             json.dump(expected_practice(args.questions, args.chat), f, ensure_ascii=False, indent=1)
         return 0
-    result = check(args.page, json.load(open(args.expected)), args.tail, args.transcript)
+    fill = {int(n): r for n, r in json.load(open(args.fill)).items()} if args.fill else None
+    result = check(args.page, json.load(open(args.expected)), args.tail, args.transcript, fill, args.all)
     ok = bool(result["checks"]) and all(result["checks"].values()) and not result["problems"]
     result["passed"] = ok
     if args.out:
