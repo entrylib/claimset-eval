@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Sets up one session of experiment lab-weak-models-2 (entrylib/claimset-eval).
-# Usage: setup.sh lab|nolab ROOT
-#        setup.sh claimset ROOT SOURCE_BARE_REPO
+# Usage: setup.sh lab|submit|control ROOT
+#        setup.sh phase2 ROOT SOURCE_BARE_REPO
 # Makes ROOT/venv, ROOT/runs/<run>/ (each a git repository whose remote is ROOT/runs/<run>.git)
 # and, for the lab and claimset sessions, the claimset files (skills, AGENTS.md, guard hook) in ROOT itself.
 set -euo pipefail
@@ -12,18 +12,23 @@ PKGS="smooth==1.2.0 statsforecast==2.1.1 numpy==2.5.4 pandas==2.3.3 scipy==1.18.
 mkdir -p "$ROOT/runs"
 if git -C "$ROOT" rev-parse --git-dir >/dev/null 2>&1; then echo "ROOT must not be inside a git repository" >&2; exit 1; fi
 
+submit_skill() {  # only the claimset-submit skill: no claimset-lab skill, no AGENTS.md or CLAUDE.md, no guard hook
+  local t; t=$(mktemp -d); ( cd "$t" && "$ROOT/venv/bin/claimset" init --agent claude >/dev/null )
+  mkdir -p "$1/.claude/skills"; cp -r "$t/.claude/skills/claimset-submit" "$1/.claude/skills/"; rm -rf "$t"
+}
 "$PY" -m venv "$ROOT/venv"
 mkdir -p "$ROOT/.claude" "$ROOT/log"
 cat > "$ROOT/.claude/settings.local.json" <<'JSON'
 {"permissions": {"allow": ["Bash", "Read", "Edit", "Write", "Glob", "Grep", "WebFetch", "WebSearch"]}}
 JSON
-if [ "$ARM" = nolab ]; then
+if [ "$ARM" = control ]; then
   "$ROOT/venv/bin/pip" install -q $PKGS
   printf '[global]\nno-index = true\n' > "$ROOT/venv/pip.conf"      # nothing more can be installed into it
   if "$ROOT/venv/bin/python" -c "import claimset" 2>/dev/null; then echo "claimset is importable in the control environment" >&2; exit 1; fi
 else
   "$ROOT/venv/bin/pip" install -q $PKGS claimset==0.45.0
-  ( cd "$ROOT" && "$ROOT/venv/bin/claimset" init --agent claude --guard >/dev/null )
+  if [ "$ARM" = submit ]; then submit_skill "$ROOT"
+  else ( cd "$ROOT" && "$ROOT/venv/bin/claimset" init --agent claude --guard >/dev/null ); fi
 fi
 
 newrun() {  # newrun RUN BRIEF
@@ -33,6 +38,7 @@ newrun() {  # newrun RUN BRIEF
   sed "s#/home/user/venv#$ROOT/venv#" "$2" > "$d/brief.md"
   printf '__pycache__/\n*.pyc\n' > "$d/.gitignore"
   if [ "$ARM" = lab ]; then ( cd "$d" && "$ROOT/venv/bin/claimset" init --agent claude --guard >/dev/null ); fi
+  if [ "$ARM" = submit ]; then submit_skill "$d"; fi
   git -C "$d" add -A
   git -C "$d" -c user.name=Experiment -c user.email=experiment@localhost commit -qm "Start of run $1"
   git -C "$d" remote add origin "$ROOT/runs/$1.git"
@@ -41,8 +47,9 @@ newrun() {  # newrun RUN BRIEF
 
 case "$ARM" in
   lab)   for r in lab-sonnet-1 lab-sonnet-2 lab-haiku-1 lab-haiku-2; do newrun "$r" "$HERE/brief-lab.md"; done ;;
-  nolab) for r in nolab-sonnet-1 nolab-sonnet-2 nolab-haiku-1 nolab-haiku-2; do newrun "$r" "$HERE/brief-control.md"; done ;;
-  claimset)
+  submit)  for r in submit-sonnet-1 submit-sonnet-2 submit-haiku-1 submit-haiku-2; do newrun "$r" "$HERE/brief-lab.md"; done ;;
+  control) for r in control-sonnet-1 control-sonnet-2 control-haiku-1 control-haiku-2; do newrun "$r" "$HERE/brief-control.md"; done ;;
+  phase2)
     [ -n "$SRC" ] || { echo "give the selected lab run's bare repository" >&2; exit 1; }
     for r in claimset-sonnet-1 claimset-sonnet-2 claimset-haiku-1 claimset-haiku-2; do
       git clone -q --bare "$SRC" "$ROOT/runs/$r.git"

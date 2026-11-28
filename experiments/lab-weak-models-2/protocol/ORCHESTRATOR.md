@@ -7,14 +7,14 @@ to report a stop condition below.
 
 ## Your session
 
-Your session (`lab`, `nolab` or `claimset`) is given in the message that started you. ROOT is the folder you were
+Your session (`lab`, `submit`, `control` or `phase2`) is given in the message that started you. ROOT is the folder you were
 started in, which the person's bootstrap has set up (`ROOT/runs/<run>/` for each run, `ROOT/venv`); the protocol
 files are in `ROOT/../protocol-<session>/`, this file among them.
 
 ## 1. Check
 
 1. Check that this session can give its agents nothing beyond their task: your tool list holds no MCP tools (you
-   were started with `--strict-mcp-config`), and, for the `nolab` session only, no skill, agent type, command or
+   were started with `--strict-mcp-config`), and, for the `control` session only, no skill, agent type, command or
    instruction you can see mentions claimset or EntryLib. If a check fails, stop and tell the person exactly what
    to change; start nothing.
 2. Check that `ROOT/runs/` holds the four run folders of your session, each a git repository whose `origin` is
@@ -41,7 +41,21 @@ To ask the human, end your turn with your question(s), addressed to the human; I
 and you then continue. Do not guess their answers.
 ```
 
-**nolab** (runs nolab-sonnet-1, nolab-sonnet-2, nolab-haiku-1, nolab-haiku-2):
+**submit** (runs submit-sonnet-1, submit-sonnet-2, submit-haiku-1, submit-haiku-2):
+```
+Do the study in brief.md and write it up as a claimset for submission, following the claimset-submit skill,
+from the first question to the finished claimset. Do not submit it.
+Ask the human anything you need through me.
+
+Your folder is ROOT/runs/RUN. Work only inside it: run every command from it (start each shell
+command with `cd ROOT/runs/RUN &&`) and do not read or write anything outside it, except the
+Python environment the brief names. Start by reading brief.md and .claude/skills/claimset-submit/SKILL.md there.
+
+To ask the human, end your turn with your question(s), addressed to the human; I will reply with their answer
+and you then continue. Do not guess their answers.
+```
+
+**control** (runs control-sonnet-1, control-sonnet-2, control-haiku-1, control-haiku-2):
 ```
 Do the study in brief.md, from the first question to the finished report.
 Ask the human anything you need through me.
@@ -58,7 +72,7 @@ To ask the human, end your turn with your question(s), addressed to the human; I
 and you then continue. Do not guess their answers.
 ```
 
-**claimset** (runs claimset-sonnet-1, claimset-sonnet-2, claimset-haiku-1, claimset-haiku-2):
+**phase2** (runs claimset-sonnet-1, claimset-sonnet-2, claimset-haiku-1, claimset-haiku-2):
 ```
 Export this lab record with `claimset lab export` and complete the claimset for submission, following the
 claimset-submit skill. Do not submit it.

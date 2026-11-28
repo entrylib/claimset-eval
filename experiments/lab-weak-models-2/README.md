@@ -10,8 +10,9 @@ each starting four Agent-tool subagents (two Sonnet, two Haiku) and answering th
 | Session | Runs | Agents' task | Folder |
 |---|---|---|---|
 | `lab` | lab-{sonnet,haiku}-{1,2} | the pilot's Phase 1 prompt, `protocol/brief-lab.md` (the pilot's brief) | claimset files, guard hook, skills |
-| `nolab` | nolab-{sonnet,haiku}-{1,2} | the control prompt, `protocol/brief-control.md` (the pilot's brief without claimset and EntryLib) | no claimset anywhere; installs blocked |
-| `claimset` | claimset-{sonnet,haiku}-{1,2} | the pilot's Phase 2 prompt, on four copies of one `lab` record | claimset files, guard hook, skills |
+| `submit` | submit-{sonnet,haiku}-{1,2} | do the study and write it up as a claimset with claimset-submit, `protocol/brief-lab.md` | claimset and the claimset-submit skill only: no lab skill, instructions or guard |
+| `control` | control-{sonnet,haiku}-{1,2} | the control prompt, `protocol/brief-control.md` (the pilot's brief without claimset and EntryLib) | no claimset anywhere; installs blocked |
+| `phase2` | claimset-{sonnet,haiku}-{1,2} | the pilot's Phase 2 prompt, on four copies of one `lab` record | claimset files, guard hook, skills |
 
 `protocol/ORCHESTRATOR.md` is what each orchestrator follows. Each session's archive (`archive.sh`) is uploaded
 here, captured in the record, graded blind and scored.
