@@ -7,7 +7,7 @@ ROOT=$(realpath "$1"); OUT="$ROOT-archive"; rm -rf "$OUT"; mkdir -p "$OUT/runs" 
 for d in "$ROOT"/runs/*/; do
   r=$(basename "$d"); mkdir -p "$OUT/runs/$r"
   git -C "$ROOT/runs/$r.git" bundle create -q "$OUT/runs/$r/repo.bundle" --all
-  rsync -a --exclude .git --exclude __pycache__ "$d" "$OUT/runs/$r/tree/"
+  mkdir -p "$OUT/runs/$r/tree" && tar -C "$d" --exclude=./.git --exclude=__pycache__ -cf - . | tar -C "$OUT/runs/$r/tree" -xf -
 done
 P="$HOME/.claude/projects/$(echo "$ROOT" | sed 's#[^A-Za-z0-9]#-#g')"
 [ -d "$P" ] && cp -r "$P"/. "$OUT/transcripts/" || echo "no transcripts found at $P" >&2

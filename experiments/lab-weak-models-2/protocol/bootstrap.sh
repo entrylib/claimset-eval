@@ -4,6 +4,12 @@
 # Fetches the protocol into BASE/protocol-<session>/, checks that nothing will leak, and sets up BASE/<session>/.
 set -euo pipefail
 PROTO=$1; S=$2; SRC=${3:-}; BASE=$(pwd)
+for c in python3 git curl tar claude; do command -v $c >/dev/null || { echo "STOP: $c is not installed" >&2; exit 1; }; done
+python3 -c 'import sys; sys.exit(sys.version_info < (3, 10))' || { echo "STOP: Python 3.10 or newer is needed" >&2; exit 1; }
+python3 -c 'import venv, ensurepip' 2>/dev/null || { echo "STOP: python3-venv is not installed" >&2; exit 1; }
+# agents commit to git; give the container an identity if it has none (the same in every session)
+git config --global user.name >/dev/null || git config --global user.name "Experiment"
+git config --global user.email >/dev/null || git config --global user.email "experiment@localhost"
 if git rev-parse --git-dir >/dev/null 2>&1; then echo "STOP: $BASE is inside a git repository" >&2; exit 1; fi
 d=$BASE; while [ "$d" != / ]; do
   for f in CLAUDE.md AGENTS.md; do [ -e "$d/$f" ] && { echo "STOP: $d/$f would be read by the session" >&2; exit 1; }; done

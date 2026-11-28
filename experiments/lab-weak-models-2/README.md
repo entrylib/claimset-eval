@@ -4,7 +4,7 @@ Replicates the pilot in `../lab-weak-models/` with claimset 0.45.0, and adds a c
 without claimset-lab, by agents that never learn it exists. The study's own lab record is on the branch
 `claimset/lab-weak-models-2` (questions, hypotheses H1–H12, plans PL1–PL3).
 
-Three orchestrator sessions run on the guarantor's machine, each in a folder set up by `protocol/bootstrap.sh`,
+Three orchestrator sessions run on the guarantor's machine, each in a Docker container of its own, each in a folder set up by `protocol/bootstrap.sh`,
 each starting four Agent-tool subagents (two Sonnet, two Haiku) and answering them from `protocol/answers.md`:
 
 | Session | Runs | Agents' task | Folder |
