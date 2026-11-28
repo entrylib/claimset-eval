@@ -4,7 +4,7 @@
 # Usage: archive.sh ROOT   -> ROOT.tar.gz
 set -euo pipefail
 ROOT=$(realpath "$1"); OUT="$ROOT-archive"; rm -rf "$OUT"; mkdir -p "$OUT/runs" "$OUT/transcripts"
-for d in "$ROOT"/runs/*/; do
+for d in "$ROOT"/runs/*/; do case "$d" in *.git/) continue;; esac
   r=$(basename "$d"); mkdir -p "$OUT/runs/$r"
   git -C "$ROOT/runs/$r.git" bundle create -q "$OUT/runs/$r/repo.bundle" --all
   mkdir -p "$OUT/runs/$r/tree" && tar -C "$d" --exclude=./.git --exclude=__pycache__ -cf - . | tar -C "$OUT/runs/$r/tree" -xf -
